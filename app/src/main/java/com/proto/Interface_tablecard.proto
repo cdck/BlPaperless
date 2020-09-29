@@ -1,0 +1,39 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+
+//会议桌牌显示相关
+message pbui_Item_MeetTableCardDetailInfo
+{
+	bytes fontname=1;//使用字体名称
+	fixed32  fontsize=2;//字体 大小
+	fixed32 fontcolor=3;//字体颜色
+	float lx=4;//左上角 x坐标 相对宽的百分比 如：lx=0.1 当宽为1920时 真正的lx应该= 0.1 * 1920 = 192
+	float ly=5;
+	float rx=6;
+	float ry=7;
+	fixed32 flag=8;//显示标志 参见Pb_TableCardFlag
+	fixed32 align=9;//参见 font align flag
+	fixed32  type=10;//显示的信息 参见Pb_TableCardType
+}
+
+//桌牌修改标志位
+enum Pb_TableCard_ModifyFlag
+{
+Pb_TABLECARD_MODFLAG_ZERO=0;
+Pb_TABLECARD_MODFLAG_SETDEFAULT= 0x00000001; //设置为默认
+}
+
+//会议桌牌显示相关
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETTABLECARD
+//method: mod/query
+message pbui_Type_MeetTableCardDetailInfo
+{
+	fixed32      modifyflag=1;//修改标志 参见Pb_TableCard_ModifyFlag
+	fixed32      bgphotoid=2;//底图ID
+	repeated 	pbui_Item_MeetTableCardDetailInfo item=3; //必须是3个
+}

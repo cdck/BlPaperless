@@ -1,0 +1,222 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//会议目录
+message pbui_Item_MeetDirDetailInfo
+{
+	fixed32			id=1; //目录ID
+	bytes			name=2; //名称
+	fixed32			parentid=3; //父目录ID
+	fixed32			filenum=4; //该目录下的文件数量
+}
+
+//会议目录
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORY
+//method: add/mod/del/query/childred
+message pbui_Type_MeetDirDetailInfo
+{
+	repeated pbui_Item_MeetDirDetailInfo	 item=1; //会议
+}
+
+message pbui_Item_MeetingDirPosItem
+{
+	fixed32 dirid=1;  //会议目录
+	fixed32 pos=2;    //序号
+}
+
+//修改会议目录排序
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORY
+//method: set
+message pbui_Type_ModMeetDirPos
+{
+	repeated pbui_Item_MeetingDirPosItem	 item=1; //会议
+}
+
+//会议目录文件
+message pbui_Item_MeetDirFileDetailInfo
+{
+	fixed32			mediaid=1; //文件ID
+	bytes			name=2; //文件名称
+	fixed32			uploaderid=3; //上传者ID
+	fixed32			uploader_role=4; //上传者角色
+	fixed32			mstime=5;//时间 毫秒
+	fixed64			size=6;//大小 字节
+	fixed32			attrib=7;//文件属性
+	fixed32			filepos=8;// 文件序号
+	bytes			uploader_name=9; //上传者名称
+}
+
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE
+//method: add/mod/del/query
+message pbui_Type_MeetDirFileDetailInfo
+{
+	fixed32   dirid=1;
+	repeated pbui_Item_MeetDirFileDetailInfo	 item=2; //文件
+}
+
+//修改会议目录文件
+message pbui_Item_ModMeetDirFile
+{
+	fixed32			mediaid=1; //文件ID
+	bytes			name=2; //文件名称
+	fixed32			attrib=3;//文件属性
+}
+
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE
+//method: modifyinfo
+message pbui_Type_ModMeetDirFile
+{
+	fixed32   dirid=1;
+	repeated pbui_Item_ModMeetDirFile	 item=2; //文件
+}
+
+//修改会议目录文件排序
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE
+//method: set
+message pbui_Type_ModMeetDirFilePos
+{
+	fixed32  dirid=1;//目录ID
+	repeated fixed32  fileid=2;//按ID的排序 
+}
+
+//分页文件查询
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE
+//method: complexpagequery
+message pbui_Type_ComplexQueryMeetDirFile
+{
+	fixed32      dirid=1;//为0表示从平台里查询(平台里查询这种情况下 role和uploadid是无效的)
+
+	fixed32		 queryflag=2;//查询标志 参见Pb_MeetFileQueryFlag
+
+	fixed32		 role=3;//上传者角色
+	fixed32		 uploadid=4;//上传人员ID 为0表示全部
+
+	fixed32		 filetype=5;//文件类型 为0表示全部 参见 Pb_MeetFileType
+
+	fixed32		 attrib=6;//文件属性 为0表示全部 参见Pb_MeetFileAttrib
+	fixed32		 pageindex=7;//分页值
+	fixed32		 pagenum=8;//分页大小 为0表示返回全部
+}
+
+//分页文件查询返回结构头部
+//callreturn
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE
+//method: complexpagequery
+message pbui_TypePageResQueryrFileInfo
+{
+	fixed32			pageindex=1;//起始索引 从0 开始
+	fixed32			pagenum=2;//每页项数
+	fixed32			itemnum=3;//当前页项数 ,根据数据不同用不同的解析
+	fixed32			totalnum=4;//总项数
+	
+	repeated pbui_Item_MeetDirFileDetailInfo item =5;//文件
+}
+
+//有新的录音文件媒体文件通知
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE
+//callback
+//method: add
+message pbui_Type_MeetNewRecordFile
+{
+	fixed32 mediaid=1;
+	bytes   filename=2;//文件名
+	fixed64 len=3;//大小 字节
+	fixed32 msec=4; //播放时长，以ms为单位,如果为升级文件 记录升级的版本信息数据长度
+}
+
+//会议目录权限
+//type:Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT
+//method: save/query
+message pbui_Type_MeetDirRightDetailInfo
+{
+	fixed32   dirid=1;
+	repeated  fixed32 memberid=2; //参会人员ID
+}
+
+///start FileScore
+message pbui_Item_MeetFileScore
+{
+	fixed32 fileid=1;  //文件ID
+	fixed32 memberid=2;//参会人员ID
+	fixed32 score=3;//评分
+	fixed64 scoretime=4;//评分utc时间 微秒
+}
+
+//会议文件评分  修改
+//会议文件评分相关
+//type:Pb_TYPE_MEET_INTERFACE_FILESCORE
+//method:添加、修改、删除、查询(数据库返回)
+message pbui_Type_MeetFileScore
+{
+	fixed32		 isfirst=1;//是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
+	repeated pbui_Item_MeetFileScore item=2;
+}
+
+//会议文件评分  查询
+//会议文件评分相关
+//type:Pb_TYPE_MEET_INTERFACE_FILESCORE
+//method:Pb_METHOD_MEET_INTERFACE_ASK\Pb_METHOD_MEET_INTERFACE_QUERY
+message pbui_Type_QueryFileScore
+{
+	fixed32 fileid=1;   //文件ID
+}
+
+//会议文件评分  返回查询结果
+//会议文件评分相关
+//type:Pb_TYPE_MEET_INTERFACE_FILESCORE
+//method:Pb_METHOD_MEET_INTERFACE_ASK
+message pbui_Type_QueryAverageFileScore
+{
+	fixed32 fileid=1;   //文件ID
+	fixed32 score=2;	 //平均评分
+}
+///end FileScore
+
+///start Fileevaluate
+message pbui_Item_FileEvaluate
+{
+	fixed32 fileid=1;  //文件ID
+	fixed32 memberid=2;//参会人员ID
+	fixed32 flag=3;//标志 参见evaluate flag 宏定义
+	fixed64 evaluatetime=4;//评分utc时间 微秒
+	bytes   evaluate=5;//评分的文本
+}
+
+//会议文件评价 
+//type：Pb_TYPE_MEET_INTERFACE_FILEEVALUATE
+//method:add、query
+message pbui_Type_MeetingFileEvaluate
+{
+	fixed32      startrow=1;//查询返回用户传过来的开始行
+	fixed32		 isfirst=2;//是否为第一帧,如果评价太多,接下来的帧会在下次接收到后回调
+	
+	repeated pbui_Item_FileEvaluate item=3;
+}
+
+//会议文件评价  查询
+//type：Pb_TYPE_MEET_INTERFACE_FILEEVALUATE
+//method:query
+message pbui_Type_QueryFileEvaluate
+{
+	fixed32 fileid=1;   //文件ID 可以为0表示所有文件
+	fixed32 memberid=2;//参会人员ID 可以为0表示所有参会人
+	fixed64 startevaluatetime=3;//查询的起始评分utc时间 微秒 必须有效
+	fixed64 endevaluatetime=4;//查询的结束评分utc时间 微秒 必须有效
+	fixed32 startrow=5;//查询开始行 实现分页查询 必须有效 第一次从0开始
+}
+
+//会议文件评价  删除
+//type：Pb_TYPE_MEET_INTERFACE_FILEEVALUATE
+//method:del
+message pbui_Type_DelFileEvaluate
+{
+	fixed32 fileid=1;   //文件ID 可以为0表示所有文件
+	fixed32 memberid=2;//参会人员ID 可以为0表示所有参会人
+	fixed64 evaluatetime=3;//评分utc时间 微秒 当fileid、memberid有效时 可以有效表示删除指定的评论
+}
+///end Fileevaluate

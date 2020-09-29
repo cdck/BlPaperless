@@ -1,0 +1,75 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//会议公告
+message pbui_Item_BulletDetailInfo
+{
+	fixed32		bulletid=1;
+	bytes	    title=2; //标题
+	bytes	    content=3; //内容 
+	fixed32		type=4;//类别
+	fixed32		starttime=5; //开始时间
+	fixed32		timeouts=6;  //超时值
+}
+
+//会议公告
+//Pb_TYPE_MEET_INTERFACE_MEETBULLET
+//call
+//method: add,del,modify,query
+message pbui_BulletDetailInfo
+{
+	repeated pbui_Item_BulletDetailInfo  item=1;// 
+}
+
+//会议公告发布
+//call
+//Pb_TYPE_MEET_INTERFACE_MEETBULLET
+//method: publish
+message pbui_Type_MeetPublishBulletInfo
+{
+	pbui_Item_BulletDetailInfo item=1;
+	repeated fixed32 deviceid=2; //发给那些设备，为NULL表示所有设备
+}
+
+//停止会议公告
+//Pb_TYPE_MEET_INTERFACE_MEETBULLET
+//call
+//method: Pb_METHOD_MEET_INTERFACE_STOP
+message pbui_Type_StopBullet
+{
+	fixed32  bulletid=1;//停止的会议公告ID
+	repeated fixed32  pdevid=2;//设备ID
+}
+
+//停止会议公告
+//Pb_TYPE_MEET_INTERFACE_MEETBULLET
+//callback
+//method: Pb_METHOD_MEET_INTERFACE_STOP
+message pbui_Type_StopBulletMsg
+{
+	fixed32  bulletid=1;//停止的会议公告ID
+}
+
+//会议公告发布
+//callback
+//Pb_TYPE_MEET_INTERFACE_MEETBULLET
+//method: publish
+message pbui_Type_NotifyMeetPublishBulletInfo
+{
+	pbui_Item_BulletDetailInfo item=1;
+
+	fixed32 operdeviceid=2;//发起设备ID
+	fixed32 opermember=3;//发起人员ID
+}
+
+//会议长文本公告
+//Pb_TYPE_MEET_INTERFACE_MEETBULLET
+//call,callback
+//method: request(获取),update(修改)
+message pbui_BigBulletDetailInfo
+{
+	bytes	    text=1; //标题
+}

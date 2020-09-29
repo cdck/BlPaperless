@@ -1,0 +1,631 @@
+<resources>
+    <string name="app_name">无纸化会议系统</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">账号</string>
+    <string name="prompt_password">密码</string>
+    <string name="prompt_new_password">新密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">邮箱格式不正确</string>
+    <string name="error_invalid_password">请输入6位数以上的密码</string>
+    <string name="error_incorrect_password">密码不正确</string>
+    <string name="error_incorrect_user_or_password">账号或密码错误</string>
+    <string name="error_field_required">请输入账号</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+
+    <!--批注页面-->
+    <string name="button_save_local">保存本地</string>
+    <string name="button_save_server">保存服务器</string>
+    <string name="button_screenshot_notation">截图批注</string>
+    <string name="button_start_screen">发起同屏</string>
+    <string name="button_stop_screen">停止同屏</string>
+    <string name="button_start_projection">发起投影</string>
+    <string name="button_stop_projection">停止投影</string>
+    <string name="button_pre_page">上一张</string>
+    <string name="button_next_page">下一张</string>
+
+    <string name="text_call_server">呼叫服务</string>
+    <string name="text_shortcuts">快捷方式</string>
+
+    <!--同屏控制-->
+    <string name="screen_title">同屏控制</string>
+    <string name="member">参会人</string>
+    <string name="allmember">所有参会人</string>
+    <string name="chooseMember">选择参会人</string>
+    <string name="project">投影机</string>
+    <string name="allproject">所有投影机</string>
+    <string name="chooseProject">选择投影机</string>
+    <string name="ensure">确定</string>
+    <string name="cancel">取消</string>
+    <string name="allchoose">全选</string>
+    <string name="allchoose_count">全选(%1$s)</string>
+    <string name="watch">观看</string>
+    <string name="canWatch">可观看的屏幕</string>
+    <string name="member_screen">参会人屏幕</string>
+    <string name="pro_screen">投影机屏幕</string>
+    <string name="send">发送</string>
+    <string name="export_file">导出资料</string>
+    <string name="number">序号</string>
+    <string name="file_name">文件名</string>
+    <string name="size">大小</string>
+    <string name="upload">上传</string>
+    <string name="pre_pape">上一页</string>
+    <string name="next_pape">下一页</string>
+    <string name="count">数量</string>
+    <string name="document">文档</string>
+    <string name="picture">图片</string>
+    <string name="video">视频</string>
+    <string name="other">其它</string>
+    <string name="look">查看</string>
+    <string name="download">下载</string>
+    <string name="batch_download">下载</string>
+    <string name="push_file">文件推送</string>
+    <string name="import_file">导入文件</string>
+    <string name="import_">导入</string>
+    <string name="document_postil">文档批注</string>
+    <string name="picture_postil">图片批注</string>
+    <!--签到页面-->
+    <string name="name">姓名</string>
+    <string name="signin_time">签到时间</string>
+    <string name="signin_state">签到状态</string>
+    <string name="signin_type">签到方式</string>
+    <!--服务文本-->
+    <string name="paper">纸</string>
+    <string name="pen">笔</string>
+    <string name="tea">茶水</string>
+    <string name="water">矿泉水</string>
+    <string name="calculate">计算器</string>
+    <string name="waiter">服务员</string>
+    <string name="sweep">清扫</string>
+    <string name="teach">技术员</string>
+
+    <string name="video_list">视频直播列表</string>
+    <string name="pelette_exit">退出</string>
+    <string name="pelette_start_postil">发起批注</string>
+    <string name="pelette_stop_postil">停止批注</string>
+    <string name="can_join">可加入同屏</string>
+    <!--画板-->
+    <string name="button_exit">退出</string>
+    <string name="button_clean">清空</string>
+    <string name="button_save">保存</string>
+    <string name="button_back">撤销</string>
+    <string name="button_color">颜色</string>
+    <string name="button_typeface">字体</string>
+    <string name="button_round">圆形</string>
+    <string name="button_rect">矩形</string>
+    <string name="button_line">直线</string>
+    <string name="button_sline">曲线</string>
+    <string name="button_paint">铅笔</string>
+    <string name="button_text">文本</string>
+    <string name="button_erase">橡皮</string>
+    <string name="button_drag">拖动</string>
+
+    <string name="agree">同意</string>
+    <string name="reject">拒绝</string>
+    <!--问卷调查-->
+    <string name="pre_topic">上一题</string>
+    <string name="submit">提交</string>
+    <string name="next_topic">下一题</string>
+    <string name="load_to">转到</string>
+
+    <string name="please_enter_file_name">请输入文件名</string>
+
+    <string name="save_server">批注上传</string>
+    <string name="save_local">保存本地</string>
+    <string name="start_screen">开始同屏</string>
+    <string name="stop_screen">停止同屏</string>
+    <!--提示文本-->
+    <string name="Please_enter_valid_file_name">请输入文件名（不需要输入后缀）</string>
+    <string name="agenda">会议议程</string>
+    <!--会议笔记-->
+    <string name="meeting_note">会议笔记</string>
+    <string name="watch_live">观看直播</string>
+    <string name="secretary">秘书</string>
+    <string name="stop_watching">停止观看</string>
+    <string name="Stop_with_the_screen">停止同屏</string>
+    <string name="Stop_the_projection">停止投影</string>
+
+    <string name="no_permission">您没有权限这么做</string>
+    <string name="slelct_online_equipment">请选择在线的设备</string>
+    <string name="only_can_watch_their_equipment">只能观看他人的设备</string>
+    <string name="into_meeting">进入会议</string>
+    <string name="setting">系统设置</string>
+    <string name="unbounded_attendees">未绑定参会人</string>
+    <string name="no_searched_meeting">没有查找到会议</string>
+    <string name="click_quit_the_application_again">再次点击退出应用</string>
+    <string name="current_meeting">当前会议：</string>
+    <string name="member_coord">参会人：</string>
+    <string name="speaker">主讲人：</string>
+    <string name="in_the_screen_recording">当前已经在录制中</string>
+    <string name="keyboard">软键盘</string>
+    <string name="handwritten">手写</string>
+    <string name="postil">批注</string>
+    <string name="call_service">呼叫服务</string>
+    <string name="launch_screen">发起同屏</string>
+    <string name="join_screen">加入同屏</string>
+    <string name="start_pro">发起投影</string>
+    <string name="go_back">返回</string>
+    <string name="view_details">查看详情</string>
+
+
+    <string name="multiple_choice">（多选, %1$s）</string>
+    <string name="the_radio">（单选, %1$s）</string>
+    <string name="five_select_four">（5选4, %1$s）</string>
+    <string name="five_select_three">（5选3, %1$s）</string>
+    <string name="five_select_two">（5选2, %1$s）</string>
+    <string name="three_select_two">（3选2, %1$s）</string>
+
+    <string name="tip_select_device">请先选择设备</string>
+    <string name="tip_select_member">请先选择参会人</string>
+    <string name="tip_too_many_words">输入的字数不得大于300字</string>
+    <string name="tip_please_enter_message">请输入消息文本</string>
+    <string name="tip_operation_failed">操作失败</string>
+    <string name="tip_most_can_choose">最多可选择%1$s个选项</string>
+    <string name="tip_most_can_choose_one">一次最多可推送1个文件</string>
+    <string name="tip_no_screen_permissions">您没有同屏操作权限</string>
+    <string name="tip_no_screen_can_join">没有可加入的同屏</string>
+    <string name="tip_no_projection_permissions">您没有投影操作权限</string>
+    <string name="tip_you_have_submitted">您已提交过了</string>
+    <string name="tip_no_camera">没有找到摄像头</string>
+    <string name="tip_vote_must_be_initiated_state">投票必须是发起状态</string>
+    <string name="tip_the_end">主持人结束了%1$s投票</string>
+    <string name="tip_export_success">导出至 %1$s 目录下</string>
+    <string name="tip_file_name_unlawfulness">该文件名称非法</string>
+    <string name="tip_save_as">保存在%1$s</string>
+    <string name="tip_repulse_join">%1$s拒绝加入</string>
+    <string name="tip_join_the_sharing">加入了共享</string>
+    <string name="tip_exit_the_shared">退出了共享</string>
+
+
+    <string name="tv_whether_agree_to_open_camera">是否同意开启摄像头?</string>
+    <string name="tv_modify_configuration_information">修改配置信息</string>
+    <string name="tv_fill_information">填写个人信息</string>
+    <string name="tv_company_info">公司：</string>
+    <string name="tv_name_info">姓名：</string>
+    <string name="tv_job_info">职位：</string>
+    <string name="tv_phone_info">电话：</string>
+    <string name="tv_email_info">邮箱：</string>
+
+    <string name="button_login">登录</string>
+    <string name="button_binding_member">绑定参会人</string>
+    <string name="button_create_new">新建</string>
+    <string name="button_open_front">开启前置</string>
+    <string name="button_open_rear">开启后置</string>
+    <string name="button_front_camera">前置</string>
+    <string name="button_shooting">拍摄</string>
+    <string name="button_rear_camera">后置</string>
+    <string name="button_play_or_pause">播放/暂停</string>
+    <string name="button_stop">停止</string>
+    <string name="button_screenshot">截图</string>
+    <string name="button_launch_vote">发起投票</string>
+    <string name="button_stop_vote">结束投票</string>
+    <string name="button_result_query">结果查询</string>
+    <string name="button_export_result">结果导出</string>
+    <string name="button_scan">扫码</string>
+    <string name="button_export">导出</string>
+    <string name="button_options">选项</string>
+
+
+    <string name="title_code_to_join_the_meeting">扫码加入会议</string>
+    <string name="title_whether_to_scan_join">是否扫码加入？</string>
+
+    <string name="fun_text_meet_file_data">会议资料</string>
+    <string name="fun_text_share_file">共享文件</string>
+    <string name="fun_text_postil_file">批注文件</string>
+    <string name="fun_text_meet_chat">会议交流</string>
+    <string name="fun_text_live_video">视频直播</string>
+    <string name="fun_text_white_board">电子白板</string>
+    <string name="fun_text_web_net">网页浏览</string>
+    <string name="fun_text_questionnaire_survey">问卷调查</string>
+    <string name="fun_text_sign_in">签到信息</string>
+    <string name="fun_text_camera_control">外部文档</string>
+
+    <string name="file_acquisition_exception">文件获取异常</string>
+    <string name="get_file_path_fail">获取文件失败</string>
+    <string name="out_of_share">当前不在共享中</string>
+    <string name="binding_meeting">已绑定会议</string>
+    <string name="platform_is_not_yet_initialized">平台还未初始化完成</string>
+    <string name="goto_open_network">无网络连接,是否前往开启?</string>
+    <string name="goto_open_permissions">需要开启悬浮窗,是否前往开启权限?</string>
+    <string name="exit_app">退出应用</string>
+    <string name="to_open">前往开启</string>
+    <string name="local_device_id">本机设备ID | %1$s</string>
+    <string name="local_device_name">席位: %1$s</string>
+    <string name="Click_exit_again">再次点击退出</string>
+    <string name="join_white_board">是否同意加入%1$s发起的共享批注?</string>
+    <string name="notice_info">公告通知</string>
+    <string name="signed_in">已签到</string>
+    <string name="not_sign_in">未签到</string>
+
+    <string name="default_str" />
+    <string name="direct_sign_in">直接签到</string>
+    <string name="local_pwd_sign_in">个人密码签到</string>
+    <string name="photo_sign_in">拍照(手写)签到</string>
+    <string name="meeting_pwd_sign_in">会议密码签到</string>
+    <string name="meeting_pwd_and_photo_sign_in">会议密码+拍照(手写)签到</string>
+    <string name="local_pwd_and_photo_sign_in">个人密码+拍照(手写)签到</string>
+    <string name="vote">投票</string>
+    <string name="election">选举</string>
+    <string name="questionnaire">问卷</string>
+    <string name="vote_title">标题</string>
+    <string name="submit_name">提交人姓名</string>
+    <string name="choose_option">所选项</string>
+
+    <string name="vote_count">%1$s %2$s票</string>
+    <string name="null_str">无数据</string>
+    <string name="isshowing_now">当前正展示中</string>
+    <string name="download_progress">%1$s 已下载 %2$s</string>
+    <string name="already_signed_in_count">已签到 %1$s 人</string>
+    <string name="no_sign_in_count">未签到 %1$s 人</string>
+    <string name="should_be_to_count">应到 %1$s 人</string>
+    <string name="already_signed_in">已签到</string>
+    <string name="no_sign_in">未签到</string>
+    <string name="unit">单位: %1$s</string>
+    <string name="job">职位: %1$s</string>
+    <string name="seat">席位: %1$s</string>
+    <string name="number_question">第 %1$s 题</string>
+    <string name="permissions_request">是否同意 %1$s 申请的查看批注文件权限?</string>
+    <string name="please_choose_file">请先选择要推送的文件</string>
+    <string name="mandatory">强制</string>
+    <string name="choose_push_target">选择推送目标&#060;发起文件推送&#062;]</string>
+    <string name="stop_push">停止推送</string>
+    <string name="launch_push_file">发起文件推送</string>
+    <string name="please_choose_push">请选择推送目标</string>
+    <string name="please_choose_downloadfile">请选择要下载的文件</string>
+    <string name="agreed_postilview">%1$s 同意了批注文件的权限，可随时查看</string>
+    <string name="reject_postilview">%1$s 拒绝了查看批注文件的权限</string>
+    <string name="remember_name">记名</string>
+    <string name="no_remember_name">不记名</string>
+    <string name="anonymous">匿名</string>
+    <string name="remember">记名</string>
+    <string name="pb_vote_type_single">单选</string>
+    <string name="pb_vote_type_4_5">5选4</string>
+    <string name="pb_vote_type_3_5">5选3</string>
+    <string name="pb_vote_type_2_5">5选2</string>
+    <string name="pb_vote_type_2_3">3选2</string>
+    <string name="pb_vote_type_many">多选</string>
+    <string name="pb_vote_notvote">未发起</string>
+    <string name="pb_vote_voteing">正在进行</string>
+    <string name="pb_vote_endvote">已经结束</string>
+    <string name="vote_result_count">应到:%1$s人   实到:%2$s人   已投:%3$s人   未投:%4$s人</string>
+
+    <string name="vote_type">%1$s（%2$s，%3$s）</string>
+    <string name="dev_control">设备控制</string>
+    <string name="camera__control">摄像控制</string>
+    <string name="vote_manage">投票管理</string>
+    <string name="electoral_manage">选举管理</string>
+    <string name="vote_result">投票结果</string>
+    <string name="electoral_result">选举结果</string>
+    <string name="screen_manage">屏幕管理</string>
+    <string name="permission_manage">权限管理</string>
+    <string name="communique">会议公告</string>
+    <string name="open_the_background">打开后台</string>
+
+    <string name="name_str">名称</string>
+    <string name="dev_type">设备类型</string>
+    <string name="dev_state">设备状态</string>
+    <string name="whether_waibu">是否外部多开文档</string>
+    <string name="interface_state">界面状态</string>
+    <string name="rising">上升</string>
+    <string name="falling">下降</string>
+    <string name="restart_app">软件重启</string>
+    <string name="restart">重启</string>
+    <string name="shutdown">关机</string>
+    <string name="auxiliary_sign_in">辅助签到</string>
+    <string name="role_set">角色设定</string>
+    <string name="set_role">角色设置</string>
+    <string name="boot">开机</string>
+    <string name="document_open">文档外部打开</string>
+    <string name="meeting_tea_device">会议茶水设备</string>
+    <string name="meeting_projector_device">会议投影机设备</string>
+    <string name="meeting_stream_device">会议流采集设备</string>
+    <string name="meeting_terminal_device">会议终端设备</string>
+    <string name="online">在线</string>
+    <string name="Offline">离线</string>
+    <string name="online_but">在线 / 未进入会议</string>
+    <string name="offline">离线</string>
+    <string name="main_interface">主界面</string>
+    <string name="mamber_interface">参会人员界面</string>
+    <string name="back_manage_interface">后台管理界面</string>
+    <string name="vote_interface">投票界面</string>
+    <string name="no_mamber">没有查找到参会人</string>
+    <string name="exit_white_board">退出白板</string>
+    <string name="meet_video_client">会议终端设备&#060;对讲&#062;]</string>
+    <string name="meet_publish">会议发布设备</string>
+    <string name="please_choose_device">请选择设备</string>
+    <string name="please_input_pwd">请输入密码</string>
+    <string name="pwd_is_error">密码错误</string>
+    <string name="signin_ture">签到成功，进入会议</string>
+    <string name="vote_entry">投票录入</string>
+    <string name="countdown">倒计时：</string>
+    <string name="start_vote">开始投票</string>
+    <string name="has_vote_ongoing">存在正在进行的投票/选举，请先结束！</string>
+    <string name="the_vote_is_over">投票已经结束</string>
+    <string name="whether_modify_timeout">是否修改当前投票的倒计时时间？</string>
+    <string name="please_choose_ongoing_vote">请选择正在进行的投票</string>
+    <string name="vote_content">投票内容</string>
+    <string name="registered">记名</string>
+    <string name="state">状态</string>
+    <string name="vote_prompt">投票信息录入。可对投票内容投&#060;赞成&#062; &#060;反对&#062; &#060;弃权&#062; 票</string>
+    <string name="vote_cnt">投票内容：</string>
+    <string name="registered_value">记名：</string>
+    <string name="add">添加</string>
+    <string name="modif">修改</string>
+    <string name="delete">删除</string>
+    <string name="export_excel">导出到excel</string>
+    <string name="from_excel">从excel导入</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="favour">赞成</string>
+    <string name="against">反对</string>
+    <string name="waiver">弃权</string>
+    <string name="please_input_content">请输入内容</string>
+    <string name="export_finish">导出%1$s Excel文件成功</string>
+    <string name="please_choose_vote">请先选择一个投票</string>
+    <string name="no_data_export">无数据可导出</string>
+    <string name="survey_entry">选举录入</string>
+    <string name="start_survey">开始选举</string>
+    <string name="stop_survey">结束选举</string>
+    <string name="survet_content">选举内容</string>
+    <string name="survet_type">选举类型</string>
+    <string name="option_a">选项一</string>
+    <string name="option_b">选项二</string>
+    <string name="option_c">选项三</string>
+    <string name="option_d">选项四</string>
+    <string name="option_e">选项五</string>
+    <string name="survey_cen">选举内容：</string>
+    <string name="survey_type">选举类型：</string>
+    <string name="option1">选项一：</string>
+    <string name="option2">选项二：</string>
+    <string name="option3">选项三：</string>
+    <string name="option4">选项四：</string>
+    <string name="option5">选项五：</string>
+    <string name="please_input_five_option">请完整的输入5个选项内容</string>
+    <string name="please_order_input">请输入连续的选项</string>
+    <string name="please_input_three_option">请输入完整的3个选项</string>
+    <string name="max_input_three_option">最多只能输入3个选项</string>
+    <string name="please_input_option">请输入选项内容</string>
+    <string name="must_order_input_three">必须按顺序输入3个选项</string>
+    <string name="option_count">选项总数</string>
+    <string name="answer_count">答案数量</string>
+    <string name="whether_registered">是否记名【1：是   0：否】</string>
+    <string name="view_chart">查看图表</string>
+    <string name="please_choose_registered_vote">请选择记名投票</string>
+    <string name="not_choose_notvote">不能查看未发起的投票</string>
+    <string name="no_data_can_show">当前投票没有提交的数据</string>
+    <string name="screen_source">屏幕源</string>
+    <string name="projector_device">投影设备</string>
+    <string name="screen_target">目标屏幕</string>
+    <string name="target_device">目标设备</string>
+    <string name="preview">预览</string>
+    <string name="stop_preview">停止预览</string>
+    <string name="mandatory_screen">强制同屏</string>
+    <string name="stop_task">停止任务</string>
+    <string name="refresh">刷新</string>
+    <string name="please_choose_screen_source">请先选中屏幕源</string>
+    <string name="no_watch_oneself">不能观看自己的屏幕</string>
+    <string name="please_choose_target">请先选中目标屏幕</string>
+    <string name="inform_title">通知标题：</string>
+    <string name="content">内容：</string>
+    <string name="content_str">内容</string>
+    <string name="push_inform">发布通知</string>
+    <string name="close_inform">关闭通知</string>
+    <string name="please_input_title">请输入标题</string>
+    <string name="please_choose_notice">请先选择公告</string>
+    <string name="no_this_function">暂无该功能</string>
+    <string name="most_choose_one">最多只能选中一个进行修改</string>
+    <string name="choose_push">选择发布目标&#060;开始发布公告&#062;</string>
+    <string name="choose_stop_notice">选择发布目标&#060;结束公告&#062;</string>
+    <string name="hava_permission">有权限</string>
+    <string name="not_permission">无权限</string>
+    <string name="choose_vote_member">选择投票人员</string>
+    <string name="instructions">参会人离线、未绑定席位或未进入会议，将无法选中参与投票</string>
+    <string name="seats">席位</string>
+    <string name="permission">权限</string>
+    <string name="please_choose">请先选择要加入投票的人员</string>
+    <string name="must_choose_online">参会人无法参与投票</string>
+    <string name="unbind_seat">未绑定席位</string>
+    <string name="beyond_max_length">已超出规定长度</string>
+    <string name="request_permission_now">正在向对方请求查看权限</string>
+    <string name="role_change">你的会议身份发生改变了</string>
+    <string name="member_pwd">密码：</string>
+    <string name="member_host">参会人（主持人）：</string>
+    <string name="member_secretary">参会人（秘书）：</string>
+    <string name="member_admin">参会人（管理员）：</string>
+    <string name="please_choose_member">请先选择一个参会人</string>
+    <string name="please_check_wps">请先安装WPS软件</string>
+    <string name="update_now_or_not">无纸化新版安装包已下载完毕，是否立即安装？</string>
+    <string name="new_ip_address">IP地址：</string>
+    <string name="new_port_address">端口号：</string>
+    <string name="max_screen_size">最大码率：</string>
+    <string name="current_version">当前版本：%1$s</string>
+    <string name="use_tgp_mode">TCP模式</string>
+    <string name="disable_mulitcast">禁用组播</string>
+    <string name="new_message">您有一条新消息</string>
+    <string name="same_screen_permission">同屏权限</string>
+    <string name="projection_permission">投影权限</string>
+    <string name="upload_permission">上传权限</string>
+    <string name="download_permission">下载权限</string>
+    <string name="vote_permission">投票权限</string>
+    <string name="add_same_screen_permission">添加同屏权限</string>
+    <string name="add_projection_permission">添加投影权限</string>
+    <string name="add_upload_permission">添加上传权限</string>
+    <string name="add_download_permission">添加下载权限</string>
+    <string name="add_vote_permission">添加投票权限</string>
+    <string name="cancel_same_screen_permission">取消同屏权限</string>
+    <string name="cancel_projection_permission">取消投影权限</string>
+    <string name="cancel_upload_permission">取消上传权限</string>
+    <string name="cancel_download_permission">取消下载权限</string>
+    <string name="cancel_vote_permission">取消投票权限</string>
+    <string name="saved_offline">离线缓存</string>
+    <string name="download_finsh">%1$s 已下载完毕</string>
+    <string name="offline_meeting">进入离线会议</string>
+    <string name="error_field_password">用户名或密码错误</string>
+    <string name="action_modifier_password">修改密码</string>
+    <string name="file_size">文件大小</string>
+    <string name="user_name">用户名</string>
+    <string name="modify_password_success">修改密码成功</string>
+    <string name="error_password_is_same">新密码不能与原密码相同</string>
+    <string name="error_password_isEmpty">密码不能为空</string>
+    <string name="error_password_too_short">新密码不能小于6位</string>
+    <string name="delete_file">删除文件</string>
+    <string name="tip_choose_delete_file">请先选择要删除的文件</string>
+    <string name="remember_password">记住密码</string>
+    <string name="administrator_mode">管理员模式</string>
+    <string name="ordinary_attendees">普通参会人</string>
+    <string name="attendees_offline_mode">参会人离线模式</string>
+    <string name="delete_dir">删除目录</string>
+    <string name="tip_choose_download_file">请选择要下载的文件</string>
+    <string name="tip_choose_screen_device">请先选择要同屏的设备</string>
+    <string name="tip_background_open_camera">应用后台无法开启录像</string>
+    <string name="tip_camera_is_busy">相机已被占用</string>
+    <string name="no_application_can_open">找不到打开此文件的应用</string>
+    <string name="tip_screen_recording">屏幕录制中...</string>
+    <string name="stop_recording">结束录屏</string>
+
+    <string name="title_whether_agree_join">是否同意加入 %1$s 发起的共享批注？</string>
+    <string name="error_instiall_apk">您未同意安装未知应用权限</string>
+    <string name="error_check_configuration_file">请先检查配置文件</string>
+    <string name="error_title_restart_app">配置文件损坏，是否进行重启初始化？</string>
+    <string name="meet_edit">切换到会议编辑</string>
+    <string name="meet_id">会议ID</string>
+    <string name="meet_name">会议名称</string>
+    <string name="meet_state">会议状态</string>
+    <string name="meet_room_name">会议室名称</string>
+    <string name="meet_start_time">开始时间</string>
+    <string name="meet_end_time">结束时间</string>
+    <string name="member_name">预约人</string>
+    <string name="secrecy">保密</string>
+    <string name="Uninitiated_meeting">未开始会议</string>
+    <string name="Already_in_session">已开始会议</string>
+    <string name="is_Closed_meeting">已结束会议</string>
+    <string name="tip_input_content">请先输入要修改的内容</string>
+    <string name="error_server_exception">服务器异常</string>
+    <string name="error_database_exception">数据库异常</string>
+    <string name="tip_choose_meeting">请先选择会议</string>
+    <string name="tv_meeting_file">会议文件</string>
+    <string name="tv_meeting_note">会议笔记</string>
+    <string name="error_uninitialized">未初始化完成</string>
+    <string name="error_memory_allocation_failed">内存分配失败</string>
+    <string name="error_unsupported_request">不支持的请求</string>
+    <string name="error_unsupported_method">不支持的请求方法</string>
+    <string name="error_download_failed">下载失败</string>
+    <string name="error_send_failed">发送失败</string>
+    <string name="error_waiting_data_to_return">数据未准备好,正在等待数据返回</string>
+    <string name="error_find_failed">找不到</string>
+    <string name="error_unsupported_properties">不支持的属性</string>
+    <string name="error_over_the_maximum">超过最大值</string>
+    <string name="error_is_errpty">个数为0</string>
+    <string name="error_parameter">参数错误</string>
+    <string name="error_data">数据错误</string>
+    <string name="error_permission_denied">功能未授权使用</string>
+    <string name="error_SMS_server_not_respond">短信服务器未响应</string>
+    <string name="error_socket_create_failed">SOCKET创建失败</string>
+    <string name="error_of_user_pwd">用户名或密码错误</string>
+    <string name="error_servicer_failed">访问服务器异常</string>
+    <string name="error_insufficient_funds">余额不足</string>
+    <string name="error_open_file_failed">文件打开失败</string>
+    <string name="error_code">错误码：%1$s</string>
+    <string name="error_operate_successful">操作成功</string>
+    <string name="upload_name">上传者</string>
+    <string name="error_find_file_failed">找不到该文件</string>
+    <string name="error_less_then_100">最小码率值不能小于100</string>
+    <string name="error_more_then_10000">最大码率值不能大于10000</string>
+    <string name="not_supported">不支持打开该格式的文件</string>
+    <string name="Platform_initialization_failed">平台初始化失败</string>
+    <string name="Whether_to_quit">是否退出到主页？</string>
+    <string name="watch_video">观看视屏</string>
+    <string name="use_record">启用录制</string>
+    <string name="video_preview">视屏预览</string>
+    <string name="please_choose_view">请先选择预览窗口</string>
+    <string name="please_choose_video_show">请先选择要播放的节目</string>
+    <string name="please_choose_stop_view">请先选择要停止的窗口</string>
+    <string name="video_live">视频直播</string>
+    <string name="NetWorkError">网络异常</string>
+    <string name="exit_form_meeting">已从会议中退出</string>
+    <string name="device_offline">设备离线</string>
+    <string name="exit_from_room">已从会议室退出</string>
+    <string name="apply_vote_permissions">是否同意 %1$s 申请的投票权限?</string>
+    <string name="apply_download_permissions">是否同意 %1$s 申请的下载权限?</string>
+    <string name="apply_upload_permissions">是否同意 %1$s 申请的上传权限?</string>
+    <string name="apply_projection_permissions">是否同意 %1$s 申请的投影权限?</string>
+    <string name="apply_screen_permissions">是否同意 %1$s 申请的同屏权限?</string>
+    <string name="open_fileSystem_failed">打开文件系统失败</string>
+    <string name="current_no_network">请检查网络连接</string>
+    <string name="error_network">当前网络异常</string>
+    <string name="encoding_filtering">编码过滤</string>
+    <string name="tencent_x5_installed_successfully">腾讯x5内核安装成功</string>
+    <string name="not_installed_tencent_x5">没有安装腾讯X5内核无法打开议程文件,安装方法是切换到网页浏览，点击主页按钮或输入网址：http://debugtbs.qq.com 进入后，点击安装线上内核；成功后重启应用。（将会产生24M左右的流量，建议处于WiFi环境）</string>
+    <string name="download_x5_kernel_progress">下载X5内核已完成 %1$s ％</string>
+    <string name="download_x5_kernel_completed">X5内核下载完毕</string>
+    <string name="tencent_x5_load_successfully">加载腾讯X5内核成功</string>
+    <string name="tencent_x5_load_failed">加载腾讯X5内核失败</string>
+    <string name="operation_tips">操作询问提示</string>
+    <string name="submit_tip">确定要提交吗？</string>
+    <string name="only_xls_file">只能以xls文件导入</string>
+    <string name="file_already_exists">%1$s 已存在，无须再次下载</string>
+    <string name="init_x5_failure">组件已下载完成，需要进行重启应用才能正常使用。（之后无须再次下载）</string>
+    <string name="error_0">平台初始化成功</string>
+    <string name="error_1">过期了</string>
+    <string name="error_2">程序出错</string>
+    <string name="error_3">不允许接入的企业</string>
+    <string name="error_4">没有多余的设备ID了</string>
+    <string name="error_5">不允许接入的设备</string>
+    <string name="error_6">文件数据错误</string>
+    <string name="error_7">非法的设备</string>
+    <string name="error_8">设备ID已经被使用了</string>
+    <string name="error_9">不存在的需要的资源</string>
+    <string name="error_10">文件数据错误,但可以解析出原设备ID</string>
+    <string name="error_11">指定设备与设备类型不匹配</string>
+    <string name="clear_cache_file">清空缓存文件</string>
+    <string name="countdown_str">倒计时</string>
+    <string name="err_bulletin_max_length">内容最多可输入%1$d字</string>
+    <string name="err_title_max_length">标题最多可输入%1$d字</string>
+    <string name="clear_cache_file_successful">成功清理缓存文件</string>
+    <string name="max_online_device">在线设备数量最多是%1$d</string>
+    <string name="video_chat">视频聊天</string>
+    <string name="mode_paging">一对多寻呼模式</string>
+    <string name="mode_intercom">一对一对讲模式</string>
+    <string name="is_ask">是否询问</string>
+    <string name="launch">发起</string>
+    <string name="stop">停止</string>
+    <string name="agree_device_paging">%1$s同意设备寻呼</string>
+    <string name="agree_device_intercom">%1$s同意设备对讲</string>
+    <string name="reject_device_paging">%1$s拒绝设备寻呼</string>
+    <string name="reject_device_intercom">%1$s拒绝设备对讲</string>
+    <string name="can_only_choose_one">只能选择一个加入</string>
+    <string name="vote_member_count">投票人数：%1$d人</string>
+
+
+    <string-array name="role_spinner">
+        <item>未设置</item>
+        <item>一般参会人员</item>
+        <item>主讲人</item>
+        <item>秘书</item>
+        <item>管理员</item>
+    </string-array>
+    <string-array name="countdown_spinner">
+        <item>10秒</item>
+        <item>30秒</item>
+        <item>60秒</item>
+        <item>2分钟</item>
+        <item>5分钟</item>
+        <item>15分钟</item>
+        <item>30分钟</item>
+        <item>无</item>
+    </string-array>
+    <string-array name="whether">
+        <item>否</item>
+        <item>是</item>
+    </string-array>
+    <string-array name="survey_type">
+        <item>多选</item>
+        <item>单选</item>
+        <item>5选4</item>
+        <item>5选3</item>
+        <item>5选2</item>
+        <item>3选2</item>
+    </string-array>
+</resources>

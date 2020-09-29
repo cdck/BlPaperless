@@ -1,0 +1,469 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//设备会议信息
+//call
+//type:TYPE_MEET_INTERFACE_DEVICEFACESHOW
+//method: query
+message pbui_Type_DeviceFaceShowDetail
+{
+	fixed32 deviceid=1;		//设备ID
+	fixed32 meetingid=2;		//会议ID
+	fixed32 memberid=3;		//人员ID
+	fixed32 roomid=4;			//会场ID
+	fixed32  signin_type=5;	//签到类型
+	bytes meetingname=6;		//会议名称
+	bytes membername=7;     //人员名称
+	bytes company=8;			//公司名称
+	bytes job=9;				//职位名称
+}
+
+//设备寄存器变更通知
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEINFO
+//callback
+//method: notify
+message pbui_Type_MeetDeviceBaseInfo
+{
+	fixed32   deviceid=1;//设备ID
+	fixed32	  attribid=2;//寄存器id 0:net status  50:res status  63:base info
+}
+
+//设备ip信息
+message pbui_SubItem_DeviceIpAddrInfo
+{
+	bytes    ip=1;//ip地址
+	fixed32  port=2;//端口
+}
+
+//设备资源信息
+message pbui_SubItem_DeviceResInfo
+{
+	fixed32  playstatus=1;	//参见 Interface_Macro.proto Pb_DevicePlayStatus 定义
+	fixed32  triggerId=2;
+	fixed32  val=3; //playstatus =Pb_DEVICE_PLAYSTATUS_MEDIA mediaid，Pb_DEVICE_PLAYSTATUS_STREAM设备ID，Pb_DEVICE_PLAYSTATUS_TALK对讲设备ID
+	fixed32  val2=4; //playstatus =Pb_DEVICE_PLAYSTATUS_MEDIA 0播放中,1暂停|Pb_DEVICE_PLAYSTATUS_STREAM,Pb_DEVICE_PLAYSTATUS_TALK子流通道
+	fixed32  createdeviceid=5; //触发器创建设备ID
+}
+
+//设备基本信息
+message pbui_Item_DeviceDetailInfo
+{
+	fixed32  devcieid=1;
+	bytes    devname=2;
+	repeated pbui_SubItem_DeviceIpAddrInfo ipinfo=3;//ip信息
+	fixed32  netstate=4;
+	fixed32  hardversion=5;//
+	fixed32  softversion=6;//
+
+	repeated pbui_SubItem_DeviceResInfo resinfo=7;//资源信息
+
+	fixed32	 facestate=8;//界面状态 参见MemState_MainFace 定义
+	fixed32  memberid=9;//当前人员
+	fixed32  meetingid=10;//当前会议
+	fixed32  liftgroupres0=11;//升降话筒组ID
+	fixed32  liftgroupres1=12;//升降话筒组ID
+	fixed32  deviceflag=13;//参见 Interface_Macro.proto Pb_MeetDeviceFlag 定义
+}
+
+//返回查询设备信息
+//callreturn
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEINFO
+//method: query
+message pbui_Type_DeviceDetailInfo
+{
+	repeated pbui_Item_DeviceDetailInfo pdev=1;
+}
+
+//分页查询返回查询设备信息结构头部
+//callreturn
+//type:需要查询的数据的类别
+//method: pagequery 接口方返回
+message	pbui_PageQueryDeviceInfo
+{
+	fixed32			pageindex=1;//起始索引 从0 开始
+	fixed32			pagenum=2;//每页项数
+	fixed32			itemnum=3;//当前页项数 ,根据数据不同用不同的解析
+	fixed32			totalnum=4;//总项数
+	fixed32		    idval=5;//用于分组使用,如：查询指分组中的人员,这里填写分组id
+	repeated pbui_Item_DeviceDetailInfo pdev=6;
+}
+
+message pbui_Item_DeviceResPlay
+{
+	fixed32 devceid=1;
+
+	//如果设备ID是参会人员席位,以下数据有效
+	fixed32 memberid=2;
+	bytes   name=3;//参会人员名称
+}
+
+//查询当前可加入播放的桌面同屏流
+//call
+//type:TYPE_MEET_INTERFACE_DEVICEINFO
+//method: METHOD_MEET_INTERFACE_RESINFO
+message pbui_Type_DeviceResPlay
+{
+	repeated pbui_Item_DeviceResPlay pdev=1;
+}
+
+//查询指定设备的某项属性
+//call 
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEINFO
+//method: queryproperty
+message pbui_MeetDeviceQueryProperty
+{
+	fixed32 propertyid=1;//数据ID
+	fixed32 deviceid=2;//传入参数 为0表示本机设备ID
+	fixed32 paramterval=3;//传入参数
+}
+
+//返回 查询指定设备的整数值属性
+//call return
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEINFO
+//method: queryproperty
+message pbui_DeviceInt32uProperty
+{
+	fixed32  propertyval=1; //数据
+	fixed32  propertyval2=2;//数据
+	fixed32  propertyval3=3;//数据
+	fixed32  propertyval4=4;//数据
+}
+
+//返回 查询指定设备的字符串属性
+//call return
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEINFO
+//method: queryproperty
+message pbui_DeviceStringProperty
+{
+	bytes propertytext=1; //字符串
+}
+
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEINFO
+//method: modifyinfo
+message pbui_DeviceModInfo
+{
+	fixed32 modflag=1;//指定需要修改的标志位 参见 Pb_DeviceModifyFlag
+	fixed32 devcieid=2;
+	bytes   devname=3;
+	repeated pbui_SubItem_DeviceIpAddrInfo ipinfo=4;//ip信息
+	fixed32 liftgroupres0=5;//升降话筒组ID
+	fixed32 liftgroupres1=6;//升降话筒组ID
+	fixed32 deviceflag=7;//参见 Interface_Macro.proto Pb_MeetDeviceFlag 定义
+}
+
+//删除设备
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEINFO
+//method: del
+message pbui_DeviceDel
+{
+	repeated fixed32 devid=1;
+}
+
+//升级设备
+//call
+//type::Pb_TYPE_MEET_INTERFACE_DEVICEINFO
+//method: update
+message pbui_Type_DoDeviceUpdate
+{
+	fixed32		mediaid=1;//已经上传完成的升级文件ID
+}
+
+//会议界面状态通知
+//callback callreturn
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEMEETSTATUS
+//method: qeuery/notify
+message pbui_MeetDeviceMeetStatus
+{
+	fixed32  deviceid=1;
+	fixed32  memberid=2;
+	fixed32  facestatus=3; // 当前界面状态 参见Pb_MeetFaceStatus 定义
+	fixed32  oldfacestatus=4; //修改前的界面状态 参见Pb_MeetFaceStatus 定义
+	fixed32  meetingid=5;
+}
+
+//查询指定设备的某项属性
+//callreturn call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEMEETSTATUS
+//method: qeuery/modify
+message pbui_ModDeviceMeetStatus
+{
+	fixed32 facestatus=1;//修改界面状态
+}
+
+//终端控制
+//type:Pb_TYPE_MEET_INTERFACE_DEVICECONTROL
+//callback
+//method: notify
+message pbui_Type_DeviceControl
+{
+	fixed32			oper=1;//参见定义 enum Pb_DeviceControlFlag
+	fixed32			operval1=2;//操作对应的参数 如更换主界面的媒体ID
+	fixed32			operval2=3;//操作对应的参数
+}
+
+//终端控制
+//type:Pb_TYPE_MEET_INTERFACE_DEVICECONTROL
+//call
+//method: control
+message pbui_Type_DeviceOperControl
+{
+	fixed32			oper=1;////参见定义 enum Pb_DeviceControlFlag
+	fixed32			operval1=2;//操作对应的参数 如更换主界面的媒体ID
+	fixed32			operval2=3;//操作对应的参数
+	repeated  fixed32			devid=4; //控制的设备,为0当前会议表示所有
+}
+
+//窗口缩放变更
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: zoom
+message pbui_MeetZoomResWin
+{
+	fixed32   zoomper=1;
+	repeated  fixed32 res=2;
+}
+
+//窗口缩放
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: zoom
+message pbui_MeetDoZoomResWin
+{
+	fixed32   zoomper=1;
+	repeated  fixed32 res=2;
+	repeated  fixed32 devid=3;
+}
+
+//接到参会人员数量和签到数量的通知
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_BROADCAST
+message pbui_Type_MeetMemberCastInfo
+{
+	fixed32 deviceid=1;//广播者设备ID
+	fixed32 memberid=2;//广播者参会人员ID
+	fixed32 membersize=3; //会议中广播时的参会人员数量
+	fixed32 membersignsize=4;////会议中广播时的参会人员已经签到的数量
+}
+
+//辅助签到--进入会议功能界面
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: enter
+message pbui_MeetDoEnterMeet
+{
+	repeated  fixed32 devid=1;
+}
+
+//回到主界面
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: back
+message pbui_MeetDoToHomePage
+{
+	repeated  fixed32 devid=1;
+}
+
+//网络唤醒设备
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_REBOOT
+message pbui_Type_MeetDoNetReboot
+{
+	//指定唤醒的设备ID 不能为空
+	repeated  fixed32 devid=1;
+}
+
+//发送请求成为管理员
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_REQUESTTOMANAGE
+message pbui_Type_MeetRequestManage
+{
+	//指定收到该请求的设备ID
+	repeated  fixed32 devid=1;
+}
+
+//收到请求成为管理员请求
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_REQUESTTOMANAGE
+message pbui_Type_MeetRequestManageNotify
+{
+	fixed32  deviceid=1;       //发起请求的设备ID
+	fixed32  memberid=2;       //发起请求的人员ID
+}
+
+//回复请求成为管理员请求
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_RESPONSETOMANAGE
+message pbui_Type_MeetResponseRequestManage
+{
+	//指定收到该请求的设备ID
+	repeated  fixed32 devid=1;
+	fixed32  returncode=2;		//1=同意,0=不同意
+}
+
+//收到请求成为管理员回复
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_RESPONSETOMANAGE
+message pbui_Type_MeetRequestManageResponse
+{
+	fixed32  deviceid=1;       //发起请求的设备ID
+	fixed32  memberid=2;       //发起请求的人员ID
+	fixed32  returncode=3;		//1=同意,0=不同意
+}
+
+//发送请求参会人员权限请求
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_REQUESTPRIVELIGE
+message pbui_Type_MeetRequestPrivilege
+{
+	//指定收到该请求的设备ID
+	repeated  fixed32 devid=1; 
+	fixed32  privilege=2;//申请的权限 参见Pb_MemberPermissionPropertyID
+}
+
+//收到请求参会人员权限请求
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_REQUESTPRIVELIGE
+message pbui_Type_MeetRequestPrivilegeNotify
+{
+	fixed32  deviceid=1;       //发起请求的设备ID
+	fixed32  memberid=2;       //发起请求的人员ID
+	fixed32  privilege=3;		//申请的权限 参见Pb_MemberPermissionPropertyID
+}
+
+//回复参会人员权限请求
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_RESPONSEPRIVELIGE
+message pbui_Type_MeetResponseRequestPrivilege
+{
+	//指定收到该请求的设备ID
+	repeated  fixed32 devid=1;
+	fixed32  returncode=2;		//1=同意,0=不同意
+}
+
+//收到参会人员权限请求回复
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_RESPONSEPRIVELIGE
+message pbui_Type_MeetRequestPrivilegeResponse
+{
+	fixed32  deviceid=1;       //发起请求的设备ID
+	fixed32  memberid=2;       //发起请求的人员ID
+	fixed32  returncode=3;		//1=同意,0=不同意
+}
+
+//20180716 add 
+//设备定位
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method:Pb_METHOD_MEET_INTERFACE_LOCATE
+message pbui_Type_DoDeviceLocate
+{
+	repeated  fixed32 devid=1; //设备ID
+}
+
+//设备定位
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_LOCATE
+message pbui_Type_DeviceLocate
+{
+	fixed32  oeprdeviceid=1;//发送该命令的设备ID
+}
+
+//texttype
+enum Pb_TextBroadcast_Type 
+{
+Pb_TEXTBRODCAST_TYPE_COMMONTEXT= 0; //普通文本信息
+Pb_TEXTBRODCAST_TYPE_MEETINGTEXT= 1; //会议名称文本信息
+Pb_TEXTBRODCAST_TYPE_MEMBERTEXT= 2; //参会人文本信息
+}
+
+//发送文本广播
+//call
+//type:TYPE_MEET_INTERFACE_DEVICEOPER
+//method: METHOD_MEET_INTERFACE_TEXTMSG
+message pbui_Type_MeetDoTextBrodcast
+{
+	//指定收到该请求的设备ID
+	repeated  fixed32 devid=1; //设备ID
+
+	fixed32  texttype=2;//文本类型 参见Pb_TextBroadcast_Type
+	bytes    ptextmsg=3;//文本信息
+}
+
+//收到文本广播
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_TEXTMSG
+message pbui_Type_MeetTextBrodcast
+{
+	fixed32  texttype=1;//文本类型 参见Pb_TextBroadcast_Type
+	bytes    ptextmsg=2;//文本信息
+}
+
+/*设备对讲功能描述：
+强制模式:A向B强制发起音、视频对讲，执行播放的操作在A端
+询问模式:A向B发起音、视频对讲询问，B端回应给A,A根据B回应的标志执行播放操作
+*/
+//inviteflag 设备对讲标志（默认是进行一对一对讲）
+enum Pb_DeviceInviteFlag
+{
+Pb_DEVICE_INVITECHAT_FLAG_ZERO=0;		  //
+Pb_DEVICE_INVITECHAT_FLAG_SIMPLEX=  0x00000001; //是否为单向寻呼 1表示单向寻呼式对讲（这个情况可以进行一对多） 0双向对讲 （发起端设置）
+Pb_DEVICE_INVITECHAT_FLAG_ASK=		0x00000002; //询问式邀请进行对讲 1表示等待对方同意 0强制执行 （发起端设置）
+Pb_DEVICE_INVITECHAT_FLAG_VIDEO=	0x00000004; //是否包含视频 （均可设置）
+Pb_DEVICE_INVITECHAT_FLAG_AUDIO=	0x00000008; //是否包含音频（均可设置）
+Pb_DEVICE_INVITECHAT_FLAG_DEAL= 	0x00000010; //是否同意 （接收端设置）
+}
+//发起设备对讲
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method:Pb_METHOD_MEET_INTERFACE_REQUESTINVITE
+message pbui_Type_DoDeviceChat
+{
+	fixed32    inviteflag=1;//设备对讲标志 Pb_DeviceInviteFlag
+	repeated  fixed32 devid=2; //设备ID
+}
+
+//收到设备对讲、回应设备对讲
+//call、callback
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_REQUESTINVITE\Pb_METHOD_MEET_INTERFACE_RESPONSEINVITE
+message pbui_Type_DeviceChat
+{
+	fixed32  inviteflag=1;//设备对讲标志 Pb_DeviceInviteFlag
+	fixed32  operdeviceid=2;//发起端设备ID、处理该请求的设备ID
+}
+
+//停止设备对讲
+//call
+//type:TYPE_MEET_INTERFACE_DEVICEOPER
+//method:Pb_METHOD_MEET_INTERFACE_EXITCHAT
+message pbui_Type_DoExitDeviceChat
+{
+	fixed32  operdeviceid=1;//发起端设备ID
+}
+
+//收到停止设备对讲
+//callback
+//type:TYPE_MEET_INTERFACE_DEVICEOPER
+//method: Pb_METHOD_MEET_INTERFACE_EXITCHAT
+message pbui_Type_ExitDeviceChat
+{
+	fixed32  operdeviceid=1;//发起端设备ID
+	fixed32  exitdeviceid=2;//退出的设备ID
+}

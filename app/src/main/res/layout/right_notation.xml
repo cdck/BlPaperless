@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/default_tv"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:drawableLeft="@drawable/member_head_s"
+            android:gravity="center"
+            android:textColor="@drawable/red_black_selector" />
+
+        <ImageView
+            android:id="@+id/div"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/divLineGray" />
+
+        <ListView
+            android:id="@+id/member_lv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:dividerHeight="0px" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divLineGray" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="5"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/document"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/document_postil" />
+
+                <Button
+                    android:id="@+id/picture"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/picture_postil" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/push_file"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/push_file" />
+
+                <Button
+                    android:id="@+id/download"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/batch_download" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <include
+            layout="@layout/incould_file_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <ListView
+            android:id="@+id/nota_lv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@null" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/nota_prepage"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/page_tv"
+                android:text="@string/pre_pape" />
+
+            <TextView
+                android:id="@+id/page_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_toLeftOf="@+id/nota_nextpage"
+                android:text="-- / --" />
+
+            <Button
+                android:id="@+id/nota_nextpage"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:text="@string/next_pape" />
+
+            <Button
+                android:id="@+id/postil_saved_offline_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:text="@string/saved_offline" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

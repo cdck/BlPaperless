@@ -1,0 +1,43 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+//错误码
+enum pbui_ComContainer_Call 
+{
+Pb_ERROR_MEET_INTERFACE_CALL=0;  //发送查询操作
+Pb_ERROR_MEET_INTERFACE_CALLBACK= 1;  //通知回调数据
+Pb_ERROR_MEET_INTERFACE_CALLRETURN= 2;  //查询返回的数据
+}
+
+//PHP----》C++
+message	pbui_ReqComContainer
+{
+	fixed32		type=1;//数据类型 参见 Pb_Type
+	fixed32		method=2;//类型对应的操作方法 参见 Pb_Method
+	fixed32     call=3;//参见 pbui_ComContainer_Call
+	
+	//标识PHP后台操作使用
+	fixed32     meetingid=4;//会议ID 该值为0不执行修改下面的数据
+	fixed32     roomid=5;//会议ID关联的会场ID
+	fixed32     role=6;////用户身份 参见Interface_Macro.proto Pb_MeetFaceStatus
+	fixed32     userid=7;//如果是参会人员则会参会人员ID,如果是管理员则为管理员ID
+	bytes       username=8;//如果是参会人员则会参会人员名称,如果是管理员则为管理员名称
+	
+	bytes       sessionid=9;//会话ID php后台使用
+	fixed32		retcode=10;//返回的值，如果错误保存错误码 参见 Pb_Error
+	bytes       data=11;//对应的数据，如果存在数据，则按照 type、method解析该数据
+}
+
+
+//C++ --->PHP
+message	pbui_ComContainer
+{
+	fixed32		type=1;//数据类型 参见 Pb_Type
+	fixed32		method=2;//类型对应的操作方法 参见 Pb_Method
+	fixed32     call=3;//参见 pbui_ComContainer_Call
+	fixed32     meetingid=4;//会议ID，data数据对应的会议ID
+	bytes       sessionid=5;//会话ID php后台使用
+	fixed32		retcode=6;//返回的值，如果错误保存错误码 参见 Pb_Error
+	bytes       data=7;//对应的数据，如果存在数据，则按照 type、method解析该数据
+}

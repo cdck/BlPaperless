@@ -1,0 +1,131 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//播放进度通知
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAYPOSINFO
+//method: notify
+message pbui_Type_PlayPosCb
+{
+	fixed32  mediaId=1;						//媒体ID
+	fixed32  status=2;						//0=播放中，1=暂停，2=停止,3=恢复
+	fixed32  per=3;							//当前位置，百分比
+	fixed32  sec=4;							//当前播放秒数，当status>0时，为文件ID号
+}
+
+//视频播放资源初始化
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAY
+//method: init
+message pbui_Type_MeetInitPlayRes
+{
+	fixed32 res=1;//资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+	
+	//资源的坐标和宽高
+	fixed32 x=2;
+	fixed32 y=3;//
+	fixed32	w=4;//宽
+	fixed32	h=5;	//高				
+}
+
+//视频播放资源释放 播放窗口退出时调用
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAY
+//method: destroy
+message pbui_Type_MeetDestroyPlayRes
+{
+	fixed32 res=1;//资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+}
+
+//媒体播放通知
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAY
+//method: notify
+message pbui_Type_MeetMediaPlay
+{
+	fixed32  triggerid=1;//触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
+	fixed32  createdeviceid=2;//创建执行该触发器的设备ID
+	fixed32  mediaid=3;//播放的媒体id
+	fixed32  res=4;//播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+	fixed32  triggeruserval=5;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+}
+
+//媒体播放操作
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAY
+//method: start
+message pbui_Type_MeetDoMediaPlay
+{
+	fixed32  playflag=1;//播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
+
+	fixed32  pos=2;//指定开始播放的百分比位置
+	fixed32  mediaid=3;//媒体ID
+	fixed32  triggeruserval=4;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+
+	repeated fixed32 res=5;//有效资源个数,为空表示全部 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+	repeated fixed32 deviceid=6;//通知的目标设备,为空表示全部
+}
+
+//设置播放位置
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAY
+//method: move
+message pbui_Type_MeetDoSetPlayPos
+{
+	fixed32   resindex=1;//资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+	fixed32   pos=2;//指定开始播放的百分比位置
+	fixed32   playflag=3;//播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
+	fixed32   triggeruserval=4;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+	repeated fixed32 deviceid=5;//通知的目标设备,为空表示全部
+}
+
+//设置播放暂停 恢复
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAY
+//method: pause play
+message pbui_Type_MeetDoPlayControl
+{
+	fixed32  resindex=1;//资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+	fixed32  playflag=2;//播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
+	fixed32  triggeruserval=3;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+	repeated fixed32 deviceid=4;//通知的目标设备,为空表示全部
+}
+
+//查询媒体播放
+message pbui_Item_MeetMediaPlayDetailInfo
+{
+	fixed32 trrigerid=1;//触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
+	fixed32 mediaid=2;//媒体ID
+}
+
+//查询媒体播放
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAY
+//method: query
+message pbui_Type_MeetMediaPlayDetailInfo
+{
+	repeated pbui_Item_MeetMediaPlayDetailInfo item=1;
+}
+
+//文件推送
+//type:Pb_TYPE_MEET_INTERFACE_FILEPUSH
+//method: notify
+//当为询问模式时，回调函数返回1表示同意播放
+message pbui_Type_FilePush
+{
+	fixed32 mediaid=1;//媒体ID
+	fixed32 triggeruserval=2;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+}
+
+//文件推送
+//type:Pb_TYPE_MEET_INTERFACE_MEDIAPLAY
+//method: push
+message pbui_Type_DoFilePush
+{
+	fixed32 mediaid=1;//媒体ID
+	fixed32 triggeruserval=2;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+	repeated fixed32 deviceid=3;//通知的目标设备,为空表示全部
+}

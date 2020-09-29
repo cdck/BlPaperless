@@ -1,0 +1,246 @@
+﻿syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//平台初始化
+//type:Pb_TYPE_MEET_INTERFACE_INITENV
+//method: start
+message	pbui_MeetCore_InitParam
+{
+	bytes       pconfigpathname=1;//client.ini文件路径名
+	fixed32		logtofile=2;//保存日志到文件
+	fixed32		streamnum=3;//初始化的流通道数
+	fixed32		programtype=4;//程序类型 用于区分程序来初始化接口数据 参见Interface_Macro.proto--> Pb_ProgramType
+	bytes       keystr=5;//程序唯一标识串，为空表示接口自动计算
+	fixed32		screenwidth=6;//屏幕宽
+	fixed32 	screenheight=7;//屏幕高
+}
+
+//平台网络和数据初始化成功
+//type:Pb_TYPE_MEET_INTERFACE_READY
+//method: notify
+//callback
+message	pbui_Ready				
+{
+	fixed32		    areaid=1;//连接上的区域服务器ID
+}
+
+//平台设备校验
+//type:Pb_TYPE_MEET_INTERFACE_DEVICEVALIDATE
+//method: notify
+//callback
+message	pbui_Type_DeviceValidate
+{
+	fixed32      valflag =1; //参见 Pb_ValidateFlagBit 参考basemacro.h的宏定义
+	repeated	     fixed32 val=2; //valflag对于有效位的数 只返回valflag依次对应的有效位
+	repeated 		 fixed64 user64bitdef=3;//注册时自定义的64位整数
+}
+
+//平台登陆错误码返回 -- 登陆失败才会通知
+//type:Pb_TYPE_MEET_INTERFACE_READY
+//method: logon
+//callback
+message	pbui_Type_LogonError
+{
+	fixed32      errcode=1; //参见Interface_Macro.proto Pb_WalletSystem_ErrorCode 定义
+}
+
+//查询平台功能限制属性
+//type:Pb_TYPE_MEET_INTERFACE_SYSTEMFUNCTIONLIMIT
+//method: queryproperty
+//call
+message	pbui_Type_SystemFuntionLimitsProperty
+{
+	fixed32 propertyid=1;//属性ID 详细用法参见 Pb_SystemFuncionPropertyId
+	fixed32 parameter=2;//传入参数值
+	fixed32 propertyval=3;//对应属性返回的值
+}
+
+//查询平台功能限制
+//type:Pb_TYPE_MEET_INTERFACE_SYSTEMFUNCTIONLIMIT
+//method: query
+//call
+message	pbui_Type_SystemFuntionLimits
+{
+	repeated	     fixed32    functionids=1; //参见Pb_SystemFuncionId 
+}
+
+//平台时间
+//type:Pb_TYPE_MEET_INTERFACE_TIME
+//method: notify
+//callback
+message	pbui_Time		
+{
+	fixed64		    usec = 1;//本地时间，每秒一次 单位：微秒
+}
+
+//call
+//type:需要缓存数据的类别
+//method: cache 
+//如果有缓存则返回ERROR_MEET_INTERFACE_NULL
+message	pbui_MeetCacheOper	
+{
+	fixed32      cacheflag=1;// 缓存标志 参见Pb_CacheFlag
+
+	//id用法描述 eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
+	fixed32		id=2;
+}
+
+//分页查询
+//call
+//type:需要查询的数据的类别
+//method: pagequery 应用方调用
+message	pbui_PageReqQueryInfo
+{
+	fixed32			pageindex=1;//请求页 从0 开始
+	fixed32			pagenum=2;  //每页项数
+	fixed32			idval=3;//用于分组使用,如：查询指分组中的人员,这里填写分组id
+}
+
+//指定ID查询 返回结果按 query 返回
+//call
+//type:需要查询的数据的类别
+//method: SINGLEQUERYBYID 应用方调用
+message	pbui_QueryInfoByID
+{
+	fixed32 id=1;//用于分组使用,如：查询指分组中的人员,这里填写分组id
+}
+
+//指定名称查询 返回结果按 query 返回
+//call
+//type:需要查询的数据的类别
+//method: SINGLEQUERYBYNAME 应用方调用
+message	pbui_QueryInfoByName
+{
+	bytes name=1;
+}
+
+//指定双重ID查询 返回结果按 query 返回
+//call
+//type:需要查询的数据的类别
+//method: SINGLEQUERYBYID 应用方调用
+message	pbui_QueryInfoByDoubleID
+{
+	fixed32 id1=1;
+	fixed32 id2=2;
+}
+
+//指定双重ID查询 返回结果按 query 返回
+//call
+//type:需要查询的数据的类别
+//method: SINGLEQUERYBYNAME 应用方调用
+message	pbui_DoubleQueryInfoByName
+{
+	fixed32 id1=1;
+	bytes name=2;
+}
+
+//变更通知回调
+//type:需要变更通知的数据的类别
+//method: notify
+message	pbui_MeetNotifyMsg
+{
+	fixed32 opermethod=1;//本次通知是因为opermethod方法触发的
+	fixed32 id=2;//如果指定了ID刚表示是对特定ID的操作,为0表示全部
+}
+
+//变更通知回调
+//type:需要变更通知的数据的类别
+//method: notify
+message	pbui_MeetNotifyMsgForDouble
+{
+	fixed32 opermethod=1;//本次通知是因为opermethod方法触发的
+	fixed32 id=2;//如果指定了ID刚表示是对特定ID的操作,为0表示全部
+	fixed32 subid=3;//如果指定了ID刚表示是对特定人员ID的操作,为0表示分组内的指定项 
+}
+
+//call
+//type:查询的属性类型
+//method: queryproperty
+message pbui_CommonQueryProperty
+{
+	fixed32 propertyid=1;//数据ID
+	fixed32 parameterval=2;//传入参数 
+	fixed32 parameterval2=3;//传入参数 
+}
+
+//返回32位无符号整形值
+//callreturn
+//type:查询的属性类型
+//method: queryproperty
+message pbui_CommonInt32uProperty
+{
+	fixed32 propertyval=1;//数据值
+}
+
+//返回64位无符号整形值
+//callreturn
+//type:查询的属性类型
+//method: queryproperty
+message pbui_CommonInt64uProperty
+{
+	fixed64 propertyval=1;//数据值
+}
+
+//返回字符串值
+//callreturn
+//type:查询的属性类型
+//method: queryproperty
+message pbui_CommonTextProperty
+{
+	bytes propertyval=1;//数据值
+}
+
+//会议网页
+message pbui_Item_UrlDetailInfo
+{
+	fixed32		id=1;//修改删除操作标识ID
+	bytes	    name=2; //网址别名
+	bytes	    addr=3; //网址
+}
+
+//type: Pb_TYPE_MEET_INTERFACE_DEFAULTURL
+//method: modify,query
+message pbui_meetUrl
+{
+	fixed32  isetdefault=1;//1表示修改系统全局的 0表示修改当前会议的
+	repeated pbui_Item_UrlDetailInfo  item=2;// 
+}
+
+//数据后台回复的错误信息
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DBSERVERERROR
+//method: notify
+message pbui_Type_MeetDBServerOperError
+{
+	fixed32  type=1;//参见 Pb_Type
+	fixed32  method=2;//参见 Pb_Method
+	fixed32  status=3;//参见 Pb_DB_StatusCode
+}
+
+//软件有新版本，下载完成后通知应用层进行升级，同时要把版本号写到client.ini文件中,不然软件下次还是会自动下载升级包
+//callback
+//type:TYPE_MEET_INTERFACE_UPDATE
+//method: METHOD_MEET_INTERFACE_UPDATE
+message pbui_Type_MeetUpdateNotify
+{
+	fixed32 localhardver=1;//当前client.ini记录的版本
+	fixed32 localsoftver=2;//当前client.ini记录的版本
+	fixed32 newhardver=3;//升级包的硬件版本
+	fixed32 newsoftver=4;//升级包的软件版本
+	fixed32 newminhardver=5;//升级包的最低硬件版本
+	fixed32 newminsoftver=6;//升级包的最低软件版本
+	fixed32 deviceidtype=7;////升级包的设备类型 eg:0x1100000
+	fixed32 devicemask=8;//升级包的设备屏蔽码  eg:14
+	bytes   updatepath=9; //升级包解压后的目录  注：程序需要有创建目录的权限
+}
+
+
+
+
+
+
+
+

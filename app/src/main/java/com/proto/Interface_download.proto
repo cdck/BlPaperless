@@ -1,0 +1,54 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//执行下载
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DOWNLOAD
+//method: add
+message pbui_Type_DownloadStart
+{
+	fixed32		mediaid=1;					//下载媒体id
+	fixed32	    newfile=2;				    //设置是否重新下载,0 不覆盖同名文件,重新下载
+	fixed32	    onlyfinish=3;				//1表示只需要结束的通知
+	bytes		pathname=4;//下载媒体全路径名称 (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
+	bytes	    userstr=5;//用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
+}
+
+//执行离线本地缓存 注:需要会议、会议室、会议目录、会议目录文件都准备好才会成功执行
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DOWNLOAD
+//method: cache
+message pbui_Type_DownloadCache
+{
+	fixed32		dirid=1;					//下载目录id
+	fixed32		mediaid=2;					//下载媒体id
+	fixed32	    newfile=3;				    //设置是否重新下载,0 不覆盖同名文件,重新下载
+	fixed32	    onlyfinish=4;				//1表示只需要结束的通知
+	bytes	    userstr=5;//用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
+}
+
+//删除一个下载
+//call
+//type:Pb_TYPE_MEET_INTERFACE_DOWNLOAD
+//method: del
+message pbui_Type_DownloadDel
+{
+	fixed32 mediaid =1;	//下载媒体id
+}
+
+//下载进度通知
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_DOWNLOAD
+//method: notify
+message pbui_Type_DownloadCb
+{
+	fixed32	   progress=1;				    //下载进度
+	fixed32	   nstate=2;				    //下载状态,参见Interface_Macro.proto --->Pb_Download_State
+	fixed32	   err=3;						//错误值 参见Interface_Macro.proto --->Pb_Download_Erro
+	fixed32    mediaid=4;					//下载媒体id
+	bytes	   pathname=5;//下载媒体全路径名称 (windows:mbcs linux:utf8)
+	bytes      userstr=6;//用户传入的自定义字串(原编码格式返回) (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
+}

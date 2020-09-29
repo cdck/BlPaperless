@@ -1,0 +1,139 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+/*--------------------------------文件自定义选项评分 20180728-----------------------------------------*/
+//字符串长度限制
+enum Pb_FILESCOREVOTE_LenLimit 
+{
+Pb_MEET_FILESCORE_ZERO=0;
+Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN= 200; //文件评分标题最大长度
+Pb_MEET_FILESCORE_MAXITEM= 4;				 //文件评分选项最大个数
+Pb_MEET_FILESCORE_MAXITEM_LEN= 60;				 //文件评分选项最大长度
+}
+
+message pbui_Type_Item_UserDefineFileScore
+{
+	fixed32 voteid=1;//评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
+	fixed32 fileid=2;//文件ID
+	bytes   content=3; //投票内容 长度限制 Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN
+
+	fixed32 mode=4; //匿名投票=0 记名投票=1 Pb_MeetVoteMode
+
+	fixed32 votestate=5;     //投票状态  参见 Pb_MeetVoteStatus
+	fixed32 timeouts=6;     //计时结束 单位：秒
+	fixed64 starttime=7;//开时投票的时间 UTC秒
+	fixed64 endtime=8;//开时投票的时间 UTC秒
+	fixed32 shouldmembernum=9;//应到人数
+	fixed32 realmembernum=10;//已投人数
+	
+	fixed32 selectcount=11;//有效选项数量
+	repeated fixed32 itemsumscore=12;//每个选项的目前总分--根据已投人数计算 [Pb_MEET_FILESCORE_MAXITEM]
+	repeated bytes   voteText=13;//描述文字[Pb_MEET_FILESCORE_MAXITEM][Pb_MEET_FILESCORE_MAXITEM_LEN]
+}
+
+//文件自定义选项评分
+//call
+//type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+//method: add\modify\query
+message pbui_Type_UserDefineFileScore
+{
+	fixed32 fileid=1;//查询指定文件的 为0表示查询所有
+	repeated pbui_Type_Item_UserDefineFileScore item=2; 
+}
+
+//删除文件自定义选项评分
+//call
+//type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+//method: delete\stop
+message pbui_Type_DeleteUserDefineFileScore
+{
+	repeated fixed32 voteid=1;//投票ID
+}
+
+//发起文件自定义选项评分
+//call
+//type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+//method: start
+message pbui_Type_StartUserDefineFileScore
+{
+	fixed32	voteid=1;
+	fixed32	voteflag=2;//参见 Pb_VoteStartFlag
+	fixed32	timeouts=3;
+	repeated fixed32 memberid=4;//人员ID
+}
+
+//收到发起文件自定义选项评分
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+//method: start
+message pbui_Type_StartUserDefineFileScoreNotify
+{
+	fixed32 voteid=1;//评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
+	fixed32 fileid=2;//文件ID
+	bytes   content=3; //投票内容 [MEET_FILESCORE_VOTECONTENT_MAXLEN]
+
+	fixed32 mode=4; //匿名投票=0 记名投票=1 参见VOTEMODE_agonymous
+	fixed32 timeouts=5; //计时结束 单位：秒
+	fixed64 starttime=6;//开时投票的时间 UTC秒
+	fixed32 voteflag=7;//参见 Pb_MEET_VOTING_FLAG_REVOTE
+
+	repeated bytes   voteText=8;//[Pb_MEET_FILESCORE_MAXITEM][Pb_MEET_FILESCORE_MAXITEM_LEN];  //描述文字
+
+	repeated fixed32 memberids=9;// [membernum];//人员ID
+}
+
+message pbui_Type_Item_FileScoreMemberStatistic
+{
+	fixed32 memberid=1;  //人员ID
+	fixed32 state=2;  //是否已经提交 1表示已经提交 0未提交
+	repeated fixed32 score=3;//[Pb_MEET_FILESCORE_MAXITEM];  //每个选项的分--根据已投人数计算
+	fixed64 votetime=4;//提交时间 UTC 秒
+	bytes   content=5;//[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
+}
+
+//文件自定义选项评分人员统计
+//call
+//type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+//method: METHOD_MEET_INTERFACE_DETAILINFO
+message pbui_Type_UserDefineFileScoreMemberStatistic
+{
+	fixed32    voteid=1;
+	repeated pbui_Type_Item_FileScoreMemberStatistic item=2;
+}
+
+//文件自定义选项评分人员统计
+//call
+//type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+//method:Pb_METHOD_MEET_INTERFACE_SUBMIT
+message pbui_Type_UserDefineFileScoreMemberStatisticNotify
+{
+	fixed32 voteid=1;
+	fixed32 memberid=2;//人员ID
+	repeated fixed32 score=3;//[Pb_MEET_FILESCORE_MAXITEM];  //每个选项的分--根据实到人数计算
+	bytes   content=5;//[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
+}
+
+//查询会议投票人属性信息
+//property id
+enum Pb_FILESCOREVOTE_PropertyID 
+{
+Pb_MEETFILESCOREVOTE_PROPERTY_ZERO=0;
+Pb_MEETFILESCOREVOTE_PROPERTY_HADSIGNIN=			    1; //按投票ID\人员ID返回是否已经投票 query
+Pb_MEETFILESCOREVOTE_PROPERTY_ATTENDNUM	=	        2; //按投票ID\返回投票应到总人数  query
+Pb_MEETFILESCOREVOTE_PROPERTY_VOTEDNUM=		            3; //按投票ID\返回投票已经投票总人数  query
+}
+
+//文件自定义选项评分人员统计属性
+//call
+//type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+//method: queryproperty
+message pbui_Type_MeetFileScoreVoteQueryProperty
+{
+	fixed32 propertyid=1;//数据ID Pb_FILESCOREVOTE_PropertyID
+	fixed32 voteid=2;//传入参数
+	fixed32 memberid=3;//传入参数 为0表示本身
+	fixed32 propertyval=4;//返回值 
+}

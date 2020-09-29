@@ -1,0 +1,88 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+
+//收到新的会议交流信息
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_MEETIM
+//method: notify
+message pbui_Type_MeetIM
+{
+	fixed32	    msgtype=1;//消息类型 参见 Pb_MeetIMMSG_TYPE
+	fixed32		role=2;//发送者角色 参见 Pb_MeetMemberRole
+	fixed32	    memberid=3;//发送者ID
+	bytes		msg=4;//消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
+	fixed64	    utcsecond=5;//发送UTC时间 单位:秒
+
+	bytes		meetname=6;//会议名称
+	bytes		roomname=7;//会议室名
+	bytes		membername=8;//人员名称
+	bytes		seatename=9;//席位名
+	repeated fixed32      userids=10; //为0表示当前会议全部 如果是会议服务类请求为0
+}
+
+//发送消息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETIM
+//method: send
+message pbui_Type_SendMeetIM
+{
+	fixed32	    msgtype=1;//消息类型 参见 Pb_MeetIMMSG_TYPE
+	bytes		msg=2;//消息文本  长度 Pb_MEETIM_CHAR_MSG_MAXLEN
+	repeated fixed32      userids=3; //为0表示当前会议全部 如果是会议服务类请求为0
+}
+
+//会议交流信息
+message pbui_Item_MeetIMDetailInfo
+{
+	fixed32	    msgtype =1;//消息类型 参见 Pb_MeetIMMSG_TYPE
+	fixed32		role=2;//发送者角色
+	fixed32	    memberid=3;//发送者ID
+	bytes		msg=4;//消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
+	fixed64	    utcsecond=5;//发送UTC时间 单位:秒
+	repeated fixed32      userids=6; //为0表示当前会议全部 如果是会议服务类请求为0
+}
+
+//callreturn
+//type:Pb_TYPE_MEET_INTERFACE_MEETIM
+//method: query
+message pbui_Type_MeetIMDetailInfo
+{
+	repeated pbui_Item_MeetIMDetailInfo item=1;
+}
+
+//组合查询
+//type:Pb_TYPE_MEET_INTERFACE_MEETIM
+//method: complexquery
+message pbui_Type_MeetComplexQueryIM
+{
+	fixed32      queryflag=1; //查询标志 参见 Pb_COMPLEXQUERY_ZERO
+
+	fixed32	    msgtype=2;//消息类型
+	fixed32		role=3;//发送者角色
+	fixed32	    memberid=4;//发送者ID
+
+	//时间范围
+	fixed64	    startutcsecond=5;//发送UTC时间
+	fixed64	    endutcsecond=6;//发送UTC时间
+
+	fixed32			pageindex=7;//起始索引 从0 开始
+	fixed32			pagenum=8;//每页项数
+}
+
+//组合查询返回结构头部
+//callreturn
+//type:Pb_TYPE_MEET_INTERFACE_MEETIM
+//method: complexpagequery
+message pbui_TypePageResQueryrMsgInfo
+{
+	fixed32			pageindex=1;//起始索引 从0 开始
+	fixed32			pagenum=2;//每页项数
+	fixed32			itemnum=3;//当前页项数 ,根据数据不同用不同的解析
+	fixed32			totalnum=4;//总项数
+	
+	repeated pbui_Item_MeetIMDetailInfo item =5;//消息
+}

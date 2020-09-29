@@ -1,0 +1,138 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//会场信息
+message pbui_Item_MeetRoomDetailInfo
+{
+	fixed32 roomid=1;		//会场ID
+	fixed32 roombgpicid=2;	//会场底图ID
+	bytes name=3;	//会场名称	
+	bytes addr=4;     //会场地址
+	bytes comment=5;//备注
+}
+
+//会场信息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_ROOM
+//method: add\del\mod\query
+message pbui_Type_MeetRoomDetailInfo
+{
+	repeated pbui_Item_MeetRoomDetailInfo item=1;
+}
+
+//会场底图信息 
+//type:Pb_TYPE_MEET_INTERFACE_ROOM
+//method: set
+message pbui_Type_MeetRoomModBGInfo
+{
+	fixed32   roomid=1;//会场ID
+	
+	//如果bgpicid指定, 则不需要指bgpathname 如果指定bgpathname，则不需要指bgpicid 如果同时指定,则优先使用bgpicid
+	fixed32	 bgpicid=2; //底图媒体ID
+	bytes	 bgpathname=3;//给会场绑定一个新的图片
+	fixed32  userval=4;////用户自定义的值
+}
+
+//修改会场底图信息 返回媒体ID信息
+message pbui_TypeSetRoomModBGReturn
+{
+	fixed32  bgpicid=1;//媒体ID
+	fixed32  userval=2;////用户自定义的值
+}
+
+//会场设备信息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_ROOMDEVICE
+//method: add \ del
+message pbui_Type_MeetRoomModDeviceInfo
+{
+	fixed32   roomid=1;//会场ID
+	repeated  fixed32	 deviceid=2; //设备数
+}
+
+//会场设备坐标朝向信息
+message pbui_Item_MeetRoomDevPosInfo
+{
+	fixed32 devid=1;//设备ID
+	float   x=2;//左上角x坐标
+	float   y=3;//左上角y坐标
+	fixed32    direction=4;//会场设备朝向 参见 Pb_DeviceDirection
+}
+
+//会场设备坐标朝向信息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_ROOMDEVICE
+//method: query/set
+message pbui_Type_MeetRoomDevPosInfo
+{
+	fixed32   roomid=1;//会场ID
+	repeated pbui_Item_MeetRoomDevPosInfo	 item=2; //设备
+}
+
+//会场设备排位详细信息
+message pbui_Item_MeetRoomDevSeatDetailInfo
+{
+	fixed32 devid=1;//设备ID
+	bytes   devname=2;//设备名称
+	float  x=3;////左上角x坐标
+	float  y=4;//左上角y坐标
+	fixed32    direction=5;//会场设备朝向
+
+	fixed32 memberid=6;//参会人员ID
+	bytes   membername=7;//参会人员名称
+
+	fixed32  issignin=8;//是否已经签到
+	fixed32  role=9;//参会人员角色 参见Pb_MeetMemberRole
+	fixed32	 facestate=10;//界面状态 参见MemState_MainFace 定义
+}
+
+//查询设备排位详细信息//（查询此项内容需要缓存(会场设备、排位、参会人员、人员签到）
+//type:Pb_TYPE_MEET_INTERFACE_ROOMDEVICE
+//method: METHOD_MEET_INTERFACE_DETAILINFO
+message pbui_Type_MeetRoomDevSeatDetailInfo
+{
+	fixed32   roomid=1;//会场ID
+	repeated pbui_Item_MeetRoomDevSeatDetailInfo	 item=2; //设备
+}
+
+//查询符合要求的设备ID （查询此项内容需要缓存(会场设备、排位、参会人员、人员签到）
+//call
+//type:Pb_TYPE_MEET_INTERFACE_ROOMDEVICE
+//method: complexquery
+message pbui_Type_DumpMeetRoomDevInfo
+{
+	fixed32   filterflag=1;//查询标志 参见 Pb_RoomDeviceFilterFlag
+	fixed32   roomid=2;//会场ID
+
+	fixed32   facestatus=3; //匹配会议界面状态
+	fixed32   exceptdevid=4;//排除指定ID
+}
+
+//返回符合要求的设备ID
+//callreturn
+//type:Pb_TYPE_MEET_INTERFACE_ROOMDEVICE
+//method: complexquery
+message pbui_Type_ResMeetRoomDevInfo
+{
+	repeated fixed32	 devid=1;   //设备
+}
+
+//会议排位信息
+message pbui_Item_MeetSeatDetailInfo
+{
+	fixed32			nameId=1;//参会人员ID
+	fixed32			seatid=2;//设备ID
+	fixed32			role=3;  //人员身份  参见Pb_MeetMemberRole
+}
+
+//会议排位信息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETSEAT
+//method: mod/query
+message pbui_Type_MeetSeatDetailInfo
+{
+	repeated 	pbui_Item_MeetSeatDetailInfo item=1; //排位
+}

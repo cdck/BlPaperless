@@ -1,0 +1,63 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//常用人员
+message pbui_Item_PersonDetailInfo
+{
+	fixed32 personid=1;
+	bytes   name=2;
+	bytes   company=3;
+	bytes   job=4;
+	bytes   comment=5;
+	bytes   phone=6;
+	bytes   email=7;
+	bytes   password=8;
+}
+
+//常用人员
+//call return
+//type:Pb_TYPE_MEET_INTERFACE_PEOPLE
+//method: add\del\modify\query
+message pbui_Type_PersonDetailInfo
+{
+	repeated pbui_Item_PersonDetailInfo item=1;
+}
+
+//常用人员分组
+message pbui_Item_PeopleGroupDetailInfo
+{
+	fixed32 groupid=1;
+	bytes   name=2;
+}
+
+//常用人员分组
+//call return
+//type:Pb_TYPE_MEET_INTERFACE_PEOPLEGROUP
+//method: add\del\modify\query
+message pbui_Type_PeopleGroupDetailInfo
+{
+	repeated pbui_Item_PeopleGroupDetailInfo item=1;
+}
+
+//常用人员分组人员
+//call callreturn
+//type:Pb_TYPE_MEET_INTERFACE_PEOPLEGROUPITEM
+//method: save\query\move\del
+message pbui_Type_PeopleInGroupDetailInfo
+{
+	fixed32			groupid=1;
+	repeated fixed32			memberid=2;
+}
+
+//添加常用人员分组人员
+//call
+//type:Pb_TYPE_MEET_INTERFACE_PEOPLEGROUPITEM
+//method: add
+message pbui_Type_AddPeopleToGroup
+{
+	fixed32			groupid=1;
+	repeated pbui_Item_PersonDetailInfo item=2;
+}

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tableColor"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/permission_cb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:button="@drawable/checkbox_select"
+            android:gravity="center"
+            android:text="@string/number"
+            android:textColor="@color/colorGray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/name"
+            android:textColor="@color/colorGray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/same_screen_permission"
+            android:textColor="@color/colorGray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/projection_permission"
+            android:textColor="@color/colorGray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/upload_permission"
+            android:textColor="@color/colorGray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/download_permission"
+            android:textColor="@color/colorGray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/vote_permission"
+            android:textColor="@color/colorGray"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/permission_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/add_same_screen_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/add_same_screen_permission" />
+
+            <Button
+                android:id="@+id/add_projection_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/add_projection_permission" />
+
+            <Button
+                android:id="@+id/add_upload_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/add_upload_permission" />
+
+            <Button
+                android:id="@+id/add_download_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/add_download_permission" />
+
+            <Button
+                android:id="@+id/add_vote_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/add_vote_permission" />
+
+            <!--<Button-->
+            <!--android:id="@+id/save_btn"-->
+            <!--style="@style/btn_style_P"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/save" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancel_same_screen_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/cancel_same_screen_permission" />
+
+            <Button
+                android:id="@+id/cancel_projection_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/cancel_projection_permission" />
+
+            <Button
+                android:id="@+id/cancel_upload_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/cancel_upload_permission" />
+
+            <Button
+                android:id="@+id/cancel_download_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/cancel_download_permission" />
+
+            <Button
+                android:id="@+id/cancel_vote_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="100dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/cancel_vote_permission" />
+
+            <!--<Button-->
+            <!--android:id="@+id/permission_refresh"-->
+            <!--style="@style/btn_style_P"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/refresh" />-->
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

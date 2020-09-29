@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dig_small_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="投票标题" />
+
+            <TextView
+                android:id="@+id/vote_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:gravity="center"
+                android:textColor="#243aff"
+                android:visibility="gone"
+                tools:text="（单选，记名）" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divLineGray" />
+
+
+        <!--投票布局-->
+        <LinearLayout
+            android:id="@+id/vote_linear"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/vote_favour_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:src="@drawable/icon_vote_approve" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/vote_against_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:src="@drawable/icon_vote_against" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/vote_waiver_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:src="@drawable/icon_vote_abstain" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!--选举布局-->
+        <LinearLayout
+            android:id="@+id/election_linear"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/chooseA"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@drawable/checkbox_select"
+                android:paddingLeft="10dp"
+                android:textColor="@color/text_color_n"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:text="赞成" />
+
+            <CheckBox
+                android:id="@+id/chooseB"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@drawable/checkbox_select"
+                android:paddingLeft="10dp"
+                android:textColor="@color/text_color_n"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:text="反对" />
+
+            <CheckBox
+                android:id="@+id/chooseC"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@drawable/checkbox_select"
+                android:paddingLeft="10dp"
+                android:textColor="@color/text_color_n"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:text="弃权" />
+
+            <CheckBox
+                android:id="@+id/chooseD"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@drawable/checkbox_select"
+                android:paddingLeft="10dp"
+                android:textColor="@color/text_color_n"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:text="答案四" />
+
+            <CheckBox
+                android:id="@+id/chooseE"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@drawable/checkbox_select"
+                android:paddingLeft="10dp"
+                android:textColor="@color/text_color_n"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:text="答案五" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="@string/countdown_str" />
+
+        <Chronometer
+            android:id="@+id/vote_chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_time_down"
+            android:format="00"
+            android:gravity="center"
+            android:textColor="@color/blue1"
+            android:textSize="24sp" />
+
+        <!--确定和取消布局-->
+        <LinearLayout
+            android:id="@+id/election_linear_ensure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/compere_votePop_ensure"
+                style="@style/fab_ensure_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:layout_weight="1"
+                android:text="@string/ensure" />
+
+            <Button
+                android:id="@+id/compere_votePop_cancel"
+                style="@style/fab_cancel_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

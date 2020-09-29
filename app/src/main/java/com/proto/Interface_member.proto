@@ -1,0 +1,159 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//参会人员
+message pbui_Item_MemberDetailInfo
+{
+	fixed32 personid=1;
+	bytes   name=2;
+	bytes   company=3;
+	bytes   job=4;
+	bytes   comment=5;
+	bytes   phone=6;
+	bytes   email=7;
+	bytes   password=8;
+}
+
+//参会人员
+//call callreturn
+//type:Pb_TYPE_MEET_INTERFACE_MEMBER
+//method: add\del\modify\query
+message pbui_Type_MemberDetailInfo
+{
+	repeated pbui_Item_MemberDetailInfo item=1;
+}
+
+//memberdetailflag
+//错误码
+enum Pb_MemberDetailFlag
+{
+Pb_MEMBERDETAIL_FLAG_ZERO=0;
+Pb_MEMBERDETAIL_FLAG_ONLINE= 0x00000001; //是否在线
+}
+
+//参会人员详细信息
+message pbui_Item_MeetMemberDetailInfo
+{
+	fixed32 devid=1;//设备ID
+	bytes   devname=2;//设备名称
+	fixed32 memberdetailflag=3;//标志 参见本文件的 Pb_MemberDetailFlag 定义
+	fixed32 facestatus=4;//界面状态 参见Interface_Macro.proto Pb_MemState_MainFace 定义
+	fixed32 memberid=5;//参会人员ID
+	bytes   membername=6;//参会人员名称
+	fixed32 permission=7;//参会人员权限 参见Interface_Macro.proto  Pb_MemberPermissionPropertyID 定义
+}
+
+//获取参会人员详细信息,注：需要缓存参会人、参会人权限、排位数据
+//call
+//type: TYPE_MEET_INTERFACE_MEMBER
+//method: METHOD_MEET_INTERFACE_DETAILINFO
+message pbui_Type_MeetMemberDetailInfo
+{
+	repeated pbui_Item_MeetMemberDetailInfo item=1;
+}
+
+//二维码内容：{"meetid":"1","roomid":"1"}
+//扫码加入会议
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEMBER
+//method: enter
+message pbui_Type_ScanEnterMeet
+{
+	fixed32 meetingid=1;//扫码加入的会议ID
+	fixed32 memberrole=2;//参会人角色 参见Pb_MeetMemberRole
+	pbui_Item_MemberDetailInfo memberinfo=3;//参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
+
+}
+
+//参会人员属性
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEMBER
+//method: queryproperty
+message pbui_Type_MeetMemberQueryProperty
+{
+	fixed32 propertyid=1;//属性ID 参见 Pb_MemberPropertyID
+	fixed32 parameterval=2;//传入参数 为0表示本机设置定的人员id
+}
+
+//参会人员属性
+//callreturn
+//type: Pb_TYPE_MEET_INTERFACE_MEMBER
+//method: queryproperty
+message pbui_Type_MeetMembeProperty
+{
+	fixed32 propertyval=1;//整数属性值 参见属性ID的类型定义
+	bytes   propertytext=2;//字符串属性值
+}
+
+//修改参会人员排序
+//call
+//method: Pb_TYPE_MEET_INTERFACE_MEMBER
+//method: Pb_METHOD_MEET_INTERFACE_CONTROL
+message pbui_Type_ModifyMemberPos
+{
+	repeated fixed32 memberid=1;//按ID排序
+}
+
+//参会人员权限
+message pbui_Item_MemberPermission
+{
+	fixed32 memberid=1;//参会人ID
+	fixed32 permission=2;	//参会人权限
+}
+
+//参会人员权限
+//type:Pb_TYPE_MEET_INTERFACE_MEMBERPERMISSION
+//call
+//method: save\query
+message pbui_Type_MemberPermission
+{
+	repeated pbui_Item_MemberPermission item=1;
+}
+
+//参会人员权限
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEMBERPERMISSION
+//method: queryproperty
+message pbui_Type_MeetMemberPermissionQueryProperty
+{
+	fixed32 propertyid=1;//属性ID 参见 Pb_MemberPermissionPropertyID
+	fixed32 memberid=2;//传入参数 为0表示本机设置定的人员id
+}
+
+//参会人员权限
+//type:Pb_TYPE_MEET_INTERFACE_MEMBERPERMISSION
+//callreturn
+//method: queryproperty
+message pbui_Type_MemberPermissionProperty
+{
+	fixed32 propertyval=1;//整数属性值
+}
+
+//参会人员分组
+message pbui_Item_MemberGroupDetailInfo
+{
+	fixed32 groupid=1;
+	bytes   name=2;
+}
+
+//参会人员分组
+//type:Pb_TYPE_MEET_INTERFACE_MEMBERGROUP
+//call
+//method: add\del\modify\query
+message pbui_Type_MemberGroupDetailInfo
+{
+	repeated pbui_Item_MemberGroupDetailInfo item=1;
+}
+
+//参会人员分组人员
+//type:Pb_TYPE_MEET_INTERFACE_MEMBERGROUPITEM
+//call
+//method: save\query
+message pbui_Type_MemberInGroupDetailInfo
+{
+	fixed32			groupid=1;
+	repeated fixed32 memberid=2;
+}

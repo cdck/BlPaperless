@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--按钮按下时填充颜色  切换修改标记-->
+    <color name="btn_fill_color">#82A4D0</color>
+    <color name="colorPrimary">#4A63EA</color>
+    <color name="transparency">#00FFFFFF</color>
+    <color name="loadview_color">#FF4081</color>
+    <!--查看图表中的颜色-->
+    <color name="chart_color_red">#FF0000</color>
+    <color name="chart_color_green">#00FF00</color>
+    <color name="chart_color_blue">#0000FF</color>
+    <color name="chart_color_aqua">#00FFFF</color><!-- 水绿色 -->
+    <color name="chart_color_pink">#FF00FF</color>
+    <color name="chart_color_yellow">#FFFF00</color>
+    <color name="vote_back_color">#0C2B84</color>
+
+    <color name="blue">#4ea7eb</color>
+    <color name="blue1">#005EFF</color>
+    <color name="red">#B5302F</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="tableColor">#b8bbbe</color>
+    <color name="colorGray">#676767</color>
+    <color name="colorGreen">#12d60f</color>
+    <color name="textGreen">#04bd00</color>
+    <color name="colorRed">#ff0000</color>
+    <color name="colorYellow">#cbffee00</color>
+    <color name="colorPink">#cbff00d5</color>
+    <color name="colorA">#ea15ffff</color>
+    <!--item点击时的颜色-->
+    <color name="ItemCheckedColor">#FF00EE</color>
+    <!--popupWindow标题背景色-->
+    <color name="popTitleBackColor">#4993E8</color>
+    <!--popupWindow 输入框背景色-->
+    <color name="popEditTextColor">#B6CCE6</color>
+    <!--取消文字填充颜色-->
+    <color name="cancel_fill_color">#A0A0A0</color>
+    <!--分割线颜色-->
+    <color name="divLineGray">#C9C9C9</color>
+    <color name="divLineRed">#B5302F</color>
+    <color name="transparent">#00ffffff</color>
+    <!--字体颜色-->
+    <color name="text_color_n">#535353</color>
+    <!--按钮字体颜色选择器：标签必须使用drawable-->
+    <drawable name="text_color_n">#535353</drawable>
+    <drawable name="text_color_p">#FFFFFF</drawable>
+    <drawable name="btn_look_nn">#B5302F</drawable>
+    <drawable name="transparent">#0000ffea</drawable>
+    <!--半透明红色背景-->
+    <color name="lucency">#50FF0000</color>
+
+    <!--悬浮窗主页控件中字体的颜色-->
+    <drawable name="fab_tv_color_p">#ffc900</drawable>
+    <drawable name="fab_tv_color_n">#ffffff</drawable>
+
+    <color name="light_blue">#529CF0</color>
+    <color name="tv_color">#eeeeed</color>
+    <color name="fun_tv_color_p">#15813b</color>
+    <color name="fun_tv_color_n">#B5302F</color>
+    <color name="select_item_bg">#70cacaca</color>
+    <color name="select_item_red_bg">#8D72DCF1</color>
+
+    <!--视频播放界面底部和顶部PopupWindow字体颜色-->
+    <color name="video_time_color">#1DDD24</color>
+    <!--视频播放界面底部和顶部PopupWindow背景颜色-->
+    <color name="video_pop_bg">#3F000000</color>
+
+    <drawable name="text_color_white">#ffffff</drawable>
+    <drawable name="text_color_black">#4a4a4a</drawable>
+</resources>

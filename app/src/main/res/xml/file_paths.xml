@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="external_storage_root"
+        path="."/>
+       
+</paths><!--
+    内部的element可以是files-path，cache-path，external-path，external-files-path，external-cache-path，
+    分别对应Context.getFilesDir()，Context.getCacheDir()，Environment.getExternalStorageDirectory()，
+    Context.getExternalFilesDir()，Context.getExternalCacheDir()等几个方法。
+    后来翻看源码发现还有一个没有写进文档的，
+    但是也可以使用的element，是root-path，直接对应文件系统根目录。
+    不过既然没有写进文档中，其实还是有将来移除的可能的。使用的话需要注意一下风险。-->
+
+
+    <!--
+    <paths>
+    files-path：          该方式提供在应用的内部存储区的文件/子目录的文件。
+                          它对应Context.getFilesDir返回的路径：eg:”/data/data/com.jph.simple/files”。
+
+    cache-path：          该方式提供在应用的内部存储区的缓存子目录的文件。
+                          它对应getCacheDir返回的路径：eg:“/data/data/com.jph.simple/cache”；
+
+    external-path：       该方式提供在外部存储区域根目录下的文件。
+                          它对应Environment.getExternalStorageDirectory返回的路径：
+
+    external-cache-path： 该方式提供在应用的外部存储区根目录的下的文件。
+                          它对应Context#getExternalFilesDir(String) Context.getExternalFilesDir(null)
+                          返回的路径。eg:”/storage/emulated/0/Android/data/com.jph.simple/files”
+
+    <cache-path name="update" path="" />
+    </paths>
+    -->

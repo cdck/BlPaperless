@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="第1题"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_maintype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="(5选2,记名)"
+                        android:textColor="#007bff"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="标题文本" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/option_one"
+                        style="@style/Topic_Tv_Style" />
+
+                    <Button
+                        android:id="@+id/option_two"
+                        style="@style/Topic_Tv_Style" />
+
+                    <Button
+                        android:id="@+id/option_three"
+                        style="@style/Topic_Tv_Style" />
+
+                    <Button
+                        android:id="@+id/option_four"
+                        style="@style/Topic_Tv_Style" />
+
+                    <Button
+                        android:id="@+id/option_five"
+                        style="@style/Topic_Tv_Style" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/survey_pre_topic"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/pre_topic"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/survey_subit_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/submit"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/survey_nex_topic"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/next_topic"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/divLineGray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/survey_number_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/divLineGray" />
+
+    </LinearLayout>
+
+</LinearLayout>

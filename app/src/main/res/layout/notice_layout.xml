@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:background="#353535"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/divLineGray"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0.5dp"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:ellipsize="end"
+                    android:lines="2"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/number"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0.5dp"
+                    android:layout_weight="2"
+                    android:background="#ffffff"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/name_str"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0.5dp"
+                    android:layout_weight="3"
+                    android:background="#ffffff"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/content_str"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notice_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0.5dp"
+                android:layout_marginStart="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:background="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/inform_title" />
+
+            <EditText
+                android:id="@+id/notice_title_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="是点开链接弗兰克圣诞节疯狂了解多少六块腹肌速度快解放"
+                android:padding="5dp"
+                android:background="@drawable/shape_edt_bg"
+                android:inputType="text"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/content" />
+
+        <EditText
+            android:id="@+id/content_edt"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            tools:text="是点开链接弗兰克圣诞节疯狂了解多少六块腹肌速度快解放"
+            android:padding="2dp"
+            android:background="@drawable/shape_edt_bg"
+            android:gravity="left|top" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/add"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:text="@string/add" />
+
+            <Button
+                android:id="@+id/del"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:text="@string/delete" />
+
+            <Button
+                android:id="@+id/modif"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:text="@string/modif" />
+
+            <Button
+                android:id="@+id/push_inform"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:text="@string/push_inform" />
+
+            <Button
+                android:id="@+id/close_inform"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:text="@string/close_inform" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

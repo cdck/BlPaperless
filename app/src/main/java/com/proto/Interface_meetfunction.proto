@@ -1,0 +1,28 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//会议功能
+message pbui_Item_MeetFunConfigDetailInfo
+{
+	fixed32	funcode=1;	//功能标识码 参见Pb_Meet_FunctionCode
+	fixed32	position=2;	//位置标识码
+}
+
+//桌牌修改标志位
+enum Pb_FunCon_ModifyFlag
+{
+Pb_FUNCONFIG_MODFLAG_ZERO=0;
+Pb_FUNCONFIG_MODFLAG_SETDEFAULT= 0x00000001; //设置为默认
+}
+
+//会议功能
+//type:Pb_TYPE_MEET_INTERFACE_FUNCONFIG
+//method: query/save/
+message pbui_Type_MeetFunConfigDetailInfo
+{
+	fixed32   modifyflag=1;//修改标志 参见Pb_FunCon_ModifyFlag
+	repeated pbui_Item_MeetFunConfigDetailInfo item=2;
+}

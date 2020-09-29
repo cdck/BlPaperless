@@ -1,0 +1,43 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//会议签到
+message pbui_Item_MeetSignInDetailInfo
+{
+	fixed32		nameId=1; //人员ID
+	fixed64		utcseconds=2;  //日期 时间 单位:秒
+	fixed32		signin_type=3;//签到方式 参见Pb_MeetSignType
+	bytes		password=4;//签到密码
+	bytes		psigndata=5; //如果有图片签到则为png图片数据(二进制转hex编码)
+}
+
+//type:Pb_TYPE_MEET_INTERFACE_MEETSIGN
+//method: query
+message pbui_Type_MeetSignInDetailInfo
+{
+	repeated pbui_Item_MeetSignInDetailInfo item=1;
+}
+
+//发送会议签到
+//type:Pb_TYPE_MEET_INTERFACE_MEETSIGN
+//method: add
+message pbui_Type_DoMeetSignIno
+{
+	fixed32     memberid=1;//指定签到的人员ID,为0表示当前绑定的人员
+	fixed32		signin_type=2;//签到方式 参见Pb_MeetSignType
+
+	bytes		password=3;//签到密码
+	bytes		psigndata=4; //如果有图片签到则为png图片数据(二进制转hex编码)
+}
+
+//删除会议签到
+//type:Pb_TYPE_MEET_INTERFACE_MEETVOTESIGNED
+//method: del
+message pbui_Type_DoDeleteMeetSignIno
+{
+	fixed32      meetingid = 1;//指定会议ID 0表示绑定的会议
+	repeated fixed32    memberids=2;//为空表示删除指定会议的全部人员签到
+}

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/right_meetingfilelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ListView
+        android:id="@+id/type_lv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divLineGray" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/rightmeetfile_type2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/rightmeetfile_document"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/document" />
+
+                <Button
+                    android:id="@+id/rightmeetfile_picture"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/picture" />
+
+                <Button
+                    android:id="@+id/rightmeetfile_video"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/video" />
+
+                <Button
+                    android:id="@+id/rightmeetfile_other"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/other" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/push_file"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/push_file" />
+
+                <Button
+                    android:id="@+id/download"
+                    style="@style/Meet_File_Btn"
+                    android:text="@string/batch_download" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/right_div_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divLineGray" />
+
+        <include
+            layout="@layout/incould_file_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <ListView
+            android:id="@+id/rightmeetfile_lv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@null" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/meet_saved_offline_btn"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:text="@string/saved_offline" />
+
+            <Button
+                android:id="@+id/rightmeetfile_prepage"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_count_num"
+                android:text="@string/pre_pape" />
+
+            <TextView
+                android:id="@+id/tv_count_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_toLeftOf="@+id/rightmeetfile_nextpage"
+                android:text="-- / --" />
+
+            <Button
+                android:id="@+id/rightmeetfile_nextpage"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="@string/next_pape" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

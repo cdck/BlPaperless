@@ -1,0 +1,23 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//会议视频相关
+message pbui_Item_MeetVideoDetailInfo
+{
+	fixed32			id=1; //流通道ID
+	fixed32		    deviceid=2;//设备ID
+	fixed32			subid=3;//子通道ID
+	bytes			name=4; //流通道名称
+	bytes			addr=5; //流通道地址
+	bytes			devicename=6;//设备名称
+}
+
+//type:Pb_TYPE_MEET_INTERFACE_MEETVIDEO
+//method: add/mod/del/query
+message pbui_Type_MeetVideoDetailInfo
+{
+	repeated pbui_Item_MeetVideoDetailInfo item=1;//视频流
+}

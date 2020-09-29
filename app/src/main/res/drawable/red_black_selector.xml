@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--所有按钮控件的 字体颜色选择器-->
+    <item android:color="@drawable/text_color_n" android:state_selected="false" />
+    <item android:color="@drawable/btn_look_nn" android:state_selected="true" />
+</selector>

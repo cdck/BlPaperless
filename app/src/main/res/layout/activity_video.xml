@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/video_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pa.paperless.video.VideoActivity">
+
+    <com.pa.paperless.video.opengles.MyGLSurfaceView
+        android:id="@+id/video_surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/play_mp3_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ECE7E7"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/opticalDisk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/two"
+            android:layout_centerInParent="true"
+            android:background="@drawable/player_record" />
+
+        <ImageView
+            android:id="@+id/plectrum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/two"
+            android:layout_alignEnd="@+id/opticalDisk"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/player_rod" />
+
+        <ImageView
+            android:id="@+id/two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/player_dot" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/video_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/video_pop_bg"
+        android:gravity="center"
+        android:textColor="@color/video_time_color"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="童话镇.mp3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,1077 @@
+﻿syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+//错误码
+enum Pb_Error 
+{
+Pb_ERROR_MEET_INTERFACE_NULL= 0;  //操作成功，或者数据为空，视操作请求定
+Pb_ERROR_MEET_INTERFACE_NOTINIT= -1; //未初始化
+Pb_ERROR_MEET_INTERFACE_MEMORY = -2; //内存分配失败
+Pb_ERROR_MEET_INTERFACE_NOSPPORTTYPE=  -3; //不支持的请求
+Pb_ERROR_MEET_INTERFACE_NOSPPORTMETHOD=  -4; //不支持的请求方法
+Pb_ERROR_MEET_INTERFACE_DOWNLOAD=  -5; //下载失败
+Pb_ERROR_MEET_INTERFACE_NETSEND =-6; //发送失败
+Pb_ERROR_MEET_INTERFACE_NOREADY =-7; //数据未准备好,可能正在等待数据返回
+Pb_ERROR_MEET_INTERFACE_NOFIND= -8; //找不到
+Pb_ERROR_MEET_INTERFACE_NOSPPORTPROPERTY= -9; //不支持的属性
+Pb_ERROR_MEET_INTERFACE_UPPONMAXVALUE= -10; //超过最大值
+Pb_ERROR_MEET_INTERFACE_ZERO= -11; //个数为0
+Pb_ERROR_MEET_INTERFACE_PARAMETER =-12; //参数错误
+Pb_ERROR_MEET_INTERFACE_DATA= -13; //数据错误
+Pb_ERROR_MEET_INTERFACE_UNAUTHORIZED= -14; //功能未授权使用
+Pb_ERROR_MEET_INTERFACE_NOCONNECT= -15; // 短信服务器未响应
+Pb_ERROR_MEET_INTERFACE_SOCKET=    -16; // SOCKET创建失败
+Pb_ERROR_MEET_INTERFACE_NAMEORPWD= -17; // 用户名或密码错误
+Pb_ERROR_MEET_INTERFACE_SERVERERR= -18; // 访问服务异常
+Pb_ERROR_MEET_INTERFACE_NOSMSCNT=  -19; // 余额不足
+Pb_ERROR_MEET_INTERFACE_OPENFILEERROR=  -20; // 文件打开失败
+}
+
+////数据后台回复的错误信息
+enum Pb_DB_StatusCode
+{
+Pb_STATUS_MULTIRECORD=0;		  //多条查询记录
+Pb_STATUS_SINGLERECORDD=1;	  //单条查询记录
+Pb_STATUS_NORECORED=2;		  //无返回记录
+Pb_STATUS_DONE=3;			  //操作成功
+Pb_STATUS_FAIL=4;			  //请求失败
+Pb_STATUS_EXCPT_DB=5;		//数据库异常
+Pb_STATUS_EXCPT_SV=6;		//服务器异常
+Pb_STATUS_ACCESSDENIED=7;	//权限限制
+Pb_STATUS_PSWFAILED=8;		//密码错误
+Pb_STATUS_COLL_MEETING=9;		//创建会议有冲突
+Pb_STATUS_PARAMETERZERO=10;		//参数错误,不应该为0
+Pb_STATUS_NOTEXIST=11;		//不存在的数据
+Pb_STATUS_PROTOLDISMATCH=12;//协议版本不区配		
+}
+	
+//操作类型
+enum Pb_Type 
+{
+Pb_TYPE_MEET_INTERFACE_INITENV=0; //初始化环境
+Pb_TYPE_MEET_INTERFACE_TIME=1; //平台时间 -- 高频回调
+Pb_TYPE_MEET_INTERFACE_READY= 2; //平台初始化完毕
+Pb_TYPE_MEET_INTERFACE_DOWNLOAD=3;//平台下载 -- 高频回调
+Pb_TYPE_MEET_INTERFACE_UPLOAD=4;//平台上传 -- 高频回调
+Pb_TYPE_MEET_INTERFACE_MEDIAPLAYPOSINFO=5;//平台播放进度通知 -- 高频回调
+Pb_TYPE_MEET_INTERFACE_DEVICEINFO=6;//设备
+Pb_TYPE_MEET_INTERFACE_DEFAULTURL=7;//会议网页
+Pb_TYPE_MEET_INTERFACE_ADMIN	=8; //管理员
+Pb_TYPE_MEET_INTERFACE_DEVICECONTROL=9; //设备控制
+Pb_TYPE_MEET_INTERFACE_PEOPLE= 10;//常用人员信息
+Pb_TYPE_MEET_INTERFACE_MEMBER= 11;//参会人员信息
+Pb_TYPE_MEET_INTERFACE_MEMBERGROUP= 12;//参会人员分组
+Pb_TYPE_MEET_INTERFACE_MEMBERGROUPITEM= 13;//参会人员分组人员
+Pb_TYPE_MEET_INTERFACE_DEVICEFACESHOW= 14;//设备会议信息
+Pb_TYPE_MEET_INTERFACE_ROOM= 15;//会场
+Pb_TYPE_MEET_INTERFACE_ROOMDEVICE= 16;//会场设备
+Pb_TYPE_MEET_INTERFACE_FILEPUSH= 17;//文件推送
+Pb_TYPE_MEET_INTERFACE_REQUESTSTREAMPUSH= 18;//流请求推送
+Pb_TYPE_MEET_INTERFACE_STREAMPUSH= 19;//流推送
+Pb_TYPE_MEET_INTERFACE_MEETINFO= 20;//会议信息
+Pb_TYPE_MEET_INTERFACE_MEETAGENDA= 21;//会议议程
+Pb_TYPE_MEET_INTERFACE_MEETBULLET= 22;//会议公告
+Pb_TYPE_MEET_INTERFACE_MEETDIRECTORY= 23;//会议目录
+Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE= 24;//会议目录文件
+Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT= 25;//会议目录权限
+Pb_TYPE_MEET_INTERFACE_MEETVIDEO= 26;//会议视频
+Pb_TYPE_MEET_INTERFACE_MEETTABLECARD= 27;//会议双屏显示
+Pb_TYPE_MEET_INTERFACE_MEETSEAT= 28;//会议排位
+Pb_TYPE_MEET_INTERFACE_MEETIM= 29;//会议交流
+Pb_TYPE_MEET_INTERFACE_MEETONVOTING= 30;//会议发起投票
+Pb_TYPE_MEET_INTERFACE_MEETVOTEINFO=31;//会议投票信息
+Pb_TYPE_MEET_INTERFACE_MEETVOTESIGNED=32;//会议投票人信息
+Pb_TYPE_MEET_INTERFACE_MANAGEROOM=33;//会议管理会场
+Pb_TYPE_MEET_INTERFACE_MEETSIGN=34;//会议签到
+Pb_TYPE_MEET_INTERFACE_WHITEBOARD=35;//会议白板
+Pb_TYPE_MEET_INTERFACE_FUNCONFIG= 36;//会议功能配置
+Pb_TYPE_MEET_INTERFACE_MEMBERPERMISSION= 37;//参会人员权限信息
+Pb_TYPE_MEET_INTERFACE_PEOPLEGROUP= 38;//常用人员分组
+Pb_TYPE_MEET_INTERFACE_PEOPLEGROUPITEM= 39;//常用人员分组人员
+Pb_TYPE_MEET_INTERFACE_SCREENMOUSECONTROL= 40;//屏幕鼠标控制
+Pb_TYPE_MEET_INTERFACE_SCREENKEYBOARDCONTROL= 41;//屏幕键盘控制
+Pb_TYPE_MEET_INTERFACE_DEVICEMEETSTATUS= 42;//设备当前会议的一些信息
+Pb_TYPE_MEET_INTERFACE_DEVICEOPER= 43;//设备交互信息
+Pb_TYPE_MEET_INTERFACE_DBSERVERERROR=44; //数据库后台回复错误信息
+Pb_TYPE_MEET_INTERFACE_MEDIAPLAY= 45;//媒体播放
+Pb_TYPE_MEET_INTERFACE_STREAMPLAY=46;//流播放
+Pb_TYPE_MEET_INTERFACE_STOPPLAY=47;//流播放
+Pb_TYPE_MEET_INTERFACE_MEMBERCOLOR= 48;//参会人员白板颜色
+Pb_TYPE_MEET_INTERFACE_MEETCONTEXT= 49;//上下文
+Pb_TYPE_MEET_INTERFACE_MEETCLEAR= 50;//缓存清理,清空所有缓存,其它类型也支持单独
+Pb_TYPE_MEET_INTERFACE_MEETSTATISTIC= 51;//会议统计
+Pb_TYPE_MEET_INTERFACE_MEETFACECONFIG= 52;//界面配置
+Pb_TYPE_MEET_INTERFACE_MEETSENDMAIL= 53;//邮件发送
+Pb_TYPE_MEET_INTERFACE_FILESCORE=     54;    //会议文件评分相关
+Pb_TYPE_MEET_INTERFACE_FILEEVALUATE=  55;  //会议文件评价相关
+Pb_TYPE_MEET_INTERFACE_MEETEVALUATE = 56;   //会议评价相关
+Pb_TYPE_MEET_INTERFACE_SYSTEMLOG=     57; //管理员操作日志相关
+Pb_TYPE_MEET_INTERFACE_DEVICEVALIDATE= 58; //设备ID校验
+Pb_TYPE_MEET_INTERFACE_SYSTEMFUNCTIONLIMIT=59;//平台功能限制
+Pb_TYPE_MEET_INTERFACE_PUBLICINFO= 60; //全局字串
+Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE= 61; //自定义文件评分投票
+Pb_TYPE_MEET_INTERFACE_PDFWHITEBOARD= 62; //PDF文件多人同时书写
+Pb_TYPE_MEET_INTERFACE_FILESCOREVOTESIGN=  63; //自定义文件评分投票记名信息
+Pb_TYPE_MEET_INTERFACE_ZKIDENTIFY=  64; //中控生物认证
+Pb_TYPE_MEET_INTERFACE_SMSSERVICE=  65; // 短信服务
+Pb_TYPE_MEET_INTERFACE_UPDATE=    66; // 升级软件
+
+Pb_TYPE_MEET_INTERFACE_EXITENV=999; //退出释放资源
+Pb_TYPE_MEET_INTERFACE_WEBSESSIONID=  1000; //网页登陆验证（登陆Pb_METHOD_MEET_INTERFACE_LOGON，退出:Pb_METHOD_MEET_INTERFACE_EXIT,查询可用在线数量Pb_METHOD_MEET_INTERFACE_QUERY(协议头ret字段返回可用值，小于0表示错误值 ））
+ }
+
+ //操作方法
+enum Pb_Method 
+{
+Pb_METHOD_MEET_INTERFACE_ZERO=0; //不使用
+Pb_METHOD_MEET_INTERFACE_QUERY=  1;
+Pb_METHOD_MEET_INTERFACE_ADD	=	2;
+Pb_METHOD_MEET_INTERFACE_MODIFY= 3;
+Pb_METHOD_MEET_INTERFACE_DEL	=	4;
+Pb_METHOD_MEET_INTERFACE_SET	=	6;
+Pb_METHOD_MEET_INTERFACE_GETSIZE=7;
+Pb_METHOD_MEET_INTERFACE_NOTIFY= 8;
+Pb_METHOD_MEET_INTERFACE_CLEAR=  9;
+Pb_METHOD_MEET_INTERFACE_LOGON=  10;
+Pb_METHOD_MEET_INTERFACE_PUSH=11;
+Pb_METHOD_MEET_INTERFACE_ASK= 12;
+Pb_METHOD_MEET_INTERFACE_REJECT= 13;
+Pb_METHOD_MEET_INTERFACE_EXIT=   14;
+Pb_METHOD_MEET_INTERFACE_OPEN=   15;
+Pb_METHOD_MEET_INTERFACE_CLOSE=  16;
+Pb_METHOD_MEET_INTERFACE_ENTER=  17;
+Pb_METHOD_MEET_INTERFACE_PAGEQUERY=  18;
+Pb_METHOD_MEET_INTERFACE_MODIFYNAME= 19;
+Pb_METHOD_MEET_INTERFACE_MODIFYINFO= 20;
+Pb_METHOD_MEET_INTERFACE_MODIFYSTATUS= 21;
+Pb_METHOD_MEET_INTERFACE_SINGLEQUERYBYID=  22;
+Pb_METHOD_MEET_INTERFACE_SINGLEQUERYBYNAME=23;
+Pb_METHOD_MEET_INTERFACE_CONTROL=24;
+Pb_METHOD_MEET_INTERFACE_SAVE=25;
+Pb_METHOD_MEET_INTERFACE_REFRESH=26;
+Pb_METHOD_MEET_INTERFACE_COMPLEXQUERY=  27; //复合查询
+Pb_METHOD_MEET_INTERFACE_COMPLEXPAGEQUERY=  28; //复合按页查询
+Pb_METHOD_MEET_INTERFACE_START=29;
+Pb_METHOD_MEET_INTERFACE_STOP=30;
+Pb_METHOD_MEET_INTERFACE_PLAY=31;
+Pb_METHOD_MEET_INTERFACE_PAUSE=32;
+Pb_METHOD_MEET_INTERFACE_MOVE=33;
+Pb_METHOD_MEET_INTERFACE_ZOOM=34 ;//缩放操作
+Pb_METHOD_MEET_INTERFACE_BACK=35; //
+Pb_METHOD_MEET_INTERFACE_REQUEST=36; //
+Pb_METHOD_MEET_INTERFACE_BROADCAST=37; //
+Pb_METHOD_MEET_INTERFACE_QUERYPROPERTY=38; //查询属性
+Pb_METHOD_MEET_INTERFACE_SETPROPERTY=39; //设置属性
+Pb_METHOD_MEET_INTERFACE_DUMP=40; //复制
+Pb_METHOD_MEET_INTERFACE_REQUESTPUSH=41; //询问推送
+Pb_METHOD_MEET_INTERFACE_DELALL	=	42;
+Pb_METHOD_MEET_INTERFACE_SEND	=	43;
+Pb_METHOD_MEET_INTERFACE_DETAILINFO	=	44;
+Pb_METHOD_MEET_INTERFACE_INIT	=	45;
+Pb_METHOD_MEET_INTERFACE_DESTORY	=	46;
+Pb_METHOD_MEET_INTERFACE_MAKEVIDEO	=	47;
+Pb_METHOD_MEET_INTERFACE_SUBMIT	=	48;
+Pb_METHOD_MEET_INTERFACE_PUBLIST	=	49;
+Pb_METHOD_MEET_INTERFACE_CACHE	=	50; //缓存
+Pb_METHOD_MEET_INTERFACE_CHILDRED	=	51; //子级数据
+Pb_METHOD_MEET_INTERFACE_ALLCHILDRED=52; //所有子级数据
+Pb_METHOD_MEET_INTERFACE_RESPONSE=   53; //
+Pb_METHOD_MEET_INTERFACE_REQUESTTOMANAGE=   54; //请求管理员
+Pb_METHOD_MEET_INTERFACE_RESPONSETOMANAGE=   55; //回复请求管理员
+Pb_METHOD_MEET_INTERFACE_REQUESTPRIVELIGE=   56; //请求参会人员权限
+Pb_METHOD_MEET_INTERFACE_RESPONSEPRIVELIGE=   57; //回复请求参会人员权限
+Pb_METHOD_MEET_INTERFACE_UPDATE=   58; //更新、升级
+Pb_METHOD_MEET_INTERFACE_TEXTMSG=   59; //文本消息
+Pb_METHOD_MEET_INTERFACE_REBOOT=    60; //重启
+Pb_METHOD_MEET_INTERFACE_RESINFO=   61; //播放资源信息
+Pb_METHOD_MEET_INTERFACE_LOCATE=    62; //定位
+Pb_METHOD_MEET_INTERFACE_REQUESTINVITE=    63; //执行邀请
+Pb_METHOD_MEET_INTERFACE_RESPONSEINVITE=    64; //回复邀请
+Pb_METHOD_MEET_INTERFACE_EXITCHAT=    65; //退出对讲
+
+Pb_METHOD_MEET_INTERFACE_ADDINK=1001; //添加INK
+Pb_METHOD_MEET_INTERFACE_ADDRECT=1002; //添加矩形、直线、圆形
+Pb_METHOD_MEET_INTERFACE_ADDTEXT=1003;//添加文本
+Pb_METHOD_MEET_INTERFACE_ADDPICTURE=1004;//添加图片
+}
+
+//基础平台错误码
+enum Pb_WalletSystem_ErrorCode 
+{
+Pb_RETURN_ERROR_NONE=			0;		//返回的错误值，此为正常，无错误
+Pb_RETURN_ERROR_NOTBEING=		1;		//不存在
+Pb_RETURN_ERROR_NOTONLINE=		2;		//不在线
+Pb_RETURN_ERROR_NOSERVER=		3;		//无法找到可用的服务器
+Pb_RETURN_ERROR_DENIAL=			4;		//拒绝操作
+Pb_RETURN_ERROR_PASSWORD=		5;		//密码错误
+Pb_RETURN_ERROR_FORMAT=			6;		//格式错误
+Pb_RETURN_ERROR_NOPOWER=		7;		//无权限操作
+Pb_RETURN_ERROR_ISBEING=		8;		//已存在
+Pb_RETURN_ERROR_UPDATEVER=		9;		//升级的版本号低于系统正在使用的版本号
+Pb_RETURN_ERROR_DBOFFLINE=		10;		//数据库没连接上
+Pb_RETURN_ERROR_NOTCONNTECT=	11;		//未联接到区域服务
+Pb_RETURN_ERROR_NORES=			12;		//没有资源了
+Pb_RETURN_ERROR_TIMEOUT=		13;		//超时
+Pb_RETURN_ERROR_ZERO=			14;      //数据为0
+Pb_RETURN_ERROR_SERVERERROR=    15;		//区域服务器操作出错
+Pb_RETURN_ERROR_NOSPACE=		16;		//没有足够的空间了
+Pb_RETURN_ERROR_DBOPERERROR=	17;		//数据操作错误
+Pb_RETURN_ERROR_NOTIDENTITY=	18;		//没有标识码
+Pb_RETURN_ERROR_MAXDEVICENUM=	19;		//超过最大在线设备数
+Pb_RETURN_ERROR_MAXERRORTIMES=	20;		//超过最大错误次数数,拒绝登陆
+Pb_RETURN_ERROR_PARSEERROR=		21;		//区域服务器认证失败
+Pb_RETURN_ERROR_PROTOCALNOMATCH=	22;		//协议版本不匹配
+Pb_RETURN_ERROR_EXPIRATIONTIME=		23;		//区域服务器已经过期了 expiration Time
+Pb_RETURN_ERROR_COMMVERNOMATCH=		24;		//协议版本不匹配,拒绝请求
+Pb_RETURN_ERROR_OVERRUN=			25;		//超出范围
+Pb_RETURN_ERROR_NOTOPEN=		26;		//无法打开
+Pb_RETURN_ERROR_FORCEDSTOP=			27;		//强行停止
+Pb_RETUNR_ERROR_LOGONERROR=			28;	    //登陆错误
+Pb_RETUNR_ERROR_MAXONLINENUM=		29;	    //超过最大并发设备数,拒绝登陆
+}
+
+//字符串长度限制
+enum Pb_String_LenLimit 
+{
+option allow_alias = true;
+Pb_STRING_LIMIT_ZERO=0; //不使用
+Pb_MAX_DEVICEIPADDR_NUM=2;//设备最大的IP地址信息数
+Pb_MAX_RES_NUM=6;//设备最大的资源数
+Pb_MEET_MAX_VOTENUM=6;//最大的投票项数
+Pb_SIGNIN_PSW_LEN= 16; //签到密码长度
+Pb_MEET_MD5_ASCILL_MAXLEN=32;//密码 (ascill/md5ascill)
+Pb_FONTNAME_LENG=48;//默认字体名称长度
+Pb_DEFAULT_NAME_MAXLEN=48;//默认名称长度
+Pb_MEET_NAME_MAXLE=100;//用户名长度
+Pb_DEFAULT_DESCRIBE_LENG=100;//默认描述字符串长度
+Pb_DEFAULT_SHORT_DESCRIBE_LENG =40;//默认描述字符串长度
+Pb_DEFAULT_PASSWORD_LENG=40; //默认密码长度
+Pb_DEVICE_NAME_MAXLEN=128;//设备名称长席
+Pb_DEVICE_IPADDR_MAXLEN=64;//IP地址长度
+Pb_DEFAULT_FILENAME_LENG=150;//默认文件名长度
+Pb_MEET_PATH_MAXLEN=260;//默认文件路径长度
+Pb_MEET_PATHNAME_MAXLEN=260;//默认文件路径长度
+Pb_MEET_MEMBERSTRING_MAXLEN=260;//参会人员属性字符串长度
+Pb_MEET_DEVICESTRING_MAXLEN=260;//设备属性字符串长度
+Pb_MAX_SYSTEMLOG_TEXTLEN= 260; //记录文本最大长度
+Pb_MAX_EVALUATETEXTLEN= 260; //评价的文本最大长度
+Pb_MEETIM_CHAR_MSG_MAXLEN= 300;//聊天文本长度
+Pb_MEETAGENDA_DESCTEXT_LENG=320;//时间轴式会议议程长度
+Pb_DEFAULT_BULLETCONTENT_LENG=320;//会议公告长度
+Pb_MEET_URL_MAXLEN=1024;//网址长度
+}
+
+//程序类型
+enum Pb_ProgramType
+{
+Pb_MEET_PROGRAM_TYPE_ZERO = 0;
+Pb_MEET_PROGRAM_TYPE_MEETCLIENT=	 1; //会议终端软件
+Pb_MEET_PROGRAM_TYPE_PROJECTIVE=	 2; //投影软件
+Pb_MEET_PROGRAM_TYPE_STREAMCAPTURE=  3; //流采集软件
+Pb_MEET_PROGRAM_TYPE_SERVICE=		 4; //茶水服务软件
+Pb_MEET_PROGRAM_TYPE_ANDROIDAPP=	 5; //android APP
+Pb_MEET_PROGRAM_TYPE_CLIENTDEBUG=	 6; //TCP客户端调试
+Pb_MEET_PROGRAM_TYPE_PUBLISHER=	 	 7; //会议发布软件
+Pb_MEET_PROGRAM_TYPE_PHPINTER=	 	 8; //用于PHP的数据中转
+Pb_MEET_PROGRAM_TYPE_BROADCAST=	     9; //会议广播软件
+Pb_MEET_PROGRAM_TYPE_TESTONLINE=     10; //测试设备
+}
+
+//缓存数据
+enum Pb_CacheFlag 
+{
+Pb_MEET_CACEH_FLAG_ZERO=0;
+Pb_MEET_CACEH_FLAG_FORCE=	     0x00000001; //强制缓存
+}
+
+//font align flag 字体对齐方式
+enum Pb_FontAlignFlag 
+{
+Pb_MEET_FONTALIGNFLAG_ZERO=0;
+Pb_MEET_FONTALIGNFLAG_LEFT=			0x0001; //左对齐
+Pb_MEET_FONTALIGNFLAG_RIGHT=			0x0002; //右对齐
+Pb_MEET_FONTALIGNFLAG_HCENTER=		0x0004; //水平对齐
+Pb_MEET_FONTALIGNFLAG_TOP=			0x0008; //上对齐
+Pb_MEET_FONTALIGNFLAG_BOTTOM=		0x0010; //下对齐
+Pb_MEET_FONTALIGNFLAG_VCENTER=		0x0020; //垂直对齐
+}
+
+//设备播放状态
+enum Pb_DevicePlayStatus 
+{
+Pb_DEVICE_PLAYSTATUS_IDLE=0; //空闲
+Pb_DEVICE_PLAYSTATUS_MEDIA=1;//播放媒体 
+Pb_DEVICE_PLAYSTATUS_STREAM=2;//播放流
+Pb_DEVICE_PLAYSTATUS_TALK=3;//对讲
+}
+
+//会议客户端软件的界面
+enum Pb_MeetFaceStatus
+{
+Pb_MemState_MainFace=0; //处于主界面
+Pb_MemState_MemFace=1;//参会人员界面
+Pb_MemState_AdminFace=2;//后台管理界面
+Pb_MemState_VoteFace=3; //投票界面
+}
+
+//property id
+//会议设备属性ID
+enum Pb_MeetDevicePropertyID
+{
+Pb_MEETDEVICE_PROPERTY_ZERO=0;
+Pb_MEETDEVICE_PROPERTY_NAME=1; //设备名称 query(text)
+Pb_MEETDEVICE_PROPERTY_IPADDR=2;		 //ip地址 query(text) paramterval(ip地址索引)
+Pb_MEETDEVICE_PROPERTY_PORT=3;				 //网络端口 query(fixed32)
+Pb_MEETDEVICE_PROPERTY_NETSTATUS=4;			 //网络状态 query(fixed32)
+Pb_MEETDEVICE_PROPERTY_PLAYSTATUS=5;			 //播放状态(propertyval2(triggerid), propertyval3(val),propertyval4(val2)有效) query(fixed32) paramterval(res地址索引)
+Pb_MEETDEVICE_PROPERTY_FACESTATUS=6;		 //界面状态 query(fixed32) (propertyval2(meetingid), propertyval3(memberid)
+Pb_MEETDEVICE_PROPERTY_MEMBERID=7;			 //当前参会人员ID query(fixed32) (propertyval2(meetingid), propertyval3(facestatus)
+Pb_MEETDEVICE_PROPERTY_MEETINGID=8;		 //当前会议ID query(fixed32) (propertyval2(memberid), propertyval3(facestatus)
+Pb_MEETDEVICE_PROPERTY_TRIGGERID=9;			 //当前正在执行的触发器ID query(fixed32) paramterval(res地址索引)
+Pb_MEETDEVICE_PROPERTY_STREAMNAME=10;			 //设备的流通道名称 query paramterval=查询的流通道号(text)
+Pb_MEETMEMBER_PROPERTY_RESOPERTORID=11; //获取资源操作的设备ID query paramterval(res地址索引)
+Pb_MEETMEMBER_PROPERTY_TYPEAVAILABLE=12; //某类设备是否可用 query deviceid(设备类别ID,eg:DEVICE_MEET_SERVICE) propertyval=1可用，=0不可用
+Pb_MEETDEVICE_PROPERTY_VERSION=13; //获取指定设备的版本 query propertyval返回版本号propertyval(hard):propertyval2(soft) 
+Pb_MEETDEVICE_PROPERTY_DEVICEFLAG=14; //获取指定设备的属性 query (propertyval fixed32)  会议设备属性 参见owbash.h MEETDEVICE_FLAG 定义
+}
+
+//设备修改标志位 modflag
+enum Pb_DeviceModifyFlag 
+{
+Pb_DEVICE_MODIFYFLAG_ZERO=0;
+Pb_DEVICE_MODIFYFLAG_NAME=		0x00000001;//表示修改名称
+Pb_DEVICE_MODIFYFLAG_IPADDR=	0x00000002;//表示修改ip地址
+Pb_DEVICE_MODIFYFLAG_PORT=		0x00000004;//表示修改端口
+Pb_DEVICE_MODIFYFLAG_LIFTRES=   0x00000008;//表示修改升降代码
+Pb_DEVICE_MODIFYFLAG_DEVICEFLAG=0x000000016; //表示修改会议设备属性
+}
+
+//会议设备的一些标志 modflag
+enum Pb_MeetDeviceFlag 
+{
+Pb_MEETDEVICE_FLAG_ZERO=0;//不使用
+Pb_MEETDEVICE_FLAG_DIRECTENTER=0x01;//免签到进入会议
+Pb_MEETDEVICE_FLAG_OPENOUTSIDE= 0x02; //使用外部软件打开文档
+}
+
+//会议上下文属性ID
+//property id
+enum Pb_ContextPropertyID 
+{
+Pb_MEETCONTEXT_PROPERTY_ZERO=0;
+Pb_MEETCONTEXT_PROPERTY_ROLE=				1; //当前会议的角色 set/query(fixed32) 参见 Pb_MeetFaceStatus
+Pb_MEETCONTEXT_PROPERTY_CURADMINID=			2; //当前会议登陆的管理员ID query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_CURADMINNAME=		3; //当前会议登陆的管理员用户名 query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_CURADMINPASSWORD=	4; //当前会议登陆的管理员密码 md5 query(text)
+Pb_MEETCONTEXT_PROPERTY_HASTABLECARD=		5; //当前会议是否是双屏 set/query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_CURMEETINGID=		6; //当前会议的会议ID set/query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_SELFID=				7; //本机设备ID query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_CURROOMID=			8; //当前会议的会场ID query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_SELFMEMBERID=		9; //当前会议的绑定的参会人员ID query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_MEETDBDEVICEID=		10; //当前会议数据库设备ID query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_SCREENSTREAMINDEX=	11; //本机屏幕流通道号 query(fixed32)
+Pb_MEETCONTEXT_PROPERTY_AVAILABLEMEDIASERER=	12; //媒体服务器是否可用 query propertyval=返回可用的个数(int32u)
+Pb_MEETCONTEXT_PROPERTY_AVAILABLESTREAMSERVER=	13; //流服务器是否可用 query=返回可用的个数(int32u)
+Pb_MEETCONTEXT_PROPERTY_UTCMICROSECONDS=	14; //返回当前系统微秒UTC时间 query(int64u)
+Pb_MEETCONTEXT_PROPERTY_LOCALCICROSECONDS=	15; //返回当前系统微秒时间 query(int64u)
+Pb_MEETCONTEXT_PROPERTY_HARDVERSION=     	16; //返回硬件版本号 query(int32u)
+Pb_MEETCONTEXT_PROPERTY_SOFTVERSION=     	17; //返回软件版本号 query(int32u)
+Pb_MEETCONTEXT_PROPERTY_ENTERPRISEID=     	18; //返回设备所属企业ID query(int32u)
+Pb_MEETCONTEXT_PROPERTY_ENTERPRISENAME=    	19; //返回设备所属企业名称 query(string)
+Pb_MEETCONTEXT_PROPERTY_SESELLMARK=			20; //返回设备销售标识 query(string)
+Pb_MEETCONTEXT_PROPERTY_EXPIRATIONTIME=		21; //区域服务器有效时间 query(int64u) UTC时间 单位：秒 为0xffffffffffffff表示永久有效
+Pb_MEETCONTEXT_PROPERTY_AREAENTERPRISEID=	22; //区域服务器企业ID query(int32u)
+Pb_MEETCONTEXT_PROPERTY_REGISTERUSERDEF32=	23; //返回注册时的用户自定义值 query(int32u) -->该值 暂时用作网页的在线数量限制
+Pb_MEETCONTEXT_PROPERTY_MAXONLINENUM=		24; //设备在线最大数量 query(int32u)
+Pb_MEETCONTEXT_PROPERTY_MINCAPTURETIME=		25; //流采集间隔最小值 单位毫秒 query(int32u)
+Pb_MEETCONTEXT_PROPERTY_ENCODEMODE=  		26; //流采集的编码模式 query(int32u)
+Pb_MEETCONTEXT_PROPERTY_STREAMSAVE=  		27; //流保存标志 set/query(int32u) 1表示保存, 0表示不保存
+Pb_MEETCONTEXT_PROPERTY_MEDIACHECK=  		28; //指定的设备或者服务器是否已经探测成功 query(propertyval int32u) 1表示已经探测成功, 0表示未探测到
+Pb_MEETCONTEXT_PROPERTY_MEETCACHEDIR=  		29; //获取会议离线缓存的目录 query(string)
+Pb_MEETCONTEXT_PROPERTY_LOGONMODE=  		30; //获取登陆模式,调用登陆时接口会保存 set/query(string)
+
+
+}
+
+//会议议程
+//agendatype
+enum Pb_AgendaType 
+{
+Pb_MEET_AGENDA_TYPE_TEXT= 0; //文本 val=文本长度
+Pb_MEET_AGENDA_TYPE_FILE= 1; //文件 val=媒体ID
+Pb_MEET_AGENDA_TYPE_TIME= 2; //时间轴式 val=Item_AgendaTimeInfo个数
+//Pb_MEET_AGENDA_TYPE_NOSET= 0xff000000; //未指定类型
+}
+
+//时间轴式会议议程
+enum Pb_AgendaStatus
+{
+Pb_MEETAGENDA_STATUS_IDLE=		0; //未发起
+Pb_MEETAGENDA_STATUS_RUNNING=   1; //进行中
+Pb_MEETAGENDA_STATUS_END=		2; //已结束
+}
+
+//管理员登陆状态
+enum Pb_AdminLogonStatus
+{
+Pb_ADMINLOGON_ERR_NONE =0; //登陆成功
+Pb_ADMINLOGON_ERR_PSW=  1; //密码错误
+Pb_ADMINLOGON_ERR_EXCPT_SV=  2; //服务器异常
+Pb_ADMINLOGON_ERR_EXCPT_DB=  3; //数据库异常
+}
+
+//终端控制
+//oper
+enum Pb_DeviceControlFlag
+{
+Pb_DEVICECONTORL_ZERO=0;
+Pb_DEVICECONTORL_SHUTDOWN= 1; //关机
+Pb_DEVICECONTORL_REBOOT=  2; //重启
+Pb_DEVICECONTORL_PROGRAMRESTART=  3; //重启软件
+Pb_DEVICECONTORL_LIFTUP = 4; //升
+Pb_DEVICECONTORL_LIFTDOWN = 5; //降
+Pb_DEVICECONTORL_LIFTSTOP = 6; //停止升（降）
+Pb_DEVICECONTORL_MODIFYLOGO = 7; //更换LOGO
+Pb_DEVICECONTORL_MODIFYMAINBG = 8; //更换主界面
+Pb_DEVICECONTORL_MODIFYPROJECTBG = 9; //更换投影界面
+Pb_DEVICECONTORL_MODIFYSUBBG = 10; //更换子界面
+Pb_DEVICECONTORL_MODIFYFONTCOLOR =11; //更换字体颜色
+}
+
+//operval1 升降控制类别标志
+enum Pb_LiftFlag
+{
+Pb_LIFT_FLAG_ZERO=0;
+Pb_LIFT_FLAG_MACHICE= 0x00000001; //选择升降机类别
+Pb_LIFT_FLAG_MIC =    0x00000002;//选择升降话筒类别
+}
+
+//下载状态
+//state flag
+enum Pb_Download_State
+{
+Pb_STATE_MEDIA_DOWNLOAD_IDLE=	  0; //空闲
+Pb_STATE_MEDIA_DOWNLOAD_WORKING=  1; //下载中
+Pb_STATE_MEDIA_DOWNLOAD_FINISH=   2; //下载结束
+Pb_STATE_MEDIA_DOWNLOAD_ERROR =   3; //下载错误
+Pb_STATE_MEDIA_DOWNLOAD_EXIT  =   4; //下载退出 ---不管成功与否,下载结束最后一次的状态都是这个
+Pb_STATE_MEDIA_DOWNLOAD_DESTROY = 5; //下载释放资料
+}
+
+//执行事件时指定的触发器标志
+//triggerusedef
+enum Pb_TriggerUsedef
+{
+Pb_EXCEC_USERDEF_FLAG_ZERO=0;
+Pb_EXCEC_USERDEF_FLAG_COMPEREOPER=				    0x00000001;//主持人操作标志
+Pb_EXCEC_USERDEF_FLAG_OTHEROPER=					0x00000002;//其他参会人员操作标志
+Pb_EXCEC_USERDEF_FLAG_NOCREATEWINOPER=				0x00000004;//不创建新窗口操作标志
+Pb_EXCEC_USERDEF_FLAG_NOSTREAMRECORD=				0x00000008;//不保存流录音操作标志
+Pb_EXCEC_USERDEF_FLAG_SCREENSHARE=					0x00000010;//同屏开启
+Pb_EXCEC_USERDEF_FLAG_SETPOSMODE=					0x00000020; //播放位置调整 0百分比 为1表示按时间调整（秒）
+}
+
+//下载错误码
+//ERROR 
+enum Pb_Download_Erro
+{
+Pb_ERROR_MEDIA_DOWNLOAD_OK=			0; //正常
+Pb_ERROR_MEDIA_DOWNLOAD_PARAMETER=  1; //参数不对
+Pb_ERROR_MEDIA_DOWNLOAD_INITTHREAD= 2; //线程创建失败
+Pb_ERROR_MEDIA_DOWNLOAD_USERSTOP=	3; //主动停止
+Pb_ERROR_MEDIA_DOWNLOAD_NOMEDIA=	4; //不存在的媒体 
+Pb_ERROR_MEDIA_DOWNLOAD_OPEN=		5; //打开文件失败
+Pb_ERROR_MEDIA_DOWNLOAD_FILEOK=		6; //文件完整,不需要下载
+Pb_ERROR_MEDIA_DOWNLOAD_CREATE=		7; //创建 文件失败
+Pb_ERROR_MEDIA_DOWNLOAD_MEMORY=		8; //内存分配失败
+Pb_ERROR_MEDIA_DOWNLOAD_EXECINIT=	9; //平台库初始化下载失败
+Pb_ERROR_MEDIA_DOWNLOAD_SETPOS=		10; //设置下载位置失败
+}
+
+
+//上传文件状态
+//status
+enum Pb_Upload_State
+{
+Pb_UPLOADMEDIA_FLAG_IDLE=		0; //等待上传
+Pb_UPLOADMEDIA_FLAG_UPLOADING=  1; //上传中
+Pb_UPLOADMEDIA_FLAG_STOP=	    2; //停止
+Pb_UPLOADMEDIA_FLAG_HADEND	=	3; //结束上传
+Pb_UPLOADMEDIA_FLAG_NOSERVER=	4; //没找到可用的服务器
+Pb_UPLOADMEDIA_FLAG_ISBEING=	5; //已经存在
+}
+
+
+//上传文件标志
+//uploadflag
+enum Pb_Upload_Flag
+{
+Pb_MEET_UPLOADFLAG_ZERO=0;
+Pb_MEET_UPLOADFLAG_ONLYENDCALLBACK =0x00000001; //只能当上传结束才回调进度
+}
+
+//查询指定参会人员的某项属性
+//property id
+enum Pb_MemberPropertyID
+{
+Pb_MEETMEMBER_PROPERTY_ZERO=0;
+Pb_MEETMEMBER_PROPERTY_NAME=				1; //名称 query(text)
+Pb_MEETMEMBER_PROPERTY_COMPANY=				2; //公司 query(text)
+Pb_MEETMEMBER_PROPERTY_JOB=					3; //身份 query(text)
+Pb_MEETMEMBER_PROPERTY_COMMENT=				4; //备注 query(text)
+Pb_MEETMEMBER_PROPERTY_PHONE=				5; //电话 query(text)
+Pb_MEETMEMBER_PROPERTY_EMAIL=				6; //邮箱 query(text)
+Pb_MEETMEMBER_PROPERTY_PASSWORD=			7; //密码 query(text)
+Pb_MEETMEMBER_PROPERTY_POS=				    8; //排序序号 query(int32u)
+}
+
+//参会人权限
+//property id
+enum Pb_MemberPermissionPropertyID
+{
+Pb_memperm_zero=0;
+Pb_memperm_sscreen=					0x00000001;		//同屏权限
+Pb_memperm_projective=				0x00000002;		//投影权限
+Pb_memperm_upload=					0x00000004;		//上传权限
+Pb_memperm_download=				0x00000008;		//下载权限
+Pb_memperm_vote=					0x00000010;		//投票权限
+Pb_memperm_postilview=				0x00000020;		//批注查看权限 -- 不保存到数据库
+}
+
+//----------会议签到类型----------
+enum Pb_MeetSignType
+{
+Pb_signin_direct=	0x00;		//类型--直接签到
+Pb_signin_psw=		0x01;		//类型--个人密码签到
+Pb_signin_photo=	0x02;		//类型--拍照(手写)签到
+Pb_signin_onepsw=	0x03;		//类型--会议密码签到
+Pb_signin_onepsw_photo=	0x04;	//类型--会议密码+拍照(手写)签到
+Pb_signin_psw_photo=	0x05;	//类型--个人密码+拍照(手写)签到
+}
+
+//查询会场属性信息
+//property id
+enum Pb_MeetRoomPropertyID
+{
+Pb_MEETROOM_PROPERTY_ZERO=0;
+Pb_MEETROOM_PROPERTY_BGPHOTOID=			1; //按会场ID返回会场底图ID query(fixed32)
+Pb_MEETSEAT_PROPERTY_MANAGERID=			2; //按会场ID返回会场管理员ID query(fixed32)
+}
+
+//direction 会场设备朝向
+enum Pb_DeviceDirection
+{
+Pb_SEATDIRECTION_UP=	0; //朝上
+Pb_SEATDIRECTION_DOWN=	1; //朝上
+Pb_SEATDIRECTION_LEFT=	2; //朝左
+Pb_SEATDIRECTION_RIGHT= 3; //朝右
+}
+
+//查询符合要求的设备ID  过滤标志
+//filterflag
+enum Pb_RoomDeviceFilterFlag
+{
+Pb_MEET_ROOMDEVICE_FLAG_ZERO=0;
+Pb_MEET_ROOMDEVICE_FLAG_ONLINE=		0x0000001; //在线
+Pb_MEET_ROOMDEVICE_FLAG_FACESTATUS= 0x0000002; //匹配会议界面状态
+Pb_MEET_ROOMDEVICE_FLAG_BINDMEMBER= 0x0000004; //参会人员绑定
+Pb_MEET_ROOMDEVICE_FLAG_PROJECTIVE= 0x0000008; //投影机
+Pb_MEET_ROOMDEVICE_FLAG_HADSIGNIN=  0x0000010; //已经签到
+Pb_MEET_ROOMDEVICE_FLAG_NOSELFID=   0x0000020; //排除本机ID
+Pb_MEET_ROOMDEVICE_FLAG_NODEVID=    0x0000040; //排除指定ID
+}
+
+//会议状态
+enum Pb_MeetStatus
+{
+Pb_MEETING_STATUS_Ready=  0;//会议创建中，等待开始
+Pb_MEETING_STATUS_Start=  1;//会议开始进行中
+Pb_MEETING_STATUS_End=    2;//会议结束
+Pb_MEETING_STATUS_PAUSE=  3;//会议暂停
+}
+
+//查询会议属性信息
+//property id
+enum Pb_MeetPropertyID
+{
+Pb_MEET_PROPERTY_ZERO=0;
+Pb_MEET_PROPERTY_SECRECY=			1; //按会议ID返回会议是否为保密会议 query(fixed32)
+Pb_MEET_PROPERTY_ROOMID=			2; //按会议ID返回会议会场ID query(fixed32)
+Pb_MEET_PROPERTY_SIGNINTYPE=		3; //按会议ID返回会议签到方式 query(fixed32)
+Pb_MEET_PROPERTY_MANAGERID=			4; //按会议ID返回会议管理员iD query(fixed32)
+Pb_MEET_PROPERTY_STATUS=			5; //按会议ID返回会议状态  query(fixed32)
+Pb_MEET_PROPERTY_STARTTIME=			6; //按会议ID返回会议开始时间 query(fixed64)
+Pb_MEET_PROPERTY_ENDTIME=			7; //按会议ID返回会议结束时间 query(fixed64)
+}
+
+//----------参会人员角色----------
+enum Pb_MeetMemberRole
+{
+Pb_role_member_nouser= 		0x00;  //未使用
+Pb_role_member_normal= 		0x01;  //一般参会人员
+Pb_role_member_compere= 	0x03;  //主持人
+Pb_role_member_secretary= 	0x04;  //秘书
+Pb_role_device_projector=	0x08;  //投影仪
+Pb_role_admin=				0x09;  //管理员
+}
+
+//查询指定会议目录的某项属性
+//property id
+enum Pb_MeetDirectoryAttrib
+{
+Pb_MEETDIRECTORY_PROPERTY_ZERO=0;
+Pb_MEETDIRECTORY_PROPERTY_NAME=   1; //目录名称   query(text)
+Pb_MEETDIRECTORY_PROPERTY_SIZE=	  2; //文件个数   query(fixed32) 
+Pb_MEETDIRECTORY_PROPERTY_PARENT= 3; //父目录ID   query(fixed32) 
+Pb_MEETDIRECTORY_PROPERTY_POS=    4; //目录的序号 query(fixed32)
+Pb_MEETDIRECTORY_PROPERTY_MAXDIRID=   5; //当前会议最大的目录ID query(fixed32)
+}
+
+//文件attrib 会议系统上传文件属性
+enum Pb_MeetFileAttrib
+{
+Pb_MEETFILE_ATTRIB_ZERO=0;
+Pb_MEETFILE_ATTRIB_IMPORTANTFILE= 0x000000001; //紧急文件
+Pb_MEETFILE_ATTRIB_BACKGROUND=		0x10000; //背景文件
+Pb_MEETFILE_ATTRIB_TABLECARD=		0x20000; //桌牌背景文件
+Pb_MEETFILE_ATTRIB_DEVICEUPDATE=	0x40000; //设备升级用的文件
+Pb_MEETFILE_ATTRIB_PUBLISH=		    0x80000; //会议发布
+}
+
+//查询指定文件的某项属性
+//property id
+enum Pb_MeetFilePropertyID
+{
+Pb_MEETFILE_PROPERTY_ZERO=0;
+Pb_MEETFILE_PROPERTY_NAME=   1; //名称 query(text)
+Pb_MEETFILE_PROPERTY_SIZE=	 2; //大小 query(fixed64) 字节
+Pb_MEETFILE_PROPERTY_TIME=   3; //时长 query(fixed32) 毫秒
+Pb_MEETFILE_PROPERTY_ATTRIB= 4; //文件attrib query(fixed32)
+Pb_MEETFILE_PROPERTY_AVAILABLE=5; //文件是否可用 query(fixed32) 0:不存在 1:存在
+Pb_MEETFILE_PROPERTY_FILEMD5=6; //文件对应的md5值 query(text：32个字节)
+}
+
+//目录文件的查询标志
+//queryflag
+enum Pb_MeetFileQueryFlag
+{
+Pb_MEET_FILETYPE_QUERYFLAG_ZERO=0;
+Pb_MEET_FILETYPE_QUERYFLAG_UPLOADID=		 0x00000001;  //上传者有效
+Pb_MEET_FILETYPE_QUERYFLAG_FILETYPE=		 0x00000002;  //文件类型有效
+Pb_MEET_FILETYPE_QUERYFLAG_ATTRIB=			 0x00000004;  //文件属性有效
+Pb_MEET_FILETYPE_QUERYFLAG_IMPORTANTFRONT=	 0x00000008;  //attrib为MEETFILE_ATTRIB_IMPORTANTFILE的文件会被放在前面返回
+}
+
+//文件类型
+//filetype
+enum Pb_MeetFileType
+{
+Pb_MEET_FILETYPE_ZERO=0;
+Pb_MEET_FILETYPE_AUDIO=		 0x00000001;  //音频
+Pb_MEET_FILETYPE_VIDEO=		 0x00000002;  //视频
+Pb_MEET_FILETYPE_PICTURE=	 0x00000004;  //图片
+Pb_MEET_FILETYPE_DOCUMENT=	 0x00000008;  //文档
+Pb_MEET_FILETYPE_OTHER=		 0x00000010;  //其它
+}
+
+//双屏显示类别
+//type
+enum Pb_TableCardType
+{
+Pb_conf_zero=0;
+Pb_conf_mtgname=	0x01; //会议名称
+Pb_conf_memname=	0x02; //参会人员名称
+Pb_conf_job=		0x03; //参会人员职业
+Pb_conf_company=	0x04; //参会人员单位
+Pb_conf_position=	0x05; //座位名称
+}
+
+//双屏显示标志
+//flag
+enum Pb_TableCardFlag
+{
+Pb_MEET_TABLECARDFLAG_ZERO=0;
+Pb_MEET_TABLECARDFLAG_SHOW=			0x00000001; //该位用于表示该项是否可见
+Pb_MEET_TABLECARDFLAG_BOLD=			0x00000002; //加粗
+Pb_MEET_TABLECARDFLAG_LEAN=			0x00000004; //倾斜
+Pb_MEET_TABLECARDFLAG_UNDERLINE=	0x00000008; //下划线
+}
+
+//查询会议排位属性信息
+//property id
+enum Pb_MeetSeatPropertyID
+{
+Pb_MEETSEAT_PROPERTY_ZERO=0;
+Pb_MEETSEAT_PROPERTY_SEATID=			1; //按人员ID返回设备ID query(fixed32)
+Pb_MEETSEAT_PROPERTY_MEMBERID=			2; //按设备ID返回人员ID query(fixed32)
+Pb_MEETSEAT_PROPERTY_ROLEBYMEMBERID=				3; //按人员ID返回人员role query(fixed32)
+Pb_MEETSEAT_PROPERTY_ROLEBYDEVICEID=				4; //按人员ID返回人员role query(fixed32)
+Pb_MEETSEAT_PROPERTY_ISCOMPEREEBYMEMBERID=		5; //按人员ID判断当前人员是不是主持人 query(fixed32)
+Pb_MEETSEAT_PROPERTY_ISCOMPEREEBYDEVICEID=		6; //按设备ID判断当前人员是不是主持人 query(fixed32)
+Pb_MEETSEAT_PROPERTY_MEMBERIDBYROLE=	7; //返回等于role的人员ID query(fixed32)
+Pb_MEETSEAT_PROPERTY_DEVICEIDBYROLE=	8; //返回等于role的设备ID query(fixed32)
+Pb_MEETSEAT_PROPERTY_COMPEEMEMID=	9; //返回当前会议主持人的人员ID query(fixed32)
+Pb_MEETSEAT_PROPERTY_COMPEEDEVID=	10; //返回当前会议主持人的设备ID query(fixed32)
+}
+
+//会议交流信息
+//type
+enum Pb_MeetIMMSG_TYPE
+{
+Pb_MEETIM_CHAT_Message= 0; //文本消息
+Pb_MEETIM_CHAT_Link= 1;	  //多媒体链接
+Pb_MEETIM_CHAT_Water= 2;		//水
+Pb_MEETIM_CHAT_Tea= 3;		//茶
+Pb_MEETIM_CHAT_Coffee= 4;    //咖啡
+Pb_MEETIM_CHAT_Pen= 5;		//笔
+Pb_MEETIM_CHAT_Paper= 6;		//纸
+Pb_MEETIM_CHAT_Technical= 7;//技术员
+Pb_MEETIM_CHAT_Waiter= 8;//服务员
+Pb_MEETIM_CHAT_Other= 9;		//其他服务
+Pb_MEETIM_CHAT_Emecc= 10;	//申请主持
+}
+
+//queryflag 需要按那个查询那位置为1
+enum Pb_MeetIMMSG_QueryFlag
+{
+Pb_COMPLEXQUERY_ZERO=0;
+Pb_COMPLEXQUERY_MSGTYPE=	0x0000001;
+Pb_COMPLEXQUERY_ROLE=		0x0000002;
+Pb_COMPLEXQUERY_MEMBERID=	0x0000004;
+Pb_COMPLEXQUERY_UTCTIME=	0x0000008;
+}
+
+//会议发起投票信息
+//voteflag
+enum Pb_VoteStartFlag 
+{
+Pb_MEET_VOTING_FLAG_ZERO=0;//未使用
+Pb_MEET_VOTING_FLAG_NOPOST=	   0x00000001; //不在投影机上显示投票结果
+Pb_MEET_VOTING_FLAG_SECRETARY= 0x00000002; //投票选项保密投票模式
+Pb_MEET_VOTING_FLAG_AUTOEXIT=  0x00000004; //自动超时结束 --由发起方计时发送结束
+Pb_MEET_VOTING_FLAG_REVOTE=    0x00000008; //重投 清空之前的记录
+}
+
+//投票状态 votestate 
+enum Pb_MeetVoteStatus
+{
+Pb_vote_notvote= 0; //未发起的投票
+Pb_vote_voteing= 1; //正在进行的投票
+Pb_vote_endvote= 2; //已经结束的投票
+}
+
+//maintype //投票 选举 调查问卷
+enum Pb_MeetVoteType
+{
+Pb_VOTE_MAINTYPE_vote=			0; //投票
+Pb_VOTE_MAINTYPE_election=		1; //选举
+Pb_VOTE_MAINTYPE_questionnaire= 2; //问卷调查
+}
+
+//mode
+enum Pb_MeetVoteMode
+{
+Pb_VOTEMODE_agonymous=	0; //匿名投票
+Pb_VOTEMODE_signed=		1; //记名投票
+}
+
+//type
+enum Pb_MeetVote_SelType
+{
+Pb_VOTE_TYPE_MANY=			    0; //多选
+Pb_VOTE_TYPE_SINGLE=			1; //多选
+Pb_VOTE_TYPE_4_5=			    2; //5选4
+Pb_VOTE_TYPE_3_5=			    3; //5选2
+Pb_VOTE_TYPE_2_5=			    4; //5选2
+Pb_VOTE_TYPE_2_3=			    5; //3选2
+}
+
+//查询会议投票人属性信息
+//property id
+enum Pb_MeetVotePropertyID
+{
+Pb_MEETVOTE_PROPERTY_ZERO=0;
+Pb_MEETVOTE_PROPERTY_HADSIGNIN=			    1; //按投票ID\人员ID返回是否已经投票 query(fixed32)
+Pb_MEETVOTE_PROPERTY_SIGNINITEM=		    2; //按投票ID\人员ID返回投票项记录 //0x0001选择了选项一,0x0010选择了选项二 query(fixed32)
+Pb_MEETVOTE_PROPERTY_HADCHECKINNUM=		    3; //按投票ID\人员ID返回是否已经投票签到 query
+Pb_MEETVOTE_PROPERTY_CHECKINNUM=	        4; //按投票ID\返回投票实际签到总人数  query
+Pb_MEETVOTE_PROPERTY_ATTENDNUM=		        5; //按投票ID\返回投票应到总人数  query
+Pb_MEETVOTE_PROPERTY_VOTEDNUM=		        6; //按投票ID\返回投票已经投票总人数  query
+}
+
+//查询会议签到属性信息
+//property id
+enum Pb_MeetSignPropertyID
+{
+Pb_MEETTSIGN_PROPERTY_ZERO=0;
+Pb_MEETTSIGN_PROPERTY_HADSIGNIN=			    1; //按人员ID返回是否已经签到 query
+Pb_MEETTSIGN_PROPERTY_SIGNINTYPE=			2; //按人员ID返回签到类型 query
+}
+
+//会议白板操作
+
+//operflag
+enum Pb_MeetPostilOperType
+{
+Pb_MEETPOTIL_FLAG_ZERO=0;
+Pb_MEETPOTIL_FLAG_FORCEOPEN=	   1; //该标志表示需要强制执行批注白板强行打开
+Pb_MEETPOTIL_FLAG_FORCECLOSE=	   2; //该标志表示需要强制执行批注白板强行关闭
+Pb_MEETPOTIL_FLAG_REQUESTOPEN=	   3; //该标志表示有人发起白板
+Pb_MEETPOTIL_FLAG_REJECTOPEN=	   4; //该标志表示对方拒绝打开白板
+Pb_MEETPOTIL_FLAG_EXIT=			   5; //该标志表示有人离开白板
+Pb_MEETPOTIL_FLAG_ENTER=		   6; //该标志表示有人进入白板
+}
+
+//白板操作类型
+enum Pb_MeetPostilFigureType
+{
+Pb_WB_FIGURETYPE_ZERO=0;
+Pb_WB_FIGURETYPE_INK=			1; //线条
+Pb_WB_FIGURETYPE_LINE=		2; //直线
+Pb_WB_FIGURETYPE_ELLIPSE=		3; //椭圆
+Pb_WB_FIGURETYPE_RECTANGLE=	4; //矩形
+Pb_WB_FIGURETYPE_FREETEXT=	5; //文字
+Pb_WB_FIGURETYPE_PICTURE=		6; //
+Pb_WB_FIGURETYPE_ARROW=		7; //箭头
+}
+
+//font flag
+enum Pb_MeetFontFlag
+{
+Pb_WHITEBOARD_FONT_ZERO=0;
+Pb_WHITEBOARD_FONT_STRIKEOUT= 0x01; //删除线
+Pb_WHITEBOARD_FONT_BOLD=	  0x02; //加粗
+Pb_WHITEBOARD_FONT_ITALIC=	  0x04; //倾斜
+Pb_WHITEBOARD_FONT_UNDERLINE= 0x08; //下划线
+}
+
+//功能标识码
+enum Pb_Meet_FunctionCode
+{
+Pb_MEET_FUNCODE_AGENDA_BULLETIN=	0;	//会议议程
+Pb_MEET_FUNCODE_MATERIAL=		1;	//会议资料
+Pb_MEET_FUNCODE_SHAREDFILE=		2;	//	共享文件
+Pb_MEET_FUNCODE_POSTIL=			3;	//批注文件
+Pb_MEET_FUNCODE_MESSAGE=			4;	//会议交流
+Pb_MEET_FUNCODE_VIDEOSTREAM=		5;	//视频直播
+Pb_MEET_FUNCODE_WHITEBOARD=		6;	//白板
+Pb_MEET_FUNCODE_WEBBROWSER=		7;	//网页
+Pb_MEET_FUNCODE_VOTERESULT=		8;	//投票
+Pb_MEET_FUNCODE_SIGNINRESULT=	9;	//签到
+Pb_MEET_FUNCODE_DOCUMENT=		10;	//外部文档
+}
+
+//媒体播放
+//playflag
+enum Pb_MeetPlayFlag
+{
+Pb_MEDIA_PLAYFLAG_ZERO=0;
+Pb_MEDIA_PLAYFLAG_LOOP= 		0x00000001; //循环播放标志
+Pb_MEDIA_PLAYFLAG_CLIENT=		0x00000002; //终端设备 在devnum=0时会判断
+Pb_MEDIA_PLAYFLAG_PROJECTIVE=   0x00000004; //投影设备 在devnum=0时会判断
+Pb_MEDIA_PLAYFLAG_NOSELFID=     0x00000008; //排除自己的设备ID 在devnum=0时会判断
+Pb_MEDIA_PLAYFLAG_SETPOSMODE=   0x00000010; //播放位置调整 0百分比 为1表示按时间调整（秒）
+
+}
+
+//会议界面设置
+//faceid
+enum Pb_MeetFaceID
+{
+Pb_MEET_FACEID_ZERO=0;
+Pb_MEET_FACEID_MAINBG=			1;  //主界面 png  //仅ID
+Pb_MEET_FACEID_SUBBG=			2;  //子界面 png  //仅ID
+Pb_MEET_FACEID_LOGO=			3;  //logo png    //仅ID
+Pb_MEET_FACEID_MEETNAME=		4;  //会议名称 text
+Pb_MEET_FACEID_MEMBERNAME=		5;  //参会人名称 text
+Pb_MEET_FACEID_MEMBERCOMPANY=	6;  //参会人单位 text
+Pb_MEET_FACEID_MEMBERJOB=		7;  //参会人职业 text
+Pb_MEET_FACEID_SEATNAME=		8;  //座席名称 text
+Pb_MEET_FACEID_TIMER=			9;  //日期时间 text
+Pb_MEET_FACEID_COMPANY=			10; //单位名称 text
+Pb_MEET_FACEID_SHOWFILE=		11; //开会预读文件、视频等  //仅ID
+Pb_MEET_FACEID_COLTDTEXT=		12; //公司名称 onytext
+Pb_MEET_FACE_LOGO_GEO=		13; //text
+Pb_MEET_FACE_topstatus_GEO=		14; //会议状态 text 
+Pb_MEET_FACE_checkin_GEO=		15; //进入会议按钮 text
+Pb_MEET_FACE_manage_GEO=		16; //进入后台 text
+Pb_MEET_FACE_remark_GEO=		17; //备注 text
+Pb_MEET_FACE_role_GEO=		18; //角色 text
+Pb_MEET_FACE_ver_GEO=		19; //版本 text
+
+Pb_MEET_FACE_SeatIcoShow_GEO=		20; //排位图标是否显示 text
+Pb_MEET_FACE_SeatLayoutShow_top=		21; //桌牌显示上  text
+Pb_MEET_FACE_SeatLayoutShow_main=		22; //桌牌显示中  text
+Pb_MEET_FACE_SeatLayoutShow_bottom=		23; //桌牌显示下  text
+Pb_MEET_FACE_MEETAGENDAFont=         24;
+Pb_MEET_FACE_BulletinBK=        25;  // 会议公告背景  png （仅ID）
+Pb_MEET_FACE_BulletinLogo=      26;  // 会议公告LOGO  png （仅ID）
+Pb_MEET_FACE_BulletinTitle=     27;  // 会议公告标题  text
+Pb_MEET_FACE_BulletinContent=   28;  // 会议公告内容  text
+Pb_MEET_FACE_BulletinBtn=       29;  // 公告关闭按钮  text
+
+Pb_MEET_FACEID_PROJECTIVE_MIANBG=		101;  //投影界面 png
+Pb_MEET_FACEID_PROJECTIVE_LOGO=			102;  //logo png
+Pb_MEET_FACEID_PROJECTIVE_MEETNAME=		103;  //会议名称 text
+Pb_MEET_FACEID_PROJECTIVE_SEATNAME=		104;  //座席名称 text
+Pb_MEET_FACEID_PROJECTIVE_TIMER=		105;  //日期时间 text
+Pb_MEET_FACEID_PROJECTIVE_COMPANY=		106;  //单位名称 text
+Pb_MEET_FACEID_PROJECTIVE_SIGNINFO=		107;  //开会预读文件、视频等  //仅ID
+Pb_MEET_FACEID_PROJECTIVE_MEETTIME=		108;  //公司名称 onytext
+Pb_MEET_FACEID_PROJECTIVE_COMPANYNAME=	109;  //公司名称位置 text
+Pb_MEET_FACEID_PROJECTIVE_STATUS=		110;  //会议状态 text
+Pb_MEET_FACEID_PROJECTIVE_SHOWFILE=		111;  //开会预读文件、视频等  //仅ID
+Pb_MEET_FACEID_PROJECTIVE_COLTDTEXT=	112;  //公司名称 onytext
+Pb_MEET_FACEID_PROJECTIVE_SIGN_ALL=     113;  // 签到：应到
+Pb_MEET_FACEID_PROJECTIVE_SIGN_IN=      114;  // 签到：已到
+Pb_MEET_FACEID_PROJECTIVE_SIGN_OUT=     115;  // 签到：未到
+}
+
+//fontflag
+enum Pb_MeetFaceFontFlag
+{
+Pb_MEET_FONTFLAG_ZERO=0;
+Pb_MEET_FONTFLAG_BOLD=		0x00000001; //加粗
+Pb_MEET_FONTFLAG_LEAN=		0x00000002; //倾斜
+Pb_MEET_FONTFLAG_UNDERLINE= 0x00000004; //下划线
+}
+
+//flag
+enum Pb_MeetFaceFlag
+{
+Pb_MEET_FACEFLAG_ZERO=0;
+Pb_MEET_FACEFLAG_SHOW=			0x00000001; //该位用于表示该项是否可见
+Pb_MEET_FACEFLAG_TEXT=			0x00000002; //该位用于表示数据是文本类型,否则为文件ID
+Pb_MEET_FACEFLAG_ONLYTEXT=		0x00000004; //该位用于表示数据是纯文本类型
+}
+
+//时间段会议统计
+//quartertype
+enum Pb_MeetStatisticFlag
+{
+Pb_MEET_QUERYSTATISTIC_ZERO=0;
+Pb_MEET_QUERYSTATISTIC_BYMONTH=	  1;//按月份查询,最多一次可查12个月
+Pb_MEET_QUERYSTATISTIC_BYQUARTER= 2;//按季度查询,最多一次可查12个季度
+Pb_MEET_QUERYSTATISTIC_BYYEAR=	  3;//按年查询,最多一次可查12个年
+}
+
+//时间段会议统计
+//evaluate flag
+enum Pb_FileEvaluateFlag
+{
+Pb_FILEEVALUATE_FLAG_ZERO=0;
+Pb_FILEEVALUATE_FLAG_SECRETARY= 0x00000001; //该标志为1表示评价对外不可见
+}
+
+////设备ID的类型
+enum Pb_DeviceIDType
+{
+	Pb_DeviceIDType_zero=0;
+	//Pb_DeviceIDType_AreaServer=0xff000000;//区域服务器
+	//Pb_DeviceIDType_MediaServer=0xfe000000;//媒体服务器
+	//Pb_DeviceIDType_StreamServer=0xfd000000;//流服务器
+	Pb_DeviceIDType_MeetDBServer=0x01000000;//会议数据库设备
+	Pb_DeviceIDType_MeetService=0x01040000;//会议茶水设备
+	Pb_DeviceIDType_MeetProjective=0x01080000;//投影设备
+	Pb_DeviceIDType_MeetCapture=0x010c0000;//会议流采集设备
+	Pb_DeviceIDType_MeetClient=0x01100000;//会议终端设备
+	Pb_DeviceIDType_MeetVideoClient=0x01110000;//会议视频对讲客户端
+	Pb_DeviceIDType_MeetPublish=0x01140000;//会议发布
+	Pb_DEVICE_MEET_PHPCLIENT=0x01180000;//PHP中转数据设备
+	Pb_DeviceIDType_MeetShare=0x01200000;//会议一键同屏设备
+}
+
+////设备的ID校验错误码
+enum Pb_ValidateErrorCode
+{
+//error code
+Pb_PARSER_ERROR_NONE=			0;//操作成功
+Pb_PARSER_ERROR_EXPIRATION=		1;//过期了
+Pb_PARSER_ERROR_OPER=			2;//程序出错
+Pb_PARSER_ERROR_ENTERPRISE=		3;//不允许接入的企业
+Pb_PARSER_ERROR_NODEVICEID=		4;//没有多余的设备ID了
+Pb_PARSER_ERROR_FILEERROR=		6;//文件数据错误
+Pb_PARSER_ERROR_NOALLOWIN=		5;//不允许接入的设备
+Pb_PARSER_ERROR_INVALID=		7;//非法的设备
+Pb_PARSER_ERROR_IDOCCUPY=		8;//设备ID已经被使用了
+Pb_PARSER_ERROR_NOTBEING=		9;//不存在需要的资源
+Pb_PARSER_ERROR_ONLYDEVICEID=   10;//文件数据错误,但可以解析出原设备ID
+Pb_PARSER_ERROR_DEVICETYPENOMATCH= 11;//指定设备与设备类型不匹配
+}
+
+////设备的ID校验错误码
+enum Pb_ValidateFlagBit
+{
+//validate status bit pos
+Pb_VALIDATE_FLAG_ZERO=0;
+Pb_VALIDATE_FLAG_AREAID	=	   0x00000001; //区域服务器ID
+Pb_VALIDATE_FLAG_DEVICEID=		   0x00000002; //设备ID
+Pb_VALIDATE_FLAG_STATUS	=	   0x00000004; //状态码 参见Pb_ValidateErrorCode
+Pb_VALIDATE_FLAG_EXPIRATIONTIME=   0x00000008; //到期时间 eg:0x07e2 05 05(表示2018 05 05)
+Pb_VALIDATE_FLAG_ENTERPISEID =     0x00000016; //企业ID
+Pb_VALIDATE_FLAG_NETCOMMONVER =    0x00000032; //协议版本
+Pb_VALIDATE_FLAG_USERDEF32UBIT =   0x00000064; //注册时自定义的32位整数值
+Pb_VALIDATE_FLAG_CURNUM		=   0x000000128; //当前在线设备数
+Pb_VALIDATE_FLAG_MAXNUM		=   0x00000256; //最大在线设备数
+}
+
+//系统限制功能属性ID
+enum Pb_SystemFuncionPropertyId
+{
+Pb_SYSTEMFUNCTIONLIMIT_PROPERTY_ISENABLE= 0; //查询功能是否可用 query,parameter(传入的功能ID 参见systemfuncion.h的功能ID定义),propertyval(返回是否可用1=可用,0=不可用)
+Pb_SYSTEMFUNCTIONLIMIT_PROPERTY_TOTALNUM= 1; //查询总数 query,parameter(0),returnval(返回总数)
+}
+
+//系统限制功能ID
+enum Pb_SystemFuncionId
+{
+//系统功能定义 不设置功能数限制
+Pb_FUNCTION_ZERO=0;
+Pb_FUNCTION_DESKTOP_CAPTURE=		1; //屏屏采集
+Pb_FUNCTION_VIDEO_PLAY		=		2; //视频播放
+Pb_FUNCTION_AUDIO_PLAY		=		3; //播放音频
+Pb_FUNCTION_CAMARA_PLAY		=	4; //播放实时视频流
+Pb_FUNCTION_CAMARA_CAPTURE	=		5; //摄像头采集
+Pb_FUNCTION_AUDIOOUTPUT_CAPTURE=	6; //音频输出回放采集
+Pb_FUNCTION_PDF_VIEW		=		7; //pdf文档查看
+Pb_FUNCTION_OFFICE_VIEW		=	8; //office文档查看
+Pb_FUNCTION_PICTURE_VIEW	=		9; //图片文档查看
+Pb_FUNCTION_MEDIA_DOWNLOAD	=		10; //文件下载
+Pb_FUNCTION_MEDIA_UPLOAD	=		11; //文件上传
+Pb_FUNCTION_DESKTOP_SHARE	=		12; //屏幕共享
+Pb_FUNCTION_WHITEBOARD		=		13; //多人白板
+Pb_FUNCTION_VIDEO_RECORD	=		14; //视频录制
+Pb_FUNCTION_AUDIO_CHAT=				15; //音频对讲
+Pb_FUNCTION_VIDEO_CHAT=				16; //视频对讲
+}
+
+//系统播放资源ID
+enum Pb_SystemPlayResIndex
+{
+Pb_DEVICE_MAINRES = 0;//主播放资源
+Pb_DEVICECHAT_AUDIO_B_RESINDEX= 9; //对讲远端音频播放资源ID
+Pb_DEVICECHAT_VIDEO_B_RESINDEX= 10; //对讲远端端视频播放资源ID
+Pb_DEVICECHAT_VIDEO_A_RESINDEX= 11; //对讲本机视频播放资源ID
+}
+
+//编码模式 encodemode
+enum Pb_StreamEncodeMode
+{
+Pb_DEVICE_INVITECHAT_ENCODEMODE_HIGH=   0; //高带宽 对网络带宽要求高
+Pb_DEVICE_INVITECHAT_ENCODEMODE_MIDDLE= 1; //高性能 对机器配置要求高
+Pb_DEVICE_INVITECHAT_ENCODEMODE_LOW=    2; //低带宽 对机器配置要求高,但对带宽要求相对较低
+Pb_DEVICE_INVITECHAT_SYSDEFAULT=        0xff; //使用系统默认 即使用系统设置的编码 由采集端和播放端握手决定
+}
+
+//系统保留使用的目录ID,用作特别用途
+//uploadflag
+/*enum Pb_Upload_DefaultDirId
+{
+Pb_MEET_UPDATE_SYSTEMDIRID_ZERO=0;
+Pb_MEET_UPDATE_SYSTEMDIRID_CHANGELOGO=			0xffffffff;  //更换LOGO
+Pb_MEET_UPDATE_SYSTEMDIRID_CHANGEMAINBG=		0xfffffffe;  //更换主界面
+Pb_MEET_UPDATE_SYSTEMDIRID_CHANGEPROJECTIVEBG=	0xfffffffd;  //更换投影主界面
+Pb_MEET_UPDATE_SYSTEMDIRID_END=					0xfffffff0; 
+}*/
+

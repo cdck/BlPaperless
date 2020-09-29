@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pa.boling.paperless"
+    android:versionCode="1"
+    android:versionName="1.14.1">
+    <!--
+    显示顶层浮窗 需要在清单文件中注册的原因是：要让设备识别是否需要该权限，
+    如果不在清单文件中注册，那么在跳转到开启悬浮窗权限时，应用列表中就找不到当前应用
+    -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 正常权限（Normal Permissions） -->
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许读取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许读取wifi网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 唤醒和锁屏权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 修改音频参数权限 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- 访问系统开机事件的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- 请求安装包权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 危险权限（Dangerous Permissions） -->
+    <!-- 文件的读写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+    <application
+        android:name="com.pa.paperless.service.ShotApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/MyAppTheme"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        tools:ignore="LockedOrientationActivity">
+        <activity android:name="com.pa.paperless.activity.ChatVideoActivity"/>
+        <activity
+            android:name="com.pa.paperless.activity.MainActivity"
+            android:launchMode="standard"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.pa.paperless.activity.MeetingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.pa.paperless.video.VideoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.pa.paperless.activity.DrawBoardActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.wind.myapplication.CameraDemo"
+            android:launchMode="singleInstance"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name="com.pa.paperless.activity.NoteActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.pa.paperless.activity.NoticeActivity"
+            android:screenOrientation="landscape" /> <!-- WPS广播 -->
+        <!-- exported="true" 属性：能否接收其他App的发出的广播 -->
+        <receiver android:name="com.pa.paperless.broadcase.WpsBroadCastReciver"/> <!-- 开机广播 -->
+        <receiver android:name="com.pa.paperless.broadcase.BootBroadCaseReciver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.pa.paperless.service.NativeService" />
+        <service android:name="com.pa.paperless.service.FabService" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- 链接：https://www.jianshu.com/p/3f9e3fc38eae -->
+        <!-- exported:要求必须为false，为true则会报安全异常。 -->
+        <!-- android:authorities="com.pa.boling.paperless.fileprovider" -->
+        <!-- grantUriPermissions:true，表示授予 URI 临时访问权限。 -->
+        <activity
+            android:name="com.pa.paperless.activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.pa.paperless.activity.offline.OffLineActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.pa.paperless.activity.offline.OffLineFileActivity"
+            android:screenOrientation="landscape" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="960" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="1280" />
+    </application>
+
+</manifest>

@@ -1,0 +1,86 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//查询会议统计
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETSTATISTIC
+//method: query
+message pbui_Type_MeetDoReqStatistic
+{
+	fixed32 meetingid=1;//会议ID 为0表示查询当前会议
+}
+
+//返回查询会议统计通知
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_MEETSTATISTIC
+//method: notify
+message pbui_Type_MeetStatisticInfo
+{
+	fixed32 meetingid=1;//会议ID
+	bytes   meetname=2;//会议名称
+	fixed32 streamgetcount=3;//流请求数
+	fixed32 screengetcount=4;//同屏请求数
+	fixed32 filegetcount=5;//文件请求数
+	fixed32 chatcount=6;//交流次数
+	fixed32 servicegetcount=7;//服务请求数
+	fixed32 whiteboardopencount=8;//白板发起次数
+	fixed32 whiteboardusecount=9;//白板交流次数
+	fixed32 votecount=10;//投票发起次数
+	fixed32 electioncount=11;//选举发起次数
+	fixed32 questioncount=12;//问卷调查发起次数
+	fixed32 bulletcount=13;//公告发起次数
+	fixed64 addtime=14;//创建时间 秒
+}
+
+//按时间段查询会议统计
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETSTATISTIC
+//method: ask
+message pbui_Type_QueryQuarterStatistic
+{
+	fixed32 quartertype=1;//参见 Pb_MeetStatisticFlag 定义
+
+	//统计时间段
+	fixed32 startyear=2; //
+	fixed32 startmonth=3; ////按月查询才有效
+	fixed32 endyear=4; //
+	fixed32 endmonth=5; ////按月查询才有效
+}
+
+message pbui_Item_MeetOneStatistic
+{
+	//统计时间段
+	fixed32 startyear=1; //
+	fixed32 startmonth=2; //
+	fixed32 endyear=3; //
+	fixed32 endmonth=4; //
+
+	fixed32 meetingcount=5;//总会议数
+
+	//总计数
+	fixed32 streamgetcount=6;//流请求数
+	fixed32 screengetcount=7;//同屏请求数
+	fixed32 filegetcount=8;//文件请求数
+	fixed32 chatcount=9;//交流次数
+	fixed32 servicegetcount=10;//服务请求数
+	fixed32 whiteboardopencount=11;//白板发起次数
+	fixed32 whiteboardusecount=12;//白板交流次数
+	fixed32 votecount=13;//投票发起次数
+	fixed32 electioncount=14;//选举发起次数
+	fixed32 questioncount=15;//问卷调查发起次数
+	fixed32 bulletcount=16;//公告发起次数
+
+}
+
+//返回按时间段查询会议统计
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_MEETSTATISTIC
+//method: ask
+message pbui_Type_MeetQuarterStatisticInfo
+{
+	fixed32 quartertype=1;////参见 Pb_MeetStatisticFlag 定义
+	repeated pbui_Item_MeetOneStatistic item = 2;
+}

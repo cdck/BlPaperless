@@ -1,0 +1,242 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//参会人白板颜色
+message pbui_Item_MeetMemberColorDetailInfo
+{
+	fixed32 memberid=1;//参会人员ID
+	fixed32 rgb=2;//颜色值
+}
+
+//参会人白板颜色
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEMBERCOLOR
+//method: query/mod/
+message pbui_Type_MeetMemberColorDetailInfo
+{
+	repeated pbui_Item_MeetMemberColorDetailInfo item=1;
+}
+
+////////////////////////////////////////////////////////////////////////
+//执行一个白板操作 用于会议交流 指定需要执行操作的标志
+//call
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//method: control 
+message pbui_Type_MeetWhiteBoardControl
+{
+	fixed32  operflag=1;//指定操作标志 参见Pb_MeetPostilOperType
+	bytes    medianame=2;//白板操作描述
+	fixed32  opermemberid=3;//当前该命令的人员ID
+	fixed32  srcmemid=4;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=5;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+	repeated fixed32 userid=6;//参会人员
+}
+
+//收到白板打开操作
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//method: ask 
+message pbui_Type_MeetStartWhiteBoard
+{
+	fixed32  operflag=1;//指定操作标志 参见Pb_MeetPostilOperType
+	bytes    medianame=2;//白板操作描述
+	fixed32  opermemberid=3;//当前该命令的人员ID
+	fixed32  srcmemid=4;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=5;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+}
+
+//被邀请人拒绝加入你发起的白板(callback/call)
+//被邀请人退出了你发起的白板(callback)
+//被邀请人加入了你发起的白板(callback/call)
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//method: reject\exit\enter
+message pbui_Type_MeetWhiteBoardOper
+{
+	fixed32  opermemberid=1;//当前该命令的人员ID
+	fixed32  srcmemid=2;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=3;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+}
+
+//白板删除和清空记录通知
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//method: clear, del
+message pbui_Type_MeetClearWhiteBoard
+{
+	fixed32  operid=1;	    //操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
+	fixed32  opermemberid=2;//当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
+	fixed32  srcmemid=3;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=4;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+
+	fixed64  utcstamp=5;	//时间戳  微秒
+	fixed32  figuretype=6;	//图形类型 为0表示清除所有等于figuretype的白板操作
+}
+
+//白板删除和清空记录操作
+//(call)
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//method: delall, del 
+message pbui_Type_MeetDoClearWhiteBoard
+{
+	fixed32  memberid=1;   //需要删除的人员ID 为0表示清除所有等于人员的白板操作
+	fixed32  operid=2;	    //操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
+
+	fixed32  opermemberid=3;//当前该命令的人员ID
+	fixed32  srcmemid=4;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=5;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+
+	fixed64  utcstamp=6;	//时间戳 微秒
+	fixed32  figuretype=7;	//图形类型 为0表示清除所有类型的白板操作
+}
+
+//白板项普通查询
+//(call)
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//method: query
+message pbui_Type_MeetWhiteBoardQuery
+{
+	fixed32  srcmemid=1;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=2;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+	fixed32  figuretype=3;	//图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
+}
+
+//白板项高级查询
+//(call)
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//method: complexquery
+message pbui_Type_MeetWhiteBoardComplexQuery
+{
+	fixed32  srcmemid=1;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=2;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+	fixed32  figuretype=3;	//图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
+
+	fixed32  opermemberid=4;//人员ID
+}
+
+//添加墨迹
+//ink
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//callback\call
+//method: add
+message pbui_Type_MeetWhiteBoardInkItem
+{
+	fixed32  operid=1;	    //操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
+	fixed32  opermemberid=2;//当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
+	fixed32  srcmemid=3;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=4;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+
+	fixed64  utcstamp=5;	//时间戳  微秒
+	fixed32  figuretype=6;	//图形类型 为0表示清除所有等于figuretype的白板操作
+
+	fixed32  linesize=7;			//线条宽度
+	fixed32  Argb=8;			//线条颜色
+
+	repeated float pinklist=9; //ink point Num, float[2 * ptnum](x,y依次排列)	
+}
+
+//查询Ink白板操作
+//callreturn
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//method: query pagequery
+message pbui_Item_MeetWBInkDetail
+{
+	fixed32  operid=1;	    //操作ID 终端计算产生
+	fixed32  opermemberid=2;//当前该命令的人员ID
+	fixed64  utcstamp=3;	//时间戳
+
+	fixed32  linesize=4;			//线条宽度
+	fixed32  Argb=5;			//线条颜色
+
+	repeated float pinklist=6; //ink point Num, float[2 * ptnum](x,y依次排列)
+}
+
+message pbui_Type_MeetWBInkDetail
+{
+	repeated pbui_Item_MeetWBInkDetail item=1;
+}
+
+//添加矩形、直线、圆形
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//rect line elipse
+//callback\call
+//method: add\query pagequery
+message pbui_Item_MeetWBRectDetail
+{
+	fixed32  operid=1;	    //操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
+	fixed32  opermemberid=2;//当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
+	fixed32  srcmemid=3;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=4;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+
+	fixed64  utcstamp=5;	//时间戳  微秒
+	fixed32  figuretype=6;	//图形类型 为0表示清除所有等于figuretype的白板操作
+
+	fixed32  linesize=7;			//线条宽度
+	fixed32  Argb=8;			//线条颜色
+	repeated float pt=9;		    //(lx,ly,rx,ry 左上角,右下角坐标)
+}
+
+//返回查询的矩形、直线、圆形
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//rect line elipse
+//callback\call
+//method: add\query pagequery
+message pbui_Type_MeetWBRectDetail
+{
+	repeated pbui_Item_MeetWBRectDetail item=1;
+}
+
+//添加文本
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//callreturn
+//method: add query pagequery
+message pbui_Item_MeetWBTextDetail
+{
+	fixed32  operid=1;	    //操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
+	fixed32  opermemberid=2;//当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
+	fixed32  srcmemid=3;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=4;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+
+	fixed64  utcstamp=5;	//时间戳  微秒
+	fixed32  figuretype=6;	//图形类型 为0表示清除所有等于figuretype的白板操作
+
+	fixed32  fontsize=7;			//字体大小
+	fixed32  fontflag=8;			//字体其它属性
+	fixed32  Argb=9;				//字体颜色
+	bytes    fontname=10; //字体名称
+	float    lx=11;				//(lx,ly,左上角坐标)
+	float    ly=12;				//(lx,ly,左上角坐标)
+	bytes    ptext=13;
+}
+
+message pbui_Type_MeetWBTextDetail
+{
+	repeated pbui_Item_MeetWBTextDetail item=1;
+}
+
+//添加图片
+//type:Pb_TYPE_MEET_INTERFACE_WHITEBOARD
+//call return
+//method: add query pagequery
+message pbui_Item_MeetWBPictureDetail
+{
+	fixed32  operid=1;	    //操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
+	fixed32  opermemberid=2;//当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
+	fixed32  srcmemid=3;//发起人的人员ID 白板标识使用
+	fixed64  srcwbid=4;//发起人的白板标识 取微秒级的时间作标识 白板标识使用
+
+	fixed64  utcstamp=5;	//时间戳  微秒
+	fixed32  figuretype=6;	//图形类型 为0表示清除所有等于figuretype的白板操作
+
+	float    lx=7;				//(lx,ly,左上角坐标)
+	float    ly=8;				//(lx,ly,左上角坐标)
+
+	bytes  picdata=9;//png图片数据(二进制转hex编码)
+}
+
+message pbui_Type_MeetWBPictureDetail
+{
+	repeated pbui_Item_MeetWBPictureDetail item=1;
+}

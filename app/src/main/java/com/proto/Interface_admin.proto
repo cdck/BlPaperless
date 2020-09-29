@@ -1,0 +1,66 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+message pbui_Item_AdminDetailInfo
+{
+	fixed32 adminid=1;
+	bytes   adminname=2;
+	bytes   pw=3;//密码 md5 ascill 32字节
+	bytes   comment=4;
+	bytes   phone=5;
+	bytes   email=6;
+}
+
+//管理员
+//call
+//Pb_TYPE_MEET_INTERFACE_ADMIN
+//method: add\del\modify\query
+message pbui_TypeAdminDetailInfo
+{
+	repeated pbui_Item_AdminDetailInfo  item=1;// 
+}
+
+//修改管理员自身的密码
+//call
+//Pb_TYPE_MEET_INTERFACE_ADMIN
+//method: set
+message pbui_Type_AdminModifyPwd
+{
+	bytes			adminname=1;//用户名
+	bytes			adminoldpwd=2;//用户密码(ascill/md5ascill)
+	bytes			adminnewpwd=3;//用户密码(ascill/md5ascill)
+}
+
+//管理员登陆
+//Pb_TYPE_MEET_INTERFACE_ADMIN
+//method: logon
+message pbui_Type_AdminLogon
+{
+	fixed32			isascill=1;//=0md5字符密码 =1明文密码
+	bytes			adminname=2;//用户名 常用人员手机号
+	bytes			adminpwd=3;//用户密码(ascill/md5ascill)
+	fixed32			logonmode=4;//=0管理员登陆 =1常用人员登陆 =2离线本地模式
+}
+
+//登陆返回
+//Pb_TYPE_MEET_INTERFACE_ADMIN
+//method: logon
+message pbui_Type_AdminLogonStatus
+{
+	fixed32			err=1;// 参见 Pb_AdminLogonStatus
+	fixed32			sessionid=2;//会话ID
+	fixed32			adminid=3;//会话ID
+	bytes			adminname=4;
+}
+
+//会议管理员控制的会场
+//type:Pb_TYPE_MEET_INTERFACE_MANAGEROOM
+//method: query/save
+message pbui_Type_MeetManagerRoomDetailInfo
+{
+	fixed32   mgrid=1;//管理员ID
+	repeated  fixed32 roomid=2; //会场ID
+}

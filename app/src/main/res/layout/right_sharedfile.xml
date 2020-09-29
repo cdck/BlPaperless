@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/rightsharefile_type2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/rightsharefile_document"
+                style="@style/Meet_File_Btn"
+                android:text="@string/document" />
+
+            <Button
+                android:id="@+id/rightsharefile_picture"
+                style="@style/Meet_File_Btn"
+                android:text="@string/picture" />
+
+            <Button
+                android:id="@+id/rightsharefile_video"
+                style="@style/Meet_File_Btn"
+                android:text="@string/video" />
+
+            <Button
+                android:id="@+id/rightsharefile_other"
+                style="@style/Meet_File_Btn"
+                android:text="@string/other" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/push_file"
+                style="@style/Meet_File_Btn"
+                android:text="@string/push_file" />
+
+            <Button
+                android:id="@+id/download"
+                style="@style/Meet_File_Btn"
+                android:text="@string/batch_download" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rightsharefile_type2"
+        android:background="@color/divLineGray" />
+
+    <include
+        android:id="@+id/rightsharefile_type3"
+        layout="@layout/incould_file_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/rightsharefile_type2" />
+
+    <ListView
+        android:id="@+id/rightsharefile_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/rightsharefile_type3"
+        android:layout_weight="1"
+        android:divider="@null" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/rightsharefile_lv">
+
+        <Button
+            android:id="@+id/rightsharefile_prepage"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_toLeftOf="@+id/page_tv"
+            style="@style/btn_style_pressend"
+            android:text="@string/pre_pape"
+            android:textColor="@drawable/btn_textcolor_p" />
+
+        <TextView
+            android:id="@+id/page_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="-- / --" />
+
+        <Button
+            android:id="@+id/rightsharefile_nextpage"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/page_tv"
+            style="@style/btn_style_pressend"
+            android:layout_width="wrap_content"
+            android:text="@string/next_pape"
+            android:textColor="@drawable/btn_textcolor_p" />
+
+        <Button
+            android:id="@+id/rightsharefile_import"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="10dp"
+            style="@style/btn_style_pressend"
+            android:text="@string/import_file"
+            android:textColor="@drawable/btn_textcolor_p" />
+
+        <Button
+            android:id="@+id/share_saved_offline_btn"
+            android:layout_alignParentLeft="true"
+            style="@style/btn_style_pressend"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/saved_offline"
+            android:textColor="@drawable/btn_textcolor_p" />
+    </RelativeLayout>
+</LinearLayout>

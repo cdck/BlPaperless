@@ -1,0 +1,137 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+//        debug {
+//            storeFile file('E:/Mykeystore/paperlesskeystore/debug.keystore')
+//            keyAlias 'androiddebugkey'
+//            keyPassword 'android'
+//            storePassword 'android'
+//        }
+        release {
+            keyAlias = 'androiddebugkey'
+            storePassword 'android'
+            keyPassword 'android'
+            storeFile file('keystore/debug.keystore')
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion '29.0.1'
+    defaultConfig {
+        applicationId "com.pa.boling.paperless"
+        minSdkVersion 23
+        targetSdkVersion 28
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+                abiFilters "armeabi-v7a"//,"armeabi", "x86", "mips"
+            }
+        }
+        //开启multidex支持：解决方法数超过65536的问题 步骤一
+        multiDexEnabled true
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        lintOptions {
+            disable 'GoogleAppIndexingWarning'
+        }
+//        signingConfig signingConfigs.debug
+    }
+    buildTypes {
+        release {
+            //是否对代码进行混淆
+            minifyEnabled false //启用Proguard
+//            shrinkResources true //是否清理无用资源,依赖于minifyEnabled,minifyEnabled 设置为true时shrinkResources 的设置才会生效
+            signingConfig signingConfigs.release
+            //指定混淆时使用的规则文件
+            //proguard-android.txt是在Android SDK目录下，里面是所有项目通用的混淆规则
+            //proguard-rules.pro是在当前项目的根目录下，里面可以编写当前项目特有的混淆规则
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+//        debug {
+//            signingConfig signingConfigs.debug
+//        }
+    }
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']     //设置目标的so存放路径
+            jni.srcDirs = [] //禁用自动调用ndk-build
+        }
+    }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+    //指定打包后应用名称
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "paperless-android-v${variant.versionName}.apk"
+        }
+    }
+    productFlavors {
+    }
+    //解决API 28只创建arm64目录，导致找不到库的问题
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi-v7a'
+            universalApk false
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    //声明本地依赖，表示将libs目录下的所有jar文件都添加到项目的构建目录中
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0-alpha02', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation files('libs/zxing-core-3.3.0.jar')
+    implementation files('libs/protobuf-java-3.3.0.jar')
+    implementation files('libs/ini4j-0.5.2.jar')
+    implementation files('libs/tbs_sdk_thirdapp_v4.3.0.3_43903_sharewithdownloadwithfile_withoutGame_obfs_20200402_121309.jar')
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'com.google.android.material:material:1.3.0-alpha02'
+    implementation 'androidx.transition:transition:1.4.0-beta01'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'q.rorbin:badgeview:1.1.3'
+    implementation 'com.android.support:multidex:1.0.3'
+//    implementation 'com.jakewharton:butterknife:8.8.1'
+    //声明测试试用例库
+    testImplementation 'junit:junit:4.12'
+
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation 'com.acker:simplezxing:1.5'
+    implementation 'com.github.IntruderShanky:scatter-piechart:1.0.0'
+    implementation 'com.hjq:xxpermissions:6.5'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45-androidx'
+
+//    implementation 'com.github.SuperKotlin:PictureViewer:2.0.1'
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+//    当前不需要网络加载图片
+//    implementation 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
+
+    //查看大图:https://github.com/SherlockGougou/BigImageViewPager
+    implementation 'com.github.SherlockGougou:BigImageViewPager:v4_6.0.0'
+
+    //屏幕适配库：https://github.com/JessYanCoding/AndroidAutoSize
+    implementation 'me.jessyan:autosize:1.2.1'
+}

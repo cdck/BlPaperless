@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/pelette_left_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <com.pa.paperless.ui.DrawBoardSeekBar
+                android:id="@+id/seb"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:max="100"
+                android:progress="10"
+                android:progressDrawable="@drawable/shape_seekbar_bg"
+                android:thumb="@drawable/palette_seb_thumb"
+                android:thumbOffset="0dp" />
+
+            <TextView
+                android:id="@+id/width_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="10"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/color_black"
+                style="@style/ColorIv"
+                android:background="@drawable/palette_color_black" />
+
+            <ImageView
+                android:id="@+id/color_red"
+                style="@style/ColorIv"
+                android:background="@drawable/palette_color_red" />
+
+            <ImageView
+                android:id="@+id/color_yellow"
+                style="@style/ColorIv"
+                android:background="@drawable/palette_color_yellow" />
+
+            <ImageView
+                android:id="@+id/color_gray"
+                style="@style/ColorIv"
+                android:background="@drawable/palette_color_gray" />
+
+            <ImageView
+                android:id="@+id/color_blue"
+                style="@style/ColorIv"
+                android:background="@drawable/palette_color_blue" />
+
+            <ImageView
+                android:id="@+id/color_violet"
+                style="@style/ColorIv"
+                android:background="@drawable/palette_color_violet" />
+
+            <ImageView
+                android:id="@+id/color_green"
+                style="@style/ColorIv"
+                android:background="@drawable/palette_color_green" />
+
+            <ImageView
+                android:id="@+id/color_orange"
+                style="@style/ColorIv"
+                android:background="@drawable/palette_color_orange" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/board_fl"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="15" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="@drawable/palette_bg"
+        android:orientation="vertical"
+        android:paddingLeft="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pelette_exit"
+                style="@style/PaletteToolTv_P"
+                android:drawableLeft="@drawable/palette_exit_n"
+                android:text="@string/pelette_exit" />
+
+            <TextView
+                android:id="@+id/clean"
+                style="@style/PaletteToolTv_P"
+                android:drawableLeft="@drawable/palette_clean_n"
+                android:text="@string/button_clean" />
+
+            <TextView
+                android:id="@+id/pelette_save"
+                style="@style/PaletteToolTv_P"
+                android:drawableLeft="@drawable/palette_save_n"
+                android:text="@string/button_save" />
+
+            <TextView
+                android:id="@+id/pic"
+                style="@style/PaletteToolTv_P"
+                android:drawableLeft="@drawable/palette_pic_n"
+                android:text="@string/picture" />
+
+            <TextView
+                android:id="@+id/back"
+                style="@style/PaletteToolTv_P"
+                android:drawableLeft="@drawable/palette_back_n"
+                android:text="@string/button_back" />
+
+            <TextView
+                android:id="@+id/palette"
+                style="@style/PaletteToolTv_P"
+                android:drawableLeft="@drawable/palette_color_n"
+                android:text="@string/button_color" />
+
+            <TextView
+                android:id="@+id/type_face"
+                style="@style/PaletteToolTv_P"
+                android:drawableLeft="@drawable/palette_typeface_n"
+                android:text="@string/button_typeface" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/round"
+                style="@style/PaletteToolTv_S"
+                android:drawableLeft="@drawable/palette_round_n"
+                android:text="@string/button_round" />
+
+            <TextView
+                android:id="@+id/rect"
+                style="@style/PaletteToolTv_S"
+                android:drawableLeft="@drawable/palette_rect_n"
+                android:text="@string/button_rect" />
+
+            <TextView
+                android:id="@+id/linee"
+                style="@style/PaletteToolTv_S"
+                android:drawableLeft="@drawable/palette_line_n"
+                android:text="@string/button_line" />
+
+            <TextView
+                android:id="@+id/sline"
+                style="@style/PaletteToolTv_S"
+                android:drawableLeft="@drawable/palette_sline_n"
+                android:text="@string/button_sline" />
+
+            <TextView
+                android:id="@+id/paint"
+                style="@style/PaletteToolTv_S"
+                android:drawableLeft="@drawable/palette_paint_n"
+                android:text="@string/button_paint" />
+
+            <TextView
+                android:id="@+id/text"
+                style="@style/PaletteToolTv_S"
+                android:drawableLeft="@drawable/palette_text_n"
+                android:text="@string/button_text" />
+
+            <TextView
+                android:id="@+id/eraser"
+                style="@style/PaletteToolTv_S"
+                android:drawableLeft="@drawable/palette_eraser_n"
+                android:text="@string/button_erase" />
+
+            <TextView
+                android:id="@+id/drag_tv"
+                style="@style/PaletteToolTv_S"
+                android:drawableLeft="@drawable/pelette_drag"
+                android:text="@string/button_drag" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--android:background="@drawable/shape_btn_white"-->
+            <Button
+                android:id="@+id/share_start"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                style="@style/btn_style_pressend"
+                android:text="@string/pelette_start_postil"
+                android:textSize="12sp" />
+<!--            android:textColor="@color/text_color_n"-->
+
+            <Button
+                android:id="@+id/share_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                style="@style/btn_style_pressend"
+                android:gravity="center"
+                android:text="@string/pelette_stop_postil"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

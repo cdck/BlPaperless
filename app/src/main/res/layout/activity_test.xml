@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.pa.paperless.activity.offline.OffLineFileActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/off_dir_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:dividerHeight="0dp" />
+
+        <Button
+            android:id="@+id/btn_delete_dir"
+            style="@style/btn_style_pressend"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_pressed"
+            android:text="@string/delete_dir"
+            android:textColor="@drawable/btn_textcolor_p" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/divLineGray" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_document_off"
+                style="@style/Meet_File_Btn"
+                android:text="@string/document" />
+
+            <Button
+                android:id="@+id/btn_picture_off"
+                style="@style/Meet_File_Btn"
+                android:text="@string/picture" />
+
+            <Button
+                android:id="@+id/btn_video_off"
+                style="@style/Meet_File_Btn"
+                android:text="@string/video" />
+
+            <Button
+                android:id="@+id/btn_other_off"
+                style="@style/Meet_File_Btn"
+                android:text="@string/other" />
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/incould_file_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ListView
+            android:id="@+id/off_file_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipChildren="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btn_pre_page"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_pressed"
+                android:text="@string/pre_pape"
+                android:textColor="@drawable/btn_textcolor_p" />
+
+            <TextView
+                android:id="@+id/tv_page_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text=" -- / -- " />
+
+            <Button
+                android:id="@+id/btn_next_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_pressed"
+                android:text="@string/next_pape"
+                android:textColor="@drawable/btn_textcolor_p" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/btn_pressed"
+                android:text="@string/delete_file"
+                android:textColor="@drawable/btn_textcolor_p" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

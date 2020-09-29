@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--android:background="@color/tableColor"-->
+    <LinearLayout
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/number_cb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:button="@drawable/checkbox_select"
+            android:clickable="false"
+            android:gravity="start|center_vertical"
+            android:paddingStart="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="18" />
+
+        <TextView
+            android:id="@+id/mamber_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="2"
+            android:background="#ffffff"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="超长参会人名字" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="2"
+            android:background="#ffffff"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="预览文字" />
+
+        <TextView
+            android:id="@+id/dev_type_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="2"
+            android:background="#ffffff"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="预览文字" />
+
+        <TextView
+            android:id="@+id/dev_state_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="预览文字" />
+
+        <TextView
+            android:id="@+id/out_document_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="2"
+            android:background="#ffffff"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="预览文字" />
+
+        <TextView
+            android:id="@+id/interface_state_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="2"
+            android:background="#ffffff"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="预览文字" />
+    </LinearLayout>
+</LinearLayout>

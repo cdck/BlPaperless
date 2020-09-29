@@ -1,0 +1,50 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//停止资源功能
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_STOPPLAY
+//method: close
+message pbui_Type_MeetStopResWork
+{
+	repeated fixed32 res=1;//有效资源个数,为空表示全部 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+}
+
+//关闭资源功能
+//call
+//type:Pb_TYPE_MEET_INTERFACE_STOPPLAY
+//method: close
+message pbui_Type_MeetDoStopResWork
+{
+	fixed32   playflag=1;//播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
+	fixed32   triggeruserval=2;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+	repeated fixed32 res=3;//有效资源个数,为空表示全部 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+	repeated fixed32 deviceid=4;//通知的目标设备,为空表示全部
+}
+
+//停止触发器
+//call
+//type:Pb_TYPE_MEET_INTERFACE_STOPPLAY
+//method: stop
+message pbui_Type_MeetDoStopTrrigerWork
+{
+	fixed32   playflag=1;//播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
+	fixed32   triggeruserval=2;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+
+	fixed32 triggerid=3;//触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
+	repeated fixed32 deviceid=4;//通知的目标设备,为空表示全部
+}
+
+//媒体、流停止播放通知
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_STOPPLAY
+//method: notify
+message pbui_Type_MeetStopPlay
+{
+	fixed32  triggerid=1;//停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
+	fixed32  createdeviceid=2;//创建该触发器的设备ID
+	fixed32  res=3;//停止的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+}

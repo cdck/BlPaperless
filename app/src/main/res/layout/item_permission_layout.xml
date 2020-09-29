@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/tableColor"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/item_permission_cb"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="0.5dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:button="@drawable/checkbox_select"
+        android:clickable="false"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        tools:text="@string/number"
+        tools:textColor="@color/colorGray"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/item_permission_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="0.5dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        tools:text="@string/name"
+        tools:textColor="@color/colorGray"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/item_permission_screen"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="0.5dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        tools:text="@string/same_screen_permission"
+        tools:textColor="@color/colorGray"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/item_permission_projection"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="0.5dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        tools:text="@string/projection_permission"
+        tools:textColor="@color/colorGray"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/item_permission_upload"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="0.5dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        tools:text="@string/upload_permission"
+        tools:textColor="@color/colorGray"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/item_permission_download"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="0.5dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        tools:text="@string/download_permission"
+        tools:textColor="@color/colorGray"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/item_permission_vote"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="0.5dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        tools:text="@string/vote_permission"
+        tools:textColor="@color/colorGray"
+        tools:textSize="18sp" />
+</LinearLayout>

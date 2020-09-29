@@ -1,0 +1,80 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+
+// 短信服务
+//#define  MAX_PHONE_NUMBER     100    // 一次可发送的最大数量
+//#define  PHONE_NUMBER_LEN     12     // 手机号码长度
+//#define  MAX_MSG_LEN          300    // 短信最大字符数
+
+//发送知信
+// call
+// type: Pb_TYPE_MEET_INTERFACE_SMSSERVICE
+// method: SEND, QUERY, TEXTMSG, GETSIZE
+message pbui_Type_SMSInfo
+{
+	bytes  serverIP=1;        // 服务器IP
+	bytes  serverPort=2;      // 服务器端口号
+	bytes  ctrlType=3;        // 短信服务类型（发送，查询等 服务器响应的网页）
+
+	bytes  uname=4;           // 短信服务账户 名称
+	bytes  upwd=5;            // 短信服务账户 密码
+	repeated bytes numbers=6;  // 电话号码  （发送短信必填，其他请求可不填）
+	bytes  messageInfo=7;      // 短信内容  （发送短信必填，其他请求可不填）
+}
+
+/* 短信发送状态码 */
+//#define SMS_SEND_STATUS_SUCCESS    1  // 发送成功
+//#define SMS_SEND_STATUS_FAILED     2  // 发送失败
+//#define SMS_SEND_STATUS_BANSEND    3  // 禁发号码
+//#define SMS_SEND_STATUS_MISTAKE    4  // 通达错误
+
+// item query SMS send status info
+message pbui_Item_SMSSendStatus
+{
+	fixed32  id=1;        // 提交请求时返回的批次标识ID
+	fixed32  status=2;    // 返回的状态码（1：成功，2：失败，3：禁发号码，4：通达错误）
+	bytes 	 number=3;    // 手机号码
+	bytes 	 donedate=4;  // 回复时间
+}
+
+// recv
+// type: Pb_TYPE_MEET_INTERFACE_SMSSERVICE
+// method: QUERY （查询发送状态，用这个解析数据）
+message pbui_Type_SMSSendStatus
+{
+	// 状态码：0参数错误，1提交成功，2用户名或密码不正确，3访问服务异常，4访问资源错误
+	fixed32  statuscode=1;  // 状态码
+	fixed32  total=2;       // 接收号码条数数量
+	repeated pbui_Item_SMSSendStatus listSendStatus=3;  // 每个号码的发送状态
+}
+
+message pbui_Item_SMSRecvMsg
+{
+	bytes  number=1;     // 手机号码
+	bytes  msg=2;        // 终端回复内容
+	bytes  donedate=3;  // 回复时间
+}
+
+// recv
+// type: Pb_TYPE_MEET_INTERFACE_SMSSERVICE
+// method: TEXTMSG（查询回复，用这个解析数据）
+message pbui_Type_SMSRecvMsg
+{
+	fixed32  statuscode=1;  // 状态码
+	fixed32  total=2;       // 接收号码条数数量
+	repeated pbui_Item_SMSRecvMsg  listRecvMsg=3;  // 终端回复的信息
+}
+
+// recv
+// type: Pb_TYPE_MEET_INTERFACE_SMSSERVICE
+// method: GETSIZE（查询余量，用这个解析数据）
+message pbui_Type_SMSLastCount
+{
+	fixed32  statuscode=1;  // 状态码
+	fixed32  account=2;     // 剩余短信条数
+	bytes    tariff=3;  // 资费（元/条）
+}

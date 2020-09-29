@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:padding="5dp"
+        android:background="@drawable/shape_dialog"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/choose_vote_member"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="@string/instructions"
+            android:textColor="@color/btn_fill_color" />
+
+        <LinearLayout
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/divLineGray"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/all_number_cb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="0.5dp"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:clickable="false"
+                android:gravity="left|center_vertical"
+                android:text="@string/number"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginTop="0.5dp"
+                android:layout_weight="2"
+                android:background="#ffffff"
+                android:gravity="left|center_vertical"
+                android:text="@string/member"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginTop="0.5dp"
+                android:layout_weight="3"
+                android:background="#ffffff"
+                android:gravity="left|center_vertical"
+                android:text="@string/seats"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginTop="0.5dp"
+                android:layout_weight="2"
+                android:background="#ffffff"
+                android:gravity="left|center_vertical"
+                android:text="@string/dev_state"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginTop="0.5dp"
+                android:layout_weight="2"
+                android:background="#ffffff"
+                android:gravity="left|center_vertical"
+                android:text="@string/permission"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/choose_rv"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ensure"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/ensure" />
+
+            <Button
+                android:id="@+id/cancel"
+                style="@style/btn_style_pressend"
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/cancel" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

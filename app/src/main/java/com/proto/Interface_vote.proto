@@ -1,0 +1,141 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+
+message pbui_Item_MeetOnVotingDetailInfo
+{
+	fixed32		voteid=1;
+	bytes		content=2; //投票内容 
+	fixed32			maintype=3; //投票 选举 调查问卷 参见Pb_MeetVoteType
+	fixed32			mode=4; //匿名投票 记名投票 参见Pb_MeetVoteMode
+	fixed32			type=5; //多选 单选 参见Pb_MeetVote_SelType
+	fixed32		timeouts=6;  //超时值 单位 秒
+	fixed32		selectcount=7; //有效选项
+	repeated bytes		text=8;  //选项描述文字
+}
+
+//查询会议发起投票信息
+//type:Pb_TYPE_MEET_INTERFACE_MEETONVOTING
+//method: query/add/mod/
+message pbui_Type_MeetOnVotingDetailInfo
+{
+	repeated pbui_Item_MeetOnVotingDetailInfo item=1;//投票信息
+}
+
+//设置投投票计时值
+//type:Pb_TYPE_MEET_INTERFACE_MEETONVOTING
+//method: set
+message pbui_Type_MeetSetVoteTimeouts
+{
+	fixed32	  voteid=1; //投票ID
+	fixed32   timeouts=2;//计时 单位 秒
+}
+
+//会议停止、删除投票信息
+//type:Pb_TYPE_MEET_INTERFACE_MEETONVOTING
+//method: stop/del
+message pbui_Type_MeetStopVoteInfo
+{
+	repeated fixed32		voteid=1;
+}
+
+message pbui_ItemVoteStart
+{
+	fixed32 voteid=1;//发起的投票ID
+	fixed32 voteflag=2; //发起投票标志 Pb_VoteStartFlag 定义
+	fixed32 timeouts=3; //计时结束 单位：秒
+	repeated fixed32 memberid=4;//参与投票的参会人员ID null表示所示参会人员
+}
+
+//投票标志 selitem高8位
+// Pb_VOTE_SELFLAG_CHECKIN  0x80000000 //该位为1表示已经签到
+
+
+//发起投票
+//type:TYPE_MEET_INTERFACE_MEETONVOTING
+//method: start
+message pbui_Type_MeetStartVoteInfo
+{
+	repeated pbui_ItemVoteStart item=1;//投票信息
+}
+
+//提交会议投票信息
+message pbui_Item_MeetSubmitVote
+{
+	fixed32		voteid=1;
+	fixed32		selcnt=2;//有效选项数
+	fixed32		selitem=3;//选择的项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择 |高8位参见 Pb_VOTE_SELFLAG_CHECKIN
+}
+
+//提交会议投票信息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETONVOTING
+//method: submit
+message pbui_Type_MeetSubmitVote
+{
+	repeated pbui_Item_MeetSubmitVote item=1;
+}
+
+//会议投票信息
+message pbui_SubItem_VoteItemInfo
+{
+	bytes    text=1;//描述文字
+	fixed32  selcnt=2;	 //投票数
+}
+
+message pbui_Item_MeetVoteDetailInfo
+{
+	fixed32		voteid=1;
+	bytes		content=2; //投票内容 
+	fixed32		maintype=3;//类别 投票 选举 调查问卷 参见Pb_MeetVoteType
+	fixed32		mode=4; //匿名投票 记名投票 参见Pb_MeetVoteMode
+	fixed32		type=5; //多选 单选 参见Pb_MeetVote_SelType
+	fixed32		votestate=6; //投票状态 参见Pb_MeetVoteStatus
+	fixed32		timeouts=7;  //超时值
+	fixed32     selcnt=8; //投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择
+	fixed32		selectcount=9; //有效选项
+	repeated pbui_SubItem_VoteItemInfo		item=10;  //选项描述文字
+}
+
+//type:Pb_TYPE_MEET_INTERFACE_MEETVOTEINFO
+//method: query
+message pbui_Type_MeetVoteDetailInfo
+{
+	repeated pbui_Item_MeetVoteDetailInfo item=1;
+}
+
+//type:Pb_TYPE_MEET_INTERFACE_MEETVOTEINFO
+//method: complexquery
+message pbui_Type_MeetVoteComplexQuery
+{
+	fixed32	 maintype=1; //指定大类 参见本文件中的maintype 定义
+}
+
+//会议投票人
+message pbui_Item_MeetVoteSignInDetailInfo
+{
+	fixed32		 id=1;//投票人员
+	fixed32       selcnt=2; //投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择|高8位参见 Pb_VOTE_SELFLAG_CHECKIN
+}
+
+//type:Pb_TYPE_MEET_INTERFACE_MEETVOTESIGNED
+//method: query
+message pbui_Type_MeetVoteSignInDetailInfo
+{
+	fixed32   voteid=1;
+	repeated pbui_Item_MeetVoteSignInDetailInfo item=2;
+}
+
+//查询会议投票人属性信息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETVOTESIGNED
+//method: queryproperty
+message pbui_Type_MeetVoteQueryProperty
+{
+	fixed32 propertyid=1;//数据ID
+	fixed32 voteid=2;//传入参数
+	fixed32 memberid=3;//传入参数 为0表示本身
+}

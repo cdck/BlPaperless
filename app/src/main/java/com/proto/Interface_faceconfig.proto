@@ -1,0 +1,49 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//文本项
+message pbui_Item_FaceTextItemInfo
+{
+	fixed32 faceid=1;  //界面项ID 参见Pb_MeetFaceID
+	fixed32 flag=2;	  //属性值 参见Pb_MeetFaceFlag
+
+	fixed32  fontsize=3;	//字体大小
+	fixed32  color=4;		//字体rgba颜色
+	fixed32  align=5;		//对齐 参见 Pb_FontAlignFlag
+	fixed32  fontflag=6;	//字体属性 Pb_MeetFaceFontFlag
+	bytes	 fontname=7;//字体名称
+
+	float lx=8;//坐标 左上角x  (x * 100 / width)
+	float ly=9;//坐标 左上角y  (y * 100 / height)
+	float bx=10;//坐标 右下角x
+	float by=11;//坐标 右下角y
+}
+
+//图片项
+message pbui_Item_FacePictureItemInfo
+{
+	fixed32 faceid=1;  //界面项ID 参见Pb_MeetFaceID
+	fixed32 flag=2;    //属性值 参见Pb_MeetFaceFlag
+	fixed32 mediaid=3; //项值
+}
+
+//纯文本项
+message pbui_Item_FaceOnlyTextItemInfo
+{
+	fixed32 faceid=1;  //界面项ID 参见Pb_MeetFaceID
+	fixed32 flag=2;    //属性值 参见Pb_MeetFaceFlag
+	bytes	text=3;//文本
+}
+
+//callreturn
+//type:Pb_TYPE_MEET_INTERFACE_MEETFACECONFIG
+//method: siglequerybyid query modify
+message pbui_Type_FaceConfigInfo
+{
+    repeated pbui_Item_FaceTextItemInfo     text = 1;
+    repeated pbui_Item_FacePictureItemInfo  picture = 2;
+	repeated pbui_Item_FaceOnlyTextItemInfo onlytext = 3;
+}

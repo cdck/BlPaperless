@@ -1,0 +1,214 @@
+<resources>
+
+    <style name="Transparent">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <!--设置是否要去掉标题-->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- 主页自定义属性 -->
+    <style name="TextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <!-- 进入会议页面左边列表字体样式 -->
+    <style name="TextStyle_Left">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+    <!-- popupWindow 打开关闭的动画 -->
+    <style name="AnimHorizontal" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <item name="android:windowExitAnimation">@anim/pophide_anim</item>
+    </style>
+    <!--会议笔记输入框字体大小-->
+    <style name="EdtTextTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <!--表格样式-->
+    <style name="tableViewStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginEnd">0.5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--PopupWindow进入退出动画（平移）-->
+    <style name="Anim_PopupWindow">
+        <item name="android:windowEnterAnimation">@anim/pop_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+    <!--PopupWindow进入退出动画（透明度）-->
+    <style name="Anim_PopupWindowD">
+        <item name="android:windowEnterAnimation">@anim/pop_new_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_new_out</item>
+    </style>
+
+    <!--会议界面 左边底部的Fragment-->
+    <style name="MeetBottomImageView1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!--视屏直播页面四个按钮-->
+    <style name="VideoFragmentBtn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:background">@drawable/btn_pressed</item>
+    </style>
+
+    <!--服务窗口按钮-->
+    <style name="service_tv_style">
+        <item name="android:layout_width">75dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/tv_color</item>
+        <item name="android:gravity">bottom|center</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+
+    <!--悬浮窗主页-->
+    <style name="ShortCutMenu_IV_Style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">bottom|center</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@drawable/select_fab_tv_color</item>
+    </style>
+
+    <!--会议资料导航按钮-->
+    <style name="Meet_File_Btn">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:background">@drawable/btn_pressed</item>
+    </style>
+
+    <!--批注文件 导航按钮-->
+    <style name="navigation_btn_style">
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/btn_pressed</item>
+    </style>
+
+    <!--画板-->
+    <style name="ColorIv">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <!--<item name="android:background">@drawable/round</item>-->
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@drawable/palette_coloriv_s</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="PaletteToolTv_S">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/pelette_tool_s</item>
+    </style>
+
+    <style name="PaletteToolTv_P">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/pelette_tool_p</item>
+    </style>
+    <!--问卷调查 选项-->
+    <style name="Topic_Tv_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/topic_s</item>
+        <item name="android:textColor">@drawable/btn_textcolor_s</item>
+    </style>
+
+    <!--按钮点击状态-->
+    <style name="btn_style_pressend">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/btn_pressed</item>
+    </style>
+
+    <style name="btn_style_selected">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/btn_selected</item>
+        <item name="android:textColor">@drawable/btn_textcolor_s</item>
+    </style>
+
+    <style name="fab_ensure_style">
+<!--        <item name="background">@drawable/shape_fab_ensure</item>-->
+<!--        <item name="textColor">@color/white</item>-->
+        <item name="android:background">@drawable/btn_pressed</item>
+    </style>
+
+    <style name="fab_cancel_style">
+<!--        <item name="background">@drawable/shape_fab_cancel</item>-->
+<!--        <item name="textColor">@color/white</item>-->
+        <item name="android:background">@drawable/btn_pressed</item>
+    </style>
+
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

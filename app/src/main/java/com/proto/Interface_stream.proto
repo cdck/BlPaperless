@@ -1,0 +1,143 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//请求播放流通道通知
+//type:Pb_TYPE_MEET_INTERFACE_REQUESTSTREAMPUSH
+//method: notify
+//当为询问模式时，回调函数返回1表示同意播放
+message pbui_Type_ReqStreamPush
+{
+	fixed32  triggeruserval=1;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+	fixed32  deviceid=2;       //发起请求的设备ID 
+	fixed32  memberid=3;       //发起请求的人员ID
+	fixed32  substreamindex=4;       //本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
+}
+
+//请求播放流通道
+//type:Pb_TYPE_MEET_INTERFACE_STREAMPLAY
+//method: requestpush
+message pbui_Type_DoReqStreamPush
+{
+	fixed32  triggeruserval=1;		  //参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+	fixed32  handledeviceid=2;        //处理该请求的设备ID 采集端的设备ID
+	fixed32  substreamindex=3;        //本设备子通道号  这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
+	repeated fixed32 deviceid=4;	  //通知的目标设备,为空表示全部
+}
+
+//推送流通知
+//type:Pb_TYPE_MEET_INTERFACE_STREAMPUSH
+//method: notify
+//当为询问模式时，回调函数返回1表示同意播放
+message pbui_Type_StreamPush
+{
+	fixed32  triggeruserval=1;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+	fixed32  deviceid=2;       //发起请求的设备ID 采集端的设备ID
+	fixed32  substreamindex=3; //本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
+}
+
+//推送流
+//type:Pb_TYPE_MEET_INTERFACE_STREAMPLAY
+//method: push
+message pbui_Type_DoStreamPush
+{
+	fixed32  triggeruserval=1;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+	fixed32  srcdeviceid=2;       //发起请求的设备ID 采集端的设备ID
+	fixed32  substreamindex=3; //本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
+	repeated fixed32 deviceid=4;	  //通知的目标设备,为空表示全部
+}
+
+//流播放通知
+//type:Pb_TYPE_MEET_INTERFACE_STREAMPLAY
+//callback
+//method: notify
+message pbui_Type_MeetStreamPlay
+{
+	fixed32  triggerid=1;//触发器ID
+	fixed32  createdeviceid=2;//创建执行该触发器的设备ID
+	fixed32  deviceid=3;//流源设备ID 采集端的设备ID
+	fixed32  subid=4;//流源设备子通道ID 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
+	fixed32  res=5;//播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
+	fixed32  triggeruserval=6;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+}
+
+//流播放
+//type:Pb_TYPE_MEET_INTERFACE_STREAMPLAY
+//call
+//method: start
+message pbui_Type_MeetDoStreamPlay
+{
+	fixed32  srcdeviceid=1;//设备ID 采集端的设备ID
+	fixed32  subid=2;//设备子通道 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
+	fixed32  playflag=3;//播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
+	fixed32  triggeruserval=4;//参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
+
+	repeated fixed32 res=5;	  //播放所用的资源,为空表示全部
+	repeated fixed32 deviceid=6;	  //通知的目标设备,为空表示全部
+}
+
+//查询流播放
+message pbui_Item_MeetStreamPlayDetailInfo
+{
+	fixed32  trrigerid=1;//触发器ID
+	fixed32  deviceid=2;//设备ID
+	fixed32  subid=3;//设备子通道
+}
+
+//type:Pb_TYPE_MEET_INTERFACE_STREAMPLAY
+//method: query/
+message pbui_Type_MeetStreamPlayDetailInfo
+{
+	repeated pbui_Item_MeetStreamPlayDetailInfo item = 1;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//屏幕鼠标控制
+//callback
+//method: notify
+message pbui_Type_MeetScreenMouseControl
+{
+	fixed32  flag=1;			//控制的标志  参考streamcontrol.h 定义
+	fixed32  deviceid=2;       //发起请求的设备ID
+	fixed32  memberid=3;       //发起请求的人员ID
+	float   x=4; //x% width的百分
+	float   y=5; //y% height的百分
+}
+
+//屏幕鼠标控制
+//call
+//method: control
+message pbui_Type_MeetDoScreenMouseControl
+{
+	fixed32  flag=1;			//控制的标志  参考streamcontrol.h 定义
+	fixed32  deviceid=2;       //设备ID
+	float   x=3; //x / width的百分比
+	float   y=4; //y / height的百分比
+}
+
+//屏幕键盘控制
+//callback
+//method: notify
+message pbui_Type_MeetScreenKeyBoardControl
+{
+	fixed32  flag=1;			//控制的标志 参考streamcontrol.h 定义
+	fixed32  deviceid=2;       //发起请求的设备ID
+	fixed32  memberid=3;       //发起请求的人员ID
+
+	fixed32  otherflag=4; //参考streamcontrol.h 定义
+	fixed32  key=5; //对应的key值 参考streamcontrol.h 定义
+}
+
+//屏幕键盘控制
+//call
+//method: control
+message pbui_Type_MeetDoScreenKeyBoardControl
+{
+	fixed32  flag=1;			//控制的标志 参考streamcontrol.h 定义
+	fixed32  deviceid=2;       //设备ID
+
+	fixed32  otherflag=3; //参考streamcontrol.h 定义
+	fixed32  key=4; //对应的key值 参考streamcontrol.h 定义
+}

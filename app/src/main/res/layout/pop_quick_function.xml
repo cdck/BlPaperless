@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quick_menu_smbg"
+        android:orientation="vertical">
+        <!--android:background="#1A2020"-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:background="@drawable/shape_fab_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/text_shortcuts"
+                android:textColor="@color/tv_color"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icon_close_select" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/start_screen"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_screen_select"
+                        android:text="@string/launch_screen" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/stop_screen"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_stopscreen_select"
+                        android:text="@string/stop_screen" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/join_screen"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_joinscreen_select"
+                        android:text="@string/join_screen" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/start_pro"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_project_select"
+                        android:text="@string/start_pro" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/stop_pro"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_stoppro_select"
+                        android:text="@string/Stop_the_projection" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/note"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_note_select"
+                        android:text="@string/meeting_note" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/vote_result"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_note_select"
+                        android:text="@string/vote_result" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/postil"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_postil_select"
+                        android:text="@string/postil" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/call_service"
+                        style="@style/ShortCutMenu_IV_Style"
+                        android:background="@drawable/short_callservice_select"
+                        android:text="@string/call_service" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

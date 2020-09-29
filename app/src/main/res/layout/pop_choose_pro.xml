@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/dig_small_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pro_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        tools:text="@string/chooseProject"
+        android:textColor="@color/btn_fill_color"
+        android:textSize="24sp" />
+
+    <CheckBox
+        android:id="@+id/cb_pro_mandatory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mandatory" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divLineGray" />
+
+    <CheckBox
+        android:id="@+id/allchoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginEnd="10dp"
+        android:button="@drawable/checkbox_select"
+        android:text="@string/allchoose"
+        android:textColor="@color/black" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pro_rl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <Button
+            android:id="@+id/ensure"
+            style="@style/fab_ensure_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ensure" />
+
+        <Button
+            android:id="@+id/cancel"
+            style="@style/fab_cancel_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel" />
+    </LinearLayout>
+</LinearLayout>

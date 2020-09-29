@@ -1,0 +1,94 @@
+
+#ifndef _WALLET_BASE_MACROPUBLIC_H
+#define _WALLET_BASE_MACROPUBLIC_H
+
+//encodemode
+#define DEVICE_INVITECHAT_SYSDEFAULT        0xff //使用系统默认
+#define DEVICE_INVITECHAT_ENCODEMODE_HIGH   0 //高带宽
+#define DEVICE_INVITECHAT_ENCODEMODE_MIDDLE 1 //高性能
+#define DEVICE_INVITECHAT_ENCODEMODE_LOW    2 //低带宽
+
+#define MAX_RES_NUM 12 //本地最大资源数
+
+#ifndef MEDIA_FILETYPE_AUDIO
+//大类
+#define MEDIA_FILETYPE_AUDIO    0x00000000 //音频
+#define MEDIA_FILETYPE_VIDEO	0x20000000 //视频
+#define MEDIA_FILETYPE_RECORD	0x40000000 //录制
+#define MEDIA_FILETYPE_PICTURE	0x60000000 //图片
+#define MEDIA_FILETYPE_UPDATE	0xe0000000 //升级
+//#define MEDIA_FILETYPE_TEMP		0x80000000 //临时文件
+#define MEDIA_FILETYPE_OTHER	0xa0000000 //其它文件
+#define MAINTYPEBITMASK			0xe0000000
+//小类
+#define MEDIA_FILETYPE_PCM		0x01000000	//PCM文件
+#define MEDIA_FILETYPE_MP3		0x02000000	//MP3文件
+#define MEDIA_FILETYPE_ADPCM	0x03000000	//WAV文件
+#define MEDIA_FILETYPE_FLAC		0x04000000	//FLAC文件
+#define MEDIA_FILETYPE_MP4		0x07000000  //MP4文件
+#define MEDIA_FILETYPE_MKV		0x08000000  //MKV文件
+#define MEDIA_FILETYPE_RMVB		0x09000000  //RMVB文件
+#define MEDIA_FILETYPE_RM		0x0a000000  //RM文件
+#define MEDIA_FILETYPE_AVI		0x0b000000  //AVI文件
+#define MEDIA_FILETYPE_BMP		0x0c000000  //bmp文件
+#define MEDIA_FILETYPE_JPEG		0x0d000000  //jpeg文件
+#define MEDIA_FILETYPE_PNG		0x0e000000  //png文件
+#define MEDIA_FILETYPE_OTHERSUB	0x10000000  //其它文件
+#define SUBTYPEBITMASK			0x1f000000
+
+#define MEDIA_FILETYPE_NET		0x00000000 //网络文件
+#define MEDIA_FILETYPE_TEMP		0x00800000 //临时文件
+#define MEDIA_FILETYPE_LOCAL	0x00c00000 //本地文件
+#define SAVETYPEBITMASK			0x00c00000
+
+#define MEDIATYPEBITCOUNT       12		   //媒体类型占用多少位
+#define MEDIATOTALTYPE			0xffc00000 //媒体类型
+#endif
+
+#define DEVICECHAT_AUDIO_B_RESINDEX 9 //对讲远端音频播放资源ID
+#define DEVICECHAT_VIDEO_B_RESINDEX 10 //对讲远端端视频播放资源ID
+#define DEVICECHAT_VIDEO_A_RESINDEX 11 //对讲本机视频播放资源ID
+
+
+#define VIDEO_START_RESID 2 //本地视频起始资源ID
+#define AUDIO_START_RESID 6//本地音频频起始资源ID
+
+#define NET_EXCHANGE_TYPE 0x1e //数据库后台点对点传输类型
+
+#define RES_RECORDVIDEOSTREAM_INDEX  0 //视频流索引
+#define RES_SCREENSTREAM_INDEX		 1 //屏幕流索引
+
+#define NETINT32DATA_ATTRIBID				47 //标识当前NETBLOBDATA_ATTRIBID的二进制数据是发送给那个设备的寄存器ID
+#define MCSERVER_NETBLOBDATA_ATTRIBID		48 //后台服务器   二进制数据使用的寄存器ID
+#define COMMONCLIENT_NETBLOBDATA_ATTRIBID   49 //普通会议终端 二进制数据使用的寄存器ID
+#define COMMONCLIENT_EXCHANGE_NETBLOBDATA_ATTRIBID   48 //普通会议终端 之间中转二进制数据使用的寄存器ID ,注:数据头使用服务器的应答头
+
+#define  USE_DEVICE_EXCHANGE  1 //启用设备点对点交换数据
+#define  CTOS_EXCHANGE		  0 //为1表示由客户端发起交换 0表示从服务端发起交换 
+
+#define MEET_SUPPORTOLDANDNEW 0 //为0表示强制匹配会议使用的设备类型
+
+#define MEETPUSHSTREAM_FLAG_MIC		   0x00000001 //音频采集流
+#define MEETPUSHSTREAM_FLAG_SCREEN	   0x00000002 //屏幕流
+#define MEETPUSHSTREAM_FLAG_USB	       0x00000004 //usb流
+#define MEETPUSHSTREAM_FLAG_HKIPC      0x00000008 //usb流
+
+//SystemAttrib -- >dns2
+#define OCCUPYSYSTEMATTRIBDNSNUM    3 //占用设备63号寄存器的变量dns2的字节数
+#define MEETDEVICE_LIFTGROUPID		0 //升降机组ID索引 dns2[0]
+#define MEETDEVICE_MICLIFTGROUPID	1 //升降话筒组ID索引 dns2[1]
+
+#define MEETDEVICE_FLAG			    2 //会议设备的一些标志 dns2[2]
+#define MEETDEVICE_FLAG_DIRECTENTER 0x01 //免签到进入会议
+#define MEETDEVICE_FLAG_OPENOUTSIDE 0x02 //使用外部软件打开文档
+#define MEETDEVICE_FLAG_GUESTMODE	0x04 //使用来宾模式-进入时必须选择参会人签到
+#define MEETDEVICE_FLAG_WELCOMEPAGE	0x08 //显示欢迎界面-当设备有会议并且绑定人员时点击后直接签到进入会议，其它情况不显示欢迎界面
+
+//会议系统上传文件属性
+#define MEET_FILEATTRIB_BACKGROUND		0x10000 //背景文件
+#define MEET_FILEATTRIB_TABLECARD		0x20000 //桌牌背景文件
+#define MEET_FILEATTRIB_DEVICEUPDATE	0x40000 //设备升级用的文件
+#define MEET_FILEATTRIB_PUBLISH		    0x80000 //会议发布
+#define MEET_FILEATTRIB_WELCOMEPAGE		0x100000 //会议欢迎界面
+
+#endif

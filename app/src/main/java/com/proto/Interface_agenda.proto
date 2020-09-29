@@ -1,0 +1,29 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+message pbui_ItemAgendaTimeInfo
+{
+	fixed32  agendaid=1;  //议程ID
+	fixed32  status=2;  //议程状态 参见Pb_AgendaStatus
+	fixed32  dirid=3;  //绑定目录ID
+	fixed64  startutctime=4;//单位秒
+	fixed64  endutctime=5;  //单位秒
+	bytes    desctext=6; //描述内容
+}
+
+//指定的媒体作议程 agendatype=Pb_MEET_AGENDA_TYPE_FILE(modify,query)
+//指定的文本作议程 agendatype=Pb_MEET_AGENDA_TYPE_TEXT(modify,query)
+//时间轴式议程     agendatype=Pb_MEET_AGENDA_TYPE_TIME(modify,query,add,del,set)
+//Pb_MEET_AGENDA_TYPE_NOSET= 0xff000000; //未指定类型，如果查询时agendatype等于该值会返回会议当前设置的议程类型
+//call ,callreturn
+//type: Pb_TYPE_MEET_INTERFACE_MEETAGENDA
+message pbui_meetAgenda
+{
+	fixed32	 agendatype=1;//议程类型 参见Pb_AgendaType 查询时可以指定议程的类型查询
+	fixed32  mediaid=2;// 媒体ID
+	bytes    text=3;// 议程文本
+	repeated pbui_ItemAgendaTimeInfo  item=4;// 时间轴式议程
+}

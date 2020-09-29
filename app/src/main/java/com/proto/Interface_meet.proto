@@ -1,0 +1,120 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//complex query meet flag
+//#define MEET_COMPLEXQUERY_FLAG_MEETINGID 0x00000001 //meetingid有效 该标志有效会无视其它标志
+//#define MEET_COMPLEXQUERY_FLAG_STATUS    0x00000002 //status有效
+//#define MEET_COMPLEXQUERY_FLAG_TIME	     0x00000004 //startutctime endutctime有效
+//#define MEET_COMPLEXQUERY_FLAG_ROOMID	 0x00000008 //roomid有效 
+//#define MEET_COMPLEXQUERY_FLAG_CACHE	 0x00000010 //缓存会议的相关资料 只有与MEET_COMPLEXQUERY_FLAG_MEETINGID才有效
+//#define MEET_COMPLEXQUERY_FLAG_PHONE	 0x00000020 //常用人员电话 
+
+//complex query cache flag 按如下的顺序返回
+//#define MEET_COMPLEXCACHE_FLAG_MEETFUNCTION			0x0000000000000001 //发送会议功能
+//#define MEET_COMPLEXCACHE_FLAG_MEETAGENDA			0x0000000000000002 //发送会议议程
+//#define MEET_COMPLEXCACHE_FLAG_MEETBULLET			0x0000000000000004 //发送会议公告
+//#define MEET_COMPLEXCACHE_FLAG_MEMBER				0x0000000000000008 //发送参会人员
+//#define MEET_COMPLEXCACHE_FLAG_MEMBERPERMISSION		0x0000000000000010 //发送参会人员权限
+//#define MEET_COMPLEXCACHE_FLAG_MEMBERSEAT			0x0000000000000020 //发送会议排位
+//#define MEET_COMPLEXCACHE_FLAG_MEETVIDEO			0x0000000000000040 //发送会议视频直播
+//#define MEET_COMPLEXCACHE_FLAG_MEETVOTE				0x0000000000000080 //发送会议投票
+//#define MEET_COMPLEXCACHE_FLAG_DIRFILE				0x0000000000000100 //发送会议目录和目录文件
+//#define MEET_COMPLEXCACHE_FLAG_ROOMDEVICE			0x0000000000000200 //发送会场与会场设备
+//#define MEET_COMPLEXCACHE_FLAG_MEETSIGN				0x0000000000000400 //发送会议签到
+//#define MEET_COMPLEXCACHE_FLAG_TABLECARD			0x0000000000000800 //发送会议桌牌
+
+//复合查询会议
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETINFO
+//method: complexquery
+message pbui_Type_ComplexQueryMeetInfo
+{
+	fixed32		 queryflag=1;	//查询标志位 参见MEET_COMPLEXQUERY_FLAG_MEETINGID
+	fixed32		 meetingid=2;//会议ID
+	fixed64		 cacheflag=3;//缓存标志 参见MEET_COMPLEXCACHE_FLAG_DIRFILE
+	fixed32		 roomid=4;//会场ID
+	fixed32	     status=5;//会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+	fixed32		 startutctime=6;//开始时间 单位：UTC秒
+	fixed32		 endutctime=7;//结束时间 单位：UTC秒
+	bytes		 phone=8;  //常用人员电话
+}
+
+//会议信息
+message pbui_Item_MeetMeetInfo
+{
+	fixed32			id=1; //会议ID
+	bytes			name=2; //名称
+	fixed32			roomId=3; //会场ID，即会议室 
+	bytes			roomname=4; //名称查询返回有效,其它情况不使用,也不需要赋值
+	fixed32			secrecy=5; //是否为保密会议 1为密保会议
+	fixed64			startTime=6; //开始时间 单位:秒
+	fixed64			endTime=7;   //结束时间 单位:秒
+	fixed32			signin_type=8;//签到类型
+	fixed32			managerid=9;//管理员id
+	bytes			onepsw_signin=10;//会议签到密码 不能超过Pb_SIGNIN_PSW_LEN 定义的限制长度
+	fixed32			status=11;//会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+	bytes			ordername=12; //会议预约人
+}
+
+//会议信息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETINFO
+//method: add/mod/del/query
+message pbui_Type_MeetMeetInfo
+{
+	repeated pbui_Item_MeetMeetInfo	 item=1; //会议
+}
+
+//修改会议状态
+//call
+//type:Pb_TYPE_MEET_INTERFACE_MEETINFO
+//method: modifystatus
+message pbui_Type_MeetModStatus
+{
+	fixed32  meetid=1;			//会议ID
+	fixed32  status=2; //会议状态 参见 Pb_MeetStatus
+}
+
+//////////////////////////////////////////////////////////////////////////
+///start Meetevaluate
+message pbui_Item_MeetEvaluate
+{
+	fixed32 memberid=1;//参会人员ID
+	fixed32 flag=2;//标志 参见file evaluate flag 宏定义
+	fixed64 evaluatetime=3;//评分utc时间 微秒
+	bytes   evaluate=4;//评分的文本
+}
+
+//会议评价 
+//type：Pb_TYPE_MEET_INTERFACE_MEETEVALUATE
+//method:添加、查询(数据库返回)
+message pbui_Type_MeetingMeetEvaluate
+{
+	fixed32   startrow=1;//查询返回用户传过来的开始行
+	fixed32	  isfirst=2;//是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
+	repeated pbui_Item_MeetEvaluate item=3; 
+}
+
+//会议评价  查询
+//stages：Pb_TYPE_MEET_INTERFACE_MEETEVALUATE
+//method:查询
+message pbui_Type_QueryMeetEvaluate
+{
+	fixed32 memberid=1;//参会人员ID 可以为0表示所有参会人
+	fixed64 startevaluatetime=2;//查询的起始评价utc时间 微秒 必须有效
+	fixed64 endevaluatetime=3;//查询的结束评分utc时间 微秒 必须有效
+	fixed32 startrow=4;//查询开始行 实现分页查询 必须有效 第一次从0开始
+}
+
+//会议文件评价  删除
+//stages：Pb_TYPE_MEET_INTERFACE_MEETEVALUATE
+//method:删除
+message pbui_Type_DelMeetEvaluate
+{
+	fixed32 memberid=1;//参会人员ID 可以为0表示所有参会人
+	fixed64 evaluatetime=2;//评分utc时间 微秒 当memberid有效时 可以有效表示删除指定的评论
+}
+///end Meetevaluate

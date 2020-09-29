@@ -1,0 +1,119 @@
+syntax = "proto3";
+option java_package = "com.mogujie.tt.protobuf";
+option optimize_for = LITE_RUNTIME;
+
+import "Interface_Macro.proto";
+
+//上传进度通知
+//callback
+//type:Pb_TYPE_MEET_INTERFACE_UPLOAD
+//method: notify
+message pbui_TypeUploadPosCb
+{
+	fixed32  mediaId=1;						//媒体ID
+	fixed32  status=2;					    //参见 Pb_Upload_State				
+	fixed32  per=3;							//当前位置，百分比
+	fixed32  uploadflag=4;				    //参见 Pb_Upload_Flag
+	fixed32  userval=5;//用户自定义的值
+	bytes    pathname=6;//全路径名
+	bytes    userstr=7;//用户传入的自定义字串(原编码格式返回)
+}
+
+//上传文件
+//call
+//type:Pb_TYPE_MEET_INTERFACE_UPLOAD
+//method: add
+message pbui_Type_AddUploadFile
+{
+	fixed32 uploadflag=1;//上传标志 参见 Pb_Upload_Flag
+	fixed32 dirid=2;//上传的目录ID 参见 Pb_Upload_DefaultDirId
+	fixed32 attrib=3;//文件属性 参见 Pb_MeetFileAttrib
+	bytes   newname=4;//上传后的新名称
+	bytes   pathname=5;//全路径名
+	fixed32 userval=6;////用户自定义的值
+	bytes   userstr=7;//用户传入的自定义字串(原编码格式返回)
+}
+
+//上传返回媒体ID信息
+message pbui_TypeUploadReturn
+{
+	fixed32  mediaId=1;//媒体ID
+	fixed32  userval=2;////用户自定义的值
+	bytes    pathname=3;//全路径名
+	bytes    userstr=4;//用户传入的自定义字串(原编码格式返回)
+}
+
+//添加本地文件到缓存目录 注:需要会议、会议室都准备好才会成功执行
+//type:TYPE_MEET_INTERFACE_UPLOAD
+//method: save
+message pbui_Type_AddCacheFile
+{
+	bytes   pathname=1;//文件全路径名
+	bytes   dirname=2;//保存到那个目录,不存在会自动创建目录
+}
+
+//查询上传文件
+message pbui_Item_UploadFileDetailInfo
+{
+	fixed32  mediaid=1;//媒体ID
+	fixed32  dirid=2;//上传到的目录ID
+
+	fixed32	 errstatus=3;//错误码
+	fixed32  percent=4;//上传的百分比
+	fixed32  userval=5;//
+
+	bytes    newname=6;//上传后的新名称
+	bytes    pathname=7;//全路径名
+	bytes    userstr=8;//用户传入的自定义字串(原编码格式返回)
+}
+
+//查询上传
+//call return
+//type:Pb_TYPE_MEET_INTERFACE_UPLOAD
+//method: query
+message pbui_Type_UploadFileDetailInfo
+{
+	repeated pbui_Item_UploadFileDetailInfo item=1;
+}
+
+//删除上传
+//call
+//type:Pb_TYPE_MEET_INTERFACE_UPLOAD
+//method: del
+message pbui_Type_DelUploadFile
+{
+	fixed32  mediaid=1;//媒体ID
+}
+
+//查询媒体文件的编码、帧率等信息
+//call
+//type:Pb_TYPE_MEET_INTERFACE_UPLOAD
+//method: Pb_METHOD_MEET_INTERFACE_DETAILINFO
+message pbui_GetFileCodecDetailInfo
+{
+	bytes  filepathname=1;//文件全路径名
+}
+	
+//查询媒体文件的编码、帧率等信息
+//callreture
+//type:Pb_TYPE_MEET_INTERFACE_UPLOAD
+//method: Pb_METHOD_MEET_INTERFACE_DETAILINFO
+message pbui_FileCodecDetailInfo
+{
+	//----out
+	fixed32 mSec=1;//文件播放时长 单位：毫秒
+	fixed64 bitrate=2;//文件的码流-比特率 单位： kbps 
+
+	//audio
+	fixed32   audiocodecid=3;// ffmpeg对应的编码ID
+	bytes  	  audiocodecname=4;//音频编码器名称
+	fixed32   samplerate=5;
+	fixed32   channel=6;
+
+	//video
+	fixed32   videocodecid=7;// ffmpeg对应的编码ID
+	bytes  	  videocodecname=8;//视频频编码器名称
+	float 	  framepersecond=9;//视频帧率 fps
+	fixed32   width=10;//视频图像的原始宽度
+	fixed32   height=11;//视频图像的原始高度
+}
