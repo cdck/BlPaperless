@@ -190,4 +190,6 @@ public class EventType {
     public static final int init_x5_finished = BASE_EVENT_TYPE + 92;
     //会议目录变更通知
     public static final int MEETDIR_CHANGE_INFORM = BASE_EVENT_TYPE + 93;
+    public static final int ACTION_SCREEN_ON = BASE_EVENT_TYPE + 94;
+    public static final int ACTION_SCREEN_OFF = BASE_EVENT_TYPE + 95;
 }

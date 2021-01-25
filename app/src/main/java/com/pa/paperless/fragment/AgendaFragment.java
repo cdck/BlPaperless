@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceAgenda;
 import com.mogujie.tt.protobuf.InterfaceBase;
@@ -20,7 +21,7 @@ import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.tencent.smtt.sdk.TbsDownloader;
 import com.tencent.smtt.sdk.TbsReaderView;
 
@@ -33,8 +34,8 @@ import java.util.List;
 
 import androidx.annotation.Nullable;
 
-import static com.pa.paperless.service.ShotApplication.applicationContext;
-import static com.pa.paperless.service.ShotApplication.initX5Finished;
+import static com.pa.paperless.service.App.applicationContext;
+import static com.pa.paperless.service.App.initX5Finished;
 
 /**
  * Created by Administrator on 2017/10/31.
@@ -68,6 +69,7 @@ public class AgendaFragment extends BaseFragment implements TbsReaderView.Reader
     @Override
     public void onDestroy() {
         super.onDestroy();
+        //不停止掉，下次进入是打开文件会卡在加载中状态
         if (tbsReaderView != null) {
             tbsReaderView.onStop();
             tbsReaderView = null;
@@ -94,7 +96,8 @@ public class AgendaFragment extends BaseFragment implements TbsReaderView.Reader
             System.out.println("tbsReaderView为null，进行创建");
             tbsReaderView = new TbsReaderView(getContext(), this);
         }
-        test_tbsid.addView(tbsReaderView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        test_tbsid.addView(tbsReaderView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
         Bundle bundle = new Bundle();
         bundle.putString("filePath", filepath);
         bundle.putString("tempPath", Environment.getExternalStorageDirectory().getPath());
@@ -108,7 +111,7 @@ public class AgendaFragment extends BaseFragment implements TbsReaderView.Reader
                 tbsReaderView.openFile(bundle);
             } else {
                 LogUtil.e(TAG, "displayFile 不支持打开该类型文件 -->");
-                ToastUtil.showToast(R.string.not_supported);
+                ToastUtils.showShort(R.string.not_supported);
             }
         } catch (Exception e) {
             LogUtil.i(TAG, "displayFile " + e.toString());
@@ -192,6 +195,10 @@ public class AgendaFragment extends BaseFragment implements TbsReaderView.Reader
     public void onHiddenChanged(boolean hidden) {
         if (!hidden) {
             fun_queryAgenda();
+        } else {
+            if (loading_bar.getVisibility() == View.VISIBLE) {
+                loading_bar.setVisibility(View.GONE);
+            }
         }
     }
 

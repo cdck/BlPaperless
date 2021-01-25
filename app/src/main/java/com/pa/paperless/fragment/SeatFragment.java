@@ -112,7 +112,7 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
         try {
             int roombgpicid = nativeUtil.queryMeetRoomProperty(Values.roomId);
             if (roombgpicid != 0) {
-                FileUtil.CreateDir(Macro.ROOT);
+                FileUtil.createDir(Macro.ROOT);
                 nativeUtil.creationFileDownload(Macro.ROOT + Macro.DOWNLOAD_ROOM_BG + ".png", roombgpicid, 1, 0, Macro.DOWNLOAD_ROOM_BG);
             } else {
                 fun_placeDeviceRankingInfo(Values.roomId);

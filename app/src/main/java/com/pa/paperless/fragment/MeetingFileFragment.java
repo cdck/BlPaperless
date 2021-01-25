@@ -1,35 +1,33 @@
 package com.pa.paperless.fragment;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.pa.paperless.data.constant.Macro;
-import com.pa.paperless.data.constant.Values;
-import com.pa.paperless.utils.LogUtil;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.entity.node.BaseNode;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceBase;
 import com.mogujie.tt.protobuf.InterfaceFile;
-import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.MeetingFileTypeAdapter;
-import com.pa.paperless.adapter.TypeFileAdapter;
+import com.pa.paperless.adapter.node.FileNodeAdapter;
+import com.pa.paperless.adapter.node.LevelDirNode;
+import com.pa.paperless.adapter.node.LevelFileNode;
+import com.pa.paperless.adapter.rvadapter.DownloadFileAdapter;
 import com.pa.paperless.data.bean.MeetDirFileInfo;
-import com.pa.paperless.data.bean.MeetingFileTypeBean;
-import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.EventMessage;
-import com.pa.paperless.utils.Dispose;
+import com.pa.paperless.data.constant.EventType;
+import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.FileUtil;
-import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+import com.pa.paperless.utils.LogUtil;
+import com.pa.paperless.utils.PopUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -40,8 +38,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-import static com.pa.paperless.data.constant.Macro.MEET_MATERIAL;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 /**
@@ -53,191 +53,235 @@ import static com.pa.paperless.data.constant.Macro.MEET_MATERIAL;
 
 public class MeetingFileFragment extends BaseFragment implements View.OnClickListener {
 
-    private ListView dir_lv;
-    private ListView rightmeetfile_lv;
-    private Button rightmeetfile_prepage, rightmeetfile_nextpage, download, push_file,
-            rightmeetfile_other, rightmeetfile_video, rightmeetfile_picture, rightmeetfile_document, meet_saved_offline_btn;
-    private MeetingFileTypeAdapter mDirAdapter;
     private List<Button> mBtns;
-    //  存放目录ID、目录名称
-    private List<MeetingFileTypeBean> mDirData = new ArrayList<>();
-    //  存放会议目录文件的详细信息
-    private List<MeetDirFileInfo> meetDirFileInfos;
-    //  用来临时存放不同类型的文件并展示
-    private List<MeetDirFileInfo> mFileData = new ArrayList<>();
-    private TypeFileAdapter dataAdapter;
-    //播放时的媒体ID
-    public static int mMediaid;
-    private TextView tv_count_num;
-    private int page_count;
-    private int clickPosion;
-    private int clickDirId = -1;//保存点击的目录ID
     private final String TAG = "MeetingFileFragment-->";
-    public static Map<Integer, Integer> saveKey = new HashMap<>();
-    private boolean isFirst;
+
+    private RecyclerView rv_file;
+    private Button btn_document, btn_picture, btn_video, btn_other, btn_push, btn_download;
+    private LinearLayout right_meetingfilelayout;
+    private FileNodeAdapter fileNodeAdapter;
+    List<BaseNode> allData = new ArrayList<>();
+    List<BaseNode> showFiles = new ArrayList<>();
+    /**
+     * 存放目录的展开和收缩状态
+     */
+    Map<Integer, Boolean> isExpandedMap = new HashMap<>();
+    Map<Integer, Boolean> isSelectedMap = new HashMap<>();
+    /**
+     * =0文档，=1图片，=2视频，=3其它，=-1全部
+     */
+    private int fileFilterType = -1;
+    private DownloadFileAdapter downloadFileAdapter;
+    private PopupWindow downloadPop;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.right_mettingfile, container, false);
-        isFirst = true;
         initView(inflate);
-        initBtns();
-        fun_queryMeetDir();
+        initButtons();
+        queryMeetDir();
         return inflate;
     }
 
-    private void fun_queryMeetDir() {
-        try {
-            //136.查询会议目录
-            InterfaceFile.pbui_Type_MeetDirDetailInfo dirInfo = jni.queryMeetDir();
-            if (dirInfo == null) {
-                //查询会议目录失败
-                if (mDirData != null) mDirData.clear();
-                if (mDirAdapter != null) mDirAdapter.notifyDataSetChanged();
-                clear();
-                return;
+    private void initView(View inflate) {
+        right_meetingfilelayout = inflate.findViewById(R.id.right_meetingfilelayout);
+        btn_document = inflate.findViewById(R.id.btn_document);
+        btn_picture = inflate.findViewById(R.id.btn_picture);
+        btn_video = inflate.findViewById(R.id.btn_video);
+        btn_other = inflate.findViewById(R.id.btn_other);
+        btn_document.setOnClickListener(this);
+        btn_picture.setOnClickListener(this);
+        btn_video.setOnClickListener(this);
+        btn_other.setOnClickListener(this);
+
+        btn_push = inflate.findViewById(R.id.btn_push);
+        btn_download = inflate.findViewById(R.id.btn_download);
+        btn_push.setOnClickListener(this);
+        btn_download.setOnClickListener(this);
+
+        rv_file = inflate.findViewById(R.id.rv_file);
+    }
+
+    private void initButtons() {
+        mBtns = new ArrayList<>();
+        mBtns.add(btn_document);
+        mBtns.add(btn_picture);
+        mBtns.add(btn_video);
+        mBtns.add(btn_other);
+    }
+
+    /**
+     * 保存当前所有的目录的展开状态
+     */
+    private void saveCurrentExpandStatus() {
+        isExpandedMap.clear();
+//        isSelectedMap.clear();
+        for (int i = 0; i < allData.size(); i++) {
+            BaseNode baseNode = allData.get(i);
+            if (baseNode instanceof LevelDirNode) {
+                LevelDirNode dirNode = (LevelDirNode) baseNode;
+                int dirId = dirNode.getDirId();
+                isExpandedMap.put(dirId, dirNode.isExpanded());
+//                List<BaseNode> childNode = dirNode.getChildNode();
+//                if (childNode != null) {
+//                    for (int j = 0; j < childNode.size(); j++) {
+//                        LevelFileNode node = (LevelFileNode) childNode.get(j);
+//                        isSelectedMap.put(node.getMediaId(), node.isSelected());
+//                    }
+//                }
             }
-            if (mDirData == null) mDirData = new ArrayList<>();
-            else mDirData.clear();
-            List<InterfaceFile.pbui_Item_MeetDirDetailInfo> itemList = dirInfo.getItemList();
-            for (int i = 0; i < itemList.size(); i++) {
-                InterfaceFile.pbui_Item_MeetDirDetailInfo info = itemList.get(i);
-                int dirId = info.getId();
-                LogUtil.d(TAG, "MeetingFileFragment.fun_queryMeetDir : 目录ID：" + dirId + ",父类ID=" + info.getParentid() + ",  会议资料目录名 --> " + info.getName().toStringUtf8());
-                if (info.getParentid() != 0) {
-                    continue;
-                }
-                String dirName = MyUtils.b2s(info.getName());
-                if(dirId!=Macro.SHARED_FILE_DIRECTORY_ID && dirId!=Macro.ANNOTATION_FILE_DIRECTORY_ID){
-//                if (!dirName.equals(getString(R.string.fun_text_share_file)) && !dirName.equals(getString(R.string.fun_text_postil_file))) {
-                    LogUtil.d(TAG, "MeetingFileFragment.fun_queryMeetDir : 目录ID：" + dirId + ",  会议资料目录名 --> " + dirName);
-                    mDirData.add(new MeetingFileTypeBean(dirId, info.getParentid(), dirName, info.getFilenum()));
-                    if (!saveKey.containsKey(dirId)) {//确保是首次查询目录
-                        saveKey.put(dirId, -1);//给每个目录ID 设置好默认显示的文件类别
+        }
+    }
+
+    /**
+     * 获取之前的目录是否是展开状态
+     *
+     * @param dirId 目录id
+     */
+    private boolean beforeIsExpanded(int dirId) {
+        if (isExpandedMap.containsKey(dirId)) {
+            return isExpandedMap.get(dirId);
+        }
+        return false;
+    }
+
+    private boolean beforeIsSelected(int mediaId) {
+        if (isSelectedMap.containsKey(mediaId)) {
+            return isSelectedMap.get(mediaId);
+        }
+        return false;
+    }
+
+    private void queryMeetDir() {
+        try {
+            InterfaceFile.pbui_Type_MeetDirDetailInfo dirInfo = jni.queryMeetDir();
+            saveCurrentExpandStatus();
+            allData.clear();
+            if (dirInfo != null) {
+                List<InterfaceFile.pbui_Item_MeetDirDetailInfo> itemList = dirInfo.getItemList();
+                for (int i = 0; i < itemList.size(); i++) {
+                    InterfaceFile.pbui_Item_MeetDirDetailInfo info = itemList.get(i);
+                    int dirId = info.getId();
+                    if (info.getParentid() != 0) {
+                        continue;
+                    }
+                    if (dirId != Macro.SHARED_FILE_DIRECTORY_ID && dirId != Macro.ANNOTATION_FILE_DIRECTORY_ID) {
+                        LevelDirNode levelDirItem = new LevelDirNode(new ArrayList<>(), dirId, info.getName().toStringUtf8());
+                        levelDirItem.setExpanded(beforeIsExpanded(dirId));
+                        LogUtils.i(TAG, "添加目录id " + dirId);
+                        allData.add(levelDirItem);
+                        queryMeetDirFile(dirId);
                     }
                 }
             }
-            if (mDirAdapter == null) {
-                mDirAdapter = new MeetingFileTypeAdapter(getActivity(), mDirData);
-                dir_lv.setAdapter(mDirAdapter);
-            } else mDirAdapter.notifyDataSetChanged();
-            dir_lv.setOnItemClickListener((adapterView, view, i, l) -> {
-                LogUtil.e(TAG, "MeetingFileFragment.initData:  点击了第 " + i + " 项目录");
-                clickPosion = i;
-                mDirAdapter.setCheck(i);//设置item选中效果
-                //获取当前选中的目录ID
-                MeetingFileTypeBean meetingFileTypeBean = mDirData.get(i);
-                clickDirId = meetingFileTypeBean.getDirId();
-                /** **** **  已经有了目录不一定就有文件数据，所以要判空处理  ** **** **/
-                if (meetDirFileInfos != null) meetDirFileInfos.clear();//将之前的目录文件清空
-                if (mFileData != null) mFileData.clear();//清空某一类型的文件
-                if (dataAdapter != null) dataAdapter.notifyDataSetChanged();
-                LogUtil.e(TAG, "MeetingFileFragment.onItemClick:  从item中传递过去的目录ID --->>> " + clickDirId);
-                //每次点击的时候，就设置当前目录显示全部
-                saveKey.put(clickDirId, -1);
-                if (dataAdapter != null) dataAdapter.PAGE_NOW = 0;
-                fun_queryMeetDirFile(clickDirId);
-            });
-            //当第一次进入会议资料界面时，就展示第一个目录item中的文档类信息
-            if (mDirData.size() > 0) {
-                if (clickDirId == -1) {
-                    clickDirId = mDirData.get(0).getDirId();
-                    saveKey.put(clickDirId, -1);
-                    mDirAdapter.setCheck(0);
-                } else {
-                    mDirAdapter.setCheck(clickPosion);
-                }
-                fun_queryMeetDirFile(clickDirId);
-            }
-        } catch (InvalidProtocolBufferException e) {
+            showFiles();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void fun_queryMeetDirFile(int dirId) {
+    private void showFiles() {
+        LogUtils.i(TAG, "showFiles fileFilterType=" + fileFilterType);
+        showFiles.clear();
+        if (fileFilterType == -1) {
+            showFiles.addAll(allData);
+        } else {
+            for (int i = 0; i < allData.size(); i++) {
+                BaseNode node = allData.get(i);
+                if (node instanceof LevelDirNode) {
+                    LevelDirNode dirNode = (LevelDirNode) node;
+                    int dirId = dirNode.getDirId();
+                    String dirName = dirNode.getDirName();
+                    List<BaseNode> childNode = dirNode.getChildNode();
+
+                    List<BaseNode> newFileNodes = new ArrayList<>();
+                    if (childNode != null) {
+                        for (int j = 0; j < childNode.size(); j++) {
+                            LevelFileNode fileNode = (LevelFileNode) childNode.get(j);
+                            String name = fileNode.getName();
+                            switch (fileFilterType) {
+                                case 0:
+                                    if (FileUtil.isDocument(name)) {
+                                        newFileNodes.add(fileNode);
+                                    }
+                                    break;
+                                case 1:
+                                    if (FileUtil.isPicture(name)) {
+                                        newFileNodes.add(fileNode);
+                                    }
+                                    break;
+                                case 2:
+                                    if (FileUtil.isVideo(name)) {
+                                        newFileNodes.add(fileNode);
+                                    }
+                                    break;
+                                case 3:
+                                    if (FileUtil.isOtherFile(name)) {
+                                        newFileNodes.add(fileNode);
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    boolean isExpanded = beforeIsExpanded(dirId);
+                    LevelDirNode newDirNode = new LevelDirNode(newFileNodes, dirId, dirName);
+                    newDirNode.setExpanded(isExpanded);
+                    showFiles.add(newDirNode);
+                }
+            }
+        }
+        LogUtils.d(TAG, "showFiles 刷新或创建adapter");
+        if (fileNodeAdapter == null) {
+            fileNodeAdapter = new FileNodeAdapter(showFiles);
+            rv_file.setLayoutManager(new LinearLayoutManager(getContext()));
+            rv_file.setAdapter(fileNodeAdapter);
+        } else {
+            fileNodeAdapter.setList(showFiles);
+            fileNodeAdapter.notifyDataSetChanged();
+        }
+        if (downloadPop != null && downloadPop.isShowing()) {
+            updateDownloadFiles();
+            downloadFileAdapter.notifyDataSetChanged();
+        }
+    }
+
+    private LevelDirNode findDirNode(int dirId) {
+        for (int i = 0; i < allData.size(); i++) {
+            LevelDirNode dirNode = (LevelDirNode) allData.get(i);
+            if (dirNode.getDirId() == dirId) {
+                return dirNode;
+            }
+        }
+        return null;
+    }
+
+    private void queryMeetDirFile(int dirId) {
         try {
+            long stime = System.currentTimeMillis();
             //查询会议目录文件
             InterfaceFile.pbui_Type_MeetDirFileDetailInfo object = jni.queryMeetDirFile(dirId);
-            if (object == null) {
-                tv_count_num.setText("0 / 0");
-                clear();
-                return;
-            }
-            if (meetDirFileInfos == null) meetDirFileInfos = new ArrayList<>();
-            else meetDirFileInfos.clear();
-            meetDirFileInfos.addAll(Dispose.MeetDirFile(object));
-            if (!meetDirFileInfos.isEmpty()) {
-                checkBtn(true);//有数据就设置类别控件可以点击
-                mFileData.clear();
-                int clickTypeId = saveKey.get(clickDirId);
-                boolean isShowAll = clickTypeId == -1;
-                for (int i = 0; i < meetDirFileInfos.size(); i++) {
-                    MeetDirFileInfo meetDirFileInfo = meetDirFileInfos.get(i);
-                    String fileName = meetDirFileInfo.getFileName();
-                    if (isShowAll) {
-                        mFileData.add(meetDirFileInfo);
-                    } else {
-                        boolean documentFile = false;
-                        switch (clickTypeId) {
-                            case 0:
-                                documentFile = FileUtil.isDocumentFile(fileName);
-                                break;
-                            case 1:
-                                documentFile = FileUtil.isPictureFile(fileName);
-                                break;
-                            case 2:
-                                documentFile = FileUtil.isVideoFile(fileName);
-                                break;
-                            case 3:
-                                documentFile = FileUtil.isOtherFile(fileName);
-                                break;
-                        }
-                        if (documentFile) {
-                            mFileData.add(meetDirFileInfo);
-                        }
+            LevelDirNode dirNode = findDirNode(dirId);
+            if (dirNode != null) {
+                dirNode.setChildNode(new ArrayList<>());
+                if (object != null) {
+                    List<InterfaceFile.pbui_Item_MeetDirFileDetailInfo> itemList = object.getItemList();
+                    List<BaseNode> fileNodes = new ArrayList<>();
+                    for (int j = 0; j < itemList.size(); j++) {
+                        InterfaceFile.pbui_Item_MeetDirFileDetailInfo info = itemList.get(j);
+                        LevelFileNode levelFileItem = new LevelFileNode(
+                                dirId, info.getMediaid(), info.getName().toStringUtf8(), info.getUploaderid(),
+                                info.getUploaderRole(), info.getUploaderName().toStringUtf8(), info.getMstime(),
+                                info.getSize(), info.getAttrib(), info.getFilepos());
+//                        levelFileItem.setSelected(beforeIsSelected(info.getMediaid()));
+                        fileNodes.add(levelFileItem);
                     }
+                    dirNode.setChildNode(fileNodes);
                 }
-                if (dataAdapter == null) {
-                    dataAdapter = new TypeFileAdapter(getContext(), mFileData);
-                    rightmeetfile_lv.setAdapter(dataAdapter);
-                }
-                dataAdapter.notifyChecks();
-                dataAdapter.notifyDataSetChanged();
-                if (!isFirst) {
-                    int pagecount;
-                    if (mFileData.size() % dataAdapter.ITEM_COUNT == 0) {
-                        pagecount = mFileData.size() / dataAdapter.ITEM_COUNT;
-                    } else {
-                        pagecount = mFileData.size() / dataAdapter.ITEM_COUNT + 1;
-                    }
-                    if (dataAdapter.PAGE_NOW >= pagecount) {
-                        dataAdapter.PAGE_NOW = pagecount;
-                    }
-                }
-                updataPageTv();
-                checkButton();
-                setBtnSelect(clickTypeId);
-                //打开文件
-                dataAdapter.setLookListener((fileInfo, mediaId, filename, filesize) -> {
-                    mMediaid = mediaId;
-                    if (FileUtil.isVideoFile(filename)) {
-                        //媒体播放操作
-                        List<Integer> devIds = new ArrayList<>();
-                        devIds.add(Values.localDevId);
-                        jni.mediaPlayOperate(mediaId, devIds, 0, 0, 0, InterfaceMacro.Pb_MeetPlayFlag.Pb_MEDIA_PLAYFLAG_ZERO.getNumber());
-                    } else {
-                        FileUtil.openFile(Macro.CACHE_ALL_FILE, filename, jni, mediaId, getContext(), filesize);
-                    }
-                });
-                //item选中事件
-                dataAdapter.setItemSelectListener((posion, view) -> {
-                    dataAdapter.setCheck(mFileData.get(posion).getMediaId());
-                });
             } else {
-                clear();
-                checkBtn(false);//没有数据就设置控件不可点击
+                LogUtils.e(TAG, "找不到该目录id " + dirId);
             }
+            LogUtils.i(TAG, "查找目录下文件用时 " + (System.currentTimeMillis() - stime));
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
@@ -246,289 +290,157 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getEventMessage(EventMessage message) throws InvalidProtocolBufferException {
         switch (message.getAction()) {
-            case EventType.MEETDIR_CHANGE_INFORM://135 会议目录变更通知
-                fun_queryMeetDir();
+            case EventType.MEETDIR_CHANGE_INFORM://会议目录变更通知
+                queryMeetDir();
                 break;
-            case EventType.MEETDIR_FILE_CHANGE_INFORM://142 会议目录文件变更通知
-                InterfaceBase.pbui_MeetNotifyMsgForDouble object1 = (InterfaceBase.pbui_MeetNotifyMsgForDouble) message.getObject();
-                int id = object1.getId();
+            case EventType.MEETDIR_FILE_CHANGE_INFORM://会议目录文件变更通知
+                InterfaceBase.pbui_MeetNotifyMsgForDouble info = (InterfaceBase.pbui_MeetNotifyMsgForDouble) message.getObject();
+                int id = info.getId();
+                int subid = info.getSubid();
+                int opermethod = info.getOpermethod();
+                LogUtils.d(TAG, "会议目录文件变更通知 id=" + id + ",subid=" + subid + ",opermethod=" + opermethod);
                 if (id != Macro.SHARED_FILE_DIRECTORY_ID && id != Macro.ANNOTATION_FILE_DIRECTORY_ID) {//过滤去除批注和共享资料
                     //文件变更,相对的目录中的文件数量也需要更新
-                    fun_queryMeetDir();
+                    queryMeetDir();
                 }
                 break;
         }
-    }
-
-    private void checkBtn(boolean b) {
-        rightmeetfile_document.setClickable(b);
-        rightmeetfile_picture.setClickable(b);
-        rightmeetfile_video.setClickable(b);
-        rightmeetfile_other.setClickable(b);
-    }
-
-    private void clear() {
-        if (meetDirFileInfos != null) meetDirFileInfos.clear();
-        if (mFileData != null) mFileData.clear();
-        if (dataAdapter != null) dataAdapter.notifyDataSetChanged();
-        clickDirId = -1;
-    }
-
-    private void initView(View inflate) {
-        dir_lv = inflate.findViewById(R.id.type_lv);
-        rightmeetfile_document = inflate.findViewById(R.id.rightmeetfile_document);
-        rightmeetfile_picture = inflate.findViewById(R.id.rightmeetfile_picture);
-        rightmeetfile_video = inflate.findViewById(R.id.rightmeetfile_video);
-        rightmeetfile_other = inflate.findViewById(R.id.rightmeetfile_other);
-        rightmeetfile_lv = inflate.findViewById(R.id.rightmeetfile_lv);
-        rightmeetfile_prepage = inflate.findViewById(R.id.rightmeetfile_prepage);
-        rightmeetfile_nextpage = inflate.findViewById(R.id.rightmeetfile_nextpage);
-        push_file = inflate.findViewById(R.id.push_file);
-        download = inflate.findViewById(R.id.download);
-        tv_count_num = inflate.findViewById(R.id.tv_count_num);
-        meet_saved_offline_btn = inflate.findViewById(R.id.meet_saved_offline_btn);
-        meet_saved_offline_btn.setOnClickListener(this);
-        rightmeetfile_document.setOnClickListener(this);
-        rightmeetfile_picture.setOnClickListener(this);
-        rightmeetfile_video.setOnClickListener(this);
-        rightmeetfile_other.setOnClickListener(this);
-        rightmeetfile_prepage.setOnClickListener(this);
-        rightmeetfile_nextpage.setOnClickListener(this);
-        push_file.setOnClickListener(this);
-        download.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if (dataAdapter == null) {
-            LogUtil.e(TAG, "MeetingFileFragment.onClick :  adapter 为 null --> ");
-            return;
-        }
         switch (v.getId()) {
-            case R.id.rightmeetfile_document:
-                if (meetDirFileInfos != null) {
-                    mFileData.clear();
-                    for (int i = 0; i < meetDirFileInfos.size(); i++) {
-                        MeetDirFileInfo documentBean = meetDirFileInfos.get(i);
-                        String fileName = documentBean.getFileName();
-                        boolean documentFile = FileUtil.isDocumentFile(fileName);
-                        if (documentFile) {
-                            LogUtil.e(TAG, "MeetingFileFragment.onClick:  其中的文档类文件： --->>> " + fileName);
-                            mFileData.add(documentBean);
-                        }
-                    }
-                }
-                if (dataAdapter != null) {
-                    dataAdapter.notifyDataSetChanged();
-                    dataAdapter.PAGE_NOW = 0;
-                }
-                updataPageTv();
-                checkButton();
-                setBtnSelect(0);
+            case R.id.btn_document: {
+                saveCurrentExpandStatus();
+                fileFilterType = fileFilterType == 0 ? -1 : 0;
+                showFiles();
                 break;
-            case R.id.rightmeetfile_picture:
-                if (meetDirFileInfos != null) {
-                    mFileData.clear();
-                    for (int i = 0; i < meetDirFileInfos.size(); i++) {
-                        MeetDirFileInfo documentBean = meetDirFileInfos.get(i);
-                        String fileName = documentBean.getFileName();
-                        if (FileUtil.isPictureFile(fileName)) {
-                            LogUtil.e(TAG, "MeetingFileFragment.onClick:  其中的图片类文件 --->>> " + fileName);
-                            mFileData.add(documentBean);
-                        }
-                    }
+            }
+            case R.id.btn_picture: {
+                saveCurrentExpandStatus();
+                fileFilterType = fileFilterType == 1 ? -1 : 1;
+                showFiles();
+                break;
+            }
+            case R.id.btn_video: {
+                saveCurrentExpandStatus();
+                fileFilterType = fileFilterType == 2 ? -1 : 2;
+                showFiles();
+                break;
+            }
+            case R.id.btn_other: {
+                saveCurrentExpandStatus();
+                fileFilterType = fileFilterType == 3 ? -1 : 3;
+                showFiles();
+                break;
+            }
+            case R.id.btn_download: {//下载文件
+                if (showFiles.isEmpty()) {
+                    ToastUtils.showShort(R.string.no_data_download);
+                    return;
                 }
-                dataAdapter.notifyDataSetChanged();
-                dataAdapter.PAGE_NOW = 0;
-                updataPageTv();
-                checkButton();
-                setBtnSelect(1);
+                updateDownloadFiles();
+                downloadFilePop();
                 break;
-            case R.id.rightmeetfile_video:
-                if (meetDirFileInfos != null) {
-                    mFileData.clear();
-                    for (int i = 0; i < meetDirFileInfos.size(); i++) {
-                        MeetDirFileInfo documentBean = meetDirFileInfos.get(i);
-                        String fileName = documentBean.getFileName();
-                        //过滤视频文件
-                        if (FileUtil.isVideoFile(fileName)) {
-                            LogUtil.e(TAG, "MeetingFileFragment.onClick:  其中的视频类文件 --->>> " + fileName);
-                            mFileData.add(documentBean);
-                        }
-                    }
+            }
+            case R.id.btn_push://文件推送
+                int mediaId = fileNodeAdapter.getSelectedFileMediaId();
+                if (mediaId == 0) {
+                    ToastUtils.showShort(R.string.please_choose_file);
+                    return;
                 }
-                dataAdapter.notifyDataSetChanged();
-                dataAdapter.PAGE_NOW = 0;
-                updataPageTv();
-                checkButton();
-                setBtnSelect(2);
-                break;
-            case R.id.rightmeetfile_other:
-                if (meetDirFileInfos != null) {
-                    mFileData.clear();
-                    for (int i = 0; i < meetDirFileInfos.size(); i++) {
-                        MeetDirFileInfo documentBean = meetDirFileInfos.get(i);
-                        String fileName = documentBean.getFileName();
-                        //过滤视频文件
-                        if (FileUtil.isOtherFile(fileName)) {
-                            LogUtil.e(TAG, "MeetingFileFragment.onClick:  其它类文件 --->>> " + fileName);
-                            mFileData.add(documentBean);
-                        }
-                    }
-                }
-                dataAdapter.notifyDataSetChanged();
-                dataAdapter.PAGE_NOW = 0;
-                updataPageTv();
-                checkButton();
-                setBtnSelect(3);
-                break;
-            case R.id.rightmeetfile_prepage://上一页
-                prePage();
-                break;
-            case R.id.rightmeetfile_nextpage://下一页
-                nextPage();
-                break;
-            case R.id.meet_saved_offline_btn://离线缓存
-                if (dataAdapter == null) break;
-                MeetDirFileInfo data = dataAdapter.getCheckedFile();
-                if (data == null) {
-                    ToastUtil.showToast(R.string.please_choose_downloadfile);
-                    break;
-                }
-                FileUtil.downOfflineFile(data);
-                break;
-            case R.id.download://下载文件
-                if (dataAdapter == null) break;
-                MeetDirFileInfo data1 = dataAdapter.getCheckedFile();
-                if (data1 == null) {
-                    ToastUtil.showToast(R.string.please_choose_downloadfile);
-                    break;
-                }
-                FileUtil.downFile(data1, MEET_MATERIAL);
-                break;
-            case R.id.push_file://文件推送
-                if (dataAdapter == null) break;
-                MeetDirFileInfo data2 = dataAdapter.getCheckedFile();
-                if (data2 == null) {
-                    ToastUtil.showToast(R.string.please_choose_file);
-                    break;
-                }
-                EventBus.getDefault().post(new EventMessage(EventType.INFORM_PUSH_FILE, data2));
+                EventBus.getDefault().post(new EventMessage(EventType.INFORM_PUSH_FILE, mediaId));
                 break;
         }
     }
 
-    @NonNull
-    private List<MeetDirFileInfo> getSelectInfo(List<Integer> mediaIds) {
-        List<MeetDirFileInfo> data = new ArrayList<>();
-        for (int i = 0; i < mediaIds.size(); i++) {
-            Integer mediaId = mediaIds.get(i);
-            for (int j = 0; j < meetDirFileInfos.size(); j++) {
-                MeetDirFileInfo meetDirFileInfo = meetDirFileInfos.get(j);
-                if (meetDirFileInfo.getMediaId() == mediaId) {
-                    data.add(meetDirFileInfo);
+    private void updateDownloadFiles() {
+        downloadFiles.clear();
+        for (int i = 0; i < showFiles.size(); i++) {
+            BaseNode node = showFiles.get(i);
+            if (node instanceof LevelDirNode) {
+                LevelDirNode dirNode = (LevelDirNode) node;
+                List<BaseNode> childNode = dirNode.getChildNode();
+                if (childNode != null) {
+                    for (int j = 0; j < childNode.size(); j++) {
+                        LevelFileNode fileNode = (LevelFileNode) childNode.get(j);
+                        MeetDirFileInfo info = new MeetDirFileInfo(
+                                fileNode.getDirId(), fileNode.getMediaId(), fileNode.getName(),
+                                fileNode.getUploaderId(), fileNode.getUploaderRole(), fileNode.getMstime(),
+                                fileNode.getSize(), fileNode.getAttrib(), fileNode.getFilepos(), fileNode.getUploaderName()
+                        );
+                        downloadFiles.add(info);
+                    }
                 }
             }
         }
-        return data;
     }
 
-    private void initBtns() {
-        mBtns = new ArrayList<>();
-        mBtns.add(rightmeetfile_document);
-        mBtns.add(rightmeetfile_picture);
-        mBtns.add(rightmeetfile_video);
-        mBtns.add(rightmeetfile_other);
-    }
+    List<MeetDirFileInfo> downloadFiles = new ArrayList<>();
 
-    private void setBtnSelect(int index) {
-        saveKey.put(clickDirId, index);
-        for (int i = 0; i < mBtns.size(); i++) {
-            mBtns.get(i).setSelected(i == index);
-        }
-    }
-
-    //下一页
-    private void nextPage() {
-        if (dataAdapter == null) return;
-        dataAdapter.PAGE_NOW++;
-        dataAdapter.notifyDataSetChanged();
-        updataPageTv();
-        checkButton();
-    }
-
-    //上一页
-    private void prePage() {
-        if (dataAdapter == null) return;
-        dataAdapter.PAGE_NOW--;
-        dataAdapter.notifyDataSetChanged();
-        updataPageTv();
-        checkButton();
-    }
-
-    private void updataPageTv() {
-        if (mFileData == null || dataAdapter == null) return;
-        int count = mFileData.size();
-        LogUtil.e(TAG, "MeetingFileFragment.updataPageTv :   --> mFileData.size()： " + count);
-        if (count != 0) {
-            if (count % dataAdapter.ITEM_COUNT == 0) {
-                page_count = mFileData.size() / dataAdapter.ITEM_COUNT;
-            } else {
-                page_count = (mFileData.size() / dataAdapter.ITEM_COUNT) + 1;
+    private void downloadFilePop() {
+        LogUtils.i(TAG, "downloadFilePop 数据个数=" + downloadFiles.size());
+        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.pop_download_file, null, false);
+        downloadPop = PopUtil.createHalfPop(inflate, btn_push);
+        RecyclerView rv_download_file = inflate.findViewById(R.id.rv_download_file);
+        downloadFileAdapter = new DownloadFileAdapter(R.layout.item_download_file, downloadFiles);
+        rv_download_file.setLayoutManager(new LinearLayoutManager(getContext()));
+        rv_download_file.setAdapter(downloadFileAdapter);
+        downloadFileAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
+                MeetDirFileInfo info = downloadFiles.get(position);
+                downloadFileAdapter.setSelectedFile(info);
             }
-            tv_count_num.setText(dataAdapter.PAGE_NOW + 1 + " / " + page_count);
-        } else {
-            tv_count_num.setText(dataAdapter.PAGE_NOW + " / " + count);
-        }
-    }
-
-    //设置两个按钮是否可用
-    public void checkButton() {
-        if (dataAdapter == null || mFileData == null) return;
-        //如果页码已经是第一页了
-        if (dataAdapter.PAGE_NOW == 0) {
-            rightmeetfile_prepage.setEnabled(false);
-            //如果不设置的话，只要进入一次else if ，那么下一页按钮就一直是false，不可点击状态
-            if (mFileData.size() > dataAdapter.ITEM_COUNT) {
-                rightmeetfile_nextpage.setEnabled(true);
-            } else {
-                rightmeetfile_nextpage.setEnabled(false);
+        });
+        inflate.findViewById(R.id.btn_back).setOnClickListener(v -> downloadPop.dismiss());
+        inflate.findViewById(R.id.btn_download).setOnClickListener(v -> {
+            List<MeetDirFileInfo> selectedFiles = downloadFileAdapter.getSelectedFiles();
+            if (selectedFiles.isEmpty()) {
+                ToastUtils.showShort(R.string.please_choose_file_first);
+                return;
             }
-        }
-        //值的长度减去前几页的长度，剩下的就是这一页的长度，如果这一页的长度比View_Count小，表示这是最后的一页了，后面在没有了。
-        else if (mFileData.size() - (dataAdapter.PAGE_NOW) * dataAdapter.ITEM_COUNT <= dataAdapter.ITEM_COUNT) {
-            rightmeetfile_nextpage.setEnabled(false);
-            rightmeetfile_prepage.setEnabled(true);
-        } else {
-            //否则两个按钮都设为可用
-            rightmeetfile_prepage.setEnabled(true);
-            rightmeetfile_nextpage.setEnabled(true);
-        }
+            for (int i = 0; i < selectedFiles.size(); i++) {
+                MeetDirFileInfo info = selectedFiles.get(i);
+                FileUtil.downloadFile(info, Macro.MEET_MATERIAL);
+            }
+        });
+        inflate.findViewById(R.id.btn_saved_offline).setOnClickListener(v -> {
+            List<MeetDirFileInfo> selectedFiles = downloadFileAdapter.getSelectedFiles();
+            if (selectedFiles.isEmpty()) {
+                ToastUtils.showShort(R.string.please_choose_file_first);
+                return;
+            }
+            for (int i = 0; i < selectedFiles.size(); i++) {
+                MeetDirFileInfo info = selectedFiles.get(i);
+                FileUtil.downOfflineFile(info);
+            }
+        });
     }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
-        isFirst = false;
         /** **** **  如果是隐藏状态，则表示不在显示  ** **** **/
         LogUtil.e(TAG, "MeetingFileFragment.onHiddenChanged :   --> 是否隐藏：" + hidden);
         if (!hidden) {
-            fun_queryMeetDir();
-        } else {
-        }/* else {
-            if (dataAdapter != null) page_now = dataAdapter.PAGE_NOW;
-        }*/
+            queryMeetDir();
+        }
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        EventBus.getDefault().register(this);
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        EventBus.getDefault().unregister(this);
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
     }
 
 }

@@ -3,6 +3,7 @@ package com.pa.paperless.fragment;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.utils.LogUtil;
@@ -22,15 +23,15 @@ import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.PostilMemberAdapter;
-import com.pa.paperless.adapter.TypeFileAdapter;
+import com.pa.paperless.adapter.rvadapter.PostilMemberAdapter;
+import com.pa.paperless.adapter.rvadapter.TypeFileAdapter;
 import com.pa.paperless.data.bean.DevMember;
 import com.pa.paperless.data.bean.MeetDirFileInfo;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.Dispose;
 import com.pa.paperless.utils.FileUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -131,13 +132,13 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                 LogUtil.e(TAG, "PostilFragment.onItemClick :  position --> " + position);
                 default_tv.setSelected(false);
                 DevMember devMember = devMembers.get(position);
-                currentMemberName = devMember.getMemberInfos().getName().toStringUtf8();
+                currentMemberName = devMember.getMemberDetailInfo().getName().toStringUtf8();
                 int devId = devMember.getDevId();
                 //保存的权限集合中是否有当前设备同意的权限
                 if (permissionList.contains(devId)) {
                     showCurrentFile(currentMemberName);
                 } else {
-                    ToastUtil.showToast(R.string.request_permission_now);
+                    ToastUtils.showShort(R.string.request_permission_now);
                     //发送请求查看批注文件权限
                     jni.sendAttendRequestPermissions(devId,
                             InterfaceMacro.Pb_MemberPermissionPropertyID.Pb_memperm_postilview.getNumber());
@@ -235,7 +236,7 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                         InterfaceMember.pbui_Item_MemberDetailInfo memberInfo = memberInfos.get(i);
                         if (memberInfo.getPersonid() == memberid) {
                             if (currentMemberName.equals(memberInfo.getName().toStringUtf8())) {
-                                ToastUtil.showToast(R.string.agreed_postilview, memberInfo.getName().toStringUtf8());
+                                ToastUtils.showShort(R.string.agreed_postilview, memberInfo.getName().toStringUtf8());
                                 showCurrentFile(memberInfo.getName().toStringUtf8());
                             }
                             break;
@@ -245,7 +246,7 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                     for (int i = 0; i < memberInfos.size(); i++) {
                         InterfaceMember.pbui_Item_MemberDetailInfo memberInfo = memberInfos.get(i);
                         if (memberInfo.getPersonid() == memberid) {
-                            ToastUtil.showToast(R.string.reject_postilview, memberInfo.getName());
+                            ToastUtils.showShort(R.string.reject_postilview, memberInfo.getName());
                             break;
                         }
                     }
@@ -368,7 +369,7 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                     for (int i = 0; i < meetDirFileInfos.size(); i++) {
                         MeetDirFileInfo meetDirFileInfo = meetDirFileInfos.get(i);
                         String uploader_name = meetDirFileInfo.getUploader_name();
-                        if (FileUtil.isDocumentFile(meetDirFileInfo.getFileName())) {
+                        if (FileUtil.isDocument(meetDirFileInfo.getFileName())) {
                             if (uploader_name.equals(currentMemberName)) {
                                 mData.add(meetDirFileInfo);
                             }
@@ -387,7 +388,7 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                     for (int i = 0; i < meetDirFileInfos.size(); i++) {
                         MeetDirFileInfo meetDirFileInfo = meetDirFileInfos.get(i);
                         String uploader_name = meetDirFileInfo.getUploader_name();
-                        if (FileUtil.isPictureFile(meetDirFileInfo.getFileName())) {
+                        if (FileUtil.isPicture(meetDirFileInfo.getFileName())) {
                             if (uploader_name.equals(currentMemberName)) {
                                 mData.add(meetDirFileInfo);
                             }
@@ -404,7 +405,7 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                 if (mAdapter == null) break;
                 MeetDirFileInfo data = mAdapter.getCheckedFile();
                 if (data == null) {
-                    ToastUtil.showToast(R.string.please_choose_downloadfile);
+                    ToastUtils.showShort(R.string.please_choose_downloadfile);
                     break;
                 }
                 FileUtil.downOfflineFile(data);
@@ -413,19 +414,19 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                 if (mAdapter == null) break;
                 MeetDirFileInfo data1 = mAdapter.getCheckedFile();
                 if (data1 == null) {
-                    ToastUtil.showToast(R.string.please_choose_downloadfile);
+                    ToastUtils.showShort(R.string.please_choose_downloadfile);
                     break;
                 }
-                FileUtil.downFile(data1, Macro.POSTIL_FILE);
+                FileUtil.downloadFile(data1, Macro.POSTIL_FILE);
                 break;
             case R.id.push_file://文件推送
                 if (mAdapter == null) break;
                 MeetDirFileInfo data2 = mAdapter.getCheckedFile();
                 if (data2 == null) {
-                    ToastUtil.showToast(R.string.please_choose_file);
+                    ToastUtils.showShort(R.string.please_choose_file);
                     break;
                 }
-                EventBus.getDefault().post(new EventMessage(EventType.INFORM_PUSH_FILE, data2));
+                EventBus.getDefault().post(new EventMessage(EventType.INFORM_PUSH_FILE, data2.getMediaId()));
                 break;
         }
     }

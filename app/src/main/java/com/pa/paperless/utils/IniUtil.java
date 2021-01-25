@@ -1,5 +1,6 @@
 package com.pa.paperless.utils;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.pa.paperless.data.constant.Macro;
 
 import org.ini4j.Config;
@@ -15,7 +16,7 @@ import java.io.File;
 public class IniUtil {
     private final String TAG = "IniUtil-->";
     private static IniUtil instance = new IniUtil();
-    public static File inifile = new File(Macro.INIT_FILE_SD_PATH + "/" + Macro.FILENAME);
+    public static File inifile = new File(Macro.root_dir + "/client.ini");
     private Ini ini;
     private File file = null;
 
@@ -37,7 +38,7 @@ public class IniUtil {
         try {
             ini.load(file);
             this.file = file;
-            LogUtil.i(TAG, "成功加载ini文件： " + file.exists());
+            LogUtils.i(TAG, "成功加载ini文件： " + file.exists());
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -60,7 +61,7 @@ public class IniUtil {
         if (file != null && ini != null) {
             try {
                 ini.store(file);
-                LogUtil.i(TAG, "成功提交到ini");
+                LogUtils.file("成功提交到ini");
             } catch (Exception e) {
                 e.printStackTrace();
             }

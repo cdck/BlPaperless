@@ -116,7 +116,7 @@ public class NoticeActivity extends BaseActivity implements View.OnClickListener
                     }
                 }
                 if (!userStr.isEmpty()) {
-                    FileUtil.CreateDir(Macro.ROOT);
+                    FileUtil.createDir(Macro.ROOT);
                     jni.creationFileDownload(Macro.ROOT + userStr + ".png", mediaid, 1, 0, userStr);
                 }
             }

@@ -139,7 +139,7 @@ public class VideoChatView extends ViewGroup {
             surfaceView.setClickable(true);
             surfaceView.setOnGlSurfaceViewOncreateListener(new WlOnGlSurfaceViewOncreateListener() {
                 @Override
-                public void onGlSurfaceViewOncreate(Surface surface) {
+                public void onGlSurfaceViewOnCreate(Surface surface) {
                     LogUtil.e(TAG, "createPlayView onGlSurfaceViewOncreate :   --> ");
                     surfaceView.setSurface(surface);
                 }

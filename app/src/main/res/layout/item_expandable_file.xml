@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_file_root"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_gravity="center"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/selector_bg_color"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/item_file_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:src="@drawable/ic_file_type_picture" />
+
+    <TextView
+        android:id="@+id/item_file_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        tools:text="圣诞快乐放假临时冻结.png" />
+
+    <TextView
+        android:id="@+id/item_file_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        tools:text="213.85 K" />
+
+    <TextView
+        android:id="@+id/item_file_uploader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        tools:text="管理员" />
+
+    <Button
+        android:id="@+id/item_file_preview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/preview_file_pressed" />
+
+</LinearLayout>

@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMeet;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.OffMeetAdapter;
+import com.pa.paperless.adapter.rvadapter.OffMeetAdapter;
 import com.pa.paperless.utils.LogUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.wind.myapplication.NativeUtil;
 
 import java.util.ArrayList;
@@ -92,7 +93,7 @@ public class OffLineActivity extends AppCompatActivity implements View.OnClickLi
                 if (adapter == null) break;
                 InterfaceMeet.pbui_Item_MeetMeetInfo meetInfo = adapter.getSelectedMeet();
                 if (meetInfo == null) {
-                    ToastUtil.showToast( R.string.tip_choose_meeting);
+                    ToastUtils.showShort( R.string.tip_choose_meeting);
                     break;
                 }
                 jump2meet(meetInfo.getId(), meetInfo.getName().toStringUtf8());
@@ -101,7 +102,7 @@ public class OffLineActivity extends AppCompatActivity implements View.OnClickLi
                 if (adapter == null) break;
                 InterfaceMeet.pbui_Item_MeetMeetInfo selectedMeet = adapter.getSelectedMeet();
                 if (selectedMeet == null) {
-                    ToastUtil.showToast( R.string.tip_choose_meeting);
+                    ToastUtils.showShort( R.string.tip_choose_meeting);
                     break;
                 }
                 jni.deleteMeeting(selectedMeet);

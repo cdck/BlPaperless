@@ -23,7 +23,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +37,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.acker.simplezxing.activity.CaptureActivity;
+import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.FileUtils;
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.hjq.permissions.OnPermission;
 import com.hjq.permissions.XXPermissions;
@@ -50,15 +53,14 @@ import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMeet;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.MemberAdapter;
+import com.pa.paperless.adapter.rvadapter.MemberAdapter;
 import com.pa.paperless.broadcase.NetWorkReceiver;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
-import com.pa.paperless.service.ShotApplication;
+import com.pa.paperless.service.App;
 import com.pa.paperless.ui.DrawBoard;
-import com.pa.paperless.utils.AppDevUtil;
 import com.pa.paperless.utils.CodecUtil;
 import com.pa.paperless.utils.ConvertUtil;
 import com.pa.paperless.utils.DateUtil;
@@ -69,7 +71,7 @@ import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.NetworkUtil;
 import com.pa.paperless.utils.PopUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.wind.myapplication.NativeUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -95,10 +97,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import static com.pa.paperless.data.constant.Values.isOver;
-import static com.pa.paperless.service.ShotApplication.isDebug;
+import static com.pa.paperless.service.App.isDebug;
 import static com.pa.paperless.utils.MyUtils.s2b;
-
-//import static android.Manifest.permission.READ_FRAME_BUFFER;
 
 /**
  * @author xlk
@@ -106,8 +106,6 @@ import static com.pa.paperless.utils.MyUtils.s2b;
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private final String TAG = "MainActivity-->";
-
-
     private long millis;
     private PopupWindow ipEdtPop;
     private boolean toSetting;
@@ -123,7 +121,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private int parseInt;
     private PopUtils.PopBuilder ScanPop;
     private int pos;
-    private int screenW, screenH;
     private float lx, ly, bx, by;
     private AlertDialog pwdDialog;
     private DrawBoard board;
@@ -137,7 +134,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private PopupWindow chooseMemberPop;
     private PopupWindow createMemberPop;
     private boolean isCached;
-
 
     private TextView tv_dev_online;
     private ImageView main_close_iv;
@@ -165,10 +161,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.absolute_main);
         initView();
         EventBus.getDefault().register(this);
-        DisplayMetrics metric = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metric);
-        screenW = metric.widthPixels; // 屏幕宽度（像素）
-        screenH = metric.heightPixels; // 屏幕高度（像素）
         netWorkReceiver = new NetWorkReceiver();
         registerNetwork();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -281,10 +273,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 int method = results.getMethod();
                 int status = results.getStatus();
                 if (status == InterfaceMacro.Pb_DB_StatusCode.Pb_STATUS_DONE.getNumber()) {
-                    ToastUtil.showToast(R.string.signin_ture);
+                    ToastUtils.showShort(R.string.signin_ture);
                     jump2Meet();
                 } else if (status == InterfaceMacro.Pb_DB_StatusCode.Pb_STATUS_PSWFAILED.getNumber()) {
-                    ToastUtil.showToast(R.string.pwd_is_error);
+                    ToastUtils.showShort(R.string.pwd_is_error);
                     showEdtPop(false);
                 }
                 break;
@@ -326,7 +318,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         break;
                     case 2:
                         LogUtil.e(TAG, "initFailed 状态码：" + code);
-                        ToastUtil.initResultToast(code);
+                        String errorMessage = Macro.getErrorMessageByCode(this, code);
+                        if (!TextUtils.isEmpty(errorMessage)) {
+                            ToastUtils.showShort(errorMessage);
+                        }
                         break;
                     case 3:
                         LogUtil.e(TAG, "initFailed 到期时间：" + code);
@@ -352,7 +347,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             }
         }
         if (onlineDevCount > onLineDevThreshold) {
-            ToastUtil.showToast(getString(R.string.max_online_device, onLineDevThreshold));
+            ToastUtils.showShort(getString(R.string.max_online_device, onLineDevThreshold));
         }
     }
 
@@ -372,12 +367,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     signIn();
                 }
             } else {
-                ToastUtil.showToast(R.string.unbounded_attendees);
+                ToastUtils.showShort(R.string.unbounded_attendees);
                 queryMember = true;
                 fun_queryAttendPeople();
             }
         } else {
-            ToastUtil.showToast(R.string.no_searched_meeting);
+            ToastUtils.showShort(R.string.no_searched_meeting);
             if (!ScanPopshowing) {
                 LogUtil.i(TAG, "gotoMeet -->打开扫码--");
                 showScanPop();
@@ -416,7 +411,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private void showDrawBoard(String pwd) {
         PopUtils.PopBuilder.createPopupWindow(R.layout.small_draw_board, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT,
-                ShotApplication.getRootView(), Gravity.CENTER, 0, 0, false, new PopUtils.ClickListener() {
+                App.getRootView(), Gravity.CENTER, 0, 0, false, new PopUtils.ClickListener() {
                     @Override
                     public void setUplistener(PopUtils.PopBuilder builder) {
                         board = builder.getView(R.id.small_drawboard);
@@ -453,7 +448,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         inflate.findViewById(R.id.ensure).setOnClickListener(v -> {
             String pwd = pwdedt.getText().toString().trim();
             if (pwd.isEmpty()) {
-                ToastUtil.showToast(R.string.please_input_pwd);
+                ToastUtils.showShort(R.string.please_input_pwd);
             } else {
                 if (haspic) {
                     showDrawBoard(pwd);
@@ -480,7 +475,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         unreceiverUpdate();
         Intent intent = new Intent(MainActivity.this, MeetingActivity.class);
         startActivity(intent);
-//        ShotApplication application = (ShotApplication) getApplication();
+//        App application = (App) getApplication();
         finish();
     }
 
@@ -698,8 +693,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         ConstraintSet set = new ConstraintSet();
         set.clone(root_layout_id);
         //设置控件的大小
-        float width = (bx - lx) / 100 * screenW;
-        float height = (by - ly) / 100 * screenH;
+        float width = (bx - lx) / 100 * App.screenWidth;
+        float height = (by - ly) / 100 * App.screenHeight;
         set.constrainWidth(resid, (int) width);
         set.constrainHeight(resid, (int) height);
 //        LogUtil.d(TAG, "update: 控件大小 当前控件宽= " + width + ", 当前控件高= " + height);
@@ -714,7 +709,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         if (ly == 0) biasY = 0;
         else if (ly > 50) biasY = by / 100;
         else biasY = halfH / 100;
-//        LogUtil.d(TAG, "update: biasX= " + biasX + ",biasY= " + biasY);
+        if (resid == R.id.main_unit) {
+            LogUtil.i(TAG, "update:单位控件 控件大小 当前控件宽= " + width + ", 当前控件高= " + height);
+            LogUtil.i(TAG, "update:单位控件 biasX= " + biasX + ",biasY= " + biasY);
+        } else if (resid == R.id.main_logo_iv) {
+            LogUtil.d(TAG, "update:logo图标控件 控件大小 当前控件宽= " + width + ", 当前控件高= " + height);
+            LogUtil.d(TAG, "update:logo图标控件 biasX= " + biasX + ",biasY= " + biasY);
+        }
         set.setHorizontalBias(resid, biasX);
         set.setVerticalBias(resid, biasY);
         set.applyTo(root_layout_id);
@@ -774,11 +775,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 List<Integer> checks = adapter.getChecks();
                 if (!checks.isEmpty()) {
                     Integer personid = checks.get(0);
-                    jni.modifMeetRanking(personid, InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_normal.getNumber(), Values.localDevId);
+                    jni.modifyMeetRanking(personid, InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_normal.getNumber(), Values.localDevId);
                     fun_queryDevMeetInfo();
                     chooseMemberPop.dismiss();
                 } else {
-                    ToastUtil.showToast(R.string.please_choose_member);
+                    ToastUtils.showShort(R.string.please_choose_member);
                 }
             }
         });
@@ -793,7 +794,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void createNewMember() {
         createNewshowing = true;
         View inflate = LayoutInflater.from(getApplicationContext()).inflate(R.layout.new_member_layout, null);
-        createMemberPop = new PopupWindow(inflate, screenW / 2, screenH / 2);
+        createMemberPop = new PopupWindow(inflate, App.screenWidth / 2, App.screenHeight / 2);
         createMemberPop.setAnimationStyle(R.style.Anim_PopupWindow);
         createMemberPop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         // 设置触摸外面时消失
@@ -801,7 +802,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         // 设置popWindow弹出窗体可点击，这句话必须添加，并且是true
         createMemberPop.setFocusable(true);
         createMemberPop.setTouchable(true);
-        createMemberPop.showAtLocation(ShotApplication.getRootView(), Gravity.CENTER, 0, 0);
+        createMemberPop.showAtLocation(App.getRootView(), Gravity.CENTER, 0, 0);
         final CreateMemberViewHolder holder = new CreateMemberViewHolder(inflate);
         holder.ensure.setOnClickListener(v -> {
             String company = holder.edt_company.getText().toString();
@@ -838,7 +839,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
      */
     private void CheckNet() {
         if (NetworkUtil.isNetworkAvailable(getApplicationContext())) {
-            LogUtil.d(TAG, "CheckNet: 有网络,开始初始化方法..." + isOver);
+            LogUtils.d(TAG, "CheckNet: 有网络,开始初始化方法..." + isOver);
             if (isOver) {
                 //线程问题所以用EventBus到UI线程
                 EventBus.getDefault().post(new EventMessage(EventType.BUS_MAINSTART));
@@ -860,7 +861,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 }
             }
         } else {
-            LogUtil.d(TAG, "CheckNet: 没有网络,前往设置...");
+            LogUtils.d(TAG, "CheckNet: 没有网络,前往设置...");
             showDig(getString(R.string.goto_open_network), 0);
             /** **** **  定时检测网络,如果突然有网络了则重新进入 CheckNet 进行初始化  ** **** **/
             if (netTimer == null) {
@@ -871,9 +872,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     @Override
                     public void run() {
                         hasNetWork = NetworkUtil.isNetworkAvailable(getApplicationContext());
-                        LogUtil.d(TAG, "CheckNet.run: 是否有网络:" + hasNetWork);
+                        LogUtils.d(TAG, "CheckNet.run: 是否有网络:" + hasNetWork);
                         if (hasNetWork) {
-                            LogUtil.d(TAG, "CheckNet.run: 检测到网络,关闭定时检测...");
+                            LogUtils.d(TAG, "CheckNet.run: 检测到网络,关闭定时检测...");
                             netTask.cancel();
                             netTimer.purge();
                             netTimer.cancel();
@@ -886,7 +887,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         }
                     }
                 };
-                LogUtil.d(TAG, "CheckNet: 开启定时网络检测...");
+                LogUtils.d(TAG, "CheckNet: 开启定时网络检测...");
                 netTimer.schedule(netTask, 0, 2000);
             }
         }
@@ -910,8 +911,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             @Override
             public void cancel(DialogInterface dialog) {
                 dialog.dismiss();
-                myApp.openNat(false);
-                System.exit(0);
+                exit();
             }
         });
     }
@@ -927,7 +927,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //                if (mainMeetName.getText().toString().trim().isEmpty()) {
 //                    jumpToScanPage();
 //                } else {
-//                    ToastUtil.showToast( R.string.binding_meeting);
+//                    ToastUtils.showShort( R.string.binding_meeting);
 //                }
 //            }
 //        });
@@ -948,7 +948,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //            defaultOpen = false;
             ScanPopshowing = true;
             ScanPop = PopUtils.PopBuilder.createPopupWindow(R.layout.scan_layout, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT,
-                    ShotApplication.getRootView(), Gravity.CENTER, 0, 0, false, new PopUtils.ClickListener() {
+                    App.getRootView(), Gravity.CENTER, 0, 0, false, new PopUtils.ClickListener() {
                         @Override
                         public void setUplistener(final PopUtils.PopBuilder builder) {
                             builder.getView(R.id.scan_btn).setOnClickListener(v -> {
@@ -957,7 +957,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                                 if (main_meetName.getText().toString().trim().isEmpty())
                                     jumpToScanPage();
                                 else {
-                                    ToastUtil.showToast(R.string.binding_meeting);
+                                    ToastUtils.showShort(R.string.binding_meeting);
                                 }
                             });
                             builder.getView(R.id.cancel).setOnClickListener(v -> ScanPop.dismiss());
@@ -975,25 +975,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void MainStart() {
+        jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(),
+                InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MainFace.getNumber());
         updateOnline();
-//        if (ContextCompat.checkSelfPermission(this,
-//                Manifest.permission.READ_FRAME_BUFFER) == PackageManager.PERMISSION_DENIED) {
-//
-//        }
         LogUtil.d(TAG, "MainStart: 直接申请读取帧缓存权限");
         startIntent(REQUEST_MEDIA_PROJECTION);
-//        if (true) {
-//            LogUtil.d(TAG, "MainStart: 没有读取帧缓存权限,进行申请");
-//            startIntent(REQUEST_MEDIA_PROJECTION);
-//        } else {
-//            LogUtil.d(TAG, "MainStart: 有读取帧缓存权限..进入下一步");
-//            next_step();
-//        }
     }
 
     private void next_step() {
-        LogUtil.e(TAG, "next_step 平台初始化完毕 -->");
-        int format = CodecUtil.selectColorFormat(CodecUtil.selectCodec("video/avc"), "video/avc");
+        LogUtils.e(TAG, "next_step 平台初始化完毕 -->");
+        int format = CodecUtil.selectColorFormat(CodecUtil.selectCodec(MediaFormat.MIMETYPE_VIDEO_AVC), MediaFormat.MIMETYPE_VIDEO_AVC);
         switch (format) {
             case MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420Planar:
                 NativeUtil.COLOR_FORMAT = 0;
@@ -1016,6 +1007,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 return;
             }
             Values.localDevId = contextInfo.getPropertyval();
+            LogUtils.i(TAG, "本机设备id=" + Values.localDevId);
             setDevName();
             fun_queryDevMeetInfo();
             fun_queryInterFaceConfiguration();
@@ -1153,7 +1145,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     userStr = Macro.DOWNLOAD_SUB_BG;
                 }
                 if (!TextUtils.isEmpty(userStr)) {
-                    FileUtil.CreateDir(Macro.ROOT);
+                    FileUtil.createDir(Macro.ROOT);
                     jni.creationFileDownload(Macro.ROOT + userStr + ".png", mediaid, 1, 0, userStr);
                 }
             }
@@ -1192,8 +1184,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_TIMER.getNumber()) {//日期时间
                     updateDate(R.id.main_date_layout, fontflag, flag, fontsize, color, align, fontName);
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_COMPANY.getNumber()) {//单位名称
+                    LogUtil.i(TAG, "单位名称控件");
                     updateTv(R.id.main_unit, fontflag, flag, fontsize, color, align, fontName);
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACE_LOGO_GEO.getNumber()) {//Logo图标,只需要更新位置坐标
+                    LogUtil.i(TAG, "logo图标控件");
                     update(R.id.main_logo_iv);
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACE_checkin_GEO.getNumber()) {//进入会议按钮 text
                     updateBtn(R.id.mian_into_meeting, fontflag, flag, fontsize, color, align, fontName);
@@ -1295,11 +1289,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     // 复制ini、dev文件
     private void initConfFile() {
+        FileUtils.createOrExistsDir(Macro.root_dir);
+        boolean exists = FileUtils.isFileExists(Macro.root_dir + "/client.ini");
         //拷贝配置文件
-        if (!IniUtil.inifile.exists()) {
-            copyTo("client.ini", Macro.INIT_FILE_SD_PATH, Macro.FILENAME);
+        if (!exists) {
+            copyTo("client.ini", Macro.root_dir, "client.ini");
         } else {
             if (iniUtil.load(IniUtil.inifile)) {//要确保load成功
+                LogUtils.i(TAG, "加载ini文件成功");
                 String streamprotol = iniUtil.get("selfinfo", "streamprotol");
                 String disablemulticast = iniUtil.get("Audio", "disablemulticast");
                 if (streamprotol == null || streamprotol.isEmpty() ||
@@ -1320,59 +1317,55 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 }
             }
         }
-        File path_class = new File(Macro.INIT_FILE_SD_PATH + "/" + Macro.FILENAME_DEV);
-        if (!path_class.exists()) {
-            copyTo("client.dev", Macro.INIT_FILE_SD_PATH, Macro.FILENAME_DEV);
-        } else {
-            path_class.delete();
-            copyTo("client.dev", Macro.INIT_FILE_SD_PATH, Macro.FILENAME_DEV);
+        boolean devFileExists = FileUtils.isFileExists(Macro.root_dir + "/client.dev");
+        if (devFileExists) {
+            FileUtils.delete(Macro.root_dir + "/client.dev");
         }
+        copyTo("client.dev", Macro.root_dir, "client.dev");
     }
 
     /**
      * 复制文件
      */
     private void copyTo(String fromPath, String toPath, String fileName) {
-        new Thread(() -> {
-            // 复制位置
-            // opPath：mnt/sdcard/lcuhg/health/
-            // mnt/sdcard：表示sdcard
-            File toFile = new File(toPath);
-            // 如果不存在，创建文件夹
-            if (!toFile.exists()) {
-                boolean isCreate = toFile.mkdirs();
-                // 打印创建结果
-                LogUtil.i("create dir", String.valueOf(isCreate));
+        // 复制位置
+        // opPath：mnt/sdcard/lcuhg/health/
+        // mnt/sdcard：表示sdcard
+        File toFile = new File(toPath);
+        // 如果不存在，创建文件夹
+        if (!toFile.exists()) {
+            boolean isCreate = toFile.mkdirs();
+            // 打印创建结果
+            LogUtil.i("create dir", String.valueOf(isCreate));
+        }
+        try {
+            // 根据文件名获取assets文件夹下的该文件的inputstream
+            InputStream fromFileIs = getResources().getAssets().open(fromPath);
+            int length = fromFileIs.available(); // 获取文件的字节数
+            byte[] buffer = new byte[length]; // 创建byte数组
+            FileOutputStream fileOutputStream = new FileOutputStream(toFile + "/" + fileName); // 字节输入流
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(
+                    fromFileIs);
+            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(
+                    fileOutputStream);
+            int len = bufferedInputStream.read(buffer);
+            while (len != -1) {
+                bufferedOutputStream.write(buffer, 0, len);
+                len = bufferedInputStream.read(buffer);
             }
-            try {
-                // 根据文件名获取assets文件夹下的该文件的inputstream
-                InputStream fromFileIs = getResources().getAssets().open(fromPath);
-                int length = fromFileIs.available(); // 获取文件的字节数
-                byte[] buffer = new byte[length]; // 创建byte数组
-                FileOutputStream fileOutputStream = new FileOutputStream(toFile + "/" + fileName); // 字节输入流
-                BufferedInputStream bufferedInputStream = new BufferedInputStream(
-                        fromFileIs);
-                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(
-                        fileOutputStream);
-                int len = bufferedInputStream.read(buffer);
-                while (len != -1) {
-                    bufferedOutputStream.write(buffer, 0, len);
-                    len = bufferedInputStream.read(buffer);
-                }
-                bufferedInputStream.close();
-                bufferedOutputStream.close();
-                fromFileIs.close();
-                fileOutputStream.close();
-                LogUtil.i(TAG, "copyTo方法 拷贝" + fromPath + "完成------");
-                //确保有ini文件
-                if (fromPath.equals("client.ini")) {
-                    LogUtil.d(TAG, "进入设置版本信息。。。。");
-                    setVersion();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
+            bufferedInputStream.close();
+            bufferedOutputStream.close();
+            fromFileIs.close();
+            fileOutputStream.close();
+            LogUtils.i(TAG, "copyTo方法 拷贝" + fromPath + "完成------");
+            //确保有ini文件
+            if (fromPath.equals("client.ini")) {
+                LogUtil.d(TAG, "进入设置版本信息。。。。");
+                setVersion();
             }
-        }).start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -1405,15 +1398,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             if (clickCount >= 5) {
                 isDebug = !isDebug;
                 if (isDebug) {
-                    ToastUtil.showToast("Debug mode turned on");
+                    ToastUtils.showShort("Debug mode turned on");
                 } else {
-                    ToastUtil.showToast("Debug mode turned off");
+                    ToastUtils.showShort("Debug mode turned off");
                 }
             }
         });
         holder.btn_clear_file.setOnClickListener(v -> {
             if (FileUtil.deleteAllFile(new File(Macro.CACHE_ALL_FILE))) {
-                ToastUtil.showToast(getString(R.string.clear_cache_file_successful));
+                ToastUtils.showShort(getString(R.string.clear_cache_file_successful));
             }
         });
         String ipStr = "";
@@ -1492,11 +1485,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             if (!newIP.isEmpty() && !newPort.isEmpty() && !newMaxBitRate.isEmpty()) {
                 int maxRate = Integer.parseInt(newMaxBitRate);
                 if (maxRate < 100) {
-                    ToastUtil.showToast(R.string.error_less_then_100);
+                    ToastUtils.showShort(R.string.error_less_then_100);
                     return;
                 }
                 if (maxRate > 10000) {
-                    ToastUtil.showToast(R.string.error_more_then_10000);
+                    ToastUtils.showShort(R.string.error_more_then_10000);
                     return;
                 }
                 iniUtil.put("OtherConfiguration", "maxBitRate", maxRate);
@@ -1508,9 +1501,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 LogUtil.i(TAG, " 点击确定 maxBitRate= " + maxRate);
                 iniUtil.store();//修改后提交
                 /** **** **  app重启  ** **** **/
-                MyUtils.reStartApp(this);
+                ipEdtPop.dismiss();
+                AppUtils.relaunchApp(true);
             } else {
-                ToastUtil.showToast(R.string.tip_input_content);
+                ToastUtils.showShort(R.string.tip_input_content);
             }
         });
         holder.ip_pop_cancel.setOnClickListener(v -> ipEdtPop.dismiss());
@@ -1520,7 +1514,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.error_title_restart_app)
                 .setPositiveButton(R.string.ensure, (dialog, which) -> {
-                    MyUtils.reStartApp(this);
+                    AppUtils.relaunchApp(true);
                     dialog.dismiss();
                 })
                 .setNegativeButton(R.string.cancel, (dialog, which) -> {
@@ -1533,7 +1527,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void onBackPressed() {
         if (System.currentTimeMillis() - millis > 2000) {
-            ToastUtil.showToast(R.string.click_quit_the_application_again);
+            ToastUtils.showShort(R.string.click_quit_the_application_again);
             millis = System.currentTimeMillis();
         } else {
             exit();
@@ -1545,9 +1539,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         /* **** **  清空临时存放的文件  ** **** */
         File f = new File(Macro.CACHE_FILE);
         FileUtil.deleteAllFile(f);
-        myApp.openNat(false);
-        myApp.delAllActivity();
-        System.exit(0);
+        finish();
     }
 
     private void initPermissions() {
@@ -1562,6 +1554,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 .request(new OnPermission() {
                     @Override
                     public void hasPermission(List<String> granted, boolean isAll) {
+                        LogUtils.i(TAG, "initPermissions :   --> hasPermission： " + granted.toString() + ",isAll=" + isAll);
                         //用户同意所有权限才开始初始化
                         if (isAll) {
                             start();
@@ -1570,17 +1563,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                     @Override
                     public void noPermission(List<String> denied, boolean quick) {
-                        LogUtil.e(TAG, "initPermissions :   --> 还未获取的权限有： " + denied.toString());
+                        LogUtils.e(TAG, "initPermissions :   --> 还未获取的权限有： " + denied.toString());
                         initPermissions();
                     }
                 });
     }
 
     private void start() {
-        if (ShotApplication.CameraW == 0 || ShotApplication.CameraH == 0) {
+        if (App.CameraW == 0 || App.CameraH == 0) {
             new Thread(() -> initCameraSize(1)).start();
         }
-        LogUtil.e(TAG, "start :  拥有了权限，进入开始方法 --> ");
+        LogUtils.i(TAG, "start :  拥有了权限，进入开始方法 --> ");
+        System.out.println("log日志写入文件路径=" + LogUtils.getCurrentLogFilePath());
         initConfFile();
         myApp.openNat(true);
         CheckNet();
@@ -1605,7 +1599,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 if (defaultMax < 100) defaultMax = 100;
                 else if (defaultMax > 10000) defaultMax = 10000;
             }
-            ShotApplication.setMaxBitRate(defaultMax);
+            App.setMaxBitRate(defaultMax);
             iniUtil.put("selfinfo", "hardver", hardver);
             iniUtil.put("selfinfo", "softver", softver);
             iniUtil.put("OtherConfiguration", "maxBitRate", defaultMax);
@@ -1616,73 +1610,71 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void initCameraSize(int type) {
-        if (!AppDevUtil.isHasCamera(this)) {
-            return;
-        }
-        try {
-            int numberOfCameras = Camera.getNumberOfCameras();//获取摄像机的个数 一般是前/后置两个
-            if (numberOfCameras < 2) {
-                type = 0;//如果没有2个则说明只有后置像头
-                if (numberOfCameras < 1) {
-                    return;
+        PackageManager packageManager = getPackageManager();
+        if (packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)
+                || packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT)) {
+            try {
+                int numberOfCameras = Camera.getNumberOfCameras();//获取摄像机的个数 一般是前/后置两个
+                if (numberOfCameras < 2) {
+                    type = 0;//如果没有2个则说明只有后置像头
+                    if (numberOfCameras < 1) {
+                        return;
+                    }
                 }
-            }
-            ArrayList<Integer> supportW = new ArrayList<>();
-            ArrayList<Integer> supportH = new ArrayList<>();
-            int largestW = 0, largestH = 0;
-            Camera c = Camera.open(type);
-            Camera.Parameters param = null;
-            if (c != null)
-                param = c.getParameters();
-            if (param == null) return;
-            for (int i = 0; i < param.getSupportedPreviewSizes().size(); i++) {
-                int w = param.getSupportedPreviewSizes().get(i).width, h = param.getSupportedPreviewSizes().get(i).height;
-                supportW.add(w);
-                supportH.add(h);
-            }
-            for (int i = 0; i < supportH.size(); i++) {
-                try {
-                    largestW = supportW.get(i);
-                    largestH = supportH.get(i);
-                    MediaFormat mediaFormat = MediaFormat.createVideoFormat("video/avc", largestW, largestH);
-                    if (MediaCodec.createEncoderByType("video/avc").getCodecInfo().getCapabilitiesForType("video/avc").isFormatSupported(mediaFormat)) {
-                        if (largestW * largestH > ShotApplication.CameraW * ShotApplication.CameraH) {
-                            ShotApplication.CameraW = largestW;
-                            ShotApplication.CameraH = largestH;
+                ArrayList<Integer> supportW = new ArrayList<>();
+                ArrayList<Integer> supportH = new ArrayList<>();
+                int largestW = 0, largestH = 0;
+                Camera c = Camera.open(type);
+                Camera.Parameters param = null;
+                if (c != null)
+                    param = c.getParameters();
+                if (param == null) return;
+                for (int i = 0; i < param.getSupportedPreviewSizes().size(); i++) {
+                    int w = param.getSupportedPreviewSizes().get(i).width, h = param.getSupportedPreviewSizes().get(i).height;
+                    supportW.add(w);
+                    supportH.add(h);
+                }
+                for (int i = 0; i < supportH.size(); i++) {
+                    try {
+                        largestW = supportW.get(i);
+                        largestH = supportH.get(i);
+                        MediaFormat mediaFormat = MediaFormat.createVideoFormat("video/avc", largestW, largestH);
+                        if (MediaCodec.createEncoderByType("video/avc").getCodecInfo().getCapabilitiesForType("video/avc").isFormatSupported(mediaFormat)) {
+                            if (largestW * largestH > App.CameraW * App.CameraH) {
+                                App.CameraW = largestW;
+                                App.CameraH = largestH;
+                            }
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (c != null) {
+                            c.setPreviewCallback(null);
+                            c.stopPreview();
+                            c.release();
+                            c = null;
                         }
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } finally {
-                    if (c != null) {
-                        c.setPreviewCallback(null);
-                        c.stopPreview();
-                        c.release();
-                        c = null;
-                    }
                 }
+                LogUtil.e(TAG, "initCameraSize: 前置像素: cameraW=" + App.CameraW + " cameraH=" + App.CameraH);
+                if (App.CameraW * App.CameraH > 1280 * 720) {
+                    App.CameraW = 1280;
+                    App.CameraH = 720;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            LogUtil.e(TAG, "initCameraSize: 前置像素: cameraW=" + ShotApplication.CameraW + " cameraH=" + ShotApplication.CameraH);
-            if (ShotApplication.CameraW * ShotApplication.CameraH > 1280 * 720) {
-                ShotApplication.CameraW = 1280;
-                ShotApplication.CameraH = 720;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    protected void startIntent(int action) {
-        MediaProjectionManager manager = (MediaProjectionManager) getApplication().getSystemService(Context.MEDIA_PROJECTION_SERVICE);
-        ((ShotApplication) getApplication()).setMediaProjectionManager(manager);
-        if (intent != null && result != 0) {
+    private void startIntent(int action) {
+        App.mediaProjectionManager = (MediaProjectionManager) getApplication().getSystemService(Context.MEDIA_PROJECTION_SERVICE);
+        if (App.intent != null && App.result != 0) {
             LogUtil.i(TAG, "startIntent :  用户同意捕获屏幕 --->>> ");
-            ((ShotApplication) getApplication()).setResult(result);
-            ((ShotApplication) getApplication()).setIntent(intent);
+            next_step();
         } else {
-            /** **** **  第一次时保存 manager  ** **** **/
-            startActivityForResult(manager.createScreenCaptureIntent(), action);
+            startActivityForResult(App.mediaProjectionManager.createScreenCaptureIntent(), action);
         }
     }
 
@@ -1710,20 +1702,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         if (requestCode == REQUEST_MEDIA_PROJECTION) {
             if (resultCode == RESULT_OK) {
                 if (data != null) {
-                    result = resultCode;
-                    intent = data;
-                    ((ShotApplication) getApplication()).setResult(resultCode);
-                    ((ShotApplication) getApplication()).setIntent(data);
+                    App.result = resultCode;
+                    App.intent = data;
                     //保存 MediaProjection 对象,解决每次录制屏幕时需要权限的问题
-                    MediaProjection projection = ((ShotApplication) getApplication()).getMediaProjectionManager()
-                            .getMediaProjection(resultCode, data);
-                    ((ShotApplication) getApplication()).setmMediaProjection(projection);
+                    App.mediaProjection = App.mediaProjectionManager.getMediaProjection(resultCode, data);
                     next_step();
                 }
             } else {
-                myApp.openNat(false);
                 this.finish();
-                System.exit(0);
             }
         } else if (requestCode == REQUEST_SCAN && resultCode == RESULT_OK) {
             if (null != data) {
@@ -1781,7 +1767,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.mian_into_meeting:
                 if (!isOver) {
-                    ToastUtil.showToast(R.string.platform_is_not_yet_initialized);
+                    ToastUtils.showShort(R.string.platform_is_not_yet_initialized);
                     break;
                 }
                 gotoMeet();
@@ -1808,7 +1794,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
         }
     }
-
 
     public static class ChooseViewHolder {
         public View rootView;

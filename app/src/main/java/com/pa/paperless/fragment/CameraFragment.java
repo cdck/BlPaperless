@@ -10,6 +10,7 @@ import android.media.MediaFormat;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.utils.LogUtil;
 
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.utils.FileUtil;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -254,7 +255,7 @@ public class CameraFragment extends BaseFragment implements SurfaceHolder.Callba
     private void setCameraOri(int ori) {
         int numberOfCameras = Camera.getNumberOfCameras();//获取摄像机的个数 前/后置
         if (numberOfCameras < 2 && (ori == 1)) {
-            ToastUtil.showToast(R.string.tip_no_camera);
+            ToastUtils.showShort(R.string.tip_no_camera);
             return;
         }
         if (CAMERA_TYPE != ori) {
@@ -277,7 +278,7 @@ public class CameraFragment extends BaseFragment implements SurfaceHolder.Callba
                 LogUtil.e(TAG, "CameraFragment.onPictureTaken :  data.length() --> " + data.length);
                 LogUtil.e(TAG, "CameraFragment.onPictureTaken :  正在保存...  ");
                 mBitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-                File file = FileUtil.CreateFile(Macro.CACHE_FILE + System.currentTimeMillis() + ".png");
+                File file = FileUtil.createFile(Macro.CACHE_FILE + System.currentTimeMillis() + ".png");
                 BufferedOutputStream os = null;
                 try {
                     os = new BufferedOutputStream(new FileOutputStream(file));

@@ -23,6 +23,7 @@ import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.intrusoft.scatter.ChartData;
@@ -34,10 +35,10 @@ import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.mogujie.tt.protobuf.InterfaceSignin;
 import com.mogujie.tt.protobuf.InterfaceVote;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.ChooseJoinVoteAdapter;
-import com.pa.paperless.adapter.VoteAdapter;
-import com.pa.paperless.adapter.VoteInfoPopAdapter;
-import com.pa.paperless.adapter.VoteOptionResultAdapter;
+import com.pa.paperless.adapter.rvadapter.ChooseJoinVoteAdapter;
+import com.pa.paperless.adapter.rvadapter.VoteAdapter;
+import com.pa.paperless.adapter.rvadapter.VoteInfoPopAdapter;
+import com.pa.paperless.adapter.rvadapter.VoteOptionResultAdapter;
 import com.pa.paperless.data.bean.ImportVoteBean;
 import com.pa.paperless.data.bean.VoteResultSubmitMember;
 import com.pa.paperless.data.constant.EventMessage;
@@ -48,7 +49,9 @@ import com.pa.paperless.utils.ConvertUtil;
 import com.pa.paperless.utils.Export;
 import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+import com.pa.paperless.utils.PopUtil;
+import com.pa.paperless.utils.ScreenUtils;
+
 import com.pa.paperless.utils.UriUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -64,8 +67,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import static android.app.Activity.RESULT_OK;
-import static com.pa.paperless.activity.MeetingActivity.fragmentHeight;
-import static com.pa.paperless.activity.MeetingActivity.fragmentWidth;
 import static com.pa.paperless.activity.MeetingActivity.saveIndex;
 import static com.pa.paperless.data.constant.Values.roomId;
 
@@ -378,14 +379,14 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                         if (votestate == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
                             for (int i = 0; i < mVoteData.size(); i++) {//查看当前是否已经有选举已经发起
                                 if (mVoteData.get(i).getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_voteing.getNumber()) {
-                                    ToastUtil.showToast(R.string.has_vote_ongoing);
+                                    ToastUtils.showShort(R.string.has_vote_ongoing);
                                     isback = true;
                                     break;
                                 }
                             }
                         }
                         if (votestate == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_endvote.getNumber()) {
-                            ToastUtil.showToast(R.string.the_vote_is_over);
+                            ToastUtils.showShort(R.string.the_vote_is_over);
                             isback = true;
                         }
                         if (isback) return;
@@ -403,18 +404,18 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                             }
                         }
                         if (voteInfo.getMode() != 1) {
-                            ToastUtil.showToast(R.string.please_choose_registered_vote);
+                            ToastUtils.showShort(R.string.please_choose_registered_vote);
                         } else if (voteInfo.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
-                            ToastUtil.showToast(R.string.not_choose_notvote);
+                            ToastUtils.showShort(R.string.not_choose_notvote);
                         } else if (!havedata) {
-                            ToastUtil.showToast(R.string.no_data_can_show);
+                            ToastUtils.showShort(R.string.no_data_can_show);
                         } else {
                             open_vote_details = true;
                             fun_queryOneVoteSubmitter(voteInfo);
                         }
                     }
                 } else
-                    ToastUtil.showToast(R.string.please_choose_vote);
+                    ToastUtils.showShort(R.string.please_choose_vote);
                 break;
             case R.id.stop_btn:
                 if (mVoteData != null && mVoteData.size() > mPosion) {
@@ -423,7 +424,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                         if (voteInfo1.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_voteing.getNumber()) {
                             jni.stopVote(voteInfo1.getVoteid());
                         } else
-                            ToastUtil.showToast(R.string.please_choose_ongoing_vote);
+                            ToastUtils.showShort(R.string.please_choose_ongoing_vote);
                     } else {//查看图表
                         InterfaceVote.pbui_Item_MeetVoteDetailInfo voteInfo = mVoteData.get(mPosion);
                         List<InterfaceVote.pbui_SubItem_VoteItemInfo> optionInfo = voteInfo.getItemList();
@@ -435,9 +436,9 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                             }
                         }
                         if (!havedata) {
-                            ToastUtil.showToast(R.string.no_data_can_show);
+                            ToastUtils.showShort(R.string.no_data_can_show);
                         } else if (voteInfo.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
-                            ToastUtil.showToast(R.string.not_choose_notvote);
+                            ToastUtils.showShort(R.string.not_choose_notvote);
                         } else {
                             open_vote_chart = true;
                             fun_queryOneVoteSubmitter(voteInfo);
@@ -494,7 +495,11 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
     private void showJoinPop(InterfaceVote.pbui_Item_MeetVoteDetailInfo voteInfo) {
         showJoinPop = true;
         View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.choose_join_vote_pop, null);
-        choosePop = new PopupWindow(inflate, fragmentWidth + 10, fragmentHeight + 48);
+        View meetFl = getActivity().findViewById(R.id.meet_fl);
+        int px_5 = ScreenUtils.dip2px(getContext(), 5);
+        int px_20 = ScreenUtils.dip2px(getContext(), 20);
+        LogUtil.d(TAG, "dp转px 5=" + px_5 + ",20=" + px_20);
+        choosePop = new PopupWindow(inflate, meetFl.getWidth() + px_5, meetFl.getHeight() + px_20);
         choosePop.setAnimationStyle(R.style.Anim_PopupWindow);
         choosePop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         choosePop.setTouchable(true);
@@ -526,7 +531,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                 holder.all_number_cb.setChecked(chooseAdapter.isCheckAll());
                 chooseAdapter.notifyDataSetChanged();
             } else
-                ToastUtil.showToast(R.string.must_choose_online);
+                ToastUtils.showShort(R.string.must_choose_online);
         });
         holder.all_number_cb.setOnClickListener(v -> {
             boolean checked = holder.all_number_cb.isChecked();
@@ -536,7 +541,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         holder.ensure.setOnClickListener(v -> {
             List<Integer> checks = chooseAdapter.getChecks();
             if (checks.isEmpty()) {
-                ToastUtil.showToast(R.string.please_choose);
+                ToastUtils.showShort(R.string.please_choose);
                 return;
             }
             LogUtil.e(TAG, "VoteFragment.choosePopEvent : 是否有自己的ID  --> " + checks.contains(Values.localMemberId));
@@ -634,9 +639,11 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
     private void showVoteChartPop(InterfaceVote.pbui_Item_MeetVoteDetailInfo voteInfo) {
         open_vote_chart = false;
         View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.vote_chart_pop, null);
-        int px_5 = ConvertUtil.dip2px(getContext(), 5);
-        int px_20 = ConvertUtil.dip2px(getContext(), 20);
-        ChartPop = new PopupWindow(inflate, fragmentWidth + px_5, fragmentHeight + px_20);
+        View meetFl = getActivity().findViewById(R.id.meet_fl);
+        int px_5 = ScreenUtils.dip2px(getContext(), 5);
+        int px_20 = ScreenUtils.dip2px(getContext(), 20);
+        LogUtil.d(TAG, "dp转px 5=" + px_5 + ",20=" + px_20);
+        ChartPop = new PopupWindow(inflate, meetFl.getWidth() + px_5, meetFl.getHeight() + px_20);
         ChartPop.setAnimationStyle(R.style.Anim_PopupWindow);
         ChartPop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         ChartPop.setTouchable(true);
@@ -797,9 +804,11 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
     private void showVoteDetailsPop() {
         open_vote_details = false;
         View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.vote_details_pop, null);
-        int px_5 = ConvertUtil.dip2px(getContext(), 5);
-        int px_20 = ConvertUtil.dip2px(getContext(), 20);
-        PopupWindow voteDetailspop = new PopupWindow(inflate, fragmentWidth + px_5, fragmentHeight + px_20);
+        View meetFl = getActivity().findViewById(R.id.meet_fl);
+        int px_5 = ScreenUtils.dip2px(getContext(), 5);
+        int px_20 = ScreenUtils.dip2px(getContext(), 20);
+        LogUtil.d(TAG, "dp转px 5=" + px_5 + ",20=" + px_20);
+        PopupWindow voteDetailspop = new PopupWindow(inflate, meetFl.getWidth() + px_5, meetFl.getHeight() + px_20);
         voteDetailspop.setAnimationStyle(R.style.Anim_PopupWindow);
         voteDetailspop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         voteDetailspop.setTouchable(true);
@@ -817,7 +826,11 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
 
     private void showVoteInfoPop() {
         View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.vote_entry_pop, null);
-        pop = new PopupWindow(inflate, fragmentWidth + 10, fragmentHeight + 48);
+        View meetFl = getActivity().findViewById(R.id.meet_fl);
+        int px_5 = ScreenUtils.dip2px(getContext(), 5);
+        int px_20 = ScreenUtils.dip2px(getContext(), 20);
+        LogUtil.d(TAG, "dp转px 5=" + px_5 + ",20=" + px_20);
+        pop = new PopupWindow(inflate, meetFl.getWidth() + px_5, meetFl.getHeight() + px_20);
         pop.setAnimationStyle(R.style.Anim_PopupWindow);
         pop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         pop.setTouchable(true);
@@ -852,10 +865,10 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         holder.pop_add_btn.setOnClickListener(v -> {
             String edt_str = holder.modif_edt.getText().toString();
             if (edt_str.trim().isEmpty()) {
-                ToastUtil.showToast(R.string.please_input_content);
+                ToastUtils.showShort(R.string.please_input_content);
                 return;
             } else if (edt_str.trim().length() > Macro.title_max_length) {
-                ToastUtil.showToast(R.string.beyond_max_length);
+                ToastUtils.showShort(R.string.beyond_max_length);
                 return;
             }
             //因为字符资源文件中的索引0就是匿名，1是记名所以可以对应起来
@@ -880,11 +893,11 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         holder.pop_modif_btn.setOnClickListener(v -> {
             String edt_str = holder.modif_edt.getText().toString();
             if (edt_str.trim().isEmpty()) {
-                ToastUtil.showToast(R.string.please_input_content);
+                ToastUtils.showShort(R.string.please_input_content);
                 return;
             }
             if (edt_str.trim().length() > Macro.title_max_length) {
-                ToastUtil.showToast(R.string.beyond_max_length);
+                ToastUtils.showShort(R.string.beyond_max_length);
                 return;
             }
             if (mVoteData != null && mVoteData.size() > popPosion) {
@@ -906,14 +919,14 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                 InterfaceVote.pbui_Item_MeetOnVotingDetailInfo build = builder.build();
                 jni.modifyVote(build);
             } else {
-                ToastUtil.showToast(R.string.please_choose_vote);
+                ToastUtils.showShort(R.string.please_choose_vote);
             }
         });
         holder.pop_del_btn.setOnClickListener(v -> {
             if (mVoteData != null && !mVoteData.isEmpty()) {
                 List<Integer> voteids = new ArrayList<>();
                 if (popPosion >= mVoteData.size()) {
-                    ToastUtil.showToast(R.string.please_choose_vote);
+                    ToastUtils.showShort(R.string.please_choose_vote);
                     return;
                 }
                 voteids.add(mVoteData.get(popPosion).getVoteid());
@@ -928,7 +941,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                 String[] titles = new String[]{getString(R.string.vote_content), getString(R.string.whether_registered)};
                 Export.VoteEntry(getString(R.string.vote_entry), titles, mVoteData, 0);
             } else
-                ToastUtil.showToast(R.string.no_data_export);
+                ToastUtils.showShort(R.string.no_data_export);
         });
         holder.import_excel.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -952,11 +965,11 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                     e.printStackTrace();
                 }
                 if (path == null || path.isEmpty()) {
-                    ToastUtil.showToast(R.string.get_file_path_fail);
+                    ToastUtils.showShort(R.string.get_file_path_fail);
                     return;
                 }
                 if (!path.endsWith(".xls")) {
-                    ToastUtil.showToast(R.string.only_xls_file);
+                    ToastUtils.showShort(R.string.only_xls_file);
                     return;
                 }
                 List<ImportVoteBean> importVoteBeen = Export.ReadVoteExcel(path);

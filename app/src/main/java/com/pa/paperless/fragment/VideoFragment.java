@@ -2,6 +2,7 @@ package com.pa.paperless.fragment;
 
 
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,13 +13,15 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceDevice;
 import com.mogujie.tt.protobuf.InterfaceStop;
 import com.mogujie.tt.protobuf.InterfaceVideo;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.MeetLiveVideoAdapter;
+import com.pa.paperless.adapter.rvadapter.MeetLiveVideoAdapter;
 import com.pa.paperless.data.bean.VideoInfo;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
@@ -26,7 +29,7 @@ import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.ui.CustomVideoView;
 import com.pa.paperless.utils.LogUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -157,7 +160,7 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener,
             adapter = new MeetLiveVideoAdapter(R.layout.item_meet_video, videoInfos);
             meet_video_rv.setLayoutManager(new LinearLayoutManager(getContext()));
             meet_video_rv.setAdapter(adapter);
-            adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            adapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(BaseQuickAdapter ad, View view, int position) {
                     if (videoInfos.get(position).getDeviceDetailInfo().getNetstate() == 1) {
@@ -302,10 +305,10 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener,
                             }
                         }, 500);
                     } else {
-                        ToastUtil.showToast(R.string.please_choose_view);
+                        ToastUtils.showShort(R.string.please_choose_view);
                     }
                 } else {
-                    ToastUtil.showToast(R.string.please_choose_video_show);
+                    ToastUtils.showShort(R.string.please_choose_video_show);
                 }
                 break;
             case R.id.meet_video_stop_watch:
@@ -313,35 +316,35 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener,
                 if (selectResId != -1) {
                     stopResource(selectResId);
                 } else {
-                    ToastUtil.showToast( R.string.please_choose_stop_view);
+                    ToastUtils.showShort( R.string.please_choose_stop_view);
                 }
                 break;
             case R.id.meet_video_screen_video:
                 if (isHasPermission(Macro.permission_code_screen)) {
                     screen_oper(true);
                 } else {
-                    ToastUtil.showToast( R.string.no_permission);
+                    ToastUtils.showShort( R.string.no_permission);
                 }
                 break;
             case R.id.meet_video_stop_screen:
                 if (isHasPermission(Macro.permission_code_screen)) {
                     screen_oper(false);
                 } else {
-                    ToastUtil.showToast( R.string.no_permission);
+                    ToastUtils.showShort( R.string.no_permission);
                 }
                 break;
             case R.id.meet_video_start_projector:
                 if (isHasPermission(Macro.permission_code_projection)) {
                     project_oper(true);
                 } else {
-                    ToastUtil.showToast( R.string.no_permission);
+                    ToastUtils.showShort( R.string.no_permission);
                 }
                 break;
             case R.id.meet_video_stop_projection:
                 if (isHasPermission(Macro.permission_code_projection)) {
                     project_oper(false);
                 } else {
-                    ToastUtil.showToast( R.string.no_permission);
+                    ToastUtils.showShort( R.string.no_permission);
                 }
                 break;
         }

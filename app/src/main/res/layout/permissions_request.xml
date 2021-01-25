@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@drawable/shape_btnbg3"
+        android:background="@drawable/dialog_full_holo_light"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -28,13 +28,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/agree"
                 style="@style/btn_style_pressend"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:text="@string/agree" />
@@ -43,7 +43,6 @@
                 android:id="@+id/reject"
                 style="@style/btn_style_pressend"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:text="@string/reject" />

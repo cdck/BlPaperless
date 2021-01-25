@@ -7,7 +7,6 @@ import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
 import android.os.Environment;
 
-import com.pa.paperless.service.ShotApplication;
 import com.pa.paperless.utils.LogUtil;
 
 import com.pa.paperless.utils.CodecUtil;
@@ -38,7 +37,7 @@ public class AvcEncoder {
 
     public byte[] configbyte;
 
-    private final int channelIndex = 3;
+    private final int channelIndex = 3;//摄像头
 
     @SuppressLint("NewApi")
     public AvcEncoder(int width, int height, int framerate, int bitrate, int imageFormat) throws IOException {

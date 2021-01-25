@@ -11,12 +11,13 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceDevice;
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.MeetChatMemberAdapter;
+import com.pa.paperless.adapter.rvadapter.MeetChatMemberAdapter;
 import com.pa.paperless.data.bean.ChatVideoMemberBean;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
@@ -24,7 +25,7 @@ import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.ui.VideoChatView;
 import com.pa.paperless.utils.LogUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.wind.myapplication.NativeUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -274,24 +275,24 @@ public class ChatVideoActivity extends BaseActivity implements View.OnClickListe
             if ((inviteflag & InterfaceDevice.Pb_DeviceInviteFlag.Pb_DEVICE_INVITECHAT_FLAG_SIMPLEX_VALUE) ==
                     InterfaceDevice.Pb_DeviceInviteFlag.Pb_DEVICE_INVITECHAT_FLAG_SIMPLEX_VALUE) {
                 LogUtil.i(TAG, "收到回复设备对讲的通知 -->" + "对方同意寻呼");
-                ToastUtil.showToast(getString(R.string.agree_device_paging, getMemberName()));
+                ToastUtils.showShort(getString(R.string.agree_device_paging, getMemberName()));
                 if (work_state != 1) {
                     createPaging();
                 }
             } else {
                 LogUtil.i(TAG, "收到回复设备对讲的通知 -->" + "对方同意对讲");
-                ToastUtil.showToast(getString(R.string.agree_device_intercom, getMemberName()));
+                ToastUtils.showShort(getString(R.string.agree_device_intercom, getMemberName()));
                 createIntercom();
             }
         } else {
             work_state = 0;
             if ((inviteflag & InterfaceDevice.Pb_DeviceInviteFlag.Pb_DEVICE_INVITECHAT_FLAG_SIMPLEX_VALUE) == InterfaceDevice.Pb_DeviceInviteFlag.Pb_DEVICE_INVITECHAT_FLAG_SIMPLEX_VALUE) {
                 LogUtil.i(TAG, "收到回复设备对讲的通知 -->" + "对方拒绝寻呼");
-                ToastUtil.showToast(getString(R.string.reject_device_paging, getMemberName()));
+                ToastUtils.showShort(getString(R.string.reject_device_paging, getMemberName()));
                 video_chat_view.createDefaultView(1);
             } else {
                 LogUtil.i(TAG, "收到回复设备对讲的通知 -->" + "对方拒绝对讲");
-                ToastUtil.showToast(getString(R.string.reject_device_intercom, getMemberName()));
+                ToastUtils.showShort(getString(R.string.reject_device_intercom, getMemberName()));
                 video_chat_view.createDefaultView(2);
             }
             setEnable();
@@ -365,7 +366,7 @@ public class ChatVideoActivity extends BaseActivity implements View.OnClickListe
                     } else {
                         //对讲模式
                         if (chooseDevids.size() > 1) {
-                            ToastUtil.showToast(R.string.can_only_choose_one);
+                            ToastUtils.showShort(R.string.can_only_choose_one);
                         } else {
                             LogUtil.i(TAG, "发起对讲 -->选中的设备ID= " + chooseDevids.toString());
                             int flag;
@@ -383,7 +384,7 @@ public class ChatVideoActivity extends BaseActivity implements View.OnClickListe
                         }
                     }
                 } else {
-                    ToastUtil.showToast(R.string.please_choose_member);
+                    ToastUtils.showShort(R.string.please_choose_member);
                 }
                 break;
             case R.id.pop_video_chat_stop:

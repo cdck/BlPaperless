@@ -3,9 +3,10 @@ package com.pa.paperless.helper;
 import android.text.InputFilter;
 import android.text.Spanned;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.utils.LogUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 
 /**
  * @author by xlk
@@ -35,7 +36,7 @@ public class MaxLengthFilter implements InputFilter {
         LogUtil.d("MaxLengthFilter", "source  ==" + source + "  start=====" + start + "   end======" + end + "   dest====" + dest + "  dstart===" + dstart + "  dend==" + dend);
         if (source.length() <= 0) return null;//一般是删除
         if (source.length() + dest.length() > mMax) {
-            ToastUtil.showToast(R.string.err_bulletin_max_length, mMax);
+            ToastUtils.showShort(R.string.err_bulletin_max_length, mMax);
             //可输入的字数
             int canAddLength = mMax - dest.length();
             //可输入的文本

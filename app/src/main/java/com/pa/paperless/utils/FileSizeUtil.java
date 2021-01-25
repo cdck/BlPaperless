@@ -1,7 +1,5 @@
 package com.pa.paperless.utils;
 
-import com.pa.paperless.utils.LogUtil;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.text.DecimalFormat;
@@ -36,7 +34,7 @@ public class FileSizeUtil {
             e.printStackTrace();
             LogUtil.e("获取文件大小", "获取失败!");
         }
-        return FormetFileSize(blockSize, sizeType);
+        return FormatFileSize(blockSize, sizeType);
     }
 
     /**
@@ -58,7 +56,7 @@ public class FileSizeUtil {
             e.printStackTrace();
             LogUtil.e("获取文件大小", "获取失败!");
         }
-        return FormetFileSize(blockSize);
+        return FormatFileSize(blockSize);
     }
 
     /**
@@ -107,7 +105,7 @@ public class FileSizeUtil {
      * @param fileS 文件的大小 file.size() 获取的值
      * @return
      */
-    public static String FormetFileSize(long fileS) {
+    public static String FormatFileSize(long fileS) {
         DecimalFormat df = new DecimalFormat("#.00");
         String fileSizeString = "";
         String wrongSize = "0B";
@@ -139,7 +137,7 @@ public class FileSizeUtil {
      * @param sizeType
      * @return
      */
-    private static double FormetFileSize(long fileS, int sizeType) {
+    private static double FormatFileSize(long fileS, int sizeType) {
         DecimalFormat df = new DecimalFormat("#.00");
         double fileSizeLong = 0;
         switch (sizeType) {

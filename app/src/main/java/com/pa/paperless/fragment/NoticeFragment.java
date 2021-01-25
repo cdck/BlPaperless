@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.helper.MaxLengthFilter;
+import com.pa.paperless.service.App;
 import com.pa.paperless.utils.LogUtil;
 
 import android.text.InputFilter;
@@ -27,16 +29,15 @@ import com.mogujie.tt.protobuf.InterfaceBullet;
 import com.mogujie.tt.protobuf.InterfaceDevice;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.NoticeAdapter;
-import com.pa.paperless.adapter.OnLineProjectorAdapter;
-import com.pa.paperless.adapter.ScreenControlAdapter;
+import com.pa.paperless.adapter.rvadapter.NoticeAdapter;
+import com.pa.paperless.adapter.rvadapter.OnLineProjectorAdapter;
+import com.pa.paperless.adapter.rvadapter.ScreenControlAdapter;
 import com.pa.paperless.data.bean.DevMember;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
-import com.pa.paperless.service.ShotApplication;
 import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.PopUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -267,7 +268,7 @@ public class NoticeFragment extends BaseFragment implements View.OnClickListener
 
     private void chooseDevice() {
         PopUtils.PopBuilder.createPopupWindow(R.layout.pop_choose_member, LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT, ShotApplication.getRootView(),
+                LinearLayout.LayoutParams.WRAP_CONTENT, App.getRootView(),
                 Gravity.CENTER, 0, 0, true, new PopUtils.ClickListener() {
                     @Override
                     public void setUplistener(PopUtils.PopBuilder builder) {
@@ -327,7 +328,7 @@ public class NoticeFragment extends BaseFragment implements View.OnClickListener
                                     }
                                 }
                             } else {
-                                ToastUtil.showToast(R.string.please_choose_device);
+                                ToastUtils.showShort(R.string.please_choose_device);
                             }
                         });
                         builder.getView(R.id.cancel).setOnClickListener(v -> builder.dismiss());
@@ -348,7 +349,7 @@ public class NoticeFragment extends BaseFragment implements View.OnClickListener
             content_edt.setText("");
             notice_title_edt.setText("");
         } else {
-            ToastUtil.showToast(R.string.please_choose_notice);
+            ToastUtils.showShort(R.string.please_choose_notice);
         }
     }
 
@@ -356,19 +357,19 @@ public class NoticeFragment extends BaseFragment implements View.OnClickListener
         String content_str = content_edt.getText().toString().trim();
         String title_str = notice_title_edt.getText().toString().trim();
         if (content_str.isEmpty()) {
-            ToastUtil.showToast(R.string.please_input_content);
+            ToastUtils.showShort(R.string.please_input_content);
             return;
         }
         if (title_str.isEmpty()) {
-            ToastUtil.showToast(R.string.please_input_title);
+            ToastUtils.showShort(R.string.please_input_title);
             return;
         }
 //        if (content_str.length() > Macro.content_max_length) {
-//            ToastUtil.showToast(R.string.err_bulletin_max_length, Macro.content_max_length);
+//            ToastUtils.showShort(R.string.err_bulletin_max_length, Macro.content_max_length);
 //            return;
 //        }
 //        if (title_str.length() > Macro.title_max_length) {
-//            ToastUtil.showToast(getString(R.string.err_title_max_length, Macro.title_max_length));
+//            ToastUtils.showShort(getString(R.string.err_title_max_length, Macro.title_max_length));
 //            return;
 //        }
         InterfaceBullet.pbui_Item_BulletDetailInfo.Builder builder = InterfaceBullet.pbui_Item_BulletDetailInfo.newBuilder();
@@ -386,19 +387,19 @@ public class NoticeFragment extends BaseFragment implements View.OnClickListener
             String content_str = content_edt.getText().toString().trim();
             String title_str = notice_title_edt.getText().toString().trim();
             if (content_str.isEmpty()) {
-                ToastUtil.showToast(R.string.please_input_content);
+                ToastUtils.showShort(R.string.please_input_content);
                 return;
             }
             if (title_str.isEmpty()) {
-                ToastUtil.showToast(R.string.please_input_title);
+                ToastUtils.showShort(R.string.please_input_title);
                 return;
             }
 //            if (content_str.length() > Macro.content_max_length) {
-//                ToastUtil.showToast(R.string.err_bulletin_max_length, Macro.content_max_length);
+//                ToastUtils.showShort(R.string.err_bulletin_max_length, Macro.content_max_length);
 //                return;
 //            }
 //            if (title_str.length() > Macro.title_max_length) {
-//                ToastUtil.showToast(getString(R.string.err_title_max_length, Macro.title_max_length));
+//                ToastUtils.showShort(getString(R.string.err_title_max_length, Macro.title_max_length));
 //                return;
 //            }
             InterfaceBullet.pbui_Item_BulletDetailInfo.Builder builder = InterfaceBullet.pbui_Item_BulletDetailInfo.newBuilder();
@@ -408,7 +409,7 @@ public class NoticeFragment extends BaseFragment implements View.OnClickListener
             InterfaceBullet.pbui_Item_BulletDetailInfo build = builder.build();
             jni.modifNotice(build);
         } else {
-            ToastUtil.showToast(R.string.please_choose_notice);
+            ToastUtils.showShort(R.string.please_choose_notice);
         }
     }
 }

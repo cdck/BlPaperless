@@ -10,13 +10,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceFile;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.OffMeetFileAdapter;
+import com.pa.paperless.adapter.rvadapter.OffMeetFileAdapter;
 import com.pa.paperless.utils.FileUtil;
 import com.pa.paperless.utils.LogUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.wind.myapplication.NativeUtil;
 
 import java.io.File;
@@ -24,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static com.pa.paperless.data.constant.Macro.INIT_FILE_SD_PATH;
+import static com.pa.paperless.data.constant.Macro.root_dir;
 
 public class OffLineFileActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -68,12 +69,12 @@ public class OffLineFileActivity extends AppCompatActivity implements View.OnCli
             });
             fileAdapter.setLookListener(fileDetailInfo -> {
                 String name = fileDetailInfo.getName().toStringUtf8();
-                File file = FileUtil.findFilePathByName(INIT_FILE_SD_PATH + "/meetcache", name);
+                File file = FileUtil.findFilePathByName(root_dir + "/meetcache", name);
                 if (file != null) {
                     LogUtil.e(TAG, "查到的文件 -->" + file.getAbsolutePath() + ", 需要查找的文件：" + name);
                     FileUtil.openLocalFile(this, file);
                 } else {
-                    ToastUtil.showToast( R.string.error_find_file_failed);
+                    ToastUtils.showShort( R.string.error_find_file_failed);
                 }
             });
             initDefaultFile();
@@ -277,17 +278,17 @@ public class OffLineFileActivity extends AppCompatActivity implements View.OnCli
             InterfaceFile.pbui_Item_MeetDirFileDetailInfo info = allFiles.get(i);
             switch (type) {
                 case 0:
-                    if (FileUtil.isDocumentFile(info.getName().toStringUtf8())) {
+                    if (FileUtil.isDocument(info.getName().toStringUtf8())) {
                         fileDatas.add(info);
                     }
                     break;
                 case 1:
-                    if (FileUtil.isPictureFile(info.getName().toStringUtf8())) {
+                    if (FileUtil.isPicture(info.getName().toStringUtf8())) {
                         fileDatas.add(info);
                     }
                     break;
                 case 2:
-                    if (FileUtil.isVideoFile(info.getName().toStringUtf8())) {
+                    if (FileUtil.isVideo(info.getName().toStringUtf8())) {
                         fileDatas.add(info);
                     }
                     break;

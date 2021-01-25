@@ -4,27 +4,29 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.broadcase.NetWorkReceiver;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.fragment.ElectionManageFragment;
 import com.pa.paperless.fragment.SignInFragment;
+import com.pa.paperless.service.App;
 import com.pa.paperless.utils.LogUtil;
 
-import android.util.DisplayMetrics;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.protobuf.ByteString;
@@ -39,8 +41,8 @@ import com.mogujie.tt.protobuf.InterfaceMember;
 import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.mogujie.tt.protobuf.InterfaceWhiteboard;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.FunctionAdapter;
-import com.pa.paperless.adapter.SecretaryAdapter;
+import com.pa.paperless.adapter.rvadapter.FunctionAdapter;
+import com.pa.paperless.adapter.rvadapter.SecretaryAdapter;
 import com.pa.paperless.data.bean.ReceiveMeetIMInfo;
 import com.pa.paperless.data.constant.BroadCaseAction;
 import com.pa.paperless.data.constant.EventType;
@@ -60,7 +62,6 @@ import com.pa.paperless.fragment.VideoFragment;
 import com.pa.paperless.fragment.VoteFragment;
 import com.pa.paperless.fragment.WebBrowseFragment;
 import com.pa.paperless.fragment.QuestionnaireFragment;
-import com.pa.paperless.service.ShotApplication;
 import com.pa.paperless.utils.DateUtil;
 import com.pa.paperless.utils.Export;
 import com.pa.paperless.utils.FileUtil;
@@ -68,7 +69,7 @@ import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.NetworkUtil;
 import com.pa.paperless.utils.PopUtils;
 import com.pa.paperless.utils.QRCodeUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.pa.paperless.ui.DrawBoard;
 import com.wind.myapplication.NativeUtil;
 
@@ -98,8 +99,8 @@ import static com.pa.paperless.data.constant.Macro.CACHE_FILE;
 import static com.pa.paperless.data.constant.Macro.PB_MEET_FUN_CODE_MESSAGE;
 import static com.pa.paperless.data.constant.Values.mPermissionsList;
 import static com.pa.paperless.fragment.CameraFragment.isOPenCamera;
-import static com.pa.paperless.service.ShotApplication.isDebug;
-import static com.pa.paperless.service.ShotApplication.lbm;
+import static com.pa.paperless.service.App.isDebug;
+import static com.pa.paperless.service.App.lbm;
 import static com.pa.paperless.ui.DrawBoard.pathList;
 import static com.pa.paperless.activity.DrawBoardActivity.savePicData;
 import static com.pa.paperless.activity.DrawBoardActivity.tempPicData;
@@ -160,8 +161,6 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
     private Bitmap QRCode;
     private SecretaryAdapter secretaryAdapter;
     private DeviceControlFragment mDeviceControlFragment;
-    public static int fragmentWidth = 600;
-    public static int fragmentHeight = 400;
     private List<Integer> secretaryData;
     private ElectionManageFragment mSurveyManageFragment;
     private ScreenManageFragment mScreenManageFragment;
@@ -170,7 +169,6 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
     private int chatIndex;
     private boolean isCanJump2Main = true;
     private NetWorkReceiver netWorkReceiver;
-    private int screenW, screenH;
     private Handler handler = new Handler();
     private NativeUtil jni = NativeUtil.getInstance();
 
@@ -179,23 +177,13 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         //视频为了避免闪屏和透明问题，Activity在onCreate时需要设置:
 //        getWindow().setFormat(PixelFormat.TRANSLUCENT);
-        setContentView(R.layout.activity_meeting_test);
+        setContentView(R.layout.activity_meeting);
         context = this;
         initView();
         EventBus.getDefault().register(this);
-        DisplayMetrics metric = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metric);
-        screenW = metric.widthPixels; // 屏幕宽度（像素）
-        screenH = metric.heightPixels; // 屏幕高度（像素）
         netWorkReceiver = new NetWorkReceiver();
         registerNetwork();
-        meet_fl.post(() -> {
-            fragmentWidth = meet_fl.getWidth();
-            fragmentHeight = meet_fl.getHeight();
-            LogUtil.e(TAG, "MeetingActivity.onCreate :  --> fragmentWidth= " + fragmentWidth + ", fragmentHeight= " + fragmentHeight);
-        });
-//        loadLocalLogo();//默认加载公司logo
-        FileUtil.CreateDir(CACHE_FILE);
+        FileUtil.createDir(CACHE_FILE);
         //获取到之前写得tempNote
         File file = new File(CACHE_FILE + "/tempNote.txt");
         if (file.exists() && file.isFile()) {
@@ -203,11 +191,12 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         }
         mFm = getSupportFragmentManager();
         try {
-            jni.initVideoRes(0, ShotApplication.SCREEN_WIDTH, ShotApplication.SCREEN_HEIGHT);
-            jni.initVideoRes(10, ShotApplication.SCREEN_WIDTH, ShotApplication.SCREEN_HEIGHT);
-            jni.initVideoRes(11, ShotApplication.SCREEN_WIDTH, ShotApplication.SCREEN_HEIGHT);
+            jni.initVideoRes(0, App.screenWidth, App.screenHeight);
+            jni.initVideoRes(10, App.screenWidth, App.screenHeight);
+            jni.initVideoRes(11, App.screenWidth, App.screenHeight);
             //  修改本机界面状态
-            jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(), InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace.getNumber());
+            jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(),
+                    InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace.getNumber());
             //缓存会议目录
             jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORY.getNumber(), 1, 0);
             //会议目录文件
@@ -253,13 +242,8 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     protected void onResume() {
-        myApp.openFab(true);
+//        myApp.openFab(true);
         super.onResume();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
     }
 
     @Override
@@ -271,7 +255,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         }
         handler.removeCallbacksAndMessages(null);
         //关闭悬浮窗的服务
-        myApp.openFab(false);
+//        myApp.openFab(false);
         jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(),
                 InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MainFace.getNumber());
         jni.mediaDestroy(0);
@@ -302,21 +286,23 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
     private void updateOnline() {
         byte[] bytes = jni.queryDevicePropertiesById(InterfaceMacro.Pb_MeetDevicePropertyID.Pb_MEETDEVICE_PROPERTY_NETSTATUS_VALUE,
                 0);
-        if (bytes == null) {
-            meet_tv_online.setText(getString(R.string.Offline));
-            ToastUtil.showToast(R.string.device_offline);
-            return;
-        }
-        try {
-            InterfaceDevice.pbui_DeviceInt32uProperty pbui_deviceInt32uProperty = InterfaceDevice.pbui_DeviceInt32uProperty.parseFrom(bytes);
-            int propertyval = pbui_deviceInt32uProperty.getPropertyval();
-            boolean b = propertyval == 1;
-            meet_tv_online.setText(b ? R.string.online : R.string.Offline);
-            if (!b) {
-                ToastUtil.showToast(R.string.device_offline);
+        boolean online = bytes == null;
+        if (bytes != null) {
+            try {
+                InterfaceDevice.pbui_DeviceInt32uProperty info = InterfaceDevice.pbui_DeviceInt32uProperty.parseFrom(bytes);
+                online = info.getPropertyval() == 1;
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
             }
-        } catch (InvalidProtocolBufferException e) {
-            e.printStackTrace();
+        }
+        LogUtils.e(TAG, "本机设备在线状态：" + (online ? "在线" : "离线"));
+        meet_tv_online.setText(online ? R.string.online : R.string.Offline);
+        if (!online) {
+            ToastUtils.showShort(R.string.device_offline);
+        } else {
+            //  修改本机界面状态
+            jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(),
+                    InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace.getNumber());
         }
     }
 
@@ -355,7 +341,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                         if (!isbusy) {
                             showFragment(integer);
                         } else {
-                            ToastUtil.showToast(R.string.in_the_screen_recording);
+                            ToastUtils.showShort(R.string.in_the_screen_recording);
                         }
                     } else {
                         showFragment(integer);
@@ -485,15 +471,15 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                     boolean isShow = (InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE == (flag & InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE));
                     if (isShow) {
                         logo_iv.setVisibility(View.VISIBLE);
-                        FileUtil.CreateDir(Macro.ROOT);
+                        FileUtil.createDir(Macro.ROOT);
                         jni.creationFileDownload(Macro.ROOT + Macro.DOWNLOAD_MAIN_LOGO + ".png", itemInfo.getMediaid(), 1, 0, Macro.DOWNLOAD_MAIN_LOGO);
                     } else {
                         logoIsHide = true;
                         logo_iv.setVisibility(View.GONE);
                     }
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_SUBBG_VALUE) {//子界面背景图
-                    LogUtil.d(TAG, "fun_queryInterFaceConfiguration -->" + "下载子界面背景图");
-                    FileUtil.CreateDir(Macro.ROOT);
+                    LogUtil.d(TAG, "fun_queryInterFaceConfiguration --> 下载子界面背景图");
+                    FileUtil.createDir(Macro.ROOT);
                     jni.creationFileDownload(Macro.ROOT + Macro.DOWNLOAD_SUB_BG + ".png", itemInfo.getMediaid(), 1, 0, Macro.DOWNLOAD_SUB_BG);
                 }
             }
@@ -510,30 +496,28 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 InterfaceFaceconfig.pbui_Item_FaceTextItemInfo info = textList.get(i);
                 int faceid = info.getFaceid();
                 if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_COMPANY.getNumber()) {//公司名称
-                    int flag = info.getFlag();
-                    boolean isShow = (InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE == (flag & InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE));
-                    LogUtil.d(TAG, "fun_queryInterFaceConfiguration -->是否显示公司名称：" + isShow);
-                    company_name_tv.setVisibility(isShow ? View.VISIBLE : View.GONE);
+                    LogUtil.i(TAG, "单位名称控件");
+                    updateCompanyNameTv(info);
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACE_LOGO_GEO.getNumber()) {//Logo图标,只需要更新位置坐标
-                    LogUtil.d(TAG, "fun_queryInterFaceConfiguration -->" + "更新logo图标大小");
+                    LogUtil.i(TAG, "logo图标控件");
                     update(R.id.meet_logo_iv, info);
                 }
             }
-            moveCompany_name_tv(logoIsHide);
+            if (logoIsHide) {
+                moveCompanyNameTv2Left();
+            }
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
     }
 
-    private void moveCompany_name_tv(boolean logoIsHide) {
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        if (logoIsHide) {
-            params.addRule(RelativeLayout.ALIGN_PARENT_START);
-        } else {
-            params.addRule(RelativeLayout.START_OF, R.id.time_ll);
-        }
-        params.addRule(RelativeLayout.CENTER_VERTICAL);
-        company_name_tv.setLayoutParams(params);
+    private void moveCompanyNameTv2Left() {
+        LogUtils.i(TAG, "moveCompanyNameTv2Left");
+        ConstraintSet set = new ConstraintSet();
+        set.clone(root_layout_id);
+        set.setHorizontalBias(R.id.company_name_tv, 0f);
+        set.setVerticalBias(R.id.company_name_tv, 0f);
+        set.applyTo(root_layout_id);
     }
 
     private void update(int resid, InterfaceFaceconfig.pbui_Item_FaceTextItemInfo info) {
@@ -544,8 +528,8 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         ConstraintSet set = new ConstraintSet();
         set.clone(root_layout_id);
         //设置控件的大小
-        float width = (bx - lx) / 100 * screenW;
-        float height = (by - ly) / 100 * screenH;
+        float width = (bx - lx) / 100 * App.screenWidth;
+        float height = (by - ly) / 100 * App.screenHeight;
         set.constrainWidth(resid, (int) width);
         set.constrainHeight(resid, (int) height);
         LogUtil.d(TAG, "update: 控件大小 当前控件宽= " + width + ", 当前控件高= " + height);
@@ -560,11 +544,75 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         if (ly == 0) biasY = 0;
         else if (ly > 50) biasY = by / 100;
         else biasY = halfH / 100;
-        LogUtil.d(TAG, "update: biasX= " + biasX + ",biasY= " + biasY);
+        LogUtil.e(TAG, "update: biasX= " + biasX + ",biasY= " + biasY);
         set.setHorizontalBias(resid, biasX);
         set.setVerticalBias(resid, biasY);
         set.applyTo(root_layout_id);
     }
+
+    /**
+     * 更新TextView信息
+     */
+    private void updateCompanyNameTv(InterfaceFaceconfig.pbui_Item_FaceTextItemInfo info) {
+        update(R.id.company_name_tv, info);
+        TextView tv = findViewById(R.id.company_name_tv);
+        tv.setTextColor(info.getColor());
+        tv.setTextSize(info.getFontsize());
+        boolean b = (InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE == (info.getFlag() & InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE));
+        tv.setVisibility(b ? View.VISIBLE : View.GONE);
+        int fontflag = info.getFontflag();
+        //字体样式
+        if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_BOLD.getNumber()) {//加粗
+            tv.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        } else if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_LEAN.getNumber()) {//倾斜
+            tv.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
+        } else if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_UNDERLINE.getNumber()) {//下划线
+            tv.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));//暂时用倾斜加粗
+        } else {//正常文本
+            tv.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+        }
+        int align = info.getAlign();
+        //对齐方式
+        if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_LEFT.getNumber()) {//左对齐
+            tv.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_RIGHT.getNumber()) {//右对齐
+            tv.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_HCENTER.getNumber()) {//水平对齐
+            tv.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_TOP.getNumber()) {//上对齐
+            tv.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_BOTTOM.getNumber()) {//下对齐
+            tv.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_VCENTER.getNumber()) {//垂直对齐
+            tv.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+        } else {
+            tv.setGravity(Gravity.CENTER);
+        }
+        String fontName = info.getFontname().toStringUtf8();
+        //字体类型
+        Typeface kt_typeface;
+        if (!TextUtils.isEmpty(fontName)) {
+            switch (fontName) {
+                case "楷体":
+                    kt_typeface = Typeface.createFromAsset(getAssets(), "kt.ttf");
+                    break;
+                case "宋体":
+                    kt_typeface = Typeface.createFromAsset(getAssets(), "fs.ttf");
+                    break;
+                case "隶书":
+                    kt_typeface = Typeface.createFromAsset(getAssets(), "ls.ttf");
+                    break;
+                case "微软雅黑":
+                    kt_typeface = Typeface.createFromAsset(getAssets(), "wryh.ttf");
+                    break;
+                default:
+                    kt_typeface = Typeface.createFromAsset(getAssets(), "fs.ttf");
+                    break;
+            }
+            tv.setTypeface(kt_typeface);
+        }
+    }
+
 
     private void fun_queryAttendPeople() {
         try {
@@ -625,6 +673,8 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getEventMessage(EventMessage message) throws InvalidProtocolBufferException {
         switch (message.getAction()) {
+            case EventType.ACTION_SCREEN_OFF:
+            case EventType.ACTION_SCREEN_ON:
             case EventType.DEV_REGISTER_INFORM://设备寄存器变更通知
                 updateOnline();
                 break;
@@ -633,7 +683,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 if (NetworkUtil.isNetworkAvailable(getApplicationContext())) {
                     updateOnline();
                 } else {
-//                    ToastUtil.showToast(R.string.NetWorkError);
+//                    ToastUtils.showShort(R.string.NetWorkError);
                     LogUtil.e(TAG, "getEventMessage -->" + "网络断开");
                     meet_tv_online.setText(getString(R.string.offline));
                     TryToReconnect();
@@ -659,7 +709,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                     if (subid == Values.localDevId) {
                         if (isCanJump2Main) {
                             isCanJump2Main = false;
-                            ToastUtil.showToast(R.string.exit_from_room);
+                            ToastUtils.showShort(R.string.exit_from_room);
                             jump2Main();
                         }
                     }
@@ -710,7 +760,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 fun_queryInterFaceConfiguration();
                 break;
             case EventType.EXPORT_VOTEENTRY_FINISH://导出投票录入文件成功通知
-                ToastUtil.showToast(R.string.export_finish);
+                ToastUtils.showShort(R.string.export_finish);
                 break;
             case EventType.SUB_BG_PNG_IMG://子界面背景下载完成
                 String filepath1 = (String) message.getObject();
@@ -891,7 +941,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
             if (DevMeetInfo.getDeviceid() == Values.localDevId && DevMeetInfo.getMeetingid() == 0) {
                 if (isCanJump2Main) {
                     isCanJump2Main = false;
-                    ToastUtil.showToast(R.string.exit_form_meeting);
+                    ToastUtils.showShort(R.string.exit_form_meeting);
                     jump2Main();
                 }
             }
@@ -925,14 +975,14 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                         setMemberRoleTv(role);
                         Values.hasAllPermissions = true;
                         if (secretary.getVisibility() != View.VISIBLE) {
-                            ToastUtil.showToast(R.string.role_change);
+                            ToastUtils.showShort(R.string.role_change);
                             secretary.setVisibility(View.VISIBLE);
                             meet_btn.performClick();
                         }
                     } else {
                         Values.hasAllPermissions = false;
                         if (secretary.getVisibility() == View.VISIBLE) {
-                            ToastUtil.showToast(R.string.role_change);
+                            ToastUtils.showShort(R.string.role_change);
                             setMemberRoleTv(role);
                             secretary.setVisibility(View.GONE);
                             setDefaultClick();
@@ -955,13 +1005,11 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
 
     private void jump2Main() {
         LogUtil.i(TAG, "jump2Main -->");
-
         Intent intent1 = new Intent(this, MainActivity.class);
         intent1.addFlags(FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent1);
         saveIndex = -1;
         finish();
-//        myApp.delActivity(this);
     }
 
     @Override
@@ -972,18 +1020,12 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
             EventBus.getDefault().post(new EventMessage(EventType.go_back_html));
         } else {
             exit();
-//            if (System.currentTimeMillis() - millis > 2000) {
-//                ToastUtil.showToast( R.string.click_quit_the_application_again);
-//                millis = System.currentTimeMillis();
-//            } else {
-//                finishApp();
-//            }
         }
     }
 
     public void showFragment(int index) {
         if (Macro.PB_MEET_FUN_CODE_OPEN_BACKGROUND == index) {
-            ToastUtil.showToast(R.string.no_this_function);
+            ToastUtils.showShort(R.string.no_this_function);
             return;
         }
         if (/*!isRestart && */Macro.PB_MEET_FUN_CODE_WHITE_BOARD != index) {
@@ -1186,7 +1228,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                         e.printStackTrace();
                     }
                     PopUtils.PopBuilder.createPopupWindow(R.layout.qr_code_layout, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT,
-                            ShotApplication.getRootView(), Gravity.CENTER, 0, 0, true, new PopUtils.ClickListener() {
+                            App.getRootView(), Gravity.CENTER, 0, 0, true, new PopUtils.ClickListener() {
                                 @Override
                                 public void setUplistener(PopUtils.PopBuilder builder) {
                                     ImageView qr_code = builder.getView(R.id.qr_code_iv);
@@ -1277,9 +1319,9 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
             if (clickCount >= 5) {
                 isDebug = !isDebug;
                 if (isDebug) {
-                    ToastUtil.showToast("Debug mode turned on");
+                    ToastUtils.showShort("Debug mode turned on");
                 } else {
-                    ToastUtil.showToast("Debug mode turned off");
+                    ToastUtils.showShort("Debug mode turned off");
                 }
             }
         });

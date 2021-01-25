@@ -30,7 +30,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
-import static com.pa.paperless.utils.FileUtil.CreateDir;
+import static com.pa.paperless.utils.FileUtil.createDir;
 
 /**
  * Created by Administrator on 2018/2/28.
@@ -49,7 +49,7 @@ public class Export {
         boolean succeed = true;
         try {
             //1.创建Excel文件
-            CreateDir(Macro.VOTE_RESULT);
+            createDir(Macro.VOTE_RESULT);
             File file = new File(Macro.VOTE_RESULT + fileName + ".xls");
             file.createNewFile();
             //2.创建工作簿
@@ -115,7 +115,7 @@ public class Export {
      */
     public static void VoteEntry(String fileName, String[] titles, List<InterfaceVote.pbui_Item_MeetVoteDetailInfo> data, int type) {
         //创建文件导出目录
-        CreateDir(Macro.VOTE_RESULT);
+        createDir(Macro.VOTE_RESULT);
         File file = new File(Macro.VOTE_RESULT + fileName + ".xls");
         try {
             file.createNewFile();
@@ -235,7 +235,7 @@ public class Export {
      */
     public static boolean ToVoteResultExcel(String content, String fileName, String SheetName, String[] titles, List<VoteBean> datas) {
         boolean succeed = true;
-        CreateDir(Macro.VOTE_RESULT);
+        createDir(Macro.VOTE_RESULT);
         // 1.创建Excel文件
         File file = new File(content + fileName + ".xls");
         try {
@@ -306,7 +306,7 @@ public class Export {
      */
     public static boolean ToVoteExcel(String meetName, String fileName, String SheetName, String[] titles, List<InterfaceVote.pbui_Item_MeetVoteDetailInfo> datas) {
         boolean succeed = true;
-        CreateDir(Macro.VOTE_RESULT);
+        createDir(Macro.VOTE_RESULT);
         //1.创建Excel文件
         File file = new File(Macro.VOTE_RESULT + meetName + fileName + ".xls");
         try {

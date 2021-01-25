@@ -10,7 +10,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceFile;
 import com.pa.paperless.data.bean.MeetDirFileInfo;
@@ -22,8 +25,8 @@ import com.pa.paperless.data.constant.WpsModel;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.boling.paperless.BuildConfig;
 import com.pa.boling.paperless.R;
+import com.pa.paperless.service.App;
 import com.pa.paperless.service.NativeService;
-import com.pa.paperless.service.ShotApplication;
 import com.wind.myapplication.NativeUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -88,15 +91,11 @@ public class FileUtil {
 
     private static void cacheFile(@NonNull InterfaceFile.pbui_Item_MeetDirFileDetailInfo info) {
         String fileName = info.getName().toStringUtf8();
-        if (isVideoFile(fileName) || isOtherFile(fileName)) {
+        if (isVideo(fileName) || isOtherFile(fileName)) {
             LogUtil.e(TAG, "downAllFile 不缓存视频和其它类的文件");
             return;
         }
-//        if (isPictureFile(fileName) && FileSizeUtil.getFileMb(info.getSize()) > Macro.MAX_CACHE_IMAGE_SIZE) {
-//            LogUtil.i(TAG, "downAllFile 该图片文件大小超过10M，不进行自动缓存");
-//            return;
-//        }
-        CreateDir(Macro.CACHE_ALL_FILE);
+        createDir(Macro.CACHE_ALL_FILE);
         int mediaid = info.getMediaid();
         long size = info.getSize();
         String pathname = Macro.CACHE_ALL_FILE + fileName;
@@ -105,7 +104,7 @@ public class FileUtil {
             NativeUtil.getInstance().creationFileDownload(pathname, mediaid, 1, 0, Macro.DOWNLOAD_CACHE_FILE);
         } else {
             LogUtil.e(TAG, fileName + " 文件已经存在");
-            if (isPictureFile(fileName)) {
+            if (isPicture(fileName)) {
                 LogUtil.i(TAG, "downAllFile 如果是图片文件则添加到集合中去 mediaid=" + mediaid + ",路径=" + file.getAbsolutePath());
                 NativeService.addPictureInfo(new PictureInfo(mediaid, file.getAbsolutePath()));
             }
@@ -124,8 +123,8 @@ public class FileUtil {
      *
      * @param dir 下载的目录
      */
-    public static void downFile(MeetDirFileInfo data, String dir) {
-        CreateDir(dir);
+    public static void downloadFile(MeetDirFileInfo data, String dir) {
+        createDir(dir);
         String fileName = data.getFileName();
         int mediaId = data.getMediaId();
         long size = data.getSize();
@@ -134,14 +133,14 @@ public class FileUtil {
         if (!file.exists() || file.length() != size) {//如果文件中没有或则大小不一致则进行覆盖下载
             NativeUtil.getInstance().creationFileDownload(pathname, mediaId, 1, 0, Macro.DOWNLOAD_FILE);
         } else {
-            LogUtil.i(TAG, "downQueue " + fileName + " 无须再次下载");
-            ToastUtil.showToast(ShotApplication.applicationContext.getString(R.string.file_already_exists, fileName));
+            LogUtils.i(TAG, "downFile " + fileName + " 无须再次下载");
+            ToastUtils.showShort(App.applicationContext.getString(R.string.file_already_exists, fileName));
         }
     }
 
     public static void openFile(String dir, String filename, final NativeUtil nativeUtil, final int mediaid, Context context, long filesize) {
         //先创建好目录
-        CreateDir(dir);
+        createDir(dir);
         dir += filename;
         LogUtil.e(TAG, "openFile : 要打开的文件 --> " + dir);
         File file1 = new File(dir);
@@ -163,12 +162,12 @@ public class FileUtil {
     public static void OpenThisFile(Context context, File file, int mediaid) {
         String filename = file.getName();
         LogUtil.e(TAG, "OpenThisFile :   --> " + filename);
-        if (FileUtil.isVideoFile(filename)) {
+        if (FileUtil.isVideo(filename)) {
             return;
         }
-        if (FileUtil.isPictureFile(filename)) {
+        if (FileUtil.isPicture(filename)) {
             EventBus.getDefault().post(new EventMessage(EventType.open_picture, file.getAbsolutePath(), mediaid));
-        } else if (FileUtil.isDocumentFile(filename)) {
+        } else if (FileUtil.isDocument(filename)) {
             EventBus.getDefault().post(new EventMessage(EventType.WPS_BROAD_CASE_INFORM, true));
             /** **** **  如果是文档类文件并且不是pdf文件，设置只能使用WPS软件打开  ** **** **/
             Bundle bundle = new Bundle();
@@ -213,7 +212,7 @@ public class FileUtil {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         } catch (ActivityNotFoundException e) {
-            ToastUtil.showToast(R.string.please_check_wps);
+            ToastUtils.showShort(R.string.please_check_wps);
             e.printStackTrace();
         }
     }
@@ -243,7 +242,7 @@ public class FileUtil {
     /**
      * 多级创建目录
      */
-    public static boolean CreateDir(String dir) {
+    public static boolean createDir(String dir) {
         File file = new File(dir);
         if (file.exists()) {
             return true;
@@ -258,9 +257,8 @@ public class FileUtil {
      *
      * @param filepath C:\meetsystem\abc.txt
      */
-    public static File CreateFile(String filepath) {
+    public static File createFile(String filepath) {
         File file = new File(filepath);
-//        CreateDir(file.getAbsolutePath());
         File parentFile = file.getParentFile();
         if (!parentFile.exists()) {
             parentFile.mkdirs();
@@ -305,121 +303,55 @@ public class FileUtil {
         return fileName.matches(regex);
     }
 
-    /**
-     * 判断是否为视频文件
-     */
-    public static boolean isVideoFile(String fileName) {
-        if (!fileName.contains(".")) {//该文件没有后缀
-            return false;
-        }
-        //获取文件的扩展名  mp3/mp4...
-        String fileEnd = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()).toLowerCase();
-        if (fileEnd.equals("mp4")
-                || fileEnd.equals("3gp")
-                || fileEnd.equals("wav")
-                || fileEnd.equals("mp3")
-                || fileEnd.equals("wmv")
-                || fileEnd.equals("ts")
-                || fileEnd.equals("rmvb")
-                || fileEnd.equals("mov")
-                || fileEnd.equals("m4v")
-                || fileEnd.equals("avi")
-                || fileEnd.equals("m3u8")
-                || fileEnd.equals("3gpp")
-                || fileEnd.equals("3gpp2")
-                || fileEnd.equals("mkv")
-                || fileEnd.equals("flv")
-                || fileEnd.equals("divx")
-                || fileEnd.equals("f4v")
-                || fileEnd.equals("rm")
-                || fileEnd.equals("asf")
-                || fileEnd.equals("ram")
-                || fileEnd.equals("mpg")
-                || fileEnd.equals("v8")
-                || fileEnd.equals("swf")
-                || fileEnd.equals("m2v")
-                || fileEnd.equals("asx")
-                || fileEnd.equals("ra")
-                || fileEnd.equals("naivx")
-                || fileEnd.equals("xvid")
-        ) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean isVideo(String fileName) {
+        if (TextUtils.isEmpty(fileName)) return false;
+        return fileName.endsWith(".mp4") ||
+                fileName.endsWith(".mp3") ||
+                fileName.endsWith(".3gp") ||
+                fileName.endsWith(".rmvb") ||
+                fileName.endsWith(".avi") ||
+                fileName.endsWith(".mkv") ||
+                fileName.endsWith(".h264") ||
+                fileName.endsWith(".flv");
     }
 
-    /**
-     * 判断是否为图片文件
-     *
-     * @param fileName eg: 123.png
-     */
-    public static boolean isPictureFile(String fileName) {
-        if (!fileName.contains(".")) {//该文件没有后缀
-            return false;
-        }
-        //获取文件的扩展名
-        String fileEnd = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()).toLowerCase();
-        if (fileEnd.equals("jpg")
-                || fileEnd.equals("png")
-                || fileEnd.equals("gif")
-                || fileEnd.equals("img")
-                || fileEnd.equals("bmp")
-                || fileEnd.equals("jpeg")
-        ) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean isPicture(String fileName) {
+        if (TextUtils.isEmpty(fileName)) return false;
+        return fileName.endsWith(".jpg") ||
+                fileName.endsWith(".png") ||
+                fileName.endsWith(".gif") ||
+                fileName.endsWith(".img") ||
+                fileName.endsWith(".img") ||
+                fileName.endsWith(".jpeg");
     }
 
-    /**
-     * 判断是否为文档类文件
-     */
-    public static boolean isDocumentFile(String fileName) {
-        if (!fileName.contains(".")) {//该文件没有后缀
-            return false;
-        }
-        //获取文件的扩展名 -->获得的是小写：toLowerCase()  /大写:toUpperCase()
-        String fileEnd = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()).toLowerCase();
-        if (fileEnd.equals("txt")
-                || fileEnd.equals("doc")
-                || fileEnd.equals("docx")
-                || fileEnd.equals("log")
-                || fileEnd.equals("dot")
-                || fileEnd.equals("dotx")
-                || fileEnd.equals("ppt")
-                || fileEnd.equals("pptx")
-                || fileEnd.equals("pps")
-                || fileEnd.equals("ppsx")
-                || fileEnd.equals("pot")
-                || fileEnd.equals("potx")
-                || fileEnd.equals("xls")
-                || fileEnd.equals("xlsx")
-                || fileEnd.equals("xlt")
-                || fileEnd.equals("xltx")
-                || fileEnd.equals("wpt")
-                || fileEnd.equals("wps")
-                || fileEnd.equals("csv")
-                || fileEnd.equals("pdf")
-        ) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean isDocument(String fileName) {
+        if (TextUtils.isEmpty(fileName)) return false;
+        return isDoc(fileName) || isPPT(fileName) || isXLS(fileName);
     }
 
-    /**
-     * 判断是否为pdf文件
-     */
-    public static boolean ispdfFile(String fileName) {
-        //获取文件的扩展名 -->获得的是小写：toLowerCase()  /大写:toUpperCase()
-        String fileEnd = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()).toLowerCase();
-        if (fileEnd.equals("pdf")) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean isDoc(String fileName) {
+        if (TextUtils.isEmpty(fileName)) return false;
+        return fileName.endsWith(".doc") ||
+                fileName.endsWith(".docx") ||
+                fileName.endsWith(".txt") ||
+                fileName.endsWith(".log") ||
+                fileName.endsWith(".dot") ||
+                fileName.endsWith(".dotx") ||
+                fileName.endsWith(".wps") ||
+                fileName.endsWith(".pdf");
+    }
+
+    public static boolean isPPT(String fileName) {
+        if (TextUtils.isEmpty(fileName)) return false;
+        return fileName.endsWith(".pptx") ||
+                fileName.endsWith(".ppt");
+    }
+
+    public static boolean isXLS(String fileName) {
+        if (TextUtils.isEmpty(fileName)) return false;
+        return fileName.endsWith(".xls") ||
+                fileName.endsWith(".xlsx");
     }
 
     /**
@@ -427,7 +359,7 @@ public class FileUtil {
      */
     public static boolean isOtherFile(String fileName) {
         //除去文档/视频/图片其它的后缀名文件
-        return !isDocumentFile(fileName) && !isVideoFile(fileName) && !isPictureFile(fileName);
+        return !isDocument(fileName) && !isVideo(fileName) && !isPicture(fileName);
     }
 
     /**
@@ -637,7 +569,7 @@ public class FileUtil {
         try {
             context.startActivity(intent);
         } catch (Exception e) {
-            ToastUtil.showToast(R.string.no_application_can_open);
+            ToastUtils.showShort(R.string.no_application_can_open);
         }
     }
 

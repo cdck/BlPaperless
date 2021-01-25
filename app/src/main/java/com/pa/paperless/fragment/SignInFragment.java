@@ -25,7 +25,7 @@ import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.mogujie.tt.protobuf.InterfaceSignin;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.SigninLvAdapter;
+import com.pa.paperless.adapter.rvadapter.SigninLvAdapter;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.bean.SignInBean;
 import com.pa.paperless.utils.ConvertUtil;

@@ -3,13 +3,11 @@ package com.pa.paperless.utils;
 import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 
-import com.pa.paperless.data.constant.Macro;
-
-//import static junit.framework.Assert.fail;
 
 /**
  * @author xlk
  * @date 2019/6/28
+ * @desc MediaCodec编解码器工具类
  */
 public class CodecUtil {
 
@@ -68,5 +66,18 @@ public class CodecUtil {
             default:
                 return false;
         }
+    }
+
+    /**
+     * 用于将是奇数的宽高改成偶数
+     * @param size
+     * @return
+     */
+    public static int getSupportSize(int size) {
+        //判断是否是奇数
+        if ((size & 1) == 1) {
+            return size - 1;
+        }
+        return size;
     }
 }

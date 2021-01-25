@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.utils.ConvertUtil;
@@ -42,16 +43,17 @@ import com.mogujie.tt.protobuf.InterfaceMember;
 import com.mogujie.tt.protobuf.InterfaceSignin;
 import com.mogujie.tt.protobuf.InterfaceVote;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.ChooseJoinVoteAdapter;
-import com.pa.paperless.adapter.SurveyPopAdapter;
-import com.pa.paperless.adapter.VoteAdapter;
-import com.pa.paperless.adapter.VoteOptionResultAdapter;
+import com.pa.paperless.adapter.rvadapter.ChooseJoinVoteAdapter;
+import com.pa.paperless.adapter.rvadapter.SurveyPopAdapter;
+import com.pa.paperless.adapter.rvadapter.VoteAdapter;
+import com.pa.paperless.adapter.rvadapter.VoteOptionResultAdapter;
 import com.pa.paperless.data.bean.VoteResultSubmitMember;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.Export;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+import com.pa.paperless.utils.ScreenUtils;
+
 import com.pa.paperless.utils.UriUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -62,8 +64,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
-import static com.pa.paperless.activity.MeetingActivity.fragmentHeight;
-import static com.pa.paperless.activity.MeetingActivity.fragmentWidth;
 import static com.pa.paperless.data.constant.Values.roomId;
 
 
@@ -344,14 +344,14 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
             if (votestate == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
                 for (int i = 0; i < mVoteData.size(); i++) {//查看当前是否已经有选举已经发起
                     if (mVoteData.get(i).getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_voteing.getNumber()) {
-                        ToastUtil.showToast(R.string.has_vote_ongoing);
+                        ToastUtils.showShort(R.string.has_vote_ongoing);
                         isback = true;
                         break;
                     }
                 }
             }
             if (votestate == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_endvote.getNumber()) {
-                ToastUtil.showToast(R.string.the_vote_is_over);
+                ToastUtils.showShort(R.string.the_vote_is_over);
                 isback = true;
             }
             if (isback) return;
@@ -368,11 +368,11 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
                     }
                 }
                 if (voteInfo.getMode() != 1) {
-                    ToastUtil.showToast(R.string.please_choose_registered_vote);
+                    ToastUtils.showShort(R.string.please_choose_registered_vote);
                 } else if (voteInfo.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
-                    ToastUtil.showToast(R.string.not_choose_notvote);
+                    ToastUtils.showShort(R.string.not_choose_notvote);
                 } else if (!havedata) {
-                    ToastUtil.showToast(R.string.no_data_can_show);
+                    ToastUtils.showShort(R.string.no_data_can_show);
                 } else {
                     open_vote_details = true;
                     fun_queryOneVoteSubmitter(voteInfo);
@@ -388,7 +388,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
                 if (voteInfo1.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_voteing.getNumber()) {
                     jni.stopVote(voteInfo1.getVoteid());
                 } else
-                    ToastUtil.showToast(R.string.please_choose_ongoing_vote);
+                    ToastUtils.showShort(R.string.please_choose_ongoing_vote);
             } else {//查看图表
                 InterfaceVote.pbui_Item_MeetVoteDetailInfo voteInfo = mVoteData.get(mPosion);
                 List<InterfaceVote.pbui_SubItem_VoteItemInfo> optionInfo = voteInfo.getItemList();
@@ -400,9 +400,9 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
                     }
                 }
                 if (!havedata) {
-                    ToastUtil.showToast(R.string.no_data_can_show);
+                    ToastUtils.showShort(R.string.no_data_can_show);
                 } else if (voteInfo.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
-                    ToastUtil.showToast(R.string.not_choose_notvote);
+                    ToastUtils.showShort(R.string.not_choose_notvote);
                 } else {
                     open_vote_chart = true;
                     fun_queryOneVoteSubmitter(voteInfo);
@@ -458,7 +458,8 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
     private void showJoinPop(InterfaceVote.pbui_Item_MeetVoteDetailInfo voteInfo) {
         showJoinPop = true;
         View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.choose_join_vote_pop, null);
-        choosePop = new PopupWindow(inflate, fragmentWidth + 10, fragmentHeight + 48);
+        View meetFl = getActivity().findViewById(R.id.meet_fl);
+        choosePop = new PopupWindow(inflate, meetFl.getWidth() + 10, meetFl.getHeight() + 48);
         choosePop.setAnimationStyle(R.style.Anim_PopupWindow);
         choosePop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         choosePop.setTouchable(true);
@@ -470,7 +471,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
         //使内部的EditText获取焦点输入的时候，软键盘不会遮挡住
         //SOFT_INPUT_ADJUST_PAN:把整个Layout顶上去露出获得焦点的EditText,不压缩多余空间
         choosePop.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-        choosePop.showAtLocation(getActivity().findViewById(R.id.meet_fl), Gravity.LEFT | Gravity.BOTTOM, 0, 0);
+        choosePop.showAtLocation(meetFl, Gravity.LEFT | Gravity.BOTTOM, 0, 0);
     }
 
 
@@ -487,7 +488,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
                 holder.all_number_cb.setChecked(chooseAdapter.isCheckAll());
                 chooseAdapter.notifyDataSetChanged();
             } else
-                ToastUtil.showToast(R.string.must_choose_online);
+                ToastUtils.showShort(R.string.must_choose_online);
         });
         holder.all_number_cb.setOnClickListener(v -> {
             boolean checked = holder.all_number_cb.isChecked();
@@ -497,7 +498,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
         holder.ensure.setOnClickListener(v -> {
             List<Integer> checks = chooseAdapter.getChecks();
             if (checks.isEmpty()) {
-                ToastUtil.showToast(R.string.please_choose);
+                ToastUtils.showShort(R.string.please_choose);
                 return;
             }
             int votestate = voteInfo.getVotestate();
@@ -593,11 +594,12 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
 
     private void showVoteChartPop(InterfaceVote.pbui_Item_MeetVoteDetailInfo voteInfo) {
         open_vote_chart = false;
-        int px_5 = ConvertUtil.dip2px(getContext(), 5);
-        int px_20 = ConvertUtil.dip2px(getContext(), 20);
-        LogUtil.d(TAG, "dp转px 5=" + px_5 + ",20=" + px_20);
         View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.vote_chart_pop, null);
-        chartPop = new PopupWindow(inflate, fragmentWidth + px_5, fragmentHeight + px_20);
+        View meetFl = getActivity().findViewById(R.id.meet_fl);
+        int px_5 = ScreenUtils.dip2px(getContext(), 5);
+        int px_20 = ScreenUtils.dip2px(getContext(), 20);
+        LogUtil.d(TAG, "dp转px 5=" + px_5 + ",20=" + px_20);
+        chartPop = new PopupWindow(inflate, meetFl.getWidth() + px_5, meetFl.getHeight() + px_20);
         chartPop.setAnimationStyle(R.style.Anim_PopupWindow);
         chartPop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         chartPop.setTouchable(true);
@@ -751,9 +753,11 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
     private void showVoteDetailsPop() {
         open_vote_details = false;
         View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.vote_details_pop, null);
-        int px_5 = ConvertUtil.dip2px(getContext(), 5);
-        int px_20 = ConvertUtil.dip2px(getContext(), 20);
-        PopupWindow voteDetailspop = new PopupWindow(inflate, fragmentWidth + px_5, fragmentHeight + px_20);
+        View meetFl = getActivity().findViewById(R.id.meet_fl);
+        int px_5 = ScreenUtils.dip2px(getContext(), 5);
+        int px_20 = ScreenUtils.dip2px(getContext(), 20);
+        LogUtil.d(TAG, "dp转px 5=" + px_5 + ",20=" + px_20);
+        PopupWindow voteDetailspop = new PopupWindow(inflate, meetFl.getWidth() + px_5, meetFl.getHeight() + px_20);
         voteDetailspop.setAnimationStyle(R.style.Anim_PopupWindow);
         voteDetailspop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         voteDetailspop.setTouchable(true);
@@ -771,7 +775,11 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
 
     private void showVoteInfoPop() {
         View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.survey_entry_pop, null);
-        pop = new PopupWindow(inflate, fragmentWidth + 10, fragmentHeight + 48);
+        View meetFl = getActivity().findViewById(R.id.meet_fl);
+        int px_5 = ScreenUtils.dip2px(getContext(), 5);
+        int px_20 = ScreenUtils.dip2px(getContext(), 20);
+        LogUtil.d(TAG, "dp转px 5=" + px_5 + ",20=" + px_20);
+        pop = new PopupWindow(inflate, meetFl.getWidth() + px_5, meetFl.getHeight() + px_20);
         pop.setAnimationStyle(R.style.Anim_PopupWindow);
         pop.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         pop.setTouchable(true);
@@ -833,10 +841,10 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
         holder.pop_add_btn.setOnClickListener(v -> {
             String edt_str = holder.survey_content_edt.getText().toString();
             if (edt_str.trim().isEmpty()) {
-                ToastUtil.showToast(R.string.please_input_content);
+                ToastUtils.showShort(R.string.please_input_content);
                 return;
             } else if (edt_str.length() > Macro.title_max_length) {
-                ToastUtil.showToast(R.string.beyond_max_length);
+                ToastUtils.showShort(R.string.beyond_max_length);
                 return;
             }
             String a = holder.edt_option_a.getText().toString().trim();
@@ -859,7 +867,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
             List<ByteString> chooses = new ArrayList<>();
             if (index == 2 || index == 3 || index == 4) {//一定要有5个选项
                 if (a.isEmpty() || b.isEmpty() || c.isEmpty() || d.isEmpty() || e.isEmpty()) {
-                    ToastUtil.showToast(R.string.please_input_five_option);
+                    ToastUtils.showShort(R.string.please_input_five_option);
                     return;
                 } else {
                     chooses.add(MyUtils.s2b(a));
@@ -871,35 +879,35 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
             } else if (index == 5) {//一定要有3个选项
                 if (a.isEmpty()) {//a项空
                     if (!b.isEmpty() || !c.isEmpty() || !d.isEmpty() || !e.isEmpty()) {
-                        ToastUtil.showToast(R.string.please_order_input);
+                        ToastUtils.showShort(R.string.please_order_input);
                         return;
                     } else if (b.isEmpty() && c.isEmpty() && d.isEmpty() && e.isEmpty()) {
-                        ToastUtil.showToast(R.string.please_input_three_option);
+                        ToastUtils.showShort(R.string.please_input_three_option);
                         return;
                     }
                 } else {
                     if (b.isEmpty()) {//A项不为空，B项是空
                         if (c.isEmpty() && d.isEmpty() && e.isEmpty()) {
-                            ToastUtil.showToast(R.string.please_input_three_option);
+                            ToastUtils.showShort(R.string.please_input_three_option);
                             return;
                         } else {
-                            ToastUtil.showToast(R.string.please_order_input);
+                            ToastUtils.showShort(R.string.please_order_input);
                             return;
                         }
                     } else {//A项和B项不为空
                         if (c.isEmpty()) {//C项为空
                             if (d.isEmpty() && e.isEmpty()) {
-                                ToastUtil.showToast(R.string.please_input_three_option);
+                                ToastUtils.showShort(R.string.please_input_three_option);
                                 return;
                             } else {//C项为空，但是D和E至少有一个不为空
                                 if (!d.isEmpty() || !e.isEmpty()) {
-                                    ToastUtil.showToast(R.string.please_order_input);
+                                    ToastUtils.showShort(R.string.please_order_input);
                                     return;
                                 }
                             }
                         } else {//A项和B项和C项都不为空
                             if (!d.isEmpty() || !e.isEmpty()) {//但是多出来了选项
-                                ToastUtil.showToast(R.string.max_input_three_option);
+                                ToastUtils.showShort(R.string.max_input_three_option);
                                 return;
                             } else {//A项和B项和C项都不为空,D和E为空
                                 chooses.add(MyUtils.s2b(a));
@@ -918,7 +926,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
             }
             LogUtil.e(TAG, "ElectionManageFragment.holderEvent :  chooses.size --> " + chooses.size());
             if (chooses.isEmpty() || chooses.size() < 2) {
-                ToastUtil.showToast(R.string.please_input_option);
+                ToastUtils.showShort(R.string.please_input_option);
                 return;
             }
             List<InterfaceVote.pbui_Item_MeetOnVotingDetailInfo> votes = new ArrayList<>();
@@ -939,11 +947,11 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
         holder.pop_modif_btn.setOnClickListener(v -> {
             String edt_str = holder.survey_content_edt.getText().toString();
             if (edt_str.trim().isEmpty()) {
-                ToastUtil.showToast(R.string.please_input_content);
+                ToastUtils.showShort(R.string.please_input_content);
                 return;
             }
             if (edt_str.trim().length() > Macro.title_max_length) {
-                ToastUtil.showToast(R.string.beyond_max_length);
+                ToastUtils.showShort(R.string.beyond_max_length);
                 return;
             }
             if (mVoteData != null && mVoteData.size() > popPosion) {
@@ -963,23 +971,23 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
                 if (!e.isEmpty()) chooses.add(MyUtils.s2b(e));
                 String content = holder.survey_content_edt.getText().toString().trim();
                 if (content.isEmpty()) {//选举的内容不能不写
-                    ToastUtil.showToast(R.string.please_input_content);
+                    ToastUtils.showShort(R.string.please_input_content);
                     return;
                 }
                 if (type == 2 || type == 3 || type == 4) {//必须是5个选项
                     if (chooses.size() < 5) {
-                        ToastUtil.showToast(R.string.please_input_five_option);
+                        ToastUtils.showShort(R.string.please_input_five_option);
                         return;
                     }
                 } else if (type == 5) {//必须是前三个选项
                     if (!a.isEmpty() && !b.isEmpty() && !c.isEmpty() && d.isEmpty() && e.isEmpty()) {
                     } else {
-                        ToastUtil.showToast(R.string.must_order_input_three);
+                        ToastUtils.showShort(R.string.must_order_input_three);
                         return;
                     }
                 }
                 if (chooses.isEmpty()) {//必须有选项
-                    ToastUtil.showToast(R.string.please_input_option);
+                    ToastUtils.showShort(R.string.please_input_option);
                     return;
                 }
                 InterfaceVote.pbui_Item_MeetOnVotingDetailInfo.Builder builder = InterfaceVote.pbui_Item_MeetOnVotingDetailInfo.newBuilder();
@@ -994,13 +1002,13 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
                 InterfaceVote.pbui_Item_MeetOnVotingDetailInfo build = builder.build();
                 jni.modifyVote(build);
             } else
-                ToastUtil.showToast(R.string.please_choose_vote);
+                ToastUtils.showShort(R.string.please_choose_vote);
         });
         holder.pop_del_btn.setOnClickListener(v -> {
             if (mVoteData != null && !mVoteData.isEmpty()) {
                 List<Integer> voteids = new ArrayList<>();
                 if (popPosion >= mVoteData.size()) {
-                    ToastUtil.showToast(R.string.please_choose_vote);
+                    ToastUtils.showShort(R.string.please_choose_vote);
                     return;
                 }
                 voteids.add(mVoteData.get(popPosion).getVoteid());
@@ -1023,7 +1031,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
                         getString(R.string.option_c), getString(R.string.option_d), getString(R.string.option_e)};
                 Export.VoteEntry(getString(R.string.survey_entry), titles, mVoteData, 1);
             } else
-                ToastUtil.showToast(R.string.no_data_export);
+                ToastUtils.showShort(R.string.no_data_export);
         });
         holder.import_excel.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -1046,7 +1054,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
                     e.printStackTrace();
                 }
                 if (path == null || path.isEmpty()) {
-                    ToastUtil.showToast(R.string.get_file_path_fail);
+                    ToastUtils.showShort(R.string.get_file_path_fail);
                 } else {
                     List<InterfaceVote.pbui_Item_MeetOnVotingDetailInfo> votes = Export.importSurvey(path);
                     if (!votes.isEmpty()) jni.createVote(votes);

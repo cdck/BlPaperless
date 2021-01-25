@@ -12,15 +12,16 @@ import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
 import android.media.Image;
 import android.media.ImageReader;
-import android.media.projection.MediaProjection;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.SystemClock;
+
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -38,6 +39,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -53,14 +56,13 @@ import com.pa.boling.paperless.R;
 import com.pa.paperless.activity.DrawBoardActivity;
 import com.pa.paperless.activity.NoteActivity;
 import com.pa.paperless.activity.NoticeActivity;
-import com.pa.paperless.adapter.CanJoinMemberAdapter;
-import com.pa.paperless.adapter.CanJoinProAdapter;
-import com.pa.paperless.adapter.OnLineProjectorAdapter;
-import com.pa.paperless.adapter.ScreenControlAdapter;
-import com.pa.paperless.adapter.VoteOptionResultAdapter;
-import com.pa.paperless.adapter.VoteTitleResultAdapter;
+import com.pa.paperless.adapter.rvadapter.CanJoinMemberAdapter;
+import com.pa.paperless.adapter.rvadapter.CanJoinProAdapter;
+import com.pa.paperless.adapter.rvadapter.OnLineProjectorAdapter;
+import com.pa.paperless.adapter.rvadapter.ScreenControlAdapter;
+import com.pa.paperless.adapter.rvadapter.VoteOptionResultAdapter;
+import com.pa.paperless.adapter.rvadapter.VoteTitleResultAdapter;
 import com.pa.paperless.data.bean.DevMember;
-import com.pa.paperless.data.bean.MeetDirFileInfo;
 import com.pa.paperless.data.bean.SubmitVoteBean;
 import com.pa.paperless.data.bean.VideoInfo;
 import com.pa.paperless.data.bean.VoteResultSubmitMember;
@@ -75,7 +77,7 @@ import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.PopUtils;
 import com.pa.paperless.utils.ScreenUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.wind.myapplication.CameraDemo;
 import com.wind.myapplication.NativeUtil;
 
@@ -100,7 +102,7 @@ import static com.pa.paperless.data.constant.Macro.CACHE_FILE;
 import static com.pa.paperless.data.constant.Values.mPermissionsList;
 import static com.pa.paperless.fragment.CameraFragment.cameraIsShowing;
 
-import static com.pa.paperless.utils.FileUtil.CreateDir;
+import static com.pa.paperless.utils.FileUtil.createDir;
 import static com.pa.paperless.utils.MyUtils.getMediaid;
 import static com.pa.paperless.utils.MyUtils.isHasPermission;
 
@@ -122,13 +124,11 @@ public class FabService extends Service {
     public static ScreenControlAdapter onLineMemberAdapter, pushOnLineMemberAdapter;
     public static ArrayList<Integer> tempRes, allScreenDevIds, applyProjectionIds, onlineClientIds;
     private VideoInfo videoInfo;
-    private int MSG_TYPE;
     private boolean openProjectpopFromPostilPop, openScreenpopFromPostilpop;//是否是从批注页面打开投影或者同屏
     private int windowWidth;
     private int windowHeight;
     private int mScreenDensity;
     private ImageReader mImageReader;
-    private MediaProjection mMediaProjection;
     private VirtualDisplay mVirtualDisplay;
     private long tempImgName;//截图的临时文件名
     private Context fabContext;
@@ -423,7 +423,7 @@ public class FabService extends Service {
 //                showScreenPop();
 //                showPop(pop, screenPop);
             } else {
-                ToastUtil.showToast(R.string.tip_no_screen_permissions);
+                ToastUtils.showShort(R.string.tip_no_screen_permissions);
             }
         });
         //加入同屏
@@ -435,24 +435,19 @@ public class FabService extends Service {
             if (isHasPermission(Macro.permission_code_screen)) {
                 startScr = false;
                 showPlayerPop(pop);
-//                showScreenPop();
-//                showPop(pop, screenPop);
             } else {
-                ToastUtil.showToast(R.string.tip_no_screen_permissions);
+                ToastUtils.showShort(R.string.tip_no_screen_permissions);
             }
         });
         //发起投影
         holder.start_pro.setOnClickListener(v -> {
             if (isHasPermission(Macro.permission_code_projection)) {
-//                dev_form_fab = true;
                 LogUtil.v("cause_log", "FabService.onClick :  点击投影控制 :查询设备信息--> ");
                 fun_queryDeviceInfo();
                 startPro = true;
                 showProRlPop(pop);
-//                showProjectPop();
-//                showPop(pop, projectPop, notParams);
             } else {
-                ToastUtil.showToast(R.string.tip_no_projection_permissions);
+                ToastUtils.showShort(R.string.tip_no_projection_permissions);
             }
         });
         //结束投影
@@ -460,10 +455,8 @@ public class FabService extends Service {
             if (isHasPermission(Macro.permission_code_projection)) {
                 startPro = false;
                 showProRlPop(pop);
-//                showProjectPop();
-//                showPop(pop, projectPop, notParams);
             } else {
-                ToastUtil.showToast(R.string.tip_no_projection_permissions);
+                ToastUtils.showShort(R.string.tip_no_projection_permissions);
             }
         });
         //会议笔记
@@ -478,7 +471,6 @@ public class FabService extends Service {
             LogUtil.d(TAG, "holderEvent: 点击投票结果");
             clickqueryVoteResult = true;
             fun_queryVote();
-            //showPop(pop, mImageView, mParams);
         });
         //返回
         holder.back.setOnClickListener(v -> showPop(pop, mImageView, mParams));
@@ -675,14 +667,8 @@ public class FabService extends Service {
                 showPop(mImageView, postilPop, postilParams);
                 break;
             case EventType.MEMBER_CHANGE_INFORM://参会人员变更通知
-                fun_queryAttendPeople();
-                break;
             case EventType.DEV_REGISTER_INFORM://设备寄存器变更通知（监听参会人退出）
-//                query_form_fab = true;
-                fun_queryAttendPeople();
-                break;
             case EventType.FACESTATUS_CHANGE_INFORM://界面状态变更通知
-//                query_form_fab = true;
                 fun_queryAttendPeople();
                 break;
             case EventType.click_key_home://收到点击HOME键监听
@@ -756,8 +742,7 @@ public class FabService extends Service {
                 LogUtil.e(TAG, "FabService.getEventMessage :   -->deviceid= " + deviceid + ", memberid= " + memberid + ", membersize= " + membersize + ", membersignsize= " + membersignsize);
                 break;
             case EventType.INFORM_PUSH_FILE://收到开启文件推送通知
-                MeetDirFileInfo meetDirFileInfo = (MeetDirFileInfo) message.getObject();
-                int pushMediaid = meetDirFileInfo.getMediaId();
+                int pushMediaid = (int) message.getObject();
                 LogUtil.e(TAG, "FabService.getEventMessage :  pushMediaid --> " + pushMediaid);
 //                query_form_fab = true;
                 //只是用来更新adapter
@@ -779,10 +764,10 @@ public class FabService extends Service {
                 if (!cameraIsShowing) {
                     if (Values.can_open_camera) showOpenCameraInform();
                     else {
-                        ToastUtil.showToast(R.string.tip_background_open_camera);
+                        ToastUtils.showShort(R.string.tip_background_open_camera);
                     }
                 } else {
-                    ToastUtil.showToast(R.string.tip_camera_is_busy);
+                    ToastUtils.showShort(R.string.tip_camera_is_busy);
                 }
                 break;
             default:
@@ -832,7 +817,7 @@ public class FabService extends Service {
                 wm.removeView(mChooseCameraPop);
                 mChooseCameraPopIsShow = false;
             } else {
-                ToastUtil.showToast(R.string.tip_no_camera);
+                ToastUtils.showShort(R.string.tip_no_camera);
             }
         });
         holder.back_btn.setOnClickListener(v -> {
@@ -844,7 +829,7 @@ public class FabService extends Service {
                 wm.removeView(mChooseCameraPop);
                 mChooseCameraPopIsShow = false;
             } else {
-                ToastUtil.showToast(R.string.tip_no_camera);
+                ToastUtils.showShort(R.string.tip_no_camera);
             }
         });
         holder.cancel.setOnClickListener(v -> {
@@ -919,7 +904,7 @@ public class FabService extends Service {
     private void showPushPop(int pushMediaid) {
         pushPopIsshowing = true;
         PopUtils.PopBuilder.createPopupWindow(R.layout.push_pop_layout, LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT, ShotApplication.getRootView(), Gravity.CENTER, 0, 0, true, new PopUtils.ClickListener() {
+                LinearLayout.LayoutParams.WRAP_CONTENT, App.getRootView(), Gravity.CENTER, 0, 0, true, new PopUtils.ClickListener() {
                     @Override
                     public void setUplistener(PopUtils.PopBuilder builder) {
                         CheckBox all_member_cb = builder.getView(R.id.all_member_cb);
@@ -958,7 +943,7 @@ public class FabService extends Service {
                             List<Integer> checks = pushOnLineMemberAdapter.getChecks();
                             checks.addAll(pushOnLineProjectorAdapter.getChecks());
                             if (checks.isEmpty()) {
-                                ToastUtil.showToast(R.string.please_choose_push);
+                                ToastUtils.showShort(R.string.please_choose_push);
                             } else {
 //                                nativeUtil.filePush(pushMediaid,
 //                                        InterfaceMacro.Pb_TriggerUsedef.Pb_EXCEC_USERDEF_FLAG_NOSTREAMRECORD.getNumber(), checks);
@@ -970,7 +955,7 @@ public class FabService extends Service {
                             List<Integer> checks = pushOnLineMemberAdapter.getChecks();
                             checks.addAll(pushOnLineProjectorAdapter.getChecks());
                             if (checks.isEmpty()) {
-                                ToastUtil.showToast(R.string.please_choose_push);
+                                ToastUtils.showShort(R.string.please_choose_push);
                             } else {
                                 jni.stopResourceOperate(tempRes, checks);
                                 builder.dismiss();
@@ -1540,7 +1525,7 @@ public class FabService extends Service {
             }
         } else/* if (maxSelect == nowSelect)*/ {
             //如果当前选中的个数 等于 可选的个数
-            ToastUtil.showToast(R.string.tip_most_can_choose, maxSelect + "");
+            ToastUtils.showShort(R.string.tip_most_can_choose, maxSelect + "");
             for (int i = 0; i < btns.size(); i++) {
                 if (!(btns.get(i).isChecked())) {
                     //就将未选中的选项设置成 不可点击状态
@@ -1704,7 +1689,7 @@ public class FabService extends Service {
         try {
             InterfaceDevice.pbui_Type_DeviceResPlay object = jni.queryCanJoin();
             if (object == null) {
-                ToastUtil.showToast(R.string.tip_no_screen_can_join);
+                ToastUtils.showShort(R.string.tip_no_screen_can_join);
                 return;
             }
             LogUtil.e(TAG, "FabService.fun_queryCanJoin :  收到可加入同屏数据 --> ");
@@ -1801,7 +1786,7 @@ public class FabService extends Service {
                             showPop(proListPop, mImageView, mParams);
                         }
                     } else {
-                        ToastUtil.showToast(R.string.tip_select_device);
+                        ToastUtils.showShort(R.string.tip_select_device);
                     }
                 }
             } else {//结束投影操作
@@ -1909,7 +1894,7 @@ public class FabService extends Service {
                         showPop(choosePlayerPop, mImageView, mParams);
                     }
                 } else {
-                    ToastUtil.showToast(R.string.tip_select_device);
+                    ToastUtils.showShort(R.string.tip_select_device);
                 }
             } else {
                 /** **** **  停止同屏操作  ** **** **/
@@ -1919,7 +1904,7 @@ public class FabService extends Service {
                     jni.stopResourceOperate(tempRes, allScreenDevIds);
                     showPop(choosePlayerPop, mImageView, mParams);
                 } else {
-                    ToastUtil.showToast(R.string.tip_select_device);
+                    ToastUtils.showShort(R.string.tip_select_device);
                 }
             }
         });
@@ -2058,7 +2043,7 @@ public class FabService extends Service {
                         }
                         showPop(projectPop, mImageView, mParams);
                     } else {
-                        ToastUtil.showToast(R.string.tip_select_device);
+                        ToastUtils.showShort(R.string.tip_select_device);
                     }
                 }
             } else {//结束投影
@@ -2067,7 +2052,7 @@ public class FabService extends Service {
                     jni.stopResourceOperate(tempRes, applyProjectionIds);
                     showPop(projectPop, mImageView, mParams);
                 } else {
-                    ToastUtil.showToast(R.string.tip_select_device);
+                    ToastUtils.showShort(R.string.tip_select_device);
                 }
             }
         });
@@ -2085,7 +2070,7 @@ public class FabService extends Service {
 
     private void initAdapter() {
         initDatas();
-        updataDatas();
+        updateDatas();
         if (allProjectorAdapter == null) {
             allProjectorAdapter = new OnLineProjectorAdapter(allProjectors);
         }
@@ -2147,7 +2132,7 @@ public class FabService extends Service {
         }
     }
 
-    private void updataDatas() {
+    private void updateDatas() {
         LogUtil.i(TAG, "updataDatas 设备个数：" + deviceInfos.size() + ",参会人个数：" + memberInfos.size());
         for (int i = 0; i < deviceInfos.size(); i++) {
             InterfaceDevice.pbui_Item_DeviceDetailInfo deviceInfo = deviceInfos.get(i);
@@ -2162,43 +2147,31 @@ public class FabService extends Service {
                 allProjectors.add(deviceInfo);
             }
             //判断是否是在线的并且界面状态为1的参会人
-            if (memberInfos.size() > 0 && netState == 1 && faceState == 1) {
+            if (memberInfos.size() > 0 && netState == 1 && faceState == InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace_VALUE) {
                 for (int j = 0; j < memberInfos.size(); j++) {
                     InterfaceMember.pbui_Item_MemberDetailInfo memberInfo = memberInfos.get(j);
                     int personid = memberInfo.getPersonid();
                     if (personid == memberId) {
-                        allOnLineMember.add(new DevMember(memberInfos.get(j), devId));
-                        /** **** **  过滤掉自己的设备  ** **** **/
+                        DevMember devMember = new DevMember(memberInfos.get(j), devId);
+                        LogUtils.d(TAG, "在线参会人：" + devMember.toString());
+                        allOnLineMember.add(devMember);
+                        //过滤掉自己的设备
                         if (devId != Values.localDevId) {
                             //查找到在线状态的参会人员
-                            onLineMember.add(new DevMember(memberInfos.get(j), devId));
+                            onLineMember.add(devMember);
                             //查找到界面状态为1的参会人员
-                            faceOnLMember.add(new DevMember(memberInfos.get(j), devId));
+                            faceOnLMember.add(devMember);
                         }
                     }
                 }
             }
-            //判断是否是在线的并且界面状态为1的参会人
-//            if (memberInfos.size() > 0 && netState == 1 && faceState == 1) {
-//                for (int j = 0; j < memberInfos.size(); j++) {
-//                    InterfaceMember.pbui_Item_MemberDetailInfo memberInfo = memberInfos.get(j);
-//                    int personid = memberInfo.getPersonid();
-//                    if (personid == memberId) {
-//                        /** **** **  过滤掉自己的设备  ** **** **/
-//                        if (devId != Values.localDevId) {
-//                            //查找到界面状态为1的参会人员
-//                            faceOnLMember.add(new DevMember(memberInfos.get(j), devId));
-//                        }
-//                    }
-//                }
-//            }
             if ((devId & Macro.DEVICE_MEET_ID_MASK) == Macro.DEVICE_MEET_CLIENT) {//客户端
                 if (netState == 1 && devId != Values.localDevId) {//过滤自己
                     onlineClientIds.add(devId);//添加在线客户端
                 }
             }
         }
-        LogUtil.i(TAG, "updataDatas 在线参会人个数：" + onLineMember.size() + ",在线投影机个数：" + onLineProjectors.size());
+        LogUtils.i(TAG, "updataDatas 在线参会人个数：" + onLineMember.size() + ",在线投影机个数：" + onLineProjectors.size());
     }
 
     private void video_screen(EventMessage message) {
@@ -2214,7 +2187,7 @@ public class FabService extends Service {
                 startScr = true;
                 showPlayerPop(mImageView);
             } else {
-                ToastUtil.showToast(R.string.tip_no_screen_permissions);
+                ToastUtils.showShort(R.string.tip_no_screen_permissions);
             }
         } else {//停止同屏
             if (allScreenDevIds != null && allScreenDevIds.size() > 0) {
@@ -2235,7 +2208,7 @@ public class FabService extends Service {
             LogUtil.d(TAG, "video_pro: 视屏直播打开投影控制..");
             showProRlPop(mImageView);
         } else {
-            ToastUtil.showToast(R.string.tip_no_projection_permissions);
+            ToastUtils.showShort(R.string.tip_no_projection_permissions);
         }
         else if (applyProjectionIds != null) {
             jni.stopResourceOperate(tempRes, applyProjectionIds);
@@ -2245,31 +2218,21 @@ public class FabService extends Service {
     }
 
     public void startVirtual() {
-        if (mMediaProjection != null) {
+        if (App.mediaProjection != null) {
             LogUtil.i(TAG, "want to display virtual");
             virtualDisplay();
         } else {
             LogUtil.i(TAG, "start screen capture intent");
             LogUtil.i(TAG, "want to build mediaprojection and display virtual");
-            setUpMediaProjection();
+            App.mediaProjection = App.mediaProjectionManager.getMediaProjection(App.result, App.intent);
             virtualDisplay();
         }
     }
 
-    public void setUpMediaProjection() {
-        mMediaProjection = ((ShotApplication) getApplication()).getmMediaProjection();
-        if (mMediaProjection == null) {
-            //直接获取保存的  manager\intent 和 result
-            mMediaProjection = ((ShotApplication) getApplication()).getMediaProjectionManager().getMediaProjection(
-                    ((ShotApplication) getApplication()).getResult(),
-                    ((ShotApplication) getApplication()).getIntent());
-            ((ShotApplication) getApplication()).setmMediaProjection(mMediaProjection);
-        }
-    }
 
     private void virtualDisplay() {
         try {
-            mVirtualDisplay = mMediaProjection.createVirtualDisplay("screen-mirror",
+            mVirtualDisplay = App.mediaProjection.createVirtualDisplay("screen-mirror",
                     windowWidth, windowHeight, mScreenDensity, DisplayManager.VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR,
                     mImageReader.getSurface(), null, null);
             LogUtil.i(TAG, "virtual displayed");
@@ -2301,7 +2264,7 @@ public class FabService extends Service {
 
         if (bitmap != null) {
             try {
-                CreateDir(CACHE_FILE);
+                createDir(CACHE_FILE);
                 File fileImage = new File(CACHE_FILE + tempImgName + ".png");
                 if (!fileImage.exists()) {
                     fileImage.createNewFile();
@@ -2395,7 +2358,7 @@ public class FabService extends Service {
                         showPop(screenPop, mImageView, mParams);
                     }
                 } else {
-                    ToastUtil.showToast(R.string.tip_select_device);
+                    ToastUtils.showShort(R.string.tip_select_device);
                 }
             } else {//停止同屏
                 allScreenDevIds = onLineMemberAdapter.getChecks();
@@ -2407,7 +2370,7 @@ public class FabService extends Service {
                     allScreenDevIds = null;
                     showPop(screenPop, mImageView, mParams);
                 } else {
-                    ToastUtil.showToast(R.string.tip_select_device);
+                    ToastUtils.showShort(R.string.tip_select_device);
                 }
                 allScreenDevIds = null;
             }
@@ -2450,12 +2413,12 @@ public class FabService extends Service {
         //确定
         holder.ensure.setOnClickListener(v -> {
             Bitmap bitmap = ConvertUtil.bytes2Bitmap(bytes);
-            CreateDir(Macro.POSTIL_FILE);
+            createDir(Macro.POSTIL_FILE);
             FabPicName = holder.edt_name.getText().toString();
             if (FabPicName.equals("")) {
-                ToastUtil.showToast(R.string.please_enter_file_name);
+                ToastUtils.showShort(R.string.please_enter_file_name);
             } else if (!FileUtil.isLegalName(FabPicName)) {
-                ToastUtil.showToast(R.string.tip_file_name_unlawfulness);
+                ToastUtils.showShort(R.string.tip_file_name_unlawfulness);
                 return;
             } else {
                 FabPicFile = new File(Macro.POSTIL_FILE, FabPicName + ".png");
@@ -2519,7 +2482,7 @@ public class FabService extends Service {
                 jni.streamPlay(playID, 2, 0, res, ids);
                 showPop(canJoinPop, mImageView, mParams);
             } else {
-                ToastUtil.showToast(R.string.tip_select_device);
+                ToastUtils.showShort(R.string.tip_select_device);
             }
         });
         holder.player_pop_cancel.setOnClickListener(v -> showPop(canJoinPop, mImageView, mParams));
@@ -2536,7 +2499,7 @@ public class FabService extends Service {
                 startScreen();
                 Handler handler3 = new Handler();
                 handler3.postDelayed(() -> {
-                    FileUtil.CreateDir(CACHE_FILE);
+                    FileUtil.createDir(CACHE_FILE);
                     File file = new File(CACHE_FILE + tempImgName + ".png");
                     if (file.exists()) {
                         Bitmap bitmap = BitmapFactory.decodeFile(CACHE_FILE + tempImgName + ".png");
@@ -2550,7 +2513,7 @@ public class FabService extends Service {
                         //将临时图片删除
                         file.delete();
                     } else {
-                        ToastUtil.showToast(R.string.tip_operation_failed);
+                        ToastUtils.showShort(R.string.tip_operation_failed);
                         wm.addView(mImageView, mParams);
                         mImageViewIsShow = true;
                     }
@@ -2611,6 +2574,8 @@ public class FabService extends Service {
         return seriveStr;
     }
 
+    private int MSG_TYPE;
+
     //呼叫服务事件
     private void callServeHolder_Event(final FunViewHolder holder) {
         final List<Integer> arr = new ArrayList<>();
@@ -2618,68 +2583,92 @@ public class FabService extends Service {
         MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Other.getNumber();
         //纸
         holder.paper_msg.setOnClickListener(view -> {
-            boolean selected = view.isSelected();
-            view.setSelected(!selected);
-            holder.edt_msg.setText(getSeriveStr());
-            MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Paper.getNumber();
+//            boolean selected = view.isSelected();
+//            view.setSelected(!selected);
+//            holder.edt_msg.setText(getSeriveStr());
+            holder.edt_msg.setText(getString(R.string.service_pager));
+            holder.edt_msg.setSelection(holder.edt_msg.getText().toString().length());
+            setSelected(0);
+            MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Paper_VALUE;
         });
         //笔
         holder.pen_msg.setOnClickListener(view -> {
-            boolean selected = view.isSelected();
-            view.setSelected(!selected);
-            holder.edt_msg.setText(getSeriveStr());
+//            boolean selected = view.isSelected();
+//            view.setSelected(!selected);
+//            holder.edt_msg.setText(getSeriveStr());
+            holder.edt_msg.setText(getString(R.string.service_pen));
+            holder.edt_msg.setSelection(holder.edt_msg.getText().toString().length());
+            setSelected(1);
             MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Pen.getNumber();
         });
         //茶水
         holder.tea_msg.setOnClickListener(view -> {
-            boolean selected = view.isSelected();
-            view.setSelected(!selected);
-            holder.edt_msg.setText(getSeriveStr());
+//            boolean selected = view.isSelected();
+//            view.setSelected(!selected);
+//            holder.edt_msg.setText(getSeriveStr());
+            holder.edt_msg.setText(getString(R.string.service_tea));
+            holder.edt_msg.setSelection(holder.edt_msg.getText().toString().length());
+            setSelected(2);
             MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Tea.getNumber();
         });
         //矿泉水
         holder.water_msg.setOnClickListener(view -> {
-            boolean selected = view.isSelected();
-            view.setSelected(!selected);
-            holder.edt_msg.setText(getSeriveStr());
+//            boolean selected = view.isSelected();
+//            view.setSelected(!selected);
+//            holder.edt_msg.setText(getSeriveStr());
+            holder.edt_msg.setText(getString(R.string.service_mineralWater));
+            holder.edt_msg.setSelection(holder.edt_msg.getText().toString().length());
+            setSelected(3);
             MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Water.getNumber();
         });
         //计算器
         holder.calculator_msg.setOnClickListener(view -> {
-            boolean selected = view.isSelected();
-            view.setSelected(!selected);
-            holder.edt_msg.setText(getSeriveStr());
+//            boolean selected = view.isSelected();
+//            view.setSelected(!selected);
+//            holder.edt_msg.setText(getSeriveStr());
+            holder.edt_msg.setText(getString(R.string.service_Calculator));
+            holder.edt_msg.setSelection(holder.edt_msg.getText().toString().length());
+            setSelected(4);
             MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Other.getNumber();
         });
         //服务员
         holder.waiter_msg.setOnClickListener(view -> {
-            boolean selected = view.isSelected();
-            view.setSelected(!selected);
-            holder.edt_msg.setText(getSeriveStr());
+//            boolean selected = view.isSelected();
+//            view.setSelected(!selected);
+//            holder.edt_msg.setText(getSeriveStr());
+            holder.edt_msg.setText(getString(R.string.service_waiter));
+            holder.edt_msg.setSelection(holder.edt_msg.getText().toString().length());
+            setSelected(5);
             MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Waiter.getNumber();
         });
         //清扫
         holder.sweep_msg.setOnClickListener(view -> {
-            boolean selected = view.isSelected();
-            view.setSelected(!selected);
-            holder.edt_msg.setText(getSeriveStr());
+//            boolean selected = view.isSelected();
+//            view.setSelected(!selected);
+//            holder.edt_msg.setText(getSeriveStr());
+            holder.edt_msg.setText(getString(R.string.service_clean));
+            holder.edt_msg.setSelection(holder.edt_msg.getText().toString().length());
+            setSelected(6);
             MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Other.getNumber();
         });
         //技术员
         holder.technician_msg.setOnClickListener(view -> {
-            boolean selected = view.isSelected();
-            view.setSelected(!selected);
-            holder.edt_msg.setText(getSeriveStr());
+//            boolean selected = view.isSelected();
+//            view.setSelected(!selected);
+//            holder.edt_msg.setText(getSeriveStr());
+            holder.edt_msg.setText(getString(R.string.service_technician));
+            holder.edt_msg.setSelection(holder.edt_msg.getText().toString().length());
+            setSelected(7);
             MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Technical.getNumber();
         });
         //发送
         holder.send_msg.setOnClickListener(v -> {
-            String other = holder.edt_msg.getText().toString();
-            if (!other.trim().equals("")) {
+            String other = holder.edt_msg.getText().toString().trim();
+            if (!TextUtils.isEmpty(other)) {
                 //全部设置成其它服务类型
                 MSG_TYPE = InterfaceMacro.Pb_MeetIMMSG_TYPE.Pb_MEETIM_CHAT_Other.getNumber();
                 jni.sendMeetChatInfo(other, MSG_TYPE, arr);
-                /** **** **  发送后清空输入框  ** **** **/
+                //发送后清空输入框
                 holder.edt_msg.setText("");
             }
             showPop(callServePop, mImageView, mParams);
@@ -2711,6 +2700,15 @@ public class FabService extends Service {
             memberInfos.clear();
             if (o != null) {
                 memberInfos.addAll(o.getItemList());
+                StringBuilder sb = new StringBuilder();
+                sb.append("参会人数量" + memberInfos.size());
+                sb.append(",所有参会人:{");
+                for (int i = 0; i < memberInfos.size(); i++) {
+                    InterfaceMember.pbui_Item_MemberDetailInfo info = memberInfos.get(i);
+                    sb.append("\n名称：" + info.getName().toStringUtf8() + ",id：" + info.getPersonid());
+                }
+                sb.append("\n}");
+                LogUtils.i(TAG, sb.toString());
                 if (voteResult) {//点击了投票结果快捷键
                     voteResult = false;
                     LogUtil.d(TAG, "fun_queryAttendPeople: 收到参会人数据,打开投票结果pop");
@@ -2729,13 +2727,28 @@ public class FabService extends Service {
             deviceInfos.clear();
             if (o != null) {
                 deviceInfos.addAll(o.getPdevList());
+                StringBuilder sb = new StringBuilder();
+                sb.append("所有终端:{");
+                int count = 0;
+                for (int i = 0; i < deviceInfos.size(); i++) {
+                    InterfaceDevice.pbui_Item_DeviceDetailInfo info = deviceInfos.get(i);
+                    int devcieid = info.getDevcieid();
+                    //判断是否是投影机
+                    if (Macro.DEVICE_MEET_CLIENT == (devcieid & Macro.DEVICE_MEET_ID_MASK)) {
+                        count++;
+                        sb.append("\n人员id：" + info.getMemberid() + ",名称：" + info.getDevname().toStringUtf8()
+                                + ",ID：" + info.getDevcieid() + ",界面状态：" + info.getFacestate()
+                                + ",在线状态：" + info.getNetstate() + ",会议id：" + info.getMeetingid());
+                    }
+                }
+                sb.append("\n}");
+                LogUtils.i(TAG, "终端数量：" + count + "," + sb.toString());
             }
             initAdapter();
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
     }
-
 
     @Override
     public void unbindService(ServiceConnection conn) {
@@ -2774,8 +2787,8 @@ public class FabService extends Service {
         LogUtil.i("Fab_life", "FabService.onDestroy :   --> ");
         exitTiming();
 //        BaseActivity.stopRecord();
-        ShotApplication.stopRecord();
-        ShotApplication.openFab = false;
+        App.stopRecord();
+        App.fabServiceIsOpened = false;
         deleteAll();
         EventBus.getDefault().unregister(this);
         super.onDestroy();
@@ -2869,6 +2882,12 @@ public class FabService extends Service {
             seriveTvs.add(waiter_msg);
             seriveTvs.add(sweep_msg);
             seriveTvs.add(technician_msg);
+        }
+    }
+
+    private void setSelected(int index) {
+        for (int i = 0; i < seriveTvs.size(); i++) {
+            seriveTvs.get(i).setSelected(i == index);
         }
     }
 
@@ -3066,22 +3085,6 @@ public class FabService extends Service {
         }
     }
 
-    public static class NoticeViewHolder {
-        public View rootView;
-        public LinearLayout notice_ll;
-        public TextView notice_title;
-        public TextView notice_content;
-        public Button ensure;
-
-        public NoticeViewHolder(View rootView) {
-            this.rootView = rootView;
-            this.notice_ll = (LinearLayout) rootView.findViewById(R.id.notice_ll);
-            this.notice_title = (TextView) rootView.findViewById(R.id.notice_title);
-            this.notice_content = (TextView) rootView.findViewById(R.id.notice_content);
-            this.ensure = (Button) rootView.findViewById(R.id.ensure);
-        }
-
-    }
 
     public static class RequestPermissionViewHolder {
         public View rootView;

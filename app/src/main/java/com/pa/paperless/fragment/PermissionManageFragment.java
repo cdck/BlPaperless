@@ -4,6 +4,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.utils.LogUtil;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +16,12 @@ import android.widget.CheckBox;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.PermissionAdapter;
+import com.pa.paperless.adapter.rvadapter.PermissionAdapter;
 import com.pa.paperless.data.bean.PermissionBean;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -136,7 +138,6 @@ public class PermissionManageFragment extends BaseFragment implements View.OnCli
         }
     }
 
-
     @Override
     public void onStart() {
         super.onStart();
@@ -238,7 +239,7 @@ public class PermissionManageFragment extends BaseFragment implements View.OnCli
     private void update(boolean isadd, int code, int value) {
         List<Integer> checks = adapter.getChecks();
         if (checks.isEmpty()) {
-             ToastUtil.showToast(R.string.tip_select_member);
+             ToastUtils.showShort(R.string.tip_select_member);
             return;
         }
         if (saves == null) {

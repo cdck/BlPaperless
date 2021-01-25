@@ -94,6 +94,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener,
         playAction = intent.getIntExtra("action", 0);
         subtype = intent.getIntExtra("subtype", 0);
         Values.videoIsShowing = true;
+        boolean isPlayStram = playAction == EventType.PLAY_STREAM_NOTIFY;
         if (subtype == Macro.MEDIA_FILE_TYPE_MP3) {
             //如果当前播放的是mp3文件，则只显示MP3控件
             play_mp3_view.setVisibility(View.VISIBLE);
@@ -103,15 +104,18 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener,
             play_mp3_view.setVisibility(View.GONE);
             surfaceView.setVisibility(View.VISIBLE);
             surfaceView.setOnGlSurfaceViewOncreateListener(this);
-            if (playAction == EventType.PLAY_STREAM_NOTIFY) {
+            if (isPlayStram) {
                 int deivceid = intent.getIntExtra("deivceid", -1);
                 String devName = presenter.queryDevName(deivceid);
                 LogUtil.i(TAG, "showVideoOrMusicUI devName=" + devName);
                 video_top_title.setText(devName);
             }
+            presenter.setIsplayStream(isPlayStram);
         }
         if (bottomPop != null && bottomPop.isShowing()) {
-            video_progress_linear.setVisibility(playAction == EventType.PLAY_STREAM_NOTIFY ? View.GONE : View.VISIBLE);
+            video_progress_linear.setVisibility(isPlayStram ? View.GONE : View.VISIBLE);
+            videoStartScreenBtn.setVisibility(isPlayStram ? View.GONE : View.VISIBLE);
+            videoStopScreenBtn.setVisibility(isPlayStram ? View.GONE : View.VISIBLE);
         }
     }
 
@@ -341,7 +345,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener,
     }
 
     @Override
-    public void onGlSurfaceViewOncreate(Surface surface) {
+    public void onGlSurfaceViewOnCreate(Surface surface) {
         LogUtil.e(TAG, "onGlSurfaceViewOncreate :   --> ");
         presenter.setSurface(surface);
     }

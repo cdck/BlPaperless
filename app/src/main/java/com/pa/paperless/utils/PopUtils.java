@@ -13,7 +13,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.pa.boling.paperless.R;
-import com.pa.paperless.service.ShotApplication;
+import com.pa.paperless.service.App;
 
 /**
  * Created by xlk on 2018/9/7.
@@ -34,7 +34,7 @@ public abstract class PopUtils {
         }
 
         public static PopBuilder createPopupWindow(int layoutResId, int width, int height, View parent, int gravity, int x, int y, boolean outside, final ClickListener callback) {
-            final Activity activity = ShotApplication.currentActivity();
+            final Activity activity = App.currentActivity();
             // 利用layoutInflater获得View
             LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(layoutResId, null);

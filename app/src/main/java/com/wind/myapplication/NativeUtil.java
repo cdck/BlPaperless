@@ -3,9 +3,11 @@ package com.wind.myapplication;
 import android.content.Intent;
 import android.graphics.PointF;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
+import com.pa.paperless.service.App;
 import com.pa.paperless.utils.LogUtil;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -36,10 +38,9 @@ import com.mogujie.tt.protobuf.InterfaceWhiteboard;
 import com.pa.paperless.data.bean.SubmitVoteBean;
 import com.pa.paperless.data.constant.BroadCaseAction;
 import com.pa.paperless.data.constant.EventType;
-import com.pa.paperless.service.ShotApplication;
 import com.pa.paperless.utils.IniUtil;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -50,7 +51,7 @@ import java.util.List;
 import static android.content.Intent.FLAG_DEBUG_LOG_RESOLUTION;
 import static com.pa.paperless.data.constant.BroadCaseAction.SCREEN_SHOT_TYPE;
 import static com.pa.paperless.data.constant.EventType.CALLBACK_YUVDISPLAY;
-import static com.pa.paperless.service.ShotApplication.lbm;
+import static com.pa.paperless.service.App.lbm;
 import static com.pa.paperless.utils.MyUtils.s2b;
 
 
@@ -101,9 +102,10 @@ public class NativeUtil {
      * 查询可加入的同屏会话
      */
     public InterfaceDevice.pbui_Type_DeviceResPlay queryCanJoin() throws InvalidProtocolBufferException {
-        byte[] array = call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_DEVICEINFO.getNumber(), InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_RESINFO.getNumber(), null);
+        byte[] array = call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_DEVICEINFO.getNumber(),
+                InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_RESINFO.getNumber(), null);
         if (array == null) {
-            LogUtil.e(TAG, "NativeUtil.queryCanJoin 93行:  查询可加入的同屏会话失败 --->>> ");
+            LogUtil.e(TAG, "queryCanJoin :  查询可加入的同屏会话失败 --->>> ");
             return null;
         }
         return InterfaceDevice.pbui_Type_DeviceResPlay.parseFrom(array);
@@ -292,7 +294,7 @@ public class NativeUtil {
         InterfaceContext.pbui_MeetContextInfo build = builder.build();
         byte[] bytes = build.toByteArray();
         call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETCONTEXT.getNumber(), InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_SETPROPERTY.getNumber(), bytes);
-        LogUtil.e(TAG, "NativeUtil.setInterfaceState:  8.修改本机界面状态 为 --->>> " + value);
+        LogUtil.e(TAG, "setInterfaceState:  修改本机界面状态 为 --->>> " + value);
     }
 
     /**
@@ -372,7 +374,7 @@ public class NativeUtil {
      * 按属性ID查询指定上下文属性
      *
      * @param propertyid Pb_ContextPropertyID
-     * @return
+     * @return InterfaceContext.pbui_MeetContextInfo
      * @throws InvalidProtocolBufferException
      */
     public InterfaceContext.pbui_MeetContextInfo queryContextProperty(int propertyid) throws InvalidProtocolBufferException {
@@ -945,7 +947,7 @@ public class NativeUtil {
     /**
      * 182.修改会议排位
      */
-    public void modifMeetRanking(int nameid, int role, int seatid) {
+    public void modifyMeetRanking(int nameid, int role, int seatid) {
         InterfaceRoom.pbui_Item_MeetSeatDetailInfo.Builder builder1 = InterfaceRoom.pbui_Item_MeetSeatDetailInfo.newBuilder();
         builder1.setNameId(nameid);
         builder1.setSeatid(seatid);
@@ -1645,43 +1647,42 @@ public class NativeUtil {
     //成功返回0 失败返回-1
     public native int call(int type, int iskeyframe, long pts, byte[] data);
 
+    public static int COLOR_FORMAT;
     //JNI获取桌面、摄像头的参数
     //type 流类型
     //oper 参数标识 用于区分获取的数据类型
     //成功返回操作属性对应的值 失败返回-1
-    public static int COLOR_FORMAT;
-
     public int callback(int type, int oper) {
         switch (oper) {
-            case 1://pixel format
+            case 1://pixel format 编码时的颜色格式
             {
                 if (type == 2) return 1;
                 return COLOR_FORMAT;
             }
-            case 2://width
+            case 2://width type=2 采集时的屏幕宽 ...
             {
                 switch (type) {
                     case 2:
-                        LogUtil.i(TAG, "callback 屏幕宽=" + ShotApplication.SCREEN_WIDTH);
-                        return ShotApplication.SCREEN_WIDTH;
+                        LogUtil.i(TAG, "callback 屏幕宽=" + App.recorderWidth);
+                        return App.recorderWidth;
                     case 3:
-                        LogUtil.i(TAG, "callback 摄像头宽=" + ShotApplication.CameraW);
-                        return ShotApplication.CameraW;
+                        LogUtil.i(TAG, "callback 摄像头宽=" + App.CameraW);
+                        return App.CameraW;
                 }
             }
-            case 3://height
+            case 3://height type=2 采集时的屏幕高 ...
             {
                 switch (type) {
                     case 2:
-                        LogUtil.i(TAG, "callback 屏幕高=" + ShotApplication.SCREEN_HEIGHT);
-                        return ShotApplication.SCREEN_HEIGHT;
+                        LogUtil.i(TAG, "callback 屏幕高=" + App.recorderHeight);
+                        return App.recorderHeight;
                     case 3:
-                        LogUtil.i(TAG, "callback 摄像头高=" + ShotApplication.CameraH);
-                        return ShotApplication.CameraH;
+                        LogUtil.i(TAG, "callback 摄像头高=" + App.CameraH);
+                        return App.CameraH;
                 }
 
             }
-            case 4://start capture
+            case 4://start capture 通知采集流 type=2采集屏幕，type=3采集摄像头
             {
                 LogUtil.i("capture", "NativeUtil.callback :  通知采集流 --->>> " + type);
                 if (type == SCREEN_SHOT_TYPE) {
@@ -1695,7 +1696,7 @@ public class NativeUtil {
                 }
                 return 0;
             }
-            case 5://releaseMediaCodec capture
+            case 5://stop capture 通知停止采集流 type=2屏幕，type=3摄像头
             {
                 LogUtil.i("capture", "NativeUtil.callback :  通知停止采集流 --->>> " + type);
                 Intent intent = new Intent();
@@ -1750,7 +1751,7 @@ public class NativeUtil {
                     LogUtil.i(CASE_TAG, "callback_method -->平台初始化失败通知");
 //                    InterfaceBase.pbui_Type_LogonError pbui_type_logonError = InterfaceBase.pbui_Type_LogonError.parseFrom(data);
 //                    EventBus.getDefault().post(new EventMessage(EventType.platform_initialization_failed, pbui_type_logonError));
-                    ToastUtil.showToast(R.string.Platform_initialization_failed);
+                    ToastUtils.showShort(R.string.Platform_initialization_failed);
                 } else if (method == InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_NOTIFY.getNumber()) {
                     InterfaceBase.pbui_Ready pbui_ready = InterfaceBase.pbui_Ready.parseFrom(data);
                     int areaid = pbui_ready.getAreaid();
@@ -2154,7 +2155,7 @@ public class NativeUtil {
                     EventBus.getDefault().post(new EventMessage(EventType.platform_initialization_failed, deviceValidate));
                 }
                 break;
-            case 66:
+            case InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_UPDATE_VALUE:
                 if (method == InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_UPDATE.getNumber()) {
                     LogUtil.e(CASE_TAG, "callback_method :  软件升级通知 --> ");
 //                    InterfaceBase.pbui_Type_MeetUpdateNotify updateNotify = InterfaceBase.pbui_Type_MeetUpdateNotify.parseFrom(data);

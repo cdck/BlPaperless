@@ -10,9 +10,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ServiceUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.hjq.permissions.OnPermission;
 import com.hjq.permissions.XXPermissions;
+import com.pa.paperless.data.constant.EventMessage;
+import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Values;
+import com.pa.paperless.service.App;
 import com.pa.paperless.utils.LogUtil;
 
 import android.view.WindowManager;
@@ -23,18 +29,19 @@ import com.pa.boling.paperless.BuildConfig;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.broadcase.InnerRecevier;
 import com.pa.paperless.data.constant.BroadCaseAction;
-import com.pa.paperless.service.ShotApplication;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
-
-import static com.pa.paperless.service.ShotApplication.lbm;
 
 /**
  * @author xlk
@@ -42,17 +49,15 @@ import static com.pa.paperless.service.ShotApplication.lbm;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private final String TAG = "BaseActivity-->";
-    protected int result;
-    protected Intent intent;
+    protected final String TAG = this.getClass().getSimpleName() + "-->";
     private InnerRecevier innerReceiver;
-    protected ShotApplication myApp;
+    protected App myApp;
     private InterfaceBase.pbui_Type_MeetUpdateNotify updateNotify;
     private final int INSTALL_REQUEST_CODE = 10012;
     private boolean isRegisterUpdateReceiver = false;//是否注册了升级广播
     private boolean receiverUpdate = true;//是否可以接收升级通知
 
-    private BroadcastReceiver receiver = new BroadcastReceiver() {
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
@@ -73,6 +78,12 @@ public abstract class BaseActivity extends AppCompatActivity {
                 } catch (InvalidProtocolBufferException e) {
                     e.printStackTrace();
                 }
+            } else if (Intent.ACTION_SCREEN_ON.equals(action)) {
+                LogUtils.i(TAG, "屏幕监听-亮屏");
+                EventBus.getDefault().post(new EventMessage(EventType.ACTION_SCREEN_ON));
+            } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+                LogUtils.i(TAG, "屏幕监听-息屏");
+                EventBus.getDefault().post(new EventMessage(EventType.ACTION_SCREEN_OFF));
             }
         }
     };
@@ -179,7 +190,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                     LogUtil.e(TAG, "onActivityResult :   --> ");
                     updateApp();
                 } else {
-                    ToastUtil.showToast(R.string.error_instiall_apk /*, MyUtils.b2s(updateNotify.getUpdatepath())*/);
+                    ToastUtils.showShort(R.string.error_instiall_apk /*, MyUtils.b2s(updateNotify.getUpdatepath())*/);
                     showUpdateAppdlg();
                     LogUtil.e(TAG, "onActivityResult :  手动安装 --> ");
                 }
@@ -189,10 +200,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 //            LogUtil.i(TAG, "onActivityResult 开始录制屏幕：" + (manager != null));
 //            if (manager != null) {
 //                MediaProjection projection = manager.getMediaProjection(resultCode, data);
-//                ((ShotApplication) getApplication()).setResult(resultCode);
-//                ((ShotApplication) getApplication()).setIntent(data);
-//                ((ShotApplication) getApplication()).setmMediaProjection(projection);
-//                recorder = new ScreenRecorder(ShotApplication.width, ShotApplication.height, maxBitRate, ShotApplication.dpi, projection, "");
+//                ((App) getApplication()).setResult(resultCode);
+//                ((App) getApplication()).setIntent(data);
+//                ((App) getApplication()).setmMediaProjection(projection);
+//                recorder = new ScreenRecorder(App.width, App.height, maxBitRate, App.dpi, projection, "");
 //                recorder.start();
 //            }
 //        }
@@ -202,11 +213,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         LogUtil.i("A_life", this.getClass().getSimpleName() + ".onCreate :   --->>> ");
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         receiver();
         if (myApp == null) {
-            myApp = (ShotApplication) getApplication();
+            myApp = (App) getApplication();
         }
-        myApp.addActivity(this);
     }
 
     protected void receiver() {
@@ -225,9 +236,9 @@ public abstract class BaseActivity extends AppCompatActivity {
             LogUtil.i(TAG, "receiverUpdate 开启软件升级广播。。。");
             IntentFilter filter = new IntentFilter();
             filter.addAction(BroadCaseAction.UPDATE_APP);//升级App
-//            filter.addAction(BroadCaseAction.SCREEN_SHOT);//录制屏幕
-//            filter.addAction(BroadCaseAction.STOP_SCREEN_SHOT);//停止录制
-            lbm.registerReceiver(receiver, filter);
+            filter.addAction(Intent.ACTION_SCREEN_ON);//屏幕亮屏
+            filter.addAction(Intent.ACTION_SCREEN_OFF);//屏幕息屏
+            registerReceiver(broadcastReceiver, filter);
             isRegisterUpdateReceiver = true;
         }
     }
@@ -235,7 +246,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void unreceiverUpdate() {
         if (isRegisterUpdateReceiver) {
             LogUtil.i(TAG, "unreceiverUpdate 解除软件升级广播。。。");
-            lbm.unregisterReceiver(receiver);
+            unregisterReceiver(broadcastReceiver);
             isRegisterUpdateReceiver = false;
         }
     }
@@ -276,7 +287,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         LogUtil.i("A_life", this.getClass().getSimpleName() + ".onDestroy :    ");
         unreceiver();
-        myApp.delActivity(this);
     }
 
     @Override
@@ -306,13 +316,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         LogUtil.i("A_life", this.getClass().getSimpleName() + ".onRestart :   --->>> " + this);
-        myApp.openNat(true);
-        if (this instanceof MainActivity) {
-            LogUtil.e(TAG, "onRestart 当前是在主界面 MainActivity");
-            myApp.openFab(false);
-        } else {
-            myApp.openFab(true);
-        }
         super.onRestart();
     }
 }

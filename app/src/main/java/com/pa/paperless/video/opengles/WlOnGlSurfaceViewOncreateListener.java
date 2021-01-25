@@ -9,7 +9,7 @@ import android.view.Surface;
 
 public interface WlOnGlSurfaceViewOncreateListener {
 
-    void onGlSurfaceViewOncreate(Surface surface);
+    void onGlSurfaceViewOnCreate(Surface surface);
 
     void onCutVideoImg(Bitmap bitmap);
 

@@ -9,7 +9,6 @@ import android.opengl.GLException;
 import android.opengl.GLSurfaceView;
 import com.pa.paperless.utils.LogUtil;
 
-import android.util.Log;
 import android.view.Surface;
 
 import com.pa.boling.paperless.R;
@@ -208,7 +207,7 @@ public class MyWlGlRender implements GLSurfaceView.Renderer, SurfaceTexture.OnFr
         surfaceTexture.setOnFrameAvailableListener(this);
         surface = new Surface(surfaceTexture);
         if (wlOnGlSurfaceViewOncreateListener != null) {
-            wlOnGlSurfaceViewOncreateListener.onGlSurfaceViewOncreate(surface);
+            wlOnGlSurfaceViewOncreateListener.onGlSurfaceViewOnCreate(surface);
         }
     }
 

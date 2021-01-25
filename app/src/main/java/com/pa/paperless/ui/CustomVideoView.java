@@ -183,7 +183,7 @@ public class CustomVideoView extends ViewGroup {
             surfaceView.setClickable(true);
             surfaceView.setOnGlSurfaceViewOncreateListener(new WlOnGlSurfaceViewOncreateListener() {
                 @Override
-                public void onGlSurfaceViewOncreate(Surface surface) {
+                public void onGlSurfaceViewOnCreate(Surface surface) {
                     LogUtil.e(TAG, "createView onGlSurfaceViewOncreate :   --> ");
                     surfaceView.setSurface(surface);
                 }

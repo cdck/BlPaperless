@@ -8,28 +8,28 @@ import com.mogujie.tt.protobuf.InterfaceMember;
  */
 
 public class DevMember {
-    InterfaceMember.pbui_Item_MemberDetailInfo memberInfos;
+    InterfaceMember.pbui_Item_MemberDetailInfo memberDetailInfo;
     int devId;
 
-    public InterfaceMember.pbui_Item_MemberDetailInfo getMemberInfos() {
-        return memberInfos;
-    }
-
-    public void setMemberInfos(InterfaceMember.pbui_Item_MemberDetailInfo memberInfos) {
-        this.memberInfos = memberInfos;
+    public InterfaceMember.pbui_Item_MemberDetailInfo getMemberDetailInfo() {
+        return memberDetailInfo;
     }
 
     public int getDevId() {
         return devId;
     }
 
-    public void setDevId(int devId) {
+    public DevMember(InterfaceMember.pbui_Item_MemberDetailInfo memberInfos, int devId) {
+        this.memberDetailInfo = memberInfos;
         this.devId = devId;
     }
 
-    public DevMember(InterfaceMember.pbui_Item_MemberDetailInfo memberInfos, int devId) {
-
-        this.memberInfos = memberInfos;
-        this.devId = devId;
+    @Override
+    public String toString() {
+        return "DevMember{" +
+                "参会人名称=" + memberDetailInfo.getName().toStringUtf8() +
+                ",参会人ID=" + memberDetailInfo.getPersonid() +
+                ",设备ID=" + devId +
+                '}';
     }
 }

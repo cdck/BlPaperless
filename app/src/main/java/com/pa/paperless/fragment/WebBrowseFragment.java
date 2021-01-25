@@ -6,7 +6,6 @@ import android.os.Build;
 import android.os.Bundle;
 
 
-import com.pa.paperless.adapter.WebMenuAdapter;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.utils.LogUtil;
 
@@ -39,7 +38,7 @@ import java.util.ArrayList;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import static com.pa.paperless.service.ShotApplication.isDebug;
+import static com.pa.paperless.service.App.isDebug;
 
 
 /**

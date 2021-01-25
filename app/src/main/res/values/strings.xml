@@ -269,7 +269,7 @@
     <string name="permissions_request">是否同意 %1$s 申请的查看批注文件权限?</string>
     <string name="please_choose_file">请先选择要推送的文件</string>
     <string name="mandatory">强制</string>
-    <string name="choose_push_target">选择推送目标&#060;发起文件推送&#062;]</string>
+    <string name="choose_push_target">选择推送目标&#060;发起文件推送&#062;</string>
     <string name="stop_push">停止推送</string>
     <string name="launch_push_file">发起文件推送</string>
     <string name="please_choose_push">请选择推送目标</string>
@@ -332,7 +332,7 @@
     <string name="vote_interface">投票界面</string>
     <string name="no_mamber">没有查找到参会人</string>
     <string name="exit_white_board">退出白板</string>
-    <string name="meet_video_client">会议终端设备&#060;对讲&#062;]</string>
+    <string name="meet_video_client">会议终端设备&#060;对讲&#062;</string>
     <string name="meet_publish">会议发布设备</string>
     <string name="please_choose_device">请选择设备</string>
     <string name="please_input_pwd">请输入密码</string>
@@ -597,6 +597,18 @@
     <string name="reject_device_intercom">%1$s拒绝设备对讲</string>
     <string name="can_only_choose_one">只能选择一个加入</string>
     <string name="vote_member_count">投票人数：%1$d人</string>
+    <string name="service_pager">纸张申请</string>
+    <string name="service_pen">笔申请</string>
+    <string name="service_tea">茶水申请</string>
+    <string name="service_mineralWater">矿泉水申请</string>
+    <string name="service_Calculator">计算器申请</string>
+    <string name="service_waiter">服务员申请</string>
+    <string name="service_clean">清扫申请</string>
+    <string name="service_technician">技术员申请</string>
+    <string name="no_data_download">无文件可下载</string>
+    <string name="file_download">文件下载</string>
+    <string name="id">ID</string>
+    <string name="please_choose_file_first">请先选择文件</string>
 
 
     <string-array name="role_spinner">

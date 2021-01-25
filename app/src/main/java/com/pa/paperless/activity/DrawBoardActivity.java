@@ -28,6 +28,7 @@ import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceDevice;
@@ -35,7 +36,7 @@ import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.mogujie.tt.protobuf.InterfaceWhiteboard;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.BoardAdapter;
+import com.pa.paperless.adapter.rvadapter.BoardAdapter;
 import com.pa.paperless.data.bean.DevMember;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
@@ -50,7 +51,7 @@ import com.pa.paperless.utils.FileUtil;
 import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.PopUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.pa.paperless.utils.UriUtil;
 import com.wind.myapplication.NativeUtil;
 
@@ -626,7 +627,7 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
         if (memberInfos != null) {
             for (int i = 0; i < memberInfos.size(); i++) {
                 if (memberInfos.get(i).getPersonid() == opermemberid) {
-                    ToastUtil.showToast(memberInfos.get(i).getName().toStringUtf8() + something);
+                    ToastUtils.showShort(memberInfos.get(i).getName().toStringUtf8() + something);
                 }
             }
         }
@@ -834,7 +835,7 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
 
     private void choose_holder(final ChooseMemberViewHolder holder) {
         onLineBoardMemberAdapter.setItemClick((view, posion) -> {
-            onLineBoardMemberAdapter.setCheck(onLineMembers.get(posion).getMemberInfos().getPersonid());
+            onLineBoardMemberAdapter.setCheck(onLineMembers.get(posion).getMemberDetailInfo().getPersonid());
             holder.board_all_check.setChecked(onLineBoardMemberAdapter.isAllCheck());
             onLineBoardMemberAdapter.notifyDataSetChanged();
         });
@@ -982,7 +983,7 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
             }
             if (realPath == null || realPath.isEmpty()) {
                 LogUtil.e(TAG, "onActivityResult: 获取该文件的路径失败....");
-                ToastUtil.showToast(R.string.get_file_path_fail);
+                ToastUtils.showShort(R.string.get_file_path_fail);
             } else {
                 // 执行操作
                 Bitmap dstbmp = BitmapFactory.decodeFile(realPath);
@@ -1055,7 +1056,7 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
                 if (onLineMembers.size() > 0) {//不在共享中并且拥有数据才能打开弹出框
                     showOlLineMember();
                 } else if (onLineMembers.size() == 0) {
-                    ToastUtil.showToast(R.string.no_mamber);
+                    ToastUtils.showShort(R.string.no_mamber);
                 }
             }
         } catch (InvalidProtocolBufferException e) {
@@ -1074,9 +1075,9 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
         builder.setPositiveButton(resources.getString(R.string.save_server), (dialog, which) -> {
             newName = edt.getText().toString().trim();
             if (newName.equals("")) {
-                ToastUtil.showToast(R.string.please_enter_file_name);
+                ToastUtils.showShort(R.string.please_enter_file_name);
             } else if (!FileUtil.isLegalName(newName)) {
-                ToastUtil.showToast(R.string.tip_file_name_unlawfulness);
+                ToastUtils.showShort(R.string.tip_file_name_unlawfulness);
             } else {
                 savePicLocal(newName, true);
                 dialog.dismiss();
@@ -1085,12 +1086,12 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
         builder.setNegativeButton(resources.getString(R.string.save_local), (dialog, which) -> {
             final String s = edt.getText().toString().trim();
             if (s.equals("")) {
-                ToastUtil.showToast(R.string.please_enter_file_name);
+                ToastUtils.showShort(R.string.please_enter_file_name);
             } else if (!FileUtil.isLegalName(s)) {
-                ToastUtil.showToast(R.string.tip_file_name_unlawfulness);
+                ToastUtils.showShort(R.string.tip_file_name_unlawfulness);
             } else {
                 savePicLocal(s, false);
-                ToastUtil.showToast(R.string.tip_save_as, Macro.POSTIL_FILE);
+                ToastUtils.showShort(R.string.tip_save_as, Macro.POSTIL_FILE);
                 dialog.dismiss();
             }
         });
@@ -1104,7 +1105,7 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
         Bitmap bitmap1 = drawBoard.getCanvasBmp();
         //重新创建一个，画板获取的bitmap对象会自动回收掉
         Bitmap bitmap = Bitmap.createBitmap(bitmap1);
-        FileUtil.CreateDir(Macro.POSTIL_FILE);
+        FileUtil.createDir(Macro.POSTIL_FILE);
         File uploadPicFile = new File(Macro.POSTIL_FILE, fileName + ".png");
         FileUtil.saveBitmap(bitmap, uploadPicFile);
         Timer tupload = new Timer();
@@ -1282,7 +1283,7 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
             case R.id.share_stop:
                 if (sharing) stopShare();
                 else {
-                    ToastUtil.showToast(R.string.out_of_share);
+                    ToastUtils.showShort(R.string.out_of_share);
                 }
                 break;
             case R.id.ensure:

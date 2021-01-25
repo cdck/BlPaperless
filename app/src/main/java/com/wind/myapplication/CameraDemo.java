@@ -36,8 +36,8 @@ import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 
 
-import static com.pa.paperless.service.ShotApplication.CameraH;
-import static com.pa.paperless.service.ShotApplication.CameraW;
+import static com.pa.paperless.service.App.CameraH;
+import static com.pa.paperless.service.App.CameraW;
 
 public class CameraDemo extends Activity implements SurfaceHolder.Callback,
         PreviewCallback {

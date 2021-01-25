@@ -1,13 +1,11 @@
 package com.pa.paperless.utils;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
@@ -20,7 +18,6 @@ import android.provider.Settings;
 
 import com.pa.paperless.data.constant.Values;
 
-import android.telephony.TelephonyManager;
 import android.widget.PopupWindow;
 
 
@@ -74,17 +71,6 @@ public class MyUtils {
     }
 
     /**
-     * 重启应用
-     */
-    public static void reStartApp(Activity cxt) {
-        Intent intent = cxt.getBaseContext().getPackageManager().getLaunchIntentForPackage(cxt.getBaseContext().getPackageName());
-        PendingIntent restartIntent = PendingIntent.getActivity(cxt.getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
-        AlarmManager mgr = (AlarmManager) cxt.getSystemService(Context.ALARM_SERVICE);
-        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 50, restartIntent);
-        Process.killProcess(Process.myPid());
-    }
-
-    /**
      * 计算媒体ID
      *
      * @param path 文件路径
@@ -92,86 +78,63 @@ public class MyUtils {
      */
     public static int getMediaid(String path) {
         //其它
-        if (FileUtil.isDocumentFile(path) || FileUtil.isOtherFile(path)) {
+        if (FileUtil.isDocument(path) || FileUtil.isOtherFile(path)) {
             return Macro.MEDIA_FILE_TYPE_OTHER | Macro.MEDIA_FILE_TYPE_OTHER_SUB;
         }
-        if (FileUtil.isDocumentFile(path) || FileUtil.isOtherFile(path)) {
+        if (FileUtil.isDocument(path) || FileUtil.isOtherFile(path)) {
             return Macro.MEDIA_FILE_TYPE_RECORD | Macro.MEDIA_FILE_TYPE_OTHER_SUB;
         }
-        if (FileUtil.isDocumentFile(path) || FileUtil.isOtherFile(path)) {
+        if (FileUtil.isDocument(path) || FileUtil.isOtherFile(path)) {
             return Macro.MEDIA_FILE_TYPE_UPDATE | Macro.MEDIA_FILE_TYPE_OTHER_SUB;
         }
-        if (FileUtil.isDocumentFile(path) || FileUtil.isOtherFile(path)) {
+        if (FileUtil.isDocument(path) || FileUtil.isOtherFile(path)) {
             return Macro.MEDIA_FILE_TYPE_TEMP | Macro.MEDIA_FILE_TYPE_OTHER_SUB;
         }
         //
-        if (FileUtil.isDocumentFile(path) || FileUtil.isOtherFile(path)) {
+        if (FileUtil.isDocument(path) || FileUtil.isOtherFile(path)) {
             return Macro.MAIN_TYPE_BITMASK | Macro.SUB_TYPE_BITMASK;
         }
         //音频
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_AUDIO | Macro.MEDIA_FILE_TYPE_PCM;
         }
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_AUDIO | Macro.MEDIA_FILE_TYPE_MP3;
         }
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_AUDIO | Macro.MEDIA_FILE_TYPE_ADPCM;
         }
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_AUDIO | Macro.MEDIA_FILE_TYPE_FLAC;
         }
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_AUDIO | Macro.MEDIA_FILE_TYPE_MP4;
         }
         //视屏
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_VIDEO | Macro.MEDIA_FILE_TYPE_MKV;
         }
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_VIDEO | Macro.MEDIA_FILE_TYPE_RMVB;
         }
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_VIDEO | Macro.MEDIA_FILE_TYPE_AVI;
         }
-        if (FileUtil.isVideoFile(path)) {
+        if (FileUtil.isVideo(path)) {
             return Macro.MEDIA_FILE_TYPE_VIDEO | Macro.MEDIA_FILE_TYPE_RM;
         }
         //图片
-        if (FileUtil.isPictureFile(path)) {
+        if (FileUtil.isPicture(path)) {
             return Macro.MEDIA_FILE_TYPE_PICTURE | Macro.MEDIA_FILE_TYPE_BMP;
         }
-        if (FileUtil.isPictureFile(path)) {
+        if (FileUtil.isPicture(path)) {
             return Macro.MEDIA_FILE_TYPE_PICTURE | Macro.MEDIA_FILE_TYPE_JPEG;
         }
-        if (FileUtil.isPictureFile(path)) {
+        if (FileUtil.isPicture(path)) {
             return Macro.MEDIA_FILE_TYPE_PICTURE | Macro.MEDIA_FILE_TYPE_PNG;
         }
         return 0;
     }
-
-//    /**
-//     * 获取设备唯一值
-//     */
-//    public static String getUniqueId(Context context) {
-//        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-//        String imei = "";
-//        if (telephonyManager != null) {
-//            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                    imei = telephonyManager.getImei();
-//                } else if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-//                    imei = telephonyManager.getDeviceId();
-//                }
-//            } else {
-//                LogUtil.i(TAG, "getIMEI 木有权限");
-//            }
-//        }
-//        if (imei == null || imei.isEmpty()) {
-//            imei = Settings.Secure.getString(context.getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
-//        }
-//        return imei;
-//    }
 
     /**
      * 获取手机的唯一标识符

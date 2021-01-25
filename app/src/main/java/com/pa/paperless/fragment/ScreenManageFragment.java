@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.utils.LogUtil;
@@ -19,12 +20,12 @@ import com.mogujie.tt.protobuf.InterfaceDevice;
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.OnLineProjectorAdapter;
-import com.pa.paperless.adapter.ScreenControlAdapter;
+import com.pa.paperless.adapter.rvadapter.OnLineProjectorAdapter;
+import com.pa.paperless.adapter.rvadapter.ScreenControlAdapter;
 import com.pa.paperless.data.bean.DevMember;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -242,11 +243,11 @@ public class ScreenManageFragment extends BaseFragment implements View.OnClickLi
                 if (onlineMemberAdapter == null) break;
                 List<Integer> checks = onlineMemberAdapter.getChecks();
                 if (checks.isEmpty()) {
-                     ToastUtil.showToast(R.string.please_choose_screen_source);
+                     ToastUtils.showShort(R.string.please_choose_screen_source);
                 } else {
                     Integer devid = checks.get(0);
                     if (devid == Values.localDevId) {
-                         ToastUtil.showToast(R.string.no_watch_oneself);
+                         ToastUtils.showShort(R.string.no_watch_oneself);
                     } else {
                         ArrayList<Integer> ids = new ArrayList<>();
                         ids.add(Values.localDevId);
@@ -277,7 +278,7 @@ public class ScreenManageFragment extends BaseFragment implements View.OnClickLi
                 if (onlineMemberRightAdapter == null) break;
                 List<Integer> checks2 = onLineProjectorAdapter.getChecks();
                 checks2.addAll(onlineMemberRightAdapter.getChecks());
-                if (checks2.isEmpty())  ToastUtil.showToast(R.string.please_choose_target);
+                if (checks2.isEmpty())  ToastUtils.showShort(R.string.please_choose_target);
                 else jni.stopResourceOperate(res, checks2);
                 break;
             case R.id.refresh:

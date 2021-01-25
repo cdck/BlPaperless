@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import android.text.TextUtils;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.utils.LogUtil;
@@ -27,13 +28,13 @@ import com.mogujie.tt.protobuf.InterfaceBase;
 import com.mogujie.tt.protobuf.InterfaceFile;
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.TypeFileAdapter;
+import com.pa.paperless.adapter.rvadapter.TypeFileAdapter;
 import com.pa.paperless.data.bean.MeetDirFileInfo;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.Dispose;
 import com.pa.paperless.utils.FileUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.pa.paperless.utils.UriUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -123,13 +124,13 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                         boolean isAdd = false;
                         switch (shardFileType) {
                             case 0:
-                                isAdd = FileUtil.isDocumentFile(fileName);
+                                isAdd = FileUtil.isDocument(fileName);
                                 break;
                             case 1:
-                                isAdd = FileUtil.isPictureFile(fileName);
+                                isAdd = FileUtil.isPicture(fileName);
                                 break;
                             case 2:
-                                isAdd = FileUtil.isVideoFile(fileName);
+                                isAdd = FileUtil.isVideo(fileName);
                                 break;
                             case 3:
                                 isAdd = FileUtil.isOtherFile(fileName);
@@ -160,13 +161,12 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                 checkButton();
                 setBtnSelect(shardFileType);
                 mAllAdapter.setLookListener((fileInfo, mediaid, filename, filesize) -> {
-                    if (FileUtil.isVideoFile(filename)) {
+                    if (FileUtil.isVideo(filename)) {
                         //如果是音频或视频则在线播放
                         List<Integer> devIds = new ArrayList<Integer>();
                         devIds.add(Values.localDevId);
                         jni.mediaPlayOperate(mediaid, devIds, 0, 0, 0, InterfaceMacro.Pb_MeetPlayFlag.Pb_MEDIA_PLAYFLAG_ZERO.getNumber());
                     } else {
-//                        String dir = getActivity().getCacheDir().getAbsolutePath();
                         //Macro.SHARE_MATERIAL
                         FileUtil.openFile(Macro.CACHE_ALL_FILE, filename, jni, mediaid, getContext(), filesize);
                     }
@@ -279,7 +279,7 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                     for (int i = 0; i < meetDirFileInfos.size(); i++) {
                         MeetDirFileInfo documentBean = meetDirFileInfos.get(i);
                         String fileName = documentBean.getFileName();
-                        if (FileUtil.isDocumentFile(fileName)) {
+                        if (FileUtil.isDocument(fileName)) {
                             mData.add(documentBean);
                         }
                     }
@@ -298,7 +298,7 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                     for (int i = 0; i < meetDirFileInfos.size(); i++) {
                         MeetDirFileInfo documentBean = meetDirFileInfos.get(i);
                         String fileName = documentBean.getFileName();
-                        if (FileUtil.isPictureFile(fileName)) {
+                        if (FileUtil.isPicture(fileName)) {
                             mData.add(documentBean);
                         }
                     }
@@ -317,7 +317,7 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                     for (int i = 0; i < meetDirFileInfos.size(); i++) {
                         MeetDirFileInfo documentBean = meetDirFileInfos.get(i);
                         String fileName = documentBean.getFileName();
-                        if (FileUtil.isVideoFile(fileName)) {
+                        if (FileUtil.isVideo(fileName)) {
                             mData.add(documentBean);
                         }
                     }
@@ -364,14 +364,14 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                 if (isHasPermission(Macro.permission_code_upload)) {
                     showPop();
                 } else {
-                    ToastUtil.showToast(R.string.no_permission);
+                    ToastUtils.showShort(R.string.no_permission);
                 }
                 break;
             case R.id.share_saved_offline_btn:
                 if (mAllAdapter == null) break;
                 MeetDirFileInfo data = mAllAdapter.getCheckedFile();
                 if (data == null) {
-                    ToastUtil.showToast(R.string.please_choose_downloadfile);
+                    ToastUtils.showShort(R.string.please_choose_downloadfile);
                     break;
                 }
                 FileUtil.downOfflineFile(data);
@@ -380,19 +380,19 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                 if (mAllAdapter == null) break;
                 MeetDirFileInfo data1 = mAllAdapter.getCheckedFile();
                 if (data1 == null) {
-                    ToastUtil.showToast(R.string.please_choose_downloadfile);
+                    ToastUtils.showShort(R.string.please_choose_downloadfile);
                     break;
                 }
-                FileUtil.downFile(data1, Macro.SHARE_MATERIAL);
+                FileUtil.downloadFile(data1, Macro.SHARE_MATERIAL);
                 break;
             case R.id.push_file:
                 if (mAllAdapter == null) break;
                 MeetDirFileInfo data2 = mAllAdapter.getCheckedFile();
                 if (data2 == null) {
-                    ToastUtil.showToast(R.string.please_choose_file);
+                    ToastUtils.showShort(R.string.please_choose_file);
                     break;
                 }
-                EventBus.getDefault().post(new EventMessage(EventType.INFORM_PUSH_FILE, data2));
+                EventBus.getDefault().post(new EventMessage(EventType.INFORM_PUSH_FILE, data2.getMediaId()));
                 break;
         }
     }
@@ -404,7 +404,7 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
             intent.addCategory(Intent.CATEGORY_OPENABLE);
             startActivityForResult(intent, 1);
         } catch (Exception e) {
-            ToastUtil.showToast(R.string.open_fileSystem_failed);
+            ToastUtils.showShort(R.string.open_fileSystem_failed);
             e.printStackTrace();
         }
     }
@@ -421,7 +421,7 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                 e.printStackTrace();
             }
             if (path == null || path.isEmpty()) {
-                ToastUtil.showToast(R.string.get_file_path_fail);
+                ToastUtils.showShort(R.string.get_file_path_fail);
             } else {
                 LogUtil.e(TAG, "SharedFileFragment.onActivityResult 370行:  选中文件的路径 --->>> " + path);
                 showDialog(path);
@@ -437,7 +437,7 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
     public void showDialog(final String path) {
         File file = new File(path);
         if (!file.exists()) {
-            ToastUtil.showToast(R.string.file_acquisition_exception);
+            ToastUtils.showShort(R.string.file_acquisition_exception);
             return;
         }
         LogUtil.e(TAG, "SharedFileFragment.showDialog :截取的文件 file --> " + file.getAbsolutePath());
@@ -467,7 +467,7 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                                 Macro.SHARED_FILE_DIRECTORY_ID, 0, newFileName, path, 0, Macro.upload_local_file);
                         dialogInterface.dismiss();
                     } else {
-                        ToastUtil.showToast(R.string.Please_enter_valid_file_name);
+                        ToastUtils.showShort(R.string.Please_enter_valid_file_name);
                     }
                 })
                 .setNegativeButton(getResources().getString(R.string.cancel), (dialogInterface, i) -> dialogInterface.dismiss()).show();

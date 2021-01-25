@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.utils.LogUtil;
 
@@ -18,10 +19,10 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceVote;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.SurveyItemAdapter;
+import com.pa.paperless.adapter.rvadapter.SurveyItemAdapter;
 import com.pa.paperless.data.bean.SubmitVoteBean;
 import com.pa.paperless.data.constant.EventType;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -331,7 +332,7 @@ public class QuestionnaireFragment extends BaseFragment implements View.OnClickL
                         saveSelcet.put(voteid, sels);
                     }
                 } else if (maxSelect == getNowSelect(btns)) {//已经是等于最大选中个数了，则设置其未选中
-                    ToastUtil.showToast(R.string.tip_most_can_choose, maxSelect + "");
+                    ToastUtils.showShort(R.string.tip_most_can_choose, maxSelect + "");
                     btns.get(index).setSelected(false);
                 }
             }
@@ -407,9 +408,9 @@ public class QuestionnaireFragment extends BaseFragment implements View.OnClickL
                 if (voteInfo.getVotestate() == 1) {//确保是发起状态
                     if (voteInfo.getSelcnt() == 0) subit();
                     else
-                        ToastUtil.showToast(R.string.tip_you_have_submitted);
+                        ToastUtils.showShort(R.string.tip_you_have_submitted);
                 } else
-                    ToastUtil.showToast(R.string.tip_vote_must_be_initiated_state);
+                    ToastUtils.showShort(R.string.tip_vote_must_be_initiated_state);
                 break;
         }
     }

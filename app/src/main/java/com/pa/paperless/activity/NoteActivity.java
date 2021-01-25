@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Environment;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.utils.FileUtil;
 import com.pa.paperless.utils.LogUtil;
@@ -20,7 +21,7 @@ import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.Export;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -130,7 +131,7 @@ public class NoteActivity extends BaseActivity implements View.OnClickListener {
         builder.setPositiveButton(resources.getString(R.string.ensure), (dialog, which) -> {
             String filename = edt.getText().toString().trim();
             if (filename.equals("")) {
-                ToastUtil.showToast( R.string.please_enter_file_name);
+                ToastUtils.showShort( R.string.please_enter_file_name);
                 return;
             } else {
                 Export.ToNoteText(content, filename, path);

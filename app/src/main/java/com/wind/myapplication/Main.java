@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.DisplayMetrics;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.helper.ScreenRecorder;
 import com.pa.paperless.utils.LogUtil;
 import android.view.View;
@@ -19,7 +20,7 @@ import android.widget.Button;
 
 
 import com.pa.boling.paperless.R;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import java.io.File;
 
@@ -108,11 +109,10 @@ public class Main extends Activity implements OnClickListener {
         file = new File(Environment.getExternalStorageDirectory(), "record_"
                 + width + "x" + height + "_" + System.currentTimeMillis() + ".mp4");
         recorder = new ScreenRecorder(width, height, bitrate, 1, projection, file.getAbsolutePath());
-        recorder.start();//�启动录屏线程
+        recorder.start();//启动录屏线程
         recordbtn.setText(getString(R.string.stop_recording));
-        ToastUtil.showToast(R.string.tip_screen_recording);
-        moveTaskToBack(true);//�将程序移到后台
-//        }
+        ToastUtils.showShort(R.string.tip_screen_recording);
+        moveTaskToBack(true);//将程序移到后台
     }
 
     /**

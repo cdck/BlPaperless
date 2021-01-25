@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.TextUtils;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.android.material.snackbar.Snackbar;
 import com.mogujie.tt.protobuf.InterfaceAdmin;
 import com.pa.paperless.activity.offline.OffLineActivity;
@@ -48,7 +49,7 @@ import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-import com.pa.paperless.utils.ToastUtil;
+
 import com.wind.myapplication.NativeUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -139,16 +140,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     startActivity(new Intent(LoginActivity.this, OffLineActivity.class));
                     break;
                 case 1:
-                    ToastUtil.showToast( R.string.error_field_password);
+                    ToastUtils.showShort( R.string.error_field_password);
                     break;
                 case 2:
-                    ToastUtil.showToast( R.string.error_server_exception);
+                    ToastUtils.showShort( R.string.error_server_exception);
                     break;
                 case 3:
-                    ToastUtil.showToast( R.string.error_database_exception);
+                    ToastUtils.showShort( R.string.error_database_exception);
                     break;
                 default:
-                    ToastUtil.showToast( R.string.error_code, err);
+                    ToastUtils.showShort( R.string.error_code, err);
                     break;
             }
         }
@@ -185,15 +186,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             LogUtil.e(TAG, "showPopup :   --> 用户名= " + user + ", pwd= " + pwd + ", newPwd= " + newPwd);
             if (user.equals(USER_NAME) && pwd.equals(PASSWORD)) {
                 if (newPwd.equals(pwd)) {
-                    ToastUtil.showToast( R.string.error_password_is_same);
+                    ToastUtils.showShort( R.string.error_password_is_same);
                     return;
                 }
                 if (newPwd.isEmpty()) {
-                    ToastUtil.showToast( R.string.error_password_isEmpty);
+                    ToastUtils.showShort( R.string.error_password_isEmpty);
                     return;
                 }
                 if (newPwd.length() < 6) {
-                    ToastUtil.showToast( R.string.error_password_too_short);
+                    ToastUtils.showShort( R.string.error_password_too_short);
                     return;
                 }
                 SharedPreferences sp = getSharedPreferences("offline", Context.MODE_PRIVATE);
@@ -202,11 +203,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 edit.putString("password", newPwd);
                 edit.apply();
                 edit.commit();
-                ToastUtil.showToast( R.string.modify_password_success);
+                ToastUtils.showShort( R.string.modify_password_success);
                 mPasswordView.setText(getString(R.string.default_str));
                 dialog.dismiss();
             } else {
-                ToastUtil.showToast( R.string.error_field_password);
+                ToastUtils.showShort( R.string.error_field_password);
                 return;
             }
         });

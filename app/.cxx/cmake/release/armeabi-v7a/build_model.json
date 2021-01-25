@@ -24,6 +24,10 @@
           "value": "-frtti -fexceptions"
         },
         {
+          "name": "CMAKE_FIND_ROOT_PATH",
+          "value": "F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\prefab\\armeabi-v7a\\prefab"
+        },
+        {
           "name": "CMAKE_BUILD_TYPE",
           "value": "Release"
         },
@@ -85,6 +89,7 @@
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
     "cFlagsList": [],
     "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "cppFlagsList": [
@@ -164,6 +169,7 @@
         "X86",
         "X86_64"
       ],
+      "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "19.2.5345600",
       "project": {
         "compilerSettingsCacheFolder": "F:\\work\\boling_paperless_3.2.1\\.cxx",
@@ -172,7 +178,8 @@
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
         "rootBuildGradleFolder": "F:\\work\\boling_paperless_3.2.1",
-        "sdkFolder": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk"
+        "sdkFolder": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk",
+        "isPrefabEnabled": false
       },
       "splitsAbiFilterSet": [
         "armeabi-v7a"
@@ -193,6 +200,9 @@
     "variantName": "release",
     "validAbiList": [
       "ARMEABI_V7A"
-    ]
-  }
+    ],
+    "prefabDirectory": "F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\prefab",
+    "prefabPackageDirectoryList": []
+  },
+  "prefabFolder": "F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\prefab\\armeabi-v7a"
 }

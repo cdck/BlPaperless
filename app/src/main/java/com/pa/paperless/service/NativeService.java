@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceBase;
@@ -32,7 +33,7 @@ import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.data.constant.WpsModel;
 import com.pa.paperless.utils.Dispose;
 import com.pa.paperless.utils.LogUtil;
-import com.pa.paperless.utils.ToastUtil;
+
 import com.pa.paperless.video.VideoActivity;
 import com.pa.paperless.utils.FileUtil;
 import com.pa.paperless.utils.MyUtils;
@@ -87,7 +88,7 @@ public class NativeService extends Service {
 
     @Override
     public void onDestroy() {
-        ShotApplication.openNat = false;
+        App.nativeServiceIsOpened = false;
         LogUtil.i(TAG, "NativeService.onDestroy " + this);
         EventBus.getDefault().unregister(this);
         super.onDestroy();
@@ -132,7 +133,7 @@ public class NativeService extends Service {
                 String modeStr = (String) objects1[1];
                 if (!modeStr.equals("cache")) {
                     String absolutePath = file.getParentFile().getAbsolutePath();
-                    ToastUtil.showToast(R.string.tip_export_success, absolutePath);
+                    ToastUtils.showShort(R.string.tip_export_success, absolutePath);
                 } else {
                     String name = file.getName();
                     LogUtil.i(TAG, "会议笔记导出成功 -->  路径： " + file.getAbsolutePath() + ",  name= " + name);
@@ -269,14 +270,14 @@ public class NativeService extends Service {
 //                .build();
 //        ImagePagerActivity.startActivity(this, config);
         ImagePreview.getInstance()
-                .setContext(ShotApplication.currentActivity())
+                .setContext(App.currentActivity())
                 .setImageList(piclist)//设置图片地址集合
                 .setIndex(index)//设置开始的索引
                 .setShowDownButton(false)//设置是否显示下载按钮
-                .setShowCloseButton(false)//设置是否显示关闭按钮
-                .setEnableDragClose(true)//设置是否开启下拉图片退出
-                .setEnableUpDragClose(true)//设置是否开启上拉图片退出
-                .setEnableClickClose(true)//设置是否开启点击图片退出
+//                .setShowCloseButton(false)//设置是否显示关闭按钮
+//                .setEnableDragClose(true)//设置是否开启下拉图片退出
+//                .setEnableUpDragClose(true)//设置是否开启上拉图片退出
+//                .setEnableClickClose(true)//设置是否开启点击图片退出
                 .setShowErrorToast(true)
                 .start();
     }
@@ -298,7 +299,7 @@ public class NativeService extends Service {
     private void receiveMeetChatInfo(EventMessage message) {
         LogUtil.d(TAG, "receiveMeetChatInfo: ");
         if (!chatisshowing) {//确保会议交流界面不在显示状态
-            ToastUtil.showToast(R.string.new_message);
+            ToastUtils.showShort(R.string.new_message);
             InterfaceIM.pbui_Type_MeetIM receiveMsg = (InterfaceIM.pbui_Type_MeetIM) message.getObject();
             //获取之前的未读消息个数
             int badgeNumber1 = mBadge.getBadgeNumber();
@@ -396,7 +397,7 @@ public class NativeService extends Service {
             LogUtil.d(TAG, "deviceControl: 更换Logo通知");
             //本地没有才下载
 //            if (!SpHelper.checkCurrentMediaId(this, operval1, 3)) {//logo的faceID固定是3
-            FileUtil.CreateDir(Macro.ROOT);
+            FileUtil.createDir(Macro.ROOT);
             jni.creationFileDownload(Macro.ROOT + Macro.DOWNLOAD_MAIN_LOGO + ".png", operval1, 1, 0, Macro.DOWNLOAD_MAIN_LOGO);
 //            }
         } else if (oper == InterfaceMacro.Pb_DeviceControlFlag.Pb_DEVICECONTORL_SHUTDOWN.getNumber()) {//关机
@@ -405,7 +406,7 @@ public class NativeService extends Service {
             LogUtil.d(TAG, "deviceControl: 重启");
         } else if (oper == InterfaceMacro.Pb_DeviceControlFlag.Pb_DEVICECONTORL_PROGRAMRESTART.getNumber()) {//重启软件
             LogUtil.d(TAG, "deviceControl: 重启软件");
-            MyUtils.reStartApp(ShotApplication.currentActivity());
+            App.lbm.sendBroadcast(new Intent("relaunchApp"));
         } else if (oper == InterfaceMacro.Pb_DeviceControlFlag.Pb_DEVICECONTORL_LIFTUP.getNumber()) {//升
             LogUtil.d(TAG, "deviceControl: 升");
         } else if (oper == InterfaceMacro.Pb_DeviceControlFlag.Pb_DEVICECONTORL_LIFTDOWN.getNumber()) {//降
@@ -520,7 +521,7 @@ public class NativeService extends Service {
         if (nstate == 1) {
             LogUtil.v(TAG, "downloadInform: " + getString(R.string.download_progress, s, progress + "%"));
             if (canToast) {
-                ToastUtil.showToast(R.string.download_progress, s, progress + "%");
+                ToastUtils.showShort(R.string.download_progress, s, progress + "%");
             }
         } else if (nstate == 2) {
         } else if (nstate == 3) {
@@ -529,11 +530,11 @@ public class NativeService extends Service {
             LogUtil.i(TAG, "downloadInform: 下载完成:" + filepath);
             if (f.exists()) {
                 if (canToast) {
-                    ToastUtil.showToast(R.string.download_finsh, f.getName());
+                    ToastUtils.showShort(R.string.download_finsh, f.getName());
                 }
                 if (Userstr.equals(Macro.DOWNLOAD_CACHE_FILE)
                         || Userstr.equals(Macro.DOWNLOAD_FILE)) {
-                    if (FileUtil.isPictureFile(s)) {
+                    if (FileUtil.isPicture(s)) {
                         PictureInfo pictureInfo = new PictureInfo(mediaid, f.getAbsolutePath());
                         addPictureInfo(pictureInfo);
                     }
@@ -639,7 +640,7 @@ public class NativeService extends Service {
 //                EventBus.getDefault().post(new EventMessage(EventType.CLOSE_VIDEO_ACTIVITY));
 //            }
             //创建好下载目录
-            FileUtil.CreateDir(CACHE_ALL_FILE);
+            FileUtil.createDir(CACHE_ALL_FILE);
             /* **** **  查询该媒体ID的文件名  ** **** */
             byte[] bytes = jni.queryFileProperty(InterfaceMacro.Pb_MeetFilePropertyID.Pb_MEETFILE_PROPERTY_NAME.getNumber(), mediaid);
             InterfaceBase.pbui_CommonTextProperty pbui_commonTextProperty = InterfaceBase.pbui_CommonTextProperty.parseFrom(bytes);

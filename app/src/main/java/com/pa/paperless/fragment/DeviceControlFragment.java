@@ -10,19 +10,20 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceDevice;
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.DevControlAdapter;
+import com.pa.paperless.adapter.rvadapter.DevControlAdapter;
 import com.pa.paperless.data.bean.DevControlBean;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -221,7 +222,7 @@ public class DeviceControlFragment extends BaseFragment implements View.OnClickL
                     if (devControlBeen.get(j).getDevice().getDevcieid() == devid) {
                         if (devControlBeen.get(j).getDevice().getMemberid() != 0) {
                             //证明是参会人
-                            jni.modifMeetRanking(devControlBeen.get(j).getDevice().getMemberid(), role, devControlBeen.get(j).getDevice().getDevcieid());
+                            jni.modifyMeetRanking(devControlBeen.get(j).getDevice().getMemberid(), role, devControlBeen.get(j).getDevice().getDevcieid());
                             if (dialog != null) dialog.dismiss();
                             break;
                         }
@@ -271,17 +272,17 @@ public class DeviceControlFragment extends BaseFragment implements View.OnClickL
                 List<Integer> checks = devControlAdapter.getChecks();
                 if (!checks.isEmpty()) showRolePop(checks);
                 else
-                    ToastUtil.showToast(R.string.please_choose_device);
+                    ToastUtils.showShort(R.string.please_choose_device);
                 break;
             case R.id.boot:
                 break;
             case R.id.document_open:
                 List<Integer> devids = devControlAdapter.getChecks();
                 if (devids.isEmpty()) {
-                    ToastUtil.showToast(R.string.please_choose_device);
+                    ToastUtils.showShort(R.string.please_choose_device);
                     break;
                 } else if (devids.size() > 1) {
-                    ToastUtil.showToast(R.string.most_choose_one);
+                    ToastUtils.showShort(R.string.most_choose_one);
                     break;
                 }
                 Integer devid = devids.get(0);

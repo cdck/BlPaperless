@@ -597,6 +597,18 @@
     <string name="reject_device_intercom">%1$s reject device intercom</string>
     <string name="can_only_choose_one">Only choose one to join</string>
     <string name="vote_member_count">Number of voters：%1$d</string>
+    <string name="service_technician">Technician application</string>
+    <string name="service_clean">Cleaning application</string>
+    <string name="service_waiter">Waiter application</string>
+    <string name="service_Calculator">Calculator application</string>
+    <string name="service_pager">Paper application</string>
+    <string name="service_pen">Pen application</string>
+    <string name="service_tea">Tea application</string>
+    <string name="service_mineralWater">Mineral water application</string>
+    <string name="no_data_download">无文件可下载</string>
+    <string name="file_download">文件下载</string>
+    <string name="id">ID</string>
+    <string name="please_choose_file_first">请先选择文件</string>
 
     <string-array name="role_spinner">
         <item>Not set</item>

@@ -1,9 +1,13 @@
 package com.pa.paperless.data.constant;
 
 
+import android.content.Context;
 import android.os.Environment;
 
 import com.mogujie.tt.protobuf.InterfaceMacro;
+import com.pa.boling.paperless.R;
+
+import static com.pa.paperless.service.App.applicationContext;
 
 /**
  * @author Administrator
@@ -14,12 +18,11 @@ public class Macro {
     /**
      * app各类文件存放路径 SD卡下
      */
-    public static final String INIT_FILE_SD_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/NETCONFIG";
-    public static final String FILENAME = "client.ini";
-    public static final String FILENAME_DEV = "client.dev";
+    public static final String root_dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/NETCONFIG";
+    public static final String logcat_dir = root_dir + "/Log";
 
     //下载的文件存放目录
-    public static final String ROOT = INIT_FILE_SD_PATH + "/无纸化文件/";
+    public static final String ROOT = root_dir + "/无纸化文件/";
     public static final String MEET_MATERIAL = ROOT + "会议资料/";
     public static final String SHARE_MATERIAL = ROOT + "共享资料/";
     public static final String POSTIL_FILE = ROOT + "批注文件/";
@@ -402,5 +405,51 @@ public class Macro {
             default:
                 return Macro.AMIME_VIDEO_AVC;
         }
+    }
+
+    public static String getErrorMessageByCode(Context context, int code) {
+        String msg = "";
+        switch (code) {
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_NONE_VALUE:
+                msg = applicationContext.getString(R.string.error_0);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_EXPIRATION_VALUE:
+                msg = applicationContext.getString(R.string.error_1);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_OPER_VALUE:
+                msg = applicationContext.getString(R.string.error_2);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_ENTERPRISE_VALUE:
+                msg = applicationContext.getString(R.string.error_3);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_NODEVICEID_VALUE:
+                msg = applicationContext.getString(R.string.error_4);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_NOALLOWIN_VALUE:
+                msg = applicationContext.getString(R.string.error_5);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_FILEERROR_VALUE:
+                msg = applicationContext.getString(R.string.error_6);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_INVALID_VALUE:
+                msg = applicationContext.getString(R.string.error_7);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_IDOCCUPY_VALUE:
+                msg = applicationContext.getString(R.string.error_8);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_NOTBEING_VALUE:
+                msg = applicationContext.getString(R.string.error_9);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_ONLYDEVICEID_VALUE:
+                msg = applicationContext.getString(R.string.error_10);
+                break;
+            case InterfaceMacro.Pb_ValidateErrorCode.Pb_PARSER_ERROR_DEVICETYPENOMATCH_VALUE:
+                msg = applicationContext.getString(R.string.error_11);
+                break;
+            default:
+                msg = "返回码：" + code;
+                break;
+        }
+        return msg;
     }
 }

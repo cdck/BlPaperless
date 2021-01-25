@@ -96,7 +96,7 @@
                         android:id="@+id/water_msg"
                         style="@style/service_tv_style"
                         android:background="@drawable/serve_water_select"
-                        android:text="@string/waiter" />
+                        android:text="@string/water" />
                 </RelativeLayout>
             </LinearLayout>
 

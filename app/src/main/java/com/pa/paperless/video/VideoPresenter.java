@@ -8,11 +8,12 @@ import android.media.MediaCodecList;
 import android.media.MediaFormat;
 import android.os.Environment;
 
-
+import com.blankj.utilcode.util.LogUtils;
+import com.mogujie.tt.protobuf.InterfaceStop;
 import com.pa.paperless.data.bean.MediaBean;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
-import com.pa.paperless.service.ShotApplication;
+import com.pa.paperless.service.App;
 import com.pa.paperless.utils.LogUtil;
 
 import android.util.Log;
@@ -34,8 +35,8 @@ import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.mogujie.tt.protobuf.InterfacePlaymedia;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.SDLonLineMemberAdapter;
-import com.pa.paperless.adapter.SDLonLineProAdapter;
+import com.pa.paperless.adapter.rvadapter.SDLonLineMemberAdapter;
+import com.pa.paperless.adapter.rvadapter.SDLonLineProAdapter;
 import com.pa.paperless.data.bean.DevMember;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
@@ -53,6 +54,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -60,8 +62,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import cc.shinichi.library.ImagePreview;
-
-import static com.pa.paperless.service.ShotApplication.isDebug;
 
 
 /**
@@ -75,7 +75,7 @@ public class VideoPresenter {
     private final NativeUtil jni;
     private String saveMimeType = "";
     private MediaFormat mediaFormat;
-    private MediaCodec mediaCodec;
+    private MediaCodec decoder;
     private MediaCodec.BufferInfo info = new MediaCodec.BufferInfo();
     /**
      * 初始化时的视屏宽高
@@ -134,22 +134,16 @@ public class VideoPresenter {
 
     private int triggeruserval = 1;
 
+    void setIsplayStream(boolean a) {
+        isplayStream = a;
+    }
+
     /**
      * 打开查看图片
      *
      * @param piclist 图片的路径集合
      */
     private void photoViewer(List<String> piclist, int index) {
-//        //使用方式
-//        PictureConfig config = new PictureConfig.Builder()
-//                .setListData((ArrayList<String>) piclist)	//图片数据List<String> list
-//                .setPosition(index)	//图片下标（从第position张图片开始浏览）
-////                .setDownloadPath("pictureviewer")	//图片下载文件夹地址
-//                .setIsShowNumber(true)//是否显示数字下标
-////                .needDownload(true)	//是否支持图片下载
-////                .setPlacrHolder(R.mipmap.icon)	//占位符图片（图片加载完成前显示的资源图片，来源drawable或者mipmap）
-//                .build();
-//        ImagePagerActivity.startActivity(this, config);
         ImagePreview.getInstance()
                 .setContext(cxt)
                 .setImageList(piclist)//设置图片地址集合
@@ -169,7 +163,7 @@ public class VideoPresenter {
             case EventType.MANDATORY_PLAY://强制性播放流
                 view.setCanNotExit();
                 break;
-            //播放进度
+            //播放进度通知
             case EventType.PLAY_PROGRESS_NOTIFY: {
                 InterfacePlaymedia.pbui_Type_PlayPosCb playPos = (InterfacePlaymedia.pbui_Type_PlayPosCb) message.getObject();
                 int mediaId = playPos.getMediaId();
@@ -193,7 +187,7 @@ public class VideoPresenter {
                             this.mMediaId);
                     InterfaceBase.pbui_CommonTextProperty pbui_commonTextProperty = InterfaceBase.pbui_CommonTextProperty.parseFrom(fileName);
                     view.updateTopTitle(pbui_commonTextProperty.getPropertyval().toStringUtf8());
-                    LogUtil.i(TAG, "播放进度通知："
+                    LogUtil.v(TAG, "播放进度通知："
                             + "\n当前播放：fileName=" + pbui_commonTextProperty.getPropertyval().toStringUtf8()
                             + "\nmediaId=" + mediaId
                             + "\nstatus=" + status
@@ -225,14 +219,15 @@ public class VideoPresenter {
 //                }
                 break;
             }
+            //解码数据
             case EventType.CALLBACK_VIDEO_DECODE: {
                 Object[] objects = message.getObjects();
                 int res = (int) objects[0];
                 int codecid = (int) objects[1];
                 int width = (int) objects[2];
                 int height = (int) objects[3];
-                byte[] codecdata = (byte[]) objects[5];
                 byte[] packet = (byte[]) objects[4];
+                byte[] codecdata = (byte[]) objects[5];
                 long pts = (long) objects[6];
                 int iskeyframe = (int) objects[7];
                 String mimeType = Macro.getMimeType(codecid);
@@ -241,12 +236,15 @@ public class VideoPresenter {
                     lastPushTime = System.currentTimeMillis();
                     length = packet.length;
                     LogUtil.v(TAG, "getEventMessage :  mimeType --> " + mimeType
-                            + "，宽高：" + width + "," + height + ", pts=" + pts + ", codecid=" + codecid);
-                    if (!saveMimeType.equals(mimeType) || initW != width || initH != height || mediaCodec == null) {
-                        if (mediaCodec != null) {
+                            + "，宽高：" + width + "," + height + ", pts=" + pts + ", codecid=" + codecid
+                            + "\ncodecdata=" + Arrays.toString(codecdata) + "\npacket长度=" + packet.length + "\npacket=" + Arrays.toString(packet)
+                    );
+
+                    if (!saveMimeType.equals(mimeType) || initW != width || initH != height || decoder == null) {
+                        if (decoder != null) {
                             //调用stop方法使其进入 uninitialzed 状态，这样才可以重新配置MediaCodec
                             LogUtil.e(TAG, "getEventMessage 重新配置MediaCodec -->");
-                            mediaCodec.stop();
+                            decoder.stop();
                         }
                         saveMimeType = mimeType;
                         initCodec(width, height, codecdata);
@@ -260,12 +258,32 @@ public class VideoPresenter {
                 }
                 break;
             }
-            //停止播放通知
-            case EventType.STOP_PLAY:
-                LogUtil.e(TAG, "getEventMessage :  停止播放通知 --> ");
-                view.close();
+            //媒体、流停止播放通知
+            case EventType.STOP_PLAY: {
+                InterfaceStop.pbui_Type_MeetStopPlay object = (InterfaceStop.pbui_Type_MeetStopPlay) message.getObject();
+                // 创建该触发器的设备ID
+                int createdeviceid = object.getCreatedeviceid();
+                // 停止的资源ID
+                int resid = object.getRes();
+                // 停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
+                int triggerid = object.getTriggerid();
+                LogUtil.e(TAG, "停止播放通知 createdeviceid=" + createdeviceid + ",triggerid=" + triggerid + ",resid=" + resid);
+                if (resid == 0) {
+                    view.close();
+                }
                 break;
-            case EventType.DEV_REGISTER_INFORM: {
+            }
+            case EventType.ACTION_SCREEN_OFF:
+            case EventType.ACTION_SCREEN_ON:
+            case EventType.MeetSeat_Change_Inform://会议排位变更通知
+            case EventType.MEMBER_CHANGE_INFORM://参会人员变更通知
+            case EventType.FACESTATUS_CHANGE_INFORM://界面状态变更通知
+            case EventType.SIGNIN_SEAT_INFORM://会场设备信息变更通知
+                LogUtils.d(TAG, "重新更新在线参会人和投影机");
+                queryAttendPeople();
+                break;
+            case EventType.DEV_REGISTER_INFORM: {// 设备寄存器变更通知
+                LogUtils.d(TAG, "设备寄存器变更通知");
                 InterfaceDevice.pbui_Type_MeetDeviceBaseInfo object = (InterfaceDevice.pbui_Type_MeetDeviceBaseInfo) message.getObject();
                 int deviceid = object.getDeviceid();
                 int attribid = object.getAttribid();
@@ -297,7 +315,6 @@ public class VideoPresenter {
                         }
                     }
                 }
-//                LogUtil.i(TAG, "getEventMessage :   --> 同屏集合：" + currentShareIds.toString() + ", mMediaId:" + mMediaId + ", deviceid:" + Values.localDevId);
                 //如果同屏集合为空则设置不在共享中
                 if (currentShareIds.isEmpty()) {
                     isShareing = false;
@@ -326,7 +343,7 @@ public class VideoPresenter {
     FileOutputStream yuvfos;
 
     private void read2file(byte[] y, byte[] u, byte[] v) throws IOException {
-        if (!isDebug) {
+        if (!App.read2file) {
             return;
         }
         if (yuvfos == null) {
@@ -344,7 +361,7 @@ public class VideoPresenter {
     private BufferedOutputStream outputStream;
 
     public void read2file(byte[] outData, byte[] codecdata) {
-        if (!isDebug) {
+        if (!App.read2file) {
             return;
         }
         try {
@@ -364,13 +381,18 @@ public class VideoPresenter {
 
     private void queryAttendPeople() {
         try {
+            LogUtil.d(TAG, "queryAttendPeople");
             InterfaceMember.pbui_Type_MemberDetailInfo attendPeople = jni.queryAttendPeople();
+            List<InterfaceMember.pbui_Item_MemberDetailInfo> memberInfos = new ArrayList<>();
             if (attendPeople != null) {
-                InterfaceDevice.pbui_Type_DeviceDetailInfo deviceDetailInfo = jni.queryDeviceInfo();
-                List<InterfaceMember.pbui_Item_MemberDetailInfo> memberInfos = attendPeople.getItemList();
-                List<InterfaceDevice.pbui_Item_DeviceDetailInfo> deviceInfos = deviceDetailInfo.getPdevList();
-                updateInfos(memberInfos, deviceInfos);
+                memberInfos.addAll(attendPeople.getItemList());
             }
+            InterfaceDevice.pbui_Type_DeviceDetailInfo deviceDetailInfo = jni.queryDeviceInfo();
+            List<InterfaceDevice.pbui_Item_DeviceDetailInfo> deviceInfos = new ArrayList<>();
+            if (deviceDetailInfo != null) {
+                deviceInfos.addAll(deviceDetailInfo.getPdevList());
+            }
+            updateInfos(memberInfos, deviceInfos);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
@@ -388,21 +410,20 @@ public class VideoPresenter {
     }
 
     /**
-     * M
      * 释放资源
      */
     public void releaseMediaCodec() {
         new Thread(() -> {
-            if (mediaCodec != null) {
+            if (decoder != null) {
                 try {
                     LogUtil.e(TAG, "releaseMediaCodec :   --> ");
-                    mediaCodec.reset();
+                    decoder.reset();
                     //调用stop()方法使编解码器返回到未初始化状态（Uninitialized），此时这个编解码器可以再次重新配置
-                    mediaCodec.stop();
+                    decoder.stop();
                     //调用flush()方法使编解码器重新返回到刷新子状态（Flushed）
-                    mediaCodec.flush();
+                    decoder.flush();
                     //使用完编解码器后，你必须调用release()方法释放其资源
-                    mediaCodec.release();
+                    decoder.release();
                 } catch (MediaCodec.CodecException e) {
                     LogUtil.e(TAG, "run :  CodecException --> " + e.getMessage());
                 } catch (IllegalStateException e) {
@@ -411,7 +432,7 @@ public class VideoPresenter {
                     LogUtil.e(TAG, "run :  Exception --> " + e.getMessage());
                 }
             }
-            mediaCodec = null;
+            decoder = null;
             mediaFormat = null;
         }).start();
     }
@@ -428,37 +449,19 @@ public class VideoPresenter {
             view.setCodecType(1);
             try {
                 //1.创建了一个编解码器，此时编解码器处于未初始化状态（Uninitialized）
-                mediaCodec = MediaCodec.createDecoderByType(saveMimeType);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (IllegalArgumentException e) {
+                decoder = MediaCodec.createDecoderByType(saveMimeType);
+            } catch (IOException | IllegalArgumentException e) {
+                LogUtils.e(TAG, "createDecoderByType异常：" + e.toString());
                 e.printStackTrace();
             }
-            MediaCodecInfo mediaCodecInfo = getSupportedMediaCodecInfo(saveMimeType);
-            if (mediaCodecInfo == null) {
-                mediaCodecInfo = mediaCodec.getCodecInfo();
-            }
-            /**  颜色格式  */
-            MediaCodecInfo.CodecCapabilities capabilitiesForType = mediaCodecInfo.getCapabilitiesForType(saveMimeType);
-            /**  宽高要判断是否是解码器所支持的范围  */
-            MediaCodecInfo.VideoCapabilities videoCapabilities = capabilitiesForType.getVideoCapabilities();
-            Range<Integer> supportedWidths = videoCapabilities.getSupportedWidths();
-            Range<Integer> supportedHeights = videoCapabilities.getSupportedHeights();
-            initW = w;
-            initH = h;
-            w = supportedWidths.clamp(w);
-            h = supportedHeights.clamp(h);
-            LogUtil.d(TAG, "initCodec -->后台收到的数据宽高：" + initW + "," + initH
-                    + ",解码器所支持的范围:宽" + supportedWidths.toString() + ", 高" + supportedHeights.toString());
             initMediaFormat(w, h, codecdata);
-            LogUtil.i(TAG, "initCodec :  是否支持 --> " + (capabilitiesForType.isFormatSupported(mediaFormat)));
             try {
                 //2.对编解码器进行配置，这将使编解码器转为配置状态（Configured）
                 if (!surface.isValid()) {
                     Log.e(TAG, "initCodec :  surface是无效的 --> ");
                     return;
                 }
-                mediaCodec.configure(mediaFormat, surface, null, 0);
+                decoder.configure(mediaFormat, surface, null, 0);
             } catch (IllegalArgumentException e) {
                 e.printStackTrace();
             } catch (MediaCodec.CodecException e) {
@@ -466,19 +469,17 @@ public class VideoPresenter {
                 //可恢复错误（recoverable errors）：如果isRecoverable() 方法返回true,然后就可以调用stop(),configure(...),以及start()方法进行修复
                 //短暂错误（transient errors）：如果isTransient()方法返回true,资源短时间内不可用，这个方法可能会在一段时间之后重试。
                 //isRecoverable()和isTransient()方法不可能同时都返回true。
-                LogUtil.e(TAG, "initCodec :   -->可恢复错误： " + e.isRecoverable() + ",短暂错误：" + e.isTransient());
+                LogUtils.e(TAG, "initCodec :   -->可恢复错误： " + e.isRecoverable() + ",短暂错误：" + e.isTransient());
             }
             //3.调用start()方法使其转入执行状态（Executing）
-            mediaCodec.start();
-//            initMediaMuxer();
+            decoder.start();
         } catch (Exception e) {
+            LogUtils.e(TAG, "异常=" + e.toString());
             e.printStackTrace();
         }
     }
 
     private MediaCodecInfo getSupportedMediaCodecInfo(String mimeType) {
-        // TODO: 2020/5/29 设备支持的解码器：
-        //=REGULAR_CODECS 常规，=ALL_CODECS 所有
         MediaCodecList mediaCodecList = new MediaCodecList(MediaCodecList.ALL_CODECS);
         MediaCodecInfo[] codecInfos = mediaCodecList.getCodecInfos();
         MediaCodecInfo supportedCodecInfo = null;
@@ -492,7 +493,6 @@ public class VideoPresenter {
             for (String type : types) {
                 LogUtil.v(TAG, "getSupportedMediaCodecInfo  支持的媒体类型= " + name + " --- " + type);
                 if (type.equalsIgnoreCase(mimeType)) {
-//                    return codecInfo;
                     supportedCodecInfo = codecInfo;
                     String[] supportedTypes = supportedCodecInfo.getSupportedTypes();
                     LogUtil.i(TAG, "getSupportedMediaCodecInfo codecInfo名称=" + supportedCodecInfo.getName());
@@ -503,19 +503,33 @@ public class VideoPresenter {
             }
         }
         if (supportedCodecInfo == null) {
-            LogUtil.e(TAG, "getSupportedMediaCodecInfo 没有找到支持 " + mimeType + " 类型的解码器");
+            LogUtils.e(TAG, "getSupportedMediaCodecInfo 没有找到支持 " + mimeType + " 类型的解码器");
         }
         return supportedCodecInfo;
     }
 
     private void initMediaFormat(int w, int h, byte[] csddata) {
-//        w = ShotApplication.screenWidth;
-//        h = ShotApplication.screenHeight;
+        MediaCodecInfo mediaCodecInfo//= getSupportedMediaCodecInfo(saveMimeType);
+                = decoder.getCodecInfo();
+        /**  颜色格式  */
+        MediaCodecInfo.CodecCapabilities capabilitiesForType = mediaCodecInfo.getCapabilitiesForType(saveMimeType);
+        /**  宽高要判断是否是解码器所支持的范围  */
+        MediaCodecInfo.VideoCapabilities videoCapabilities = capabilitiesForType.getVideoCapabilities();
+        Range<Integer> supportedWidths = videoCapabilities.getSupportedWidths();
+        Range<Integer> supportedHeights = videoCapabilities.getSupportedHeights();
+        initW = w;
+        initH = h;
+        if (w > supportedWidths.getUpper()) {
+            w = supportedWidths.getUpper();
+            h = videoCapabilities.getSupportedHeightsFor(w).getUpper();
+        }
+        if (h > supportedHeights.getUpper()) {
+            h = supportedHeights.getUpper();
+            w = videoCapabilities.getSupportedWidthsFor(h).getUpper();
+        }
         mediaFormat = MediaFormat.createVideoFormat(saveMimeType, w, h);
         mediaFormat.setInteger(MediaFormat.KEY_WIDTH, w);
         mediaFormat.setInteger(MediaFormat.KEY_HEIGHT, h);
-        //设置最大输出大小
-        mediaFormat.setLong(MediaFormat.KEY_MAX_INPUT_SIZE, w * h);
         if (csddata != null) {
             ByteBuffer csd_0 = ByteBuffer.wrap(csddata);
             ByteBuffer csd_1 = ByteBuffer.wrap(csddata);
@@ -553,51 +567,50 @@ public class VideoPresenter {
             // 如果timeoutUs == 0，则此方法将立即返回；
             // 如果timeoutUs <0，则无限期等待输入缓冲区的可用性；
             // 如果timeoutUs> 0，则等待直至“ timeoutUs”微秒。
-            int inputBufferIndex = mediaCodec.dequeueInputBuffer(0);
+            int inputBufferIndex = decoder.dequeueInputBuffer(0);
 
 //            LogUtil.i(TAG, "mediaCodecDecode -->dequeueInputBuffer index= " + inputBufferIndex);
             if (inputBufferIndex >= 0) {
                 //有空闲可用的解码buffer
-                ByteBuffer byteBuffer = mediaCodec.getInputBuffer(inputBufferIndex);
+                ByteBuffer byteBuffer = decoder.getInputBuffer(inputBufferIndex);
                 byteBuffer.clear();
                 //将视频队列中的头取出送到解码队列中
                 byteBuffer.put(bytes);
-                mediaCodec.queueInputBuffer(inputBufferIndex, 0, size, pts, 0);
+                decoder.queueInputBuffer(inputBufferIndex, 0, size, pts, 0);
 //                LogUtil.i(TAG, "mediaCodecDecode dequeueInputBuffer  pts= " + pts + ", inputBufferIndex = " + inputBufferIndex + ", inputCount：" + (++inputCount));
             }
         } catch (Exception e) {
             LogUtil.e(TAG, "mediaCodecDecode dequeueInputBuffer 异常 -->" + e.getMessage());
             //如果解码出错，需要提示用户或者程序自动重新初始化解码
-            mediaCodec = null;
+            decoder = null;
             return;
         }
         try {
             //使输出缓冲区出队，最多阻塞“ timeoutUs”微秒。 返回已成功解码的输出缓冲区的索引
-            int outputBufferIndex = mediaCodec.dequeueOutputBuffer(info, 0);
+            int outputBufferIndex = decoder.dequeueOutputBuffer(info, 0);
             switch (outputBufferIndex) {
                 case MediaCodec.INFO_TRY_AGAIN_LATER:
 //                    LogUtil.d(TAG, "mediaCodecDecode -->dequeueOutputBuffer 没有可用数据");
                     break;
                 case MediaCodec.INFO_OUTPUT_FORMAT_CHANGED:
-                    MediaFormat outputFormat = mediaCodec.getOutputFormat();
-//                    LogUtil.e(TAG, "The output format has changed, new format:" + outputFormat);
+                    MediaFormat outputFormat = decoder.getOutputFormat();
+                    LogUtil.e(TAG, "The output format has changed, new format:" + outputFormat);
                     mediaFormat = outputFormat;
                     break;
                 case MediaCodec.INFO_OUTPUT_BUFFERS_CHANGED:
 //                    LogUtil.e(TAG, "this event signals that the video scaling mode may have been reset to the default");
                     break;
                 default:
-//                    LogUtil.d(TAG, " -->mediaCodecDecode dequeueOutputBuffer outputBufferIndex= " + outputBufferIndex);
-                    ByteBuffer outputBuffer = mediaCodec.getOutputBuffer(outputBufferIndex);
+                    LogUtil.d(TAG, " -->mediaCodecDecode dequeueOutputBuffer outputBufferIndex= " + outputBufferIndex);
+                    ByteBuffer outputBuffer = decoder.getOutputBuffer(outputBufferIndex);
                     //position和limit方法 解决输出混乱问题
-//                    outputBuffer.position(info.offset);
-//                    outputBuffer.limit(info.offset + info.size);
-//                    LogUtil.d(TAG, "mediaCodecDecode releaseOutputBuffer  pts= " + info.presentationTimeUs
-//                            + ", outputBufferIndex= " + outputBufferIndex + " outputCount：" + (++outputCount));
-//                    mediaCodec.releaseOutputBuffer(outputBufferIndex, info.presentationTimeUs);
+                    if (outputBuffer != null) {
+                        outputBuffer.position(info.offset);
+                        outputBuffer.limit(info.offset + info.size);
+                    }
                     //如果配置编码器时指定了有效的surface，传true将此输出缓冲区显示在surface
                     //释放output缓冲区,否则将会导致MediaCodec输出缓冲被占用，无法继续解码。
-                    mediaCodec.releaseOutputBuffer(outputBufferIndex, true);
+                    decoder.releaseOutputBuffer(outputBufferIndex, true);
                     break;
             }
         } catch (Exception e) {
@@ -606,8 +619,8 @@ public class VideoPresenter {
         }
     }
 
-//    int count = 0;
-//    int allCount = 0;
+    int count = 0;
+    int allCount = 0;
 
     /**
      * 处理逻辑：收到数据包进行解码显示，
@@ -619,17 +632,17 @@ public class VideoPresenter {
             return;
         }
         if (bytes != null && bytes.length > 0) {
-//            if (isDebug) {
-//                allCount++;
-//                LogUtil.v(TAG, "接收方 接收数据总量：" + allCount);
-//                if (iskeyframe != 1) {
-//                    count++;
-//                    LogUtil.v(TAG, "接收方 收到普通帧数据：pts= " + pts + ", size= " + size);
-//                } else {
-//                    LogUtil.v(TAG, "接收方 收到关键帧数据 关键帧之间的个数=" + count + ", pts= " + pts + ", size= " + size);
-//                    count = 1;
-//                }
-//            }
+            if (App.isDebug) {
+                allCount++;
+                LogUtil.v(TAG, "接收方 接收数据总量：" + allCount);
+                if (iskeyframe != 1) {
+                    count++;
+                    LogUtil.v(TAG, "接收方 收到普通帧数据：pts= " + pts + ", size= " + size);
+                } else {
+                    LogUtil.v(TAG, "接收方 收到关键帧数据 关键帧之间的个数=" + count + ", 发送数据总量=" + allCount + ", pts= " + pts + ", size= " + size);
+                    count = 0;
+                }
+            }
             //把网络接收到的视频数据先加入到队列中
             queue.offer(new MediaBean(bytes, size, pts, iskeyframe));
         } else {
@@ -665,7 +678,7 @@ public class VideoPresenter {
             queuesize = queue.size();
         }
         //判断解码器是否初始化完成
-        if (mediaCodec == null) {
+        if (decoder == null) {
             LogUtil.v(TAG, "mediaCodecDecode mediacodec null");
             return;
         }
@@ -678,23 +691,24 @@ public class VideoPresenter {
                 // 如果timeoutUs == 0，则此方法将立即返回；
                 // 如果timeoutUs <0，则无限期等待输入缓冲区的可用性；
                 // 如果timeoutUs> 0，则等待直至“ timeoutUs”微秒。
-                inputBufferIndex = mediaCodec.dequeueInputBuffer(0);
+                inputBufferIndex = decoder.dequeueInputBuffer(0);
                 LogUtil.v(TAG, "mediaCodecDecode -->dequeueInputBuffer index= " + inputBufferIndex);
                 if (inputBufferIndex >= 0) {
                     //有空闲可用的解码buffer
-                    ByteBuffer byteBuffer = mediaCodec.getInputBuffer(inputBufferIndex);
+                    ByteBuffer byteBuffer = decoder.getInputBuffer(inputBufferIndex);
                     //将视频队列中的头取出送到解码队列中
                     MediaBean poll = queue.poll();
                     if (byteBuffer != null) {
                         byteBuffer.clear();
                         byteBuffer.put(poll.getBytes());
                     }
-                    mediaCodec.queueInputBuffer(inputBufferIndex, 0, poll.getSize(), poll.getPts(), 0);
+                    decoder.queueInputBuffer(inputBufferIndex, 0, poll.getSize(), poll.getPts(), 0);
                     LogUtil.v(TAG, "mediaCodecDecode queueInputBuffer  pts= " + poll.getPts() + ", index = " + inputBufferIndex + ", inputCount：" + (++inputCount));
                 }
             } catch (IllegalStateException e) {
                 //如果解码出错，需要提示用户或者程序自动重新初始化解码
-                mediaCodec = null;
+//                decoder = null;
+                e.printStackTrace();
                 return;
             }
         }
@@ -709,20 +723,20 @@ public class VideoPresenter {
 //        }
         try {
             //使输出缓冲区出队，最多阻塞“ timeoutUs”微秒。 返回已成功解码的输出缓冲区的索引
-            int index = mediaCodec.dequeueOutputBuffer(info, 0);
+            int index = decoder.dequeueOutputBuffer(info, 0);
             switch (index) {
                 case MediaCodec.INFO_TRY_AGAIN_LATER:
                     LogUtil.v(TAG, "mediaCodecDecode -->dequeueOutputBuffer index = " + index);
                     break;
                 case MediaCodec.INFO_OUTPUT_FORMAT_CHANGED:
-                    MediaFormat outputFormat = mediaCodec.getOutputFormat();
+                    MediaFormat outputFormat = decoder.getOutputFormat();
                     LogUtil.v(TAG, "The output format has changed, new format:" + outputFormat);
                     break;
                 case MediaCodec.INFO_OUTPUT_BUFFERS_CHANGED:
                     LogUtil.v(TAG, "this event signals that the video scaling mode may have been reset to the default");
                     break;
                 default:
-                    ByteBuffer outputBuffer = mediaCodec.getOutputBuffer(index);
+                    ByteBuffer outputBuffer = decoder.getOutputBuffer(index);
                     if (outputBuffer != null) {
                         outputBuffer.position(info.offset);
                         outputBuffer.limit(info.offset + info.size);
@@ -734,7 +748,7 @@ public class VideoPresenter {
                             + ", index= " + index + " outputCount：" + (++outputCount));
 //            mediaCodec.releaseOutputBuffer(index, info.presentationTimeUs);
                     //如果配置编码器时指定了有效的surface，传true将此输出缓冲区显示在surface
-                    mediaCodec.releaseOutputBuffer(index, true);
+                    decoder.releaseOutputBuffer(index, true);
                     break;
             }
         } catch (Exception e) {
@@ -925,20 +939,22 @@ public class VideoPresenter {
                 List<Integer> res = new ArrayList<>();
                 res.add(0);
                 jni.streamPlay(streamId, 2, triggeruserval, res, temps);
-                ArrayList<Integer> temps1 = new ArrayList<>();
-                temps1.add(Values.localDevId);
-                jni.streamPlay(streamId, 2, 0, res, temps1);
+//                ArrayList<Integer> temps1 = new ArrayList<>();
+//                temps1.add(Values.localDevId);
+//                jni.streamPlay(streamId, 2, 0, res, temps1);
             } else {
                 //媒体播放操作
                 jni.mediaPlayOperate(mMediaId, temps, currentPre, 0, triggeruserval, 0);
-                ArrayList<Integer> temps1 = new ArrayList<>();
-                temps1.add(Values.localDevId);
-                jni.mediaPlayOperate(mMediaId, temps1, currentPre, 0, 0, 0);
+//                ArrayList<Integer> temps1 = new ArrayList<>();
+//                temps1.add(Values.localDevId);
+//                jni.mediaPlayOperate(mMediaId, temps1, currentPre, 0, 0, 0);
+
+                jni.setPlayPlace(0, currentPre, temps, triggeruserval, 0);
             }
-//                //再设置自己的播放进度
-//                List<Integer> addids = new ArrayList<>();
-//                addids.add(Values.localDevId);
-//                jni.setPlayPlace(0, currentPre, addids, triggeruserval, 0);
+            //再设置自己的播放进度
+//            List<Integer> addids = new ArrayList<>();
+//            addids.add(Values.localDevId);
+//            jni.setPlayPlace(0, currentPre, addids, triggeruserval, 0);
             popup.dismiss();
         });
         holder.cancel.setOnClickListener(v -> {
@@ -968,60 +984,37 @@ public class VideoPresenter {
      * @param deviceInfos
      */
     private void updateInfos(List<InterfaceMember.pbui_Item_MemberDetailInfo> memberInfos, List<InterfaceDevice.pbui_Item_DeviceDetailInfo> deviceInfos) {
-        onlineProjectors.clear();
+        LogUtils.d(TAG, "updateInfos");
         devMemberInfos.clear();
+        onlineProjectors.clear();
         for (InterfaceDevice.pbui_Item_DeviceDetailInfo dev : deviceInfos) {
             int devcieid = dev.getDevcieid();
             int netstate = dev.getNetstate();
             int memberid = dev.getMemberid();
-            if (devcieid == Values.localDevId) {
-                List<InterfaceDevice.pbui_SubItem_DeviceResInfo> resInfo = dev.getResinfoList();
-                //获取当前设备0号播放资源的资源信息
-                InterfaceDevice.pbui_SubItem_DeviceResInfo resInfo1 = resInfo.get(0);
-                int playstatus = resInfo1.getPlaystatus();
-                int val = resInfo1.getVal();
-                int val2 = resInfo1.getVal2();
-                int triggerId = resInfo1.getTriggerId();
-                int createid = resInfo1.getCreatedeviceid();
-                if (playstatus == 2) {
-                    isplayStream = true;
-                    streamId = val;
-                } else if (playstatus == 1) {
-                    isplayStream = false;
-                    streamId = 0;
-                }
-                LogUtil.d(TAG, "getEventMessage updateInfos :   --> devcieid=" + devcieid +
-                        ",  playstatus：" + playstatus + "，  val:" + val +
-                        "，  val2:" + val2 + "， triggerId:" + triggerId + ", createid:" + createid);
-            }
-            //跳过不在线/和自己的设备
-            if (netstate != 1 || devcieid == Values.localDevId) {
-                continue;
-            }
+            int facestate = dev.getFacestate();
             //找到在线的投影机
-            if (Macro.DEVICE_MEET_PROJECTIVE == (devcieid & Macro.DEVICE_MEET_ID_MASK)) {
+            if (Macro.DEVICE_MEET_PROJECTIVE == (devcieid & Macro.DEVICE_MEET_ID_MASK) && netstate == 1) {
                 onlineProjectors.add(dev);
             }
-            //如果当前设备没有绑定的参会人就直接跳过
-            if (memberid == 0) {
-                continue;
-            }
-            for (InterfaceMember.pbui_Item_MemberDetailInfo member : memberInfos) {
-                if (member.getPersonid() == memberid) {
-                    devMemberInfos.add(new DevMember(member, devcieid));
+            if (!memberInfos.isEmpty() && netstate == 1 && facestate == InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace_VALUE) {
+                for (InterfaceMember.pbui_Item_MemberDetailInfo member : memberInfos) {
+                    if (member.getPersonid() == memberid && devcieid != Values.localDevId) {
+                        devMemberInfos.add(new DevMember(member, devcieid));
+                    }
                 }
             }
         }
-//        LogUtil.v(TAG, "updateInfos :   --> 同屏集合：" + currentShareIds.toString() + ", mMediaId:" + mMediaId + ", deviceid:" + Values.localDevId);
         if (memberAdapter == null) {
             memberAdapter = new SDLonLineMemberAdapter(devMemberInfos);
         } else {
-            memberAdapter.notifyChecks();
+            memberAdapter.notifyDataSetChanged();
+//            memberAdapter.notifyChecks();
         }
         if (proAdapter == null) {
             proAdapter = new SDLonLineProAdapter(onlineProjectors);
         } else {
-            proAdapter.notifyChecks();
+            proAdapter.notifyDataSetChanged();
+//            proAdapter.notifyChecks();
         }
     }
 

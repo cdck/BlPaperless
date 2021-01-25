@@ -7,6 +7,9 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Looper;
 
+import com.blankj.utilcode.util.ToastUtils;
+import com.pa.paperless.data.constant.Macro;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -20,7 +23,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.pa.paperless.data.constant.Macro.INIT_FILE_SD_PATH;
+import static com.pa.paperless.data.constant.Macro.root_dir;
 
 /**
  * Created by Administrator on 2018/2/25.
@@ -33,7 +36,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     private Map<String, String> info = new HashMap<String, String>();// 用来存储设备信息和异常信息
     private SimpleDateFormat format = new SimpleDateFormat(
             "yyyy-MM-dd_HH:mm:ss");// 用于格式化日期,作为日志文件名的一部分
-    private String BUGPATH = INIT_FILE_SD_PATH + "/Log";
 
     /**
      * 保证只有一个CrashHandler实例
@@ -90,7 +92,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         new Thread() {
             public void run() {
                 Looper.prepare();
-                ToastUtil.showToast( "很抱歉,程序出现异常,即将退出");
+                ToastUtils.showShort("很抱歉,程序出现异常,即将退出");
                 Looper.loop();
             }
         }.start();
@@ -154,7 +156,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
                 + "\n操作系统: " + android.os.Build.VERSION.RELEASE
                 + "\nSDK_INI：" + Build.VERSION.SDK_INT
                 + "\n主板名：" + Build.BOARD
-                + "\n硬件：" + Build.HARDWARE+"\n\n";
+                + "\n硬件：" + Build.HARDWARE + "\n\n";
         sb.append(devInfo);
 
         for (Map.Entry<String, String> entry : info.entrySet()) {
@@ -183,10 +185,11 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         String fileName = "crash-" + time + "-" + timeStamp + ".log";
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             try {
-                File dir = new File(BUGPATH);
+                File dir = new File(Macro.logcat_dir);
                 LogUtil.i("CrashHandler", dir.toString());
-                if (!dir.exists())
+                if (!dir.exists()) {
                     dir.mkdir();
+                }
                 FileOutputStream fos = new FileOutputStream(new File(dir, fileName));
                 fos.write(sb.toString().getBytes());
                 fos.close();

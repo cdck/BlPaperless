@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.text.InputFilter;
 import android.text.TextUtils;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.activity.ChatVideoActivity;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Macro;
@@ -31,14 +32,14 @@ import com.mogujie.tt.protobuf.InterfaceIM;
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.MemberListAdapter;
-import com.pa.paperless.adapter.MulitpleItemAdapter;
+import com.pa.paperless.adapter.rvadapter.MemberListAdapter;
+import com.pa.paperless.adapter.rvadapter.MulitpleItemAdapter;
 import com.pa.paperless.data.bean.DevMember;
 import com.pa.paperless.data.bean.ReceiveMeetIMInfo;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.utils.Dispose;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.ToastUtil;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -178,7 +179,7 @@ public class ChatFragment extends BaseFragment implements View.OnClickListener {
             }
             mChatCountTv.setText(mMemberAdapter.getCheckedId().size() + " / " + mChatonLineMember.size());
             mRightChatLv.setOnItemClickListener((parent, view, position, id) -> {
-                mMemberAdapter.setCheck(mChatonLineMember.get(position).getMemberInfos().getPersonid());
+                mMemberAdapter.setCheck(mChatonLineMember.get(position).getMemberDetailInfo().getPersonid());
                 //每次点击item的时候检查是否为全选状态
                 boolean allCheck = mMemberAdapter.isAllCheck();
                 mChatCountTv.setSelected(allCheck);
@@ -265,14 +266,14 @@ public class ChatFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.send_btn://发送
                 if (Values.isOnline == 0) {
-                    ToastUtil.showToast(R.string.error_network);
+                    ToastUtils.showShort(R.string.error_network);
                     break;
                 }
                 if (mMemberAdapter == null) break;
                 // 获取选中的参会人 ID
                 List<Integer> ids = mMemberAdapter.getCheckedId();
                 if (ids.isEmpty()) {
-                    ToastUtil.showToast(R.string.tip_select_member);
+                    ToastUtils.showShort(R.string.tip_select_member);
                     break;
                 }
                 String string = mChatMsgEdt.getText().toString();
@@ -296,10 +297,10 @@ public class ChatFragment extends BaseFragment implements View.OnClickListener {
                         //清除输入框内容
                         mChatMsgEdt.setText("".trim());
                     } else {
-                        ToastUtil.showToast(R.string.tip_too_many_words);
+                        ToastUtils.showShort(R.string.tip_too_many_words);
                     }
                 } else {
-                    ToastUtil.showToast(R.string.tip_please_enter_message);
+                    ToastUtils.showShort(R.string.tip_please_enter_message);
                 }
                 break;
         }
