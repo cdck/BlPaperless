@@ -1,7 +1,6 @@
 package com.pa.paperless.adapter.node;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import com.blankj.utilcode.util.LogUtils;
@@ -84,7 +83,7 @@ public class LevelFileProvider extends BaseNodeProvider {
     @Override
     public void onClick(@NotNull BaseViewHolder helper, @NotNull View view, BaseNode data, int position) {
         LevelFileNode fileNode = (LevelFileNode) data;
-        selectedFileNode = fileNode;
+        selectedFileNode = selectedFileNode != fileNode ? fileNode : null;
         if (getAdapter() != null) {
             getAdapter().notifyDataSetChanged();
         }

@@ -897,14 +897,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
      * @param type =0前往设置界面，=1申请悬浮窗权限
      */
     private void showDig(String title, int type) {
+        LogUtils.i(TAG, "showDig title=" + title + ",type=" + type);
         alertDialog = DiaLogUtil.createDialog(this, title, getString(R.string.to_open), getString(R.string.exit_app), new DiaLogUtil.DiaLogListener() {
             @Override
             public void ensure(DialogInterface dialog) {
-                if (type == 0) {
-                    toSetting = true;
-                    startActivity(new Intent(Settings.ACTION_SETTINGS));
-                } else {
-                    applyPermissions(Manifest.permission.SYSTEM_ALERT_WINDOW);
+                try {
+                    if (type == 0) {
+                        toSetting = true;
+                        startActivity(new Intent(Settings.ACTION_SETTINGS));
+                    } else {
+                        applyPermissions(Manifest.permission.SYSTEM_ALERT_WINDOW);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
 

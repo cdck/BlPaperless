@@ -15,6 +15,7 @@ public abstract class BaseAdapter<T> extends android.widget.BaseAdapter {
 
     protected List<T> mDatas;
     protected final LayoutInflater mInflater;
+    protected Context mContext;
 
     /**
      * 构造器
@@ -22,6 +23,7 @@ public abstract class BaseAdapter<T> extends android.widget.BaseAdapter {
      * @param context
      */
     public BaseAdapter(Context context) {
+        mContext=context;
         mInflater = LayoutInflater.from(context);
     }
 

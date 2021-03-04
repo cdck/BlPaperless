@@ -434,7 +434,7 @@
     <string name="member_host">参会人（主持人）：</string>
     <string name="member_secretary">参会人（秘书）：</string>
     <string name="member_admin">参会人（管理员）：</string>
-    <string name="please_choose_member">请先选择一个参会人</string>
+    <string name="please_choose_member">请先选择参会人</string>
     <string name="please_check_wps">请先安装WPS软件</string>
     <string name="update_now_or_not">无纸化新版安装包已下载完毕，是否立即安装？</string>
     <string name="new_ip_address">IP地址：</string>
@@ -609,6 +609,7 @@
     <string name="file_download">文件下载</string>
     <string name="id">ID</string>
     <string name="please_choose_file_first">请先选择文件</string>
+    <string name="delete_check_in_record">删除签到记录</string>
 
 
     <string-array name="role_spinner">

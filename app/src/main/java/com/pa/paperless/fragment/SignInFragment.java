@@ -1,11 +1,13 @@
 package com.pa.paperless.fragment;
 
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
 import android.text.TextUtils;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
@@ -14,6 +16,7 @@ import com.pa.paperless.utils.LogUtil;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -25,7 +28,7 @@ import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.mogujie.tt.protobuf.InterfaceSignin;
 import com.pa.boling.paperless.R;
-import com.pa.paperless.adapter.rvadapter.SigninLvAdapter;
+import com.pa.paperless.adapter.rvadapter.SignInLvAdapter;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.bean.SignInBean;
 import com.pa.paperless.utils.ConvertUtil;
@@ -47,12 +50,11 @@ import java.util.List;
 public class SignInFragment extends BaseFragment implements View.OnClickListener {
     private final String TAG = "SignInFragment-->";
     private ListView mSigninLv;
-    private List<SignInBean> mDatas;
-    private SigninLvAdapter signinLvAdapter;
+    private List<SignInBean> mDatas = new ArrayList<>();
+    private SignInLvAdapter signinLvAdapter;
     private TextView count_tv, signed_in_tv, not_sign_in_tv;
     private Button back_btn;
-    private List<InterfaceMember.pbui_Item_MemberDetailInfo> memberInfos;
-    private List<Integer> filterMembers = new ArrayList<>();
+    private List<InterfaceMember.pbui_Item_MemberDetailInfo> memberInfos = new ArrayList<>();
 
     @Nullable
     @Override
@@ -69,12 +71,6 @@ public class SignInFragment extends BaseFragment implements View.OnClickListener
         LogUtil.i(TAG, "fun_placeDeviceRankingInfo ");
         InterfaceRoom.pbui_Type_MeetRoomDevSeatDetailInfo info = jni.placeDeviceRankingInfo(roomId);
         if (info == null) return;
-        filterMembers.clear();
-        for (InterfaceRoom.pbui_Item_MeetRoomDevSeatDetailInfo item : info.getItemList()) {
-            if (item.getRole() == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary_VALUE) {
-                filterMembers.add(item.getMemberid());
-            }
-        }
         fun_queryAttendPeople();
     }
 
@@ -86,22 +82,21 @@ public class SignInFragment extends BaseFragment implements View.OnClickListener
                 clean();
                 return;
             }
-            if (memberInfos == null) memberInfos = new ArrayList<>();
-            else memberInfos.clear();
-            List<InterfaceMember.pbui_Item_MemberDetailInfo> itemList = o.getItemList();
-            for (InterfaceMember.pbui_Item_MemberDetailInfo item : itemList) {
-                if (!filterMembers.contains(item.getPersonid())) {
-                    memberInfos.add(item);
-                }
-            }
+            memberInfos.clear();
+            memberInfos.addAll(o.getItemList());
             if (!memberInfos.isEmpty()) {
-                if (mDatas == null) mDatas = new ArrayList<>();
-                else mDatas.clear();
+                mDatas.clear();
                 /** ************ ******  206.查询签到信息  ****** ************ **/
                 for (int i = 0; i < memberInfos.size(); i++) {
                     mDatas.add(new SignInBean(memberInfos.get(i).getPersonid(), String.valueOf(mDatas.size() + 1), memberInfos.get(i).getName().toStringUtf8(), "", 0));
                 }
-                fun_querySign();
+                if (!fun_querySign()) {
+                    int isSignIn = 0;
+                    signed_in_tv.setText(getString(R.string.already_signed_in_count, isSignIn + ""));
+                    not_sign_in_tv.setText(getString(R.string.no_sign_in_count, mDatas.size() - isSignIn + ""));
+                    count_tv.setText(getString(R.string.should_be_to_count, mDatas.size() + ""));
+                    initAdapter();
+                }
             } else {
                 clean();
             }
@@ -110,21 +105,22 @@ public class SignInFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
-    private void fun_querySign() {
+    private boolean fun_querySign() {
         try {
             InterfaceSignin.pbui_Type_MeetSignInDetailInfo object1 = jni.querySign();
-            if (object1 == null) return;
+            if (object1 == null) {
+                return false;
+            }
             List<InterfaceSignin.pbui_Item_MeetSignInDetailInfo> itemList = object1.getItemList();
             int isSignIn = 0;
             for (int i = 0; i < itemList.size(); i++) {
                 InterfaceSignin.pbui_Item_MeetSignInDetailInfo item = itemList.get(i);
                 int nameId = item.getNameId();
-                if (filterMembers.contains(nameId)) continue;
                 int signinType = item.getSigninType();
                 long utcseconds = item.getUtcseconds();
                 int type = item.getSigninType();
-                String[] gtmDate = DateUtil.getDate(utcseconds * 1000);
-                String dateTime = gtmDate[0] + "  " + gtmDate[2];
+                String dateTime = DateUtil.getSignInTime(utcseconds);
+                LogUtil.e(TAG, "nameId=" + nameId + ",时间=" + dateTime);
                 ByteString psigndata = item.getPsigndata();
                 for (int j = 0; j < mDatas.size(); j++) {
                     SignInBean bean = mDatas.get(j);
@@ -143,18 +139,29 @@ public class SignInFragment extends BaseFragment implements View.OnClickListener
             signed_in_tv.setText(getString(R.string.already_signed_in_count, isSignIn + ""));
             not_sign_in_tv.setText(getString(R.string.no_sign_in_count, mDatas.size() - isSignIn + ""));
             count_tv.setText(getString(R.string.should_be_to_count, mDatas.size() + ""));
-            if (signinLvAdapter == null) {
-                signinLvAdapter = new SigninLvAdapter(getActivity(), mDatas);
-                mSigninLv.setAdapter(signinLvAdapter);
-            } else {
-                signinLvAdapter.notifyDataSetChanged();
-            }
+            initAdapter();
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    private void initAdapter() {
+        if (signinLvAdapter == null) {
+            signinLvAdapter = new SignInLvAdapter(getActivity(), mDatas);
+            mSigninLv.setAdapter(signinLvAdapter);
             signinLvAdapter.setListener((posion, picdata) -> {
                 LogUtil.e(TAG, "SignInFragment.fun_querySign :  点击的索引 --> " + posion);
                 showPicPop(picdata);
             });
-        } catch (InvalidProtocolBufferException e) {
-            e.printStackTrace();
+            mSigninLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    signinLvAdapter.setSelected(mDatas.get(position).getId());
+                }
+            });
+        } else {
+            signinLvAdapter.notifyDataSetChanged();
         }
     }
 
@@ -171,7 +178,7 @@ public class SignInFragment extends BaseFragment implements View.OnClickListener
     public void getEventMessage(EventMessage message) throws InvalidProtocolBufferException {
         switch (message.getAction()) {
             case EventType.SIGN_CHANGE_INFORM://签到变更通知
-                fun_querySign();
+                fun_queryAttendPeople();
                 break;
             case EventType.SIGNIN_SEAT_INFORM://会场设备信息变更通知
                 fun_placeDeviceRankingInfo(Values.roomId);
@@ -198,6 +205,7 @@ public class SignInFragment extends BaseFragment implements View.OnClickListener
         signed_in_tv = inflate.findViewById(R.id.signed_in_tv);
         not_sign_in_tv = inflate.findViewById(R.id.not_sign_in_tv);
         back_btn.setOnClickListener(this);
+        inflate.findViewById(R.id.btn_delete).setOnClickListener(this);
     }
 
     @Override
@@ -205,6 +213,16 @@ public class SignInFragment extends BaseFragment implements View.OnClickListener
         switch (v.getId()) {
             case R.id.back_btn:
                 EventBus.getDefault().post(new EventMessage(EventType.SIGNIN_SEAT_FRAG));
+                break;
+            case R.id.btn_delete:
+                if (signinLvAdapter != null) {
+                    List<Integer> selectedIds = signinLvAdapter.getSelectedIds();
+                    if (selectedIds.isEmpty()) {
+                        ToastUtils.showShort(R.string.please_choose_member);
+                        return;
+                    }
+                    jni.deleteSign(selectedIds);
+                }
                 break;
         }
     }

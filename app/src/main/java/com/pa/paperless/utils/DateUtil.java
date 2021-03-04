@@ -72,6 +72,7 @@ public class DateUtil {
 
     /**
      * 转成时分秒 00::00:00
+     *
      * @param ms 单位：毫秒
      * @return
      */
@@ -112,22 +113,17 @@ public class DateUtil {
     }
 
     /**
-     * 月、星期、时间
      * day :01月01日  week:  星期四   time:  08:00
+     * 大写HH是24小时制，小写hh是12小时制
      *
-     * @param time 时间 单位是毫秒
-     * @return
+     * @param time 时间 单位秒
+     * @return eg: 2021-2-23 14:06:17
      */
-    public static String[] getDate(long time) {
-        Date date = new Date(time);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yy月dd日");
-        SimpleDateFormat weekFormat = new SimpleDateFormat("EEEE");
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-        String day = dateFormat.format(date);
-        String week = weekFormat.format(date);
-        String tim = timeFormat.format(date);
-        String[] dateStr = new String[]{day, week, tim};
-        return dateStr;
+    public static String getSignInTime(long time) {
+        Date date = new Date(time * 1000L);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateTime = dateFormat.format(date);
+        return dateTime;
     }
 
     /**

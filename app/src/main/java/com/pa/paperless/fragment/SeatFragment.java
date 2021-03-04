@@ -21,7 +21,6 @@ import android.widget.TextView;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceBase;
-import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.mogujie.tt.protobuf.InterfaceSignin;
@@ -67,7 +66,7 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
     private SeatHandler handler;
     private Timer timer;
     private TimerTask task;
-    private List<Integer> filterMembers = new ArrayList<>();
+//    private List<Integer> filterMembers = new ArrayList<>();
 
     public static class SeatHandler extends Handler {
 
@@ -129,9 +128,9 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
             if (o == null) return;
             List<InterfaceMember.pbui_Item_MemberDetailInfo> itemList = o.getItemList();
             for (int i = 0; i < itemList.size(); i++) {
-                if (!filterMembers.contains((itemList.get(i).getPersonid()))) {
+//                if (!filterMembers.contains((itemList.get(i).getPersonid()))) {
                     memberInfos.add(itemList.get(i));
-                }
+//                }
             }
             fun_querySign();
         } catch (InvalidProtocolBufferException e) {
@@ -149,11 +148,10 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
             for (int i = 0; i < itemList.size(); i++) {
                 InterfaceSignin.pbui_Item_MeetSignInDetailInfo item = itemList.get(i);
                 int nameId = item.getNameId();
-                if (filterMembers.contains(nameId)) continue;
+//                if (filterMembers.contains(nameId)) continue;
                 int signinType = item.getSigninType();
                 long utcseconds = item.getUtcseconds();
-                String[] gtmDate = DateUtil.getDate(utcseconds * 1000);
-                String dateTime = gtmDate[0] + "  " + gtmDate[2];
+                String dateTime = DateUtil.getSignInTime(utcseconds);
                 for (int j = 0; j < memberInfos.size(); j++) {
                     InterfaceMember.pbui_Item_MemberDetailInfo bean = memberInfos.get(j);
                     if (bean.getPersonid() == nameId) {
@@ -240,11 +238,11 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
         seatInfos.clear();
         seatInfos.addAll(info.getItemList());
         absolute.removeAllViews();
-        filterMembers.clear();
+//        filterMembers.clear();
         for (InterfaceRoom.pbui_Item_MeetRoomDevSeatDetailInfo item : seatInfos) {
-            if (item.getRole() == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary_VALUE) {
-                filterMembers.add(item.getMemberid());
-            }
+//            if (item.getRole() == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary_VALUE) {
+//                filterMembers.add(item.getMemberid());
+//            }
             addSeat(item);
         }
         fun_queryAttendPeople();

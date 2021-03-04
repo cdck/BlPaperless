@@ -18,7 +18,7 @@ public class Macro {
     /**
      * app各类文件存放路径 SD卡下
      */
-    public static final String root_dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/NETCONFIG";
+    public static final String root_dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/BOLING_PAPERLESS_NETCONFIG";
     public static final String logcat_dir = root_dir + "/Log";
 
     //下载的文件存放目录

@@ -1193,6 +1193,20 @@ public class NativeUtil {
     }
 
     /**
+     * 删除签到记录
+     *  meetingid 指定会议ID 0表示绑定的会议
+     * @param memberids 为空表示删除指定会议的全部人员签到
+     */
+    public void deleteSign(List<Integer> memberids) {
+        InterfaceSignin.pbui_Type_DoDeleteMeetSignIno build = InterfaceSignin.pbui_Type_DoDeleteMeetSignIno.newBuilder()
+                .addAllMemberids(memberids)
+                .setMeetingid(0)
+                .build();
+        call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETSIGN_VALUE, InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_DEL_VALUE,
+                build.toByteArray());
+    }
+
+    /**
      * 207.发送签到
      *
      * @param memberid 签到的人员ID,为0表示当前绑定的人员
@@ -1648,6 +1662,7 @@ public class NativeUtil {
     public native int call(int type, int iskeyframe, long pts, byte[] data);
 
     public static int COLOR_FORMAT;
+
     //JNI获取桌面、摄像头的参数
     //type 流类型
     //oper 参数标识 用于区分获取的数据类型
