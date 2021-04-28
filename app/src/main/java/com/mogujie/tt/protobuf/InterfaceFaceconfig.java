@@ -17,7 +17,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     int getFaceid();
 
@@ -26,7 +26,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     int getFlag();
 
@@ -35,7 +35,7 @@ public final class InterfaceFaceconfig {
      *字体大小
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 3;</code>
+     * <code>fixed32 fontsize = 3;</code>
      */
     int getFontsize();
 
@@ -44,7 +44,7 @@ public final class InterfaceFaceconfig {
      *字体rgba颜色
      * </pre>
      *
-     * <code>optional fixed32 color = 4;</code>
+     * <code>fixed32 color = 4;</code>
      */
     int getColor();
 
@@ -53,7 +53,7 @@ public final class InterfaceFaceconfig {
      *对齐 参见 Pb_FontAlignFlag
      * </pre>
      *
-     * <code>optional fixed32 align = 5;</code>
+     * <code>fixed32 align = 5;</code>
      */
     int getAlign();
 
@@ -62,7 +62,7 @@ public final class InterfaceFaceconfig {
      *字体属性 Pb_MeetFaceFontFlag
      * </pre>
      *
-     * <code>optional fixed32 fontflag = 6;</code>
+     * <code>fixed32 fontflag = 6;</code>
      */
     int getFontflag();
 
@@ -71,7 +71,7 @@ public final class InterfaceFaceconfig {
      *字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 7;</code>
+     * <code>bytes fontname = 7;</code>
      */
     com.google.protobuf.ByteString getFontname();
 
@@ -80,7 +80,7 @@ public final class InterfaceFaceconfig {
      *坐标 左上角x  (x * 100 / width)
      * </pre>
      *
-     * <code>optional float lx = 8;</code>
+     * <code>float lx = 8;</code>
      */
     float getLx();
 
@@ -89,7 +89,7 @@ public final class InterfaceFaceconfig {
      *坐标 左上角y  (y * 100 / height)
      * </pre>
      *
-     * <code>optional float ly = 9;</code>
+     * <code>float ly = 9;</code>
      */
     float getLy();
 
@@ -98,7 +98,7 @@ public final class InterfaceFaceconfig {
      *坐标 右下角x
      * </pre>
      *
-     * <code>optional float bx = 10;</code>
+     * <code>float bx = 10;</code>
      */
     float getBx();
 
@@ -107,7 +107,7 @@ public final class InterfaceFaceconfig {
      *坐标 右下角y
      * </pre>
      *
-     * <code>optional float by = 11;</code>
+     * <code>float by = 11;</code>
      */
     float getBy();
   }
@@ -133,7 +133,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     public int getFaceid() {
       return faceid_;
@@ -143,7 +143,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     private void setFaceid(int value) {
       
@@ -154,7 +154,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     private void clearFaceid() {
       
@@ -168,7 +168,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     public int getFlag() {
       return flag_;
@@ -178,7 +178,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     private void setFlag(int value) {
       
@@ -189,7 +189,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     private void clearFlag() {
       
@@ -203,7 +203,7 @@ public final class InterfaceFaceconfig {
      *字体大小
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 3;</code>
+     * <code>fixed32 fontsize = 3;</code>
      */
     public int getFontsize() {
       return fontsize_;
@@ -213,7 +213,7 @@ public final class InterfaceFaceconfig {
      *字体大小
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 3;</code>
+     * <code>fixed32 fontsize = 3;</code>
      */
     private void setFontsize(int value) {
       
@@ -224,7 +224,7 @@ public final class InterfaceFaceconfig {
      *字体大小
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 3;</code>
+     * <code>fixed32 fontsize = 3;</code>
      */
     private void clearFontsize() {
       
@@ -238,7 +238,7 @@ public final class InterfaceFaceconfig {
      *字体rgba颜色
      * </pre>
      *
-     * <code>optional fixed32 color = 4;</code>
+     * <code>fixed32 color = 4;</code>
      */
     public int getColor() {
       return color_;
@@ -248,7 +248,7 @@ public final class InterfaceFaceconfig {
      *字体rgba颜色
      * </pre>
      *
-     * <code>optional fixed32 color = 4;</code>
+     * <code>fixed32 color = 4;</code>
      */
     private void setColor(int value) {
       
@@ -259,7 +259,7 @@ public final class InterfaceFaceconfig {
      *字体rgba颜色
      * </pre>
      *
-     * <code>optional fixed32 color = 4;</code>
+     * <code>fixed32 color = 4;</code>
      */
     private void clearColor() {
       
@@ -273,7 +273,7 @@ public final class InterfaceFaceconfig {
      *对齐 参见 Pb_FontAlignFlag
      * </pre>
      *
-     * <code>optional fixed32 align = 5;</code>
+     * <code>fixed32 align = 5;</code>
      */
     public int getAlign() {
       return align_;
@@ -283,7 +283,7 @@ public final class InterfaceFaceconfig {
      *对齐 参见 Pb_FontAlignFlag
      * </pre>
      *
-     * <code>optional fixed32 align = 5;</code>
+     * <code>fixed32 align = 5;</code>
      */
     private void setAlign(int value) {
       
@@ -294,7 +294,7 @@ public final class InterfaceFaceconfig {
      *对齐 参见 Pb_FontAlignFlag
      * </pre>
      *
-     * <code>optional fixed32 align = 5;</code>
+     * <code>fixed32 align = 5;</code>
      */
     private void clearAlign() {
       
@@ -308,7 +308,7 @@ public final class InterfaceFaceconfig {
      *字体属性 Pb_MeetFaceFontFlag
      * </pre>
      *
-     * <code>optional fixed32 fontflag = 6;</code>
+     * <code>fixed32 fontflag = 6;</code>
      */
     public int getFontflag() {
       return fontflag_;
@@ -318,7 +318,7 @@ public final class InterfaceFaceconfig {
      *字体属性 Pb_MeetFaceFontFlag
      * </pre>
      *
-     * <code>optional fixed32 fontflag = 6;</code>
+     * <code>fixed32 fontflag = 6;</code>
      */
     private void setFontflag(int value) {
       
@@ -329,7 +329,7 @@ public final class InterfaceFaceconfig {
      *字体属性 Pb_MeetFaceFontFlag
      * </pre>
      *
-     * <code>optional fixed32 fontflag = 6;</code>
+     * <code>fixed32 fontflag = 6;</code>
      */
     private void clearFontflag() {
       
@@ -343,7 +343,7 @@ public final class InterfaceFaceconfig {
      *字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 7;</code>
+     * <code>bytes fontname = 7;</code>
      */
     public com.google.protobuf.ByteString getFontname() {
       return fontname_;
@@ -353,7 +353,7 @@ public final class InterfaceFaceconfig {
      *字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 7;</code>
+     * <code>bytes fontname = 7;</code>
      */
     private void setFontname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -367,7 +367,7 @@ public final class InterfaceFaceconfig {
      *字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 7;</code>
+     * <code>bytes fontname = 7;</code>
      */
     private void clearFontname() {
       
@@ -381,7 +381,7 @@ public final class InterfaceFaceconfig {
      *坐标 左上角x  (x * 100 / width)
      * </pre>
      *
-     * <code>optional float lx = 8;</code>
+     * <code>float lx = 8;</code>
      */
     public float getLx() {
       return lx_;
@@ -391,7 +391,7 @@ public final class InterfaceFaceconfig {
      *坐标 左上角x  (x * 100 / width)
      * </pre>
      *
-     * <code>optional float lx = 8;</code>
+     * <code>float lx = 8;</code>
      */
     private void setLx(float value) {
       
@@ -402,7 +402,7 @@ public final class InterfaceFaceconfig {
      *坐标 左上角x  (x * 100 / width)
      * </pre>
      *
-     * <code>optional float lx = 8;</code>
+     * <code>float lx = 8;</code>
      */
     private void clearLx() {
       
@@ -416,7 +416,7 @@ public final class InterfaceFaceconfig {
      *坐标 左上角y  (y * 100 / height)
      * </pre>
      *
-     * <code>optional float ly = 9;</code>
+     * <code>float ly = 9;</code>
      */
     public float getLy() {
       return ly_;
@@ -426,7 +426,7 @@ public final class InterfaceFaceconfig {
      *坐标 左上角y  (y * 100 / height)
      * </pre>
      *
-     * <code>optional float ly = 9;</code>
+     * <code>float ly = 9;</code>
      */
     private void setLy(float value) {
       
@@ -437,7 +437,7 @@ public final class InterfaceFaceconfig {
      *坐标 左上角y  (y * 100 / height)
      * </pre>
      *
-     * <code>optional float ly = 9;</code>
+     * <code>float ly = 9;</code>
      */
     private void clearLy() {
       
@@ -451,7 +451,7 @@ public final class InterfaceFaceconfig {
      *坐标 右下角x
      * </pre>
      *
-     * <code>optional float bx = 10;</code>
+     * <code>float bx = 10;</code>
      */
     public float getBx() {
       return bx_;
@@ -461,7 +461,7 @@ public final class InterfaceFaceconfig {
      *坐标 右下角x
      * </pre>
      *
-     * <code>optional float bx = 10;</code>
+     * <code>float bx = 10;</code>
      */
     private void setBx(float value) {
       
@@ -472,7 +472,7 @@ public final class InterfaceFaceconfig {
      *坐标 右下角x
      * </pre>
      *
-     * <code>optional float bx = 10;</code>
+     * <code>float bx = 10;</code>
      */
     private void clearBx() {
       
@@ -486,7 +486,7 @@ public final class InterfaceFaceconfig {
      *坐标 右下角y
      * </pre>
      *
-     * <code>optional float by = 11;</code>
+     * <code>float by = 11;</code>
      */
     public float getBy() {
       return by_;
@@ -496,7 +496,7 @@ public final class InterfaceFaceconfig {
      *坐标 右下角y
      * </pre>
      *
-     * <code>optional float by = 11;</code>
+     * <code>float by = 11;</code>
      */
     private void setBy(float value) {
       
@@ -507,7 +507,7 @@ public final class InterfaceFaceconfig {
      *坐标 右下角y
      * </pre>
      *
-     * <code>optional float by = 11;</code>
+     * <code>float by = 11;</code>
      */
     private void clearBy() {
       
@@ -605,6 +605,19 @@ public final class InterfaceFaceconfig {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FaceTextItemInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FaceTextItemInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FaceTextItemInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -695,7 +708,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public int getFaceid() {
         return instance.getFaceid();
@@ -705,7 +718,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public Builder setFaceid(int value) {
         copyOnWrite();
@@ -717,7 +730,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public Builder clearFaceid() {
         copyOnWrite();
@@ -730,7 +743,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -740,7 +753,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -752,7 +765,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -765,7 +778,7 @@ public final class InterfaceFaceconfig {
        *字体大小
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 3;</code>
+       * <code>fixed32 fontsize = 3;</code>
        */
       public int getFontsize() {
         return instance.getFontsize();
@@ -775,7 +788,7 @@ public final class InterfaceFaceconfig {
        *字体大小
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 3;</code>
+       * <code>fixed32 fontsize = 3;</code>
        */
       public Builder setFontsize(int value) {
         copyOnWrite();
@@ -787,7 +800,7 @@ public final class InterfaceFaceconfig {
        *字体大小
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 3;</code>
+       * <code>fixed32 fontsize = 3;</code>
        */
       public Builder clearFontsize() {
         copyOnWrite();
@@ -800,7 +813,7 @@ public final class InterfaceFaceconfig {
        *字体rgba颜色
        * </pre>
        *
-       * <code>optional fixed32 color = 4;</code>
+       * <code>fixed32 color = 4;</code>
        */
       public int getColor() {
         return instance.getColor();
@@ -810,7 +823,7 @@ public final class InterfaceFaceconfig {
        *字体rgba颜色
        * </pre>
        *
-       * <code>optional fixed32 color = 4;</code>
+       * <code>fixed32 color = 4;</code>
        */
       public Builder setColor(int value) {
         copyOnWrite();
@@ -822,7 +835,7 @@ public final class InterfaceFaceconfig {
        *字体rgba颜色
        * </pre>
        *
-       * <code>optional fixed32 color = 4;</code>
+       * <code>fixed32 color = 4;</code>
        */
       public Builder clearColor() {
         copyOnWrite();
@@ -835,7 +848,7 @@ public final class InterfaceFaceconfig {
        *对齐 参见 Pb_FontAlignFlag
        * </pre>
        *
-       * <code>optional fixed32 align = 5;</code>
+       * <code>fixed32 align = 5;</code>
        */
       public int getAlign() {
         return instance.getAlign();
@@ -845,7 +858,7 @@ public final class InterfaceFaceconfig {
        *对齐 参见 Pb_FontAlignFlag
        * </pre>
        *
-       * <code>optional fixed32 align = 5;</code>
+       * <code>fixed32 align = 5;</code>
        */
       public Builder setAlign(int value) {
         copyOnWrite();
@@ -857,7 +870,7 @@ public final class InterfaceFaceconfig {
        *对齐 参见 Pb_FontAlignFlag
        * </pre>
        *
-       * <code>optional fixed32 align = 5;</code>
+       * <code>fixed32 align = 5;</code>
        */
       public Builder clearAlign() {
         copyOnWrite();
@@ -870,7 +883,7 @@ public final class InterfaceFaceconfig {
        *字体属性 Pb_MeetFaceFontFlag
        * </pre>
        *
-       * <code>optional fixed32 fontflag = 6;</code>
+       * <code>fixed32 fontflag = 6;</code>
        */
       public int getFontflag() {
         return instance.getFontflag();
@@ -880,7 +893,7 @@ public final class InterfaceFaceconfig {
        *字体属性 Pb_MeetFaceFontFlag
        * </pre>
        *
-       * <code>optional fixed32 fontflag = 6;</code>
+       * <code>fixed32 fontflag = 6;</code>
        */
       public Builder setFontflag(int value) {
         copyOnWrite();
@@ -892,7 +905,7 @@ public final class InterfaceFaceconfig {
        *字体属性 Pb_MeetFaceFontFlag
        * </pre>
        *
-       * <code>optional fixed32 fontflag = 6;</code>
+       * <code>fixed32 fontflag = 6;</code>
        */
       public Builder clearFontflag() {
         copyOnWrite();
@@ -905,7 +918,7 @@ public final class InterfaceFaceconfig {
        *字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 7;</code>
+       * <code>bytes fontname = 7;</code>
        */
       public com.google.protobuf.ByteString getFontname() {
         return instance.getFontname();
@@ -915,7 +928,7 @@ public final class InterfaceFaceconfig {
        *字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 7;</code>
+       * <code>bytes fontname = 7;</code>
        */
       public Builder setFontname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -927,7 +940,7 @@ public final class InterfaceFaceconfig {
        *字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 7;</code>
+       * <code>bytes fontname = 7;</code>
        */
       public Builder clearFontname() {
         copyOnWrite();
@@ -940,7 +953,7 @@ public final class InterfaceFaceconfig {
        *坐标 左上角x  (x * 100 / width)
        * </pre>
        *
-       * <code>optional float lx = 8;</code>
+       * <code>float lx = 8;</code>
        */
       public float getLx() {
         return instance.getLx();
@@ -950,7 +963,7 @@ public final class InterfaceFaceconfig {
        *坐标 左上角x  (x * 100 / width)
        * </pre>
        *
-       * <code>optional float lx = 8;</code>
+       * <code>float lx = 8;</code>
        */
       public Builder setLx(float value) {
         copyOnWrite();
@@ -962,7 +975,7 @@ public final class InterfaceFaceconfig {
        *坐标 左上角x  (x * 100 / width)
        * </pre>
        *
-       * <code>optional float lx = 8;</code>
+       * <code>float lx = 8;</code>
        */
       public Builder clearLx() {
         copyOnWrite();
@@ -975,7 +988,7 @@ public final class InterfaceFaceconfig {
        *坐标 左上角y  (y * 100 / height)
        * </pre>
        *
-       * <code>optional float ly = 9;</code>
+       * <code>float ly = 9;</code>
        */
       public float getLy() {
         return instance.getLy();
@@ -985,7 +998,7 @@ public final class InterfaceFaceconfig {
        *坐标 左上角y  (y * 100 / height)
        * </pre>
        *
-       * <code>optional float ly = 9;</code>
+       * <code>float ly = 9;</code>
        */
       public Builder setLy(float value) {
         copyOnWrite();
@@ -997,7 +1010,7 @@ public final class InterfaceFaceconfig {
        *坐标 左上角y  (y * 100 / height)
        * </pre>
        *
-       * <code>optional float ly = 9;</code>
+       * <code>float ly = 9;</code>
        */
       public Builder clearLy() {
         copyOnWrite();
@@ -1010,7 +1023,7 @@ public final class InterfaceFaceconfig {
        *坐标 右下角x
        * </pre>
        *
-       * <code>optional float bx = 10;</code>
+       * <code>float bx = 10;</code>
        */
       public float getBx() {
         return instance.getBx();
@@ -1020,7 +1033,7 @@ public final class InterfaceFaceconfig {
        *坐标 右下角x
        * </pre>
        *
-       * <code>optional float bx = 10;</code>
+       * <code>float bx = 10;</code>
        */
       public Builder setBx(float value) {
         copyOnWrite();
@@ -1032,7 +1045,7 @@ public final class InterfaceFaceconfig {
        *坐标 右下角x
        * </pre>
        *
-       * <code>optional float bx = 10;</code>
+       * <code>float bx = 10;</code>
        */
       public Builder clearBx() {
         copyOnWrite();
@@ -1045,7 +1058,7 @@ public final class InterfaceFaceconfig {
        *坐标 右下角y
        * </pre>
        *
-       * <code>optional float by = 11;</code>
+       * <code>float by = 11;</code>
        */
       public float getBy() {
         return instance.getBy();
@@ -1055,7 +1068,7 @@ public final class InterfaceFaceconfig {
        *坐标 右下角y
        * </pre>
        *
-       * <code>optional float by = 11;</code>
+       * <code>float by = 11;</code>
        */
       public Builder setBy(float value) {
         copyOnWrite();
@@ -1067,7 +1080,7 @@ public final class InterfaceFaceconfig {
        *坐标 右下角y
        * </pre>
        *
-       * <code>optional float by = 11;</code>
+       * <code>float by = 11;</code>
        */
       public Builder clearBy() {
         copyOnWrite();
@@ -1077,6 +1090,7 @@ public final class InterfaceFaceconfig {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_FaceTextItemInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1208,6 +1222,7 @@ public final class InterfaceFaceconfig {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1252,7 +1267,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     int getFaceid();
 
@@ -1261,7 +1276,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     int getFlag();
 
@@ -1270,7 +1285,7 @@ public final class InterfaceFaceconfig {
      *项值
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     int getMediaid();
   }
@@ -1295,7 +1310,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     public int getFaceid() {
       return faceid_;
@@ -1305,7 +1320,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     private void setFaceid(int value) {
       
@@ -1316,7 +1331,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     private void clearFaceid() {
       
@@ -1330,7 +1345,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     public int getFlag() {
       return flag_;
@@ -1340,7 +1355,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     private void setFlag(int value) {
       
@@ -1351,7 +1366,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     private void clearFlag() {
       
@@ -1365,7 +1380,7 @@ public final class InterfaceFaceconfig {
      *项值
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -1375,7 +1390,7 @@ public final class InterfaceFaceconfig {
      *项值
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     private void setMediaid(int value) {
       
@@ -1386,7 +1401,7 @@ public final class InterfaceFaceconfig {
      *项值
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     private void clearMediaid() {
       
@@ -1427,6 +1442,19 @@ public final class InterfaceFaceconfig {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FacePictureItemInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FacePictureItemInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FacePictureItemInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1518,7 +1546,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public int getFaceid() {
         return instance.getFaceid();
@@ -1528,7 +1556,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public Builder setFaceid(int value) {
         copyOnWrite();
@@ -1540,7 +1568,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public Builder clearFaceid() {
         copyOnWrite();
@@ -1553,7 +1581,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -1563,7 +1591,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -1575,7 +1603,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -1588,7 +1616,7 @@ public final class InterfaceFaceconfig {
        *项值
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -1598,7 +1626,7 @@ public final class InterfaceFaceconfig {
        *项值
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -1610,7 +1638,7 @@ public final class InterfaceFaceconfig {
        *项值
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -1620,6 +1648,7 @@ public final class InterfaceFaceconfig {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_FacePictureItemInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1695,6 +1724,7 @@ public final class InterfaceFaceconfig {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1739,7 +1769,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     int getFaceid();
 
@@ -1748,7 +1778,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     int getFlag();
 
@@ -1757,7 +1787,7 @@ public final class InterfaceFaceconfig {
      *文本
      * </pre>
      *
-     * <code>optional bytes text = 3;</code>
+     * <code>bytes text = 3;</code>
      */
     com.google.protobuf.ByteString getText();
   }
@@ -1783,7 +1813,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     public int getFaceid() {
       return faceid_;
@@ -1793,7 +1823,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     private void setFaceid(int value) {
       
@@ -1804,7 +1834,7 @@ public final class InterfaceFaceconfig {
      *界面项ID 参见Pb_MeetFaceID
      * </pre>
      *
-     * <code>optional fixed32 faceid = 1;</code>
+     * <code>fixed32 faceid = 1;</code>
      */
     private void clearFaceid() {
       
@@ -1818,7 +1848,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     public int getFlag() {
       return flag_;
@@ -1828,7 +1858,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     private void setFlag(int value) {
       
@@ -1839,7 +1869,7 @@ public final class InterfaceFaceconfig {
      *属性值 参见Pb_MeetFaceFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     private void clearFlag() {
       
@@ -1853,7 +1883,7 @@ public final class InterfaceFaceconfig {
      *文本
      * </pre>
      *
-     * <code>optional bytes text = 3;</code>
+     * <code>bytes text = 3;</code>
      */
     public com.google.protobuf.ByteString getText() {
       return text_;
@@ -1863,7 +1893,7 @@ public final class InterfaceFaceconfig {
      *文本
      * </pre>
      *
-     * <code>optional bytes text = 3;</code>
+     * <code>bytes text = 3;</code>
      */
     private void setText(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1877,7 +1907,7 @@ public final class InterfaceFaceconfig {
      *文本
      * </pre>
      *
-     * <code>optional bytes text = 3;</code>
+     * <code>bytes text = 3;</code>
      */
     private void clearText() {
       
@@ -1918,6 +1948,19 @@ public final class InterfaceFaceconfig {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FaceOnlyTextItemInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FaceOnlyTextItemInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Item_FaceOnlyTextItemInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2009,7 +2052,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public int getFaceid() {
         return instance.getFaceid();
@@ -2019,7 +2062,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public Builder setFaceid(int value) {
         copyOnWrite();
@@ -2031,7 +2074,7 @@ public final class InterfaceFaceconfig {
        *界面项ID 参见Pb_MeetFaceID
        * </pre>
        *
-       * <code>optional fixed32 faceid = 1;</code>
+       * <code>fixed32 faceid = 1;</code>
        */
       public Builder clearFaceid() {
         copyOnWrite();
@@ -2044,7 +2087,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -2054,7 +2097,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -2066,7 +2109,7 @@ public final class InterfaceFaceconfig {
        *属性值 参见Pb_MeetFaceFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -2079,7 +2122,7 @@ public final class InterfaceFaceconfig {
        *文本
        * </pre>
        *
-       * <code>optional bytes text = 3;</code>
+       * <code>bytes text = 3;</code>
        */
       public com.google.protobuf.ByteString getText() {
         return instance.getText();
@@ -2089,7 +2132,7 @@ public final class InterfaceFaceconfig {
        *文本
        * </pre>
        *
-       * <code>optional bytes text = 3;</code>
+       * <code>bytes text = 3;</code>
        */
       public Builder setText(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2101,7 +2144,7 @@ public final class InterfaceFaceconfig {
        *文本
        * </pre>
        *
-       * <code>optional bytes text = 3;</code>
+       * <code>bytes text = 3;</code>
        */
       public Builder clearText() {
         copyOnWrite();
@@ -2111,6 +2154,7 @@ public final class InterfaceFaceconfig {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_FaceOnlyTextItemInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2186,6 +2230,7 @@ public final class InterfaceFaceconfig {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2681,6 +2726,19 @@ public final class InterfaceFaceconfig {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Type_FaceConfigInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Type_FaceConfigInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFaceconfig.pbui_Type_FaceConfigInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3061,6 +3119,7 @@ public final class InterfaceFaceconfig {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_FaceConfigInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3148,6 +3207,7 @@ public final class InterfaceFaceconfig {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

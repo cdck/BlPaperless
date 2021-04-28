@@ -165,6 +165,19 @@ public final class InterfaceStop {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetStopResWork parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetStopResWork parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetStopResWork parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -338,6 +351,7 @@ public final class InterfaceStop {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetStopResWork)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -416,6 +430,7 @@ public final class InterfaceStop {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -460,7 +475,7 @@ public final class InterfaceStop {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     int getPlayflag();
 
@@ -469,7 +484,7 @@ public final class InterfaceStop {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     int getTriggeruserval();
 
@@ -550,7 +565,7 @@ public final class InterfaceStop {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     public int getPlayflag() {
       return playflag_;
@@ -560,7 +575,7 @@ public final class InterfaceStop {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     private void setPlayflag(int value) {
       
@@ -571,7 +586,7 @@ public final class InterfaceStop {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     private void clearPlayflag() {
       
@@ -585,7 +600,7 @@ public final class InterfaceStop {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -595,7 +610,7 @@ public final class InterfaceStop {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -606,7 +621,7 @@ public final class InterfaceStop {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     private void clearTriggeruserval() {
       
@@ -832,6 +847,19 @@ public final class InterfaceStop {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetDoStopResWork parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetDoStopResWork parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetDoStopResWork parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -925,7 +953,7 @@ public final class InterfaceStop {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public int getPlayflag() {
         return instance.getPlayflag();
@@ -935,7 +963,7 @@ public final class InterfaceStop {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public Builder setPlayflag(int value) {
         copyOnWrite();
@@ -947,7 +975,7 @@ public final class InterfaceStop {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public Builder clearPlayflag() {
         copyOnWrite();
@@ -960,7 +988,7 @@ public final class InterfaceStop {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -970,7 +998,7 @@ public final class InterfaceStop {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -982,7 +1010,7 @@ public final class InterfaceStop {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -1158,6 +1186,7 @@ public final class InterfaceStop {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoStopResWork)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1275,6 +1304,7 @@ public final class InterfaceStop {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1319,7 +1349,7 @@ public final class InterfaceStop {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     int getPlayflag();
 
@@ -1328,7 +1358,7 @@ public final class InterfaceStop {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     int getTriggeruserval();
 
@@ -1337,7 +1367,7 @@ public final class InterfaceStop {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 3;</code>
+     * <code>fixed32 triggerid = 3;</code>
      */
     int getTriggerid();
 
@@ -1392,7 +1422,7 @@ public final class InterfaceStop {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     public int getPlayflag() {
       return playflag_;
@@ -1402,7 +1432,7 @@ public final class InterfaceStop {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     private void setPlayflag(int value) {
       
@@ -1413,7 +1443,7 @@ public final class InterfaceStop {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     private void clearPlayflag() {
       
@@ -1427,7 +1457,7 @@ public final class InterfaceStop {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -1437,7 +1467,7 @@ public final class InterfaceStop {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -1448,7 +1478,7 @@ public final class InterfaceStop {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     private void clearTriggeruserval() {
       
@@ -1462,7 +1492,7 @@ public final class InterfaceStop {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 3;</code>
+     * <code>fixed32 triggerid = 3;</code>
      */
     public int getTriggerid() {
       return triggerid_;
@@ -1472,7 +1502,7 @@ public final class InterfaceStop {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 3;</code>
+     * <code>fixed32 triggerid = 3;</code>
      */
     private void setTriggerid(int value) {
       
@@ -1483,7 +1513,7 @@ public final class InterfaceStop {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 3;</code>
+     * <code>fixed32 triggerid = 3;</code>
      */
     private void clearTriggerid() {
       
@@ -1621,6 +1651,19 @@ public final class InterfaceStop {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetDoStopTrrigerWork parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetDoStopTrrigerWork parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetDoStopTrrigerWork parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1714,7 +1757,7 @@ public final class InterfaceStop {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public int getPlayflag() {
         return instance.getPlayflag();
@@ -1724,7 +1767,7 @@ public final class InterfaceStop {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public Builder setPlayflag(int value) {
         copyOnWrite();
@@ -1736,7 +1779,7 @@ public final class InterfaceStop {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public Builder clearPlayflag() {
         copyOnWrite();
@@ -1749,7 +1792,7 @@ public final class InterfaceStop {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -1759,7 +1802,7 @@ public final class InterfaceStop {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -1771,7 +1814,7 @@ public final class InterfaceStop {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -1784,7 +1827,7 @@ public final class InterfaceStop {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 3;</code>
+       * <code>fixed32 triggerid = 3;</code>
        */
       public int getTriggerid() {
         return instance.getTriggerid();
@@ -1794,7 +1837,7 @@ public final class InterfaceStop {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 3;</code>
+       * <code>fixed32 triggerid = 3;</code>
        */
       public Builder setTriggerid(int value) {
         copyOnWrite();
@@ -1806,7 +1849,7 @@ public final class InterfaceStop {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 3;</code>
+       * <code>fixed32 triggerid = 3;</code>
        */
       public Builder clearTriggerid() {
         copyOnWrite();
@@ -1899,6 +1942,7 @@ public final class InterfaceStop {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoStopTrrigerWork)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1999,6 +2043,7 @@ public final class InterfaceStop {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2043,7 +2088,7 @@ public final class InterfaceStop {
      *停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     int getTriggerid();
 
@@ -2052,7 +2097,7 @@ public final class InterfaceStop {
      *创建该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     int getCreatedeviceid();
 
@@ -2061,7 +2106,7 @@ public final class InterfaceStop {
      *停止的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 3;</code>
+     * <code>fixed32 res = 3;</code>
      */
     int getRes();
   }
@@ -2089,7 +2134,7 @@ public final class InterfaceStop {
      *停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     public int getTriggerid() {
       return triggerid_;
@@ -2099,7 +2144,7 @@ public final class InterfaceStop {
      *停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     private void setTriggerid(int value) {
       
@@ -2110,7 +2155,7 @@ public final class InterfaceStop {
      *停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     private void clearTriggerid() {
       
@@ -2124,7 +2169,7 @@ public final class InterfaceStop {
      *创建该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     public int getCreatedeviceid() {
       return createdeviceid_;
@@ -2134,7 +2179,7 @@ public final class InterfaceStop {
      *创建该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     private void setCreatedeviceid(int value) {
       
@@ -2145,7 +2190,7 @@ public final class InterfaceStop {
      *创建该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     private void clearCreatedeviceid() {
       
@@ -2159,7 +2204,7 @@ public final class InterfaceStop {
      *停止的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 3;</code>
+     * <code>fixed32 res = 3;</code>
      */
     public int getRes() {
       return res_;
@@ -2169,7 +2214,7 @@ public final class InterfaceStop {
      *停止的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 3;</code>
+     * <code>fixed32 res = 3;</code>
      */
     private void setRes(int value) {
       
@@ -2180,7 +2225,7 @@ public final class InterfaceStop {
      *停止的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 3;</code>
+     * <code>fixed32 res = 3;</code>
      */
     private void clearRes() {
       
@@ -2221,6 +2266,19 @@ public final class InterfaceStop {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetStopPlay parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetStopPlay parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStop.pbui_Type_MeetStopPlay parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2315,7 +2373,7 @@ public final class InterfaceStop {
        *停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public int getTriggerid() {
         return instance.getTriggerid();
@@ -2325,7 +2383,7 @@ public final class InterfaceStop {
        *停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public Builder setTriggerid(int value) {
         copyOnWrite();
@@ -2337,7 +2395,7 @@ public final class InterfaceStop {
        *停止的触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public Builder clearTriggerid() {
         copyOnWrite();
@@ -2350,7 +2408,7 @@ public final class InterfaceStop {
        *创建该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public int getCreatedeviceid() {
         return instance.getCreatedeviceid();
@@ -2360,7 +2418,7 @@ public final class InterfaceStop {
        *创建该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public Builder setCreatedeviceid(int value) {
         copyOnWrite();
@@ -2372,7 +2430,7 @@ public final class InterfaceStop {
        *创建该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public Builder clearCreatedeviceid() {
         copyOnWrite();
@@ -2385,7 +2443,7 @@ public final class InterfaceStop {
        *停止的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 3;</code>
+       * <code>fixed32 res = 3;</code>
        */
       public int getRes() {
         return instance.getRes();
@@ -2395,7 +2453,7 @@ public final class InterfaceStop {
        *停止的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 3;</code>
+       * <code>fixed32 res = 3;</code>
        */
       public Builder setRes(int value) {
         copyOnWrite();
@@ -2407,7 +2465,7 @@ public final class InterfaceStop {
        *停止的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 3;</code>
+       * <code>fixed32 res = 3;</code>
        */
       public Builder clearRes() {
         copyOnWrite();
@@ -2417,6 +2475,7 @@ public final class InterfaceStop {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetStopPlay)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2492,6 +2551,7 @@ public final class InterfaceStop {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

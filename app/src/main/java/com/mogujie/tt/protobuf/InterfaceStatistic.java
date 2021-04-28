@@ -17,7 +17,7 @@ public final class InterfaceStatistic {
      *会议ID 为0表示查询当前会议
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     int getMeetingid();
   }
@@ -45,7 +45,7 @@ public final class InterfaceStatistic {
      *会议ID 为0表示查询当前会议
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     public int getMeetingid() {
       return meetingid_;
@@ -55,7 +55,7 @@ public final class InterfaceStatistic {
      *会议ID 为0表示查询当前会议
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     private void setMeetingid(int value) {
       
@@ -66,7 +66,7 @@ public final class InterfaceStatistic {
      *会议ID 为0表示查询当前会议
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     private void clearMeetingid() {
       
@@ -93,6 +93,19 @@ public final class InterfaceStatistic {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetDoReqStatistic parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetDoReqStatistic parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetDoReqStatistic parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -187,7 +200,7 @@ public final class InterfaceStatistic {
        *会议ID 为0表示查询当前会议
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public int getMeetingid() {
         return instance.getMeetingid();
@@ -197,7 +210,7 @@ public final class InterfaceStatistic {
        *会议ID 为0表示查询当前会议
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public Builder setMeetingid(int value) {
         copyOnWrite();
@@ -209,7 +222,7 @@ public final class InterfaceStatistic {
        *会议ID 为0表示查询当前会议
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public Builder clearMeetingid() {
         copyOnWrite();
@@ -219,6 +232,7 @@ public final class InterfaceStatistic {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoReqStatistic)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -280,6 +294,7 @@ public final class InterfaceStatistic {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -324,7 +339,7 @@ public final class InterfaceStatistic {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     int getMeetingid();
 
@@ -333,7 +348,7 @@ public final class InterfaceStatistic {
      *会议名称
      * </pre>
      *
-     * <code>optional bytes meetname = 2;</code>
+     * <code>bytes meetname = 2;</code>
      */
     com.google.protobuf.ByteString getMeetname();
 
@@ -342,7 +357,7 @@ public final class InterfaceStatistic {
      *流请求数
      * </pre>
      *
-     * <code>optional fixed32 streamgetcount = 3;</code>
+     * <code>fixed32 streamgetcount = 3;</code>
      */
     int getStreamgetcount();
 
@@ -351,7 +366,7 @@ public final class InterfaceStatistic {
      *同屏请求数
      * </pre>
      *
-     * <code>optional fixed32 screengetcount = 4;</code>
+     * <code>fixed32 screengetcount = 4;</code>
      */
     int getScreengetcount();
 
@@ -360,7 +375,7 @@ public final class InterfaceStatistic {
      *文件请求数
      * </pre>
      *
-     * <code>optional fixed32 filegetcount = 5;</code>
+     * <code>fixed32 filegetcount = 5;</code>
      */
     int getFilegetcount();
 
@@ -369,7 +384,7 @@ public final class InterfaceStatistic {
      *交流次数
      * </pre>
      *
-     * <code>optional fixed32 chatcount = 6;</code>
+     * <code>fixed32 chatcount = 6;</code>
      */
     int getChatcount();
 
@@ -378,7 +393,7 @@ public final class InterfaceStatistic {
      *服务请求数
      * </pre>
      *
-     * <code>optional fixed32 servicegetcount = 7;</code>
+     * <code>fixed32 servicegetcount = 7;</code>
      */
     int getServicegetcount();
 
@@ -387,7 +402,7 @@ public final class InterfaceStatistic {
      *白板发起次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardopencount = 8;</code>
+     * <code>fixed32 whiteboardopencount = 8;</code>
      */
     int getWhiteboardopencount();
 
@@ -396,7 +411,7 @@ public final class InterfaceStatistic {
      *白板交流次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardusecount = 9;</code>
+     * <code>fixed32 whiteboardusecount = 9;</code>
      */
     int getWhiteboardusecount();
 
@@ -405,7 +420,7 @@ public final class InterfaceStatistic {
      *投票发起次数
      * </pre>
      *
-     * <code>optional fixed32 votecount = 10;</code>
+     * <code>fixed32 votecount = 10;</code>
      */
     int getVotecount();
 
@@ -414,7 +429,7 @@ public final class InterfaceStatistic {
      *选举发起次数
      * </pre>
      *
-     * <code>optional fixed32 electioncount = 11;</code>
+     * <code>fixed32 electioncount = 11;</code>
      */
     int getElectioncount();
 
@@ -423,7 +438,7 @@ public final class InterfaceStatistic {
      *问卷调查发起次数
      * </pre>
      *
-     * <code>optional fixed32 questioncount = 12;</code>
+     * <code>fixed32 questioncount = 12;</code>
      */
     int getQuestioncount();
 
@@ -432,7 +447,7 @@ public final class InterfaceStatistic {
      *公告发起次数
      * </pre>
      *
-     * <code>optional fixed32 bulletcount = 13;</code>
+     * <code>fixed32 bulletcount = 13;</code>
      */
     int getBulletcount();
 
@@ -441,7 +456,7 @@ public final class InterfaceStatistic {
      *创建时间 秒
      * </pre>
      *
-     * <code>optional fixed64 addtime = 14;</code>
+     * <code>fixed64 addtime = 14;</code>
      */
     long getAddtime();
   }
@@ -470,7 +485,7 @@ public final class InterfaceStatistic {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     public int getMeetingid() {
       return meetingid_;
@@ -480,7 +495,7 @@ public final class InterfaceStatistic {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     private void setMeetingid(int value) {
       
@@ -491,7 +506,7 @@ public final class InterfaceStatistic {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     private void clearMeetingid() {
       
@@ -505,7 +520,7 @@ public final class InterfaceStatistic {
      *会议名称
      * </pre>
      *
-     * <code>optional bytes meetname = 2;</code>
+     * <code>bytes meetname = 2;</code>
      */
     public com.google.protobuf.ByteString getMeetname() {
       return meetname_;
@@ -515,7 +530,7 @@ public final class InterfaceStatistic {
      *会议名称
      * </pre>
      *
-     * <code>optional bytes meetname = 2;</code>
+     * <code>bytes meetname = 2;</code>
      */
     private void setMeetname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -529,7 +544,7 @@ public final class InterfaceStatistic {
      *会议名称
      * </pre>
      *
-     * <code>optional bytes meetname = 2;</code>
+     * <code>bytes meetname = 2;</code>
      */
     private void clearMeetname() {
       
@@ -543,7 +558,7 @@ public final class InterfaceStatistic {
      *流请求数
      * </pre>
      *
-     * <code>optional fixed32 streamgetcount = 3;</code>
+     * <code>fixed32 streamgetcount = 3;</code>
      */
     public int getStreamgetcount() {
       return streamgetcount_;
@@ -553,7 +568,7 @@ public final class InterfaceStatistic {
      *流请求数
      * </pre>
      *
-     * <code>optional fixed32 streamgetcount = 3;</code>
+     * <code>fixed32 streamgetcount = 3;</code>
      */
     private void setStreamgetcount(int value) {
       
@@ -564,7 +579,7 @@ public final class InterfaceStatistic {
      *流请求数
      * </pre>
      *
-     * <code>optional fixed32 streamgetcount = 3;</code>
+     * <code>fixed32 streamgetcount = 3;</code>
      */
     private void clearStreamgetcount() {
       
@@ -578,7 +593,7 @@ public final class InterfaceStatistic {
      *同屏请求数
      * </pre>
      *
-     * <code>optional fixed32 screengetcount = 4;</code>
+     * <code>fixed32 screengetcount = 4;</code>
      */
     public int getScreengetcount() {
       return screengetcount_;
@@ -588,7 +603,7 @@ public final class InterfaceStatistic {
      *同屏请求数
      * </pre>
      *
-     * <code>optional fixed32 screengetcount = 4;</code>
+     * <code>fixed32 screengetcount = 4;</code>
      */
     private void setScreengetcount(int value) {
       
@@ -599,7 +614,7 @@ public final class InterfaceStatistic {
      *同屏请求数
      * </pre>
      *
-     * <code>optional fixed32 screengetcount = 4;</code>
+     * <code>fixed32 screengetcount = 4;</code>
      */
     private void clearScreengetcount() {
       
@@ -613,7 +628,7 @@ public final class InterfaceStatistic {
      *文件请求数
      * </pre>
      *
-     * <code>optional fixed32 filegetcount = 5;</code>
+     * <code>fixed32 filegetcount = 5;</code>
      */
     public int getFilegetcount() {
       return filegetcount_;
@@ -623,7 +638,7 @@ public final class InterfaceStatistic {
      *文件请求数
      * </pre>
      *
-     * <code>optional fixed32 filegetcount = 5;</code>
+     * <code>fixed32 filegetcount = 5;</code>
      */
     private void setFilegetcount(int value) {
       
@@ -634,7 +649,7 @@ public final class InterfaceStatistic {
      *文件请求数
      * </pre>
      *
-     * <code>optional fixed32 filegetcount = 5;</code>
+     * <code>fixed32 filegetcount = 5;</code>
      */
     private void clearFilegetcount() {
       
@@ -648,7 +663,7 @@ public final class InterfaceStatistic {
      *交流次数
      * </pre>
      *
-     * <code>optional fixed32 chatcount = 6;</code>
+     * <code>fixed32 chatcount = 6;</code>
      */
     public int getChatcount() {
       return chatcount_;
@@ -658,7 +673,7 @@ public final class InterfaceStatistic {
      *交流次数
      * </pre>
      *
-     * <code>optional fixed32 chatcount = 6;</code>
+     * <code>fixed32 chatcount = 6;</code>
      */
     private void setChatcount(int value) {
       
@@ -669,7 +684,7 @@ public final class InterfaceStatistic {
      *交流次数
      * </pre>
      *
-     * <code>optional fixed32 chatcount = 6;</code>
+     * <code>fixed32 chatcount = 6;</code>
      */
     private void clearChatcount() {
       
@@ -683,7 +698,7 @@ public final class InterfaceStatistic {
      *服务请求数
      * </pre>
      *
-     * <code>optional fixed32 servicegetcount = 7;</code>
+     * <code>fixed32 servicegetcount = 7;</code>
      */
     public int getServicegetcount() {
       return servicegetcount_;
@@ -693,7 +708,7 @@ public final class InterfaceStatistic {
      *服务请求数
      * </pre>
      *
-     * <code>optional fixed32 servicegetcount = 7;</code>
+     * <code>fixed32 servicegetcount = 7;</code>
      */
     private void setServicegetcount(int value) {
       
@@ -704,7 +719,7 @@ public final class InterfaceStatistic {
      *服务请求数
      * </pre>
      *
-     * <code>optional fixed32 servicegetcount = 7;</code>
+     * <code>fixed32 servicegetcount = 7;</code>
      */
     private void clearServicegetcount() {
       
@@ -718,7 +733,7 @@ public final class InterfaceStatistic {
      *白板发起次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardopencount = 8;</code>
+     * <code>fixed32 whiteboardopencount = 8;</code>
      */
     public int getWhiteboardopencount() {
       return whiteboardopencount_;
@@ -728,7 +743,7 @@ public final class InterfaceStatistic {
      *白板发起次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardopencount = 8;</code>
+     * <code>fixed32 whiteboardopencount = 8;</code>
      */
     private void setWhiteboardopencount(int value) {
       
@@ -739,7 +754,7 @@ public final class InterfaceStatistic {
      *白板发起次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardopencount = 8;</code>
+     * <code>fixed32 whiteboardopencount = 8;</code>
      */
     private void clearWhiteboardopencount() {
       
@@ -753,7 +768,7 @@ public final class InterfaceStatistic {
      *白板交流次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardusecount = 9;</code>
+     * <code>fixed32 whiteboardusecount = 9;</code>
      */
     public int getWhiteboardusecount() {
       return whiteboardusecount_;
@@ -763,7 +778,7 @@ public final class InterfaceStatistic {
      *白板交流次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardusecount = 9;</code>
+     * <code>fixed32 whiteboardusecount = 9;</code>
      */
     private void setWhiteboardusecount(int value) {
       
@@ -774,7 +789,7 @@ public final class InterfaceStatistic {
      *白板交流次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardusecount = 9;</code>
+     * <code>fixed32 whiteboardusecount = 9;</code>
      */
     private void clearWhiteboardusecount() {
       
@@ -788,7 +803,7 @@ public final class InterfaceStatistic {
      *投票发起次数
      * </pre>
      *
-     * <code>optional fixed32 votecount = 10;</code>
+     * <code>fixed32 votecount = 10;</code>
      */
     public int getVotecount() {
       return votecount_;
@@ -798,7 +813,7 @@ public final class InterfaceStatistic {
      *投票发起次数
      * </pre>
      *
-     * <code>optional fixed32 votecount = 10;</code>
+     * <code>fixed32 votecount = 10;</code>
      */
     private void setVotecount(int value) {
       
@@ -809,7 +824,7 @@ public final class InterfaceStatistic {
      *投票发起次数
      * </pre>
      *
-     * <code>optional fixed32 votecount = 10;</code>
+     * <code>fixed32 votecount = 10;</code>
      */
     private void clearVotecount() {
       
@@ -823,7 +838,7 @@ public final class InterfaceStatistic {
      *选举发起次数
      * </pre>
      *
-     * <code>optional fixed32 electioncount = 11;</code>
+     * <code>fixed32 electioncount = 11;</code>
      */
     public int getElectioncount() {
       return electioncount_;
@@ -833,7 +848,7 @@ public final class InterfaceStatistic {
      *选举发起次数
      * </pre>
      *
-     * <code>optional fixed32 electioncount = 11;</code>
+     * <code>fixed32 electioncount = 11;</code>
      */
     private void setElectioncount(int value) {
       
@@ -844,7 +859,7 @@ public final class InterfaceStatistic {
      *选举发起次数
      * </pre>
      *
-     * <code>optional fixed32 electioncount = 11;</code>
+     * <code>fixed32 electioncount = 11;</code>
      */
     private void clearElectioncount() {
       
@@ -858,7 +873,7 @@ public final class InterfaceStatistic {
      *问卷调查发起次数
      * </pre>
      *
-     * <code>optional fixed32 questioncount = 12;</code>
+     * <code>fixed32 questioncount = 12;</code>
      */
     public int getQuestioncount() {
       return questioncount_;
@@ -868,7 +883,7 @@ public final class InterfaceStatistic {
      *问卷调查发起次数
      * </pre>
      *
-     * <code>optional fixed32 questioncount = 12;</code>
+     * <code>fixed32 questioncount = 12;</code>
      */
     private void setQuestioncount(int value) {
       
@@ -879,7 +894,7 @@ public final class InterfaceStatistic {
      *问卷调查发起次数
      * </pre>
      *
-     * <code>optional fixed32 questioncount = 12;</code>
+     * <code>fixed32 questioncount = 12;</code>
      */
     private void clearQuestioncount() {
       
@@ -893,7 +908,7 @@ public final class InterfaceStatistic {
      *公告发起次数
      * </pre>
      *
-     * <code>optional fixed32 bulletcount = 13;</code>
+     * <code>fixed32 bulletcount = 13;</code>
      */
     public int getBulletcount() {
       return bulletcount_;
@@ -903,7 +918,7 @@ public final class InterfaceStatistic {
      *公告发起次数
      * </pre>
      *
-     * <code>optional fixed32 bulletcount = 13;</code>
+     * <code>fixed32 bulletcount = 13;</code>
      */
     private void setBulletcount(int value) {
       
@@ -914,7 +929,7 @@ public final class InterfaceStatistic {
      *公告发起次数
      * </pre>
      *
-     * <code>optional fixed32 bulletcount = 13;</code>
+     * <code>fixed32 bulletcount = 13;</code>
      */
     private void clearBulletcount() {
       
@@ -928,7 +943,7 @@ public final class InterfaceStatistic {
      *创建时间 秒
      * </pre>
      *
-     * <code>optional fixed64 addtime = 14;</code>
+     * <code>fixed64 addtime = 14;</code>
      */
     public long getAddtime() {
       return addtime_;
@@ -938,7 +953,7 @@ public final class InterfaceStatistic {
      *创建时间 秒
      * </pre>
      *
-     * <code>optional fixed64 addtime = 14;</code>
+     * <code>fixed64 addtime = 14;</code>
      */
     private void setAddtime(long value) {
       
@@ -949,7 +964,7 @@ public final class InterfaceStatistic {
      *创建时间 秒
      * </pre>
      *
-     * <code>optional fixed64 addtime = 14;</code>
+     * <code>fixed64 addtime = 14;</code>
      */
     private void clearAddtime() {
       
@@ -1068,6 +1083,19 @@ public final class InterfaceStatistic {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetStatisticInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetStatisticInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetStatisticInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1161,7 +1189,7 @@ public final class InterfaceStatistic {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public int getMeetingid() {
         return instance.getMeetingid();
@@ -1171,7 +1199,7 @@ public final class InterfaceStatistic {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public Builder setMeetingid(int value) {
         copyOnWrite();
@@ -1183,7 +1211,7 @@ public final class InterfaceStatistic {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public Builder clearMeetingid() {
         copyOnWrite();
@@ -1196,7 +1224,7 @@ public final class InterfaceStatistic {
        *会议名称
        * </pre>
        *
-       * <code>optional bytes meetname = 2;</code>
+       * <code>bytes meetname = 2;</code>
        */
       public com.google.protobuf.ByteString getMeetname() {
         return instance.getMeetname();
@@ -1206,7 +1234,7 @@ public final class InterfaceStatistic {
        *会议名称
        * </pre>
        *
-       * <code>optional bytes meetname = 2;</code>
+       * <code>bytes meetname = 2;</code>
        */
       public Builder setMeetname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1218,7 +1246,7 @@ public final class InterfaceStatistic {
        *会议名称
        * </pre>
        *
-       * <code>optional bytes meetname = 2;</code>
+       * <code>bytes meetname = 2;</code>
        */
       public Builder clearMeetname() {
         copyOnWrite();
@@ -1231,7 +1259,7 @@ public final class InterfaceStatistic {
        *流请求数
        * </pre>
        *
-       * <code>optional fixed32 streamgetcount = 3;</code>
+       * <code>fixed32 streamgetcount = 3;</code>
        */
       public int getStreamgetcount() {
         return instance.getStreamgetcount();
@@ -1241,7 +1269,7 @@ public final class InterfaceStatistic {
        *流请求数
        * </pre>
        *
-       * <code>optional fixed32 streamgetcount = 3;</code>
+       * <code>fixed32 streamgetcount = 3;</code>
        */
       public Builder setStreamgetcount(int value) {
         copyOnWrite();
@@ -1253,7 +1281,7 @@ public final class InterfaceStatistic {
        *流请求数
        * </pre>
        *
-       * <code>optional fixed32 streamgetcount = 3;</code>
+       * <code>fixed32 streamgetcount = 3;</code>
        */
       public Builder clearStreamgetcount() {
         copyOnWrite();
@@ -1266,7 +1294,7 @@ public final class InterfaceStatistic {
        *同屏请求数
        * </pre>
        *
-       * <code>optional fixed32 screengetcount = 4;</code>
+       * <code>fixed32 screengetcount = 4;</code>
        */
       public int getScreengetcount() {
         return instance.getScreengetcount();
@@ -1276,7 +1304,7 @@ public final class InterfaceStatistic {
        *同屏请求数
        * </pre>
        *
-       * <code>optional fixed32 screengetcount = 4;</code>
+       * <code>fixed32 screengetcount = 4;</code>
        */
       public Builder setScreengetcount(int value) {
         copyOnWrite();
@@ -1288,7 +1316,7 @@ public final class InterfaceStatistic {
        *同屏请求数
        * </pre>
        *
-       * <code>optional fixed32 screengetcount = 4;</code>
+       * <code>fixed32 screengetcount = 4;</code>
        */
       public Builder clearScreengetcount() {
         copyOnWrite();
@@ -1301,7 +1329,7 @@ public final class InterfaceStatistic {
        *文件请求数
        * </pre>
        *
-       * <code>optional fixed32 filegetcount = 5;</code>
+       * <code>fixed32 filegetcount = 5;</code>
        */
       public int getFilegetcount() {
         return instance.getFilegetcount();
@@ -1311,7 +1339,7 @@ public final class InterfaceStatistic {
        *文件请求数
        * </pre>
        *
-       * <code>optional fixed32 filegetcount = 5;</code>
+       * <code>fixed32 filegetcount = 5;</code>
        */
       public Builder setFilegetcount(int value) {
         copyOnWrite();
@@ -1323,7 +1351,7 @@ public final class InterfaceStatistic {
        *文件请求数
        * </pre>
        *
-       * <code>optional fixed32 filegetcount = 5;</code>
+       * <code>fixed32 filegetcount = 5;</code>
        */
       public Builder clearFilegetcount() {
         copyOnWrite();
@@ -1336,7 +1364,7 @@ public final class InterfaceStatistic {
        *交流次数
        * </pre>
        *
-       * <code>optional fixed32 chatcount = 6;</code>
+       * <code>fixed32 chatcount = 6;</code>
        */
       public int getChatcount() {
         return instance.getChatcount();
@@ -1346,7 +1374,7 @@ public final class InterfaceStatistic {
        *交流次数
        * </pre>
        *
-       * <code>optional fixed32 chatcount = 6;</code>
+       * <code>fixed32 chatcount = 6;</code>
        */
       public Builder setChatcount(int value) {
         copyOnWrite();
@@ -1358,7 +1386,7 @@ public final class InterfaceStatistic {
        *交流次数
        * </pre>
        *
-       * <code>optional fixed32 chatcount = 6;</code>
+       * <code>fixed32 chatcount = 6;</code>
        */
       public Builder clearChatcount() {
         copyOnWrite();
@@ -1371,7 +1399,7 @@ public final class InterfaceStatistic {
        *服务请求数
        * </pre>
        *
-       * <code>optional fixed32 servicegetcount = 7;</code>
+       * <code>fixed32 servicegetcount = 7;</code>
        */
       public int getServicegetcount() {
         return instance.getServicegetcount();
@@ -1381,7 +1409,7 @@ public final class InterfaceStatistic {
        *服务请求数
        * </pre>
        *
-       * <code>optional fixed32 servicegetcount = 7;</code>
+       * <code>fixed32 servicegetcount = 7;</code>
        */
       public Builder setServicegetcount(int value) {
         copyOnWrite();
@@ -1393,7 +1421,7 @@ public final class InterfaceStatistic {
        *服务请求数
        * </pre>
        *
-       * <code>optional fixed32 servicegetcount = 7;</code>
+       * <code>fixed32 servicegetcount = 7;</code>
        */
       public Builder clearServicegetcount() {
         copyOnWrite();
@@ -1406,7 +1434,7 @@ public final class InterfaceStatistic {
        *白板发起次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardopencount = 8;</code>
+       * <code>fixed32 whiteboardopencount = 8;</code>
        */
       public int getWhiteboardopencount() {
         return instance.getWhiteboardopencount();
@@ -1416,7 +1444,7 @@ public final class InterfaceStatistic {
        *白板发起次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardopencount = 8;</code>
+       * <code>fixed32 whiteboardopencount = 8;</code>
        */
       public Builder setWhiteboardopencount(int value) {
         copyOnWrite();
@@ -1428,7 +1456,7 @@ public final class InterfaceStatistic {
        *白板发起次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardopencount = 8;</code>
+       * <code>fixed32 whiteboardopencount = 8;</code>
        */
       public Builder clearWhiteboardopencount() {
         copyOnWrite();
@@ -1441,7 +1469,7 @@ public final class InterfaceStatistic {
        *白板交流次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardusecount = 9;</code>
+       * <code>fixed32 whiteboardusecount = 9;</code>
        */
       public int getWhiteboardusecount() {
         return instance.getWhiteboardusecount();
@@ -1451,7 +1479,7 @@ public final class InterfaceStatistic {
        *白板交流次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardusecount = 9;</code>
+       * <code>fixed32 whiteboardusecount = 9;</code>
        */
       public Builder setWhiteboardusecount(int value) {
         copyOnWrite();
@@ -1463,7 +1491,7 @@ public final class InterfaceStatistic {
        *白板交流次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardusecount = 9;</code>
+       * <code>fixed32 whiteboardusecount = 9;</code>
        */
       public Builder clearWhiteboardusecount() {
         copyOnWrite();
@@ -1476,7 +1504,7 @@ public final class InterfaceStatistic {
        *投票发起次数
        * </pre>
        *
-       * <code>optional fixed32 votecount = 10;</code>
+       * <code>fixed32 votecount = 10;</code>
        */
       public int getVotecount() {
         return instance.getVotecount();
@@ -1486,7 +1514,7 @@ public final class InterfaceStatistic {
        *投票发起次数
        * </pre>
        *
-       * <code>optional fixed32 votecount = 10;</code>
+       * <code>fixed32 votecount = 10;</code>
        */
       public Builder setVotecount(int value) {
         copyOnWrite();
@@ -1498,7 +1526,7 @@ public final class InterfaceStatistic {
        *投票发起次数
        * </pre>
        *
-       * <code>optional fixed32 votecount = 10;</code>
+       * <code>fixed32 votecount = 10;</code>
        */
       public Builder clearVotecount() {
         copyOnWrite();
@@ -1511,7 +1539,7 @@ public final class InterfaceStatistic {
        *选举发起次数
        * </pre>
        *
-       * <code>optional fixed32 electioncount = 11;</code>
+       * <code>fixed32 electioncount = 11;</code>
        */
       public int getElectioncount() {
         return instance.getElectioncount();
@@ -1521,7 +1549,7 @@ public final class InterfaceStatistic {
        *选举发起次数
        * </pre>
        *
-       * <code>optional fixed32 electioncount = 11;</code>
+       * <code>fixed32 electioncount = 11;</code>
        */
       public Builder setElectioncount(int value) {
         copyOnWrite();
@@ -1533,7 +1561,7 @@ public final class InterfaceStatistic {
        *选举发起次数
        * </pre>
        *
-       * <code>optional fixed32 electioncount = 11;</code>
+       * <code>fixed32 electioncount = 11;</code>
        */
       public Builder clearElectioncount() {
         copyOnWrite();
@@ -1546,7 +1574,7 @@ public final class InterfaceStatistic {
        *问卷调查发起次数
        * </pre>
        *
-       * <code>optional fixed32 questioncount = 12;</code>
+       * <code>fixed32 questioncount = 12;</code>
        */
       public int getQuestioncount() {
         return instance.getQuestioncount();
@@ -1556,7 +1584,7 @@ public final class InterfaceStatistic {
        *问卷调查发起次数
        * </pre>
        *
-       * <code>optional fixed32 questioncount = 12;</code>
+       * <code>fixed32 questioncount = 12;</code>
        */
       public Builder setQuestioncount(int value) {
         copyOnWrite();
@@ -1568,7 +1596,7 @@ public final class InterfaceStatistic {
        *问卷调查发起次数
        * </pre>
        *
-       * <code>optional fixed32 questioncount = 12;</code>
+       * <code>fixed32 questioncount = 12;</code>
        */
       public Builder clearQuestioncount() {
         copyOnWrite();
@@ -1581,7 +1609,7 @@ public final class InterfaceStatistic {
        *公告发起次数
        * </pre>
        *
-       * <code>optional fixed32 bulletcount = 13;</code>
+       * <code>fixed32 bulletcount = 13;</code>
        */
       public int getBulletcount() {
         return instance.getBulletcount();
@@ -1591,7 +1619,7 @@ public final class InterfaceStatistic {
        *公告发起次数
        * </pre>
        *
-       * <code>optional fixed32 bulletcount = 13;</code>
+       * <code>fixed32 bulletcount = 13;</code>
        */
       public Builder setBulletcount(int value) {
         copyOnWrite();
@@ -1603,7 +1631,7 @@ public final class InterfaceStatistic {
        *公告发起次数
        * </pre>
        *
-       * <code>optional fixed32 bulletcount = 13;</code>
+       * <code>fixed32 bulletcount = 13;</code>
        */
       public Builder clearBulletcount() {
         copyOnWrite();
@@ -1616,7 +1644,7 @@ public final class InterfaceStatistic {
        *创建时间 秒
        * </pre>
        *
-       * <code>optional fixed64 addtime = 14;</code>
+       * <code>fixed64 addtime = 14;</code>
        */
       public long getAddtime() {
         return instance.getAddtime();
@@ -1626,7 +1654,7 @@ public final class InterfaceStatistic {
        *创建时间 秒
        * </pre>
        *
-       * <code>optional fixed64 addtime = 14;</code>
+       * <code>fixed64 addtime = 14;</code>
        */
       public Builder setAddtime(long value) {
         copyOnWrite();
@@ -1638,7 +1666,7 @@ public final class InterfaceStatistic {
        *创建时间 秒
        * </pre>
        *
-       * <code>optional fixed64 addtime = 14;</code>
+       * <code>fixed64 addtime = 14;</code>
        */
       public Builder clearAddtime() {
         copyOnWrite();
@@ -1648,6 +1676,7 @@ public final class InterfaceStatistic {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetStatisticInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1800,6 +1829,7 @@ public final class InterfaceStatistic {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1844,7 +1874,7 @@ public final class InterfaceStatistic {
      *参见 Pb_MeetStatisticFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 quartertype = 1;</code>
+     * <code>fixed32 quartertype = 1;</code>
      */
     int getQuartertype();
 
@@ -1853,7 +1883,7 @@ public final class InterfaceStatistic {
      *统计时间段
      * </pre>
      *
-     * <code>optional fixed32 startyear = 2;</code>
+     * <code>fixed32 startyear = 2;</code>
      */
     int getStartyear();
 
@@ -1862,7 +1892,7 @@ public final class InterfaceStatistic {
      *&#47;/按月查询才有效
      * </pre>
      *
-     * <code>optional fixed32 startmonth = 3;</code>
+     * <code>fixed32 startmonth = 3;</code>
      */
     int getStartmonth();
 
@@ -1870,7 +1900,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endyear = 4;</code>
+     * <code>fixed32 endyear = 4;</code>
      */
     int getEndyear();
 
@@ -1879,7 +1909,7 @@ public final class InterfaceStatistic {
      *&#47;/按月查询才有效
      * </pre>
      *
-     * <code>optional fixed32 endmonth = 5;</code>
+     * <code>fixed32 endmonth = 5;</code>
      */
     int getEndmonth();
   }
@@ -1907,7 +1937,7 @@ public final class InterfaceStatistic {
      *参见 Pb_MeetStatisticFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 quartertype = 1;</code>
+     * <code>fixed32 quartertype = 1;</code>
      */
     public int getQuartertype() {
       return quartertype_;
@@ -1917,7 +1947,7 @@ public final class InterfaceStatistic {
      *参见 Pb_MeetStatisticFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 quartertype = 1;</code>
+     * <code>fixed32 quartertype = 1;</code>
      */
     private void setQuartertype(int value) {
       
@@ -1928,7 +1958,7 @@ public final class InterfaceStatistic {
      *参见 Pb_MeetStatisticFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 quartertype = 1;</code>
+     * <code>fixed32 quartertype = 1;</code>
      */
     private void clearQuartertype() {
       
@@ -1942,7 +1972,7 @@ public final class InterfaceStatistic {
      *统计时间段
      * </pre>
      *
-     * <code>optional fixed32 startyear = 2;</code>
+     * <code>fixed32 startyear = 2;</code>
      */
     public int getStartyear() {
       return startyear_;
@@ -1952,7 +1982,7 @@ public final class InterfaceStatistic {
      *统计时间段
      * </pre>
      *
-     * <code>optional fixed32 startyear = 2;</code>
+     * <code>fixed32 startyear = 2;</code>
      */
     private void setStartyear(int value) {
       
@@ -1963,7 +1993,7 @@ public final class InterfaceStatistic {
      *统计时间段
      * </pre>
      *
-     * <code>optional fixed32 startyear = 2;</code>
+     * <code>fixed32 startyear = 2;</code>
      */
     private void clearStartyear() {
       
@@ -1977,7 +2007,7 @@ public final class InterfaceStatistic {
      *&#47;/按月查询才有效
      * </pre>
      *
-     * <code>optional fixed32 startmonth = 3;</code>
+     * <code>fixed32 startmonth = 3;</code>
      */
     public int getStartmonth() {
       return startmonth_;
@@ -1987,7 +2017,7 @@ public final class InterfaceStatistic {
      *&#47;/按月查询才有效
      * </pre>
      *
-     * <code>optional fixed32 startmonth = 3;</code>
+     * <code>fixed32 startmonth = 3;</code>
      */
     private void setStartmonth(int value) {
       
@@ -1998,7 +2028,7 @@ public final class InterfaceStatistic {
      *&#47;/按月查询才有效
      * </pre>
      *
-     * <code>optional fixed32 startmonth = 3;</code>
+     * <code>fixed32 startmonth = 3;</code>
      */
     private void clearStartmonth() {
       
@@ -2011,7 +2041,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endyear = 4;</code>
+     * <code>fixed32 endyear = 4;</code>
      */
     public int getEndyear() {
       return endyear_;
@@ -2020,7 +2050,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endyear = 4;</code>
+     * <code>fixed32 endyear = 4;</code>
      */
     private void setEndyear(int value) {
       
@@ -2030,7 +2060,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endyear = 4;</code>
+     * <code>fixed32 endyear = 4;</code>
      */
     private void clearEndyear() {
       
@@ -2044,7 +2074,7 @@ public final class InterfaceStatistic {
      *&#47;/按月查询才有效
      * </pre>
      *
-     * <code>optional fixed32 endmonth = 5;</code>
+     * <code>fixed32 endmonth = 5;</code>
      */
     public int getEndmonth() {
       return endmonth_;
@@ -2054,7 +2084,7 @@ public final class InterfaceStatistic {
      *&#47;/按月查询才有效
      * </pre>
      *
-     * <code>optional fixed32 endmonth = 5;</code>
+     * <code>fixed32 endmonth = 5;</code>
      */
     private void setEndmonth(int value) {
       
@@ -2065,7 +2095,7 @@ public final class InterfaceStatistic {
      *&#47;/按月查询才有效
      * </pre>
      *
-     * <code>optional fixed32 endmonth = 5;</code>
+     * <code>fixed32 endmonth = 5;</code>
      */
     private void clearEndmonth() {
       
@@ -2120,6 +2150,19 @@ public final class InterfaceStatistic {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_QueryQuarterStatistic parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_QueryQuarterStatistic parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_QueryQuarterStatistic parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2214,7 +2257,7 @@ public final class InterfaceStatistic {
        *参见 Pb_MeetStatisticFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 quartertype = 1;</code>
+       * <code>fixed32 quartertype = 1;</code>
        */
       public int getQuartertype() {
         return instance.getQuartertype();
@@ -2224,7 +2267,7 @@ public final class InterfaceStatistic {
        *参见 Pb_MeetStatisticFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 quartertype = 1;</code>
+       * <code>fixed32 quartertype = 1;</code>
        */
       public Builder setQuartertype(int value) {
         copyOnWrite();
@@ -2236,7 +2279,7 @@ public final class InterfaceStatistic {
        *参见 Pb_MeetStatisticFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 quartertype = 1;</code>
+       * <code>fixed32 quartertype = 1;</code>
        */
       public Builder clearQuartertype() {
         copyOnWrite();
@@ -2249,7 +2292,7 @@ public final class InterfaceStatistic {
        *统计时间段
        * </pre>
        *
-       * <code>optional fixed32 startyear = 2;</code>
+       * <code>fixed32 startyear = 2;</code>
        */
       public int getStartyear() {
         return instance.getStartyear();
@@ -2259,7 +2302,7 @@ public final class InterfaceStatistic {
        *统计时间段
        * </pre>
        *
-       * <code>optional fixed32 startyear = 2;</code>
+       * <code>fixed32 startyear = 2;</code>
        */
       public Builder setStartyear(int value) {
         copyOnWrite();
@@ -2271,7 +2314,7 @@ public final class InterfaceStatistic {
        *统计时间段
        * </pre>
        *
-       * <code>optional fixed32 startyear = 2;</code>
+       * <code>fixed32 startyear = 2;</code>
        */
       public Builder clearStartyear() {
         copyOnWrite();
@@ -2284,7 +2327,7 @@ public final class InterfaceStatistic {
        *&#47;/按月查询才有效
        * </pre>
        *
-       * <code>optional fixed32 startmonth = 3;</code>
+       * <code>fixed32 startmonth = 3;</code>
        */
       public int getStartmonth() {
         return instance.getStartmonth();
@@ -2294,7 +2337,7 @@ public final class InterfaceStatistic {
        *&#47;/按月查询才有效
        * </pre>
        *
-       * <code>optional fixed32 startmonth = 3;</code>
+       * <code>fixed32 startmonth = 3;</code>
        */
       public Builder setStartmonth(int value) {
         copyOnWrite();
@@ -2306,7 +2349,7 @@ public final class InterfaceStatistic {
        *&#47;/按月查询才有效
        * </pre>
        *
-       * <code>optional fixed32 startmonth = 3;</code>
+       * <code>fixed32 startmonth = 3;</code>
        */
       public Builder clearStartmonth() {
         copyOnWrite();
@@ -2318,7 +2361,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endyear = 4;</code>
+       * <code>fixed32 endyear = 4;</code>
        */
       public int getEndyear() {
         return instance.getEndyear();
@@ -2327,7 +2370,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endyear = 4;</code>
+       * <code>fixed32 endyear = 4;</code>
        */
       public Builder setEndyear(int value) {
         copyOnWrite();
@@ -2338,7 +2381,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endyear = 4;</code>
+       * <code>fixed32 endyear = 4;</code>
        */
       public Builder clearEndyear() {
         copyOnWrite();
@@ -2351,7 +2394,7 @@ public final class InterfaceStatistic {
        *&#47;/按月查询才有效
        * </pre>
        *
-       * <code>optional fixed32 endmonth = 5;</code>
+       * <code>fixed32 endmonth = 5;</code>
        */
       public int getEndmonth() {
         return instance.getEndmonth();
@@ -2361,7 +2404,7 @@ public final class InterfaceStatistic {
        *&#47;/按月查询才有效
        * </pre>
        *
-       * <code>optional fixed32 endmonth = 5;</code>
+       * <code>fixed32 endmonth = 5;</code>
        */
       public Builder setEndmonth(int value) {
         copyOnWrite();
@@ -2373,7 +2416,7 @@ public final class InterfaceStatistic {
        *&#47;/按月查询才有效
        * </pre>
        *
-       * <code>optional fixed32 endmonth = 5;</code>
+       * <code>fixed32 endmonth = 5;</code>
        */
       public Builder clearEndmonth() {
         copyOnWrite();
@@ -2383,6 +2426,7 @@ public final class InterfaceStatistic {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_QueryQuarterStatistic)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2472,6 +2516,7 @@ public final class InterfaceStatistic {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2516,7 +2561,7 @@ public final class InterfaceStatistic {
      *统计时间段
      * </pre>
      *
-     * <code>optional fixed32 startyear = 1;</code>
+     * <code>fixed32 startyear = 1;</code>
      */
     int getStartyear();
 
@@ -2524,7 +2569,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 startmonth = 2;</code>
+     * <code>fixed32 startmonth = 2;</code>
      */
     int getStartmonth();
 
@@ -2532,7 +2577,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endyear = 3;</code>
+     * <code>fixed32 endyear = 3;</code>
      */
     int getEndyear();
 
@@ -2540,7 +2585,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endmonth = 4;</code>
+     * <code>fixed32 endmonth = 4;</code>
      */
     int getEndmonth();
 
@@ -2549,7 +2594,7 @@ public final class InterfaceStatistic {
      *总会议数
      * </pre>
      *
-     * <code>optional fixed32 meetingcount = 5;</code>
+     * <code>fixed32 meetingcount = 5;</code>
      */
     int getMeetingcount();
 
@@ -2558,7 +2603,7 @@ public final class InterfaceStatistic {
      *总计数
      * </pre>
      *
-     * <code>optional fixed32 streamgetcount = 6;</code>
+     * <code>fixed32 streamgetcount = 6;</code>
      */
     int getStreamgetcount();
 
@@ -2567,7 +2612,7 @@ public final class InterfaceStatistic {
      *同屏请求数
      * </pre>
      *
-     * <code>optional fixed32 screengetcount = 7;</code>
+     * <code>fixed32 screengetcount = 7;</code>
      */
     int getScreengetcount();
 
@@ -2576,7 +2621,7 @@ public final class InterfaceStatistic {
      *文件请求数
      * </pre>
      *
-     * <code>optional fixed32 filegetcount = 8;</code>
+     * <code>fixed32 filegetcount = 8;</code>
      */
     int getFilegetcount();
 
@@ -2585,7 +2630,7 @@ public final class InterfaceStatistic {
      *交流次数
      * </pre>
      *
-     * <code>optional fixed32 chatcount = 9;</code>
+     * <code>fixed32 chatcount = 9;</code>
      */
     int getChatcount();
 
@@ -2594,7 +2639,7 @@ public final class InterfaceStatistic {
      *服务请求数
      * </pre>
      *
-     * <code>optional fixed32 servicegetcount = 10;</code>
+     * <code>fixed32 servicegetcount = 10;</code>
      */
     int getServicegetcount();
 
@@ -2603,7 +2648,7 @@ public final class InterfaceStatistic {
      *白板发起次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardopencount = 11;</code>
+     * <code>fixed32 whiteboardopencount = 11;</code>
      */
     int getWhiteboardopencount();
 
@@ -2612,7 +2657,7 @@ public final class InterfaceStatistic {
      *白板交流次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardusecount = 12;</code>
+     * <code>fixed32 whiteboardusecount = 12;</code>
      */
     int getWhiteboardusecount();
 
@@ -2621,7 +2666,7 @@ public final class InterfaceStatistic {
      *投票发起次数
      * </pre>
      *
-     * <code>optional fixed32 votecount = 13;</code>
+     * <code>fixed32 votecount = 13;</code>
      */
     int getVotecount();
 
@@ -2630,7 +2675,7 @@ public final class InterfaceStatistic {
      *选举发起次数
      * </pre>
      *
-     * <code>optional fixed32 electioncount = 14;</code>
+     * <code>fixed32 electioncount = 14;</code>
      */
     int getElectioncount();
 
@@ -2639,7 +2684,7 @@ public final class InterfaceStatistic {
      *问卷调查发起次数
      * </pre>
      *
-     * <code>optional fixed32 questioncount = 15;</code>
+     * <code>fixed32 questioncount = 15;</code>
      */
     int getQuestioncount();
 
@@ -2648,7 +2693,7 @@ public final class InterfaceStatistic {
      *公告发起次数
      * </pre>
      *
-     * <code>optional fixed32 bulletcount = 16;</code>
+     * <code>fixed32 bulletcount = 16;</code>
      */
     int getBulletcount();
   }
@@ -2669,7 +2714,7 @@ public final class InterfaceStatistic {
      *统计时间段
      * </pre>
      *
-     * <code>optional fixed32 startyear = 1;</code>
+     * <code>fixed32 startyear = 1;</code>
      */
     public int getStartyear() {
       return startyear_;
@@ -2679,7 +2724,7 @@ public final class InterfaceStatistic {
      *统计时间段
      * </pre>
      *
-     * <code>optional fixed32 startyear = 1;</code>
+     * <code>fixed32 startyear = 1;</code>
      */
     private void setStartyear(int value) {
       
@@ -2690,7 +2735,7 @@ public final class InterfaceStatistic {
      *统计时间段
      * </pre>
      *
-     * <code>optional fixed32 startyear = 1;</code>
+     * <code>fixed32 startyear = 1;</code>
      */
     private void clearStartyear() {
       
@@ -2703,7 +2748,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 startmonth = 2;</code>
+     * <code>fixed32 startmonth = 2;</code>
      */
     public int getStartmonth() {
       return startmonth_;
@@ -2712,7 +2757,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 startmonth = 2;</code>
+     * <code>fixed32 startmonth = 2;</code>
      */
     private void setStartmonth(int value) {
       
@@ -2722,7 +2767,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 startmonth = 2;</code>
+     * <code>fixed32 startmonth = 2;</code>
      */
     private void clearStartmonth() {
       
@@ -2735,7 +2780,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endyear = 3;</code>
+     * <code>fixed32 endyear = 3;</code>
      */
     public int getEndyear() {
       return endyear_;
@@ -2744,7 +2789,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endyear = 3;</code>
+     * <code>fixed32 endyear = 3;</code>
      */
     private void setEndyear(int value) {
       
@@ -2754,7 +2799,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endyear = 3;</code>
+     * <code>fixed32 endyear = 3;</code>
      */
     private void clearEndyear() {
       
@@ -2767,7 +2812,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endmonth = 4;</code>
+     * <code>fixed32 endmonth = 4;</code>
      */
     public int getEndmonth() {
       return endmonth_;
@@ -2776,7 +2821,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endmonth = 4;</code>
+     * <code>fixed32 endmonth = 4;</code>
      */
     private void setEndmonth(int value) {
       
@@ -2786,7 +2831,7 @@ public final class InterfaceStatistic {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 endmonth = 4;</code>
+     * <code>fixed32 endmonth = 4;</code>
      */
     private void clearEndmonth() {
       
@@ -2800,7 +2845,7 @@ public final class InterfaceStatistic {
      *总会议数
      * </pre>
      *
-     * <code>optional fixed32 meetingcount = 5;</code>
+     * <code>fixed32 meetingcount = 5;</code>
      */
     public int getMeetingcount() {
       return meetingcount_;
@@ -2810,7 +2855,7 @@ public final class InterfaceStatistic {
      *总会议数
      * </pre>
      *
-     * <code>optional fixed32 meetingcount = 5;</code>
+     * <code>fixed32 meetingcount = 5;</code>
      */
     private void setMeetingcount(int value) {
       
@@ -2821,7 +2866,7 @@ public final class InterfaceStatistic {
      *总会议数
      * </pre>
      *
-     * <code>optional fixed32 meetingcount = 5;</code>
+     * <code>fixed32 meetingcount = 5;</code>
      */
     private void clearMeetingcount() {
       
@@ -2835,7 +2880,7 @@ public final class InterfaceStatistic {
      *总计数
      * </pre>
      *
-     * <code>optional fixed32 streamgetcount = 6;</code>
+     * <code>fixed32 streamgetcount = 6;</code>
      */
     public int getStreamgetcount() {
       return streamgetcount_;
@@ -2845,7 +2890,7 @@ public final class InterfaceStatistic {
      *总计数
      * </pre>
      *
-     * <code>optional fixed32 streamgetcount = 6;</code>
+     * <code>fixed32 streamgetcount = 6;</code>
      */
     private void setStreamgetcount(int value) {
       
@@ -2856,7 +2901,7 @@ public final class InterfaceStatistic {
      *总计数
      * </pre>
      *
-     * <code>optional fixed32 streamgetcount = 6;</code>
+     * <code>fixed32 streamgetcount = 6;</code>
      */
     private void clearStreamgetcount() {
       
@@ -2870,7 +2915,7 @@ public final class InterfaceStatistic {
      *同屏请求数
      * </pre>
      *
-     * <code>optional fixed32 screengetcount = 7;</code>
+     * <code>fixed32 screengetcount = 7;</code>
      */
     public int getScreengetcount() {
       return screengetcount_;
@@ -2880,7 +2925,7 @@ public final class InterfaceStatistic {
      *同屏请求数
      * </pre>
      *
-     * <code>optional fixed32 screengetcount = 7;</code>
+     * <code>fixed32 screengetcount = 7;</code>
      */
     private void setScreengetcount(int value) {
       
@@ -2891,7 +2936,7 @@ public final class InterfaceStatistic {
      *同屏请求数
      * </pre>
      *
-     * <code>optional fixed32 screengetcount = 7;</code>
+     * <code>fixed32 screengetcount = 7;</code>
      */
     private void clearScreengetcount() {
       
@@ -2905,7 +2950,7 @@ public final class InterfaceStatistic {
      *文件请求数
      * </pre>
      *
-     * <code>optional fixed32 filegetcount = 8;</code>
+     * <code>fixed32 filegetcount = 8;</code>
      */
     public int getFilegetcount() {
       return filegetcount_;
@@ -2915,7 +2960,7 @@ public final class InterfaceStatistic {
      *文件请求数
      * </pre>
      *
-     * <code>optional fixed32 filegetcount = 8;</code>
+     * <code>fixed32 filegetcount = 8;</code>
      */
     private void setFilegetcount(int value) {
       
@@ -2926,7 +2971,7 @@ public final class InterfaceStatistic {
      *文件请求数
      * </pre>
      *
-     * <code>optional fixed32 filegetcount = 8;</code>
+     * <code>fixed32 filegetcount = 8;</code>
      */
     private void clearFilegetcount() {
       
@@ -2940,7 +2985,7 @@ public final class InterfaceStatistic {
      *交流次数
      * </pre>
      *
-     * <code>optional fixed32 chatcount = 9;</code>
+     * <code>fixed32 chatcount = 9;</code>
      */
     public int getChatcount() {
       return chatcount_;
@@ -2950,7 +2995,7 @@ public final class InterfaceStatistic {
      *交流次数
      * </pre>
      *
-     * <code>optional fixed32 chatcount = 9;</code>
+     * <code>fixed32 chatcount = 9;</code>
      */
     private void setChatcount(int value) {
       
@@ -2961,7 +3006,7 @@ public final class InterfaceStatistic {
      *交流次数
      * </pre>
      *
-     * <code>optional fixed32 chatcount = 9;</code>
+     * <code>fixed32 chatcount = 9;</code>
      */
     private void clearChatcount() {
       
@@ -2975,7 +3020,7 @@ public final class InterfaceStatistic {
      *服务请求数
      * </pre>
      *
-     * <code>optional fixed32 servicegetcount = 10;</code>
+     * <code>fixed32 servicegetcount = 10;</code>
      */
     public int getServicegetcount() {
       return servicegetcount_;
@@ -2985,7 +3030,7 @@ public final class InterfaceStatistic {
      *服务请求数
      * </pre>
      *
-     * <code>optional fixed32 servicegetcount = 10;</code>
+     * <code>fixed32 servicegetcount = 10;</code>
      */
     private void setServicegetcount(int value) {
       
@@ -2996,7 +3041,7 @@ public final class InterfaceStatistic {
      *服务请求数
      * </pre>
      *
-     * <code>optional fixed32 servicegetcount = 10;</code>
+     * <code>fixed32 servicegetcount = 10;</code>
      */
     private void clearServicegetcount() {
       
@@ -3010,7 +3055,7 @@ public final class InterfaceStatistic {
      *白板发起次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardopencount = 11;</code>
+     * <code>fixed32 whiteboardopencount = 11;</code>
      */
     public int getWhiteboardopencount() {
       return whiteboardopencount_;
@@ -3020,7 +3065,7 @@ public final class InterfaceStatistic {
      *白板发起次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardopencount = 11;</code>
+     * <code>fixed32 whiteboardopencount = 11;</code>
      */
     private void setWhiteboardopencount(int value) {
       
@@ -3031,7 +3076,7 @@ public final class InterfaceStatistic {
      *白板发起次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardopencount = 11;</code>
+     * <code>fixed32 whiteboardopencount = 11;</code>
      */
     private void clearWhiteboardopencount() {
       
@@ -3045,7 +3090,7 @@ public final class InterfaceStatistic {
      *白板交流次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardusecount = 12;</code>
+     * <code>fixed32 whiteboardusecount = 12;</code>
      */
     public int getWhiteboardusecount() {
       return whiteboardusecount_;
@@ -3055,7 +3100,7 @@ public final class InterfaceStatistic {
      *白板交流次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardusecount = 12;</code>
+     * <code>fixed32 whiteboardusecount = 12;</code>
      */
     private void setWhiteboardusecount(int value) {
       
@@ -3066,7 +3111,7 @@ public final class InterfaceStatistic {
      *白板交流次数
      * </pre>
      *
-     * <code>optional fixed32 whiteboardusecount = 12;</code>
+     * <code>fixed32 whiteboardusecount = 12;</code>
      */
     private void clearWhiteboardusecount() {
       
@@ -3080,7 +3125,7 @@ public final class InterfaceStatistic {
      *投票发起次数
      * </pre>
      *
-     * <code>optional fixed32 votecount = 13;</code>
+     * <code>fixed32 votecount = 13;</code>
      */
     public int getVotecount() {
       return votecount_;
@@ -3090,7 +3135,7 @@ public final class InterfaceStatistic {
      *投票发起次数
      * </pre>
      *
-     * <code>optional fixed32 votecount = 13;</code>
+     * <code>fixed32 votecount = 13;</code>
      */
     private void setVotecount(int value) {
       
@@ -3101,7 +3146,7 @@ public final class InterfaceStatistic {
      *投票发起次数
      * </pre>
      *
-     * <code>optional fixed32 votecount = 13;</code>
+     * <code>fixed32 votecount = 13;</code>
      */
     private void clearVotecount() {
       
@@ -3115,7 +3160,7 @@ public final class InterfaceStatistic {
      *选举发起次数
      * </pre>
      *
-     * <code>optional fixed32 electioncount = 14;</code>
+     * <code>fixed32 electioncount = 14;</code>
      */
     public int getElectioncount() {
       return electioncount_;
@@ -3125,7 +3170,7 @@ public final class InterfaceStatistic {
      *选举发起次数
      * </pre>
      *
-     * <code>optional fixed32 electioncount = 14;</code>
+     * <code>fixed32 electioncount = 14;</code>
      */
     private void setElectioncount(int value) {
       
@@ -3136,7 +3181,7 @@ public final class InterfaceStatistic {
      *选举发起次数
      * </pre>
      *
-     * <code>optional fixed32 electioncount = 14;</code>
+     * <code>fixed32 electioncount = 14;</code>
      */
     private void clearElectioncount() {
       
@@ -3150,7 +3195,7 @@ public final class InterfaceStatistic {
      *问卷调查发起次数
      * </pre>
      *
-     * <code>optional fixed32 questioncount = 15;</code>
+     * <code>fixed32 questioncount = 15;</code>
      */
     public int getQuestioncount() {
       return questioncount_;
@@ -3160,7 +3205,7 @@ public final class InterfaceStatistic {
      *问卷调查发起次数
      * </pre>
      *
-     * <code>optional fixed32 questioncount = 15;</code>
+     * <code>fixed32 questioncount = 15;</code>
      */
     private void setQuestioncount(int value) {
       
@@ -3171,7 +3216,7 @@ public final class InterfaceStatistic {
      *问卷调查发起次数
      * </pre>
      *
-     * <code>optional fixed32 questioncount = 15;</code>
+     * <code>fixed32 questioncount = 15;</code>
      */
     private void clearQuestioncount() {
       
@@ -3185,7 +3230,7 @@ public final class InterfaceStatistic {
      *公告发起次数
      * </pre>
      *
-     * <code>optional fixed32 bulletcount = 16;</code>
+     * <code>fixed32 bulletcount = 16;</code>
      */
     public int getBulletcount() {
       return bulletcount_;
@@ -3195,7 +3240,7 @@ public final class InterfaceStatistic {
      *公告发起次数
      * </pre>
      *
-     * <code>optional fixed32 bulletcount = 16;</code>
+     * <code>fixed32 bulletcount = 16;</code>
      */
     private void setBulletcount(int value) {
       
@@ -3206,7 +3251,7 @@ public final class InterfaceStatistic {
      *公告发起次数
      * </pre>
      *
-     * <code>optional fixed32 bulletcount = 16;</code>
+     * <code>fixed32 bulletcount = 16;</code>
      */
     private void clearBulletcount() {
       
@@ -3339,6 +3384,19 @@ public final class InterfaceStatistic {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Item_MeetOneStatistic parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Item_MeetOneStatistic parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Item_MeetOneStatistic parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3425,7 +3483,7 @@ public final class InterfaceStatistic {
        *统计时间段
        * </pre>
        *
-       * <code>optional fixed32 startyear = 1;</code>
+       * <code>fixed32 startyear = 1;</code>
        */
       public int getStartyear() {
         return instance.getStartyear();
@@ -3435,7 +3493,7 @@ public final class InterfaceStatistic {
        *统计时间段
        * </pre>
        *
-       * <code>optional fixed32 startyear = 1;</code>
+       * <code>fixed32 startyear = 1;</code>
        */
       public Builder setStartyear(int value) {
         copyOnWrite();
@@ -3447,7 +3505,7 @@ public final class InterfaceStatistic {
        *统计时间段
        * </pre>
        *
-       * <code>optional fixed32 startyear = 1;</code>
+       * <code>fixed32 startyear = 1;</code>
        */
       public Builder clearStartyear() {
         copyOnWrite();
@@ -3459,7 +3517,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 startmonth = 2;</code>
+       * <code>fixed32 startmonth = 2;</code>
        */
       public int getStartmonth() {
         return instance.getStartmonth();
@@ -3468,7 +3526,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 startmonth = 2;</code>
+       * <code>fixed32 startmonth = 2;</code>
        */
       public Builder setStartmonth(int value) {
         copyOnWrite();
@@ -3479,7 +3537,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 startmonth = 2;</code>
+       * <code>fixed32 startmonth = 2;</code>
        */
       public Builder clearStartmonth() {
         copyOnWrite();
@@ -3491,7 +3549,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endyear = 3;</code>
+       * <code>fixed32 endyear = 3;</code>
        */
       public int getEndyear() {
         return instance.getEndyear();
@@ -3500,7 +3558,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endyear = 3;</code>
+       * <code>fixed32 endyear = 3;</code>
        */
       public Builder setEndyear(int value) {
         copyOnWrite();
@@ -3511,7 +3569,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endyear = 3;</code>
+       * <code>fixed32 endyear = 3;</code>
        */
       public Builder clearEndyear() {
         copyOnWrite();
@@ -3523,7 +3581,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endmonth = 4;</code>
+       * <code>fixed32 endmonth = 4;</code>
        */
       public int getEndmonth() {
         return instance.getEndmonth();
@@ -3532,7 +3590,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endmonth = 4;</code>
+       * <code>fixed32 endmonth = 4;</code>
        */
       public Builder setEndmonth(int value) {
         copyOnWrite();
@@ -3543,7 +3601,7 @@ public final class InterfaceStatistic {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 endmonth = 4;</code>
+       * <code>fixed32 endmonth = 4;</code>
        */
       public Builder clearEndmonth() {
         copyOnWrite();
@@ -3556,7 +3614,7 @@ public final class InterfaceStatistic {
        *总会议数
        * </pre>
        *
-       * <code>optional fixed32 meetingcount = 5;</code>
+       * <code>fixed32 meetingcount = 5;</code>
        */
       public int getMeetingcount() {
         return instance.getMeetingcount();
@@ -3566,7 +3624,7 @@ public final class InterfaceStatistic {
        *总会议数
        * </pre>
        *
-       * <code>optional fixed32 meetingcount = 5;</code>
+       * <code>fixed32 meetingcount = 5;</code>
        */
       public Builder setMeetingcount(int value) {
         copyOnWrite();
@@ -3578,7 +3636,7 @@ public final class InterfaceStatistic {
        *总会议数
        * </pre>
        *
-       * <code>optional fixed32 meetingcount = 5;</code>
+       * <code>fixed32 meetingcount = 5;</code>
        */
       public Builder clearMeetingcount() {
         copyOnWrite();
@@ -3591,7 +3649,7 @@ public final class InterfaceStatistic {
        *总计数
        * </pre>
        *
-       * <code>optional fixed32 streamgetcount = 6;</code>
+       * <code>fixed32 streamgetcount = 6;</code>
        */
       public int getStreamgetcount() {
         return instance.getStreamgetcount();
@@ -3601,7 +3659,7 @@ public final class InterfaceStatistic {
        *总计数
        * </pre>
        *
-       * <code>optional fixed32 streamgetcount = 6;</code>
+       * <code>fixed32 streamgetcount = 6;</code>
        */
       public Builder setStreamgetcount(int value) {
         copyOnWrite();
@@ -3613,7 +3671,7 @@ public final class InterfaceStatistic {
        *总计数
        * </pre>
        *
-       * <code>optional fixed32 streamgetcount = 6;</code>
+       * <code>fixed32 streamgetcount = 6;</code>
        */
       public Builder clearStreamgetcount() {
         copyOnWrite();
@@ -3626,7 +3684,7 @@ public final class InterfaceStatistic {
        *同屏请求数
        * </pre>
        *
-       * <code>optional fixed32 screengetcount = 7;</code>
+       * <code>fixed32 screengetcount = 7;</code>
        */
       public int getScreengetcount() {
         return instance.getScreengetcount();
@@ -3636,7 +3694,7 @@ public final class InterfaceStatistic {
        *同屏请求数
        * </pre>
        *
-       * <code>optional fixed32 screengetcount = 7;</code>
+       * <code>fixed32 screengetcount = 7;</code>
        */
       public Builder setScreengetcount(int value) {
         copyOnWrite();
@@ -3648,7 +3706,7 @@ public final class InterfaceStatistic {
        *同屏请求数
        * </pre>
        *
-       * <code>optional fixed32 screengetcount = 7;</code>
+       * <code>fixed32 screengetcount = 7;</code>
        */
       public Builder clearScreengetcount() {
         copyOnWrite();
@@ -3661,7 +3719,7 @@ public final class InterfaceStatistic {
        *文件请求数
        * </pre>
        *
-       * <code>optional fixed32 filegetcount = 8;</code>
+       * <code>fixed32 filegetcount = 8;</code>
        */
       public int getFilegetcount() {
         return instance.getFilegetcount();
@@ -3671,7 +3729,7 @@ public final class InterfaceStatistic {
        *文件请求数
        * </pre>
        *
-       * <code>optional fixed32 filegetcount = 8;</code>
+       * <code>fixed32 filegetcount = 8;</code>
        */
       public Builder setFilegetcount(int value) {
         copyOnWrite();
@@ -3683,7 +3741,7 @@ public final class InterfaceStatistic {
        *文件请求数
        * </pre>
        *
-       * <code>optional fixed32 filegetcount = 8;</code>
+       * <code>fixed32 filegetcount = 8;</code>
        */
       public Builder clearFilegetcount() {
         copyOnWrite();
@@ -3696,7 +3754,7 @@ public final class InterfaceStatistic {
        *交流次数
        * </pre>
        *
-       * <code>optional fixed32 chatcount = 9;</code>
+       * <code>fixed32 chatcount = 9;</code>
        */
       public int getChatcount() {
         return instance.getChatcount();
@@ -3706,7 +3764,7 @@ public final class InterfaceStatistic {
        *交流次数
        * </pre>
        *
-       * <code>optional fixed32 chatcount = 9;</code>
+       * <code>fixed32 chatcount = 9;</code>
        */
       public Builder setChatcount(int value) {
         copyOnWrite();
@@ -3718,7 +3776,7 @@ public final class InterfaceStatistic {
        *交流次数
        * </pre>
        *
-       * <code>optional fixed32 chatcount = 9;</code>
+       * <code>fixed32 chatcount = 9;</code>
        */
       public Builder clearChatcount() {
         copyOnWrite();
@@ -3731,7 +3789,7 @@ public final class InterfaceStatistic {
        *服务请求数
        * </pre>
        *
-       * <code>optional fixed32 servicegetcount = 10;</code>
+       * <code>fixed32 servicegetcount = 10;</code>
        */
       public int getServicegetcount() {
         return instance.getServicegetcount();
@@ -3741,7 +3799,7 @@ public final class InterfaceStatistic {
        *服务请求数
        * </pre>
        *
-       * <code>optional fixed32 servicegetcount = 10;</code>
+       * <code>fixed32 servicegetcount = 10;</code>
        */
       public Builder setServicegetcount(int value) {
         copyOnWrite();
@@ -3753,7 +3811,7 @@ public final class InterfaceStatistic {
        *服务请求数
        * </pre>
        *
-       * <code>optional fixed32 servicegetcount = 10;</code>
+       * <code>fixed32 servicegetcount = 10;</code>
        */
       public Builder clearServicegetcount() {
         copyOnWrite();
@@ -3766,7 +3824,7 @@ public final class InterfaceStatistic {
        *白板发起次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardopencount = 11;</code>
+       * <code>fixed32 whiteboardopencount = 11;</code>
        */
       public int getWhiteboardopencount() {
         return instance.getWhiteboardopencount();
@@ -3776,7 +3834,7 @@ public final class InterfaceStatistic {
        *白板发起次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardopencount = 11;</code>
+       * <code>fixed32 whiteboardopencount = 11;</code>
        */
       public Builder setWhiteboardopencount(int value) {
         copyOnWrite();
@@ -3788,7 +3846,7 @@ public final class InterfaceStatistic {
        *白板发起次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardopencount = 11;</code>
+       * <code>fixed32 whiteboardopencount = 11;</code>
        */
       public Builder clearWhiteboardopencount() {
         copyOnWrite();
@@ -3801,7 +3859,7 @@ public final class InterfaceStatistic {
        *白板交流次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardusecount = 12;</code>
+       * <code>fixed32 whiteboardusecount = 12;</code>
        */
       public int getWhiteboardusecount() {
         return instance.getWhiteboardusecount();
@@ -3811,7 +3869,7 @@ public final class InterfaceStatistic {
        *白板交流次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardusecount = 12;</code>
+       * <code>fixed32 whiteboardusecount = 12;</code>
        */
       public Builder setWhiteboardusecount(int value) {
         copyOnWrite();
@@ -3823,7 +3881,7 @@ public final class InterfaceStatistic {
        *白板交流次数
        * </pre>
        *
-       * <code>optional fixed32 whiteboardusecount = 12;</code>
+       * <code>fixed32 whiteboardusecount = 12;</code>
        */
       public Builder clearWhiteboardusecount() {
         copyOnWrite();
@@ -3836,7 +3894,7 @@ public final class InterfaceStatistic {
        *投票发起次数
        * </pre>
        *
-       * <code>optional fixed32 votecount = 13;</code>
+       * <code>fixed32 votecount = 13;</code>
        */
       public int getVotecount() {
         return instance.getVotecount();
@@ -3846,7 +3904,7 @@ public final class InterfaceStatistic {
        *投票发起次数
        * </pre>
        *
-       * <code>optional fixed32 votecount = 13;</code>
+       * <code>fixed32 votecount = 13;</code>
        */
       public Builder setVotecount(int value) {
         copyOnWrite();
@@ -3858,7 +3916,7 @@ public final class InterfaceStatistic {
        *投票发起次数
        * </pre>
        *
-       * <code>optional fixed32 votecount = 13;</code>
+       * <code>fixed32 votecount = 13;</code>
        */
       public Builder clearVotecount() {
         copyOnWrite();
@@ -3871,7 +3929,7 @@ public final class InterfaceStatistic {
        *选举发起次数
        * </pre>
        *
-       * <code>optional fixed32 electioncount = 14;</code>
+       * <code>fixed32 electioncount = 14;</code>
        */
       public int getElectioncount() {
         return instance.getElectioncount();
@@ -3881,7 +3939,7 @@ public final class InterfaceStatistic {
        *选举发起次数
        * </pre>
        *
-       * <code>optional fixed32 electioncount = 14;</code>
+       * <code>fixed32 electioncount = 14;</code>
        */
       public Builder setElectioncount(int value) {
         copyOnWrite();
@@ -3893,7 +3951,7 @@ public final class InterfaceStatistic {
        *选举发起次数
        * </pre>
        *
-       * <code>optional fixed32 electioncount = 14;</code>
+       * <code>fixed32 electioncount = 14;</code>
        */
       public Builder clearElectioncount() {
         copyOnWrite();
@@ -3906,7 +3964,7 @@ public final class InterfaceStatistic {
        *问卷调查发起次数
        * </pre>
        *
-       * <code>optional fixed32 questioncount = 15;</code>
+       * <code>fixed32 questioncount = 15;</code>
        */
       public int getQuestioncount() {
         return instance.getQuestioncount();
@@ -3916,7 +3974,7 @@ public final class InterfaceStatistic {
        *问卷调查发起次数
        * </pre>
        *
-       * <code>optional fixed32 questioncount = 15;</code>
+       * <code>fixed32 questioncount = 15;</code>
        */
       public Builder setQuestioncount(int value) {
         copyOnWrite();
@@ -3928,7 +3986,7 @@ public final class InterfaceStatistic {
        *问卷调查发起次数
        * </pre>
        *
-       * <code>optional fixed32 questioncount = 15;</code>
+       * <code>fixed32 questioncount = 15;</code>
        */
       public Builder clearQuestioncount() {
         copyOnWrite();
@@ -3941,7 +3999,7 @@ public final class InterfaceStatistic {
        *公告发起次数
        * </pre>
        *
-       * <code>optional fixed32 bulletcount = 16;</code>
+       * <code>fixed32 bulletcount = 16;</code>
        */
       public int getBulletcount() {
         return instance.getBulletcount();
@@ -3951,7 +4009,7 @@ public final class InterfaceStatistic {
        *公告发起次数
        * </pre>
        *
-       * <code>optional fixed32 bulletcount = 16;</code>
+       * <code>fixed32 bulletcount = 16;</code>
        */
       public Builder setBulletcount(int value) {
         copyOnWrite();
@@ -3963,7 +4021,7 @@ public final class InterfaceStatistic {
        *公告发起次数
        * </pre>
        *
-       * <code>optional fixed32 bulletcount = 16;</code>
+       * <code>fixed32 bulletcount = 16;</code>
        */
       public Builder clearBulletcount() {
         copyOnWrite();
@@ -3973,6 +4031,7 @@ public final class InterfaceStatistic {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetOneStatistic)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4139,6 +4198,7 @@ public final class InterfaceStatistic {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4183,7 +4243,7 @@ public final class InterfaceStatistic {
      *&#47;/参见 Pb_MeetStatisticFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 quartertype = 1;</code>
+     * <code>fixed32 quartertype = 1;</code>
      */
     int getQuartertype();
 
@@ -4227,7 +4287,7 @@ public final class InterfaceStatistic {
      *&#47;/参见 Pb_MeetStatisticFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 quartertype = 1;</code>
+     * <code>fixed32 quartertype = 1;</code>
      */
     public int getQuartertype() {
       return quartertype_;
@@ -4237,7 +4297,7 @@ public final class InterfaceStatistic {
      *&#47;/参见 Pb_MeetStatisticFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 quartertype = 1;</code>
+     * <code>fixed32 quartertype = 1;</code>
      */
     private void setQuartertype(int value) {
       
@@ -4248,7 +4308,7 @@ public final class InterfaceStatistic {
      *&#47;/参见 Pb_MeetStatisticFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 quartertype = 1;</code>
+     * <code>fixed32 quartertype = 1;</code>
      */
     private void clearQuartertype() {
       
@@ -4403,6 +4463,19 @@ public final class InterfaceStatistic {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetQuarterStatisticInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetQuarterStatisticInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStatistic.pbui_Type_MeetQuarterStatisticInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4496,7 +4569,7 @@ public final class InterfaceStatistic {
        *&#47;/参见 Pb_MeetStatisticFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 quartertype = 1;</code>
+       * <code>fixed32 quartertype = 1;</code>
        */
       public int getQuartertype() {
         return instance.getQuartertype();
@@ -4506,7 +4579,7 @@ public final class InterfaceStatistic {
        *&#47;/参见 Pb_MeetStatisticFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 quartertype = 1;</code>
+       * <code>fixed32 quartertype = 1;</code>
        */
       public Builder setQuartertype(int value) {
         copyOnWrite();
@@ -4518,7 +4591,7 @@ public final class InterfaceStatistic {
        *&#47;/参见 Pb_MeetStatisticFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 quartertype = 1;</code>
+       * <code>fixed32 quartertype = 1;</code>
        */
       public Builder clearQuartertype() {
         copyOnWrite();
@@ -4625,6 +4698,7 @@ public final class InterfaceStatistic {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetQuarterStatisticInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4698,6 +4772,7 @@ public final class InterfaceStatistic {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

@@ -610,6 +610,7 @@
     <string name="id">ID</string>
     <string name="please_choose_file_first">请先选择文件</string>
     <string name="delete_check_in_record">删除签到记录</string>
+    <string name="file_name_marquee">滚动显示文件名</string>
 
 
     <string-array name="role_spinner">

@@ -136,6 +136,12 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/use_tgp_mode" />
+                    <CheckBox
+                        android:id="@+id/cb_marquee"
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/file_name_marquee"
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
 
                 <LinearLayout

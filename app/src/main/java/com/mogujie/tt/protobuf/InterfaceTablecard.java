@@ -47,6 +47,10 @@ public final class InterfaceTablecard {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -96,16 +100,18 @@ public final class InterfaceTablecard {
      *使用字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 1;</code>
+     * <code>bytes fontname = 1;</code>
      */
     com.google.protobuf.ByteString getFontname();
 
     /**
      * <pre>
-     *字体 大小
+     * 桌面字体大小计算方法
+     *fontsize * 当前屏幕高度 / 基准屏幕高度
+     *eg: 收到字体大小是100，当前的屏幕高度是720，推算出真实的字体大小为：100 * 720 / 1080 = 67
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 2;</code>
+     * <code>fixed32 fontsize = 2;</code>
      */
     int getFontsize();
 
@@ -114,7 +120,7 @@ public final class InterfaceTablecard {
      *字体颜色
      * </pre>
      *
-     * <code>optional fixed32 fontcolor = 3;</code>
+     * <code>fixed32 fontcolor = 3;</code>
      */
     int getFontcolor();
 
@@ -123,22 +129,22 @@ public final class InterfaceTablecard {
      *左上角 x坐标 相对宽的百分比 如：lx=0.1 当宽为1920时 真正的lx应该= 0.1 * 1920 = 192
      * </pre>
      *
-     * <code>optional float lx = 4;</code>
+     * <code>float lx = 4;</code>
      */
     float getLx();
 
     /**
-     * <code>optional float ly = 5;</code>
+     * <code>float ly = 5;</code>
      */
     float getLy();
 
     /**
-     * <code>optional float rx = 6;</code>
+     * <code>float rx = 6;</code>
      */
     float getRx();
 
     /**
-     * <code>optional float ry = 7;</code>
+     * <code>float ry = 7;</code>
      */
     float getRy();
 
@@ -147,7 +153,7 @@ public final class InterfaceTablecard {
      *显示标志 参见Pb_TableCardFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 8;</code>
+     * <code>fixed32 flag = 8;</code>
      */
     int getFlag();
 
@@ -156,7 +162,7 @@ public final class InterfaceTablecard {
      *参见 font align flag
      * </pre>
      *
-     * <code>optional fixed32 align = 9;</code>
+     * <code>fixed32 align = 9;</code>
      */
     int getAlign();
 
@@ -165,7 +171,7 @@ public final class InterfaceTablecard {
      *显示的信息 参见Pb_TableCardType
      * </pre>
      *
-     * <code>optional fixed32 type = 10;</code>
+     * <code>fixed32 type = 10;</code>
      */
     int getType();
   }
@@ -191,7 +197,7 @@ public final class InterfaceTablecard {
      *使用字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 1;</code>
+     * <code>bytes fontname = 1;</code>
      */
     public com.google.protobuf.ByteString getFontname() {
       return fontname_;
@@ -201,7 +207,7 @@ public final class InterfaceTablecard {
      *使用字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 1;</code>
+     * <code>bytes fontname = 1;</code>
      */
     private void setFontname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -215,7 +221,7 @@ public final class InterfaceTablecard {
      *使用字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 1;</code>
+     * <code>bytes fontname = 1;</code>
      */
     private void clearFontname() {
       
@@ -226,20 +232,24 @@ public final class InterfaceTablecard {
     private int fontsize_;
     /**
      * <pre>
-     *字体 大小
+     * 桌面字体大小计算方法
+     *fontsize * 当前屏幕高度 / 基准屏幕高度
+     *eg: 收到字体大小是100，当前的屏幕高度是720，推算出真实的字体大小为：100 * 720 / 1080 = 67
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 2;</code>
+     * <code>fixed32 fontsize = 2;</code>
      */
     public int getFontsize() {
       return fontsize_;
     }
     /**
      * <pre>
-     *字体 大小
+     * 桌面字体大小计算方法
+     *fontsize * 当前屏幕高度 / 基准屏幕高度
+     *eg: 收到字体大小是100，当前的屏幕高度是720，推算出真实的字体大小为：100 * 720 / 1080 = 67
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 2;</code>
+     * <code>fixed32 fontsize = 2;</code>
      */
     private void setFontsize(int value) {
       
@@ -247,10 +257,12 @@ public final class InterfaceTablecard {
     }
     /**
      * <pre>
-     *字体 大小
+     * 桌面字体大小计算方法
+     *fontsize * 当前屏幕高度 / 基准屏幕高度
+     *eg: 收到字体大小是100，当前的屏幕高度是720，推算出真实的字体大小为：100 * 720 / 1080 = 67
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 2;</code>
+     * <code>fixed32 fontsize = 2;</code>
      */
     private void clearFontsize() {
       
@@ -264,7 +276,7 @@ public final class InterfaceTablecard {
      *字体颜色
      * </pre>
      *
-     * <code>optional fixed32 fontcolor = 3;</code>
+     * <code>fixed32 fontcolor = 3;</code>
      */
     public int getFontcolor() {
       return fontcolor_;
@@ -274,7 +286,7 @@ public final class InterfaceTablecard {
      *字体颜色
      * </pre>
      *
-     * <code>optional fixed32 fontcolor = 3;</code>
+     * <code>fixed32 fontcolor = 3;</code>
      */
     private void setFontcolor(int value) {
       
@@ -285,7 +297,7 @@ public final class InterfaceTablecard {
      *字体颜色
      * </pre>
      *
-     * <code>optional fixed32 fontcolor = 3;</code>
+     * <code>fixed32 fontcolor = 3;</code>
      */
     private void clearFontcolor() {
       
@@ -299,7 +311,7 @@ public final class InterfaceTablecard {
      *左上角 x坐标 相对宽的百分比 如：lx=0.1 当宽为1920时 真正的lx应该= 0.1 * 1920 = 192
      * </pre>
      *
-     * <code>optional float lx = 4;</code>
+     * <code>float lx = 4;</code>
      */
     public float getLx() {
       return lx_;
@@ -309,7 +321,7 @@ public final class InterfaceTablecard {
      *左上角 x坐标 相对宽的百分比 如：lx=0.1 当宽为1920时 真正的lx应该= 0.1 * 1920 = 192
      * </pre>
      *
-     * <code>optional float lx = 4;</code>
+     * <code>float lx = 4;</code>
      */
     private void setLx(float value) {
       
@@ -320,7 +332,7 @@ public final class InterfaceTablecard {
      *左上角 x坐标 相对宽的百分比 如：lx=0.1 当宽为1920时 真正的lx应该= 0.1 * 1920 = 192
      * </pre>
      *
-     * <code>optional float lx = 4;</code>
+     * <code>float lx = 4;</code>
      */
     private void clearLx() {
       
@@ -330,20 +342,20 @@ public final class InterfaceTablecard {
     public static final int LY_FIELD_NUMBER = 5;
     private float ly_;
     /**
-     * <code>optional float ly = 5;</code>
+     * <code>float ly = 5;</code>
      */
     public float getLy() {
       return ly_;
     }
     /**
-     * <code>optional float ly = 5;</code>
+     * <code>float ly = 5;</code>
      */
     private void setLy(float value) {
       
       ly_ = value;
     }
     /**
-     * <code>optional float ly = 5;</code>
+     * <code>float ly = 5;</code>
      */
     private void clearLy() {
       
@@ -353,20 +365,20 @@ public final class InterfaceTablecard {
     public static final int RX_FIELD_NUMBER = 6;
     private float rx_;
     /**
-     * <code>optional float rx = 6;</code>
+     * <code>float rx = 6;</code>
      */
     public float getRx() {
       return rx_;
     }
     /**
-     * <code>optional float rx = 6;</code>
+     * <code>float rx = 6;</code>
      */
     private void setRx(float value) {
       
       rx_ = value;
     }
     /**
-     * <code>optional float rx = 6;</code>
+     * <code>float rx = 6;</code>
      */
     private void clearRx() {
       
@@ -376,20 +388,20 @@ public final class InterfaceTablecard {
     public static final int RY_FIELD_NUMBER = 7;
     private float ry_;
     /**
-     * <code>optional float ry = 7;</code>
+     * <code>float ry = 7;</code>
      */
     public float getRy() {
       return ry_;
     }
     /**
-     * <code>optional float ry = 7;</code>
+     * <code>float ry = 7;</code>
      */
     private void setRy(float value) {
       
       ry_ = value;
     }
     /**
-     * <code>optional float ry = 7;</code>
+     * <code>float ry = 7;</code>
      */
     private void clearRy() {
       
@@ -403,7 +415,7 @@ public final class InterfaceTablecard {
      *显示标志 参见Pb_TableCardFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 8;</code>
+     * <code>fixed32 flag = 8;</code>
      */
     public int getFlag() {
       return flag_;
@@ -413,7 +425,7 @@ public final class InterfaceTablecard {
      *显示标志 参见Pb_TableCardFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 8;</code>
+     * <code>fixed32 flag = 8;</code>
      */
     private void setFlag(int value) {
       
@@ -424,7 +436,7 @@ public final class InterfaceTablecard {
      *显示标志 参见Pb_TableCardFlag
      * </pre>
      *
-     * <code>optional fixed32 flag = 8;</code>
+     * <code>fixed32 flag = 8;</code>
      */
     private void clearFlag() {
       
@@ -438,7 +450,7 @@ public final class InterfaceTablecard {
      *参见 font align flag
      * </pre>
      *
-     * <code>optional fixed32 align = 9;</code>
+     * <code>fixed32 align = 9;</code>
      */
     public int getAlign() {
       return align_;
@@ -448,7 +460,7 @@ public final class InterfaceTablecard {
      *参见 font align flag
      * </pre>
      *
-     * <code>optional fixed32 align = 9;</code>
+     * <code>fixed32 align = 9;</code>
      */
     private void setAlign(int value) {
       
@@ -459,7 +471,7 @@ public final class InterfaceTablecard {
      *参见 font align flag
      * </pre>
      *
-     * <code>optional fixed32 align = 9;</code>
+     * <code>fixed32 align = 9;</code>
      */
     private void clearAlign() {
       
@@ -473,7 +485,7 @@ public final class InterfaceTablecard {
      *显示的信息 参见Pb_TableCardType
      * </pre>
      *
-     * <code>optional fixed32 type = 10;</code>
+     * <code>fixed32 type = 10;</code>
      */
     public int getType() {
       return type_;
@@ -483,7 +495,7 @@ public final class InterfaceTablecard {
      *显示的信息 参见Pb_TableCardType
      * </pre>
      *
-     * <code>optional fixed32 type = 10;</code>
+     * <code>fixed32 type = 10;</code>
      */
     private void setType(int value) {
       
@@ -494,7 +506,7 @@ public final class InterfaceTablecard {
      *显示的信息 参见Pb_TableCardType
      * </pre>
      *
-     * <code>optional fixed32 type = 10;</code>
+     * <code>fixed32 type = 10;</code>
      */
     private void clearType() {
       
@@ -584,6 +596,19 @@ public final class InterfaceTablecard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceTablecard.pbui_Item_MeetTableCardDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceTablecard.pbui_Item_MeetTableCardDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceTablecard.pbui_Item_MeetTableCardDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -675,7 +700,7 @@ public final class InterfaceTablecard {
        *使用字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 1;</code>
+       * <code>bytes fontname = 1;</code>
        */
       public com.google.protobuf.ByteString getFontname() {
         return instance.getFontname();
@@ -685,7 +710,7 @@ public final class InterfaceTablecard {
        *使用字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 1;</code>
+       * <code>bytes fontname = 1;</code>
        */
       public Builder setFontname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -697,7 +722,7 @@ public final class InterfaceTablecard {
        *使用字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 1;</code>
+       * <code>bytes fontname = 1;</code>
        */
       public Builder clearFontname() {
         copyOnWrite();
@@ -707,20 +732,24 @@ public final class InterfaceTablecard {
 
       /**
        * <pre>
-       *字体 大小
+       * 桌面字体大小计算方法
+       *fontsize * 当前屏幕高度 / 基准屏幕高度
+       *eg: 收到字体大小是100，当前的屏幕高度是720，推算出真实的字体大小为：100 * 720 / 1080 = 67
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 2;</code>
+       * <code>fixed32 fontsize = 2;</code>
        */
       public int getFontsize() {
         return instance.getFontsize();
       }
       /**
        * <pre>
-       *字体 大小
+       * 桌面字体大小计算方法
+       *fontsize * 当前屏幕高度 / 基准屏幕高度
+       *eg: 收到字体大小是100，当前的屏幕高度是720，推算出真实的字体大小为：100 * 720 / 1080 = 67
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 2;</code>
+       * <code>fixed32 fontsize = 2;</code>
        */
       public Builder setFontsize(int value) {
         copyOnWrite();
@@ -729,10 +758,12 @@ public final class InterfaceTablecard {
       }
       /**
        * <pre>
-       *字体 大小
+       * 桌面字体大小计算方法
+       *fontsize * 当前屏幕高度 / 基准屏幕高度
+       *eg: 收到字体大小是100，当前的屏幕高度是720，推算出真实的字体大小为：100 * 720 / 1080 = 67
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 2;</code>
+       * <code>fixed32 fontsize = 2;</code>
        */
       public Builder clearFontsize() {
         copyOnWrite();
@@ -745,7 +776,7 @@ public final class InterfaceTablecard {
        *字体颜色
        * </pre>
        *
-       * <code>optional fixed32 fontcolor = 3;</code>
+       * <code>fixed32 fontcolor = 3;</code>
        */
       public int getFontcolor() {
         return instance.getFontcolor();
@@ -755,7 +786,7 @@ public final class InterfaceTablecard {
        *字体颜色
        * </pre>
        *
-       * <code>optional fixed32 fontcolor = 3;</code>
+       * <code>fixed32 fontcolor = 3;</code>
        */
       public Builder setFontcolor(int value) {
         copyOnWrite();
@@ -767,7 +798,7 @@ public final class InterfaceTablecard {
        *字体颜色
        * </pre>
        *
-       * <code>optional fixed32 fontcolor = 3;</code>
+       * <code>fixed32 fontcolor = 3;</code>
        */
       public Builder clearFontcolor() {
         copyOnWrite();
@@ -780,7 +811,7 @@ public final class InterfaceTablecard {
        *左上角 x坐标 相对宽的百分比 如：lx=0.1 当宽为1920时 真正的lx应该= 0.1 * 1920 = 192
        * </pre>
        *
-       * <code>optional float lx = 4;</code>
+       * <code>float lx = 4;</code>
        */
       public float getLx() {
         return instance.getLx();
@@ -790,7 +821,7 @@ public final class InterfaceTablecard {
        *左上角 x坐标 相对宽的百分比 如：lx=0.1 当宽为1920时 真正的lx应该= 0.1 * 1920 = 192
        * </pre>
        *
-       * <code>optional float lx = 4;</code>
+       * <code>float lx = 4;</code>
        */
       public Builder setLx(float value) {
         copyOnWrite();
@@ -802,7 +833,7 @@ public final class InterfaceTablecard {
        *左上角 x坐标 相对宽的百分比 如：lx=0.1 当宽为1920时 真正的lx应该= 0.1 * 1920 = 192
        * </pre>
        *
-       * <code>optional float lx = 4;</code>
+       * <code>float lx = 4;</code>
        */
       public Builder clearLx() {
         copyOnWrite();
@@ -811,13 +842,13 @@ public final class InterfaceTablecard {
       }
 
       /**
-       * <code>optional float ly = 5;</code>
+       * <code>float ly = 5;</code>
        */
       public float getLy() {
         return instance.getLy();
       }
       /**
-       * <code>optional float ly = 5;</code>
+       * <code>float ly = 5;</code>
        */
       public Builder setLy(float value) {
         copyOnWrite();
@@ -825,7 +856,7 @@ public final class InterfaceTablecard {
         return this;
       }
       /**
-       * <code>optional float ly = 5;</code>
+       * <code>float ly = 5;</code>
        */
       public Builder clearLy() {
         copyOnWrite();
@@ -834,13 +865,13 @@ public final class InterfaceTablecard {
       }
 
       /**
-       * <code>optional float rx = 6;</code>
+       * <code>float rx = 6;</code>
        */
       public float getRx() {
         return instance.getRx();
       }
       /**
-       * <code>optional float rx = 6;</code>
+       * <code>float rx = 6;</code>
        */
       public Builder setRx(float value) {
         copyOnWrite();
@@ -848,7 +879,7 @@ public final class InterfaceTablecard {
         return this;
       }
       /**
-       * <code>optional float rx = 6;</code>
+       * <code>float rx = 6;</code>
        */
       public Builder clearRx() {
         copyOnWrite();
@@ -857,13 +888,13 @@ public final class InterfaceTablecard {
       }
 
       /**
-       * <code>optional float ry = 7;</code>
+       * <code>float ry = 7;</code>
        */
       public float getRy() {
         return instance.getRy();
       }
       /**
-       * <code>optional float ry = 7;</code>
+       * <code>float ry = 7;</code>
        */
       public Builder setRy(float value) {
         copyOnWrite();
@@ -871,7 +902,7 @@ public final class InterfaceTablecard {
         return this;
       }
       /**
-       * <code>optional float ry = 7;</code>
+       * <code>float ry = 7;</code>
        */
       public Builder clearRy() {
         copyOnWrite();
@@ -884,7 +915,7 @@ public final class InterfaceTablecard {
        *显示标志 参见Pb_TableCardFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 8;</code>
+       * <code>fixed32 flag = 8;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -894,7 +925,7 @@ public final class InterfaceTablecard {
        *显示标志 参见Pb_TableCardFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 8;</code>
+       * <code>fixed32 flag = 8;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -906,7 +937,7 @@ public final class InterfaceTablecard {
        *显示标志 参见Pb_TableCardFlag
        * </pre>
        *
-       * <code>optional fixed32 flag = 8;</code>
+       * <code>fixed32 flag = 8;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -919,7 +950,7 @@ public final class InterfaceTablecard {
        *参见 font align flag
        * </pre>
        *
-       * <code>optional fixed32 align = 9;</code>
+       * <code>fixed32 align = 9;</code>
        */
       public int getAlign() {
         return instance.getAlign();
@@ -929,7 +960,7 @@ public final class InterfaceTablecard {
        *参见 font align flag
        * </pre>
        *
-       * <code>optional fixed32 align = 9;</code>
+       * <code>fixed32 align = 9;</code>
        */
       public Builder setAlign(int value) {
         copyOnWrite();
@@ -941,7 +972,7 @@ public final class InterfaceTablecard {
        *参见 font align flag
        * </pre>
        *
-       * <code>optional fixed32 align = 9;</code>
+       * <code>fixed32 align = 9;</code>
        */
       public Builder clearAlign() {
         copyOnWrite();
@@ -954,7 +985,7 @@ public final class InterfaceTablecard {
        *显示的信息 参见Pb_TableCardType
        * </pre>
        *
-       * <code>optional fixed32 type = 10;</code>
+       * <code>fixed32 type = 10;</code>
        */
       public int getType() {
         return instance.getType();
@@ -964,7 +995,7 @@ public final class InterfaceTablecard {
        *显示的信息 参见Pb_TableCardType
        * </pre>
        *
-       * <code>optional fixed32 type = 10;</code>
+       * <code>fixed32 type = 10;</code>
        */
       public Builder setType(int value) {
         copyOnWrite();
@@ -976,7 +1007,7 @@ public final class InterfaceTablecard {
        *显示的信息 参见Pb_TableCardType
        * </pre>
        *
-       * <code>optional fixed32 type = 10;</code>
+       * <code>fixed32 type = 10;</code>
        */
       public Builder clearType() {
         copyOnWrite();
@@ -986,6 +1017,7 @@ public final class InterfaceTablecard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetTableCardDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1110,6 +1142,7 @@ public final class InterfaceTablecard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1154,7 +1187,7 @@ public final class InterfaceTablecard {
      *修改标志 参见Pb_TableCard_ModifyFlag
      * </pre>
      *
-     * <code>optional fixed32 modifyflag = 1;</code>
+     * <code>fixed32 modifyflag = 1;</code>
      */
     int getModifyflag();
 
@@ -1163,7 +1196,7 @@ public final class InterfaceTablecard {
      *底图ID
      * </pre>
      *
-     * <code>optional fixed32 bgphotoid = 2;</code>
+     * <code>fixed32 bgphotoid = 2;</code>
      */
     int getBgphotoid();
 
@@ -1219,7 +1252,7 @@ public final class InterfaceTablecard {
      *修改标志 参见Pb_TableCard_ModifyFlag
      * </pre>
      *
-     * <code>optional fixed32 modifyflag = 1;</code>
+     * <code>fixed32 modifyflag = 1;</code>
      */
     public int getModifyflag() {
       return modifyflag_;
@@ -1229,7 +1262,7 @@ public final class InterfaceTablecard {
      *修改标志 参见Pb_TableCard_ModifyFlag
      * </pre>
      *
-     * <code>optional fixed32 modifyflag = 1;</code>
+     * <code>fixed32 modifyflag = 1;</code>
      */
     private void setModifyflag(int value) {
       
@@ -1240,7 +1273,7 @@ public final class InterfaceTablecard {
      *修改标志 参见Pb_TableCard_ModifyFlag
      * </pre>
      *
-     * <code>optional fixed32 modifyflag = 1;</code>
+     * <code>fixed32 modifyflag = 1;</code>
      */
     private void clearModifyflag() {
       
@@ -1254,7 +1287,7 @@ public final class InterfaceTablecard {
      *底图ID
      * </pre>
      *
-     * <code>optional fixed32 bgphotoid = 2;</code>
+     * <code>fixed32 bgphotoid = 2;</code>
      */
     public int getBgphotoid() {
       return bgphotoid_;
@@ -1264,7 +1297,7 @@ public final class InterfaceTablecard {
      *底图ID
      * </pre>
      *
-     * <code>optional fixed32 bgphotoid = 2;</code>
+     * <code>fixed32 bgphotoid = 2;</code>
      */
     private void setBgphotoid(int value) {
       
@@ -1275,7 +1308,7 @@ public final class InterfaceTablecard {
      *底图ID
      * </pre>
      *
-     * <code>optional fixed32 bgphotoid = 2;</code>
+     * <code>fixed32 bgphotoid = 2;</code>
      */
     private void clearBgphotoid() {
       
@@ -1493,6 +1526,19 @@ public final class InterfaceTablecard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceTablecard.pbui_Type_MeetTableCardDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceTablecard.pbui_Type_MeetTableCardDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceTablecard.pbui_Type_MeetTableCardDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1586,7 +1632,7 @@ public final class InterfaceTablecard {
        *修改标志 参见Pb_TableCard_ModifyFlag
        * </pre>
        *
-       * <code>optional fixed32 modifyflag = 1;</code>
+       * <code>fixed32 modifyflag = 1;</code>
        */
       public int getModifyflag() {
         return instance.getModifyflag();
@@ -1596,7 +1642,7 @@ public final class InterfaceTablecard {
        *修改标志 参见Pb_TableCard_ModifyFlag
        * </pre>
        *
-       * <code>optional fixed32 modifyflag = 1;</code>
+       * <code>fixed32 modifyflag = 1;</code>
        */
       public Builder setModifyflag(int value) {
         copyOnWrite();
@@ -1608,7 +1654,7 @@ public final class InterfaceTablecard {
        *修改标志 参见Pb_TableCard_ModifyFlag
        * </pre>
        *
-       * <code>optional fixed32 modifyflag = 1;</code>
+       * <code>fixed32 modifyflag = 1;</code>
        */
       public Builder clearModifyflag() {
         copyOnWrite();
@@ -1621,7 +1667,7 @@ public final class InterfaceTablecard {
        *底图ID
        * </pre>
        *
-       * <code>optional fixed32 bgphotoid = 2;</code>
+       * <code>fixed32 bgphotoid = 2;</code>
        */
       public int getBgphotoid() {
         return instance.getBgphotoid();
@@ -1631,7 +1677,7 @@ public final class InterfaceTablecard {
        *底图ID
        * </pre>
        *
-       * <code>optional fixed32 bgphotoid = 2;</code>
+       * <code>fixed32 bgphotoid = 2;</code>
        */
       public Builder setBgphotoid(int value) {
         copyOnWrite();
@@ -1643,7 +1689,7 @@ public final class InterfaceTablecard {
        *底图ID
        * </pre>
        *
-       * <code>optional fixed32 bgphotoid = 2;</code>
+       * <code>fixed32 bgphotoid = 2;</code>
        */
       public Builder clearBgphotoid() {
         copyOnWrite();
@@ -1798,6 +1844,7 @@ public final class InterfaceTablecard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetTableCardDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1878,6 +1925,7 @@ public final class InterfaceTablecard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

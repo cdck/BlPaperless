@@ -17,7 +17,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
 
@@ -26,7 +26,7 @@ public final class InterfaceDownload {
      *设置是否重新下载,0 不覆盖同名文件,重新下载
      * </pre>
      *
-     * <code>optional fixed32 newfile = 2;</code>
+     * <code>fixed32 newfile = 2;</code>
      */
     int getNewfile();
 
@@ -35,7 +35,7 @@ public final class InterfaceDownload {
      *1表示只需要结束的通知
      * </pre>
      *
-     * <code>optional fixed32 onlyfinish = 3;</code>
+     * <code>fixed32 onlyfinish = 3;</code>
      */
     int getOnlyfinish();
 
@@ -44,7 +44,7 @@ public final class InterfaceDownload {
      *下载媒体全路径名称 (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes pathname = 4;</code>
+     * <code>bytes pathname = 4;</code>
      */
     com.google.protobuf.ByteString getPathname();
 
@@ -53,7 +53,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 5;</code>
+     * <code>bytes userstr = 5;</code>
      */
     com.google.protobuf.ByteString getUserstr();
   }
@@ -83,7 +83,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -93,7 +93,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
@@ -104,7 +104,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -118,7 +118,7 @@ public final class InterfaceDownload {
      *设置是否重新下载,0 不覆盖同名文件,重新下载
      * </pre>
      *
-     * <code>optional fixed32 newfile = 2;</code>
+     * <code>fixed32 newfile = 2;</code>
      */
     public int getNewfile() {
       return newfile_;
@@ -128,7 +128,7 @@ public final class InterfaceDownload {
      *设置是否重新下载,0 不覆盖同名文件,重新下载
      * </pre>
      *
-     * <code>optional fixed32 newfile = 2;</code>
+     * <code>fixed32 newfile = 2;</code>
      */
     private void setNewfile(int value) {
       
@@ -139,7 +139,7 @@ public final class InterfaceDownload {
      *设置是否重新下载,0 不覆盖同名文件,重新下载
      * </pre>
      *
-     * <code>optional fixed32 newfile = 2;</code>
+     * <code>fixed32 newfile = 2;</code>
      */
     private void clearNewfile() {
       
@@ -153,7 +153,7 @@ public final class InterfaceDownload {
      *1表示只需要结束的通知
      * </pre>
      *
-     * <code>optional fixed32 onlyfinish = 3;</code>
+     * <code>fixed32 onlyfinish = 3;</code>
      */
     public int getOnlyfinish() {
       return onlyfinish_;
@@ -163,7 +163,7 @@ public final class InterfaceDownload {
      *1表示只需要结束的通知
      * </pre>
      *
-     * <code>optional fixed32 onlyfinish = 3;</code>
+     * <code>fixed32 onlyfinish = 3;</code>
      */
     private void setOnlyfinish(int value) {
       
@@ -174,7 +174,7 @@ public final class InterfaceDownload {
      *1表示只需要结束的通知
      * </pre>
      *
-     * <code>optional fixed32 onlyfinish = 3;</code>
+     * <code>fixed32 onlyfinish = 3;</code>
      */
     private void clearOnlyfinish() {
       
@@ -188,7 +188,7 @@ public final class InterfaceDownload {
      *下载媒体全路径名称 (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes pathname = 4;</code>
+     * <code>bytes pathname = 4;</code>
      */
     public com.google.protobuf.ByteString getPathname() {
       return pathname_;
@@ -198,7 +198,7 @@ public final class InterfaceDownload {
      *下载媒体全路径名称 (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes pathname = 4;</code>
+     * <code>bytes pathname = 4;</code>
      */
     private void setPathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -212,7 +212,7 @@ public final class InterfaceDownload {
      *下载媒体全路径名称 (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes pathname = 4;</code>
+     * <code>bytes pathname = 4;</code>
      */
     private void clearPathname() {
       
@@ -226,7 +226,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 5;</code>
+     * <code>bytes userstr = 5;</code>
      */
     public com.google.protobuf.ByteString getUserstr() {
       return userstr_;
@@ -236,7 +236,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 5;</code>
+     * <code>bytes userstr = 5;</code>
      */
     private void setUserstr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -250,7 +250,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 5;</code>
+     * <code>bytes userstr = 5;</code>
      */
     private void clearUserstr() {
       
@@ -305,6 +305,19 @@ public final class InterfaceDownload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadStart parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadStart parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadStart parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -399,7 +412,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -409,7 +422,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -421,7 +434,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -434,7 +447,7 @@ public final class InterfaceDownload {
        *设置是否重新下载,0 不覆盖同名文件,重新下载
        * </pre>
        *
-       * <code>optional fixed32 newfile = 2;</code>
+       * <code>fixed32 newfile = 2;</code>
        */
       public int getNewfile() {
         return instance.getNewfile();
@@ -444,7 +457,7 @@ public final class InterfaceDownload {
        *设置是否重新下载,0 不覆盖同名文件,重新下载
        * </pre>
        *
-       * <code>optional fixed32 newfile = 2;</code>
+       * <code>fixed32 newfile = 2;</code>
        */
       public Builder setNewfile(int value) {
         copyOnWrite();
@@ -456,7 +469,7 @@ public final class InterfaceDownload {
        *设置是否重新下载,0 不覆盖同名文件,重新下载
        * </pre>
        *
-       * <code>optional fixed32 newfile = 2;</code>
+       * <code>fixed32 newfile = 2;</code>
        */
       public Builder clearNewfile() {
         copyOnWrite();
@@ -469,7 +482,7 @@ public final class InterfaceDownload {
        *1表示只需要结束的通知
        * </pre>
        *
-       * <code>optional fixed32 onlyfinish = 3;</code>
+       * <code>fixed32 onlyfinish = 3;</code>
        */
       public int getOnlyfinish() {
         return instance.getOnlyfinish();
@@ -479,7 +492,7 @@ public final class InterfaceDownload {
        *1表示只需要结束的通知
        * </pre>
        *
-       * <code>optional fixed32 onlyfinish = 3;</code>
+       * <code>fixed32 onlyfinish = 3;</code>
        */
       public Builder setOnlyfinish(int value) {
         copyOnWrite();
@@ -491,7 +504,7 @@ public final class InterfaceDownload {
        *1表示只需要结束的通知
        * </pre>
        *
-       * <code>optional fixed32 onlyfinish = 3;</code>
+       * <code>fixed32 onlyfinish = 3;</code>
        */
       public Builder clearOnlyfinish() {
         copyOnWrite();
@@ -504,7 +517,7 @@ public final class InterfaceDownload {
        *下载媒体全路径名称 (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes pathname = 4;</code>
+       * <code>bytes pathname = 4;</code>
        */
       public com.google.protobuf.ByteString getPathname() {
         return instance.getPathname();
@@ -514,7 +527,7 @@ public final class InterfaceDownload {
        *下载媒体全路径名称 (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes pathname = 4;</code>
+       * <code>bytes pathname = 4;</code>
        */
       public Builder setPathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -526,7 +539,7 @@ public final class InterfaceDownload {
        *下载媒体全路径名称 (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes pathname = 4;</code>
+       * <code>bytes pathname = 4;</code>
        */
       public Builder clearPathname() {
         copyOnWrite();
@@ -539,7 +552,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 5;</code>
+       * <code>bytes userstr = 5;</code>
        */
       public com.google.protobuf.ByteString getUserstr() {
         return instance.getUserstr();
@@ -549,7 +562,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 5;</code>
+       * <code>bytes userstr = 5;</code>
        */
       public Builder setUserstr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -561,7 +574,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 5;</code>
+       * <code>bytes userstr = 5;</code>
        */
       public Builder clearUserstr() {
         copyOnWrite();
@@ -571,6 +584,7 @@ public final class InterfaceDownload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DownloadStart)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -660,6 +674,7 @@ public final class InterfaceDownload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -704,7 +719,7 @@ public final class InterfaceDownload {
      *下载目录id
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     int getDirid();
 
@@ -713,7 +728,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     int getMediaid();
 
@@ -722,7 +737,7 @@ public final class InterfaceDownload {
      *设置是否重新下载,0 不覆盖同名文件,重新下载
      * </pre>
      *
-     * <code>optional fixed32 newfile = 3;</code>
+     * <code>fixed32 newfile = 3;</code>
      */
     int getNewfile();
 
@@ -731,7 +746,7 @@ public final class InterfaceDownload {
      *1表示只需要结束的通知
      * </pre>
      *
-     * <code>optional fixed32 onlyfinish = 4;</code>
+     * <code>fixed32 onlyfinish = 4;</code>
      */
     int getOnlyfinish();
 
@@ -740,7 +755,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 5;</code>
+     * <code>bytes userstr = 5;</code>
      */
     com.google.protobuf.ByteString getUserstr();
   }
@@ -769,7 +784,7 @@ public final class InterfaceDownload {
      *下载目录id
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     public int getDirid() {
       return dirid_;
@@ -779,7 +794,7 @@ public final class InterfaceDownload {
      *下载目录id
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void setDirid(int value) {
       
@@ -790,7 +805,7 @@ public final class InterfaceDownload {
      *下载目录id
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void clearDirid() {
       
@@ -804,7 +819,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -814,7 +829,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     private void setMediaid(int value) {
       
@@ -825,7 +840,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     private void clearMediaid() {
       
@@ -839,7 +854,7 @@ public final class InterfaceDownload {
      *设置是否重新下载,0 不覆盖同名文件,重新下载
      * </pre>
      *
-     * <code>optional fixed32 newfile = 3;</code>
+     * <code>fixed32 newfile = 3;</code>
      */
     public int getNewfile() {
       return newfile_;
@@ -849,7 +864,7 @@ public final class InterfaceDownload {
      *设置是否重新下载,0 不覆盖同名文件,重新下载
      * </pre>
      *
-     * <code>optional fixed32 newfile = 3;</code>
+     * <code>fixed32 newfile = 3;</code>
      */
     private void setNewfile(int value) {
       
@@ -860,7 +875,7 @@ public final class InterfaceDownload {
      *设置是否重新下载,0 不覆盖同名文件,重新下载
      * </pre>
      *
-     * <code>optional fixed32 newfile = 3;</code>
+     * <code>fixed32 newfile = 3;</code>
      */
     private void clearNewfile() {
       
@@ -874,7 +889,7 @@ public final class InterfaceDownload {
      *1表示只需要结束的通知
      * </pre>
      *
-     * <code>optional fixed32 onlyfinish = 4;</code>
+     * <code>fixed32 onlyfinish = 4;</code>
      */
     public int getOnlyfinish() {
       return onlyfinish_;
@@ -884,7 +899,7 @@ public final class InterfaceDownload {
      *1表示只需要结束的通知
      * </pre>
      *
-     * <code>optional fixed32 onlyfinish = 4;</code>
+     * <code>fixed32 onlyfinish = 4;</code>
      */
     private void setOnlyfinish(int value) {
       
@@ -895,7 +910,7 @@ public final class InterfaceDownload {
      *1表示只需要结束的通知
      * </pre>
      *
-     * <code>optional fixed32 onlyfinish = 4;</code>
+     * <code>fixed32 onlyfinish = 4;</code>
      */
     private void clearOnlyfinish() {
       
@@ -909,7 +924,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 5;</code>
+     * <code>bytes userstr = 5;</code>
      */
     public com.google.protobuf.ByteString getUserstr() {
       return userstr_;
@@ -919,7 +934,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 5;</code>
+     * <code>bytes userstr = 5;</code>
      */
     private void setUserstr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -933,7 +948,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 5;</code>
+     * <code>bytes userstr = 5;</code>
      */
     private void clearUserstr() {
       
@@ -988,6 +1003,19 @@ public final class InterfaceDownload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadCache parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadCache parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadCache parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1082,7 +1110,7 @@ public final class InterfaceDownload {
        *下载目录id
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public int getDirid() {
         return instance.getDirid();
@@ -1092,7 +1120,7 @@ public final class InterfaceDownload {
        *下载目录id
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -1104,7 +1132,7 @@ public final class InterfaceDownload {
        *下载目录id
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -1117,7 +1145,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -1127,7 +1155,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -1139,7 +1167,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -1152,7 +1180,7 @@ public final class InterfaceDownload {
        *设置是否重新下载,0 不覆盖同名文件,重新下载
        * </pre>
        *
-       * <code>optional fixed32 newfile = 3;</code>
+       * <code>fixed32 newfile = 3;</code>
        */
       public int getNewfile() {
         return instance.getNewfile();
@@ -1162,7 +1190,7 @@ public final class InterfaceDownload {
        *设置是否重新下载,0 不覆盖同名文件,重新下载
        * </pre>
        *
-       * <code>optional fixed32 newfile = 3;</code>
+       * <code>fixed32 newfile = 3;</code>
        */
       public Builder setNewfile(int value) {
         copyOnWrite();
@@ -1174,7 +1202,7 @@ public final class InterfaceDownload {
        *设置是否重新下载,0 不覆盖同名文件,重新下载
        * </pre>
        *
-       * <code>optional fixed32 newfile = 3;</code>
+       * <code>fixed32 newfile = 3;</code>
        */
       public Builder clearNewfile() {
         copyOnWrite();
@@ -1187,7 +1215,7 @@ public final class InterfaceDownload {
        *1表示只需要结束的通知
        * </pre>
        *
-       * <code>optional fixed32 onlyfinish = 4;</code>
+       * <code>fixed32 onlyfinish = 4;</code>
        */
       public int getOnlyfinish() {
         return instance.getOnlyfinish();
@@ -1197,7 +1225,7 @@ public final class InterfaceDownload {
        *1表示只需要结束的通知
        * </pre>
        *
-       * <code>optional fixed32 onlyfinish = 4;</code>
+       * <code>fixed32 onlyfinish = 4;</code>
        */
       public Builder setOnlyfinish(int value) {
         copyOnWrite();
@@ -1209,7 +1237,7 @@ public final class InterfaceDownload {
        *1表示只需要结束的通知
        * </pre>
        *
-       * <code>optional fixed32 onlyfinish = 4;</code>
+       * <code>fixed32 onlyfinish = 4;</code>
        */
       public Builder clearOnlyfinish() {
         copyOnWrite();
@@ -1222,7 +1250,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 5;</code>
+       * <code>bytes userstr = 5;</code>
        */
       public com.google.protobuf.ByteString getUserstr() {
         return instance.getUserstr();
@@ -1232,7 +1260,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 5;</code>
+       * <code>bytes userstr = 5;</code>
        */
       public Builder setUserstr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1244,7 +1272,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 5;</code>
+       * <code>bytes userstr = 5;</code>
        */
       public Builder clearUserstr() {
         copyOnWrite();
@@ -1254,6 +1282,7 @@ public final class InterfaceDownload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DownloadCache)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1343,6 +1372,7 @@ public final class InterfaceDownload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1387,7 +1417,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
   }
@@ -1415,7 +1445,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -1425,7 +1455,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
@@ -1436,7 +1466,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -1463,6 +1493,19 @@ public final class InterfaceDownload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadDel parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadDel parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadDel parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1557,7 +1600,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -1567,7 +1610,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -1579,7 +1622,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -1589,6 +1632,7 @@ public final class InterfaceDownload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DownloadDel)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1650,6 +1694,7 @@ public final class InterfaceDownload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1694,7 +1739,7 @@ public final class InterfaceDownload {
      *下载进度
      * </pre>
      *
-     * <code>optional fixed32 progress = 1;</code>
+     * <code>fixed32 progress = 1;</code>
      */
     int getProgress();
 
@@ -1703,7 +1748,7 @@ public final class InterfaceDownload {
      *下载状态,参见Interface_Macro.proto ---&gt;Pb_Download_State
      * </pre>
      *
-     * <code>optional fixed32 nstate = 2;</code>
+     * <code>fixed32 nstate = 2;</code>
      */
     int getNstate();
 
@@ -1712,7 +1757,7 @@ public final class InterfaceDownload {
      *错误值 参见Interface_Macro.proto ---&gt;Pb_Download_Erro
      * </pre>
      *
-     * <code>optional fixed32 err = 3;</code>
+     * <code>fixed32 err = 3;</code>
      */
     int getErr();
 
@@ -1721,7 +1766,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 4;</code>
+     * <code>fixed32 mediaid = 4;</code>
      */
     int getMediaid();
 
@@ -1730,7 +1775,7 @@ public final class InterfaceDownload {
      *下载媒体全路径名称 (windows:mbcs linux:utf8)
      * </pre>
      *
-     * <code>optional bytes pathname = 5;</code>
+     * <code>bytes pathname = 5;</code>
      */
     com.google.protobuf.ByteString getPathname();
 
@@ -1739,7 +1784,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(原编码格式返回) (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 6;</code>
+     * <code>bytes userstr = 6;</code>
      */
     com.google.protobuf.ByteString getUserstr();
   }
@@ -1769,7 +1814,7 @@ public final class InterfaceDownload {
      *下载进度
      * </pre>
      *
-     * <code>optional fixed32 progress = 1;</code>
+     * <code>fixed32 progress = 1;</code>
      */
     public int getProgress() {
       return progress_;
@@ -1779,7 +1824,7 @@ public final class InterfaceDownload {
      *下载进度
      * </pre>
      *
-     * <code>optional fixed32 progress = 1;</code>
+     * <code>fixed32 progress = 1;</code>
      */
     private void setProgress(int value) {
       
@@ -1790,7 +1835,7 @@ public final class InterfaceDownload {
      *下载进度
      * </pre>
      *
-     * <code>optional fixed32 progress = 1;</code>
+     * <code>fixed32 progress = 1;</code>
      */
     private void clearProgress() {
       
@@ -1804,7 +1849,7 @@ public final class InterfaceDownload {
      *下载状态,参见Interface_Macro.proto ---&gt;Pb_Download_State
      * </pre>
      *
-     * <code>optional fixed32 nstate = 2;</code>
+     * <code>fixed32 nstate = 2;</code>
      */
     public int getNstate() {
       return nstate_;
@@ -1814,7 +1859,7 @@ public final class InterfaceDownload {
      *下载状态,参见Interface_Macro.proto ---&gt;Pb_Download_State
      * </pre>
      *
-     * <code>optional fixed32 nstate = 2;</code>
+     * <code>fixed32 nstate = 2;</code>
      */
     private void setNstate(int value) {
       
@@ -1825,7 +1870,7 @@ public final class InterfaceDownload {
      *下载状态,参见Interface_Macro.proto ---&gt;Pb_Download_State
      * </pre>
      *
-     * <code>optional fixed32 nstate = 2;</code>
+     * <code>fixed32 nstate = 2;</code>
      */
     private void clearNstate() {
       
@@ -1839,7 +1884,7 @@ public final class InterfaceDownload {
      *错误值 参见Interface_Macro.proto ---&gt;Pb_Download_Erro
      * </pre>
      *
-     * <code>optional fixed32 err = 3;</code>
+     * <code>fixed32 err = 3;</code>
      */
     public int getErr() {
       return err_;
@@ -1849,7 +1894,7 @@ public final class InterfaceDownload {
      *错误值 参见Interface_Macro.proto ---&gt;Pb_Download_Erro
      * </pre>
      *
-     * <code>optional fixed32 err = 3;</code>
+     * <code>fixed32 err = 3;</code>
      */
     private void setErr(int value) {
       
@@ -1860,7 +1905,7 @@ public final class InterfaceDownload {
      *错误值 参见Interface_Macro.proto ---&gt;Pb_Download_Erro
      * </pre>
      *
-     * <code>optional fixed32 err = 3;</code>
+     * <code>fixed32 err = 3;</code>
      */
     private void clearErr() {
       
@@ -1874,7 +1919,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 4;</code>
+     * <code>fixed32 mediaid = 4;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -1884,7 +1929,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 4;</code>
+     * <code>fixed32 mediaid = 4;</code>
      */
     private void setMediaid(int value) {
       
@@ -1895,7 +1940,7 @@ public final class InterfaceDownload {
      *下载媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 4;</code>
+     * <code>fixed32 mediaid = 4;</code>
      */
     private void clearMediaid() {
       
@@ -1909,7 +1954,7 @@ public final class InterfaceDownload {
      *下载媒体全路径名称 (windows:mbcs linux:utf8)
      * </pre>
      *
-     * <code>optional bytes pathname = 5;</code>
+     * <code>bytes pathname = 5;</code>
      */
     public com.google.protobuf.ByteString getPathname() {
       return pathname_;
@@ -1919,7 +1964,7 @@ public final class InterfaceDownload {
      *下载媒体全路径名称 (windows:mbcs linux:utf8)
      * </pre>
      *
-     * <code>optional bytes pathname = 5;</code>
+     * <code>bytes pathname = 5;</code>
      */
     private void setPathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1933,7 +1978,7 @@ public final class InterfaceDownload {
      *下载媒体全路径名称 (windows:mbcs linux:utf8)
      * </pre>
      *
-     * <code>optional bytes pathname = 5;</code>
+     * <code>bytes pathname = 5;</code>
      */
     private void clearPathname() {
       
@@ -1947,7 +1992,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(原编码格式返回) (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 6;</code>
+     * <code>bytes userstr = 6;</code>
      */
     public com.google.protobuf.ByteString getUserstr() {
       return userstr_;
@@ -1957,7 +2002,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(原编码格式返回) (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 6;</code>
+     * <code>bytes userstr = 6;</code>
      */
     private void setUserstr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1971,7 +2016,7 @@ public final class InterfaceDownload {
      *用户传入的自定义字串(原编码格式返回) (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
      * </pre>
      *
-     * <code>optional bytes userstr = 6;</code>
+     * <code>bytes userstr = 6;</code>
      */
     private void clearUserstr() {
       
@@ -2033,6 +2078,19 @@ public final class InterfaceDownload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadCb parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadCb parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceDownload.pbui_Type_DownloadCb parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2127,7 +2185,7 @@ public final class InterfaceDownload {
        *下载进度
        * </pre>
        *
-       * <code>optional fixed32 progress = 1;</code>
+       * <code>fixed32 progress = 1;</code>
        */
       public int getProgress() {
         return instance.getProgress();
@@ -2137,7 +2195,7 @@ public final class InterfaceDownload {
        *下载进度
        * </pre>
        *
-       * <code>optional fixed32 progress = 1;</code>
+       * <code>fixed32 progress = 1;</code>
        */
       public Builder setProgress(int value) {
         copyOnWrite();
@@ -2149,7 +2207,7 @@ public final class InterfaceDownload {
        *下载进度
        * </pre>
        *
-       * <code>optional fixed32 progress = 1;</code>
+       * <code>fixed32 progress = 1;</code>
        */
       public Builder clearProgress() {
         copyOnWrite();
@@ -2162,7 +2220,7 @@ public final class InterfaceDownload {
        *下载状态,参见Interface_Macro.proto ---&gt;Pb_Download_State
        * </pre>
        *
-       * <code>optional fixed32 nstate = 2;</code>
+       * <code>fixed32 nstate = 2;</code>
        */
       public int getNstate() {
         return instance.getNstate();
@@ -2172,7 +2230,7 @@ public final class InterfaceDownload {
        *下载状态,参见Interface_Macro.proto ---&gt;Pb_Download_State
        * </pre>
        *
-       * <code>optional fixed32 nstate = 2;</code>
+       * <code>fixed32 nstate = 2;</code>
        */
       public Builder setNstate(int value) {
         copyOnWrite();
@@ -2184,7 +2242,7 @@ public final class InterfaceDownload {
        *下载状态,参见Interface_Macro.proto ---&gt;Pb_Download_State
        * </pre>
        *
-       * <code>optional fixed32 nstate = 2;</code>
+       * <code>fixed32 nstate = 2;</code>
        */
       public Builder clearNstate() {
         copyOnWrite();
@@ -2197,7 +2255,7 @@ public final class InterfaceDownload {
        *错误值 参见Interface_Macro.proto ---&gt;Pb_Download_Erro
        * </pre>
        *
-       * <code>optional fixed32 err = 3;</code>
+       * <code>fixed32 err = 3;</code>
        */
       public int getErr() {
         return instance.getErr();
@@ -2207,7 +2265,7 @@ public final class InterfaceDownload {
        *错误值 参见Interface_Macro.proto ---&gt;Pb_Download_Erro
        * </pre>
        *
-       * <code>optional fixed32 err = 3;</code>
+       * <code>fixed32 err = 3;</code>
        */
       public Builder setErr(int value) {
         copyOnWrite();
@@ -2219,7 +2277,7 @@ public final class InterfaceDownload {
        *错误值 参见Interface_Macro.proto ---&gt;Pb_Download_Erro
        * </pre>
        *
-       * <code>optional fixed32 err = 3;</code>
+       * <code>fixed32 err = 3;</code>
        */
       public Builder clearErr() {
         copyOnWrite();
@@ -2232,7 +2290,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 4;</code>
+       * <code>fixed32 mediaid = 4;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -2242,7 +2300,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 4;</code>
+       * <code>fixed32 mediaid = 4;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -2254,7 +2312,7 @@ public final class InterfaceDownload {
        *下载媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 4;</code>
+       * <code>fixed32 mediaid = 4;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -2267,7 +2325,7 @@ public final class InterfaceDownload {
        *下载媒体全路径名称 (windows:mbcs linux:utf8)
        * </pre>
        *
-       * <code>optional bytes pathname = 5;</code>
+       * <code>bytes pathname = 5;</code>
        */
       public com.google.protobuf.ByteString getPathname() {
         return instance.getPathname();
@@ -2277,7 +2335,7 @@ public final class InterfaceDownload {
        *下载媒体全路径名称 (windows:mbcs linux:utf8)
        * </pre>
        *
-       * <code>optional bytes pathname = 5;</code>
+       * <code>bytes pathname = 5;</code>
        */
       public Builder setPathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2289,7 +2347,7 @@ public final class InterfaceDownload {
        *下载媒体全路径名称 (windows:mbcs linux:utf8)
        * </pre>
        *
-       * <code>optional bytes pathname = 5;</code>
+       * <code>bytes pathname = 5;</code>
        */
       public Builder clearPathname() {
         copyOnWrite();
@@ -2302,7 +2360,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(原编码格式返回) (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 6;</code>
+       * <code>bytes userstr = 6;</code>
        */
       public com.google.protobuf.ByteString getUserstr() {
         return instance.getUserstr();
@@ -2312,7 +2370,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(原编码格式返回) (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 6;</code>
+       * <code>bytes userstr = 6;</code>
        */
       public Builder setUserstr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2324,7 +2382,7 @@ public final class InterfaceDownload {
        *用户传入的自定义字串(原编码格式返回) (长度不能超过 Pb_DEFAULT_DESCRIBE_LENG 定义的长度)
        * </pre>
        *
-       * <code>optional bytes userstr = 6;</code>
+       * <code>bytes userstr = 6;</code>
        */
       public Builder clearUserstr() {
         copyOnWrite();
@@ -2334,6 +2392,7 @@ public final class InterfaceDownload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DownloadCb)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2430,6 +2489,7 @@ public final class InterfaceDownload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

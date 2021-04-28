@@ -3,6 +3,7 @@ package com.wind.myapplication;
 import android.content.Intent;
 import android.graphics.PointF;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.data.constant.EventMessage;
@@ -638,7 +639,7 @@ public class NativeUtil {
                 .setMediaid(mediaid)
                 .setNewfile(newfile)
                 .setOnlyfinish(onlyfinish)
-                .setUserstr(MyUtils.s2b(userStr))
+                .setUserstr(s2b(userStr))
                 .build();
         call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_DOWNLOAD.getNumber(),
                 InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_SAVE.getNumber(), build.toByteArray());
@@ -878,6 +879,31 @@ public class NativeUtil {
         }
         LogUtil.e(TAG, "NativeUtil.queryMeetDir :  查询会议目录成功 --> ");
         return InterfaceFile.pbui_Type_MeetDirDetailInfo.parseFrom(array);
+    }
+
+    /**
+     * 查询指定会议目录权限
+     *
+     * @param dirId 目录id
+     * @return
+     */
+    public InterfaceFile.pbui_Type_MeetDirRightDetailInfo queryDirPermission(int dirId) {
+        InterfaceBase.pbui_QueryInfoByID build = InterfaceBase.pbui_QueryInfoByID.newBuilder()
+                .setId(dirId)
+                .build();
+        byte[] bytes = call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT_VALUE,
+                InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_QUERY_VALUE, build.toByteArray());
+        if (bytes != null) {
+            try {
+                InterfaceFile.pbui_Type_MeetDirRightDetailInfo pbui_type_meetDirRightDetailInfo = InterfaceFile.pbui_Type_MeetDirRightDetailInfo.parseFrom(bytes);
+                LogUtils.i(TAG, "queryDirPermission 查询会议目录权限成功 dirId=" + dirId);
+                return pbui_type_meetDirRightDetailInfo;
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
+        }
+        LogUtils.e(TAG, "queryDirPermission 查询会议目录权限失败 dirId=" + dirId);
+        return null;
     }
 
     /**
@@ -1167,7 +1193,7 @@ public class NativeUtil {
      *
      * @param type 数据类型
      * @param id   eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,
-     *             如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
+     *             如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER(-12 参数错误)
      * @param flag Interface_Macro.Pb_CacheFlag =1表示强制缓存
      */
     public void cacheData(int type, int id, int flag) {
@@ -1194,7 +1220,8 @@ public class NativeUtil {
 
     /**
      * 删除签到记录
-     *  meetingid 指定会议ID 0表示绑定的会议
+     * meetingid 指定会议ID 0表示绑定的会议
+     *
      * @param memberids 为空表示删除指定会议的全部人员签到
      */
     public void deleteSign(List<Integer> memberids) {
@@ -1897,10 +1924,12 @@ public class NativeUtil {
                     LogUtil.e(CASE_TAG, "NativeUtil.callback_method:  142 会议目录文件变更通知 --->>> ");
                 }
                 break;
-            case 25://153
-//                InterfaceBase.pbui_MeetNotifyMsg.parseFrom(data);
-                LogUtil.e(CASE_TAG, "NativeUtil.callback_method:  153 会议目录权限变更通知 --->>> ");
+            case InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT_VALUE: {
+                InterfaceBase.pbui_MeetNotifyMsg info = InterfaceBase.pbui_MeetNotifyMsg.parseFrom(data);
+                LogUtils.e(CASE_TAG, "NativeUtil.callback_method:  会议目录权限变更通知 --->>> id=" + info.getId() + ",opermethod=" + info.getOpermethod());
+                EventBus.getDefault().post(new EventMessage(EventType.directory_permission_change_inform, info));
                 break;
+            }
             case 26://171
                 EventBus.getDefault().post(new EventMessage(EventType.Meet_vedio_changeInform, InterfaceBase.pbui_MeetNotifyMsg.parseFrom(data)));
                 LogUtil.e(CASE_TAG, "NativeUtil.callback_method:  171 会议视频变更通知 --->>> ");

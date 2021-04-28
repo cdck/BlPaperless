@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:gravity="center"
         tools:text="1"
         android:textColor="@color/black"
@@ -27,7 +27,7 @@
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginStart="10dp"
-        android:layout_weight="3"
+        android:layout_weight="5"
         android:gravity="center|start"
         tools:text="收到了会计分录开始"
         android:textColor="@color/black"
@@ -43,7 +43,7 @@
         android:gravity="center"
         tools:text="22.95kb"
         android:textColor="@color/black"
-        android:textSize="13sp" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/document_item_uploadname"
@@ -54,7 +54,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:textColor="@color/black"
-        android:textSize="13sp" />
+        android:textSize="12sp" />
 
     <LinearLayout
         android:layout_width="0dp"

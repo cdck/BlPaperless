@@ -192,4 +192,8 @@ public class EventType {
     public static final int MEETDIR_CHANGE_INFORM = BASE_EVENT_TYPE + 93;
     public static final int ACTION_SCREEN_ON = BASE_EVENT_TYPE + 94;
     public static final int ACTION_SCREEN_OFF = BASE_EVENT_TYPE + 95;
+    /**
+     * 会议目录权限变更通知
+     */
+    public static final int directory_permission_change_inform = BASE_EVENT_TYPE + 96;
 }

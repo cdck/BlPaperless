@@ -13,42 +13,42 @@ public final class InterfacePerson {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 personid = 1;</code>
+     * <code>fixed32 personid = 1;</code>
      */
     int getPersonid();
 
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
 
     /**
-     * <code>optional bytes company = 3;</code>
+     * <code>bytes company = 3;</code>
      */
     com.google.protobuf.ByteString getCompany();
 
     /**
-     * <code>optional bytes job = 4;</code>
+     * <code>bytes job = 4;</code>
      */
     com.google.protobuf.ByteString getJob();
 
     /**
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     com.google.protobuf.ByteString getComment();
 
     /**
-     * <code>optional bytes phone = 6;</code>
+     * <code>bytes phone = 6;</code>
      */
     com.google.protobuf.ByteString getPhone();
 
     /**
-     * <code>optional bytes email = 7;</code>
+     * <code>bytes email = 7;</code>
      */
     com.google.protobuf.ByteString getEmail();
 
     /**
-     * <code>optional bytes password = 8;</code>
+     * <code>bytes password = 8;</code>
      */
     com.google.protobuf.ByteString getPassword();
   }
@@ -76,20 +76,20 @@ public final class InterfacePerson {
     public static final int PERSONID_FIELD_NUMBER = 1;
     private int personid_;
     /**
-     * <code>optional fixed32 personid = 1;</code>
+     * <code>fixed32 personid = 1;</code>
      */
     public int getPersonid() {
       return personid_;
     }
     /**
-     * <code>optional fixed32 personid = 1;</code>
+     * <code>fixed32 personid = 1;</code>
      */
     private void setPersonid(int value) {
       
       personid_ = value;
     }
     /**
-     * <code>optional fixed32 personid = 1;</code>
+     * <code>fixed32 personid = 1;</code>
      */
     private void clearPersonid() {
       
@@ -99,13 +99,13 @@ public final class InterfacePerson {
     public static final int NAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString name_;
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -115,7 +115,7 @@ public final class InterfacePerson {
       name_ = value;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -125,13 +125,13 @@ public final class InterfacePerson {
     public static final int COMPANY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString company_;
     /**
-     * <code>optional bytes company = 3;</code>
+     * <code>bytes company = 3;</code>
      */
     public com.google.protobuf.ByteString getCompany() {
       return company_;
     }
     /**
-     * <code>optional bytes company = 3;</code>
+     * <code>bytes company = 3;</code>
      */
     private void setCompany(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -141,7 +141,7 @@ public final class InterfacePerson {
       company_ = value;
     }
     /**
-     * <code>optional bytes company = 3;</code>
+     * <code>bytes company = 3;</code>
      */
     private void clearCompany() {
       
@@ -151,13 +151,13 @@ public final class InterfacePerson {
     public static final int JOB_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString job_;
     /**
-     * <code>optional bytes job = 4;</code>
+     * <code>bytes job = 4;</code>
      */
     public com.google.protobuf.ByteString getJob() {
       return job_;
     }
     /**
-     * <code>optional bytes job = 4;</code>
+     * <code>bytes job = 4;</code>
      */
     private void setJob(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -167,7 +167,7 @@ public final class InterfacePerson {
       job_ = value;
     }
     /**
-     * <code>optional bytes job = 4;</code>
+     * <code>bytes job = 4;</code>
      */
     private void clearJob() {
       
@@ -177,13 +177,13 @@ public final class InterfacePerson {
     public static final int COMMENT_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString comment_;
     /**
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     public com.google.protobuf.ByteString getComment() {
       return comment_;
     }
     /**
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     private void setComment(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -193,7 +193,7 @@ public final class InterfacePerson {
       comment_ = value;
     }
     /**
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     private void clearComment() {
       
@@ -203,13 +203,13 @@ public final class InterfacePerson {
     public static final int PHONE_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString phone_;
     /**
-     * <code>optional bytes phone = 6;</code>
+     * <code>bytes phone = 6;</code>
      */
     public com.google.protobuf.ByteString getPhone() {
       return phone_;
     }
     /**
-     * <code>optional bytes phone = 6;</code>
+     * <code>bytes phone = 6;</code>
      */
     private void setPhone(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -219,7 +219,7 @@ public final class InterfacePerson {
       phone_ = value;
     }
     /**
-     * <code>optional bytes phone = 6;</code>
+     * <code>bytes phone = 6;</code>
      */
     private void clearPhone() {
       
@@ -229,13 +229,13 @@ public final class InterfacePerson {
     public static final int EMAIL_FIELD_NUMBER = 7;
     private com.google.protobuf.ByteString email_;
     /**
-     * <code>optional bytes email = 7;</code>
+     * <code>bytes email = 7;</code>
      */
     public com.google.protobuf.ByteString getEmail() {
       return email_;
     }
     /**
-     * <code>optional bytes email = 7;</code>
+     * <code>bytes email = 7;</code>
      */
     private void setEmail(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -245,7 +245,7 @@ public final class InterfacePerson {
       email_ = value;
     }
     /**
-     * <code>optional bytes email = 7;</code>
+     * <code>bytes email = 7;</code>
      */
     private void clearEmail() {
       
@@ -255,13 +255,13 @@ public final class InterfacePerson {
     public static final int PASSWORD_FIELD_NUMBER = 8;
     private com.google.protobuf.ByteString password_;
     /**
-     * <code>optional bytes password = 8;</code>
+     * <code>bytes password = 8;</code>
      */
     public com.google.protobuf.ByteString getPassword() {
       return password_;
     }
     /**
-     * <code>optional bytes password = 8;</code>
+     * <code>bytes password = 8;</code>
      */
     private void setPassword(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -271,7 +271,7 @@ public final class InterfacePerson {
       password_ = value;
     }
     /**
-     * <code>optional bytes password = 8;</code>
+     * <code>bytes password = 8;</code>
      */
     private void clearPassword() {
       
@@ -347,6 +347,19 @@ public final class InterfacePerson {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Item_PersonDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Item_PersonDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Item_PersonDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -434,13 +447,13 @@ public final class InterfacePerson {
 
 
       /**
-       * <code>optional fixed32 personid = 1;</code>
+       * <code>fixed32 personid = 1;</code>
        */
       public int getPersonid() {
         return instance.getPersonid();
       }
       /**
-       * <code>optional fixed32 personid = 1;</code>
+       * <code>fixed32 personid = 1;</code>
        */
       public Builder setPersonid(int value) {
         copyOnWrite();
@@ -448,7 +461,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional fixed32 personid = 1;</code>
+       * <code>fixed32 personid = 1;</code>
        */
       public Builder clearPersonid() {
         copyOnWrite();
@@ -457,13 +470,13 @@ public final class InterfacePerson {
       }
 
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -471,7 +484,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -480,13 +493,13 @@ public final class InterfacePerson {
       }
 
       /**
-       * <code>optional bytes company = 3;</code>
+       * <code>bytes company = 3;</code>
        */
       public com.google.protobuf.ByteString getCompany() {
         return instance.getCompany();
       }
       /**
-       * <code>optional bytes company = 3;</code>
+       * <code>bytes company = 3;</code>
        */
       public Builder setCompany(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -494,7 +507,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional bytes company = 3;</code>
+       * <code>bytes company = 3;</code>
        */
       public Builder clearCompany() {
         copyOnWrite();
@@ -503,13 +516,13 @@ public final class InterfacePerson {
       }
 
       /**
-       * <code>optional bytes job = 4;</code>
+       * <code>bytes job = 4;</code>
        */
       public com.google.protobuf.ByteString getJob() {
         return instance.getJob();
       }
       /**
-       * <code>optional bytes job = 4;</code>
+       * <code>bytes job = 4;</code>
        */
       public Builder setJob(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -517,7 +530,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional bytes job = 4;</code>
+       * <code>bytes job = 4;</code>
        */
       public Builder clearJob() {
         copyOnWrite();
@@ -526,13 +539,13 @@ public final class InterfacePerson {
       }
 
       /**
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public com.google.protobuf.ByteString getComment() {
         return instance.getComment();
       }
       /**
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public Builder setComment(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -540,7 +553,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public Builder clearComment() {
         copyOnWrite();
@@ -549,13 +562,13 @@ public final class InterfacePerson {
       }
 
       /**
-       * <code>optional bytes phone = 6;</code>
+       * <code>bytes phone = 6;</code>
        */
       public com.google.protobuf.ByteString getPhone() {
         return instance.getPhone();
       }
       /**
-       * <code>optional bytes phone = 6;</code>
+       * <code>bytes phone = 6;</code>
        */
       public Builder setPhone(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -563,7 +576,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional bytes phone = 6;</code>
+       * <code>bytes phone = 6;</code>
        */
       public Builder clearPhone() {
         copyOnWrite();
@@ -572,13 +585,13 @@ public final class InterfacePerson {
       }
 
       /**
-       * <code>optional bytes email = 7;</code>
+       * <code>bytes email = 7;</code>
        */
       public com.google.protobuf.ByteString getEmail() {
         return instance.getEmail();
       }
       /**
-       * <code>optional bytes email = 7;</code>
+       * <code>bytes email = 7;</code>
        */
       public Builder setEmail(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -586,7 +599,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional bytes email = 7;</code>
+       * <code>bytes email = 7;</code>
        */
       public Builder clearEmail() {
         copyOnWrite();
@@ -595,13 +608,13 @@ public final class InterfacePerson {
       }
 
       /**
-       * <code>optional bytes password = 8;</code>
+       * <code>bytes password = 8;</code>
        */
       public com.google.protobuf.ByteString getPassword() {
         return instance.getPassword();
       }
       /**
-       * <code>optional bytes password = 8;</code>
+       * <code>bytes password = 8;</code>
        */
       public Builder setPassword(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -609,7 +622,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional bytes password = 8;</code>
+       * <code>bytes password = 8;</code>
        */
       public Builder clearPassword() {
         copyOnWrite();
@@ -619,6 +632,7 @@ public final class InterfacePerson {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_PersonDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -729,6 +743,7 @@ public final class InterfacePerson {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -941,6 +956,19 @@ public final class InterfacePerson {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PersonDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PersonDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PersonDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1128,6 +1156,7 @@ public final class InterfacePerson {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_PersonDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1193,6 +1222,7 @@ public final class InterfacePerson {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1233,12 +1263,12 @@ public final class InterfacePerson {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     int getGroupid();
 
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
   }
@@ -1260,20 +1290,20 @@ public final class InterfacePerson {
     public static final int GROUPID_FIELD_NUMBER = 1;
     private int groupid_;
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     public int getGroupid() {
       return groupid_;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void setGroupid(int value) {
       
       groupid_ = value;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void clearGroupid() {
       
@@ -1283,13 +1313,13 @@ public final class InterfacePerson {
     public static final int NAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString name_;
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1299,7 +1329,7 @@ public final class InterfacePerson {
       name_ = value;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -1333,6 +1363,19 @@ public final class InterfacePerson {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Item_PeopleGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Item_PeopleGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Item_PeopleGroupDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1420,13 +1463,13 @@ public final class InterfacePerson {
 
 
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public int getGroupid() {
         return instance.getGroupid();
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder setGroupid(int value) {
         copyOnWrite();
@@ -1434,7 +1477,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder clearGroupid() {
         copyOnWrite();
@@ -1443,13 +1486,13 @@ public final class InterfacePerson {
       }
 
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1457,7 +1500,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -1467,6 +1510,7 @@ public final class InterfacePerson {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_PeopleGroupDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1535,6 +1579,7 @@ public final class InterfacePerson {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1747,6 +1792,19 @@ public final class InterfacePerson {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PeopleGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PeopleGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PeopleGroupDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1934,6 +1992,7 @@ public final class InterfacePerson {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_PeopleGroupDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1999,6 +2058,7 @@ public final class InterfacePerson {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2039,7 +2099,7 @@ public final class InterfacePerson {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     int getGroupid();
 
@@ -2078,20 +2138,20 @@ public final class InterfacePerson {
     public static final int GROUPID_FIELD_NUMBER = 1;
     private int groupid_;
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     public int getGroupid() {
       return groupid_;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void setGroupid(int value) {
       
       groupid_ = value;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void clearGroupid() {
       
@@ -2187,6 +2247,19 @@ public final class InterfacePerson {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PeopleInGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PeopleInGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_PeopleInGroupDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2276,13 +2349,13 @@ public final class InterfacePerson {
 
 
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public int getGroupid() {
         return instance.getGroupid();
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder setGroupid(int value) {
         copyOnWrite();
@@ -2290,7 +2363,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder clearGroupid() {
         copyOnWrite();
@@ -2355,6 +2428,7 @@ public final class InterfacePerson {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_PeopleInGroupDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2441,6 +2515,7 @@ public final class InterfacePerson {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2481,7 +2556,7 @@ public final class InterfacePerson {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     int getGroupid();
 
@@ -2521,20 +2596,20 @@ public final class InterfacePerson {
     public static final int GROUPID_FIELD_NUMBER = 1;
     private int groupid_;
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     public int getGroupid() {
       return groupid_;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void setGroupid(int value) {
       
       groupid_ = value;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void clearGroupid() {
       
@@ -2689,6 +2764,19 @@ public final class InterfacePerson {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_AddPeopleToGroup parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_AddPeopleToGroup parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePerson.pbui_Type_AddPeopleToGroup parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2778,13 +2866,13 @@ public final class InterfacePerson {
 
 
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public int getGroupid() {
         return instance.getGroupid();
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder setGroupid(int value) {
         copyOnWrite();
@@ -2792,7 +2880,7 @@ public final class InterfacePerson {
         return this;
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder clearGroupid() {
         copyOnWrite();
@@ -2899,6 +2987,7 @@ public final class InterfacePerson {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_AddPeopleToGroup)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2972,6 +3061,7 @@ public final class InterfacePerson {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

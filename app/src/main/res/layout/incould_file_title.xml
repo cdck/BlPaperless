@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:gravity="center"
         android:text="@string/number"
         android:textColor="@color/text_color_n"
@@ -18,17 +18,15 @@
 
     <ImageView
         android:layout_width="1dp"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:layout_gravity="center"
-        android:background="@color/divLineGray"
-        android:textColor="@color/text_color_n"
-        android:textSize="14sp" />
+        android:background="@color/divLineGray"/>
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginStart="15dp"
-        android:layout_weight="3"
+        android:layout_weight="5"
         android:gravity="center|left"
         android:text="@string/file_name"
         android:textColor="@color/text_color_n"
@@ -36,7 +34,7 @@
 
     <ImageView
         android:layout_width="1dp"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:layout_gravity="center"
         android:background="@color/divLineGray" />
 
@@ -51,7 +49,7 @@
 
     <ImageView
         android:layout_width="1dp"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:layout_gravity="center"
         android:background="@color/divLineGray" />
 

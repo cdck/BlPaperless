@@ -13,7 +13,7 @@ public final class InterfaceVote {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -22,7 +22,7 @@ public final class InterfaceVote {
      *投票内容 
      * </pre>
      *
-     * <code>optional bytes content = 2;</code>
+     * <code>bytes content = 2;</code>
      */
     com.google.protobuf.ByteString getContent();
 
@@ -31,7 +31,7 @@ public final class InterfaceVote {
      *投票 选举 调查问卷 参见Pb_MeetVoteType
      * </pre>
      *
-     * <code>optional fixed32 maintype = 3;</code>
+     * <code>fixed32 maintype = 3;</code>
      */
     int getMaintype();
 
@@ -40,7 +40,7 @@ public final class InterfaceVote {
      *匿名投票 记名投票 参见Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     int getMode();
 
@@ -49,7 +49,7 @@ public final class InterfaceVote {
      *多选 单选 参见Pb_MeetVote_SelType
      * </pre>
      *
-     * <code>optional fixed32 type = 5;</code>
+     * <code>fixed32 type = 5;</code>
      */
     int getType();
 
@@ -58,7 +58,7 @@ public final class InterfaceVote {
      *超时值 单位 秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     int getTimeouts();
 
@@ -67,7 +67,7 @@ public final class InterfaceVote {
      *有效选项
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 7;</code>
+     * <code>fixed32 selectcount = 7;</code>
      */
     int getSelectcount();
 
@@ -112,20 +112,20 @@ public final class InterfaceVote {
     public static final int VOTEID_FIELD_NUMBER = 1;
     private int voteid_;
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
       voteid_ = value;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -139,7 +139,7 @@ public final class InterfaceVote {
      *投票内容 
      * </pre>
      *
-     * <code>optional bytes content = 2;</code>
+     * <code>bytes content = 2;</code>
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -149,7 +149,7 @@ public final class InterfaceVote {
      *投票内容 
      * </pre>
      *
-     * <code>optional bytes content = 2;</code>
+     * <code>bytes content = 2;</code>
      */
     private void setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -163,7 +163,7 @@ public final class InterfaceVote {
      *投票内容 
      * </pre>
      *
-     * <code>optional bytes content = 2;</code>
+     * <code>bytes content = 2;</code>
      */
     private void clearContent() {
       
@@ -177,7 +177,7 @@ public final class InterfaceVote {
      *投票 选举 调查问卷 参见Pb_MeetVoteType
      * </pre>
      *
-     * <code>optional fixed32 maintype = 3;</code>
+     * <code>fixed32 maintype = 3;</code>
      */
     public int getMaintype() {
       return maintype_;
@@ -187,7 +187,7 @@ public final class InterfaceVote {
      *投票 选举 调查问卷 参见Pb_MeetVoteType
      * </pre>
      *
-     * <code>optional fixed32 maintype = 3;</code>
+     * <code>fixed32 maintype = 3;</code>
      */
     private void setMaintype(int value) {
       
@@ -198,7 +198,7 @@ public final class InterfaceVote {
      *投票 选举 调查问卷 参见Pb_MeetVoteType
      * </pre>
      *
-     * <code>optional fixed32 maintype = 3;</code>
+     * <code>fixed32 maintype = 3;</code>
      */
     private void clearMaintype() {
       
@@ -212,7 +212,7 @@ public final class InterfaceVote {
      *匿名投票 记名投票 参见Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     public int getMode() {
       return mode_;
@@ -222,7 +222,7 @@ public final class InterfaceVote {
      *匿名投票 记名投票 参见Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     private void setMode(int value) {
       
@@ -233,7 +233,7 @@ public final class InterfaceVote {
      *匿名投票 记名投票 参见Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     private void clearMode() {
       
@@ -247,7 +247,7 @@ public final class InterfaceVote {
      *多选 单选 参见Pb_MeetVote_SelType
      * </pre>
      *
-     * <code>optional fixed32 type = 5;</code>
+     * <code>fixed32 type = 5;</code>
      */
     public int getType() {
       return type_;
@@ -257,7 +257,7 @@ public final class InterfaceVote {
      *多选 单选 参见Pb_MeetVote_SelType
      * </pre>
      *
-     * <code>optional fixed32 type = 5;</code>
+     * <code>fixed32 type = 5;</code>
      */
     private void setType(int value) {
       
@@ -268,7 +268,7 @@ public final class InterfaceVote {
      *多选 单选 参见Pb_MeetVote_SelType
      * </pre>
      *
-     * <code>optional fixed32 type = 5;</code>
+     * <code>fixed32 type = 5;</code>
      */
     private void clearType() {
       
@@ -282,7 +282,7 @@ public final class InterfaceVote {
      *超时值 单位 秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     public int getTimeouts() {
       return timeouts_;
@@ -292,7 +292,7 @@ public final class InterfaceVote {
      *超时值 单位 秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     private void setTimeouts(int value) {
       
@@ -303,7 +303,7 @@ public final class InterfaceVote {
      *超时值 单位 秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     private void clearTimeouts() {
       
@@ -317,7 +317,7 @@ public final class InterfaceVote {
      *有效选项
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 7;</code>
+     * <code>fixed32 selectcount = 7;</code>
      */
     public int getSelectcount() {
       return selectcount_;
@@ -327,7 +327,7 @@ public final class InterfaceVote {
      *有效选项
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 7;</code>
+     * <code>fixed32 selectcount = 7;</code>
      */
     private void setSelectcount(int value) {
       
@@ -338,7 +338,7 @@ public final class InterfaceVote {
      *有效选项
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 7;</code>
+     * <code>fixed32 selectcount = 7;</code>
      */
     private void clearSelectcount() {
       
@@ -512,6 +512,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetOnVotingDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetOnVotingDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetOnVotingDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -594,13 +607,13 @@ public final class InterfaceVote {
 
 
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -608,7 +621,7 @@ public final class InterfaceVote {
         return this;
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -621,7 +634,7 @@ public final class InterfaceVote {
        *投票内容 
        * </pre>
        *
-       * <code>optional bytes content = 2;</code>
+       * <code>bytes content = 2;</code>
        */
       public com.google.protobuf.ByteString getContent() {
         return instance.getContent();
@@ -631,7 +644,7 @@ public final class InterfaceVote {
        *投票内容 
        * </pre>
        *
-       * <code>optional bytes content = 2;</code>
+       * <code>bytes content = 2;</code>
        */
       public Builder setContent(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -643,7 +656,7 @@ public final class InterfaceVote {
        *投票内容 
        * </pre>
        *
-       * <code>optional bytes content = 2;</code>
+       * <code>bytes content = 2;</code>
        */
       public Builder clearContent() {
         copyOnWrite();
@@ -656,7 +669,7 @@ public final class InterfaceVote {
        *投票 选举 调查问卷 参见Pb_MeetVoteType
        * </pre>
        *
-       * <code>optional fixed32 maintype = 3;</code>
+       * <code>fixed32 maintype = 3;</code>
        */
       public int getMaintype() {
         return instance.getMaintype();
@@ -666,7 +679,7 @@ public final class InterfaceVote {
        *投票 选举 调查问卷 参见Pb_MeetVoteType
        * </pre>
        *
-       * <code>optional fixed32 maintype = 3;</code>
+       * <code>fixed32 maintype = 3;</code>
        */
       public Builder setMaintype(int value) {
         copyOnWrite();
@@ -678,7 +691,7 @@ public final class InterfaceVote {
        *投票 选举 调查问卷 参见Pb_MeetVoteType
        * </pre>
        *
-       * <code>optional fixed32 maintype = 3;</code>
+       * <code>fixed32 maintype = 3;</code>
        */
       public Builder clearMaintype() {
         copyOnWrite();
@@ -691,7 +704,7 @@ public final class InterfaceVote {
        *匿名投票 记名投票 参见Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public int getMode() {
         return instance.getMode();
@@ -701,7 +714,7 @@ public final class InterfaceVote {
        *匿名投票 记名投票 参见Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public Builder setMode(int value) {
         copyOnWrite();
@@ -713,7 +726,7 @@ public final class InterfaceVote {
        *匿名投票 记名投票 参见Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public Builder clearMode() {
         copyOnWrite();
@@ -726,7 +739,7 @@ public final class InterfaceVote {
        *多选 单选 参见Pb_MeetVote_SelType
        * </pre>
        *
-       * <code>optional fixed32 type = 5;</code>
+       * <code>fixed32 type = 5;</code>
        */
       public int getType() {
         return instance.getType();
@@ -736,7 +749,7 @@ public final class InterfaceVote {
        *多选 单选 参见Pb_MeetVote_SelType
        * </pre>
        *
-       * <code>optional fixed32 type = 5;</code>
+       * <code>fixed32 type = 5;</code>
        */
       public Builder setType(int value) {
         copyOnWrite();
@@ -748,7 +761,7 @@ public final class InterfaceVote {
        *多选 单选 参见Pb_MeetVote_SelType
        * </pre>
        *
-       * <code>optional fixed32 type = 5;</code>
+       * <code>fixed32 type = 5;</code>
        */
       public Builder clearType() {
         copyOnWrite();
@@ -761,7 +774,7 @@ public final class InterfaceVote {
        *超时值 单位 秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public int getTimeouts() {
         return instance.getTimeouts();
@@ -771,7 +784,7 @@ public final class InterfaceVote {
        *超时值 单位 秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public Builder setTimeouts(int value) {
         copyOnWrite();
@@ -783,7 +796,7 @@ public final class InterfaceVote {
        *超时值 单位 秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public Builder clearTimeouts() {
         copyOnWrite();
@@ -796,7 +809,7 @@ public final class InterfaceVote {
        *有效选项
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 7;</code>
+       * <code>fixed32 selectcount = 7;</code>
        */
       public int getSelectcount() {
         return instance.getSelectcount();
@@ -806,7 +819,7 @@ public final class InterfaceVote {
        *有效选项
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 7;</code>
+       * <code>fixed32 selectcount = 7;</code>
        */
       public Builder setSelectcount(int value) {
         copyOnWrite();
@@ -818,7 +831,7 @@ public final class InterfaceVote {
        *有效选项
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 7;</code>
+       * <code>fixed32 selectcount = 7;</code>
        */
       public Builder clearSelectcount() {
         copyOnWrite();
@@ -911,6 +924,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetOnVotingDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1025,6 +1039,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1304,6 +1319,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetOnVotingDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetOnVotingDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetOnVotingDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1538,6 +1566,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetOnVotingDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1603,6 +1632,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1647,7 +1677,7 @@ public final class InterfaceVote {
      *投票ID
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -1656,7 +1686,7 @@ public final class InterfaceVote {
      *计时 单位 秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 2;</code>
+     * <code>fixed32 timeouts = 2;</code>
      */
     int getTimeouts();
   }
@@ -1683,7 +1713,7 @@ public final class InterfaceVote {
      *投票ID
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
@@ -1693,7 +1723,7 @@ public final class InterfaceVote {
      *投票ID
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
@@ -1704,7 +1734,7 @@ public final class InterfaceVote {
      *投票ID
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -1718,7 +1748,7 @@ public final class InterfaceVote {
      *计时 单位 秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 2;</code>
+     * <code>fixed32 timeouts = 2;</code>
      */
     public int getTimeouts() {
       return timeouts_;
@@ -1728,7 +1758,7 @@ public final class InterfaceVote {
      *计时 单位 秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 2;</code>
+     * <code>fixed32 timeouts = 2;</code>
      */
     private void setTimeouts(int value) {
       
@@ -1739,7 +1769,7 @@ public final class InterfaceVote {
      *计时 单位 秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 2;</code>
+     * <code>fixed32 timeouts = 2;</code>
      */
     private void clearTimeouts() {
       
@@ -1773,6 +1803,19 @@ public final class InterfaceVote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetSetVoteTimeouts parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetSetVoteTimeouts parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetSetVoteTimeouts parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1866,7 +1909,7 @@ public final class InterfaceVote {
        *投票ID
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
@@ -1876,7 +1919,7 @@ public final class InterfaceVote {
        *投票ID
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -1888,7 +1931,7 @@ public final class InterfaceVote {
        *投票ID
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -1901,7 +1944,7 @@ public final class InterfaceVote {
        *计时 单位 秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 2;</code>
+       * <code>fixed32 timeouts = 2;</code>
        */
       public int getTimeouts() {
         return instance.getTimeouts();
@@ -1911,7 +1954,7 @@ public final class InterfaceVote {
        *计时 单位 秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 2;</code>
+       * <code>fixed32 timeouts = 2;</code>
        */
       public Builder setTimeouts(int value) {
         copyOnWrite();
@@ -1923,7 +1966,7 @@ public final class InterfaceVote {
        *计时 单位 秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 2;</code>
+       * <code>fixed32 timeouts = 2;</code>
        */
       public Builder clearTimeouts() {
         copyOnWrite();
@@ -1933,6 +1976,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetSetVoteTimeouts)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2001,6 +2045,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2152,6 +2197,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetStopVoteInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetStopVoteInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetStopVoteInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2296,6 +2354,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetStopVoteInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2374,6 +2433,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2418,7 +2478,7 @@ public final class InterfaceVote {
      *发起的投票ID
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -2427,7 +2487,7 @@ public final class InterfaceVote {
      *发起投票标志 Pb_VoteStartFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 2;</code>
+     * <code>fixed32 voteflag = 2;</code>
      */
     int getVoteflag();
 
@@ -2436,7 +2496,7 @@ public final class InterfaceVote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 3;</code>
+     * <code>fixed32 timeouts = 3;</code>
      */
     int getTimeouts();
 
@@ -2484,7 +2544,7 @@ public final class InterfaceVote {
      *发起的投票ID
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
@@ -2494,7 +2554,7 @@ public final class InterfaceVote {
      *发起的投票ID
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
@@ -2505,7 +2565,7 @@ public final class InterfaceVote {
      *发起的投票ID
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -2519,7 +2579,7 @@ public final class InterfaceVote {
      *发起投票标志 Pb_VoteStartFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 2;</code>
+     * <code>fixed32 voteflag = 2;</code>
      */
     public int getVoteflag() {
       return voteflag_;
@@ -2529,7 +2589,7 @@ public final class InterfaceVote {
      *发起投票标志 Pb_VoteStartFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 2;</code>
+     * <code>fixed32 voteflag = 2;</code>
      */
     private void setVoteflag(int value) {
       
@@ -2540,7 +2600,7 @@ public final class InterfaceVote {
      *发起投票标志 Pb_VoteStartFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 2;</code>
+     * <code>fixed32 voteflag = 2;</code>
      */
     private void clearVoteflag() {
       
@@ -2554,7 +2614,7 @@ public final class InterfaceVote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 3;</code>
+     * <code>fixed32 timeouts = 3;</code>
      */
     public int getTimeouts() {
       return timeouts_;
@@ -2564,7 +2624,7 @@ public final class InterfaceVote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 3;</code>
+     * <code>fixed32 timeouts = 3;</code>
      */
     private void setTimeouts(int value) {
       
@@ -2575,7 +2635,7 @@ public final class InterfaceVote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 3;</code>
+     * <code>fixed32 timeouts = 3;</code>
      */
     private void clearTimeouts() {
       
@@ -2713,6 +2773,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_ItemVoteStart parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_ItemVoteStart parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_ItemVoteStart parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2799,7 +2872,7 @@ public final class InterfaceVote {
        *发起的投票ID
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
@@ -2809,7 +2882,7 @@ public final class InterfaceVote {
        *发起的投票ID
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -2821,7 +2894,7 @@ public final class InterfaceVote {
        *发起的投票ID
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -2834,7 +2907,7 @@ public final class InterfaceVote {
        *发起投票标志 Pb_VoteStartFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 2;</code>
+       * <code>fixed32 voteflag = 2;</code>
        */
       public int getVoteflag() {
         return instance.getVoteflag();
@@ -2844,7 +2917,7 @@ public final class InterfaceVote {
        *发起投票标志 Pb_VoteStartFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 2;</code>
+       * <code>fixed32 voteflag = 2;</code>
        */
       public Builder setVoteflag(int value) {
         copyOnWrite();
@@ -2856,7 +2929,7 @@ public final class InterfaceVote {
        *发起投票标志 Pb_VoteStartFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 2;</code>
+       * <code>fixed32 voteflag = 2;</code>
        */
       public Builder clearVoteflag() {
         copyOnWrite();
@@ -2869,7 +2942,7 @@ public final class InterfaceVote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 3;</code>
+       * <code>fixed32 timeouts = 3;</code>
        */
       public int getTimeouts() {
         return instance.getTimeouts();
@@ -2879,7 +2952,7 @@ public final class InterfaceVote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 3;</code>
+       * <code>fixed32 timeouts = 3;</code>
        */
       public Builder setTimeouts(int value) {
         copyOnWrite();
@@ -2891,7 +2964,7 @@ public final class InterfaceVote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 3;</code>
+       * <code>fixed32 timeouts = 3;</code>
        */
       public Builder clearTimeouts() {
         copyOnWrite();
@@ -2984,6 +3057,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_ItemVoteStart)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3084,6 +3158,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3363,6 +3438,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetStartVoteInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetStartVoteInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetStartVoteInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3597,6 +3685,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetStartVoteInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3662,6 +3751,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3702,7 +3792,7 @@ public final class InterfaceVote {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -3711,7 +3801,7 @@ public final class InterfaceVote {
      *有效选项数
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     int getSelcnt();
 
@@ -3720,7 +3810,7 @@ public final class InterfaceVote {
      *选择的项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择 |高8位参见 Pb_VOTE_SELFLAG_CHECKIN
      * </pre>
      *
-     * <code>optional fixed32 selitem = 3;</code>
+     * <code>fixed32 selitem = 3;</code>
      */
     int getSelitem();
   }
@@ -3741,20 +3831,20 @@ public final class InterfaceVote {
     public static final int VOTEID_FIELD_NUMBER = 1;
     private int voteid_;
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
       voteid_ = value;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -3768,7 +3858,7 @@ public final class InterfaceVote {
      *有效选项数
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     public int getSelcnt() {
       return selcnt_;
@@ -3778,7 +3868,7 @@ public final class InterfaceVote {
      *有效选项数
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     private void setSelcnt(int value) {
       
@@ -3789,7 +3879,7 @@ public final class InterfaceVote {
      *有效选项数
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     private void clearSelcnt() {
       
@@ -3803,7 +3893,7 @@ public final class InterfaceVote {
      *选择的项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择 |高8位参见 Pb_VOTE_SELFLAG_CHECKIN
      * </pre>
      *
-     * <code>optional fixed32 selitem = 3;</code>
+     * <code>fixed32 selitem = 3;</code>
      */
     public int getSelitem() {
       return selitem_;
@@ -3813,7 +3903,7 @@ public final class InterfaceVote {
      *选择的项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择 |高8位参见 Pb_VOTE_SELFLAG_CHECKIN
      * </pre>
      *
-     * <code>optional fixed32 selitem = 3;</code>
+     * <code>fixed32 selitem = 3;</code>
      */
     private void setSelitem(int value) {
       
@@ -3824,7 +3914,7 @@ public final class InterfaceVote {
      *选择的项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择 |高8位参见 Pb_VOTE_SELFLAG_CHECKIN
      * </pre>
      *
-     * <code>optional fixed32 selitem = 3;</code>
+     * <code>fixed32 selitem = 3;</code>
      */
     private void clearSelitem() {
       
@@ -3865,6 +3955,19 @@ public final class InterfaceVote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetSubmitVote parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetSubmitVote parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetSubmitVote parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3952,13 +4055,13 @@ public final class InterfaceVote {
 
 
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -3966,7 +4069,7 @@ public final class InterfaceVote {
         return this;
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -3979,7 +4082,7 @@ public final class InterfaceVote {
        *有效选项数
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public int getSelcnt() {
         return instance.getSelcnt();
@@ -3989,7 +4092,7 @@ public final class InterfaceVote {
        *有效选项数
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public Builder setSelcnt(int value) {
         copyOnWrite();
@@ -4001,7 +4104,7 @@ public final class InterfaceVote {
        *有效选项数
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public Builder clearSelcnt() {
         copyOnWrite();
@@ -4014,7 +4117,7 @@ public final class InterfaceVote {
        *选择的项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择 |高8位参见 Pb_VOTE_SELFLAG_CHECKIN
        * </pre>
        *
-       * <code>optional fixed32 selitem = 3;</code>
+       * <code>fixed32 selitem = 3;</code>
        */
       public int getSelitem() {
         return instance.getSelitem();
@@ -4024,7 +4127,7 @@ public final class InterfaceVote {
        *选择的项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择 |高8位参见 Pb_VOTE_SELFLAG_CHECKIN
        * </pre>
        *
-       * <code>optional fixed32 selitem = 3;</code>
+       * <code>fixed32 selitem = 3;</code>
        */
       public Builder setSelitem(int value) {
         copyOnWrite();
@@ -4036,7 +4139,7 @@ public final class InterfaceVote {
        *选择的项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择 |高8位参见 Pb_VOTE_SELFLAG_CHECKIN
        * </pre>
        *
-       * <code>optional fixed32 selitem = 3;</code>
+       * <code>fixed32 selitem = 3;</code>
        */
       public Builder clearSelitem() {
         copyOnWrite();
@@ -4046,6 +4149,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetSubmitVote)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4121,6 +4225,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4333,6 +4438,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetSubmitVote parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetSubmitVote parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetSubmitVote parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4520,6 +4638,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetSubmitVote)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4585,6 +4704,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4629,7 +4749,7 @@ public final class InterfaceVote {
      *描述文字
      * </pre>
      *
-     * <code>optional bytes text = 1;</code>
+     * <code>bytes text = 1;</code>
      */
     com.google.protobuf.ByteString getText();
 
@@ -4638,7 +4758,7 @@ public final class InterfaceVote {
      *投票数
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     int getSelcnt();
   }
@@ -4664,7 +4784,7 @@ public final class InterfaceVote {
      *描述文字
      * </pre>
      *
-     * <code>optional bytes text = 1;</code>
+     * <code>bytes text = 1;</code>
      */
     public com.google.protobuf.ByteString getText() {
       return text_;
@@ -4674,7 +4794,7 @@ public final class InterfaceVote {
      *描述文字
      * </pre>
      *
-     * <code>optional bytes text = 1;</code>
+     * <code>bytes text = 1;</code>
      */
     private void setText(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4688,7 +4808,7 @@ public final class InterfaceVote {
      *描述文字
      * </pre>
      *
-     * <code>optional bytes text = 1;</code>
+     * <code>bytes text = 1;</code>
      */
     private void clearText() {
       
@@ -4702,7 +4822,7 @@ public final class InterfaceVote {
      *投票数
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     public int getSelcnt() {
       return selcnt_;
@@ -4712,7 +4832,7 @@ public final class InterfaceVote {
      *投票数
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     private void setSelcnt(int value) {
       
@@ -4723,7 +4843,7 @@ public final class InterfaceVote {
      *投票数
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     private void clearSelcnt() {
       
@@ -4757,6 +4877,19 @@ public final class InterfaceVote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_SubItem_VoteItemInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_SubItem_VoteItemInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_SubItem_VoteItemInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4848,7 +4981,7 @@ public final class InterfaceVote {
        *描述文字
        * </pre>
        *
-       * <code>optional bytes text = 1;</code>
+       * <code>bytes text = 1;</code>
        */
       public com.google.protobuf.ByteString getText() {
         return instance.getText();
@@ -4858,7 +4991,7 @@ public final class InterfaceVote {
        *描述文字
        * </pre>
        *
-       * <code>optional bytes text = 1;</code>
+       * <code>bytes text = 1;</code>
        */
       public Builder setText(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -4870,7 +5003,7 @@ public final class InterfaceVote {
        *描述文字
        * </pre>
        *
-       * <code>optional bytes text = 1;</code>
+       * <code>bytes text = 1;</code>
        */
       public Builder clearText() {
         copyOnWrite();
@@ -4883,7 +5016,7 @@ public final class InterfaceVote {
        *投票数
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public int getSelcnt() {
         return instance.getSelcnt();
@@ -4893,7 +5026,7 @@ public final class InterfaceVote {
        *投票数
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public Builder setSelcnt(int value) {
         copyOnWrite();
@@ -4905,7 +5038,7 @@ public final class InterfaceVote {
        *投票数
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public Builder clearSelcnt() {
         copyOnWrite();
@@ -4915,6 +5048,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_SubItem_VoteItemInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4983,6 +5117,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5023,7 +5158,7 @@ public final class InterfaceVote {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -5032,7 +5167,7 @@ public final class InterfaceVote {
      *投票内容 
      * </pre>
      *
-     * <code>optional bytes content = 2;</code>
+     * <code>bytes content = 2;</code>
      */
     com.google.protobuf.ByteString getContent();
 
@@ -5041,7 +5176,7 @@ public final class InterfaceVote {
      *类别 投票 选举 调查问卷 参见Pb_MeetVoteType
      * </pre>
      *
-     * <code>optional fixed32 maintype = 3;</code>
+     * <code>fixed32 maintype = 3;</code>
      */
     int getMaintype();
 
@@ -5050,7 +5185,7 @@ public final class InterfaceVote {
      *匿名投票 记名投票 参见Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     int getMode();
 
@@ -5059,7 +5194,7 @@ public final class InterfaceVote {
      *多选 单选 参见Pb_MeetVote_SelType
      * </pre>
      *
-     * <code>optional fixed32 type = 5;</code>
+     * <code>fixed32 type = 5;</code>
      */
     int getType();
 
@@ -5068,7 +5203,7 @@ public final class InterfaceVote {
      *投票状态 参见Pb_MeetVoteStatus
      * </pre>
      *
-     * <code>optional fixed32 votestate = 6;</code>
+     * <code>fixed32 votestate = 6;</code>
      */
     int getVotestate();
 
@@ -5077,7 +5212,7 @@ public final class InterfaceVote {
      *超时值
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 7;</code>
+     * <code>fixed32 timeouts = 7;</code>
      */
     int getTimeouts();
 
@@ -5086,7 +5221,7 @@ public final class InterfaceVote {
      *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 8;</code>
+     * <code>fixed32 selcnt = 8;</code>
      */
     int getSelcnt();
 
@@ -5095,7 +5230,7 @@ public final class InterfaceVote {
      *有效选项
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 9;</code>
+     * <code>fixed32 selectcount = 9;</code>
      */
     int getSelectcount();
 
@@ -5141,20 +5276,20 @@ public final class InterfaceVote {
     public static final int VOTEID_FIELD_NUMBER = 1;
     private int voteid_;
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
       voteid_ = value;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -5168,7 +5303,7 @@ public final class InterfaceVote {
      *投票内容 
      * </pre>
      *
-     * <code>optional bytes content = 2;</code>
+     * <code>bytes content = 2;</code>
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -5178,7 +5313,7 @@ public final class InterfaceVote {
      *投票内容 
      * </pre>
      *
-     * <code>optional bytes content = 2;</code>
+     * <code>bytes content = 2;</code>
      */
     private void setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5192,7 +5327,7 @@ public final class InterfaceVote {
      *投票内容 
      * </pre>
      *
-     * <code>optional bytes content = 2;</code>
+     * <code>bytes content = 2;</code>
      */
     private void clearContent() {
       
@@ -5206,7 +5341,7 @@ public final class InterfaceVote {
      *类别 投票 选举 调查问卷 参见Pb_MeetVoteType
      * </pre>
      *
-     * <code>optional fixed32 maintype = 3;</code>
+     * <code>fixed32 maintype = 3;</code>
      */
     public int getMaintype() {
       return maintype_;
@@ -5216,7 +5351,7 @@ public final class InterfaceVote {
      *类别 投票 选举 调查问卷 参见Pb_MeetVoteType
      * </pre>
      *
-     * <code>optional fixed32 maintype = 3;</code>
+     * <code>fixed32 maintype = 3;</code>
      */
     private void setMaintype(int value) {
       
@@ -5227,7 +5362,7 @@ public final class InterfaceVote {
      *类别 投票 选举 调查问卷 参见Pb_MeetVoteType
      * </pre>
      *
-     * <code>optional fixed32 maintype = 3;</code>
+     * <code>fixed32 maintype = 3;</code>
      */
     private void clearMaintype() {
       
@@ -5241,7 +5376,7 @@ public final class InterfaceVote {
      *匿名投票 记名投票 参见Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     public int getMode() {
       return mode_;
@@ -5251,7 +5386,7 @@ public final class InterfaceVote {
      *匿名投票 记名投票 参见Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     private void setMode(int value) {
       
@@ -5262,7 +5397,7 @@ public final class InterfaceVote {
      *匿名投票 记名投票 参见Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     private void clearMode() {
       
@@ -5276,7 +5411,7 @@ public final class InterfaceVote {
      *多选 单选 参见Pb_MeetVote_SelType
      * </pre>
      *
-     * <code>optional fixed32 type = 5;</code>
+     * <code>fixed32 type = 5;</code>
      */
     public int getType() {
       return type_;
@@ -5286,7 +5421,7 @@ public final class InterfaceVote {
      *多选 单选 参见Pb_MeetVote_SelType
      * </pre>
      *
-     * <code>optional fixed32 type = 5;</code>
+     * <code>fixed32 type = 5;</code>
      */
     private void setType(int value) {
       
@@ -5297,7 +5432,7 @@ public final class InterfaceVote {
      *多选 单选 参见Pb_MeetVote_SelType
      * </pre>
      *
-     * <code>optional fixed32 type = 5;</code>
+     * <code>fixed32 type = 5;</code>
      */
     private void clearType() {
       
@@ -5311,7 +5446,7 @@ public final class InterfaceVote {
      *投票状态 参见Pb_MeetVoteStatus
      * </pre>
      *
-     * <code>optional fixed32 votestate = 6;</code>
+     * <code>fixed32 votestate = 6;</code>
      */
     public int getVotestate() {
       return votestate_;
@@ -5321,7 +5456,7 @@ public final class InterfaceVote {
      *投票状态 参见Pb_MeetVoteStatus
      * </pre>
      *
-     * <code>optional fixed32 votestate = 6;</code>
+     * <code>fixed32 votestate = 6;</code>
      */
     private void setVotestate(int value) {
       
@@ -5332,7 +5467,7 @@ public final class InterfaceVote {
      *投票状态 参见Pb_MeetVoteStatus
      * </pre>
      *
-     * <code>optional fixed32 votestate = 6;</code>
+     * <code>fixed32 votestate = 6;</code>
      */
     private void clearVotestate() {
       
@@ -5346,7 +5481,7 @@ public final class InterfaceVote {
      *超时值
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 7;</code>
+     * <code>fixed32 timeouts = 7;</code>
      */
     public int getTimeouts() {
       return timeouts_;
@@ -5356,7 +5491,7 @@ public final class InterfaceVote {
      *超时值
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 7;</code>
+     * <code>fixed32 timeouts = 7;</code>
      */
     private void setTimeouts(int value) {
       
@@ -5367,7 +5502,7 @@ public final class InterfaceVote {
      *超时值
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 7;</code>
+     * <code>fixed32 timeouts = 7;</code>
      */
     private void clearTimeouts() {
       
@@ -5381,7 +5516,7 @@ public final class InterfaceVote {
      *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 8;</code>
+     * <code>fixed32 selcnt = 8;</code>
      */
     public int getSelcnt() {
       return selcnt_;
@@ -5391,7 +5526,7 @@ public final class InterfaceVote {
      *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 8;</code>
+     * <code>fixed32 selcnt = 8;</code>
      */
     private void setSelcnt(int value) {
       
@@ -5402,7 +5537,7 @@ public final class InterfaceVote {
      *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 8;</code>
+     * <code>fixed32 selcnt = 8;</code>
      */
     private void clearSelcnt() {
       
@@ -5416,7 +5551,7 @@ public final class InterfaceVote {
      *有效选项
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 9;</code>
+     * <code>fixed32 selectcount = 9;</code>
      */
     public int getSelectcount() {
       return selectcount_;
@@ -5426,7 +5561,7 @@ public final class InterfaceVote {
      *有效选项
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 9;</code>
+     * <code>fixed32 selectcount = 9;</code>
      */
     private void setSelectcount(int value) {
       
@@ -5437,7 +5572,7 @@ public final class InterfaceVote {
      *有效选项
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 9;</code>
+     * <code>fixed32 selectcount = 9;</code>
      */
     private void clearSelectcount() {
       
@@ -5704,6 +5839,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetVoteDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetVoteDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetVoteDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -5786,13 +5934,13 @@ public final class InterfaceVote {
 
 
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -5800,7 +5948,7 @@ public final class InterfaceVote {
         return this;
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -5813,7 +5961,7 @@ public final class InterfaceVote {
        *投票内容 
        * </pre>
        *
-       * <code>optional bytes content = 2;</code>
+       * <code>bytes content = 2;</code>
        */
       public com.google.protobuf.ByteString getContent() {
         return instance.getContent();
@@ -5823,7 +5971,7 @@ public final class InterfaceVote {
        *投票内容 
        * </pre>
        *
-       * <code>optional bytes content = 2;</code>
+       * <code>bytes content = 2;</code>
        */
       public Builder setContent(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -5835,7 +5983,7 @@ public final class InterfaceVote {
        *投票内容 
        * </pre>
        *
-       * <code>optional bytes content = 2;</code>
+       * <code>bytes content = 2;</code>
        */
       public Builder clearContent() {
         copyOnWrite();
@@ -5848,7 +5996,7 @@ public final class InterfaceVote {
        *类别 投票 选举 调查问卷 参见Pb_MeetVoteType
        * </pre>
        *
-       * <code>optional fixed32 maintype = 3;</code>
+       * <code>fixed32 maintype = 3;</code>
        */
       public int getMaintype() {
         return instance.getMaintype();
@@ -5858,7 +6006,7 @@ public final class InterfaceVote {
        *类别 投票 选举 调查问卷 参见Pb_MeetVoteType
        * </pre>
        *
-       * <code>optional fixed32 maintype = 3;</code>
+       * <code>fixed32 maintype = 3;</code>
        */
       public Builder setMaintype(int value) {
         copyOnWrite();
@@ -5870,7 +6018,7 @@ public final class InterfaceVote {
        *类别 投票 选举 调查问卷 参见Pb_MeetVoteType
        * </pre>
        *
-       * <code>optional fixed32 maintype = 3;</code>
+       * <code>fixed32 maintype = 3;</code>
        */
       public Builder clearMaintype() {
         copyOnWrite();
@@ -5883,7 +6031,7 @@ public final class InterfaceVote {
        *匿名投票 记名投票 参见Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public int getMode() {
         return instance.getMode();
@@ -5893,7 +6041,7 @@ public final class InterfaceVote {
        *匿名投票 记名投票 参见Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public Builder setMode(int value) {
         copyOnWrite();
@@ -5905,7 +6053,7 @@ public final class InterfaceVote {
        *匿名投票 记名投票 参见Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public Builder clearMode() {
         copyOnWrite();
@@ -5918,7 +6066,7 @@ public final class InterfaceVote {
        *多选 单选 参见Pb_MeetVote_SelType
        * </pre>
        *
-       * <code>optional fixed32 type = 5;</code>
+       * <code>fixed32 type = 5;</code>
        */
       public int getType() {
         return instance.getType();
@@ -5928,7 +6076,7 @@ public final class InterfaceVote {
        *多选 单选 参见Pb_MeetVote_SelType
        * </pre>
        *
-       * <code>optional fixed32 type = 5;</code>
+       * <code>fixed32 type = 5;</code>
        */
       public Builder setType(int value) {
         copyOnWrite();
@@ -5940,7 +6088,7 @@ public final class InterfaceVote {
        *多选 单选 参见Pb_MeetVote_SelType
        * </pre>
        *
-       * <code>optional fixed32 type = 5;</code>
+       * <code>fixed32 type = 5;</code>
        */
       public Builder clearType() {
         copyOnWrite();
@@ -5953,7 +6101,7 @@ public final class InterfaceVote {
        *投票状态 参见Pb_MeetVoteStatus
        * </pre>
        *
-       * <code>optional fixed32 votestate = 6;</code>
+       * <code>fixed32 votestate = 6;</code>
        */
       public int getVotestate() {
         return instance.getVotestate();
@@ -5963,7 +6111,7 @@ public final class InterfaceVote {
        *投票状态 参见Pb_MeetVoteStatus
        * </pre>
        *
-       * <code>optional fixed32 votestate = 6;</code>
+       * <code>fixed32 votestate = 6;</code>
        */
       public Builder setVotestate(int value) {
         copyOnWrite();
@@ -5975,7 +6123,7 @@ public final class InterfaceVote {
        *投票状态 参见Pb_MeetVoteStatus
        * </pre>
        *
-       * <code>optional fixed32 votestate = 6;</code>
+       * <code>fixed32 votestate = 6;</code>
        */
       public Builder clearVotestate() {
         copyOnWrite();
@@ -5988,7 +6136,7 @@ public final class InterfaceVote {
        *超时值
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 7;</code>
+       * <code>fixed32 timeouts = 7;</code>
        */
       public int getTimeouts() {
         return instance.getTimeouts();
@@ -5998,7 +6146,7 @@ public final class InterfaceVote {
        *超时值
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 7;</code>
+       * <code>fixed32 timeouts = 7;</code>
        */
       public Builder setTimeouts(int value) {
         copyOnWrite();
@@ -6010,7 +6158,7 @@ public final class InterfaceVote {
        *超时值
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 7;</code>
+       * <code>fixed32 timeouts = 7;</code>
        */
       public Builder clearTimeouts() {
         copyOnWrite();
@@ -6023,7 +6171,7 @@ public final class InterfaceVote {
        *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 8;</code>
+       * <code>fixed32 selcnt = 8;</code>
        */
       public int getSelcnt() {
         return instance.getSelcnt();
@@ -6033,7 +6181,7 @@ public final class InterfaceVote {
        *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 8;</code>
+       * <code>fixed32 selcnt = 8;</code>
        */
       public Builder setSelcnt(int value) {
         copyOnWrite();
@@ -6045,7 +6193,7 @@ public final class InterfaceVote {
        *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 8;</code>
+       * <code>fixed32 selcnt = 8;</code>
        */
       public Builder clearSelcnt() {
         copyOnWrite();
@@ -6058,7 +6206,7 @@ public final class InterfaceVote {
        *有效选项
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 9;</code>
+       * <code>fixed32 selectcount = 9;</code>
        */
       public int getSelectcount() {
         return instance.getSelectcount();
@@ -6068,7 +6216,7 @@ public final class InterfaceVote {
        *有效选项
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 9;</code>
+       * <code>fixed32 selectcount = 9;</code>
        */
       public Builder setSelectcount(int value) {
         copyOnWrite();
@@ -6080,7 +6228,7 @@ public final class InterfaceVote {
        *有效选项
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 9;</code>
+       * <code>fixed32 selectcount = 9;</code>
        */
       public Builder clearSelectcount() {
         copyOnWrite();
@@ -6235,6 +6383,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetVoteDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6364,6 +6513,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6574,6 +6724,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -6759,6 +6922,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetVoteDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6824,6 +6988,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6868,7 +7033,7 @@ public final class InterfaceVote {
      *指定大类 参见本文件中的maintype 定义
      * </pre>
      *
-     * <code>optional fixed32 maintype = 1;</code>
+     * <code>fixed32 maintype = 1;</code>
      */
     int getMaintype();
   }
@@ -6894,7 +7059,7 @@ public final class InterfaceVote {
      *指定大类 参见本文件中的maintype 定义
      * </pre>
      *
-     * <code>optional fixed32 maintype = 1;</code>
+     * <code>fixed32 maintype = 1;</code>
      */
     public int getMaintype() {
       return maintype_;
@@ -6904,7 +7069,7 @@ public final class InterfaceVote {
      *指定大类 参见本文件中的maintype 定义
      * </pre>
      *
-     * <code>optional fixed32 maintype = 1;</code>
+     * <code>fixed32 maintype = 1;</code>
      */
     private void setMaintype(int value) {
       
@@ -6915,7 +7080,7 @@ public final class InterfaceVote {
      *指定大类 参见本文件中的maintype 定义
      * </pre>
      *
-     * <code>optional fixed32 maintype = 1;</code>
+     * <code>fixed32 maintype = 1;</code>
      */
     private void clearMaintype() {
       
@@ -6942,6 +7107,19 @@ public final class InterfaceVote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteComplexQuery parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteComplexQuery parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteComplexQuery parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7034,7 +7212,7 @@ public final class InterfaceVote {
        *指定大类 参见本文件中的maintype 定义
        * </pre>
        *
-       * <code>optional fixed32 maintype = 1;</code>
+       * <code>fixed32 maintype = 1;</code>
        */
       public int getMaintype() {
         return instance.getMaintype();
@@ -7044,7 +7222,7 @@ public final class InterfaceVote {
        *指定大类 参见本文件中的maintype 定义
        * </pre>
        *
-       * <code>optional fixed32 maintype = 1;</code>
+       * <code>fixed32 maintype = 1;</code>
        */
       public Builder setMaintype(int value) {
         copyOnWrite();
@@ -7056,7 +7234,7 @@ public final class InterfaceVote {
        *指定大类 参见本文件中的maintype 定义
        * </pre>
        *
-       * <code>optional fixed32 maintype = 1;</code>
+       * <code>fixed32 maintype = 1;</code>
        */
       public Builder clearMaintype() {
         copyOnWrite();
@@ -7066,6 +7244,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetVoteComplexQuery)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7127,6 +7306,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7171,7 +7351,7 @@ public final class InterfaceVote {
      *投票人员
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     int getId();
 
@@ -7180,7 +7360,7 @@ public final class InterfaceVote {
      *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择|高8位参见 Pb_VOTE_SELFLAG_CHECKIN
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     int getSelcnt();
   }
@@ -7205,7 +7385,7 @@ public final class InterfaceVote {
      *投票人员
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     public int getId() {
       return id_;
@@ -7215,7 +7395,7 @@ public final class InterfaceVote {
      *投票人员
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void setId(int value) {
       
@@ -7226,7 +7406,7 @@ public final class InterfaceVote {
      *投票人员
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void clearId() {
       
@@ -7240,7 +7420,7 @@ public final class InterfaceVote {
      *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择|高8位参见 Pb_VOTE_SELFLAG_CHECKIN
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     public int getSelcnt() {
       return selcnt_;
@@ -7250,7 +7430,7 @@ public final class InterfaceVote {
      *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择|高8位参见 Pb_VOTE_SELFLAG_CHECKIN
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     private void setSelcnt(int value) {
       
@@ -7261,7 +7441,7 @@ public final class InterfaceVote {
      *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择|高8位参见 Pb_VOTE_SELFLAG_CHECKIN
      * </pre>
      *
-     * <code>optional fixed32 selcnt = 2;</code>
+     * <code>fixed32 selcnt = 2;</code>
      */
     private void clearSelcnt() {
       
@@ -7295,6 +7475,19 @@ public final class InterfaceVote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetVoteSignInDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetVoteSignInDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Item_MeetVoteSignInDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7386,7 +7579,7 @@ public final class InterfaceVote {
        *投票人员
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public int getId() {
         return instance.getId();
@@ -7396,7 +7589,7 @@ public final class InterfaceVote {
        *投票人员
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -7408,7 +7601,7 @@ public final class InterfaceVote {
        *投票人员
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -7421,7 +7614,7 @@ public final class InterfaceVote {
        *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择|高8位参见 Pb_VOTE_SELFLAG_CHECKIN
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public int getSelcnt() {
         return instance.getSelcnt();
@@ -7431,7 +7624,7 @@ public final class InterfaceVote {
        *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择|高8位参见 Pb_VOTE_SELFLAG_CHECKIN
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public Builder setSelcnt(int value) {
         copyOnWrite();
@@ -7443,7 +7636,7 @@ public final class InterfaceVote {
        *投票选项 0x00000001 选择了第一项 0x00000002第二项 对应项位置1表示选择|高8位参见 Pb_VOTE_SELFLAG_CHECKIN
        * </pre>
        *
-       * <code>optional fixed32 selcnt = 2;</code>
+       * <code>fixed32 selcnt = 2;</code>
        */
       public Builder clearSelcnt() {
         copyOnWrite();
@@ -7453,6 +7646,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetVoteSignInDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7521,6 +7715,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7561,7 +7756,7 @@ public final class InterfaceVote {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -7599,20 +7794,20 @@ public final class InterfaceVote {
     public static final int VOTEID_FIELD_NUMBER = 1;
     private int voteid_;
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
       voteid_ = value;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -7767,6 +7962,19 @@ public final class InterfaceVote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteSignInDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteSignInDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteSignInDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -7854,13 +8062,13 @@ public final class InterfaceVote {
 
 
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -7868,7 +8076,7 @@ public final class InterfaceVote {
         return this;
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -7975,6 +8183,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetVoteSignInDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -8048,6 +8257,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -8092,7 +8302,7 @@ public final class InterfaceVote {
      *数据ID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     int getPropertyid();
 
@@ -8101,7 +8311,7 @@ public final class InterfaceVote {
      *传入参数
      * </pre>
      *
-     * <code>optional fixed32 voteid = 2;</code>
+     * <code>fixed32 voteid = 2;</code>
      */
     int getVoteid();
 
@@ -8110,7 +8320,7 @@ public final class InterfaceVote {
      *传入参数 为0表示本身
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     int getMemberid();
   }
@@ -8138,7 +8348,7 @@ public final class InterfaceVote {
      *数据ID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     public int getPropertyid() {
       return propertyid_;
@@ -8148,7 +8358,7 @@ public final class InterfaceVote {
      *数据ID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void setPropertyid(int value) {
       
@@ -8159,7 +8369,7 @@ public final class InterfaceVote {
      *数据ID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void clearPropertyid() {
       
@@ -8173,7 +8383,7 @@ public final class InterfaceVote {
      *传入参数
      * </pre>
      *
-     * <code>optional fixed32 voteid = 2;</code>
+     * <code>fixed32 voteid = 2;</code>
      */
     public int getVoteid() {
       return voteid_;
@@ -8183,7 +8393,7 @@ public final class InterfaceVote {
      *传入参数
      * </pre>
      *
-     * <code>optional fixed32 voteid = 2;</code>
+     * <code>fixed32 voteid = 2;</code>
      */
     private void setVoteid(int value) {
       
@@ -8194,7 +8404,7 @@ public final class InterfaceVote {
      *传入参数
      * </pre>
      *
-     * <code>optional fixed32 voteid = 2;</code>
+     * <code>fixed32 voteid = 2;</code>
      */
     private void clearVoteid() {
       
@@ -8208,7 +8418,7 @@ public final class InterfaceVote {
      *传入参数 为0表示本身
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -8218,7 +8428,7 @@ public final class InterfaceVote {
      *传入参数 为0表示本身
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void setMemberid(int value) {
       
@@ -8229,7 +8439,7 @@ public final class InterfaceVote {
      *传入参数 为0表示本身
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void clearMemberid() {
       
@@ -8270,6 +8480,19 @@ public final class InterfaceVote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteQueryProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteQueryProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceVote.pbui_Type_MeetVoteQueryProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8364,7 +8587,7 @@ public final class InterfaceVote {
        *数据ID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public int getPropertyid() {
         return instance.getPropertyid();
@@ -8374,7 +8597,7 @@ public final class InterfaceVote {
        *数据ID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder setPropertyid(int value) {
         copyOnWrite();
@@ -8386,7 +8609,7 @@ public final class InterfaceVote {
        *数据ID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder clearPropertyid() {
         copyOnWrite();
@@ -8399,7 +8622,7 @@ public final class InterfaceVote {
        *传入参数
        * </pre>
        *
-       * <code>optional fixed32 voteid = 2;</code>
+       * <code>fixed32 voteid = 2;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
@@ -8409,7 +8632,7 @@ public final class InterfaceVote {
        *传入参数
        * </pre>
        *
-       * <code>optional fixed32 voteid = 2;</code>
+       * <code>fixed32 voteid = 2;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -8421,7 +8644,7 @@ public final class InterfaceVote {
        *传入参数
        * </pre>
        *
-       * <code>optional fixed32 voteid = 2;</code>
+       * <code>fixed32 voteid = 2;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -8434,7 +8657,7 @@ public final class InterfaceVote {
        *传入参数 为0表示本身
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -8444,7 +8667,7 @@ public final class InterfaceVote {
        *传入参数 为0表示本身
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -8456,7 +8679,7 @@ public final class InterfaceVote {
        *传入参数 为0表示本身
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -8466,6 +8689,7 @@ public final class InterfaceVote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetVoteQueryProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -8541,6 +8765,7 @@ public final class InterfaceVote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

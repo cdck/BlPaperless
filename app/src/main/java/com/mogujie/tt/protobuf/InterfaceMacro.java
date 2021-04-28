@@ -359,6 +359,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -641,6 +645,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -1239,6 +1247,38 @@ public final class InterfaceMacro {
     Pb_TYPE_MEET_INTERFACE_UPDATE(66),
     /**
      * <pre>
+     *会议议题
+     * </pre>
+     *
+     * <code>Pb_TYPE_MEET_INTERFACE_TOPIC = 67;</code>
+     */
+    Pb_TYPE_MEET_INTERFACE_TOPIC(67),
+    /**
+     * <pre>
+     * 会议议题参加单位
+     * </pre>
+     *
+     * <code>Pb_TYPE_MEET_INTERFACE_TOPICGROUP = 68;</code>
+     */
+    Pb_TYPE_MEET_INTERFACE_TOPICGROUP(68),
+    /**
+     * <pre>
+     * 会议议题权限
+     * </pre>
+     *
+     * <code>Pb_TYPE_MEET_INTERFACE_TOPICPERMINSSION = 69;</code>
+     */
+    Pb_TYPE_MEET_INTERFACE_TOPICPERMINSSION(69),
+    /**
+     * <pre>
+     * 会议发布任务
+     * </pre>
+     *
+     * <code>Pb_TYPE_MEET_INTERFACE_MEETTASK = 70;</code>
+     */
+    Pb_TYPE_MEET_INTERFACE_MEETTASK(70),
+    /**
+     * <pre>
      *退出释放资源
      * </pre>
      *
@@ -1794,6 +1834,38 @@ public final class InterfaceMacro {
     public static final int Pb_TYPE_MEET_INTERFACE_UPDATE_VALUE = 66;
     /**
      * <pre>
+     *会议议题
+     * </pre>
+     *
+     * <code>Pb_TYPE_MEET_INTERFACE_TOPIC = 67;</code>
+     */
+    public static final int Pb_TYPE_MEET_INTERFACE_TOPIC_VALUE = 67;
+    /**
+     * <pre>
+     * 会议议题参加单位
+     * </pre>
+     *
+     * <code>Pb_TYPE_MEET_INTERFACE_TOPICGROUP = 68;</code>
+     */
+    public static final int Pb_TYPE_MEET_INTERFACE_TOPICGROUP_VALUE = 68;
+    /**
+     * <pre>
+     * 会议议题权限
+     * </pre>
+     *
+     * <code>Pb_TYPE_MEET_INTERFACE_TOPICPERMINSSION = 69;</code>
+     */
+    public static final int Pb_TYPE_MEET_INTERFACE_TOPICPERMINSSION_VALUE = 69;
+    /**
+     * <pre>
+     * 会议发布任务
+     * </pre>
+     *
+     * <code>Pb_TYPE_MEET_INTERFACE_MEETTASK = 70;</code>
+     */
+    public static final int Pb_TYPE_MEET_INTERFACE_MEETTASK_VALUE = 70;
+    /**
+     * <pre>
      *退出释放资源
      * </pre>
      *
@@ -1811,6 +1883,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -1891,6 +1967,10 @@ public final class InterfaceMacro {
         case 64: return Pb_TYPE_MEET_INTERFACE_ZKIDENTIFY;
         case 65: return Pb_TYPE_MEET_INTERFACE_SMSSERVICE;
         case 66: return Pb_TYPE_MEET_INTERFACE_UPDATE;
+        case 67: return Pb_TYPE_MEET_INTERFACE_TOPIC;
+        case 68: return Pb_TYPE_MEET_INTERFACE_TOPICGROUP;
+        case 69: return Pb_TYPE_MEET_INTERFACE_TOPICPERMINSSION;
+        case 70: return Pb_TYPE_MEET_INTERFACE_MEETTASK;
         case 999: return Pb_TYPE_MEET_INTERFACE_EXITENV;
         case 1000: return Pb_TYPE_MEET_INTERFACE_WEBSESSIONID;
         default: return null;
@@ -2293,6 +2373,14 @@ public final class InterfaceMacro {
     Pb_METHOD_MEET_INTERFACE_EXITCHAT(65),
     /**
      * <pre>
+     *远程配置
+     * </pre>
+     *
+     * <code>Pb_METHOD_MEET_INTERFACE_REMOTESET = 66;</code>
+     */
+    Pb_METHOD_MEET_INTERFACE_REMOTESET(66),
+    /**
+     * <pre>
      *添加INK
      * </pre>
      *
@@ -2692,6 +2780,14 @@ public final class InterfaceMacro {
     public static final int Pb_METHOD_MEET_INTERFACE_EXITCHAT_VALUE = 65;
     /**
      * <pre>
+     *远程配置
+     * </pre>
+     *
+     * <code>Pb_METHOD_MEET_INTERFACE_REMOTESET = 66;</code>
+     */
+    public static final int Pb_METHOD_MEET_INTERFACE_REMOTESET_VALUE = 66;
+    /**
+     * <pre>
      *添加INK
      * </pre>
      *
@@ -2725,6 +2821,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -2803,6 +2903,7 @@ public final class InterfaceMacro {
         case 63: return Pb_METHOD_MEET_INTERFACE_REQUESTINVITE;
         case 64: return Pb_METHOD_MEET_INTERFACE_RESPONSEINVITE;
         case 65: return Pb_METHOD_MEET_INTERFACE_EXITCHAT;
+        case 66: return Pb_METHOD_MEET_INTERFACE_REMOTESET;
         case 1001: return Pb_METHOD_MEET_INTERFACE_ADDINK;
         case 1002: return Pb_METHOD_MEET_INTERFACE_ADDRECT;
         case 1003: return Pb_METHOD_MEET_INTERFACE_ADDTEXT;
@@ -3327,6 +3428,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -3524,6 +3629,14 @@ public final class InterfaceMacro {
      * <code>Pb_MEET_URL_MAXLEN = 1024;</code>
      */
     Pb_MEET_URL_MAXLEN(1024),
+    /**
+     * <pre>
+     *会议任务名称长度
+     * </pre>
+     *
+     * <code>Pb_MEET_MAX_TASKNAMELEN = 80;</code>
+     */
+    Pb_MEET_MAX_TASKNAMELEN(80),
     UNRECOGNIZED(-1),
     ;
 
@@ -3807,9 +3920,21 @@ public final class InterfaceMacro {
      * <code>Pb_MEET_URL_MAXLEN = 1024;</code>
      */
     public static final int Pb_MEET_URL_MAXLEN_VALUE = 1024;
+    /**
+     * <pre>
+     *会议任务名称长度
+     * </pre>
+     *
+     * <code>Pb_MEET_MAX_TASKNAMELEN = 80;</code>
+     */
+    public static final int Pb_MEET_MAX_TASKNAMELEN_VALUE = 80;
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -3838,6 +3963,7 @@ public final class InterfaceMacro {
         case 300: return Pb_MEETIM_CHAR_MSG_MAXLEN;
         case 320: return Pb_MEETAGENDA_DESCTEXT_LENG;
         case 1024: return Pb_MEET_URL_MAXLEN;
+        case 80: return Pb_MEET_MAX_TASKNAMELEN;
         default: return null;
       }
     }
@@ -4046,6 +4172,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -4134,6 +4264,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -4293,6 +4427,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -4417,6 +4555,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -4538,6 +4680,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -4828,6 +4974,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -4984,6 +5134,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -5061,6 +5215,30 @@ public final class InterfaceMacro {
      * <code>Pb_MEETDEVICE_FLAG_OPENOUTSIDE = 2;</code>
      */
     Pb_MEETDEVICE_FLAG_OPENOUTSIDE(2),
+    /**
+     * <pre>
+     *使用来宾模式-进入时必须选择参会人签到
+     * </pre>
+     *
+     * <code>Pb_MEETDEVICE_FLAG_GUESTMODE = 4;</code>
+     */
+    Pb_MEETDEVICE_FLAG_GUESTMODE(4),
+    /**
+     * <pre>
+     *显示欢迎界面-当设备有会议并且绑定人员时点击后直接签到进入会议，其它情况不显示欢迎界面
+     * </pre>
+     *
+     * <code>Pb_MEETDEVICE_FLAG_WELCOMEPAGE = 8;</code>
+     */
+    Pb_MEETDEVICE_FLAG_WELCOMEPAGE(8),
+    /**
+     * <pre>
+     *资料保护,禁止截图，判断当前设备是不是设置该项，如果是需要在用户端禁止用户的截图操作等
+     * </pre>
+     *
+     * <code>Pb_MEETDEVICE_FLAG_DATAPROTECT = 16;</code>
+     */
+    Pb_MEETDEVICE_FLAG_DATAPROTECT(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -5088,9 +5266,37 @@ public final class InterfaceMacro {
      * <code>Pb_MEETDEVICE_FLAG_OPENOUTSIDE = 2;</code>
      */
     public static final int Pb_MEETDEVICE_FLAG_OPENOUTSIDE_VALUE = 2;
+    /**
+     * <pre>
+     *使用来宾模式-进入时必须选择参会人签到
+     * </pre>
+     *
+     * <code>Pb_MEETDEVICE_FLAG_GUESTMODE = 4;</code>
+     */
+    public static final int Pb_MEETDEVICE_FLAG_GUESTMODE_VALUE = 4;
+    /**
+     * <pre>
+     *显示欢迎界面-当设备有会议并且绑定人员时点击后直接签到进入会议，其它情况不显示欢迎界面
+     * </pre>
+     *
+     * <code>Pb_MEETDEVICE_FLAG_WELCOMEPAGE = 8;</code>
+     */
+    public static final int Pb_MEETDEVICE_FLAG_WELCOMEPAGE_VALUE = 8;
+    /**
+     * <pre>
+     *资料保护,禁止截图，判断当前设备是不是设置该项，如果是需要在用户端禁止用户的截图操作等
+     * </pre>
+     *
+     * <code>Pb_MEETDEVICE_FLAG_DATAPROTECT = 16;</code>
+     */
+    public static final int Pb_MEETDEVICE_FLAG_DATAPROTECT_VALUE = 16;
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -5107,6 +5313,9 @@ public final class InterfaceMacro {
         case 0: return Pb_MEETDEVICE_FLAG_ZERO;
         case 1: return Pb_MEETDEVICE_FLAG_DIRECTENTER;
         case 2: return Pb_MEETDEVICE_FLAG_OPENOUTSIDE;
+        case 4: return Pb_MEETDEVICE_FLAG_GUESTMODE;
+        case 8: return Pb_MEETDEVICE_FLAG_WELCOMEPAGE;
+        case 16: return Pb_MEETDEVICE_FLAG_DATAPROTECT;
         default: return null;
       }
     }
@@ -5636,6 +5845,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -5769,6 +5982,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -5873,6 +6090,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -5993,6 +6214,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -6075,7 +6300,7 @@ public final class InterfaceMacro {
     Pb_DEVICECONTORL_PROGRAMRESTART(3),
     /**
      * <pre>
-     *升
+     *升 operval1有效 Pb_LiftFlag
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_LIFTUP = 4;</code>
@@ -6083,7 +6308,7 @@ public final class InterfaceMacro {
     Pb_DEVICECONTORL_LIFTUP(4),
     /**
      * <pre>
-     *降
+     *降 operval1有效 Pb_LiftFlag
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_LIFTDOWN = 5;</code>
@@ -6091,7 +6316,7 @@ public final class InterfaceMacro {
     Pb_DEVICECONTORL_LIFTDOWN(5),
     /**
      * <pre>
-     *停止升（降）
+     *停止升（降）operval1有效 Pb_LiftFlag
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_LIFTSTOP = 6;</code>
@@ -6099,7 +6324,7 @@ public final class InterfaceMacro {
     Pb_DEVICECONTORL_LIFTSTOP(6),
     /**
      * <pre>
-     *更换LOGO
+     *更换LOGO operval1有效 指媒体ID
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYLOGO = 7;</code>
@@ -6107,7 +6332,7 @@ public final class InterfaceMacro {
     Pb_DEVICECONTORL_MODIFYLOGO(7),
     /**
      * <pre>
-     *更换主界面
+     *更换主界面 operval1有效 指媒体ID
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYMAINBG = 8;</code>
@@ -6115,7 +6340,7 @@ public final class InterfaceMacro {
     Pb_DEVICECONTORL_MODIFYMAINBG(8),
     /**
      * <pre>
-     *更换投影界面
+     *更换投影界面 operval1有效 指媒体ID
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYPROJECTBG = 9;</code>
@@ -6123,7 +6348,7 @@ public final class InterfaceMacro {
     Pb_DEVICECONTORL_MODIFYPROJECTBG(9),
     /**
      * <pre>
-     *更换子界面
+     *更换子界面 operval1有效 指媒体ID
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYSUBBG = 10;</code>
@@ -6131,7 +6356,7 @@ public final class InterfaceMacro {
     Pb_DEVICECONTORL_MODIFYSUBBG(10),
     /**
      * <pre>
-     *更换字体颜色
+     *更换字体颜色 operval1有效 指颜色标号 参见fontcolor index
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYFONTCOLOR = 11;</code>
@@ -6170,7 +6395,7 @@ public final class InterfaceMacro {
     public static final int Pb_DEVICECONTORL_PROGRAMRESTART_VALUE = 3;
     /**
      * <pre>
-     *升
+     *升 operval1有效 Pb_LiftFlag
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_LIFTUP = 4;</code>
@@ -6178,7 +6403,7 @@ public final class InterfaceMacro {
     public static final int Pb_DEVICECONTORL_LIFTUP_VALUE = 4;
     /**
      * <pre>
-     *降
+     *降 operval1有效 Pb_LiftFlag
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_LIFTDOWN = 5;</code>
@@ -6186,7 +6411,7 @@ public final class InterfaceMacro {
     public static final int Pb_DEVICECONTORL_LIFTDOWN_VALUE = 5;
     /**
      * <pre>
-     *停止升（降）
+     *停止升（降）operval1有效 Pb_LiftFlag
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_LIFTSTOP = 6;</code>
@@ -6194,7 +6419,7 @@ public final class InterfaceMacro {
     public static final int Pb_DEVICECONTORL_LIFTSTOP_VALUE = 6;
     /**
      * <pre>
-     *更换LOGO
+     *更换LOGO operval1有效 指媒体ID
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYLOGO = 7;</code>
@@ -6202,7 +6427,7 @@ public final class InterfaceMacro {
     public static final int Pb_DEVICECONTORL_MODIFYLOGO_VALUE = 7;
     /**
      * <pre>
-     *更换主界面
+     *更换主界面 operval1有效 指媒体ID
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYMAINBG = 8;</code>
@@ -6210,7 +6435,7 @@ public final class InterfaceMacro {
     public static final int Pb_DEVICECONTORL_MODIFYMAINBG_VALUE = 8;
     /**
      * <pre>
-     *更换投影界面
+     *更换投影界面 operval1有效 指媒体ID
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYPROJECTBG = 9;</code>
@@ -6218,7 +6443,7 @@ public final class InterfaceMacro {
     public static final int Pb_DEVICECONTORL_MODIFYPROJECTBG_VALUE = 9;
     /**
      * <pre>
-     *更换子界面
+     *更换子界面 operval1有效 指媒体ID
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYSUBBG = 10;</code>
@@ -6226,7 +6451,7 @@ public final class InterfaceMacro {
     public static final int Pb_DEVICECONTORL_MODIFYSUBBG_VALUE = 10;
     /**
      * <pre>
-     *更换字体颜色
+     *更换字体颜色 operval1有效 指颜色标号 参见fontcolor index
      * </pre>
      *
      * <code>Pb_DEVICECONTORL_MODIFYFONTCOLOR = 11;</code>
@@ -6235,6 +6460,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -6340,6 +6569,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -6493,6 +6726,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -6569,7 +6806,7 @@ public final class InterfaceMacro {
     Pb_EXCEC_USERDEF_FLAG_OTHEROPER(2),
     /**
      * <pre>
-     *不创建新窗口操作标志
+     *不创建新窗口操作标志 强制播放不允许接收端主动关闭
      * </pre>
      *
      * <code>Pb_EXCEC_USERDEF_FLAG_NOCREATEWINOPER = 4;</code>
@@ -6624,7 +6861,7 @@ public final class InterfaceMacro {
     public static final int Pb_EXCEC_USERDEF_FLAG_OTHEROPER_VALUE = 2;
     /**
      * <pre>
-     *不创建新窗口操作标志
+     *不创建新窗口操作标志 强制播放不允许接收端主动关闭
      * </pre>
      *
      * <code>Pb_EXCEC_USERDEF_FLAG_NOCREATEWINOPER = 4;</code>
@@ -6657,6 +6894,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -6894,6 +7135,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -7055,6 +7300,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -7139,6 +7388,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -7331,6 +7584,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -7498,6 +7755,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -7654,6 +7915,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -7754,6 +8019,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -7874,6 +8143,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -8052,6 +8325,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -8139,6 +8416,14 @@ public final class InterfaceMacro {
      * <code>Pb_MEETING_STATUS_PAUSE = 3;</code>
      */
     Pb_MEETING_STATUS_PAUSE(3),
+    /**
+     * <pre>
+     *模板会议
+     * </pre>
+     *
+     * <code>Pb_MEETING_MODEL = 4;</code>
+     */
+    Pb_MEETING_MODEL(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -8174,9 +8459,21 @@ public final class InterfaceMacro {
      * <code>Pb_MEETING_STATUS_PAUSE = 3;</code>
      */
     public static final int Pb_MEETING_STATUS_PAUSE_VALUE = 3;
+    /**
+     * <pre>
+     *模板会议
+     * </pre>
+     *
+     * <code>Pb_MEETING_MODEL = 4;</code>
+     */
+    public static final int Pb_MEETING_MODEL_VALUE = 4;
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -8194,6 +8491,7 @@ public final class InterfaceMacro {
         case 1: return Pb_MEETING_STATUS_Start;
         case 2: return Pb_MEETING_STATUS_End;
         case 3: return Pb_MEETING_STATUS_PAUSE;
+        case 4: return Pb_MEETING_MODEL;
         default: return null;
       }
     }
@@ -8355,6 +8653,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -8512,6 +8814,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -8660,6 +8966,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -8757,6 +9067,14 @@ public final class InterfaceMacro {
      * <code>Pb_MEETFILE_ATTRIB_PUBLISH = 524288;</code>
      */
     Pb_MEETFILE_ATTRIB_PUBLISH(524288),
+    /**
+     * <pre>
+     *会议欢迎界面
+     * </pre>
+     *
+     * <code>Pb_MEET_FILEATTRIB_WELCOMEPAGE = 1048576;</code>
+     */
+    Pb_MEET_FILEATTRIB_WELCOMEPAGE(1048576),
     UNRECOGNIZED(-1),
     ;
 
@@ -8804,9 +9122,21 @@ public final class InterfaceMacro {
      * <code>Pb_MEETFILE_ATTRIB_PUBLISH = 524288;</code>
      */
     public static final int Pb_MEETFILE_ATTRIB_PUBLISH_VALUE = 524288;
+    /**
+     * <pre>
+     *会议欢迎界面
+     * </pre>
+     *
+     * <code>Pb_MEET_FILEATTRIB_WELCOMEPAGE = 1048576;</code>
+     */
+    public static final int Pb_MEET_FILEATTRIB_WELCOMEPAGE_VALUE = 1048576;
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -8826,6 +9156,7 @@ public final class InterfaceMacro {
         case 131072: return Pb_MEETFILE_ATTRIB_TABLECARD;
         case 262144: return Pb_MEETFILE_ATTRIB_DEVICEUPDATE;
         case 524288: return Pb_MEETFILE_ATTRIB_PUBLISH;
+        case 1048576: return Pb_MEET_FILEATTRIB_WELCOMEPAGE;
         default: return null;
       }
     }
@@ -8971,6 +9302,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -9104,6 +9439,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -9251,6 +9590,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -9399,6 +9742,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -9531,6 +9878,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -9758,6 +10109,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -9999,6 +10354,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -10103,6 +10462,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -10242,6 +10605,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -10348,6 +10715,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -10452,6 +10823,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -10540,6 +10915,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -10691,6 +11070,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -10855,6 +11238,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -10956,6 +11343,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -11116,6 +11507,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -11294,6 +11689,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -11427,6 +11826,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -11661,6 +12064,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -11814,6 +12221,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -12578,6 +12989,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -12732,6 +13147,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -12845,6 +13264,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -12959,6 +13382,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -13041,6 +13468,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -13252,6 +13683,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -13507,6 +13942,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -13732,6 +14171,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -13827,6 +14270,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -14154,6 +14601,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -14288,6 +14739,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -14409,6 +14864,10 @@ public final class InterfaceMacro {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 

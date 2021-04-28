@@ -17,7 +17,7 @@ public final class InterfaceMsn {
      * 服务器IP
      * </pre>
      *
-     * <code>optional bytes serverIP = 1;</code>
+     * <code>bytes serverIP = 1;</code>
      */
     com.google.protobuf.ByteString getServerIP();
 
@@ -26,7 +26,7 @@ public final class InterfaceMsn {
      * 服务器端口号
      * </pre>
      *
-     * <code>optional bytes serverPort = 2;</code>
+     * <code>bytes serverPort = 2;</code>
      */
     com.google.protobuf.ByteString getServerPort();
 
@@ -35,7 +35,7 @@ public final class InterfaceMsn {
      * 短信服务类型（发送，查询等 服务器响应的网页）
      * </pre>
      *
-     * <code>optional bytes ctrlType = 3;</code>
+     * <code>bytes ctrlType = 3;</code>
      */
     com.google.protobuf.ByteString getCtrlType();
 
@@ -44,7 +44,7 @@ public final class InterfaceMsn {
      * 短信服务账户 名称
      * </pre>
      *
-     * <code>optional bytes uname = 4;</code>
+     * <code>bytes uname = 4;</code>
      */
     com.google.protobuf.ByteString getUname();
 
@@ -53,7 +53,7 @@ public final class InterfaceMsn {
      * 短信服务账户 密码
      * </pre>
      *
-     * <code>optional bytes upwd = 5;</code>
+     * <code>bytes upwd = 5;</code>
      */
     com.google.protobuf.ByteString getUpwd();
 
@@ -87,7 +87,7 @@ public final class InterfaceMsn {
      * 短信内容  （发送短信必填，其他请求可不填）
      * </pre>
      *
-     * <code>optional bytes messageInfo = 7;</code>
+     * <code>bytes messageInfo = 7;</code>
      */
     com.google.protobuf.ByteString getMessageInfo();
   }
@@ -123,7 +123,7 @@ public final class InterfaceMsn {
      * 服务器IP
      * </pre>
      *
-     * <code>optional bytes serverIP = 1;</code>
+     * <code>bytes serverIP = 1;</code>
      */
     public com.google.protobuf.ByteString getServerIP() {
       return serverIP_;
@@ -133,7 +133,7 @@ public final class InterfaceMsn {
      * 服务器IP
      * </pre>
      *
-     * <code>optional bytes serverIP = 1;</code>
+     * <code>bytes serverIP = 1;</code>
      */
     private void setServerIP(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -147,7 +147,7 @@ public final class InterfaceMsn {
      * 服务器IP
      * </pre>
      *
-     * <code>optional bytes serverIP = 1;</code>
+     * <code>bytes serverIP = 1;</code>
      */
     private void clearServerIP() {
       
@@ -161,7 +161,7 @@ public final class InterfaceMsn {
      * 服务器端口号
      * </pre>
      *
-     * <code>optional bytes serverPort = 2;</code>
+     * <code>bytes serverPort = 2;</code>
      */
     public com.google.protobuf.ByteString getServerPort() {
       return serverPort_;
@@ -171,7 +171,7 @@ public final class InterfaceMsn {
      * 服务器端口号
      * </pre>
      *
-     * <code>optional bytes serverPort = 2;</code>
+     * <code>bytes serverPort = 2;</code>
      */
     private void setServerPort(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -185,7 +185,7 @@ public final class InterfaceMsn {
      * 服务器端口号
      * </pre>
      *
-     * <code>optional bytes serverPort = 2;</code>
+     * <code>bytes serverPort = 2;</code>
      */
     private void clearServerPort() {
       
@@ -199,7 +199,7 @@ public final class InterfaceMsn {
      * 短信服务类型（发送，查询等 服务器响应的网页）
      * </pre>
      *
-     * <code>optional bytes ctrlType = 3;</code>
+     * <code>bytes ctrlType = 3;</code>
      */
     public com.google.protobuf.ByteString getCtrlType() {
       return ctrlType_;
@@ -209,7 +209,7 @@ public final class InterfaceMsn {
      * 短信服务类型（发送，查询等 服务器响应的网页）
      * </pre>
      *
-     * <code>optional bytes ctrlType = 3;</code>
+     * <code>bytes ctrlType = 3;</code>
      */
     private void setCtrlType(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -223,7 +223,7 @@ public final class InterfaceMsn {
      * 短信服务类型（发送，查询等 服务器响应的网页）
      * </pre>
      *
-     * <code>optional bytes ctrlType = 3;</code>
+     * <code>bytes ctrlType = 3;</code>
      */
     private void clearCtrlType() {
       
@@ -237,7 +237,7 @@ public final class InterfaceMsn {
      * 短信服务账户 名称
      * </pre>
      *
-     * <code>optional bytes uname = 4;</code>
+     * <code>bytes uname = 4;</code>
      */
     public com.google.protobuf.ByteString getUname() {
       return uname_;
@@ -247,7 +247,7 @@ public final class InterfaceMsn {
      * 短信服务账户 名称
      * </pre>
      *
-     * <code>optional bytes uname = 4;</code>
+     * <code>bytes uname = 4;</code>
      */
     private void setUname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -261,7 +261,7 @@ public final class InterfaceMsn {
      * 短信服务账户 名称
      * </pre>
      *
-     * <code>optional bytes uname = 4;</code>
+     * <code>bytes uname = 4;</code>
      */
     private void clearUname() {
       
@@ -275,7 +275,7 @@ public final class InterfaceMsn {
      * 短信服务账户 密码
      * </pre>
      *
-     * <code>optional bytes upwd = 5;</code>
+     * <code>bytes upwd = 5;</code>
      */
     public com.google.protobuf.ByteString getUpwd() {
       return upwd_;
@@ -285,7 +285,7 @@ public final class InterfaceMsn {
      * 短信服务账户 密码
      * </pre>
      *
-     * <code>optional bytes upwd = 5;</code>
+     * <code>bytes upwd = 5;</code>
      */
     private void setUpwd(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -299,7 +299,7 @@ public final class InterfaceMsn {
      * 短信服务账户 密码
      * </pre>
      *
-     * <code>optional bytes upwd = 5;</code>
+     * <code>bytes upwd = 5;</code>
      */
     private void clearUpwd() {
       
@@ -405,7 +405,7 @@ public final class InterfaceMsn {
      * 短信内容  （发送短信必填，其他请求可不填）
      * </pre>
      *
-     * <code>optional bytes messageInfo = 7;</code>
+     * <code>bytes messageInfo = 7;</code>
      */
     public com.google.protobuf.ByteString getMessageInfo() {
       return messageInfo_;
@@ -415,7 +415,7 @@ public final class InterfaceMsn {
      * 短信内容  （发送短信必填，其他请求可不填）
      * </pre>
      *
-     * <code>optional bytes messageInfo = 7;</code>
+     * <code>bytes messageInfo = 7;</code>
      */
     private void setMessageInfo(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -429,7 +429,7 @@ public final class InterfaceMsn {
      * 短信内容  （发送短信必填，其他请求可不填）
      * </pre>
      *
-     * <code>optional bytes messageInfo = 7;</code>
+     * <code>bytes messageInfo = 7;</code>
      */
     private void clearMessageInfo() {
       
@@ -503,6 +503,19 @@ public final class InterfaceMsn {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -597,7 +610,7 @@ public final class InterfaceMsn {
        * 服务器IP
        * </pre>
        *
-       * <code>optional bytes serverIP = 1;</code>
+       * <code>bytes serverIP = 1;</code>
        */
       public com.google.protobuf.ByteString getServerIP() {
         return instance.getServerIP();
@@ -607,7 +620,7 @@ public final class InterfaceMsn {
        * 服务器IP
        * </pre>
        *
-       * <code>optional bytes serverIP = 1;</code>
+       * <code>bytes serverIP = 1;</code>
        */
       public Builder setServerIP(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -619,7 +632,7 @@ public final class InterfaceMsn {
        * 服务器IP
        * </pre>
        *
-       * <code>optional bytes serverIP = 1;</code>
+       * <code>bytes serverIP = 1;</code>
        */
       public Builder clearServerIP() {
         copyOnWrite();
@@ -632,7 +645,7 @@ public final class InterfaceMsn {
        * 服务器端口号
        * </pre>
        *
-       * <code>optional bytes serverPort = 2;</code>
+       * <code>bytes serverPort = 2;</code>
        */
       public com.google.protobuf.ByteString getServerPort() {
         return instance.getServerPort();
@@ -642,7 +655,7 @@ public final class InterfaceMsn {
        * 服务器端口号
        * </pre>
        *
-       * <code>optional bytes serverPort = 2;</code>
+       * <code>bytes serverPort = 2;</code>
        */
       public Builder setServerPort(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -654,7 +667,7 @@ public final class InterfaceMsn {
        * 服务器端口号
        * </pre>
        *
-       * <code>optional bytes serverPort = 2;</code>
+       * <code>bytes serverPort = 2;</code>
        */
       public Builder clearServerPort() {
         copyOnWrite();
@@ -667,7 +680,7 @@ public final class InterfaceMsn {
        * 短信服务类型（发送，查询等 服务器响应的网页）
        * </pre>
        *
-       * <code>optional bytes ctrlType = 3;</code>
+       * <code>bytes ctrlType = 3;</code>
        */
       public com.google.protobuf.ByteString getCtrlType() {
         return instance.getCtrlType();
@@ -677,7 +690,7 @@ public final class InterfaceMsn {
        * 短信服务类型（发送，查询等 服务器响应的网页）
        * </pre>
        *
-       * <code>optional bytes ctrlType = 3;</code>
+       * <code>bytes ctrlType = 3;</code>
        */
       public Builder setCtrlType(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -689,7 +702,7 @@ public final class InterfaceMsn {
        * 短信服务类型（发送，查询等 服务器响应的网页）
        * </pre>
        *
-       * <code>optional bytes ctrlType = 3;</code>
+       * <code>bytes ctrlType = 3;</code>
        */
       public Builder clearCtrlType() {
         copyOnWrite();
@@ -702,7 +715,7 @@ public final class InterfaceMsn {
        * 短信服务账户 名称
        * </pre>
        *
-       * <code>optional bytes uname = 4;</code>
+       * <code>bytes uname = 4;</code>
        */
       public com.google.protobuf.ByteString getUname() {
         return instance.getUname();
@@ -712,7 +725,7 @@ public final class InterfaceMsn {
        * 短信服务账户 名称
        * </pre>
        *
-       * <code>optional bytes uname = 4;</code>
+       * <code>bytes uname = 4;</code>
        */
       public Builder setUname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -724,7 +737,7 @@ public final class InterfaceMsn {
        * 短信服务账户 名称
        * </pre>
        *
-       * <code>optional bytes uname = 4;</code>
+       * <code>bytes uname = 4;</code>
        */
       public Builder clearUname() {
         copyOnWrite();
@@ -737,7 +750,7 @@ public final class InterfaceMsn {
        * 短信服务账户 密码
        * </pre>
        *
-       * <code>optional bytes upwd = 5;</code>
+       * <code>bytes upwd = 5;</code>
        */
       public com.google.protobuf.ByteString getUpwd() {
         return instance.getUpwd();
@@ -747,7 +760,7 @@ public final class InterfaceMsn {
        * 短信服务账户 密码
        * </pre>
        *
-       * <code>optional bytes upwd = 5;</code>
+       * <code>bytes upwd = 5;</code>
        */
       public Builder setUpwd(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -759,7 +772,7 @@ public final class InterfaceMsn {
        * 短信服务账户 密码
        * </pre>
        *
-       * <code>optional bytes upwd = 5;</code>
+       * <code>bytes upwd = 5;</code>
        */
       public Builder clearUpwd() {
         copyOnWrite();
@@ -855,7 +868,7 @@ public final class InterfaceMsn {
        * 短信内容  （发送短信必填，其他请求可不填）
        * </pre>
        *
-       * <code>optional bytes messageInfo = 7;</code>
+       * <code>bytes messageInfo = 7;</code>
        */
       public com.google.protobuf.ByteString getMessageInfo() {
         return instance.getMessageInfo();
@@ -865,7 +878,7 @@ public final class InterfaceMsn {
        * 短信内容  （发送短信必填，其他请求可不填）
        * </pre>
        *
-       * <code>optional bytes messageInfo = 7;</code>
+       * <code>bytes messageInfo = 7;</code>
        */
       public Builder setMessageInfo(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -877,7 +890,7 @@ public final class InterfaceMsn {
        * 短信内容  （发送短信必填，其他请求可不填）
        * </pre>
        *
-       * <code>optional bytes messageInfo = 7;</code>
+       * <code>bytes messageInfo = 7;</code>
        */
       public Builder clearMessageInfo() {
         copyOnWrite();
@@ -887,6 +900,7 @@ public final class InterfaceMsn {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_SMSInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -994,6 +1008,7 @@ public final class InterfaceMsn {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1038,7 +1053,7 @@ public final class InterfaceMsn {
      * 提交请求时返回的批次标识ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     int getId();
 
@@ -1047,7 +1062,7 @@ public final class InterfaceMsn {
      * 返回的状态码（1：成功，2：失败，3：禁发号码，4：通达错误）
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     int getStatus();
 
@@ -1056,7 +1071,7 @@ public final class InterfaceMsn {
      * 手机号码
      * </pre>
      *
-     * <code>optional bytes number = 3;</code>
+     * <code>bytes number = 3;</code>
      */
     com.google.protobuf.ByteString getNumber();
 
@@ -1065,7 +1080,7 @@ public final class InterfaceMsn {
      * 回复时间
      * </pre>
      *
-     * <code>optional bytes donedate = 4;</code>
+     * <code>bytes donedate = 4;</code>
      */
     com.google.protobuf.ByteString getDonedate();
   }
@@ -1092,7 +1107,7 @@ public final class InterfaceMsn {
      * 提交请求时返回的批次标识ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     public int getId() {
       return id_;
@@ -1102,7 +1117,7 @@ public final class InterfaceMsn {
      * 提交请求时返回的批次标识ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void setId(int value) {
       
@@ -1113,7 +1128,7 @@ public final class InterfaceMsn {
      * 提交请求时返回的批次标识ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void clearId() {
       
@@ -1127,7 +1142,7 @@ public final class InterfaceMsn {
      * 返回的状态码（1：成功，2：失败，3：禁发号码，4：通达错误）
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     public int getStatus() {
       return status_;
@@ -1137,7 +1152,7 @@ public final class InterfaceMsn {
      * 返回的状态码（1：成功，2：失败，3：禁发号码，4：通达错误）
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void setStatus(int value) {
       
@@ -1148,7 +1163,7 @@ public final class InterfaceMsn {
      * 返回的状态码（1：成功，2：失败，3：禁发号码，4：通达错误）
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void clearStatus() {
       
@@ -1162,7 +1177,7 @@ public final class InterfaceMsn {
      * 手机号码
      * </pre>
      *
-     * <code>optional bytes number = 3;</code>
+     * <code>bytes number = 3;</code>
      */
     public com.google.protobuf.ByteString getNumber() {
       return number_;
@@ -1172,7 +1187,7 @@ public final class InterfaceMsn {
      * 手机号码
      * </pre>
      *
-     * <code>optional bytes number = 3;</code>
+     * <code>bytes number = 3;</code>
      */
     private void setNumber(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1186,7 +1201,7 @@ public final class InterfaceMsn {
      * 手机号码
      * </pre>
      *
-     * <code>optional bytes number = 3;</code>
+     * <code>bytes number = 3;</code>
      */
     private void clearNumber() {
       
@@ -1200,7 +1215,7 @@ public final class InterfaceMsn {
      * 回复时间
      * </pre>
      *
-     * <code>optional bytes donedate = 4;</code>
+     * <code>bytes donedate = 4;</code>
      */
     public com.google.protobuf.ByteString getDonedate() {
       return donedate_;
@@ -1210,7 +1225,7 @@ public final class InterfaceMsn {
      * 回复时间
      * </pre>
      *
-     * <code>optional bytes donedate = 4;</code>
+     * <code>bytes donedate = 4;</code>
      */
     private void setDonedate(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1224,7 +1239,7 @@ public final class InterfaceMsn {
      * 回复时间
      * </pre>
      *
-     * <code>optional bytes donedate = 4;</code>
+     * <code>bytes donedate = 4;</code>
      */
     private void clearDonedate() {
       
@@ -1272,6 +1287,19 @@ public final class InterfaceMsn {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Item_SMSSendStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Item_SMSSendStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Item_SMSSendStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1363,7 +1391,7 @@ public final class InterfaceMsn {
        * 提交请求时返回的批次标识ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public int getId() {
         return instance.getId();
@@ -1373,7 +1401,7 @@ public final class InterfaceMsn {
        * 提交请求时返回的批次标识ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -1385,7 +1413,7 @@ public final class InterfaceMsn {
        * 提交请求时返回的批次标识ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -1398,7 +1426,7 @@ public final class InterfaceMsn {
        * 返回的状态码（1：成功，2：失败，3：禁发号码，4：通达错误）
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public int getStatus() {
         return instance.getStatus();
@@ -1408,7 +1436,7 @@ public final class InterfaceMsn {
        * 返回的状态码（1：成功，2：失败，3：禁发号码，4：通达错误）
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder setStatus(int value) {
         copyOnWrite();
@@ -1420,7 +1448,7 @@ public final class InterfaceMsn {
        * 返回的状态码（1：成功，2：失败，3：禁发号码，4：通达错误）
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder clearStatus() {
         copyOnWrite();
@@ -1433,7 +1461,7 @@ public final class InterfaceMsn {
        * 手机号码
        * </pre>
        *
-       * <code>optional bytes number = 3;</code>
+       * <code>bytes number = 3;</code>
        */
       public com.google.protobuf.ByteString getNumber() {
         return instance.getNumber();
@@ -1443,7 +1471,7 @@ public final class InterfaceMsn {
        * 手机号码
        * </pre>
        *
-       * <code>optional bytes number = 3;</code>
+       * <code>bytes number = 3;</code>
        */
       public Builder setNumber(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1455,7 +1483,7 @@ public final class InterfaceMsn {
        * 手机号码
        * </pre>
        *
-       * <code>optional bytes number = 3;</code>
+       * <code>bytes number = 3;</code>
        */
       public Builder clearNumber() {
         copyOnWrite();
@@ -1468,7 +1496,7 @@ public final class InterfaceMsn {
        * 回复时间
        * </pre>
        *
-       * <code>optional bytes donedate = 4;</code>
+       * <code>bytes donedate = 4;</code>
        */
       public com.google.protobuf.ByteString getDonedate() {
         return instance.getDonedate();
@@ -1478,7 +1506,7 @@ public final class InterfaceMsn {
        * 回复时间
        * </pre>
        *
-       * <code>optional bytes donedate = 4;</code>
+       * <code>bytes donedate = 4;</code>
        */
       public Builder setDonedate(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1490,7 +1518,7 @@ public final class InterfaceMsn {
        * 回复时间
        * </pre>
        *
-       * <code>optional bytes donedate = 4;</code>
+       * <code>bytes donedate = 4;</code>
        */
       public Builder clearDonedate() {
         copyOnWrite();
@@ -1500,6 +1528,7 @@ public final class InterfaceMsn {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_SMSSendStatus)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1582,6 +1611,7 @@ public final class InterfaceMsn {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1626,7 +1656,7 @@ public final class InterfaceMsn {
      * 状态码：0参数错误，1提交成功，2用户名或密码不正确，3访问服务异常，4访问资源错误
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     int getStatuscode();
 
@@ -1635,7 +1665,7 @@ public final class InterfaceMsn {
      * 接收号码条数数量
      * </pre>
      *
-     * <code>optional fixed32 total = 2;</code>
+     * <code>fixed32 total = 2;</code>
      */
     int getTotal();
 
@@ -1690,7 +1720,7 @@ public final class InterfaceMsn {
      * 状态码：0参数错误，1提交成功，2用户名或密码不正确，3访问服务异常，4访问资源错误
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     public int getStatuscode() {
       return statuscode_;
@@ -1700,7 +1730,7 @@ public final class InterfaceMsn {
      * 状态码：0参数错误，1提交成功，2用户名或密码不正确，3访问服务异常，4访问资源错误
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     private void setStatuscode(int value) {
       
@@ -1711,7 +1741,7 @@ public final class InterfaceMsn {
      * 状态码：0参数错误，1提交成功，2用户名或密码不正确，3访问服务异常，4访问资源错误
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     private void clearStatuscode() {
       
@@ -1725,7 +1755,7 @@ public final class InterfaceMsn {
      * 接收号码条数数量
      * </pre>
      *
-     * <code>optional fixed32 total = 2;</code>
+     * <code>fixed32 total = 2;</code>
      */
     public int getTotal() {
       return total_;
@@ -1735,7 +1765,7 @@ public final class InterfaceMsn {
      * 接收号码条数数量
      * </pre>
      *
-     * <code>optional fixed32 total = 2;</code>
+     * <code>fixed32 total = 2;</code>
      */
     private void setTotal(int value) {
       
@@ -1746,7 +1776,7 @@ public final class InterfaceMsn {
      * 接收号码条数数量
      * </pre>
      *
-     * <code>optional fixed32 total = 2;</code>
+     * <code>fixed32 total = 2;</code>
      */
     private void clearTotal() {
       
@@ -1964,6 +1994,19 @@ public final class InterfaceMsn {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSSendStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSSendStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSSendStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2056,7 +2099,7 @@ public final class InterfaceMsn {
        * 状态码：0参数错误，1提交成功，2用户名或密码不正确，3访问服务异常，4访问资源错误
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public int getStatuscode() {
         return instance.getStatuscode();
@@ -2066,7 +2109,7 @@ public final class InterfaceMsn {
        * 状态码：0参数错误，1提交成功，2用户名或密码不正确，3访问服务异常，4访问资源错误
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public Builder setStatuscode(int value) {
         copyOnWrite();
@@ -2078,7 +2121,7 @@ public final class InterfaceMsn {
        * 状态码：0参数错误，1提交成功，2用户名或密码不正确，3访问服务异常，4访问资源错误
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public Builder clearStatuscode() {
         copyOnWrite();
@@ -2091,7 +2134,7 @@ public final class InterfaceMsn {
        * 接收号码条数数量
        * </pre>
        *
-       * <code>optional fixed32 total = 2;</code>
+       * <code>fixed32 total = 2;</code>
        */
       public int getTotal() {
         return instance.getTotal();
@@ -2101,7 +2144,7 @@ public final class InterfaceMsn {
        * 接收号码条数数量
        * </pre>
        *
-       * <code>optional fixed32 total = 2;</code>
+       * <code>fixed32 total = 2;</code>
        */
       public Builder setTotal(int value) {
         copyOnWrite();
@@ -2113,7 +2156,7 @@ public final class InterfaceMsn {
        * 接收号码条数数量
        * </pre>
        *
-       * <code>optional fixed32 total = 2;</code>
+       * <code>fixed32 total = 2;</code>
        */
       public Builder clearTotal() {
         copyOnWrite();
@@ -2268,6 +2311,7 @@ public final class InterfaceMsn {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_SMSSendStatus)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2348,6 +2392,7 @@ public final class InterfaceMsn {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2392,7 +2437,7 @@ public final class InterfaceMsn {
      * 手机号码
      * </pre>
      *
-     * <code>optional bytes number = 1;</code>
+     * <code>bytes number = 1;</code>
      */
     com.google.protobuf.ByteString getNumber();
 
@@ -2401,7 +2446,7 @@ public final class InterfaceMsn {
      * 终端回复内容
      * </pre>
      *
-     * <code>optional bytes msg = 2;</code>
+     * <code>bytes msg = 2;</code>
      */
     com.google.protobuf.ByteString getMsg();
 
@@ -2410,7 +2455,7 @@ public final class InterfaceMsn {
      * 回复时间
      * </pre>
      *
-     * <code>optional bytes donedate = 3;</code>
+     * <code>bytes donedate = 3;</code>
      */
     com.google.protobuf.ByteString getDonedate();
   }
@@ -2434,7 +2479,7 @@ public final class InterfaceMsn {
      * 手机号码
      * </pre>
      *
-     * <code>optional bytes number = 1;</code>
+     * <code>bytes number = 1;</code>
      */
     public com.google.protobuf.ByteString getNumber() {
       return number_;
@@ -2444,7 +2489,7 @@ public final class InterfaceMsn {
      * 手机号码
      * </pre>
      *
-     * <code>optional bytes number = 1;</code>
+     * <code>bytes number = 1;</code>
      */
     private void setNumber(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2458,7 +2503,7 @@ public final class InterfaceMsn {
      * 手机号码
      * </pre>
      *
-     * <code>optional bytes number = 1;</code>
+     * <code>bytes number = 1;</code>
      */
     private void clearNumber() {
       
@@ -2472,7 +2517,7 @@ public final class InterfaceMsn {
      * 终端回复内容
      * </pre>
      *
-     * <code>optional bytes msg = 2;</code>
+     * <code>bytes msg = 2;</code>
      */
     public com.google.protobuf.ByteString getMsg() {
       return msg_;
@@ -2482,7 +2527,7 @@ public final class InterfaceMsn {
      * 终端回复内容
      * </pre>
      *
-     * <code>optional bytes msg = 2;</code>
+     * <code>bytes msg = 2;</code>
      */
     private void setMsg(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2496,7 +2541,7 @@ public final class InterfaceMsn {
      * 终端回复内容
      * </pre>
      *
-     * <code>optional bytes msg = 2;</code>
+     * <code>bytes msg = 2;</code>
      */
     private void clearMsg() {
       
@@ -2510,7 +2555,7 @@ public final class InterfaceMsn {
      * 回复时间
      * </pre>
      *
-     * <code>optional bytes donedate = 3;</code>
+     * <code>bytes donedate = 3;</code>
      */
     public com.google.protobuf.ByteString getDonedate() {
       return donedate_;
@@ -2520,7 +2565,7 @@ public final class InterfaceMsn {
      * 回复时间
      * </pre>
      *
-     * <code>optional bytes donedate = 3;</code>
+     * <code>bytes donedate = 3;</code>
      */
     private void setDonedate(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2534,7 +2579,7 @@ public final class InterfaceMsn {
      * 回复时间
      * </pre>
      *
-     * <code>optional bytes donedate = 3;</code>
+     * <code>bytes donedate = 3;</code>
      */
     private void clearDonedate() {
       
@@ -2575,6 +2620,19 @@ public final class InterfaceMsn {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Item_SMSRecvMsg parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Item_SMSRecvMsg parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Item_SMSRecvMsg parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2662,7 +2720,7 @@ public final class InterfaceMsn {
        * 手机号码
        * </pre>
        *
-       * <code>optional bytes number = 1;</code>
+       * <code>bytes number = 1;</code>
        */
       public com.google.protobuf.ByteString getNumber() {
         return instance.getNumber();
@@ -2672,7 +2730,7 @@ public final class InterfaceMsn {
        * 手机号码
        * </pre>
        *
-       * <code>optional bytes number = 1;</code>
+       * <code>bytes number = 1;</code>
        */
       public Builder setNumber(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2684,7 +2742,7 @@ public final class InterfaceMsn {
        * 手机号码
        * </pre>
        *
-       * <code>optional bytes number = 1;</code>
+       * <code>bytes number = 1;</code>
        */
       public Builder clearNumber() {
         copyOnWrite();
@@ -2697,7 +2755,7 @@ public final class InterfaceMsn {
        * 终端回复内容
        * </pre>
        *
-       * <code>optional bytes msg = 2;</code>
+       * <code>bytes msg = 2;</code>
        */
       public com.google.protobuf.ByteString getMsg() {
         return instance.getMsg();
@@ -2707,7 +2765,7 @@ public final class InterfaceMsn {
        * 终端回复内容
        * </pre>
        *
-       * <code>optional bytes msg = 2;</code>
+       * <code>bytes msg = 2;</code>
        */
       public Builder setMsg(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2719,7 +2777,7 @@ public final class InterfaceMsn {
        * 终端回复内容
        * </pre>
        *
-       * <code>optional bytes msg = 2;</code>
+       * <code>bytes msg = 2;</code>
        */
       public Builder clearMsg() {
         copyOnWrite();
@@ -2732,7 +2790,7 @@ public final class InterfaceMsn {
        * 回复时间
        * </pre>
        *
-       * <code>optional bytes donedate = 3;</code>
+       * <code>bytes donedate = 3;</code>
        */
       public com.google.protobuf.ByteString getDonedate() {
         return instance.getDonedate();
@@ -2742,7 +2800,7 @@ public final class InterfaceMsn {
        * 回复时间
        * </pre>
        *
-       * <code>optional bytes donedate = 3;</code>
+       * <code>bytes donedate = 3;</code>
        */
       public Builder setDonedate(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2754,7 +2812,7 @@ public final class InterfaceMsn {
        * 回复时间
        * </pre>
        *
-       * <code>optional bytes donedate = 3;</code>
+       * <code>bytes donedate = 3;</code>
        */
       public Builder clearDonedate() {
         copyOnWrite();
@@ -2764,6 +2822,7 @@ public final class InterfaceMsn {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_SMSRecvMsg)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2839,6 +2898,7 @@ public final class InterfaceMsn {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2883,7 +2943,7 @@ public final class InterfaceMsn {
      * 状态码
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     int getStatuscode();
 
@@ -2892,7 +2952,7 @@ public final class InterfaceMsn {
      * 接收号码条数数量
      * </pre>
      *
-     * <code>optional fixed32 total = 2;</code>
+     * <code>fixed32 total = 2;</code>
      */
     int getTotal();
 
@@ -2947,7 +3007,7 @@ public final class InterfaceMsn {
      * 状态码
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     public int getStatuscode() {
       return statuscode_;
@@ -2957,7 +3017,7 @@ public final class InterfaceMsn {
      * 状态码
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     private void setStatuscode(int value) {
       
@@ -2968,7 +3028,7 @@ public final class InterfaceMsn {
      * 状态码
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     private void clearStatuscode() {
       
@@ -2982,7 +3042,7 @@ public final class InterfaceMsn {
      * 接收号码条数数量
      * </pre>
      *
-     * <code>optional fixed32 total = 2;</code>
+     * <code>fixed32 total = 2;</code>
      */
     public int getTotal() {
       return total_;
@@ -2992,7 +3052,7 @@ public final class InterfaceMsn {
      * 接收号码条数数量
      * </pre>
      *
-     * <code>optional fixed32 total = 2;</code>
+     * <code>fixed32 total = 2;</code>
      */
     private void setTotal(int value) {
       
@@ -3003,7 +3063,7 @@ public final class InterfaceMsn {
      * 接收号码条数数量
      * </pre>
      *
-     * <code>optional fixed32 total = 2;</code>
+     * <code>fixed32 total = 2;</code>
      */
     private void clearTotal() {
       
@@ -3221,6 +3281,19 @@ public final class InterfaceMsn {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSRecvMsg parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSRecvMsg parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSRecvMsg parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3313,7 +3386,7 @@ public final class InterfaceMsn {
        * 状态码
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public int getStatuscode() {
         return instance.getStatuscode();
@@ -3323,7 +3396,7 @@ public final class InterfaceMsn {
        * 状态码
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public Builder setStatuscode(int value) {
         copyOnWrite();
@@ -3335,7 +3408,7 @@ public final class InterfaceMsn {
        * 状态码
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public Builder clearStatuscode() {
         copyOnWrite();
@@ -3348,7 +3421,7 @@ public final class InterfaceMsn {
        * 接收号码条数数量
        * </pre>
        *
-       * <code>optional fixed32 total = 2;</code>
+       * <code>fixed32 total = 2;</code>
        */
       public int getTotal() {
         return instance.getTotal();
@@ -3358,7 +3431,7 @@ public final class InterfaceMsn {
        * 接收号码条数数量
        * </pre>
        *
-       * <code>optional fixed32 total = 2;</code>
+       * <code>fixed32 total = 2;</code>
        */
       public Builder setTotal(int value) {
         copyOnWrite();
@@ -3370,7 +3443,7 @@ public final class InterfaceMsn {
        * 接收号码条数数量
        * </pre>
        *
-       * <code>optional fixed32 total = 2;</code>
+       * <code>fixed32 total = 2;</code>
        */
       public Builder clearTotal() {
         copyOnWrite();
@@ -3525,6 +3598,7 @@ public final class InterfaceMsn {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_SMSRecvMsg)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3605,6 +3679,7 @@ public final class InterfaceMsn {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3649,7 +3724,7 @@ public final class InterfaceMsn {
      * 状态码
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     int getStatuscode();
 
@@ -3658,7 +3733,7 @@ public final class InterfaceMsn {
      * 剩余短信条数
      * </pre>
      *
-     * <code>optional fixed32 account = 2;</code>
+     * <code>fixed32 account = 2;</code>
      */
     int getAccount();
 
@@ -3667,7 +3742,7 @@ public final class InterfaceMsn {
      * 资费（元/条）
      * </pre>
      *
-     * <code>optional bytes tariff = 3;</code>
+     * <code>bytes tariff = 3;</code>
      */
     com.google.protobuf.ByteString getTariff();
   }
@@ -3695,7 +3770,7 @@ public final class InterfaceMsn {
      * 状态码
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     public int getStatuscode() {
       return statuscode_;
@@ -3705,7 +3780,7 @@ public final class InterfaceMsn {
      * 状态码
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     private void setStatuscode(int value) {
       
@@ -3716,7 +3791,7 @@ public final class InterfaceMsn {
      * 状态码
      * </pre>
      *
-     * <code>optional fixed32 statuscode = 1;</code>
+     * <code>fixed32 statuscode = 1;</code>
      */
     private void clearStatuscode() {
       
@@ -3730,7 +3805,7 @@ public final class InterfaceMsn {
      * 剩余短信条数
      * </pre>
      *
-     * <code>optional fixed32 account = 2;</code>
+     * <code>fixed32 account = 2;</code>
      */
     public int getAccount() {
       return account_;
@@ -3740,7 +3815,7 @@ public final class InterfaceMsn {
      * 剩余短信条数
      * </pre>
      *
-     * <code>optional fixed32 account = 2;</code>
+     * <code>fixed32 account = 2;</code>
      */
     private void setAccount(int value) {
       
@@ -3751,7 +3826,7 @@ public final class InterfaceMsn {
      * 剩余短信条数
      * </pre>
      *
-     * <code>optional fixed32 account = 2;</code>
+     * <code>fixed32 account = 2;</code>
      */
     private void clearAccount() {
       
@@ -3765,7 +3840,7 @@ public final class InterfaceMsn {
      * 资费（元/条）
      * </pre>
      *
-     * <code>optional bytes tariff = 3;</code>
+     * <code>bytes tariff = 3;</code>
      */
     public com.google.protobuf.ByteString getTariff() {
       return tariff_;
@@ -3775,7 +3850,7 @@ public final class InterfaceMsn {
      * 资费（元/条）
      * </pre>
      *
-     * <code>optional bytes tariff = 3;</code>
+     * <code>bytes tariff = 3;</code>
      */
     private void setTariff(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3789,7 +3864,7 @@ public final class InterfaceMsn {
      * 资费（元/条）
      * </pre>
      *
-     * <code>optional bytes tariff = 3;</code>
+     * <code>bytes tariff = 3;</code>
      */
     private void clearTariff() {
       
@@ -3830,6 +3905,19 @@ public final class InterfaceMsn {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSLastCount parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSLastCount parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMsn.pbui_Type_SMSLastCount parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3923,7 +4011,7 @@ public final class InterfaceMsn {
        * 状态码
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public int getStatuscode() {
         return instance.getStatuscode();
@@ -3933,7 +4021,7 @@ public final class InterfaceMsn {
        * 状态码
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public Builder setStatuscode(int value) {
         copyOnWrite();
@@ -3945,7 +4033,7 @@ public final class InterfaceMsn {
        * 状态码
        * </pre>
        *
-       * <code>optional fixed32 statuscode = 1;</code>
+       * <code>fixed32 statuscode = 1;</code>
        */
       public Builder clearStatuscode() {
         copyOnWrite();
@@ -3958,7 +4046,7 @@ public final class InterfaceMsn {
        * 剩余短信条数
        * </pre>
        *
-       * <code>optional fixed32 account = 2;</code>
+       * <code>fixed32 account = 2;</code>
        */
       public int getAccount() {
         return instance.getAccount();
@@ -3968,7 +4056,7 @@ public final class InterfaceMsn {
        * 剩余短信条数
        * </pre>
        *
-       * <code>optional fixed32 account = 2;</code>
+       * <code>fixed32 account = 2;</code>
        */
       public Builder setAccount(int value) {
         copyOnWrite();
@@ -3980,7 +4068,7 @@ public final class InterfaceMsn {
        * 剩余短信条数
        * </pre>
        *
-       * <code>optional fixed32 account = 2;</code>
+       * <code>fixed32 account = 2;</code>
        */
       public Builder clearAccount() {
         copyOnWrite();
@@ -3993,7 +4081,7 @@ public final class InterfaceMsn {
        * 资费（元/条）
        * </pre>
        *
-       * <code>optional bytes tariff = 3;</code>
+       * <code>bytes tariff = 3;</code>
        */
       public com.google.protobuf.ByteString getTariff() {
         return instance.getTariff();
@@ -4003,7 +4091,7 @@ public final class InterfaceMsn {
        * 资费（元/条）
        * </pre>
        *
-       * <code>optional bytes tariff = 3;</code>
+       * <code>bytes tariff = 3;</code>
        */
       public Builder setTariff(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -4015,7 +4103,7 @@ public final class InterfaceMsn {
        * 资费（元/条）
        * </pre>
        *
-       * <code>optional bytes tariff = 3;</code>
+       * <code>bytes tariff = 3;</code>
        */
       public Builder clearTariff() {
         copyOnWrite();
@@ -4025,6 +4113,7 @@ public final class InterfaceMsn {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_SMSLastCount)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4100,6 +4189,7 @@ public final class InterfaceMsn {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

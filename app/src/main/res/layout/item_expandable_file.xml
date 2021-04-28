@@ -22,7 +22,7 @@
         android:id="@+id/item_file_name"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="5"
+        android:layout_weight="8"
         android:gravity="center_vertical"
         android:textColor="@color/black"
         tools:text="圣诞快乐放假临时冻结.png" />
@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="5dp"
+        android:visibility="gone"
         android:layout_weight="1"
         android:textColor="@color/black"
         tools:text="管理员" />

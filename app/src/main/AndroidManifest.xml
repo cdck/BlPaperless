@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.pa.boling.paperless"
-    android:versionCode="3"
-    android:versionName="1.15">
+    android:versionCode="8"
+    android:versionName="1.17">
     <!--
     显示顶层浮窗 需要在清单文件中注册的原因是：要让设备识别是否需要该权限，
     如果不在清单文件中注册，那么在跳转到开启悬浮窗权限时，应用列表中就找不到当前应用

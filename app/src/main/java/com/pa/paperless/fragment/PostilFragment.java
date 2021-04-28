@@ -1,8 +1,10 @@
 package com.pa.paperless.fragment;
 
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
@@ -31,6 +33,7 @@ import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.Dispose;
 import com.pa.paperless.utils.FileUtil;
+import com.pa.paperless.utils.MyUtils;
 
 
 import org.greenrobot.eventbus.EventBus;
@@ -150,6 +153,12 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
     }
 
     private void fun_queryMeetDirFile(int dirid) {
+        InterfaceFile.pbui_Type_MeetDirRightDetailInfo dirPermission = jni.queryDirPermission(dirid);
+        if (dirPermission!=null && dirPermission.getMemberidList().contains(Values.localMemberId)) {
+            LogUtils.e("没有批注文件的目录权限");
+            clear();
+            return;
+        }
         try {
             InterfaceFile.pbui_Type_MeetDirFileDetailInfo object = jni.queryMeetDirFile(dirid);
             if (object == null) {
@@ -178,6 +187,10 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                 checkButton();
                 setSelect(0);
                 mAdapter.setLookListener((fileInfo, posion, filename, filesize) -> {
+                    /*if(!MyUtils.isHasPermission(Macro.permission_code_download)){
+                        ToastUtils.showShort(R.string.no_permission);
+                        return;
+                    }*/
 //                    String dir = getActivity().getCacheDir().getAbsolutePath();
                     //Macro.CACHE_FILE
                     FileUtil.openFile(Macro.CACHE_ALL_FILE, filename, jni, posion, getContext(), filesize);
@@ -211,6 +224,15 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getEventMessage(EventMessage message) throws InvalidProtocolBufferException {
         switch (message.getAction()) {
+            //会议目录权限变更通知
+            case EventType.directory_permission_change_inform: {
+                InterfaceBase.pbui_MeetNotifyMsg object = (InterfaceBase.pbui_MeetNotifyMsg) message.getObject();
+                int id = object.getId();
+                if (id == Macro.ANNOTATION_FILE_DIRECTORY_ID) {
+                    fun_queryMeetDirFile(id);
+                }
+                break;
+            }
             case EventType.MEETDIR_FILE_CHANGE_INFORM://142 会议目录文件变更通知
                 InterfaceBase.pbui_MeetNotifyMsgForDouble object1 = (InterfaceBase.pbui_MeetNotifyMsgForDouble) message.getObject();
                 int id = object1.getId();
@@ -402,6 +424,10 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                 }
                 break;
             case R.id.postil_saved_offline_btn://离线缓存
+//                if(!MyUtils.isHasPermission(Macro.permission_code_download)){
+//                    ToastUtils.showShort(R.string.no_permission);
+//                    return;
+//                }
                 if (mAdapter == null) break;
                 MeetDirFileInfo data = mAdapter.getCheckedFile();
                 if (data == null) {
@@ -411,6 +437,10 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                 FileUtil.downOfflineFile(data);
                 break;
             case R.id.download:
+                if (!MyUtils.isHasPermission(Macro.permission_code_download)) {
+                    ToastUtils.showShort(R.string.no_permission);
+                    return;
+                }
                 if (mAdapter == null) break;
                 MeetDirFileInfo data1 = mAdapter.getCheckedFile();
                 if (data1 == null) {

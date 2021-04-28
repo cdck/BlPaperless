@@ -155,7 +155,6 @@ public class FabService extends Service {
     private List<ChartData> chartDatas;
     private int countPre;//一共占用的百分比数
     private boolean voteResult;
-    private InterfaceVote.pbui_Type_MeetVoteDetailInfo allVoteResults;
     private List<VoteResultSubmitMember> submitMemberData;
     private RecyclerView optionRv;
     private int selectedItem = 0;
@@ -1048,7 +1047,9 @@ public class FabService extends Service {
             }
             voteResultAdapter.notifyDataSetChanged();
         });
-        clickVote(holder, 0);
+        if (!voteResultData.isEmpty()) {
+            clickVote(holder, 0);
+        }
         //设置默认点击第一个投票按钮
         holder.vote.performClick();
         voteResultAdapter.setItemSelectListener((posion, view) -> {
@@ -1671,7 +1672,7 @@ public class FabService extends Service {
 
     private void fun_queryVote() {
         try {
-            allVoteResults = jni.queryVote();
+            InterfaceVote.pbui_Type_MeetVoteDetailInfo allVoteResults = jni.queryVote();
             if (allVoteResults == null) return;
             //确保是点击了快捷方式中的投票结果
             if (!clickqueryVoteResult) return;

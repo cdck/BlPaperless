@@ -17,7 +17,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     int getMsgtype();
 
@@ -26,7 +26,7 @@ public final class InterfaceIM {
      *发送者角色 参见 Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 2;</code>
+     * <code>fixed32 role = 2;</code>
      */
     int getRole();
 
@@ -35,7 +35,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     int getMemberid();
 
@@ -44,7 +44,7 @@ public final class InterfaceIM {
      *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4;</code>
      */
     com.google.protobuf.ByteString getMsg();
 
@@ -53,7 +53,7 @@ public final class InterfaceIM {
      *发送UTC时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcsecond = 5;</code>
+     * <code>fixed64 utcsecond = 5;</code>
      */
     long getUtcsecond();
 
@@ -62,7 +62,7 @@ public final class InterfaceIM {
      *会议名称
      * </pre>
      *
-     * <code>optional bytes meetname = 6;</code>
+     * <code>bytes meetname = 6;</code>
      */
     com.google.protobuf.ByteString getMeetname();
 
@@ -71,7 +71,7 @@ public final class InterfaceIM {
      *会议室名
      * </pre>
      *
-     * <code>optional bytes roomname = 7;</code>
+     * <code>bytes roomname = 7;</code>
      */
     com.google.protobuf.ByteString getRoomname();
 
@@ -80,7 +80,7 @@ public final class InterfaceIM {
      *人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 8;</code>
+     * <code>bytes membername = 8;</code>
      */
     com.google.protobuf.ByteString getMembername();
 
@@ -89,7 +89,7 @@ public final class InterfaceIM {
      *席位名
      * </pre>
      *
-     * <code>optional bytes seatename = 9;</code>
+     * <code>bytes seatename = 9;</code>
      */
     com.google.protobuf.ByteString getSeatename();
 
@@ -149,7 +149,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     public int getMsgtype() {
       return msgtype_;
@@ -159,7 +159,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     private void setMsgtype(int value) {
       
@@ -170,7 +170,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     private void clearMsgtype() {
       
@@ -184,7 +184,7 @@ public final class InterfaceIM {
      *发送者角色 参见 Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 2;</code>
+     * <code>fixed32 role = 2;</code>
      */
     public int getRole() {
       return role_;
@@ -194,7 +194,7 @@ public final class InterfaceIM {
      *发送者角色 参见 Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 2;</code>
+     * <code>fixed32 role = 2;</code>
      */
     private void setRole(int value) {
       
@@ -205,7 +205,7 @@ public final class InterfaceIM {
      *发送者角色 参见 Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 2;</code>
+     * <code>fixed32 role = 2;</code>
      */
     private void clearRole() {
       
@@ -219,7 +219,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -229,7 +229,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void setMemberid(int value) {
       
@@ -240,7 +240,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void clearMemberid() {
       
@@ -254,7 +254,7 @@ public final class InterfaceIM {
      *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4;</code>
      */
     public com.google.protobuf.ByteString getMsg() {
       return msg_;
@@ -264,7 +264,7 @@ public final class InterfaceIM {
      *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4;</code>
      */
     private void setMsg(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -278,7 +278,7 @@ public final class InterfaceIM {
      *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4;</code>
      */
     private void clearMsg() {
       
@@ -292,7 +292,7 @@ public final class InterfaceIM {
      *发送UTC时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcsecond = 5;</code>
+     * <code>fixed64 utcsecond = 5;</code>
      */
     public long getUtcsecond() {
       return utcsecond_;
@@ -302,7 +302,7 @@ public final class InterfaceIM {
      *发送UTC时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcsecond = 5;</code>
+     * <code>fixed64 utcsecond = 5;</code>
      */
     private void setUtcsecond(long value) {
       
@@ -313,7 +313,7 @@ public final class InterfaceIM {
      *发送UTC时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcsecond = 5;</code>
+     * <code>fixed64 utcsecond = 5;</code>
      */
     private void clearUtcsecond() {
       
@@ -327,7 +327,7 @@ public final class InterfaceIM {
      *会议名称
      * </pre>
      *
-     * <code>optional bytes meetname = 6;</code>
+     * <code>bytes meetname = 6;</code>
      */
     public com.google.protobuf.ByteString getMeetname() {
       return meetname_;
@@ -337,7 +337,7 @@ public final class InterfaceIM {
      *会议名称
      * </pre>
      *
-     * <code>optional bytes meetname = 6;</code>
+     * <code>bytes meetname = 6;</code>
      */
     private void setMeetname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -351,7 +351,7 @@ public final class InterfaceIM {
      *会议名称
      * </pre>
      *
-     * <code>optional bytes meetname = 6;</code>
+     * <code>bytes meetname = 6;</code>
      */
     private void clearMeetname() {
       
@@ -365,7 +365,7 @@ public final class InterfaceIM {
      *会议室名
      * </pre>
      *
-     * <code>optional bytes roomname = 7;</code>
+     * <code>bytes roomname = 7;</code>
      */
     public com.google.protobuf.ByteString getRoomname() {
       return roomname_;
@@ -375,7 +375,7 @@ public final class InterfaceIM {
      *会议室名
      * </pre>
      *
-     * <code>optional bytes roomname = 7;</code>
+     * <code>bytes roomname = 7;</code>
      */
     private void setRoomname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -389,7 +389,7 @@ public final class InterfaceIM {
      *会议室名
      * </pre>
      *
-     * <code>optional bytes roomname = 7;</code>
+     * <code>bytes roomname = 7;</code>
      */
     private void clearRoomname() {
       
@@ -403,7 +403,7 @@ public final class InterfaceIM {
      *人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 8;</code>
+     * <code>bytes membername = 8;</code>
      */
     public com.google.protobuf.ByteString getMembername() {
       return membername_;
@@ -413,7 +413,7 @@ public final class InterfaceIM {
      *人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 8;</code>
+     * <code>bytes membername = 8;</code>
      */
     private void setMembername(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -427,7 +427,7 @@ public final class InterfaceIM {
      *人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 8;</code>
+     * <code>bytes membername = 8;</code>
      */
     private void clearMembername() {
       
@@ -441,7 +441,7 @@ public final class InterfaceIM {
      *席位名
      * </pre>
      *
-     * <code>optional bytes seatename = 9;</code>
+     * <code>bytes seatename = 9;</code>
      */
     public com.google.protobuf.ByteString getSeatename() {
       return seatename_;
@@ -451,7 +451,7 @@ public final class InterfaceIM {
      *席位名
      * </pre>
      *
-     * <code>optional bytes seatename = 9;</code>
+     * <code>bytes seatename = 9;</code>
      */
     private void setSeatename(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -465,7 +465,7 @@ public final class InterfaceIM {
      *席位名
      * </pre>
      *
-     * <code>optional bytes seatename = 9;</code>
+     * <code>bytes seatename = 9;</code>
      */
     private void clearSeatename() {
       
@@ -645,6 +645,19 @@ public final class InterfaceIM {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetIM parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetIM parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetIM parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -738,7 +751,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public int getMsgtype() {
         return instance.getMsgtype();
@@ -748,7 +761,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public Builder setMsgtype(int value) {
         copyOnWrite();
@@ -760,7 +773,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public Builder clearMsgtype() {
         copyOnWrite();
@@ -773,7 +786,7 @@ public final class InterfaceIM {
        *发送者角色 参见 Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 2;</code>
+       * <code>fixed32 role = 2;</code>
        */
       public int getRole() {
         return instance.getRole();
@@ -783,7 +796,7 @@ public final class InterfaceIM {
        *发送者角色 参见 Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 2;</code>
+       * <code>fixed32 role = 2;</code>
        */
       public Builder setRole(int value) {
         copyOnWrite();
@@ -795,7 +808,7 @@ public final class InterfaceIM {
        *发送者角色 参见 Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 2;</code>
+       * <code>fixed32 role = 2;</code>
        */
       public Builder clearRole() {
         copyOnWrite();
@@ -808,7 +821,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -818,7 +831,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -830,7 +843,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -843,7 +856,7 @@ public final class InterfaceIM {
        *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4;</code>
        */
       public com.google.protobuf.ByteString getMsg() {
         return instance.getMsg();
@@ -853,7 +866,7 @@ public final class InterfaceIM {
        *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4;</code>
        */
       public Builder setMsg(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -865,7 +878,7 @@ public final class InterfaceIM {
        *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4;</code>
        */
       public Builder clearMsg() {
         copyOnWrite();
@@ -878,7 +891,7 @@ public final class InterfaceIM {
        *发送UTC时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcsecond = 5;</code>
+       * <code>fixed64 utcsecond = 5;</code>
        */
       public long getUtcsecond() {
         return instance.getUtcsecond();
@@ -888,7 +901,7 @@ public final class InterfaceIM {
        *发送UTC时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcsecond = 5;</code>
+       * <code>fixed64 utcsecond = 5;</code>
        */
       public Builder setUtcsecond(long value) {
         copyOnWrite();
@@ -900,7 +913,7 @@ public final class InterfaceIM {
        *发送UTC时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcsecond = 5;</code>
+       * <code>fixed64 utcsecond = 5;</code>
        */
       public Builder clearUtcsecond() {
         copyOnWrite();
@@ -913,7 +926,7 @@ public final class InterfaceIM {
        *会议名称
        * </pre>
        *
-       * <code>optional bytes meetname = 6;</code>
+       * <code>bytes meetname = 6;</code>
        */
       public com.google.protobuf.ByteString getMeetname() {
         return instance.getMeetname();
@@ -923,7 +936,7 @@ public final class InterfaceIM {
        *会议名称
        * </pre>
        *
-       * <code>optional bytes meetname = 6;</code>
+       * <code>bytes meetname = 6;</code>
        */
       public Builder setMeetname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -935,7 +948,7 @@ public final class InterfaceIM {
        *会议名称
        * </pre>
        *
-       * <code>optional bytes meetname = 6;</code>
+       * <code>bytes meetname = 6;</code>
        */
       public Builder clearMeetname() {
         copyOnWrite();
@@ -948,7 +961,7 @@ public final class InterfaceIM {
        *会议室名
        * </pre>
        *
-       * <code>optional bytes roomname = 7;</code>
+       * <code>bytes roomname = 7;</code>
        */
       public com.google.protobuf.ByteString getRoomname() {
         return instance.getRoomname();
@@ -958,7 +971,7 @@ public final class InterfaceIM {
        *会议室名
        * </pre>
        *
-       * <code>optional bytes roomname = 7;</code>
+       * <code>bytes roomname = 7;</code>
        */
       public Builder setRoomname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -970,7 +983,7 @@ public final class InterfaceIM {
        *会议室名
        * </pre>
        *
-       * <code>optional bytes roomname = 7;</code>
+       * <code>bytes roomname = 7;</code>
        */
       public Builder clearRoomname() {
         copyOnWrite();
@@ -983,7 +996,7 @@ public final class InterfaceIM {
        *人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 8;</code>
+       * <code>bytes membername = 8;</code>
        */
       public com.google.protobuf.ByteString getMembername() {
         return instance.getMembername();
@@ -993,7 +1006,7 @@ public final class InterfaceIM {
        *人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 8;</code>
+       * <code>bytes membername = 8;</code>
        */
       public Builder setMembername(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1005,7 +1018,7 @@ public final class InterfaceIM {
        *人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 8;</code>
+       * <code>bytes membername = 8;</code>
        */
       public Builder clearMembername() {
         copyOnWrite();
@@ -1018,7 +1031,7 @@ public final class InterfaceIM {
        *席位名
        * </pre>
        *
-       * <code>optional bytes seatename = 9;</code>
+       * <code>bytes seatename = 9;</code>
        */
       public com.google.protobuf.ByteString getSeatename() {
         return instance.getSeatename();
@@ -1028,7 +1041,7 @@ public final class InterfaceIM {
        *席位名
        * </pre>
        *
-       * <code>optional bytes seatename = 9;</code>
+       * <code>bytes seatename = 9;</code>
        */
       public Builder setSeatename(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1040,7 +1053,7 @@ public final class InterfaceIM {
        *席位名
        * </pre>
        *
-       * <code>optional bytes seatename = 9;</code>
+       * <code>bytes seatename = 9;</code>
        */
       public Builder clearSeatename() {
         copyOnWrite();
@@ -1133,6 +1146,7 @@ public final class InterfaceIM {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetIM)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1275,6 +1289,7 @@ public final class InterfaceIM {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1319,7 +1334,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     int getMsgtype();
 
@@ -1328,7 +1343,7 @@ public final class InterfaceIM {
      *消息文本  长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 2;</code>
+     * <code>bytes msg = 2;</code>
      */
     com.google.protobuf.ByteString getMsg();
 
@@ -1384,7 +1399,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     public int getMsgtype() {
       return msgtype_;
@@ -1394,7 +1409,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     private void setMsgtype(int value) {
       
@@ -1405,7 +1420,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     private void clearMsgtype() {
       
@@ -1419,7 +1434,7 @@ public final class InterfaceIM {
      *消息文本  长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 2;</code>
+     * <code>bytes msg = 2;</code>
      */
     public com.google.protobuf.ByteString getMsg() {
       return msg_;
@@ -1429,7 +1444,7 @@ public final class InterfaceIM {
      *消息文本  长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 2;</code>
+     * <code>bytes msg = 2;</code>
      */
     private void setMsg(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1443,7 +1458,7 @@ public final class InterfaceIM {
      *消息文本  长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 2;</code>
+     * <code>bytes msg = 2;</code>
      */
     private void clearMsg() {
       
@@ -1574,6 +1589,19 @@ public final class InterfaceIM {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_SendMeetIM parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_SendMeetIM parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_SendMeetIM parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1667,7 +1695,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public int getMsgtype() {
         return instance.getMsgtype();
@@ -1677,7 +1705,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public Builder setMsgtype(int value) {
         copyOnWrite();
@@ -1689,7 +1717,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public Builder clearMsgtype() {
         copyOnWrite();
@@ -1702,7 +1730,7 @@ public final class InterfaceIM {
        *消息文本  长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 2;</code>
+       * <code>bytes msg = 2;</code>
        */
       public com.google.protobuf.ByteString getMsg() {
         return instance.getMsg();
@@ -1712,7 +1740,7 @@ public final class InterfaceIM {
        *消息文本  长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 2;</code>
+       * <code>bytes msg = 2;</code>
        */
       public Builder setMsg(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1724,7 +1752,7 @@ public final class InterfaceIM {
        *消息文本  长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 2;</code>
+       * <code>bytes msg = 2;</code>
        */
       public Builder clearMsg() {
         copyOnWrite();
@@ -1817,6 +1845,7 @@ public final class InterfaceIM {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_SendMeetIM)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1910,6 +1939,7 @@ public final class InterfaceIM {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1954,7 +1984,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     int getMsgtype();
 
@@ -1963,7 +1993,7 @@ public final class InterfaceIM {
      *发送者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 2;</code>
+     * <code>fixed32 role = 2;</code>
      */
     int getRole();
 
@@ -1972,7 +2002,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     int getMemberid();
 
@@ -1981,7 +2011,7 @@ public final class InterfaceIM {
      *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4;</code>
      */
     com.google.protobuf.ByteString getMsg();
 
@@ -1990,7 +2020,7 @@ public final class InterfaceIM {
      *发送UTC时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcsecond = 5;</code>
+     * <code>fixed64 utcsecond = 5;</code>
      */
     long getUtcsecond();
 
@@ -2043,7 +2073,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     public int getMsgtype() {
       return msgtype_;
@@ -2053,7 +2083,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     private void setMsgtype(int value) {
       
@@ -2064,7 +2094,7 @@ public final class InterfaceIM {
      *消息类型 参见 Pb_MeetIMMSG_TYPE
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 1;</code>
+     * <code>fixed32 msgtype = 1;</code>
      */
     private void clearMsgtype() {
       
@@ -2078,7 +2108,7 @@ public final class InterfaceIM {
      *发送者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 2;</code>
+     * <code>fixed32 role = 2;</code>
      */
     public int getRole() {
       return role_;
@@ -2088,7 +2118,7 @@ public final class InterfaceIM {
      *发送者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 2;</code>
+     * <code>fixed32 role = 2;</code>
      */
     private void setRole(int value) {
       
@@ -2099,7 +2129,7 @@ public final class InterfaceIM {
      *发送者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 2;</code>
+     * <code>fixed32 role = 2;</code>
      */
     private void clearRole() {
       
@@ -2113,7 +2143,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -2123,7 +2153,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void setMemberid(int value) {
       
@@ -2134,7 +2164,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void clearMemberid() {
       
@@ -2148,7 +2178,7 @@ public final class InterfaceIM {
      *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4;</code>
      */
     public com.google.protobuf.ByteString getMsg() {
       return msg_;
@@ -2158,7 +2188,7 @@ public final class InterfaceIM {
      *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4;</code>
      */
     private void setMsg(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2172,7 +2202,7 @@ public final class InterfaceIM {
      *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
      * </pre>
      *
-     * <code>optional bytes msg = 4;</code>
+     * <code>bytes msg = 4;</code>
      */
     private void clearMsg() {
       
@@ -2186,7 +2216,7 @@ public final class InterfaceIM {
      *发送UTC时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcsecond = 5;</code>
+     * <code>fixed64 utcsecond = 5;</code>
      */
     public long getUtcsecond() {
       return utcsecond_;
@@ -2196,7 +2226,7 @@ public final class InterfaceIM {
      *发送UTC时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcsecond = 5;</code>
+     * <code>fixed64 utcsecond = 5;</code>
      */
     private void setUtcsecond(long value) {
       
@@ -2207,7 +2237,7 @@ public final class InterfaceIM {
      *发送UTC时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcsecond = 5;</code>
+     * <code>fixed64 utcsecond = 5;</code>
      */
     private void clearUtcsecond() {
       
@@ -2359,6 +2389,19 @@ public final class InterfaceIM {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Item_MeetIMDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Item_MeetIMDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Item_MeetIMDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2449,7 +2492,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public int getMsgtype() {
         return instance.getMsgtype();
@@ -2459,7 +2502,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public Builder setMsgtype(int value) {
         copyOnWrite();
@@ -2471,7 +2514,7 @@ public final class InterfaceIM {
        *消息类型 参见 Pb_MeetIMMSG_TYPE
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 1;</code>
+       * <code>fixed32 msgtype = 1;</code>
        */
       public Builder clearMsgtype() {
         copyOnWrite();
@@ -2484,7 +2527,7 @@ public final class InterfaceIM {
        *发送者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 2;</code>
+       * <code>fixed32 role = 2;</code>
        */
       public int getRole() {
         return instance.getRole();
@@ -2494,7 +2537,7 @@ public final class InterfaceIM {
        *发送者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 2;</code>
+       * <code>fixed32 role = 2;</code>
        */
       public Builder setRole(int value) {
         copyOnWrite();
@@ -2506,7 +2549,7 @@ public final class InterfaceIM {
        *发送者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 2;</code>
+       * <code>fixed32 role = 2;</code>
        */
       public Builder clearRole() {
         copyOnWrite();
@@ -2519,7 +2562,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -2529,7 +2572,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -2541,7 +2584,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -2554,7 +2597,7 @@ public final class InterfaceIM {
        *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4;</code>
        */
       public com.google.protobuf.ByteString getMsg() {
         return instance.getMsg();
@@ -2564,7 +2607,7 @@ public final class InterfaceIM {
        *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4;</code>
        */
       public Builder setMsg(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2576,7 +2619,7 @@ public final class InterfaceIM {
        *消息文本 长度 Pb_MEETIM_CHAR_MSG_MAXLEN
        * </pre>
        *
-       * <code>optional bytes msg = 4;</code>
+       * <code>bytes msg = 4;</code>
        */
       public Builder clearMsg() {
         copyOnWrite();
@@ -2589,7 +2632,7 @@ public final class InterfaceIM {
        *发送UTC时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcsecond = 5;</code>
+       * <code>fixed64 utcsecond = 5;</code>
        */
       public long getUtcsecond() {
         return instance.getUtcsecond();
@@ -2599,7 +2642,7 @@ public final class InterfaceIM {
        *发送UTC时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcsecond = 5;</code>
+       * <code>fixed64 utcsecond = 5;</code>
        */
       public Builder setUtcsecond(long value) {
         copyOnWrite();
@@ -2611,7 +2654,7 @@ public final class InterfaceIM {
        *发送UTC时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcsecond = 5;</code>
+       * <code>fixed64 utcsecond = 5;</code>
        */
       public Builder clearUtcsecond() {
         copyOnWrite();
@@ -2704,6 +2747,7 @@ public final class InterfaceIM {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetIMDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2818,6 +2862,7 @@ public final class InterfaceIM {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3029,6 +3074,19 @@ public final class InterfaceIM {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetIMDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetIMDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetIMDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3215,6 +3273,7 @@ public final class InterfaceIM {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetIMDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3280,6 +3339,7 @@ public final class InterfaceIM {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3324,7 +3384,7 @@ public final class InterfaceIM {
      *查询标志 参见 Pb_COMPLEXQUERY_ZERO
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 1;</code>
+     * <code>fixed32 queryflag = 1;</code>
      */
     int getQueryflag();
 
@@ -3333,7 +3393,7 @@ public final class InterfaceIM {
      *消息类型
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 2;</code>
+     * <code>fixed32 msgtype = 2;</code>
      */
     int getMsgtype();
 
@@ -3342,7 +3402,7 @@ public final class InterfaceIM {
      *发送者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     int getRole();
 
@@ -3351,7 +3411,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 4;</code>
+     * <code>fixed32 memberid = 4;</code>
      */
     int getMemberid();
 
@@ -3360,7 +3420,7 @@ public final class InterfaceIM {
      *时间范围
      * </pre>
      *
-     * <code>optional fixed64 startutcsecond = 5;</code>
+     * <code>fixed64 startutcsecond = 5;</code>
      */
     long getStartutcsecond();
 
@@ -3369,7 +3429,7 @@ public final class InterfaceIM {
      *发送UTC时间
      * </pre>
      *
-     * <code>optional fixed64 endutcsecond = 6;</code>
+     * <code>fixed64 endutcsecond = 6;</code>
      */
     long getEndutcsecond();
 
@@ -3378,7 +3438,7 @@ public final class InterfaceIM {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 7;</code>
+     * <code>fixed32 pageindex = 7;</code>
      */
     int getPageindex();
 
@@ -3387,7 +3447,7 @@ public final class InterfaceIM {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 8;</code>
+     * <code>fixed32 pagenum = 8;</code>
      */
     int getPagenum();
   }
@@ -3414,7 +3474,7 @@ public final class InterfaceIM {
      *查询标志 参见 Pb_COMPLEXQUERY_ZERO
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 1;</code>
+     * <code>fixed32 queryflag = 1;</code>
      */
     public int getQueryflag() {
       return queryflag_;
@@ -3424,7 +3484,7 @@ public final class InterfaceIM {
      *查询标志 参见 Pb_COMPLEXQUERY_ZERO
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 1;</code>
+     * <code>fixed32 queryflag = 1;</code>
      */
     private void setQueryflag(int value) {
       
@@ -3435,7 +3495,7 @@ public final class InterfaceIM {
      *查询标志 参见 Pb_COMPLEXQUERY_ZERO
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 1;</code>
+     * <code>fixed32 queryflag = 1;</code>
      */
     private void clearQueryflag() {
       
@@ -3449,7 +3509,7 @@ public final class InterfaceIM {
      *消息类型
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 2;</code>
+     * <code>fixed32 msgtype = 2;</code>
      */
     public int getMsgtype() {
       return msgtype_;
@@ -3459,7 +3519,7 @@ public final class InterfaceIM {
      *消息类型
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 2;</code>
+     * <code>fixed32 msgtype = 2;</code>
      */
     private void setMsgtype(int value) {
       
@@ -3470,7 +3530,7 @@ public final class InterfaceIM {
      *消息类型
      * </pre>
      *
-     * <code>optional fixed32 msgtype = 2;</code>
+     * <code>fixed32 msgtype = 2;</code>
      */
     private void clearMsgtype() {
       
@@ -3484,7 +3544,7 @@ public final class InterfaceIM {
      *发送者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     public int getRole() {
       return role_;
@@ -3494,7 +3554,7 @@ public final class InterfaceIM {
      *发送者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     private void setRole(int value) {
       
@@ -3505,7 +3565,7 @@ public final class InterfaceIM {
      *发送者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     private void clearRole() {
       
@@ -3519,7 +3579,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 4;</code>
+     * <code>fixed32 memberid = 4;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -3529,7 +3589,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 4;</code>
+     * <code>fixed32 memberid = 4;</code>
      */
     private void setMemberid(int value) {
       
@@ -3540,7 +3600,7 @@ public final class InterfaceIM {
      *发送者ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 4;</code>
+     * <code>fixed32 memberid = 4;</code>
      */
     private void clearMemberid() {
       
@@ -3554,7 +3614,7 @@ public final class InterfaceIM {
      *时间范围
      * </pre>
      *
-     * <code>optional fixed64 startutcsecond = 5;</code>
+     * <code>fixed64 startutcsecond = 5;</code>
      */
     public long getStartutcsecond() {
       return startutcsecond_;
@@ -3564,7 +3624,7 @@ public final class InterfaceIM {
      *时间范围
      * </pre>
      *
-     * <code>optional fixed64 startutcsecond = 5;</code>
+     * <code>fixed64 startutcsecond = 5;</code>
      */
     private void setStartutcsecond(long value) {
       
@@ -3575,7 +3635,7 @@ public final class InterfaceIM {
      *时间范围
      * </pre>
      *
-     * <code>optional fixed64 startutcsecond = 5;</code>
+     * <code>fixed64 startutcsecond = 5;</code>
      */
     private void clearStartutcsecond() {
       
@@ -3589,7 +3649,7 @@ public final class InterfaceIM {
      *发送UTC时间
      * </pre>
      *
-     * <code>optional fixed64 endutcsecond = 6;</code>
+     * <code>fixed64 endutcsecond = 6;</code>
      */
     public long getEndutcsecond() {
       return endutcsecond_;
@@ -3599,7 +3659,7 @@ public final class InterfaceIM {
      *发送UTC时间
      * </pre>
      *
-     * <code>optional fixed64 endutcsecond = 6;</code>
+     * <code>fixed64 endutcsecond = 6;</code>
      */
     private void setEndutcsecond(long value) {
       
@@ -3610,7 +3670,7 @@ public final class InterfaceIM {
      *发送UTC时间
      * </pre>
      *
-     * <code>optional fixed64 endutcsecond = 6;</code>
+     * <code>fixed64 endutcsecond = 6;</code>
      */
     private void clearEndutcsecond() {
       
@@ -3624,7 +3684,7 @@ public final class InterfaceIM {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 7;</code>
+     * <code>fixed32 pageindex = 7;</code>
      */
     public int getPageindex() {
       return pageindex_;
@@ -3634,7 +3694,7 @@ public final class InterfaceIM {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 7;</code>
+     * <code>fixed32 pageindex = 7;</code>
      */
     private void setPageindex(int value) {
       
@@ -3645,7 +3705,7 @@ public final class InterfaceIM {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 7;</code>
+     * <code>fixed32 pageindex = 7;</code>
      */
     private void clearPageindex() {
       
@@ -3659,7 +3719,7 @@ public final class InterfaceIM {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 8;</code>
+     * <code>fixed32 pagenum = 8;</code>
      */
     public int getPagenum() {
       return pagenum_;
@@ -3669,7 +3729,7 @@ public final class InterfaceIM {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 8;</code>
+     * <code>fixed32 pagenum = 8;</code>
      */
     private void setPagenum(int value) {
       
@@ -3680,7 +3740,7 @@ public final class InterfaceIM {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 8;</code>
+     * <code>fixed32 pagenum = 8;</code>
      */
     private void clearPagenum() {
       
@@ -3756,6 +3816,19 @@ public final class InterfaceIM {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetComplexQueryIM parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetComplexQueryIM parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceIM.pbui_Type_MeetComplexQueryIM parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3849,7 +3922,7 @@ public final class InterfaceIM {
        *查询标志 参见 Pb_COMPLEXQUERY_ZERO
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 1;</code>
+       * <code>fixed32 queryflag = 1;</code>
        */
       public int getQueryflag() {
         return instance.getQueryflag();
@@ -3859,7 +3932,7 @@ public final class InterfaceIM {
        *查询标志 参见 Pb_COMPLEXQUERY_ZERO
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 1;</code>
+       * <code>fixed32 queryflag = 1;</code>
        */
       public Builder setQueryflag(int value) {
         copyOnWrite();
@@ -3871,7 +3944,7 @@ public final class InterfaceIM {
        *查询标志 参见 Pb_COMPLEXQUERY_ZERO
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 1;</code>
+       * <code>fixed32 queryflag = 1;</code>
        */
       public Builder clearQueryflag() {
         copyOnWrite();
@@ -3884,7 +3957,7 @@ public final class InterfaceIM {
        *消息类型
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 2;</code>
+       * <code>fixed32 msgtype = 2;</code>
        */
       public int getMsgtype() {
         return instance.getMsgtype();
@@ -3894,7 +3967,7 @@ public final class InterfaceIM {
        *消息类型
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 2;</code>
+       * <code>fixed32 msgtype = 2;</code>
        */
       public Builder setMsgtype(int value) {
         copyOnWrite();
@@ -3906,7 +3979,7 @@ public final class InterfaceIM {
        *消息类型
        * </pre>
        *
-       * <code>optional fixed32 msgtype = 2;</code>
+       * <code>fixed32 msgtype = 2;</code>
        */
       public Builder clearMsgtype() {
         copyOnWrite();
@@ -3919,7 +3992,7 @@ public final class InterfaceIM {
        *发送者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public int getRole() {
         return instance.getRole();
@@ -3929,7 +4002,7 @@ public final class InterfaceIM {
        *发送者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public Builder setRole(int value) {
         copyOnWrite();
@@ -3941,7 +4014,7 @@ public final class InterfaceIM {
        *发送者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public Builder clearRole() {
         copyOnWrite();
@@ -3954,7 +4027,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 4;</code>
+       * <code>fixed32 memberid = 4;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -3964,7 +4037,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 4;</code>
+       * <code>fixed32 memberid = 4;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -3976,7 +4049,7 @@ public final class InterfaceIM {
        *发送者ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 4;</code>
+       * <code>fixed32 memberid = 4;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -3989,7 +4062,7 @@ public final class InterfaceIM {
        *时间范围
        * </pre>
        *
-       * <code>optional fixed64 startutcsecond = 5;</code>
+       * <code>fixed64 startutcsecond = 5;</code>
        */
       public long getStartutcsecond() {
         return instance.getStartutcsecond();
@@ -3999,7 +4072,7 @@ public final class InterfaceIM {
        *时间范围
        * </pre>
        *
-       * <code>optional fixed64 startutcsecond = 5;</code>
+       * <code>fixed64 startutcsecond = 5;</code>
        */
       public Builder setStartutcsecond(long value) {
         copyOnWrite();
@@ -4011,7 +4084,7 @@ public final class InterfaceIM {
        *时间范围
        * </pre>
        *
-       * <code>optional fixed64 startutcsecond = 5;</code>
+       * <code>fixed64 startutcsecond = 5;</code>
        */
       public Builder clearStartutcsecond() {
         copyOnWrite();
@@ -4024,7 +4097,7 @@ public final class InterfaceIM {
        *发送UTC时间
        * </pre>
        *
-       * <code>optional fixed64 endutcsecond = 6;</code>
+       * <code>fixed64 endutcsecond = 6;</code>
        */
       public long getEndutcsecond() {
         return instance.getEndutcsecond();
@@ -4034,7 +4107,7 @@ public final class InterfaceIM {
        *发送UTC时间
        * </pre>
        *
-       * <code>optional fixed64 endutcsecond = 6;</code>
+       * <code>fixed64 endutcsecond = 6;</code>
        */
       public Builder setEndutcsecond(long value) {
         copyOnWrite();
@@ -4046,7 +4119,7 @@ public final class InterfaceIM {
        *发送UTC时间
        * </pre>
        *
-       * <code>optional fixed64 endutcsecond = 6;</code>
+       * <code>fixed64 endutcsecond = 6;</code>
        */
       public Builder clearEndutcsecond() {
         copyOnWrite();
@@ -4059,7 +4132,7 @@ public final class InterfaceIM {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 7;</code>
+       * <code>fixed32 pageindex = 7;</code>
        */
       public int getPageindex() {
         return instance.getPageindex();
@@ -4069,7 +4142,7 @@ public final class InterfaceIM {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 7;</code>
+       * <code>fixed32 pageindex = 7;</code>
        */
       public Builder setPageindex(int value) {
         copyOnWrite();
@@ -4081,7 +4154,7 @@ public final class InterfaceIM {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 7;</code>
+       * <code>fixed32 pageindex = 7;</code>
        */
       public Builder clearPageindex() {
         copyOnWrite();
@@ -4094,7 +4167,7 @@ public final class InterfaceIM {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 8;</code>
+       * <code>fixed32 pagenum = 8;</code>
        */
       public int getPagenum() {
         return instance.getPagenum();
@@ -4104,7 +4177,7 @@ public final class InterfaceIM {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 8;</code>
+       * <code>fixed32 pagenum = 8;</code>
        */
       public Builder setPagenum(int value) {
         copyOnWrite();
@@ -4116,7 +4189,7 @@ public final class InterfaceIM {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 8;</code>
+       * <code>fixed32 pagenum = 8;</code>
        */
       public Builder clearPagenum() {
         copyOnWrite();
@@ -4126,6 +4199,7 @@ public final class InterfaceIM {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetComplexQueryIM)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4236,6 +4310,7 @@ public final class InterfaceIM {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4280,7 +4355,7 @@ public final class InterfaceIM {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     int getPageindex();
 
@@ -4289,7 +4364,7 @@ public final class InterfaceIM {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     int getPagenum();
 
@@ -4298,7 +4373,7 @@ public final class InterfaceIM {
      *当前页项数 ,根据数据不同用不同的解析
      * </pre>
      *
-     * <code>optional fixed32 itemnum = 3;</code>
+     * <code>fixed32 itemnum = 3;</code>
      */
     int getItemnum();
 
@@ -4307,7 +4382,7 @@ public final class InterfaceIM {
      *总项数
      * </pre>
      *
-     * <code>optional fixed32 totalnum = 4;</code>
+     * <code>fixed32 totalnum = 4;</code>
      */
     int getTotalnum();
 
@@ -4363,7 +4438,7 @@ public final class InterfaceIM {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     public int getPageindex() {
       return pageindex_;
@@ -4373,7 +4448,7 @@ public final class InterfaceIM {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     private void setPageindex(int value) {
       
@@ -4384,7 +4459,7 @@ public final class InterfaceIM {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     private void clearPageindex() {
       
@@ -4398,7 +4473,7 @@ public final class InterfaceIM {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     public int getPagenum() {
       return pagenum_;
@@ -4408,7 +4483,7 @@ public final class InterfaceIM {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     private void setPagenum(int value) {
       
@@ -4419,7 +4494,7 @@ public final class InterfaceIM {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     private void clearPagenum() {
       
@@ -4433,7 +4508,7 @@ public final class InterfaceIM {
      *当前页项数 ,根据数据不同用不同的解析
      * </pre>
      *
-     * <code>optional fixed32 itemnum = 3;</code>
+     * <code>fixed32 itemnum = 3;</code>
      */
     public int getItemnum() {
       return itemnum_;
@@ -4443,7 +4518,7 @@ public final class InterfaceIM {
      *当前页项数 ,根据数据不同用不同的解析
      * </pre>
      *
-     * <code>optional fixed32 itemnum = 3;</code>
+     * <code>fixed32 itemnum = 3;</code>
      */
     private void setItemnum(int value) {
       
@@ -4454,7 +4529,7 @@ public final class InterfaceIM {
      *当前页项数 ,根据数据不同用不同的解析
      * </pre>
      *
-     * <code>optional fixed32 itemnum = 3;</code>
+     * <code>fixed32 itemnum = 3;</code>
      */
     private void clearItemnum() {
       
@@ -4468,7 +4543,7 @@ public final class InterfaceIM {
      *总项数
      * </pre>
      *
-     * <code>optional fixed32 totalnum = 4;</code>
+     * <code>fixed32 totalnum = 4;</code>
      */
     public int getTotalnum() {
       return totalnum_;
@@ -4478,7 +4553,7 @@ public final class InterfaceIM {
      *总项数
      * </pre>
      *
-     * <code>optional fixed32 totalnum = 4;</code>
+     * <code>fixed32 totalnum = 4;</code>
      */
     private void setTotalnum(int value) {
       
@@ -4489,7 +4564,7 @@ public final class InterfaceIM {
      *总项数
      * </pre>
      *
-     * <code>optional fixed32 totalnum = 4;</code>
+     * <code>fixed32 totalnum = 4;</code>
      */
     private void clearTotalnum() {
       
@@ -4721,6 +4796,19 @@ public final class InterfaceIM {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceIM.pbui_TypePageResQueryrMsgInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_TypePageResQueryrMsgInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceIM.pbui_TypePageResQueryrMsgInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4814,7 +4902,7 @@ public final class InterfaceIM {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public int getPageindex() {
         return instance.getPageindex();
@@ -4824,7 +4912,7 @@ public final class InterfaceIM {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public Builder setPageindex(int value) {
         copyOnWrite();
@@ -4836,7 +4924,7 @@ public final class InterfaceIM {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public Builder clearPageindex() {
         copyOnWrite();
@@ -4849,7 +4937,7 @@ public final class InterfaceIM {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public int getPagenum() {
         return instance.getPagenum();
@@ -4859,7 +4947,7 @@ public final class InterfaceIM {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public Builder setPagenum(int value) {
         copyOnWrite();
@@ -4871,7 +4959,7 @@ public final class InterfaceIM {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public Builder clearPagenum() {
         copyOnWrite();
@@ -4884,7 +4972,7 @@ public final class InterfaceIM {
        *当前页项数 ,根据数据不同用不同的解析
        * </pre>
        *
-       * <code>optional fixed32 itemnum = 3;</code>
+       * <code>fixed32 itemnum = 3;</code>
        */
       public int getItemnum() {
         return instance.getItemnum();
@@ -4894,7 +4982,7 @@ public final class InterfaceIM {
        *当前页项数 ,根据数据不同用不同的解析
        * </pre>
        *
-       * <code>optional fixed32 itemnum = 3;</code>
+       * <code>fixed32 itemnum = 3;</code>
        */
       public Builder setItemnum(int value) {
         copyOnWrite();
@@ -4906,7 +4994,7 @@ public final class InterfaceIM {
        *当前页项数 ,根据数据不同用不同的解析
        * </pre>
        *
-       * <code>optional fixed32 itemnum = 3;</code>
+       * <code>fixed32 itemnum = 3;</code>
        */
       public Builder clearItemnum() {
         copyOnWrite();
@@ -4919,7 +5007,7 @@ public final class InterfaceIM {
        *总项数
        * </pre>
        *
-       * <code>optional fixed32 totalnum = 4;</code>
+       * <code>fixed32 totalnum = 4;</code>
        */
       public int getTotalnum() {
         return instance.getTotalnum();
@@ -4929,7 +5017,7 @@ public final class InterfaceIM {
        *总项数
        * </pre>
        *
-       * <code>optional fixed32 totalnum = 4;</code>
+       * <code>fixed32 totalnum = 4;</code>
        */
       public Builder setTotalnum(int value) {
         copyOnWrite();
@@ -4941,7 +5029,7 @@ public final class InterfaceIM {
        *总项数
        * </pre>
        *
-       * <code>optional fixed32 totalnum = 4;</code>
+       * <code>fixed32 totalnum = 4;</code>
        */
       public Builder clearTotalnum() {
         copyOnWrite();
@@ -5096,6 +5184,7 @@ public final class InterfaceIM {
 
       // @@protoc_insertion_point(builder_scope:pbui_TypePageResQueryrMsgInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5190,6 +5279,7 @@ public final class InterfaceIM {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

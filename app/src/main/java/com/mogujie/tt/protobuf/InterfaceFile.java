@@ -17,7 +17,7 @@ public final class InterfaceFile {
      *目录ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     int getId();
 
@@ -26,7 +26,7 @@ public final class InterfaceFile {
      *名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
 
@@ -35,7 +35,7 @@ public final class InterfaceFile {
      *父目录ID
      * </pre>
      *
-     * <code>optional fixed32 parentid = 3;</code>
+     * <code>fixed32 parentid = 3;</code>
      */
     int getParentid();
 
@@ -44,7 +44,7 @@ public final class InterfaceFile {
      *该目录下的文件数量
      * </pre>
      *
-     * <code>optional fixed32 filenum = 4;</code>
+     * <code>fixed32 filenum = 4;</code>
      */
     int getFilenum();
   }
@@ -70,7 +70,7 @@ public final class InterfaceFile {
      *目录ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     public int getId() {
       return id_;
@@ -80,7 +80,7 @@ public final class InterfaceFile {
      *目录ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void setId(int value) {
       
@@ -91,7 +91,7 @@ public final class InterfaceFile {
      *目录ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void clearId() {
       
@@ -105,7 +105,7 @@ public final class InterfaceFile {
      *名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
@@ -115,7 +115,7 @@ public final class InterfaceFile {
      *名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -129,7 +129,7 @@ public final class InterfaceFile {
      *名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -143,7 +143,7 @@ public final class InterfaceFile {
      *父目录ID
      * </pre>
      *
-     * <code>optional fixed32 parentid = 3;</code>
+     * <code>fixed32 parentid = 3;</code>
      */
     public int getParentid() {
       return parentid_;
@@ -153,7 +153,7 @@ public final class InterfaceFile {
      *父目录ID
      * </pre>
      *
-     * <code>optional fixed32 parentid = 3;</code>
+     * <code>fixed32 parentid = 3;</code>
      */
     private void setParentid(int value) {
       
@@ -164,7 +164,7 @@ public final class InterfaceFile {
      *父目录ID
      * </pre>
      *
-     * <code>optional fixed32 parentid = 3;</code>
+     * <code>fixed32 parentid = 3;</code>
      */
     private void clearParentid() {
       
@@ -178,7 +178,7 @@ public final class InterfaceFile {
      *该目录下的文件数量
      * </pre>
      *
-     * <code>optional fixed32 filenum = 4;</code>
+     * <code>fixed32 filenum = 4;</code>
      */
     public int getFilenum() {
       return filenum_;
@@ -188,7 +188,7 @@ public final class InterfaceFile {
      *该目录下的文件数量
      * </pre>
      *
-     * <code>optional fixed32 filenum = 4;</code>
+     * <code>fixed32 filenum = 4;</code>
      */
     private void setFilenum(int value) {
       
@@ -199,7 +199,7 @@ public final class InterfaceFile {
      *该目录下的文件数量
      * </pre>
      *
-     * <code>optional fixed32 filenum = 4;</code>
+     * <code>fixed32 filenum = 4;</code>
      */
     private void clearFilenum() {
       
@@ -247,6 +247,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetDirDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetDirDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetDirDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -338,7 +351,7 @@ public final class InterfaceFile {
        *目录ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public int getId() {
         return instance.getId();
@@ -348,7 +361,7 @@ public final class InterfaceFile {
        *目录ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -360,7 +373,7 @@ public final class InterfaceFile {
        *目录ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -373,7 +386,7 @@ public final class InterfaceFile {
        *名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
@@ -383,7 +396,7 @@ public final class InterfaceFile {
        *名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -395,7 +408,7 @@ public final class InterfaceFile {
        *名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -408,7 +421,7 @@ public final class InterfaceFile {
        *父目录ID
        * </pre>
        *
-       * <code>optional fixed32 parentid = 3;</code>
+       * <code>fixed32 parentid = 3;</code>
        */
       public int getParentid() {
         return instance.getParentid();
@@ -418,7 +431,7 @@ public final class InterfaceFile {
        *父目录ID
        * </pre>
        *
-       * <code>optional fixed32 parentid = 3;</code>
+       * <code>fixed32 parentid = 3;</code>
        */
       public Builder setParentid(int value) {
         copyOnWrite();
@@ -430,7 +443,7 @@ public final class InterfaceFile {
        *父目录ID
        * </pre>
        *
-       * <code>optional fixed32 parentid = 3;</code>
+       * <code>fixed32 parentid = 3;</code>
        */
       public Builder clearParentid() {
         copyOnWrite();
@@ -443,7 +456,7 @@ public final class InterfaceFile {
        *该目录下的文件数量
        * </pre>
        *
-       * <code>optional fixed32 filenum = 4;</code>
+       * <code>fixed32 filenum = 4;</code>
        */
       public int getFilenum() {
         return instance.getFilenum();
@@ -453,7 +466,7 @@ public final class InterfaceFile {
        *该目录下的文件数量
        * </pre>
        *
-       * <code>optional fixed32 filenum = 4;</code>
+       * <code>fixed32 filenum = 4;</code>
        */
       public Builder setFilenum(int value) {
         copyOnWrite();
@@ -465,7 +478,7 @@ public final class InterfaceFile {
        *该目录下的文件数量
        * </pre>
        *
-       * <code>optional fixed32 filenum = 4;</code>
+       * <code>fixed32 filenum = 4;</code>
        */
       public Builder clearFilenum() {
         copyOnWrite();
@@ -475,6 +488,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetDirDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -557,6 +571,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -837,6 +852,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1072,6 +1100,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDirDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1137,6 +1166,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1181,7 +1211,7 @@ public final class InterfaceFile {
      *会议目录
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     int getDirid();
 
@@ -1190,7 +1220,7 @@ public final class InterfaceFile {
      *序号
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     int getPos();
   }
@@ -1211,7 +1241,7 @@ public final class InterfaceFile {
      *会议目录
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     public int getDirid() {
       return dirid_;
@@ -1221,7 +1251,7 @@ public final class InterfaceFile {
      *会议目录
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void setDirid(int value) {
       
@@ -1232,7 +1262,7 @@ public final class InterfaceFile {
      *会议目录
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void clearDirid() {
       
@@ -1246,7 +1276,7 @@ public final class InterfaceFile {
      *序号
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     public int getPos() {
       return pos_;
@@ -1256,7 +1286,7 @@ public final class InterfaceFile {
      *序号
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     private void setPos(int value) {
       
@@ -1267,7 +1297,7 @@ public final class InterfaceFile {
      *序号
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     private void clearPos() {
       
@@ -1301,6 +1331,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetingDirPosItem parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetingDirPosItem parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetingDirPosItem parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1388,7 +1431,7 @@ public final class InterfaceFile {
        *会议目录
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public int getDirid() {
         return instance.getDirid();
@@ -1398,7 +1441,7 @@ public final class InterfaceFile {
        *会议目录
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -1410,7 +1453,7 @@ public final class InterfaceFile {
        *会议目录
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -1423,7 +1466,7 @@ public final class InterfaceFile {
        *序号
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public int getPos() {
         return instance.getPos();
@@ -1433,7 +1476,7 @@ public final class InterfaceFile {
        *序号
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public Builder setPos(int value) {
         copyOnWrite();
@@ -1445,7 +1488,7 @@ public final class InterfaceFile {
        *序号
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public Builder clearPos() {
         copyOnWrite();
@@ -1455,6 +1498,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetingDirPosItem)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1523,6 +1567,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1802,6 +1847,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirPos parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirPos parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirPos parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2036,6 +2094,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ModMeetDirPos)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2101,6 +2160,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2145,7 +2205,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
 
@@ -2154,7 +2214,7 @@ public final class InterfaceFile {
      *文件名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
 
@@ -2163,7 +2223,7 @@ public final class InterfaceFile {
      *上传者ID
      * </pre>
      *
-     * <code>optional fixed32 uploaderid = 3;</code>
+     * <code>fixed32 uploaderid = 3;</code>
      */
     int getUploaderid();
 
@@ -2172,7 +2232,7 @@ public final class InterfaceFile {
      *上传者角色
      * </pre>
      *
-     * <code>optional fixed32 uploader_role = 4;</code>
+     * <code>fixed32 uploader_role = 4;</code>
      */
     int getUploaderRole();
 
@@ -2181,7 +2241,7 @@ public final class InterfaceFile {
      *时间 毫秒
      * </pre>
      *
-     * <code>optional fixed32 mstime = 5;</code>
+     * <code>fixed32 mstime = 5;</code>
      */
     int getMstime();
 
@@ -2190,7 +2250,7 @@ public final class InterfaceFile {
      *大小 字节
      * </pre>
      *
-     * <code>optional fixed64 size = 6;</code>
+     * <code>fixed64 size = 6;</code>
      */
     long getSize();
 
@@ -2199,7 +2259,7 @@ public final class InterfaceFile {
      *文件属性
      * </pre>
      *
-     * <code>optional fixed32 attrib = 7;</code>
+     * <code>fixed32 attrib = 7;</code>
      */
     int getAttrib();
 
@@ -2208,7 +2268,7 @@ public final class InterfaceFile {
      * 文件序号
      * </pre>
      *
-     * <code>optional fixed32 filepos = 8;</code>
+     * <code>fixed32 filepos = 8;</code>
      */
     int getFilepos();
 
@@ -2217,7 +2277,7 @@ public final class InterfaceFile {
      *上传者名称
      * </pre>
      *
-     * <code>optional bytes uploader_name = 9;</code>
+     * <code>bytes uploader_name = 9;</code>
      */
     com.google.protobuf.ByteString getUploaderName();
   }
@@ -2244,7 +2304,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -2254,7 +2314,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
@@ -2265,7 +2325,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -2279,7 +2339,7 @@ public final class InterfaceFile {
      *文件名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
@@ -2289,7 +2349,7 @@ public final class InterfaceFile {
      *文件名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2303,7 +2363,7 @@ public final class InterfaceFile {
      *文件名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -2317,7 +2377,7 @@ public final class InterfaceFile {
      *上传者ID
      * </pre>
      *
-     * <code>optional fixed32 uploaderid = 3;</code>
+     * <code>fixed32 uploaderid = 3;</code>
      */
     public int getUploaderid() {
       return uploaderid_;
@@ -2327,7 +2387,7 @@ public final class InterfaceFile {
      *上传者ID
      * </pre>
      *
-     * <code>optional fixed32 uploaderid = 3;</code>
+     * <code>fixed32 uploaderid = 3;</code>
      */
     private void setUploaderid(int value) {
       
@@ -2338,7 +2398,7 @@ public final class InterfaceFile {
      *上传者ID
      * </pre>
      *
-     * <code>optional fixed32 uploaderid = 3;</code>
+     * <code>fixed32 uploaderid = 3;</code>
      */
     private void clearUploaderid() {
       
@@ -2352,7 +2412,7 @@ public final class InterfaceFile {
      *上传者角色
      * </pre>
      *
-     * <code>optional fixed32 uploader_role = 4;</code>
+     * <code>fixed32 uploader_role = 4;</code>
      */
     public int getUploaderRole() {
       return uploaderRole_;
@@ -2362,7 +2422,7 @@ public final class InterfaceFile {
      *上传者角色
      * </pre>
      *
-     * <code>optional fixed32 uploader_role = 4;</code>
+     * <code>fixed32 uploader_role = 4;</code>
      */
     private void setUploaderRole(int value) {
       
@@ -2373,7 +2433,7 @@ public final class InterfaceFile {
      *上传者角色
      * </pre>
      *
-     * <code>optional fixed32 uploader_role = 4;</code>
+     * <code>fixed32 uploader_role = 4;</code>
      */
     private void clearUploaderRole() {
       
@@ -2387,7 +2447,7 @@ public final class InterfaceFile {
      *时间 毫秒
      * </pre>
      *
-     * <code>optional fixed32 mstime = 5;</code>
+     * <code>fixed32 mstime = 5;</code>
      */
     public int getMstime() {
       return mstime_;
@@ -2397,7 +2457,7 @@ public final class InterfaceFile {
      *时间 毫秒
      * </pre>
      *
-     * <code>optional fixed32 mstime = 5;</code>
+     * <code>fixed32 mstime = 5;</code>
      */
     private void setMstime(int value) {
       
@@ -2408,7 +2468,7 @@ public final class InterfaceFile {
      *时间 毫秒
      * </pre>
      *
-     * <code>optional fixed32 mstime = 5;</code>
+     * <code>fixed32 mstime = 5;</code>
      */
     private void clearMstime() {
       
@@ -2422,7 +2482,7 @@ public final class InterfaceFile {
      *大小 字节
      * </pre>
      *
-     * <code>optional fixed64 size = 6;</code>
+     * <code>fixed64 size = 6;</code>
      */
     public long getSize() {
       return size_;
@@ -2432,7 +2492,7 @@ public final class InterfaceFile {
      *大小 字节
      * </pre>
      *
-     * <code>optional fixed64 size = 6;</code>
+     * <code>fixed64 size = 6;</code>
      */
     private void setSize(long value) {
       
@@ -2443,7 +2503,7 @@ public final class InterfaceFile {
      *大小 字节
      * </pre>
      *
-     * <code>optional fixed64 size = 6;</code>
+     * <code>fixed64 size = 6;</code>
      */
     private void clearSize() {
       
@@ -2457,7 +2517,7 @@ public final class InterfaceFile {
      *文件属性
      * </pre>
      *
-     * <code>optional fixed32 attrib = 7;</code>
+     * <code>fixed32 attrib = 7;</code>
      */
     public int getAttrib() {
       return attrib_;
@@ -2467,7 +2527,7 @@ public final class InterfaceFile {
      *文件属性
      * </pre>
      *
-     * <code>optional fixed32 attrib = 7;</code>
+     * <code>fixed32 attrib = 7;</code>
      */
     private void setAttrib(int value) {
       
@@ -2478,7 +2538,7 @@ public final class InterfaceFile {
      *文件属性
      * </pre>
      *
-     * <code>optional fixed32 attrib = 7;</code>
+     * <code>fixed32 attrib = 7;</code>
      */
     private void clearAttrib() {
       
@@ -2492,7 +2552,7 @@ public final class InterfaceFile {
      * 文件序号
      * </pre>
      *
-     * <code>optional fixed32 filepos = 8;</code>
+     * <code>fixed32 filepos = 8;</code>
      */
     public int getFilepos() {
       return filepos_;
@@ -2502,7 +2562,7 @@ public final class InterfaceFile {
      * 文件序号
      * </pre>
      *
-     * <code>optional fixed32 filepos = 8;</code>
+     * <code>fixed32 filepos = 8;</code>
      */
     private void setFilepos(int value) {
       
@@ -2513,7 +2573,7 @@ public final class InterfaceFile {
      * 文件序号
      * </pre>
      *
-     * <code>optional fixed32 filepos = 8;</code>
+     * <code>fixed32 filepos = 8;</code>
      */
     private void clearFilepos() {
       
@@ -2527,7 +2587,7 @@ public final class InterfaceFile {
      *上传者名称
      * </pre>
      *
-     * <code>optional bytes uploader_name = 9;</code>
+     * <code>bytes uploader_name = 9;</code>
      */
     public com.google.protobuf.ByteString getUploaderName() {
       return uploaderName_;
@@ -2537,7 +2597,7 @@ public final class InterfaceFile {
      *上传者名称
      * </pre>
      *
-     * <code>optional bytes uploader_name = 9;</code>
+     * <code>bytes uploader_name = 9;</code>
      */
     private void setUploaderName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2551,7 +2611,7 @@ public final class InterfaceFile {
      *上传者名称
      * </pre>
      *
-     * <code>optional bytes uploader_name = 9;</code>
+     * <code>bytes uploader_name = 9;</code>
      */
     private void clearUploaderName() {
       
@@ -2634,6 +2694,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetDirFileDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetDirFileDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetDirFileDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2725,7 +2798,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -2735,7 +2808,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -2747,7 +2820,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -2760,7 +2833,7 @@ public final class InterfaceFile {
        *文件名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
@@ -2770,7 +2843,7 @@ public final class InterfaceFile {
        *文件名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2782,7 +2855,7 @@ public final class InterfaceFile {
        *文件名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -2795,7 +2868,7 @@ public final class InterfaceFile {
        *上传者ID
        * </pre>
        *
-       * <code>optional fixed32 uploaderid = 3;</code>
+       * <code>fixed32 uploaderid = 3;</code>
        */
       public int getUploaderid() {
         return instance.getUploaderid();
@@ -2805,7 +2878,7 @@ public final class InterfaceFile {
        *上传者ID
        * </pre>
        *
-       * <code>optional fixed32 uploaderid = 3;</code>
+       * <code>fixed32 uploaderid = 3;</code>
        */
       public Builder setUploaderid(int value) {
         copyOnWrite();
@@ -2817,7 +2890,7 @@ public final class InterfaceFile {
        *上传者ID
        * </pre>
        *
-       * <code>optional fixed32 uploaderid = 3;</code>
+       * <code>fixed32 uploaderid = 3;</code>
        */
       public Builder clearUploaderid() {
         copyOnWrite();
@@ -2830,7 +2903,7 @@ public final class InterfaceFile {
        *上传者角色
        * </pre>
        *
-       * <code>optional fixed32 uploader_role = 4;</code>
+       * <code>fixed32 uploader_role = 4;</code>
        */
       public int getUploaderRole() {
         return instance.getUploaderRole();
@@ -2840,7 +2913,7 @@ public final class InterfaceFile {
        *上传者角色
        * </pre>
        *
-       * <code>optional fixed32 uploader_role = 4;</code>
+       * <code>fixed32 uploader_role = 4;</code>
        */
       public Builder setUploaderRole(int value) {
         copyOnWrite();
@@ -2852,7 +2925,7 @@ public final class InterfaceFile {
        *上传者角色
        * </pre>
        *
-       * <code>optional fixed32 uploader_role = 4;</code>
+       * <code>fixed32 uploader_role = 4;</code>
        */
       public Builder clearUploaderRole() {
         copyOnWrite();
@@ -2865,7 +2938,7 @@ public final class InterfaceFile {
        *时间 毫秒
        * </pre>
        *
-       * <code>optional fixed32 mstime = 5;</code>
+       * <code>fixed32 mstime = 5;</code>
        */
       public int getMstime() {
         return instance.getMstime();
@@ -2875,7 +2948,7 @@ public final class InterfaceFile {
        *时间 毫秒
        * </pre>
        *
-       * <code>optional fixed32 mstime = 5;</code>
+       * <code>fixed32 mstime = 5;</code>
        */
       public Builder setMstime(int value) {
         copyOnWrite();
@@ -2887,7 +2960,7 @@ public final class InterfaceFile {
        *时间 毫秒
        * </pre>
        *
-       * <code>optional fixed32 mstime = 5;</code>
+       * <code>fixed32 mstime = 5;</code>
        */
       public Builder clearMstime() {
         copyOnWrite();
@@ -2900,7 +2973,7 @@ public final class InterfaceFile {
        *大小 字节
        * </pre>
        *
-       * <code>optional fixed64 size = 6;</code>
+       * <code>fixed64 size = 6;</code>
        */
       public long getSize() {
         return instance.getSize();
@@ -2910,7 +2983,7 @@ public final class InterfaceFile {
        *大小 字节
        * </pre>
        *
-       * <code>optional fixed64 size = 6;</code>
+       * <code>fixed64 size = 6;</code>
        */
       public Builder setSize(long value) {
         copyOnWrite();
@@ -2922,7 +2995,7 @@ public final class InterfaceFile {
        *大小 字节
        * </pre>
        *
-       * <code>optional fixed64 size = 6;</code>
+       * <code>fixed64 size = 6;</code>
        */
       public Builder clearSize() {
         copyOnWrite();
@@ -2935,7 +3008,7 @@ public final class InterfaceFile {
        *文件属性
        * </pre>
        *
-       * <code>optional fixed32 attrib = 7;</code>
+       * <code>fixed32 attrib = 7;</code>
        */
       public int getAttrib() {
         return instance.getAttrib();
@@ -2945,7 +3018,7 @@ public final class InterfaceFile {
        *文件属性
        * </pre>
        *
-       * <code>optional fixed32 attrib = 7;</code>
+       * <code>fixed32 attrib = 7;</code>
        */
       public Builder setAttrib(int value) {
         copyOnWrite();
@@ -2957,7 +3030,7 @@ public final class InterfaceFile {
        *文件属性
        * </pre>
        *
-       * <code>optional fixed32 attrib = 7;</code>
+       * <code>fixed32 attrib = 7;</code>
        */
       public Builder clearAttrib() {
         copyOnWrite();
@@ -2970,7 +3043,7 @@ public final class InterfaceFile {
        * 文件序号
        * </pre>
        *
-       * <code>optional fixed32 filepos = 8;</code>
+       * <code>fixed32 filepos = 8;</code>
        */
       public int getFilepos() {
         return instance.getFilepos();
@@ -2980,7 +3053,7 @@ public final class InterfaceFile {
        * 文件序号
        * </pre>
        *
-       * <code>optional fixed32 filepos = 8;</code>
+       * <code>fixed32 filepos = 8;</code>
        */
       public Builder setFilepos(int value) {
         copyOnWrite();
@@ -2992,7 +3065,7 @@ public final class InterfaceFile {
        * 文件序号
        * </pre>
        *
-       * <code>optional fixed32 filepos = 8;</code>
+       * <code>fixed32 filepos = 8;</code>
        */
       public Builder clearFilepos() {
         copyOnWrite();
@@ -3005,7 +3078,7 @@ public final class InterfaceFile {
        *上传者名称
        * </pre>
        *
-       * <code>optional bytes uploader_name = 9;</code>
+       * <code>bytes uploader_name = 9;</code>
        */
       public com.google.protobuf.ByteString getUploaderName() {
         return instance.getUploaderName();
@@ -3015,7 +3088,7 @@ public final class InterfaceFile {
        *上传者名称
        * </pre>
        *
-       * <code>optional bytes uploader_name = 9;</code>
+       * <code>bytes uploader_name = 9;</code>
        */
       public Builder setUploaderName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -3027,7 +3100,7 @@ public final class InterfaceFile {
        *上传者名称
        * </pre>
        *
-       * <code>optional bytes uploader_name = 9;</code>
+       * <code>bytes uploader_name = 9;</code>
        */
       public Builder clearUploaderName() {
         copyOnWrite();
@@ -3037,6 +3110,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetDirFileDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3154,6 +3228,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3194,7 +3269,7 @@ public final class InterfaceFile {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     int getDirid();
 
@@ -3244,20 +3319,20 @@ public final class InterfaceFile {
     public static final int DIRID_FIELD_NUMBER = 1;
     private int dirid_;
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     public int getDirid() {
       return dirid_;
     }
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void setDirid(int value) {
       
       dirid_ = value;
     }
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void clearDirid() {
       
@@ -3468,6 +3543,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirFileDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirFileDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirFileDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3555,13 +3643,13 @@ public final class InterfaceFile {
 
 
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public int getDirid() {
         return instance.getDirid();
       }
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -3569,7 +3657,7 @@ public final class InterfaceFile {
         return this;
       }
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -3724,6 +3812,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDirFileDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3797,6 +3886,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3841,7 +3931,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
 
@@ -3850,7 +3940,7 @@ public final class InterfaceFile {
      *文件名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
 
@@ -3859,7 +3949,7 @@ public final class InterfaceFile {
      *文件属性
      * </pre>
      *
-     * <code>optional fixed32 attrib = 3;</code>
+     * <code>fixed32 attrib = 3;</code>
      */
     int getAttrib();
   }
@@ -3885,7 +3975,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -3895,7 +3985,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
@@ -3906,7 +3996,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -3920,7 +4010,7 @@ public final class InterfaceFile {
      *文件名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
@@ -3930,7 +4020,7 @@ public final class InterfaceFile {
      *文件名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3944,7 +4034,7 @@ public final class InterfaceFile {
      *文件名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -3958,7 +4048,7 @@ public final class InterfaceFile {
      *文件属性
      * </pre>
      *
-     * <code>optional fixed32 attrib = 3;</code>
+     * <code>fixed32 attrib = 3;</code>
      */
     public int getAttrib() {
       return attrib_;
@@ -3968,7 +4058,7 @@ public final class InterfaceFile {
      *文件属性
      * </pre>
      *
-     * <code>optional fixed32 attrib = 3;</code>
+     * <code>fixed32 attrib = 3;</code>
      */
     private void setAttrib(int value) {
       
@@ -3979,7 +4069,7 @@ public final class InterfaceFile {
      *文件属性
      * </pre>
      *
-     * <code>optional fixed32 attrib = 3;</code>
+     * <code>fixed32 attrib = 3;</code>
      */
     private void clearAttrib() {
       
@@ -4020,6 +4110,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_ModMeetDirFile parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_ModMeetDirFile parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_ModMeetDirFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4111,7 +4214,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -4121,7 +4224,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -4133,7 +4236,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -4146,7 +4249,7 @@ public final class InterfaceFile {
        *文件名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
@@ -4156,7 +4259,7 @@ public final class InterfaceFile {
        *文件名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -4168,7 +4271,7 @@ public final class InterfaceFile {
        *文件名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -4181,7 +4284,7 @@ public final class InterfaceFile {
        *文件属性
        * </pre>
        *
-       * <code>optional fixed32 attrib = 3;</code>
+       * <code>fixed32 attrib = 3;</code>
        */
       public int getAttrib() {
         return instance.getAttrib();
@@ -4191,7 +4294,7 @@ public final class InterfaceFile {
        *文件属性
        * </pre>
        *
-       * <code>optional fixed32 attrib = 3;</code>
+       * <code>fixed32 attrib = 3;</code>
        */
       public Builder setAttrib(int value) {
         copyOnWrite();
@@ -4203,7 +4306,7 @@ public final class InterfaceFile {
        *文件属性
        * </pre>
        *
-       * <code>optional fixed32 attrib = 3;</code>
+       * <code>fixed32 attrib = 3;</code>
        */
       public Builder clearAttrib() {
         copyOnWrite();
@@ -4213,6 +4316,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_ModMeetDirFile)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4288,6 +4392,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4328,7 +4433,7 @@ public final class InterfaceFile {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     int getDirid();
 
@@ -4378,20 +4483,20 @@ public final class InterfaceFile {
     public static final int DIRID_FIELD_NUMBER = 1;
     private int dirid_;
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     public int getDirid() {
       return dirid_;
     }
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void setDirid(int value) {
       
       dirid_ = value;
     }
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void clearDirid() {
       
@@ -4602,6 +4707,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirFile parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirFile parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4689,13 +4807,13 @@ public final class InterfaceFile {
 
 
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public int getDirid() {
         return instance.getDirid();
       }
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -4703,7 +4821,7 @@ public final class InterfaceFile {
         return this;
       }
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -4858,6 +4976,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ModMeetDirFile)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4931,6 +5050,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4975,7 +5095,7 @@ public final class InterfaceFile {
      *目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     int getDirid();
 
@@ -5029,7 +5149,7 @@ public final class InterfaceFile {
      *目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     public int getDirid() {
       return dirid_;
@@ -5039,7 +5159,7 @@ public final class InterfaceFile {
      *目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void setDirid(int value) {
       
@@ -5050,7 +5170,7 @@ public final class InterfaceFile {
      *目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void clearDirid() {
       
@@ -5174,6 +5294,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirFilePos parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirFilePos parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ModMeetDirFilePos parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -5266,7 +5399,7 @@ public final class InterfaceFile {
        *目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public int getDirid() {
         return instance.getDirid();
@@ -5276,7 +5409,7 @@ public final class InterfaceFile {
        *目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -5288,7 +5421,7 @@ public final class InterfaceFile {
        *目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -5381,6 +5514,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ModMeetDirFilePos)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5467,6 +5601,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5511,7 +5646,7 @@ public final class InterfaceFile {
      *为0表示从平台里查询(平台里查询这种情况下 role和uploadid是无效的)
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     int getDirid();
 
@@ -5520,7 +5655,7 @@ public final class InterfaceFile {
      *查询标志 参见Pb_MeetFileQueryFlag
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 2;</code>
+     * <code>fixed32 queryflag = 2;</code>
      */
     int getQueryflag();
 
@@ -5529,7 +5664,7 @@ public final class InterfaceFile {
      *上传者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     int getRole();
 
@@ -5538,7 +5673,7 @@ public final class InterfaceFile {
      *上传人员ID 为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 uploadid = 4;</code>
+     * <code>fixed32 uploadid = 4;</code>
      */
     int getUploadid();
 
@@ -5547,7 +5682,7 @@ public final class InterfaceFile {
      *文件类型 为0表示全部 参见 Pb_MeetFileType
      * </pre>
      *
-     * <code>optional fixed32 filetype = 5;</code>
+     * <code>fixed32 filetype = 5;</code>
      */
     int getFiletype();
 
@@ -5556,7 +5691,7 @@ public final class InterfaceFile {
      *文件属性 为0表示全部 参见Pb_MeetFileAttrib
      * </pre>
      *
-     * <code>optional fixed32 attrib = 6;</code>
+     * <code>fixed32 attrib = 6;</code>
      */
     int getAttrib();
 
@@ -5565,7 +5700,7 @@ public final class InterfaceFile {
      *分页值
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 7;</code>
+     * <code>fixed32 pageindex = 7;</code>
      */
     int getPageindex();
 
@@ -5574,7 +5709,7 @@ public final class InterfaceFile {
      *分页大小 为0表示返回全部
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 8;</code>
+     * <code>fixed32 pagenum = 8;</code>
      */
     int getPagenum();
   }
@@ -5602,7 +5737,7 @@ public final class InterfaceFile {
      *为0表示从平台里查询(平台里查询这种情况下 role和uploadid是无效的)
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     public int getDirid() {
       return dirid_;
@@ -5612,7 +5747,7 @@ public final class InterfaceFile {
      *为0表示从平台里查询(平台里查询这种情况下 role和uploadid是无效的)
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void setDirid(int value) {
       
@@ -5623,7 +5758,7 @@ public final class InterfaceFile {
      *为0表示从平台里查询(平台里查询这种情况下 role和uploadid是无效的)
      * </pre>
      *
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void clearDirid() {
       
@@ -5637,7 +5772,7 @@ public final class InterfaceFile {
      *查询标志 参见Pb_MeetFileQueryFlag
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 2;</code>
+     * <code>fixed32 queryflag = 2;</code>
      */
     public int getQueryflag() {
       return queryflag_;
@@ -5647,7 +5782,7 @@ public final class InterfaceFile {
      *查询标志 参见Pb_MeetFileQueryFlag
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 2;</code>
+     * <code>fixed32 queryflag = 2;</code>
      */
     private void setQueryflag(int value) {
       
@@ -5658,7 +5793,7 @@ public final class InterfaceFile {
      *查询标志 参见Pb_MeetFileQueryFlag
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 2;</code>
+     * <code>fixed32 queryflag = 2;</code>
      */
     private void clearQueryflag() {
       
@@ -5672,7 +5807,7 @@ public final class InterfaceFile {
      *上传者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     public int getRole() {
       return role_;
@@ -5682,7 +5817,7 @@ public final class InterfaceFile {
      *上传者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     private void setRole(int value) {
       
@@ -5693,7 +5828,7 @@ public final class InterfaceFile {
      *上传者角色
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     private void clearRole() {
       
@@ -5707,7 +5842,7 @@ public final class InterfaceFile {
      *上传人员ID 为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 uploadid = 4;</code>
+     * <code>fixed32 uploadid = 4;</code>
      */
     public int getUploadid() {
       return uploadid_;
@@ -5717,7 +5852,7 @@ public final class InterfaceFile {
      *上传人员ID 为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 uploadid = 4;</code>
+     * <code>fixed32 uploadid = 4;</code>
      */
     private void setUploadid(int value) {
       
@@ -5728,7 +5863,7 @@ public final class InterfaceFile {
      *上传人员ID 为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 uploadid = 4;</code>
+     * <code>fixed32 uploadid = 4;</code>
      */
     private void clearUploadid() {
       
@@ -5742,7 +5877,7 @@ public final class InterfaceFile {
      *文件类型 为0表示全部 参见 Pb_MeetFileType
      * </pre>
      *
-     * <code>optional fixed32 filetype = 5;</code>
+     * <code>fixed32 filetype = 5;</code>
      */
     public int getFiletype() {
       return filetype_;
@@ -5752,7 +5887,7 @@ public final class InterfaceFile {
      *文件类型 为0表示全部 参见 Pb_MeetFileType
      * </pre>
      *
-     * <code>optional fixed32 filetype = 5;</code>
+     * <code>fixed32 filetype = 5;</code>
      */
     private void setFiletype(int value) {
       
@@ -5763,7 +5898,7 @@ public final class InterfaceFile {
      *文件类型 为0表示全部 参见 Pb_MeetFileType
      * </pre>
      *
-     * <code>optional fixed32 filetype = 5;</code>
+     * <code>fixed32 filetype = 5;</code>
      */
     private void clearFiletype() {
       
@@ -5777,7 +5912,7 @@ public final class InterfaceFile {
      *文件属性 为0表示全部 参见Pb_MeetFileAttrib
      * </pre>
      *
-     * <code>optional fixed32 attrib = 6;</code>
+     * <code>fixed32 attrib = 6;</code>
      */
     public int getAttrib() {
       return attrib_;
@@ -5787,7 +5922,7 @@ public final class InterfaceFile {
      *文件属性 为0表示全部 参见Pb_MeetFileAttrib
      * </pre>
      *
-     * <code>optional fixed32 attrib = 6;</code>
+     * <code>fixed32 attrib = 6;</code>
      */
     private void setAttrib(int value) {
       
@@ -5798,7 +5933,7 @@ public final class InterfaceFile {
      *文件属性 为0表示全部 参见Pb_MeetFileAttrib
      * </pre>
      *
-     * <code>optional fixed32 attrib = 6;</code>
+     * <code>fixed32 attrib = 6;</code>
      */
     private void clearAttrib() {
       
@@ -5812,7 +5947,7 @@ public final class InterfaceFile {
      *分页值
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 7;</code>
+     * <code>fixed32 pageindex = 7;</code>
      */
     public int getPageindex() {
       return pageindex_;
@@ -5822,7 +5957,7 @@ public final class InterfaceFile {
      *分页值
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 7;</code>
+     * <code>fixed32 pageindex = 7;</code>
      */
     private void setPageindex(int value) {
       
@@ -5833,7 +5968,7 @@ public final class InterfaceFile {
      *分页值
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 7;</code>
+     * <code>fixed32 pageindex = 7;</code>
      */
     private void clearPageindex() {
       
@@ -5847,7 +5982,7 @@ public final class InterfaceFile {
      *分页大小 为0表示返回全部
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 8;</code>
+     * <code>fixed32 pagenum = 8;</code>
      */
     public int getPagenum() {
       return pagenum_;
@@ -5857,7 +5992,7 @@ public final class InterfaceFile {
      *分页大小 为0表示返回全部
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 8;</code>
+     * <code>fixed32 pagenum = 8;</code>
      */
     private void setPagenum(int value) {
       
@@ -5868,7 +6003,7 @@ public final class InterfaceFile {
      *分页大小 为0表示返回全部
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 8;</code>
+     * <code>fixed32 pagenum = 8;</code>
      */
     private void clearPagenum() {
       
@@ -5944,6 +6079,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ComplexQueryMeetDirFile parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ComplexQueryMeetDirFile parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_ComplexQueryMeetDirFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6038,7 +6186,7 @@ public final class InterfaceFile {
        *为0表示从平台里查询(平台里查询这种情况下 role和uploadid是无效的)
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public int getDirid() {
         return instance.getDirid();
@@ -6048,7 +6196,7 @@ public final class InterfaceFile {
        *为0表示从平台里查询(平台里查询这种情况下 role和uploadid是无效的)
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -6060,7 +6208,7 @@ public final class InterfaceFile {
        *为0表示从平台里查询(平台里查询这种情况下 role和uploadid是无效的)
        * </pre>
        *
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -6073,7 +6221,7 @@ public final class InterfaceFile {
        *查询标志 参见Pb_MeetFileQueryFlag
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 2;</code>
+       * <code>fixed32 queryflag = 2;</code>
        */
       public int getQueryflag() {
         return instance.getQueryflag();
@@ -6083,7 +6231,7 @@ public final class InterfaceFile {
        *查询标志 参见Pb_MeetFileQueryFlag
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 2;</code>
+       * <code>fixed32 queryflag = 2;</code>
        */
       public Builder setQueryflag(int value) {
         copyOnWrite();
@@ -6095,7 +6243,7 @@ public final class InterfaceFile {
        *查询标志 参见Pb_MeetFileQueryFlag
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 2;</code>
+       * <code>fixed32 queryflag = 2;</code>
        */
       public Builder clearQueryflag() {
         copyOnWrite();
@@ -6108,7 +6256,7 @@ public final class InterfaceFile {
        *上传者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public int getRole() {
         return instance.getRole();
@@ -6118,7 +6266,7 @@ public final class InterfaceFile {
        *上传者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public Builder setRole(int value) {
         copyOnWrite();
@@ -6130,7 +6278,7 @@ public final class InterfaceFile {
        *上传者角色
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public Builder clearRole() {
         copyOnWrite();
@@ -6143,7 +6291,7 @@ public final class InterfaceFile {
        *上传人员ID 为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 uploadid = 4;</code>
+       * <code>fixed32 uploadid = 4;</code>
        */
       public int getUploadid() {
         return instance.getUploadid();
@@ -6153,7 +6301,7 @@ public final class InterfaceFile {
        *上传人员ID 为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 uploadid = 4;</code>
+       * <code>fixed32 uploadid = 4;</code>
        */
       public Builder setUploadid(int value) {
         copyOnWrite();
@@ -6165,7 +6313,7 @@ public final class InterfaceFile {
        *上传人员ID 为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 uploadid = 4;</code>
+       * <code>fixed32 uploadid = 4;</code>
        */
       public Builder clearUploadid() {
         copyOnWrite();
@@ -6178,7 +6326,7 @@ public final class InterfaceFile {
        *文件类型 为0表示全部 参见 Pb_MeetFileType
        * </pre>
        *
-       * <code>optional fixed32 filetype = 5;</code>
+       * <code>fixed32 filetype = 5;</code>
        */
       public int getFiletype() {
         return instance.getFiletype();
@@ -6188,7 +6336,7 @@ public final class InterfaceFile {
        *文件类型 为0表示全部 参见 Pb_MeetFileType
        * </pre>
        *
-       * <code>optional fixed32 filetype = 5;</code>
+       * <code>fixed32 filetype = 5;</code>
        */
       public Builder setFiletype(int value) {
         copyOnWrite();
@@ -6200,7 +6348,7 @@ public final class InterfaceFile {
        *文件类型 为0表示全部 参见 Pb_MeetFileType
        * </pre>
        *
-       * <code>optional fixed32 filetype = 5;</code>
+       * <code>fixed32 filetype = 5;</code>
        */
       public Builder clearFiletype() {
         copyOnWrite();
@@ -6213,7 +6361,7 @@ public final class InterfaceFile {
        *文件属性 为0表示全部 参见Pb_MeetFileAttrib
        * </pre>
        *
-       * <code>optional fixed32 attrib = 6;</code>
+       * <code>fixed32 attrib = 6;</code>
        */
       public int getAttrib() {
         return instance.getAttrib();
@@ -6223,7 +6371,7 @@ public final class InterfaceFile {
        *文件属性 为0表示全部 参见Pb_MeetFileAttrib
        * </pre>
        *
-       * <code>optional fixed32 attrib = 6;</code>
+       * <code>fixed32 attrib = 6;</code>
        */
       public Builder setAttrib(int value) {
         copyOnWrite();
@@ -6235,7 +6383,7 @@ public final class InterfaceFile {
        *文件属性 为0表示全部 参见Pb_MeetFileAttrib
        * </pre>
        *
-       * <code>optional fixed32 attrib = 6;</code>
+       * <code>fixed32 attrib = 6;</code>
        */
       public Builder clearAttrib() {
         copyOnWrite();
@@ -6248,7 +6396,7 @@ public final class InterfaceFile {
        *分页值
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 7;</code>
+       * <code>fixed32 pageindex = 7;</code>
        */
       public int getPageindex() {
         return instance.getPageindex();
@@ -6258,7 +6406,7 @@ public final class InterfaceFile {
        *分页值
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 7;</code>
+       * <code>fixed32 pageindex = 7;</code>
        */
       public Builder setPageindex(int value) {
         copyOnWrite();
@@ -6270,7 +6418,7 @@ public final class InterfaceFile {
        *分页值
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 7;</code>
+       * <code>fixed32 pageindex = 7;</code>
        */
       public Builder clearPageindex() {
         copyOnWrite();
@@ -6283,7 +6431,7 @@ public final class InterfaceFile {
        *分页大小 为0表示返回全部
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 8;</code>
+       * <code>fixed32 pagenum = 8;</code>
        */
       public int getPagenum() {
         return instance.getPagenum();
@@ -6293,7 +6441,7 @@ public final class InterfaceFile {
        *分页大小 为0表示返回全部
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 8;</code>
+       * <code>fixed32 pagenum = 8;</code>
        */
       public Builder setPagenum(int value) {
         copyOnWrite();
@@ -6305,7 +6453,7 @@ public final class InterfaceFile {
        *分页大小 为0表示返回全部
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 8;</code>
+       * <code>fixed32 pagenum = 8;</code>
        */
       public Builder clearPagenum() {
         copyOnWrite();
@@ -6315,6 +6463,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ComplexQueryMeetDirFile)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6425,6 +6574,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6469,7 +6619,7 @@ public final class InterfaceFile {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     int getPageindex();
 
@@ -6478,7 +6628,7 @@ public final class InterfaceFile {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     int getPagenum();
 
@@ -6487,7 +6637,7 @@ public final class InterfaceFile {
      *当前页项数 ,根据数据不同用不同的解析
      * </pre>
      *
-     * <code>optional fixed32 itemnum = 3;</code>
+     * <code>fixed32 itemnum = 3;</code>
      */
     int getItemnum();
 
@@ -6496,7 +6646,7 @@ public final class InterfaceFile {
      *总项数
      * </pre>
      *
-     * <code>optional fixed32 totalnum = 4;</code>
+     * <code>fixed32 totalnum = 4;</code>
      */
     int getTotalnum();
 
@@ -6552,7 +6702,7 @@ public final class InterfaceFile {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     public int getPageindex() {
       return pageindex_;
@@ -6562,7 +6712,7 @@ public final class InterfaceFile {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     private void setPageindex(int value) {
       
@@ -6573,7 +6723,7 @@ public final class InterfaceFile {
      *起始索引 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     private void clearPageindex() {
       
@@ -6587,7 +6737,7 @@ public final class InterfaceFile {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     public int getPagenum() {
       return pagenum_;
@@ -6597,7 +6747,7 @@ public final class InterfaceFile {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     private void setPagenum(int value) {
       
@@ -6608,7 +6758,7 @@ public final class InterfaceFile {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     private void clearPagenum() {
       
@@ -6622,7 +6772,7 @@ public final class InterfaceFile {
      *当前页项数 ,根据数据不同用不同的解析
      * </pre>
      *
-     * <code>optional fixed32 itemnum = 3;</code>
+     * <code>fixed32 itemnum = 3;</code>
      */
     public int getItemnum() {
       return itemnum_;
@@ -6632,7 +6782,7 @@ public final class InterfaceFile {
      *当前页项数 ,根据数据不同用不同的解析
      * </pre>
      *
-     * <code>optional fixed32 itemnum = 3;</code>
+     * <code>fixed32 itemnum = 3;</code>
      */
     private void setItemnum(int value) {
       
@@ -6643,7 +6793,7 @@ public final class InterfaceFile {
      *当前页项数 ,根据数据不同用不同的解析
      * </pre>
      *
-     * <code>optional fixed32 itemnum = 3;</code>
+     * <code>fixed32 itemnum = 3;</code>
      */
     private void clearItemnum() {
       
@@ -6657,7 +6807,7 @@ public final class InterfaceFile {
      *总项数
      * </pre>
      *
-     * <code>optional fixed32 totalnum = 4;</code>
+     * <code>fixed32 totalnum = 4;</code>
      */
     public int getTotalnum() {
       return totalnum_;
@@ -6667,7 +6817,7 @@ public final class InterfaceFile {
      *总项数
      * </pre>
      *
-     * <code>optional fixed32 totalnum = 4;</code>
+     * <code>fixed32 totalnum = 4;</code>
      */
     private void setTotalnum(int value) {
       
@@ -6678,7 +6828,7 @@ public final class InterfaceFile {
      *总项数
      * </pre>
      *
-     * <code>optional fixed32 totalnum = 4;</code>
+     * <code>fixed32 totalnum = 4;</code>
      */
     private void clearTotalnum() {
       
@@ -6910,6 +7060,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_TypePageResQueryrFileInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_TypePageResQueryrFileInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_TypePageResQueryrFileInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -7003,7 +7166,7 @@ public final class InterfaceFile {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public int getPageindex() {
         return instance.getPageindex();
@@ -7013,7 +7176,7 @@ public final class InterfaceFile {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public Builder setPageindex(int value) {
         copyOnWrite();
@@ -7025,7 +7188,7 @@ public final class InterfaceFile {
        *起始索引 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public Builder clearPageindex() {
         copyOnWrite();
@@ -7038,7 +7201,7 @@ public final class InterfaceFile {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public int getPagenum() {
         return instance.getPagenum();
@@ -7048,7 +7211,7 @@ public final class InterfaceFile {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public Builder setPagenum(int value) {
         copyOnWrite();
@@ -7060,7 +7223,7 @@ public final class InterfaceFile {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public Builder clearPagenum() {
         copyOnWrite();
@@ -7073,7 +7236,7 @@ public final class InterfaceFile {
        *当前页项数 ,根据数据不同用不同的解析
        * </pre>
        *
-       * <code>optional fixed32 itemnum = 3;</code>
+       * <code>fixed32 itemnum = 3;</code>
        */
       public int getItemnum() {
         return instance.getItemnum();
@@ -7083,7 +7246,7 @@ public final class InterfaceFile {
        *当前页项数 ,根据数据不同用不同的解析
        * </pre>
        *
-       * <code>optional fixed32 itemnum = 3;</code>
+       * <code>fixed32 itemnum = 3;</code>
        */
       public Builder setItemnum(int value) {
         copyOnWrite();
@@ -7095,7 +7258,7 @@ public final class InterfaceFile {
        *当前页项数 ,根据数据不同用不同的解析
        * </pre>
        *
-       * <code>optional fixed32 itemnum = 3;</code>
+       * <code>fixed32 itemnum = 3;</code>
        */
       public Builder clearItemnum() {
         copyOnWrite();
@@ -7108,7 +7271,7 @@ public final class InterfaceFile {
        *总项数
        * </pre>
        *
-       * <code>optional fixed32 totalnum = 4;</code>
+       * <code>fixed32 totalnum = 4;</code>
        */
       public int getTotalnum() {
         return instance.getTotalnum();
@@ -7118,7 +7281,7 @@ public final class InterfaceFile {
        *总项数
        * </pre>
        *
-       * <code>optional fixed32 totalnum = 4;</code>
+       * <code>fixed32 totalnum = 4;</code>
        */
       public Builder setTotalnum(int value) {
         copyOnWrite();
@@ -7130,7 +7293,7 @@ public final class InterfaceFile {
        *总项数
        * </pre>
        *
-       * <code>optional fixed32 totalnum = 4;</code>
+       * <code>fixed32 totalnum = 4;</code>
        */
       public Builder clearTotalnum() {
         copyOnWrite();
@@ -7285,6 +7448,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_TypePageResQueryrFileInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7379,6 +7543,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7419,7 +7584,7 @@ public final class InterfaceFile {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
 
@@ -7428,7 +7593,7 @@ public final class InterfaceFile {
      *文件名
      * </pre>
      *
-     * <code>optional bytes filename = 2;</code>
+     * <code>bytes filename = 2;</code>
      */
     com.google.protobuf.ByteString getFilename();
 
@@ -7437,7 +7602,7 @@ public final class InterfaceFile {
      *大小 字节
      * </pre>
      *
-     * <code>optional fixed64 len = 3;</code>
+     * <code>fixed64 len = 3;</code>
      */
     long getLen();
 
@@ -7446,7 +7611,7 @@ public final class InterfaceFile {
      *播放时长，以ms为单位,如果为升级文件 记录升级的版本信息数据长度
      * </pre>
      *
-     * <code>optional fixed32 msec = 4;</code>
+     * <code>fixed32 msec = 4;</code>
      */
     int getMsec();
   }
@@ -7471,20 +7636,20 @@ public final class InterfaceFile {
     public static final int MEDIAID_FIELD_NUMBER = 1;
     private int mediaid_;
     /**
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
     }
     /**
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
       mediaid_ = value;
     }
     /**
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -7498,7 +7663,7 @@ public final class InterfaceFile {
      *文件名
      * </pre>
      *
-     * <code>optional bytes filename = 2;</code>
+     * <code>bytes filename = 2;</code>
      */
     public com.google.protobuf.ByteString getFilename() {
       return filename_;
@@ -7508,7 +7673,7 @@ public final class InterfaceFile {
      *文件名
      * </pre>
      *
-     * <code>optional bytes filename = 2;</code>
+     * <code>bytes filename = 2;</code>
      */
     private void setFilename(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7522,7 +7687,7 @@ public final class InterfaceFile {
      *文件名
      * </pre>
      *
-     * <code>optional bytes filename = 2;</code>
+     * <code>bytes filename = 2;</code>
      */
     private void clearFilename() {
       
@@ -7536,7 +7701,7 @@ public final class InterfaceFile {
      *大小 字节
      * </pre>
      *
-     * <code>optional fixed64 len = 3;</code>
+     * <code>fixed64 len = 3;</code>
      */
     public long getLen() {
       return len_;
@@ -7546,7 +7711,7 @@ public final class InterfaceFile {
      *大小 字节
      * </pre>
      *
-     * <code>optional fixed64 len = 3;</code>
+     * <code>fixed64 len = 3;</code>
      */
     private void setLen(long value) {
       
@@ -7557,7 +7722,7 @@ public final class InterfaceFile {
      *大小 字节
      * </pre>
      *
-     * <code>optional fixed64 len = 3;</code>
+     * <code>fixed64 len = 3;</code>
      */
     private void clearLen() {
       
@@ -7571,7 +7736,7 @@ public final class InterfaceFile {
      *播放时长，以ms为单位,如果为升级文件 记录升级的版本信息数据长度
      * </pre>
      *
-     * <code>optional fixed32 msec = 4;</code>
+     * <code>fixed32 msec = 4;</code>
      */
     public int getMsec() {
       return msec_;
@@ -7581,7 +7746,7 @@ public final class InterfaceFile {
      *播放时长，以ms为单位,如果为升级文件 记录升级的版本信息数据长度
      * </pre>
      *
-     * <code>optional fixed32 msec = 4;</code>
+     * <code>fixed32 msec = 4;</code>
      */
     private void setMsec(int value) {
       
@@ -7592,7 +7757,7 @@ public final class InterfaceFile {
      *播放时长，以ms为单位,如果为升级文件 记录升级的版本信息数据长度
      * </pre>
      *
-     * <code>optional fixed32 msec = 4;</code>
+     * <code>fixed32 msec = 4;</code>
      */
     private void clearMsec() {
       
@@ -7640,6 +7805,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetNewRecordFile parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetNewRecordFile parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetNewRecordFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7730,13 +7908,13 @@ public final class InterfaceFile {
 
 
       /**
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
       }
       /**
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -7744,7 +7922,7 @@ public final class InterfaceFile {
         return this;
       }
       /**
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -7757,7 +7935,7 @@ public final class InterfaceFile {
        *文件名
        * </pre>
        *
-       * <code>optional bytes filename = 2;</code>
+       * <code>bytes filename = 2;</code>
        */
       public com.google.protobuf.ByteString getFilename() {
         return instance.getFilename();
@@ -7767,7 +7945,7 @@ public final class InterfaceFile {
        *文件名
        * </pre>
        *
-       * <code>optional bytes filename = 2;</code>
+       * <code>bytes filename = 2;</code>
        */
       public Builder setFilename(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -7779,7 +7957,7 @@ public final class InterfaceFile {
        *文件名
        * </pre>
        *
-       * <code>optional bytes filename = 2;</code>
+       * <code>bytes filename = 2;</code>
        */
       public Builder clearFilename() {
         copyOnWrite();
@@ -7792,7 +7970,7 @@ public final class InterfaceFile {
        *大小 字节
        * </pre>
        *
-       * <code>optional fixed64 len = 3;</code>
+       * <code>fixed64 len = 3;</code>
        */
       public long getLen() {
         return instance.getLen();
@@ -7802,7 +7980,7 @@ public final class InterfaceFile {
        *大小 字节
        * </pre>
        *
-       * <code>optional fixed64 len = 3;</code>
+       * <code>fixed64 len = 3;</code>
        */
       public Builder setLen(long value) {
         copyOnWrite();
@@ -7814,7 +7992,7 @@ public final class InterfaceFile {
        *大小 字节
        * </pre>
        *
-       * <code>optional fixed64 len = 3;</code>
+       * <code>fixed64 len = 3;</code>
        */
       public Builder clearLen() {
         copyOnWrite();
@@ -7827,7 +8005,7 @@ public final class InterfaceFile {
        *播放时长，以ms为单位,如果为升级文件 记录升级的版本信息数据长度
        * </pre>
        *
-       * <code>optional fixed32 msec = 4;</code>
+       * <code>fixed32 msec = 4;</code>
        */
       public int getMsec() {
         return instance.getMsec();
@@ -7837,7 +8015,7 @@ public final class InterfaceFile {
        *播放时长，以ms为单位,如果为升级文件 记录升级的版本信息数据长度
        * </pre>
        *
-       * <code>optional fixed32 msec = 4;</code>
+       * <code>fixed32 msec = 4;</code>
        */
       public Builder setMsec(int value) {
         copyOnWrite();
@@ -7849,7 +8027,7 @@ public final class InterfaceFile {
        *播放时长，以ms为单位,如果为升级文件 记录升级的版本信息数据长度
        * </pre>
        *
-       * <code>optional fixed32 msec = 4;</code>
+       * <code>fixed32 msec = 4;</code>
        */
       public Builder clearMsec() {
         copyOnWrite();
@@ -7859,6 +8037,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetNewRecordFile)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7941,6 +8120,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7981,7 +8161,7 @@ public final class InterfaceFile {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     int getDirid();
 
@@ -8031,20 +8211,20 @@ public final class InterfaceFile {
     public static final int DIRID_FIELD_NUMBER = 1;
     private int dirid_;
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     public int getDirid() {
       return dirid_;
     }
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void setDirid(int value) {
       
       dirid_ = value;
     }
     /**
-     * <code>optional fixed32 dirid = 1;</code>
+     * <code>fixed32 dirid = 1;</code>
      */
     private void clearDirid() {
       
@@ -8168,6 +8348,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirRightDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirRightDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetDirRightDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -8256,13 +8449,13 @@ public final class InterfaceFile {
 
 
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public int getDirid() {
         return instance.getDirid();
       }
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -8270,7 +8463,7 @@ public final class InterfaceFile {
         return this;
       }
       /**
-       * <code>optional fixed32 dirid = 1;</code>
+       * <code>fixed32 dirid = 1;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -8363,6 +8556,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDirRightDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -8449,6 +8643,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -8493,7 +8688,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     int getFileid();
 
@@ -8502,7 +8697,7 @@ public final class InterfaceFile {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     int getMemberid();
 
@@ -8511,7 +8706,7 @@ public final class InterfaceFile {
      *评分
      * </pre>
      *
-     * <code>optional fixed32 score = 3;</code>
+     * <code>fixed32 score = 3;</code>
      */
     int getScore();
 
@@ -8520,7 +8715,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 scoretime = 4;</code>
+     * <code>fixed64 scoretime = 4;</code>
      */
     long getScoretime();
   }
@@ -8545,7 +8740,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -8555,7 +8750,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void setFileid(int value) {
       
@@ -8566,7 +8761,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void clearFileid() {
       
@@ -8580,7 +8775,7 @@ public final class InterfaceFile {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -8590,7 +8785,7 @@ public final class InterfaceFile {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void setMemberid(int value) {
       
@@ -8601,7 +8796,7 @@ public final class InterfaceFile {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void clearMemberid() {
       
@@ -8615,7 +8810,7 @@ public final class InterfaceFile {
      *评分
      * </pre>
      *
-     * <code>optional fixed32 score = 3;</code>
+     * <code>fixed32 score = 3;</code>
      */
     public int getScore() {
       return score_;
@@ -8625,7 +8820,7 @@ public final class InterfaceFile {
      *评分
      * </pre>
      *
-     * <code>optional fixed32 score = 3;</code>
+     * <code>fixed32 score = 3;</code>
      */
     private void setScore(int value) {
       
@@ -8636,7 +8831,7 @@ public final class InterfaceFile {
      *评分
      * </pre>
      *
-     * <code>optional fixed32 score = 3;</code>
+     * <code>fixed32 score = 3;</code>
      */
     private void clearScore() {
       
@@ -8650,7 +8845,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 scoretime = 4;</code>
+     * <code>fixed64 scoretime = 4;</code>
      */
     public long getScoretime() {
       return scoretime_;
@@ -8660,7 +8855,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 scoretime = 4;</code>
+     * <code>fixed64 scoretime = 4;</code>
      */
     private void setScoretime(long value) {
       
@@ -8671,7 +8866,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 scoretime = 4;</code>
+     * <code>fixed64 scoretime = 4;</code>
      */
     private void clearScoretime() {
       
@@ -8719,6 +8914,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetFileScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetFileScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_MeetFileScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8810,7 +9018,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -8820,7 +9028,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -8832,7 +9040,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -8845,7 +9053,7 @@ public final class InterfaceFile {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -8855,7 +9063,7 @@ public final class InterfaceFile {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -8867,7 +9075,7 @@ public final class InterfaceFile {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -8880,7 +9088,7 @@ public final class InterfaceFile {
        *评分
        * </pre>
        *
-       * <code>optional fixed32 score = 3;</code>
+       * <code>fixed32 score = 3;</code>
        */
       public int getScore() {
         return instance.getScore();
@@ -8890,7 +9098,7 @@ public final class InterfaceFile {
        *评分
        * </pre>
        *
-       * <code>optional fixed32 score = 3;</code>
+       * <code>fixed32 score = 3;</code>
        */
       public Builder setScore(int value) {
         copyOnWrite();
@@ -8902,7 +9110,7 @@ public final class InterfaceFile {
        *评分
        * </pre>
        *
-       * <code>optional fixed32 score = 3;</code>
+       * <code>fixed32 score = 3;</code>
        */
       public Builder clearScore() {
         copyOnWrite();
@@ -8915,7 +9123,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 scoretime = 4;</code>
+       * <code>fixed64 scoretime = 4;</code>
        */
       public long getScoretime() {
         return instance.getScoretime();
@@ -8925,7 +9133,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 scoretime = 4;</code>
+       * <code>fixed64 scoretime = 4;</code>
        */
       public Builder setScoretime(long value) {
         copyOnWrite();
@@ -8937,7 +9145,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 scoretime = 4;</code>
+       * <code>fixed64 scoretime = 4;</code>
        */
       public Builder clearScoretime() {
         copyOnWrite();
@@ -8947,6 +9155,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetFileScore)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -9029,6 +9238,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -9073,7 +9283,7 @@ public final class InterfaceFile {
      *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 1;</code>
+     * <code>fixed32 isfirst = 1;</code>
      */
     int getIsfirst();
 
@@ -9117,7 +9327,7 @@ public final class InterfaceFile {
      *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 1;</code>
+     * <code>fixed32 isfirst = 1;</code>
      */
     public int getIsfirst() {
       return isfirst_;
@@ -9127,7 +9337,7 @@ public final class InterfaceFile {
      *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 1;</code>
+     * <code>fixed32 isfirst = 1;</code>
      */
     private void setIsfirst(int value) {
       
@@ -9138,7 +9348,7 @@ public final class InterfaceFile {
      *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 1;</code>
+     * <code>fixed32 isfirst = 1;</code>
      */
     private void clearIsfirst() {
       
@@ -9293,6 +9503,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetFileScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetFileScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetFileScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -9386,7 +9609,7 @@ public final class InterfaceFile {
        *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 1;</code>
+       * <code>fixed32 isfirst = 1;</code>
        */
       public int getIsfirst() {
         return instance.getIsfirst();
@@ -9396,7 +9619,7 @@ public final class InterfaceFile {
        *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 1;</code>
+       * <code>fixed32 isfirst = 1;</code>
        */
       public Builder setIsfirst(int value) {
         copyOnWrite();
@@ -9408,7 +9631,7 @@ public final class InterfaceFile {
        *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 1;</code>
+       * <code>fixed32 isfirst = 1;</code>
        */
       public Builder clearIsfirst() {
         copyOnWrite();
@@ -9515,6 +9738,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetFileScore)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -9588,6 +9812,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -9632,7 +9857,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     int getFileid();
   }
@@ -9660,7 +9885,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -9670,7 +9895,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void setFileid(int value) {
       
@@ -9681,7 +9906,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void clearFileid() {
       
@@ -9708,6 +9933,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryFileScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryFileScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryFileScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9802,7 +10040,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -9812,7 +10050,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -9824,7 +10062,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -9834,6 +10072,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_QueryFileScore)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -9895,6 +10134,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -9939,7 +10179,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     int getFileid();
 
@@ -9948,7 +10188,7 @@ public final class InterfaceFile {
      *平均评分
      * </pre>
      *
-     * <code>optional fixed32 score = 2;</code>
+     * <code>fixed32 score = 2;</code>
      */
     int getScore();
   }
@@ -9976,7 +10216,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -9986,7 +10226,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void setFileid(int value) {
       
@@ -9997,7 +10237,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void clearFileid() {
       
@@ -10011,7 +10251,7 @@ public final class InterfaceFile {
      *平均评分
      * </pre>
      *
-     * <code>optional fixed32 score = 2;</code>
+     * <code>fixed32 score = 2;</code>
      */
     public int getScore() {
       return score_;
@@ -10021,7 +10261,7 @@ public final class InterfaceFile {
      *平均评分
      * </pre>
      *
-     * <code>optional fixed32 score = 2;</code>
+     * <code>fixed32 score = 2;</code>
      */
     private void setScore(int value) {
       
@@ -10032,7 +10272,7 @@ public final class InterfaceFile {
      *平均评分
      * </pre>
      *
-     * <code>optional fixed32 score = 2;</code>
+     * <code>fixed32 score = 2;</code>
      */
     private void clearScore() {
       
@@ -10066,6 +10306,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryAverageFileScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryAverageFileScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryAverageFileScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10160,7 +10413,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -10170,7 +10423,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -10182,7 +10435,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -10195,7 +10448,7 @@ public final class InterfaceFile {
        *平均评分
        * </pre>
        *
-       * <code>optional fixed32 score = 2;</code>
+       * <code>fixed32 score = 2;</code>
        */
       public int getScore() {
         return instance.getScore();
@@ -10205,7 +10458,7 @@ public final class InterfaceFile {
        *平均评分
        * </pre>
        *
-       * <code>optional fixed32 score = 2;</code>
+       * <code>fixed32 score = 2;</code>
        */
       public Builder setScore(int value) {
         copyOnWrite();
@@ -10217,7 +10470,7 @@ public final class InterfaceFile {
        *平均评分
        * </pre>
        *
-       * <code>optional fixed32 score = 2;</code>
+       * <code>fixed32 score = 2;</code>
        */
       public Builder clearScore() {
         copyOnWrite();
@@ -10227,6 +10480,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_QueryAverageFileScore)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -10295,6 +10549,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -10339,7 +10594,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     int getFileid();
 
@@ -10348,7 +10603,7 @@ public final class InterfaceFile {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     int getMemberid();
 
@@ -10357,7 +10612,7 @@ public final class InterfaceFile {
      *标志 参见evaluate flag 宏定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 3;</code>
+     * <code>fixed32 flag = 3;</code>
      */
     int getFlag();
 
@@ -10366,7 +10621,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 4;</code>
+     * <code>fixed64 evaluatetime = 4;</code>
      */
     long getEvaluatetime();
 
@@ -10375,7 +10630,7 @@ public final class InterfaceFile {
      *评分的文本
      * </pre>
      *
-     * <code>optional bytes evaluate = 5;</code>
+     * <code>bytes evaluate = 5;</code>
      */
     com.google.protobuf.ByteString getEvaluate();
   }
@@ -10401,7 +10656,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -10411,7 +10666,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void setFileid(int value) {
       
@@ -10422,7 +10677,7 @@ public final class InterfaceFile {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void clearFileid() {
       
@@ -10436,7 +10691,7 @@ public final class InterfaceFile {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -10446,7 +10701,7 @@ public final class InterfaceFile {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void setMemberid(int value) {
       
@@ -10457,7 +10712,7 @@ public final class InterfaceFile {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void clearMemberid() {
       
@@ -10471,7 +10726,7 @@ public final class InterfaceFile {
      *标志 参见evaluate flag 宏定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 3;</code>
+     * <code>fixed32 flag = 3;</code>
      */
     public int getFlag() {
       return flag_;
@@ -10481,7 +10736,7 @@ public final class InterfaceFile {
      *标志 参见evaluate flag 宏定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 3;</code>
+     * <code>fixed32 flag = 3;</code>
      */
     private void setFlag(int value) {
       
@@ -10492,7 +10747,7 @@ public final class InterfaceFile {
      *标志 参见evaluate flag 宏定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 3;</code>
+     * <code>fixed32 flag = 3;</code>
      */
     private void clearFlag() {
       
@@ -10506,7 +10761,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 4;</code>
+     * <code>fixed64 evaluatetime = 4;</code>
      */
     public long getEvaluatetime() {
       return evaluatetime_;
@@ -10516,7 +10771,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 4;</code>
+     * <code>fixed64 evaluatetime = 4;</code>
      */
     private void setEvaluatetime(long value) {
       
@@ -10527,7 +10782,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 4;</code>
+     * <code>fixed64 evaluatetime = 4;</code>
      */
     private void clearEvaluatetime() {
       
@@ -10541,7 +10796,7 @@ public final class InterfaceFile {
      *评分的文本
      * </pre>
      *
-     * <code>optional bytes evaluate = 5;</code>
+     * <code>bytes evaluate = 5;</code>
      */
     public com.google.protobuf.ByteString getEvaluate() {
       return evaluate_;
@@ -10551,7 +10806,7 @@ public final class InterfaceFile {
      *评分的文本
      * </pre>
      *
-     * <code>optional bytes evaluate = 5;</code>
+     * <code>bytes evaluate = 5;</code>
      */
     private void setEvaluate(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -10565,7 +10820,7 @@ public final class InterfaceFile {
      *评分的文本
      * </pre>
      *
-     * <code>optional bytes evaluate = 5;</code>
+     * <code>bytes evaluate = 5;</code>
      */
     private void clearEvaluate() {
       
@@ -10620,6 +10875,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_FileEvaluate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_FileEvaluate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Item_FileEvaluate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10711,7 +10979,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -10721,7 +10989,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -10733,7 +11001,7 @@ public final class InterfaceFile {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -10746,7 +11014,7 @@ public final class InterfaceFile {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -10756,7 +11024,7 @@ public final class InterfaceFile {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -10768,7 +11036,7 @@ public final class InterfaceFile {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -10781,7 +11049,7 @@ public final class InterfaceFile {
        *标志 参见evaluate flag 宏定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 3;</code>
+       * <code>fixed32 flag = 3;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -10791,7 +11059,7 @@ public final class InterfaceFile {
        *标志 参见evaluate flag 宏定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 3;</code>
+       * <code>fixed32 flag = 3;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -10803,7 +11071,7 @@ public final class InterfaceFile {
        *标志 参见evaluate flag 宏定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 3;</code>
+       * <code>fixed32 flag = 3;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -10816,7 +11084,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 4;</code>
+       * <code>fixed64 evaluatetime = 4;</code>
        */
       public long getEvaluatetime() {
         return instance.getEvaluatetime();
@@ -10826,7 +11094,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 4;</code>
+       * <code>fixed64 evaluatetime = 4;</code>
        */
       public Builder setEvaluatetime(long value) {
         copyOnWrite();
@@ -10838,7 +11106,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 4;</code>
+       * <code>fixed64 evaluatetime = 4;</code>
        */
       public Builder clearEvaluatetime() {
         copyOnWrite();
@@ -10851,7 +11119,7 @@ public final class InterfaceFile {
        *评分的文本
        * </pre>
        *
-       * <code>optional bytes evaluate = 5;</code>
+       * <code>bytes evaluate = 5;</code>
        */
       public com.google.protobuf.ByteString getEvaluate() {
         return instance.getEvaluate();
@@ -10861,7 +11129,7 @@ public final class InterfaceFile {
        *评分的文本
        * </pre>
        *
-       * <code>optional bytes evaluate = 5;</code>
+       * <code>bytes evaluate = 5;</code>
        */
       public Builder setEvaluate(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -10873,7 +11141,7 @@ public final class InterfaceFile {
        *评分的文本
        * </pre>
        *
-       * <code>optional bytes evaluate = 5;</code>
+       * <code>bytes evaluate = 5;</code>
        */
       public Builder clearEvaluate() {
         copyOnWrite();
@@ -10883,6 +11151,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_FileEvaluate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -10972,6 +11241,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -11016,7 +11286,7 @@ public final class InterfaceFile {
      *查询返回用户传过来的开始行
      * </pre>
      *
-     * <code>optional fixed32 startrow = 1;</code>
+     * <code>fixed32 startrow = 1;</code>
      */
     int getStartrow();
 
@@ -11025,7 +11295,7 @@ public final class InterfaceFile {
      *是否为第一帧,如果评价太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 2;</code>
+     * <code>fixed32 isfirst = 2;</code>
      */
     int getIsfirst();
 
@@ -11068,7 +11338,7 @@ public final class InterfaceFile {
      *查询返回用户传过来的开始行
      * </pre>
      *
-     * <code>optional fixed32 startrow = 1;</code>
+     * <code>fixed32 startrow = 1;</code>
      */
     public int getStartrow() {
       return startrow_;
@@ -11078,7 +11348,7 @@ public final class InterfaceFile {
      *查询返回用户传过来的开始行
      * </pre>
      *
-     * <code>optional fixed32 startrow = 1;</code>
+     * <code>fixed32 startrow = 1;</code>
      */
     private void setStartrow(int value) {
       
@@ -11089,7 +11359,7 @@ public final class InterfaceFile {
      *查询返回用户传过来的开始行
      * </pre>
      *
-     * <code>optional fixed32 startrow = 1;</code>
+     * <code>fixed32 startrow = 1;</code>
      */
     private void clearStartrow() {
       
@@ -11103,7 +11373,7 @@ public final class InterfaceFile {
      *是否为第一帧,如果评价太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 2;</code>
+     * <code>fixed32 isfirst = 2;</code>
      */
     public int getIsfirst() {
       return isfirst_;
@@ -11113,7 +11383,7 @@ public final class InterfaceFile {
      *是否为第一帧,如果评价太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 2;</code>
+     * <code>fixed32 isfirst = 2;</code>
      */
     private void setIsfirst(int value) {
       
@@ -11124,7 +11394,7 @@ public final class InterfaceFile {
      *是否为第一帧,如果评价太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 2;</code>
+     * <code>fixed32 isfirst = 2;</code>
      */
     private void clearIsfirst() {
       
@@ -11286,6 +11556,19 @@ public final class InterfaceFile {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetingFileEvaluate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetingFileEvaluate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_MeetingFileEvaluate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -11378,7 +11661,7 @@ public final class InterfaceFile {
        *查询返回用户传过来的开始行
        * </pre>
        *
-       * <code>optional fixed32 startrow = 1;</code>
+       * <code>fixed32 startrow = 1;</code>
        */
       public int getStartrow() {
         return instance.getStartrow();
@@ -11388,7 +11671,7 @@ public final class InterfaceFile {
        *查询返回用户传过来的开始行
        * </pre>
        *
-       * <code>optional fixed32 startrow = 1;</code>
+       * <code>fixed32 startrow = 1;</code>
        */
       public Builder setStartrow(int value) {
         copyOnWrite();
@@ -11400,7 +11683,7 @@ public final class InterfaceFile {
        *查询返回用户传过来的开始行
        * </pre>
        *
-       * <code>optional fixed32 startrow = 1;</code>
+       * <code>fixed32 startrow = 1;</code>
        */
       public Builder clearStartrow() {
         copyOnWrite();
@@ -11413,7 +11696,7 @@ public final class InterfaceFile {
        *是否为第一帧,如果评价太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 2;</code>
+       * <code>fixed32 isfirst = 2;</code>
        */
       public int getIsfirst() {
         return instance.getIsfirst();
@@ -11423,7 +11706,7 @@ public final class InterfaceFile {
        *是否为第一帧,如果评价太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 2;</code>
+       * <code>fixed32 isfirst = 2;</code>
        */
       public Builder setIsfirst(int value) {
         copyOnWrite();
@@ -11435,7 +11718,7 @@ public final class InterfaceFile {
        *是否为第一帧,如果评价太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 2;</code>
+       * <code>fixed32 isfirst = 2;</code>
        */
       public Builder clearIsfirst() {
         copyOnWrite();
@@ -11542,6 +11825,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetingFileEvaluate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -11622,6 +11906,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -11666,7 +11951,7 @@ public final class InterfaceFile {
      *文件ID 可以为0表示所有文件
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     int getFileid();
 
@@ -11675,7 +11960,7 @@ public final class InterfaceFile {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     int getMemberid();
 
@@ -11684,7 +11969,7 @@ public final class InterfaceFile {
      *查询的起始评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 startevaluatetime = 3;</code>
+     * <code>fixed64 startevaluatetime = 3;</code>
      */
     long getStartevaluatetime();
 
@@ -11693,7 +11978,7 @@ public final class InterfaceFile {
      *查询的结束评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 endevaluatetime = 4;</code>
+     * <code>fixed64 endevaluatetime = 4;</code>
      */
     long getEndevaluatetime();
 
@@ -11702,7 +11987,7 @@ public final class InterfaceFile {
      *查询开始行 实现分页查询 必须有效 第一次从0开始
      * </pre>
      *
-     * <code>optional fixed32 startrow = 5;</code>
+     * <code>fixed32 startrow = 5;</code>
      */
     int getStartrow();
   }
@@ -11729,7 +12014,7 @@ public final class InterfaceFile {
      *文件ID 可以为0表示所有文件
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -11739,7 +12024,7 @@ public final class InterfaceFile {
      *文件ID 可以为0表示所有文件
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void setFileid(int value) {
       
@@ -11750,7 +12035,7 @@ public final class InterfaceFile {
      *文件ID 可以为0表示所有文件
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void clearFileid() {
       
@@ -11764,7 +12049,7 @@ public final class InterfaceFile {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -11774,7 +12059,7 @@ public final class InterfaceFile {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void setMemberid(int value) {
       
@@ -11785,7 +12070,7 @@ public final class InterfaceFile {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void clearMemberid() {
       
@@ -11799,7 +12084,7 @@ public final class InterfaceFile {
      *查询的起始评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 startevaluatetime = 3;</code>
+     * <code>fixed64 startevaluatetime = 3;</code>
      */
     public long getStartevaluatetime() {
       return startevaluatetime_;
@@ -11809,7 +12094,7 @@ public final class InterfaceFile {
      *查询的起始评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 startevaluatetime = 3;</code>
+     * <code>fixed64 startevaluatetime = 3;</code>
      */
     private void setStartevaluatetime(long value) {
       
@@ -11820,7 +12105,7 @@ public final class InterfaceFile {
      *查询的起始评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 startevaluatetime = 3;</code>
+     * <code>fixed64 startevaluatetime = 3;</code>
      */
     private void clearStartevaluatetime() {
       
@@ -11834,7 +12119,7 @@ public final class InterfaceFile {
      *查询的结束评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 endevaluatetime = 4;</code>
+     * <code>fixed64 endevaluatetime = 4;</code>
      */
     public long getEndevaluatetime() {
       return endevaluatetime_;
@@ -11844,7 +12129,7 @@ public final class InterfaceFile {
      *查询的结束评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 endevaluatetime = 4;</code>
+     * <code>fixed64 endevaluatetime = 4;</code>
      */
     private void setEndevaluatetime(long value) {
       
@@ -11855,7 +12140,7 @@ public final class InterfaceFile {
      *查询的结束评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 endevaluatetime = 4;</code>
+     * <code>fixed64 endevaluatetime = 4;</code>
      */
     private void clearEndevaluatetime() {
       
@@ -11869,7 +12154,7 @@ public final class InterfaceFile {
      *查询开始行 实现分页查询 必须有效 第一次从0开始
      * </pre>
      *
-     * <code>optional fixed32 startrow = 5;</code>
+     * <code>fixed32 startrow = 5;</code>
      */
     public int getStartrow() {
       return startrow_;
@@ -11879,7 +12164,7 @@ public final class InterfaceFile {
      *查询开始行 实现分页查询 必须有效 第一次从0开始
      * </pre>
      *
-     * <code>optional fixed32 startrow = 5;</code>
+     * <code>fixed32 startrow = 5;</code>
      */
     private void setStartrow(int value) {
       
@@ -11890,7 +12175,7 @@ public final class InterfaceFile {
      *查询开始行 实现分页查询 必须有效 第一次从0开始
      * </pre>
      *
-     * <code>optional fixed32 startrow = 5;</code>
+     * <code>fixed32 startrow = 5;</code>
      */
     private void clearStartrow() {
       
@@ -11945,6 +12230,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryFileEvaluate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryFileEvaluate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_QueryFileEvaluate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12038,7 +12336,7 @@ public final class InterfaceFile {
        *文件ID 可以为0表示所有文件
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -12048,7 +12346,7 @@ public final class InterfaceFile {
        *文件ID 可以为0表示所有文件
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -12060,7 +12358,7 @@ public final class InterfaceFile {
        *文件ID 可以为0表示所有文件
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -12073,7 +12371,7 @@ public final class InterfaceFile {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -12083,7 +12381,7 @@ public final class InterfaceFile {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -12095,7 +12393,7 @@ public final class InterfaceFile {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -12108,7 +12406,7 @@ public final class InterfaceFile {
        *查询的起始评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 startevaluatetime = 3;</code>
+       * <code>fixed64 startevaluatetime = 3;</code>
        */
       public long getStartevaluatetime() {
         return instance.getStartevaluatetime();
@@ -12118,7 +12416,7 @@ public final class InterfaceFile {
        *查询的起始评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 startevaluatetime = 3;</code>
+       * <code>fixed64 startevaluatetime = 3;</code>
        */
       public Builder setStartevaluatetime(long value) {
         copyOnWrite();
@@ -12130,7 +12428,7 @@ public final class InterfaceFile {
        *查询的起始评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 startevaluatetime = 3;</code>
+       * <code>fixed64 startevaluatetime = 3;</code>
        */
       public Builder clearStartevaluatetime() {
         copyOnWrite();
@@ -12143,7 +12441,7 @@ public final class InterfaceFile {
        *查询的结束评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 endevaluatetime = 4;</code>
+       * <code>fixed64 endevaluatetime = 4;</code>
        */
       public long getEndevaluatetime() {
         return instance.getEndevaluatetime();
@@ -12153,7 +12451,7 @@ public final class InterfaceFile {
        *查询的结束评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 endevaluatetime = 4;</code>
+       * <code>fixed64 endevaluatetime = 4;</code>
        */
       public Builder setEndevaluatetime(long value) {
         copyOnWrite();
@@ -12165,7 +12463,7 @@ public final class InterfaceFile {
        *查询的结束评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 endevaluatetime = 4;</code>
+       * <code>fixed64 endevaluatetime = 4;</code>
        */
       public Builder clearEndevaluatetime() {
         copyOnWrite();
@@ -12178,7 +12476,7 @@ public final class InterfaceFile {
        *查询开始行 实现分页查询 必须有效 第一次从0开始
        * </pre>
        *
-       * <code>optional fixed32 startrow = 5;</code>
+       * <code>fixed32 startrow = 5;</code>
        */
       public int getStartrow() {
         return instance.getStartrow();
@@ -12188,7 +12486,7 @@ public final class InterfaceFile {
        *查询开始行 实现分页查询 必须有效 第一次从0开始
        * </pre>
        *
-       * <code>optional fixed32 startrow = 5;</code>
+       * <code>fixed32 startrow = 5;</code>
        */
       public Builder setStartrow(int value) {
         copyOnWrite();
@@ -12200,7 +12498,7 @@ public final class InterfaceFile {
        *查询开始行 实现分页查询 必须有效 第一次从0开始
        * </pre>
        *
-       * <code>optional fixed32 startrow = 5;</code>
+       * <code>fixed32 startrow = 5;</code>
        */
       public Builder clearStartrow() {
         copyOnWrite();
@@ -12210,6 +12508,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_QueryFileEvaluate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -12299,6 +12598,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -12343,7 +12643,7 @@ public final class InterfaceFile {
      *文件ID 可以为0表示所有文件
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     int getFileid();
 
@@ -12352,7 +12652,7 @@ public final class InterfaceFile {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     int getMemberid();
 
@@ -12361,7 +12661,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒 当fileid、memberid有效时 可以有效表示删除指定的评论
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 3;</code>
+     * <code>fixed64 evaluatetime = 3;</code>
      */
     long getEvaluatetime();
   }
@@ -12388,7 +12688,7 @@ public final class InterfaceFile {
      *文件ID 可以为0表示所有文件
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -12398,7 +12698,7 @@ public final class InterfaceFile {
      *文件ID 可以为0表示所有文件
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void setFileid(int value) {
       
@@ -12409,7 +12709,7 @@ public final class InterfaceFile {
      *文件ID 可以为0表示所有文件
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void clearFileid() {
       
@@ -12423,7 +12723,7 @@ public final class InterfaceFile {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -12433,7 +12733,7 @@ public final class InterfaceFile {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void setMemberid(int value) {
       
@@ -12444,7 +12744,7 @@ public final class InterfaceFile {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void clearMemberid() {
       
@@ -12458,7 +12758,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒 当fileid、memberid有效时 可以有效表示删除指定的评论
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 3;</code>
+     * <code>fixed64 evaluatetime = 3;</code>
      */
     public long getEvaluatetime() {
       return evaluatetime_;
@@ -12468,7 +12768,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒 当fileid、memberid有效时 可以有效表示删除指定的评论
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 3;</code>
+     * <code>fixed64 evaluatetime = 3;</code>
      */
     private void setEvaluatetime(long value) {
       
@@ -12479,7 +12779,7 @@ public final class InterfaceFile {
      *评分utc时间 微秒 当fileid、memberid有效时 可以有效表示删除指定的评论
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 3;</code>
+     * <code>fixed64 evaluatetime = 3;</code>
      */
     private void clearEvaluatetime() {
       
@@ -12520,6 +12820,19 @@ public final class InterfaceFile {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_DelFileEvaluate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_DelFileEvaluate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFile.pbui_Type_DelFileEvaluate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12613,7 +12926,7 @@ public final class InterfaceFile {
        *文件ID 可以为0表示所有文件
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -12623,7 +12936,7 @@ public final class InterfaceFile {
        *文件ID 可以为0表示所有文件
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -12635,7 +12948,7 @@ public final class InterfaceFile {
        *文件ID 可以为0表示所有文件
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -12648,7 +12961,7 @@ public final class InterfaceFile {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -12658,7 +12971,7 @@ public final class InterfaceFile {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -12670,7 +12983,7 @@ public final class InterfaceFile {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -12683,7 +12996,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒 当fileid、memberid有效时 可以有效表示删除指定的评论
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 3;</code>
+       * <code>fixed64 evaluatetime = 3;</code>
        */
       public long getEvaluatetime() {
         return instance.getEvaluatetime();
@@ -12693,7 +13006,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒 当fileid、memberid有效时 可以有效表示删除指定的评论
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 3;</code>
+       * <code>fixed64 evaluatetime = 3;</code>
        */
       public Builder setEvaluatetime(long value) {
         copyOnWrite();
@@ -12705,7 +13018,7 @@ public final class InterfaceFile {
        *评分utc时间 微秒 当fileid、memberid有效时 可以有效表示删除指定的评论
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 3;</code>
+       * <code>fixed64 evaluatetime = 3;</code>
        */
       public Builder clearEvaluatetime() {
         copyOnWrite();
@@ -12715,6 +13028,7 @@ public final class InterfaceFile {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DelFileEvaluate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -12790,6 +13104,7 @@ public final class InterfaceFile {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

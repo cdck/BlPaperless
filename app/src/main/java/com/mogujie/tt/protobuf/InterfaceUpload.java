@@ -17,7 +17,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     int getMediaId();
 
@@ -26,7 +26,7 @@ public final class InterfaceUpload {
      *参见 Pb_Upload_State				
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     int getStatus();
 
@@ -35,7 +35,7 @@ public final class InterfaceUpload {
      *当前位置，百分比
      * </pre>
      *
-     * <code>optional fixed32 per = 3;</code>
+     * <code>fixed32 per = 3;</code>
      */
     int getPer();
 
@@ -44,7 +44,7 @@ public final class InterfaceUpload {
      *参见 Pb_Upload_Flag
      * </pre>
      *
-     * <code>optional fixed32 uploadflag = 4;</code>
+     * <code>fixed32 uploadflag = 4;</code>
      */
     int getUploadflag();
 
@@ -53,7 +53,7 @@ public final class InterfaceUpload {
      *用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 5;</code>
+     * <code>fixed32 userval = 5;</code>
      */
     int getUserval();
 
@@ -62,7 +62,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 6;</code>
+     * <code>bytes pathname = 6;</code>
      */
     com.google.protobuf.ByteString getPathname();
 
@@ -71,7 +71,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 7;</code>
+     * <code>bytes userstr = 7;</code>
      */
     com.google.protobuf.ByteString getUserstr();
   }
@@ -101,7 +101,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     public int getMediaId() {
       return mediaId_;
@@ -111,7 +111,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     private void setMediaId(int value) {
       
@@ -122,7 +122,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     private void clearMediaId() {
       
@@ -136,7 +136,7 @@ public final class InterfaceUpload {
      *参见 Pb_Upload_State				
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     public int getStatus() {
       return status_;
@@ -146,7 +146,7 @@ public final class InterfaceUpload {
      *参见 Pb_Upload_State				
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void setStatus(int value) {
       
@@ -157,7 +157,7 @@ public final class InterfaceUpload {
      *参见 Pb_Upload_State				
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void clearStatus() {
       
@@ -171,7 +171,7 @@ public final class InterfaceUpload {
      *当前位置，百分比
      * </pre>
      *
-     * <code>optional fixed32 per = 3;</code>
+     * <code>fixed32 per = 3;</code>
      */
     public int getPer() {
       return per_;
@@ -181,7 +181,7 @@ public final class InterfaceUpload {
      *当前位置，百分比
      * </pre>
      *
-     * <code>optional fixed32 per = 3;</code>
+     * <code>fixed32 per = 3;</code>
      */
     private void setPer(int value) {
       
@@ -192,7 +192,7 @@ public final class InterfaceUpload {
      *当前位置，百分比
      * </pre>
      *
-     * <code>optional fixed32 per = 3;</code>
+     * <code>fixed32 per = 3;</code>
      */
     private void clearPer() {
       
@@ -206,7 +206,7 @@ public final class InterfaceUpload {
      *参见 Pb_Upload_Flag
      * </pre>
      *
-     * <code>optional fixed32 uploadflag = 4;</code>
+     * <code>fixed32 uploadflag = 4;</code>
      */
     public int getUploadflag() {
       return uploadflag_;
@@ -216,7 +216,7 @@ public final class InterfaceUpload {
      *参见 Pb_Upload_Flag
      * </pre>
      *
-     * <code>optional fixed32 uploadflag = 4;</code>
+     * <code>fixed32 uploadflag = 4;</code>
      */
     private void setUploadflag(int value) {
       
@@ -227,7 +227,7 @@ public final class InterfaceUpload {
      *参见 Pb_Upload_Flag
      * </pre>
      *
-     * <code>optional fixed32 uploadflag = 4;</code>
+     * <code>fixed32 uploadflag = 4;</code>
      */
     private void clearUploadflag() {
       
@@ -241,7 +241,7 @@ public final class InterfaceUpload {
      *用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 5;</code>
+     * <code>fixed32 userval = 5;</code>
      */
     public int getUserval() {
       return userval_;
@@ -251,7 +251,7 @@ public final class InterfaceUpload {
      *用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 5;</code>
+     * <code>fixed32 userval = 5;</code>
      */
     private void setUserval(int value) {
       
@@ -262,7 +262,7 @@ public final class InterfaceUpload {
      *用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 5;</code>
+     * <code>fixed32 userval = 5;</code>
      */
     private void clearUserval() {
       
@@ -276,7 +276,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 6;</code>
+     * <code>bytes pathname = 6;</code>
      */
     public com.google.protobuf.ByteString getPathname() {
       return pathname_;
@@ -286,7 +286,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 6;</code>
+     * <code>bytes pathname = 6;</code>
      */
     private void setPathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -300,7 +300,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 6;</code>
+     * <code>bytes pathname = 6;</code>
      */
     private void clearPathname() {
       
@@ -314,7 +314,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 7;</code>
+     * <code>bytes userstr = 7;</code>
      */
     public com.google.protobuf.ByteString getUserstr() {
       return userstr_;
@@ -324,7 +324,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 7;</code>
+     * <code>bytes userstr = 7;</code>
      */
     private void setUserstr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -338,7 +338,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 7;</code>
+     * <code>bytes userstr = 7;</code>
      */
     private void clearUserstr() {
       
@@ -407,6 +407,19 @@ public final class InterfaceUpload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_TypeUploadPosCb parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_TypeUploadPosCb parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_TypeUploadPosCb parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -501,7 +514,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public int getMediaId() {
         return instance.getMediaId();
@@ -511,7 +524,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public Builder setMediaId(int value) {
         copyOnWrite();
@@ -523,7 +536,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public Builder clearMediaId() {
         copyOnWrite();
@@ -536,7 +549,7 @@ public final class InterfaceUpload {
        *参见 Pb_Upload_State				
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public int getStatus() {
         return instance.getStatus();
@@ -546,7 +559,7 @@ public final class InterfaceUpload {
        *参见 Pb_Upload_State				
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder setStatus(int value) {
         copyOnWrite();
@@ -558,7 +571,7 @@ public final class InterfaceUpload {
        *参见 Pb_Upload_State				
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder clearStatus() {
         copyOnWrite();
@@ -571,7 +584,7 @@ public final class InterfaceUpload {
        *当前位置，百分比
        * </pre>
        *
-       * <code>optional fixed32 per = 3;</code>
+       * <code>fixed32 per = 3;</code>
        */
       public int getPer() {
         return instance.getPer();
@@ -581,7 +594,7 @@ public final class InterfaceUpload {
        *当前位置，百分比
        * </pre>
        *
-       * <code>optional fixed32 per = 3;</code>
+       * <code>fixed32 per = 3;</code>
        */
       public Builder setPer(int value) {
         copyOnWrite();
@@ -593,7 +606,7 @@ public final class InterfaceUpload {
        *当前位置，百分比
        * </pre>
        *
-       * <code>optional fixed32 per = 3;</code>
+       * <code>fixed32 per = 3;</code>
        */
       public Builder clearPer() {
         copyOnWrite();
@@ -606,7 +619,7 @@ public final class InterfaceUpload {
        *参见 Pb_Upload_Flag
        * </pre>
        *
-       * <code>optional fixed32 uploadflag = 4;</code>
+       * <code>fixed32 uploadflag = 4;</code>
        */
       public int getUploadflag() {
         return instance.getUploadflag();
@@ -616,7 +629,7 @@ public final class InterfaceUpload {
        *参见 Pb_Upload_Flag
        * </pre>
        *
-       * <code>optional fixed32 uploadflag = 4;</code>
+       * <code>fixed32 uploadflag = 4;</code>
        */
       public Builder setUploadflag(int value) {
         copyOnWrite();
@@ -628,7 +641,7 @@ public final class InterfaceUpload {
        *参见 Pb_Upload_Flag
        * </pre>
        *
-       * <code>optional fixed32 uploadflag = 4;</code>
+       * <code>fixed32 uploadflag = 4;</code>
        */
       public Builder clearUploadflag() {
         copyOnWrite();
@@ -641,7 +654,7 @@ public final class InterfaceUpload {
        *用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 5;</code>
+       * <code>fixed32 userval = 5;</code>
        */
       public int getUserval() {
         return instance.getUserval();
@@ -651,7 +664,7 @@ public final class InterfaceUpload {
        *用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 5;</code>
+       * <code>fixed32 userval = 5;</code>
        */
       public Builder setUserval(int value) {
         copyOnWrite();
@@ -663,7 +676,7 @@ public final class InterfaceUpload {
        *用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 5;</code>
+       * <code>fixed32 userval = 5;</code>
        */
       public Builder clearUserval() {
         copyOnWrite();
@@ -676,7 +689,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 6;</code>
+       * <code>bytes pathname = 6;</code>
        */
       public com.google.protobuf.ByteString getPathname() {
         return instance.getPathname();
@@ -686,7 +699,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 6;</code>
+       * <code>bytes pathname = 6;</code>
        */
       public Builder setPathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -698,7 +711,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 6;</code>
+       * <code>bytes pathname = 6;</code>
        */
       public Builder clearPathname() {
         copyOnWrite();
@@ -711,7 +724,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 7;</code>
+       * <code>bytes userstr = 7;</code>
        */
       public com.google.protobuf.ByteString getUserstr() {
         return instance.getUserstr();
@@ -721,7 +734,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 7;</code>
+       * <code>bytes userstr = 7;</code>
        */
       public Builder setUserstr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -733,7 +746,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 7;</code>
+       * <code>bytes userstr = 7;</code>
        */
       public Builder clearUserstr() {
         copyOnWrite();
@@ -743,6 +756,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_TypeUploadPosCb)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -846,6 +860,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -890,7 +905,7 @@ public final class InterfaceUpload {
      *上传标志 参见 Pb_Upload_Flag
      * </pre>
      *
-     * <code>optional fixed32 uploadflag = 1;</code>
+     * <code>fixed32 uploadflag = 1;</code>
      */
     int getUploadflag();
 
@@ -899,7 +914,7 @@ public final class InterfaceUpload {
      *上传的目录ID 参见 Pb_Upload_DefaultDirId
      * </pre>
      *
-     * <code>optional fixed32 dirid = 2;</code>
+     * <code>fixed32 dirid = 2;</code>
      */
     int getDirid();
 
@@ -908,7 +923,7 @@ public final class InterfaceUpload {
      *文件属性 参见 Pb_MeetFileAttrib
      * </pre>
      *
-     * <code>optional fixed32 attrib = 3;</code>
+     * <code>fixed32 attrib = 3;</code>
      */
     int getAttrib();
 
@@ -917,7 +932,7 @@ public final class InterfaceUpload {
      *上传后的新名称
      * </pre>
      *
-     * <code>optional bytes newname = 4;</code>
+     * <code>bytes newname = 4;</code>
      */
     com.google.protobuf.ByteString getNewname();
 
@@ -926,7 +941,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 5;</code>
+     * <code>bytes pathname = 5;</code>
      */
     com.google.protobuf.ByteString getPathname();
 
@@ -935,7 +950,7 @@ public final class InterfaceUpload {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 6;</code>
+     * <code>fixed32 userval = 6;</code>
      */
     int getUserval();
 
@@ -944,7 +959,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 7;</code>
+     * <code>bytes userstr = 7;</code>
      */
     com.google.protobuf.ByteString getUserstr();
   }
@@ -975,7 +990,7 @@ public final class InterfaceUpload {
      *上传标志 参见 Pb_Upload_Flag
      * </pre>
      *
-     * <code>optional fixed32 uploadflag = 1;</code>
+     * <code>fixed32 uploadflag = 1;</code>
      */
     public int getUploadflag() {
       return uploadflag_;
@@ -985,7 +1000,7 @@ public final class InterfaceUpload {
      *上传标志 参见 Pb_Upload_Flag
      * </pre>
      *
-     * <code>optional fixed32 uploadflag = 1;</code>
+     * <code>fixed32 uploadflag = 1;</code>
      */
     private void setUploadflag(int value) {
       
@@ -996,7 +1011,7 @@ public final class InterfaceUpload {
      *上传标志 参见 Pb_Upload_Flag
      * </pre>
      *
-     * <code>optional fixed32 uploadflag = 1;</code>
+     * <code>fixed32 uploadflag = 1;</code>
      */
     private void clearUploadflag() {
       
@@ -1010,7 +1025,7 @@ public final class InterfaceUpload {
      *上传的目录ID 参见 Pb_Upload_DefaultDirId
      * </pre>
      *
-     * <code>optional fixed32 dirid = 2;</code>
+     * <code>fixed32 dirid = 2;</code>
      */
     public int getDirid() {
       return dirid_;
@@ -1020,7 +1035,7 @@ public final class InterfaceUpload {
      *上传的目录ID 参见 Pb_Upload_DefaultDirId
      * </pre>
      *
-     * <code>optional fixed32 dirid = 2;</code>
+     * <code>fixed32 dirid = 2;</code>
      */
     private void setDirid(int value) {
       
@@ -1031,7 +1046,7 @@ public final class InterfaceUpload {
      *上传的目录ID 参见 Pb_Upload_DefaultDirId
      * </pre>
      *
-     * <code>optional fixed32 dirid = 2;</code>
+     * <code>fixed32 dirid = 2;</code>
      */
     private void clearDirid() {
       
@@ -1045,7 +1060,7 @@ public final class InterfaceUpload {
      *文件属性 参见 Pb_MeetFileAttrib
      * </pre>
      *
-     * <code>optional fixed32 attrib = 3;</code>
+     * <code>fixed32 attrib = 3;</code>
      */
     public int getAttrib() {
       return attrib_;
@@ -1055,7 +1070,7 @@ public final class InterfaceUpload {
      *文件属性 参见 Pb_MeetFileAttrib
      * </pre>
      *
-     * <code>optional fixed32 attrib = 3;</code>
+     * <code>fixed32 attrib = 3;</code>
      */
     private void setAttrib(int value) {
       
@@ -1066,7 +1081,7 @@ public final class InterfaceUpload {
      *文件属性 参见 Pb_MeetFileAttrib
      * </pre>
      *
-     * <code>optional fixed32 attrib = 3;</code>
+     * <code>fixed32 attrib = 3;</code>
      */
     private void clearAttrib() {
       
@@ -1080,7 +1095,7 @@ public final class InterfaceUpload {
      *上传后的新名称
      * </pre>
      *
-     * <code>optional bytes newname = 4;</code>
+     * <code>bytes newname = 4;</code>
      */
     public com.google.protobuf.ByteString getNewname() {
       return newname_;
@@ -1090,7 +1105,7 @@ public final class InterfaceUpload {
      *上传后的新名称
      * </pre>
      *
-     * <code>optional bytes newname = 4;</code>
+     * <code>bytes newname = 4;</code>
      */
     private void setNewname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1104,7 +1119,7 @@ public final class InterfaceUpload {
      *上传后的新名称
      * </pre>
      *
-     * <code>optional bytes newname = 4;</code>
+     * <code>bytes newname = 4;</code>
      */
     private void clearNewname() {
       
@@ -1118,7 +1133,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 5;</code>
+     * <code>bytes pathname = 5;</code>
      */
     public com.google.protobuf.ByteString getPathname() {
       return pathname_;
@@ -1128,7 +1143,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 5;</code>
+     * <code>bytes pathname = 5;</code>
      */
     private void setPathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1142,7 +1157,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 5;</code>
+     * <code>bytes pathname = 5;</code>
      */
     private void clearPathname() {
       
@@ -1156,7 +1171,7 @@ public final class InterfaceUpload {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 6;</code>
+     * <code>fixed32 userval = 6;</code>
      */
     public int getUserval() {
       return userval_;
@@ -1166,7 +1181,7 @@ public final class InterfaceUpload {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 6;</code>
+     * <code>fixed32 userval = 6;</code>
      */
     private void setUserval(int value) {
       
@@ -1177,7 +1192,7 @@ public final class InterfaceUpload {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 6;</code>
+     * <code>fixed32 userval = 6;</code>
      */
     private void clearUserval() {
       
@@ -1191,7 +1206,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 7;</code>
+     * <code>bytes userstr = 7;</code>
      */
     public com.google.protobuf.ByteString getUserstr() {
       return userstr_;
@@ -1201,7 +1216,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 7;</code>
+     * <code>bytes userstr = 7;</code>
      */
     private void setUserstr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1215,7 +1230,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 7;</code>
+     * <code>bytes userstr = 7;</code>
      */
     private void clearUserstr() {
       
@@ -1284,6 +1299,19 @@ public final class InterfaceUpload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_AddUploadFile parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_AddUploadFile parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_AddUploadFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1378,7 +1406,7 @@ public final class InterfaceUpload {
        *上传标志 参见 Pb_Upload_Flag
        * </pre>
        *
-       * <code>optional fixed32 uploadflag = 1;</code>
+       * <code>fixed32 uploadflag = 1;</code>
        */
       public int getUploadflag() {
         return instance.getUploadflag();
@@ -1388,7 +1416,7 @@ public final class InterfaceUpload {
        *上传标志 参见 Pb_Upload_Flag
        * </pre>
        *
-       * <code>optional fixed32 uploadflag = 1;</code>
+       * <code>fixed32 uploadflag = 1;</code>
        */
       public Builder setUploadflag(int value) {
         copyOnWrite();
@@ -1400,7 +1428,7 @@ public final class InterfaceUpload {
        *上传标志 参见 Pb_Upload_Flag
        * </pre>
        *
-       * <code>optional fixed32 uploadflag = 1;</code>
+       * <code>fixed32 uploadflag = 1;</code>
        */
       public Builder clearUploadflag() {
         copyOnWrite();
@@ -1413,7 +1441,7 @@ public final class InterfaceUpload {
        *上传的目录ID 参见 Pb_Upload_DefaultDirId
        * </pre>
        *
-       * <code>optional fixed32 dirid = 2;</code>
+       * <code>fixed32 dirid = 2;</code>
        */
       public int getDirid() {
         return instance.getDirid();
@@ -1423,7 +1451,7 @@ public final class InterfaceUpload {
        *上传的目录ID 参见 Pb_Upload_DefaultDirId
        * </pre>
        *
-       * <code>optional fixed32 dirid = 2;</code>
+       * <code>fixed32 dirid = 2;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -1435,7 +1463,7 @@ public final class InterfaceUpload {
        *上传的目录ID 参见 Pb_Upload_DefaultDirId
        * </pre>
        *
-       * <code>optional fixed32 dirid = 2;</code>
+       * <code>fixed32 dirid = 2;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -1448,7 +1476,7 @@ public final class InterfaceUpload {
        *文件属性 参见 Pb_MeetFileAttrib
        * </pre>
        *
-       * <code>optional fixed32 attrib = 3;</code>
+       * <code>fixed32 attrib = 3;</code>
        */
       public int getAttrib() {
         return instance.getAttrib();
@@ -1458,7 +1486,7 @@ public final class InterfaceUpload {
        *文件属性 参见 Pb_MeetFileAttrib
        * </pre>
        *
-       * <code>optional fixed32 attrib = 3;</code>
+       * <code>fixed32 attrib = 3;</code>
        */
       public Builder setAttrib(int value) {
         copyOnWrite();
@@ -1470,7 +1498,7 @@ public final class InterfaceUpload {
        *文件属性 参见 Pb_MeetFileAttrib
        * </pre>
        *
-       * <code>optional fixed32 attrib = 3;</code>
+       * <code>fixed32 attrib = 3;</code>
        */
       public Builder clearAttrib() {
         copyOnWrite();
@@ -1483,7 +1511,7 @@ public final class InterfaceUpload {
        *上传后的新名称
        * </pre>
        *
-       * <code>optional bytes newname = 4;</code>
+       * <code>bytes newname = 4;</code>
        */
       public com.google.protobuf.ByteString getNewname() {
         return instance.getNewname();
@@ -1493,7 +1521,7 @@ public final class InterfaceUpload {
        *上传后的新名称
        * </pre>
        *
-       * <code>optional bytes newname = 4;</code>
+       * <code>bytes newname = 4;</code>
        */
       public Builder setNewname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1505,7 +1533,7 @@ public final class InterfaceUpload {
        *上传后的新名称
        * </pre>
        *
-       * <code>optional bytes newname = 4;</code>
+       * <code>bytes newname = 4;</code>
        */
       public Builder clearNewname() {
         copyOnWrite();
@@ -1518,7 +1546,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 5;</code>
+       * <code>bytes pathname = 5;</code>
        */
       public com.google.protobuf.ByteString getPathname() {
         return instance.getPathname();
@@ -1528,7 +1556,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 5;</code>
+       * <code>bytes pathname = 5;</code>
        */
       public Builder setPathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1540,7 +1568,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 5;</code>
+       * <code>bytes pathname = 5;</code>
        */
       public Builder clearPathname() {
         copyOnWrite();
@@ -1553,7 +1581,7 @@ public final class InterfaceUpload {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 6;</code>
+       * <code>fixed32 userval = 6;</code>
        */
       public int getUserval() {
         return instance.getUserval();
@@ -1563,7 +1591,7 @@ public final class InterfaceUpload {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 6;</code>
+       * <code>fixed32 userval = 6;</code>
        */
       public Builder setUserval(int value) {
         copyOnWrite();
@@ -1575,7 +1603,7 @@ public final class InterfaceUpload {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 6;</code>
+       * <code>fixed32 userval = 6;</code>
        */
       public Builder clearUserval() {
         copyOnWrite();
@@ -1588,7 +1616,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 7;</code>
+       * <code>bytes userstr = 7;</code>
        */
       public com.google.protobuf.ByteString getUserstr() {
         return instance.getUserstr();
@@ -1598,7 +1626,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 7;</code>
+       * <code>bytes userstr = 7;</code>
        */
       public Builder setUserstr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1610,7 +1638,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 7;</code>
+       * <code>bytes userstr = 7;</code>
        */
       public Builder clearUserstr() {
         copyOnWrite();
@@ -1620,6 +1648,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_AddUploadFile)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1723,6 +1752,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1767,7 +1797,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     int getMediaId();
 
@@ -1776,7 +1806,7 @@ public final class InterfaceUpload {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 2;</code>
+     * <code>fixed32 userval = 2;</code>
      */
     int getUserval();
 
@@ -1785,7 +1815,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 3;</code>
+     * <code>bytes pathname = 3;</code>
      */
     com.google.protobuf.ByteString getPathname();
 
@@ -1794,7 +1824,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 4;</code>
+     * <code>bytes userstr = 4;</code>
      */
     com.google.protobuf.ByteString getUserstr();
   }
@@ -1821,7 +1851,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     public int getMediaId() {
       return mediaId_;
@@ -1831,7 +1861,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     private void setMediaId(int value) {
       
@@ -1842,7 +1872,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     private void clearMediaId() {
       
@@ -1856,7 +1886,7 @@ public final class InterfaceUpload {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 2;</code>
+     * <code>fixed32 userval = 2;</code>
      */
     public int getUserval() {
       return userval_;
@@ -1866,7 +1896,7 @@ public final class InterfaceUpload {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 2;</code>
+     * <code>fixed32 userval = 2;</code>
      */
     private void setUserval(int value) {
       
@@ -1877,7 +1907,7 @@ public final class InterfaceUpload {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 2;</code>
+     * <code>fixed32 userval = 2;</code>
      */
     private void clearUserval() {
       
@@ -1891,7 +1921,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 3;</code>
+     * <code>bytes pathname = 3;</code>
      */
     public com.google.protobuf.ByteString getPathname() {
       return pathname_;
@@ -1901,7 +1931,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 3;</code>
+     * <code>bytes pathname = 3;</code>
      */
     private void setPathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1915,7 +1945,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 3;</code>
+     * <code>bytes pathname = 3;</code>
      */
     private void clearPathname() {
       
@@ -1929,7 +1959,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 4;</code>
+     * <code>bytes userstr = 4;</code>
      */
     public com.google.protobuf.ByteString getUserstr() {
       return userstr_;
@@ -1939,7 +1969,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 4;</code>
+     * <code>bytes userstr = 4;</code>
      */
     private void setUserstr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1953,7 +1983,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 4;</code>
+     * <code>bytes userstr = 4;</code>
      */
     private void clearUserstr() {
       
@@ -2001,6 +2031,19 @@ public final class InterfaceUpload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_TypeUploadReturn parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_TypeUploadReturn parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_TypeUploadReturn parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2092,7 +2135,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public int getMediaId() {
         return instance.getMediaId();
@@ -2102,7 +2145,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public Builder setMediaId(int value) {
         copyOnWrite();
@@ -2114,7 +2157,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public Builder clearMediaId() {
         copyOnWrite();
@@ -2127,7 +2170,7 @@ public final class InterfaceUpload {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 2;</code>
+       * <code>fixed32 userval = 2;</code>
        */
       public int getUserval() {
         return instance.getUserval();
@@ -2137,7 +2180,7 @@ public final class InterfaceUpload {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 2;</code>
+       * <code>fixed32 userval = 2;</code>
        */
       public Builder setUserval(int value) {
         copyOnWrite();
@@ -2149,7 +2192,7 @@ public final class InterfaceUpload {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 2;</code>
+       * <code>fixed32 userval = 2;</code>
        */
       public Builder clearUserval() {
         copyOnWrite();
@@ -2162,7 +2205,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 3;</code>
+       * <code>bytes pathname = 3;</code>
        */
       public com.google.protobuf.ByteString getPathname() {
         return instance.getPathname();
@@ -2172,7 +2215,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 3;</code>
+       * <code>bytes pathname = 3;</code>
        */
       public Builder setPathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2184,7 +2227,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 3;</code>
+       * <code>bytes pathname = 3;</code>
        */
       public Builder clearPathname() {
         copyOnWrite();
@@ -2197,7 +2240,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 4;</code>
+       * <code>bytes userstr = 4;</code>
        */
       public com.google.protobuf.ByteString getUserstr() {
         return instance.getUserstr();
@@ -2207,7 +2250,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 4;</code>
+       * <code>bytes userstr = 4;</code>
        */
       public Builder setUserstr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2219,7 +2262,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 4;</code>
+       * <code>bytes userstr = 4;</code>
        */
       public Builder clearUserstr() {
         copyOnWrite();
@@ -2229,6 +2272,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_TypeUploadReturn)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2311,6 +2355,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2355,7 +2400,7 @@ public final class InterfaceUpload {
      *文件全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 1;</code>
+     * <code>bytes pathname = 1;</code>
      */
     com.google.protobuf.ByteString getPathname();
 
@@ -2364,7 +2409,7 @@ public final class InterfaceUpload {
      *保存到那个目录,不存在会自动创建目录
      * </pre>
      *
-     * <code>optional bytes dirname = 2;</code>
+     * <code>bytes dirname = 2;</code>
      */
     com.google.protobuf.ByteString getDirname();
   }
@@ -2393,7 +2438,7 @@ public final class InterfaceUpload {
      *文件全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 1;</code>
+     * <code>bytes pathname = 1;</code>
      */
     public com.google.protobuf.ByteString getPathname() {
       return pathname_;
@@ -2403,7 +2448,7 @@ public final class InterfaceUpload {
      *文件全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 1;</code>
+     * <code>bytes pathname = 1;</code>
      */
     private void setPathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2417,7 +2462,7 @@ public final class InterfaceUpload {
      *文件全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 1;</code>
+     * <code>bytes pathname = 1;</code>
      */
     private void clearPathname() {
       
@@ -2431,7 +2476,7 @@ public final class InterfaceUpload {
      *保存到那个目录,不存在会自动创建目录
      * </pre>
      *
-     * <code>optional bytes dirname = 2;</code>
+     * <code>bytes dirname = 2;</code>
      */
     public com.google.protobuf.ByteString getDirname() {
       return dirname_;
@@ -2441,7 +2486,7 @@ public final class InterfaceUpload {
      *保存到那个目录,不存在会自动创建目录
      * </pre>
      *
-     * <code>optional bytes dirname = 2;</code>
+     * <code>bytes dirname = 2;</code>
      */
     private void setDirname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2455,7 +2500,7 @@ public final class InterfaceUpload {
      *保存到那个目录,不存在会自动创建目录
      * </pre>
      *
-     * <code>optional bytes dirname = 2;</code>
+     * <code>bytes dirname = 2;</code>
      */
     private void clearDirname() {
       
@@ -2489,6 +2534,19 @@ public final class InterfaceUpload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_AddCacheFile parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_AddCacheFile parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_AddCacheFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2582,7 +2640,7 @@ public final class InterfaceUpload {
        *文件全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 1;</code>
+       * <code>bytes pathname = 1;</code>
        */
       public com.google.protobuf.ByteString getPathname() {
         return instance.getPathname();
@@ -2592,7 +2650,7 @@ public final class InterfaceUpload {
        *文件全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 1;</code>
+       * <code>bytes pathname = 1;</code>
        */
       public Builder setPathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2604,7 +2662,7 @@ public final class InterfaceUpload {
        *文件全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 1;</code>
+       * <code>bytes pathname = 1;</code>
        */
       public Builder clearPathname() {
         copyOnWrite();
@@ -2617,7 +2675,7 @@ public final class InterfaceUpload {
        *保存到那个目录,不存在会自动创建目录
        * </pre>
        *
-       * <code>optional bytes dirname = 2;</code>
+       * <code>bytes dirname = 2;</code>
        */
       public com.google.protobuf.ByteString getDirname() {
         return instance.getDirname();
@@ -2627,7 +2685,7 @@ public final class InterfaceUpload {
        *保存到那个目录,不存在会自动创建目录
        * </pre>
        *
-       * <code>optional bytes dirname = 2;</code>
+       * <code>bytes dirname = 2;</code>
        */
       public Builder setDirname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2639,7 +2697,7 @@ public final class InterfaceUpload {
        *保存到那个目录,不存在会自动创建目录
        * </pre>
        *
-       * <code>optional bytes dirname = 2;</code>
+       * <code>bytes dirname = 2;</code>
        */
       public Builder clearDirname() {
         copyOnWrite();
@@ -2649,6 +2707,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_AddCacheFile)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2717,6 +2776,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2761,7 +2821,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
 
@@ -2770,7 +2830,7 @@ public final class InterfaceUpload {
      *上传到的目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 2;</code>
+     * <code>fixed32 dirid = 2;</code>
      */
     int getDirid();
 
@@ -2779,7 +2839,7 @@ public final class InterfaceUpload {
      *错误码
      * </pre>
      *
-     * <code>optional fixed32 errstatus = 3;</code>
+     * <code>fixed32 errstatus = 3;</code>
      */
     int getErrstatus();
 
@@ -2788,7 +2848,7 @@ public final class InterfaceUpload {
      *上传的百分比
      * </pre>
      *
-     * <code>optional fixed32 percent = 4;</code>
+     * <code>fixed32 percent = 4;</code>
      */
     int getPercent();
 
@@ -2796,7 +2856,7 @@ public final class InterfaceUpload {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 userval = 5;</code>
+     * <code>fixed32 userval = 5;</code>
      */
     int getUserval();
 
@@ -2805,7 +2865,7 @@ public final class InterfaceUpload {
      *上传后的新名称
      * </pre>
      *
-     * <code>optional bytes newname = 6;</code>
+     * <code>bytes newname = 6;</code>
      */
     com.google.protobuf.ByteString getNewname();
 
@@ -2814,7 +2874,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 7;</code>
+     * <code>bytes pathname = 7;</code>
      */
     com.google.protobuf.ByteString getPathname();
 
@@ -2823,7 +2883,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 8;</code>
+     * <code>bytes userstr = 8;</code>
      */
     com.google.protobuf.ByteString getUserstr();
   }
@@ -2851,7 +2911,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -2861,7 +2921,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
@@ -2872,7 +2932,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -2886,7 +2946,7 @@ public final class InterfaceUpload {
      *上传到的目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 2;</code>
+     * <code>fixed32 dirid = 2;</code>
      */
     public int getDirid() {
       return dirid_;
@@ -2896,7 +2956,7 @@ public final class InterfaceUpload {
      *上传到的目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 2;</code>
+     * <code>fixed32 dirid = 2;</code>
      */
     private void setDirid(int value) {
       
@@ -2907,7 +2967,7 @@ public final class InterfaceUpload {
      *上传到的目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 2;</code>
+     * <code>fixed32 dirid = 2;</code>
      */
     private void clearDirid() {
       
@@ -2921,7 +2981,7 @@ public final class InterfaceUpload {
      *错误码
      * </pre>
      *
-     * <code>optional fixed32 errstatus = 3;</code>
+     * <code>fixed32 errstatus = 3;</code>
      */
     public int getErrstatus() {
       return errstatus_;
@@ -2931,7 +2991,7 @@ public final class InterfaceUpload {
      *错误码
      * </pre>
      *
-     * <code>optional fixed32 errstatus = 3;</code>
+     * <code>fixed32 errstatus = 3;</code>
      */
     private void setErrstatus(int value) {
       
@@ -2942,7 +3002,7 @@ public final class InterfaceUpload {
      *错误码
      * </pre>
      *
-     * <code>optional fixed32 errstatus = 3;</code>
+     * <code>fixed32 errstatus = 3;</code>
      */
     private void clearErrstatus() {
       
@@ -2956,7 +3016,7 @@ public final class InterfaceUpload {
      *上传的百分比
      * </pre>
      *
-     * <code>optional fixed32 percent = 4;</code>
+     * <code>fixed32 percent = 4;</code>
      */
     public int getPercent() {
       return percent_;
@@ -2966,7 +3026,7 @@ public final class InterfaceUpload {
      *上传的百分比
      * </pre>
      *
-     * <code>optional fixed32 percent = 4;</code>
+     * <code>fixed32 percent = 4;</code>
      */
     private void setPercent(int value) {
       
@@ -2977,7 +3037,7 @@ public final class InterfaceUpload {
      *上传的百分比
      * </pre>
      *
-     * <code>optional fixed32 percent = 4;</code>
+     * <code>fixed32 percent = 4;</code>
      */
     private void clearPercent() {
       
@@ -2990,7 +3050,7 @@ public final class InterfaceUpload {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 userval = 5;</code>
+     * <code>fixed32 userval = 5;</code>
      */
     public int getUserval() {
       return userval_;
@@ -2999,7 +3059,7 @@ public final class InterfaceUpload {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 userval = 5;</code>
+     * <code>fixed32 userval = 5;</code>
      */
     private void setUserval(int value) {
       
@@ -3009,7 +3069,7 @@ public final class InterfaceUpload {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 userval = 5;</code>
+     * <code>fixed32 userval = 5;</code>
      */
     private void clearUserval() {
       
@@ -3023,7 +3083,7 @@ public final class InterfaceUpload {
      *上传后的新名称
      * </pre>
      *
-     * <code>optional bytes newname = 6;</code>
+     * <code>bytes newname = 6;</code>
      */
     public com.google.protobuf.ByteString getNewname() {
       return newname_;
@@ -3033,7 +3093,7 @@ public final class InterfaceUpload {
      *上传后的新名称
      * </pre>
      *
-     * <code>optional bytes newname = 6;</code>
+     * <code>bytes newname = 6;</code>
      */
     private void setNewname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3047,7 +3107,7 @@ public final class InterfaceUpload {
      *上传后的新名称
      * </pre>
      *
-     * <code>optional bytes newname = 6;</code>
+     * <code>bytes newname = 6;</code>
      */
     private void clearNewname() {
       
@@ -3061,7 +3121,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 7;</code>
+     * <code>bytes pathname = 7;</code>
      */
     public com.google.protobuf.ByteString getPathname() {
       return pathname_;
@@ -3071,7 +3131,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 7;</code>
+     * <code>bytes pathname = 7;</code>
      */
     private void setPathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3085,7 +3145,7 @@ public final class InterfaceUpload {
      *全路径名
      * </pre>
      *
-     * <code>optional bytes pathname = 7;</code>
+     * <code>bytes pathname = 7;</code>
      */
     private void clearPathname() {
       
@@ -3099,7 +3159,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 8;</code>
+     * <code>bytes userstr = 8;</code>
      */
     public com.google.protobuf.ByteString getUserstr() {
       return userstr_;
@@ -3109,7 +3169,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 8;</code>
+     * <code>bytes userstr = 8;</code>
      */
     private void setUserstr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3123,7 +3183,7 @@ public final class InterfaceUpload {
      *用户传入的自定义字串(原编码格式返回)
      * </pre>
      *
-     * <code>optional bytes userstr = 8;</code>
+     * <code>bytes userstr = 8;</code>
      */
     private void clearUserstr() {
       
@@ -3199,6 +3259,19 @@ public final class InterfaceUpload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Item_UploadFileDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Item_UploadFileDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Item_UploadFileDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3290,7 +3363,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -3300,7 +3373,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -3312,7 +3385,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -3325,7 +3398,7 @@ public final class InterfaceUpload {
        *上传到的目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 2;</code>
+       * <code>fixed32 dirid = 2;</code>
        */
       public int getDirid() {
         return instance.getDirid();
@@ -3335,7 +3408,7 @@ public final class InterfaceUpload {
        *上传到的目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 2;</code>
+       * <code>fixed32 dirid = 2;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -3347,7 +3420,7 @@ public final class InterfaceUpload {
        *上传到的目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 2;</code>
+       * <code>fixed32 dirid = 2;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -3360,7 +3433,7 @@ public final class InterfaceUpload {
        *错误码
        * </pre>
        *
-       * <code>optional fixed32 errstatus = 3;</code>
+       * <code>fixed32 errstatus = 3;</code>
        */
       public int getErrstatus() {
         return instance.getErrstatus();
@@ -3370,7 +3443,7 @@ public final class InterfaceUpload {
        *错误码
        * </pre>
        *
-       * <code>optional fixed32 errstatus = 3;</code>
+       * <code>fixed32 errstatus = 3;</code>
        */
       public Builder setErrstatus(int value) {
         copyOnWrite();
@@ -3382,7 +3455,7 @@ public final class InterfaceUpload {
        *错误码
        * </pre>
        *
-       * <code>optional fixed32 errstatus = 3;</code>
+       * <code>fixed32 errstatus = 3;</code>
        */
       public Builder clearErrstatus() {
         copyOnWrite();
@@ -3395,7 +3468,7 @@ public final class InterfaceUpload {
        *上传的百分比
        * </pre>
        *
-       * <code>optional fixed32 percent = 4;</code>
+       * <code>fixed32 percent = 4;</code>
        */
       public int getPercent() {
         return instance.getPercent();
@@ -3405,7 +3478,7 @@ public final class InterfaceUpload {
        *上传的百分比
        * </pre>
        *
-       * <code>optional fixed32 percent = 4;</code>
+       * <code>fixed32 percent = 4;</code>
        */
       public Builder setPercent(int value) {
         copyOnWrite();
@@ -3417,7 +3490,7 @@ public final class InterfaceUpload {
        *上传的百分比
        * </pre>
        *
-       * <code>optional fixed32 percent = 4;</code>
+       * <code>fixed32 percent = 4;</code>
        */
       public Builder clearPercent() {
         copyOnWrite();
@@ -3429,7 +3502,7 @@ public final class InterfaceUpload {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 userval = 5;</code>
+       * <code>fixed32 userval = 5;</code>
        */
       public int getUserval() {
         return instance.getUserval();
@@ -3438,7 +3511,7 @@ public final class InterfaceUpload {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 userval = 5;</code>
+       * <code>fixed32 userval = 5;</code>
        */
       public Builder setUserval(int value) {
         copyOnWrite();
@@ -3449,7 +3522,7 @@ public final class InterfaceUpload {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 userval = 5;</code>
+       * <code>fixed32 userval = 5;</code>
        */
       public Builder clearUserval() {
         copyOnWrite();
@@ -3462,7 +3535,7 @@ public final class InterfaceUpload {
        *上传后的新名称
        * </pre>
        *
-       * <code>optional bytes newname = 6;</code>
+       * <code>bytes newname = 6;</code>
        */
       public com.google.protobuf.ByteString getNewname() {
         return instance.getNewname();
@@ -3472,7 +3545,7 @@ public final class InterfaceUpload {
        *上传后的新名称
        * </pre>
        *
-       * <code>optional bytes newname = 6;</code>
+       * <code>bytes newname = 6;</code>
        */
       public Builder setNewname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -3484,7 +3557,7 @@ public final class InterfaceUpload {
        *上传后的新名称
        * </pre>
        *
-       * <code>optional bytes newname = 6;</code>
+       * <code>bytes newname = 6;</code>
        */
       public Builder clearNewname() {
         copyOnWrite();
@@ -3497,7 +3570,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 7;</code>
+       * <code>bytes pathname = 7;</code>
        */
       public com.google.protobuf.ByteString getPathname() {
         return instance.getPathname();
@@ -3507,7 +3580,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 7;</code>
+       * <code>bytes pathname = 7;</code>
        */
       public Builder setPathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -3519,7 +3592,7 @@ public final class InterfaceUpload {
        *全路径名
        * </pre>
        *
-       * <code>optional bytes pathname = 7;</code>
+       * <code>bytes pathname = 7;</code>
        */
       public Builder clearPathname() {
         copyOnWrite();
@@ -3532,7 +3605,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 8;</code>
+       * <code>bytes userstr = 8;</code>
        */
       public com.google.protobuf.ByteString getUserstr() {
         return instance.getUserstr();
@@ -3542,7 +3615,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 8;</code>
+       * <code>bytes userstr = 8;</code>
        */
       public Builder setUserstr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -3554,7 +3627,7 @@ public final class InterfaceUpload {
        *用户传入的自定义字串(原编码格式返回)
        * </pre>
        *
-       * <code>optional bytes userstr = 8;</code>
+       * <code>bytes userstr = 8;</code>
        */
       public Builder clearUserstr() {
         copyOnWrite();
@@ -3564,6 +3637,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_UploadFileDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3674,6 +3748,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3886,6 +3961,19 @@ public final class InterfaceUpload {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_UploadFileDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_UploadFileDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_UploadFileDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4073,6 +4161,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_UploadFileDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4138,6 +4227,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4182,7 +4272,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
   }
@@ -4210,7 +4300,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -4220,7 +4310,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
@@ -4231,7 +4321,7 @@ public final class InterfaceUpload {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -4258,6 +4348,19 @@ public final class InterfaceUpload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_DelUploadFile parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_DelUploadFile parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_Type_DelUploadFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4352,7 +4455,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -4362,7 +4465,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -4374,7 +4477,7 @@ public final class InterfaceUpload {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -4384,6 +4487,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DelUploadFile)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4445,6 +4549,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4489,7 +4594,7 @@ public final class InterfaceUpload {
      *文件全路径名
      * </pre>
      *
-     * <code>optional bytes filepathname = 1;</code>
+     * <code>bytes filepathname = 1;</code>
      */
     com.google.protobuf.ByteString getFilepathname();
   }
@@ -4518,7 +4623,7 @@ public final class InterfaceUpload {
      *文件全路径名
      * </pre>
      *
-     * <code>optional bytes filepathname = 1;</code>
+     * <code>bytes filepathname = 1;</code>
      */
     public com.google.protobuf.ByteString getFilepathname() {
       return filepathname_;
@@ -4528,7 +4633,7 @@ public final class InterfaceUpload {
      *文件全路径名
      * </pre>
      *
-     * <code>optional bytes filepathname = 1;</code>
+     * <code>bytes filepathname = 1;</code>
      */
     private void setFilepathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4542,7 +4647,7 @@ public final class InterfaceUpload {
      *文件全路径名
      * </pre>
      *
-     * <code>optional bytes filepathname = 1;</code>
+     * <code>bytes filepathname = 1;</code>
      */
     private void clearFilepathname() {
       
@@ -4569,6 +4674,19 @@ public final class InterfaceUpload {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_GetFileCodecDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_GetFileCodecDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_GetFileCodecDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4663,7 +4781,7 @@ public final class InterfaceUpload {
        *文件全路径名
        * </pre>
        *
-       * <code>optional bytes filepathname = 1;</code>
+       * <code>bytes filepathname = 1;</code>
        */
       public com.google.protobuf.ByteString getFilepathname() {
         return instance.getFilepathname();
@@ -4673,7 +4791,7 @@ public final class InterfaceUpload {
        *文件全路径名
        * </pre>
        *
-       * <code>optional bytes filepathname = 1;</code>
+       * <code>bytes filepathname = 1;</code>
        */
       public Builder setFilepathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -4685,7 +4803,7 @@ public final class InterfaceUpload {
        *文件全路径名
        * </pre>
        *
-       * <code>optional bytes filepathname = 1;</code>
+       * <code>bytes filepathname = 1;</code>
        */
       public Builder clearFilepathname() {
         copyOnWrite();
@@ -4695,6 +4813,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_GetFileCodecDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4756,6 +4875,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4800,7 +4920,7 @@ public final class InterfaceUpload {
      *----out
      * </pre>
      *
-     * <code>optional fixed32 mSec = 1;</code>
+     * <code>fixed32 mSec = 1;</code>
      */
     int getMSec();
 
@@ -4809,7 +4929,7 @@ public final class InterfaceUpload {
      *文件的码流-比特率 单位： kbps 
      * </pre>
      *
-     * <code>optional fixed64 bitrate = 2;</code>
+     * <code>fixed64 bitrate = 2;</code>
      */
     long getBitrate();
 
@@ -4818,7 +4938,7 @@ public final class InterfaceUpload {
      *audio
      * </pre>
      *
-     * <code>optional fixed32 audiocodecid = 3;</code>
+     * <code>fixed32 audiocodecid = 3;</code>
      */
     int getAudiocodecid();
 
@@ -4827,17 +4947,17 @@ public final class InterfaceUpload {
      *音频编码器名称
      * </pre>
      *
-     * <code>optional bytes audiocodecname = 4;</code>
+     * <code>bytes audiocodecname = 4;</code>
      */
     com.google.protobuf.ByteString getAudiocodecname();
 
     /**
-     * <code>optional fixed32 samplerate = 5;</code>
+     * <code>fixed32 samplerate = 5;</code>
      */
     int getSamplerate();
 
     /**
-     * <code>optional fixed32 channel = 6;</code>
+     * <code>fixed32 channel = 6;</code>
      */
     int getChannel();
 
@@ -4846,7 +4966,7 @@ public final class InterfaceUpload {
      *video
      * </pre>
      *
-     * <code>optional fixed32 videocodecid = 7;</code>
+     * <code>fixed32 videocodecid = 7;</code>
      */
     int getVideocodecid();
 
@@ -4855,7 +4975,7 @@ public final class InterfaceUpload {
      *视频频编码器名称
      * </pre>
      *
-     * <code>optional bytes videocodecname = 8;</code>
+     * <code>bytes videocodecname = 8;</code>
      */
     com.google.protobuf.ByteString getVideocodecname();
 
@@ -4864,7 +4984,7 @@ public final class InterfaceUpload {
      *视频帧率 fps
      * </pre>
      *
-     * <code>optional float framepersecond = 9;</code>
+     * <code>float framepersecond = 9;</code>
      */
     float getFramepersecond();
 
@@ -4873,7 +4993,7 @@ public final class InterfaceUpload {
      *视频图像的原始宽度
      * </pre>
      *
-     * <code>optional fixed32 width = 10;</code>
+     * <code>fixed32 width = 10;</code>
      */
     int getWidth();
 
@@ -4882,7 +5002,7 @@ public final class InterfaceUpload {
      *视频图像的原始高度
      * </pre>
      *
-     * <code>optional fixed32 height = 11;</code>
+     * <code>fixed32 height = 11;</code>
      */
     int getHeight();
   }
@@ -4912,7 +5032,7 @@ public final class InterfaceUpload {
      *----out
      * </pre>
      *
-     * <code>optional fixed32 mSec = 1;</code>
+     * <code>fixed32 mSec = 1;</code>
      */
     public int getMSec() {
       return mSec_;
@@ -4922,7 +5042,7 @@ public final class InterfaceUpload {
      *----out
      * </pre>
      *
-     * <code>optional fixed32 mSec = 1;</code>
+     * <code>fixed32 mSec = 1;</code>
      */
     private void setMSec(int value) {
       
@@ -4933,7 +5053,7 @@ public final class InterfaceUpload {
      *----out
      * </pre>
      *
-     * <code>optional fixed32 mSec = 1;</code>
+     * <code>fixed32 mSec = 1;</code>
      */
     private void clearMSec() {
       
@@ -4947,7 +5067,7 @@ public final class InterfaceUpload {
      *文件的码流-比特率 单位： kbps 
      * </pre>
      *
-     * <code>optional fixed64 bitrate = 2;</code>
+     * <code>fixed64 bitrate = 2;</code>
      */
     public long getBitrate() {
       return bitrate_;
@@ -4957,7 +5077,7 @@ public final class InterfaceUpload {
      *文件的码流-比特率 单位： kbps 
      * </pre>
      *
-     * <code>optional fixed64 bitrate = 2;</code>
+     * <code>fixed64 bitrate = 2;</code>
      */
     private void setBitrate(long value) {
       
@@ -4968,7 +5088,7 @@ public final class InterfaceUpload {
      *文件的码流-比特率 单位： kbps 
      * </pre>
      *
-     * <code>optional fixed64 bitrate = 2;</code>
+     * <code>fixed64 bitrate = 2;</code>
      */
     private void clearBitrate() {
       
@@ -4982,7 +5102,7 @@ public final class InterfaceUpload {
      *audio
      * </pre>
      *
-     * <code>optional fixed32 audiocodecid = 3;</code>
+     * <code>fixed32 audiocodecid = 3;</code>
      */
     public int getAudiocodecid() {
       return audiocodecid_;
@@ -4992,7 +5112,7 @@ public final class InterfaceUpload {
      *audio
      * </pre>
      *
-     * <code>optional fixed32 audiocodecid = 3;</code>
+     * <code>fixed32 audiocodecid = 3;</code>
      */
     private void setAudiocodecid(int value) {
       
@@ -5003,7 +5123,7 @@ public final class InterfaceUpload {
      *audio
      * </pre>
      *
-     * <code>optional fixed32 audiocodecid = 3;</code>
+     * <code>fixed32 audiocodecid = 3;</code>
      */
     private void clearAudiocodecid() {
       
@@ -5017,7 +5137,7 @@ public final class InterfaceUpload {
      *音频编码器名称
      * </pre>
      *
-     * <code>optional bytes audiocodecname = 4;</code>
+     * <code>bytes audiocodecname = 4;</code>
      */
     public com.google.protobuf.ByteString getAudiocodecname() {
       return audiocodecname_;
@@ -5027,7 +5147,7 @@ public final class InterfaceUpload {
      *音频编码器名称
      * </pre>
      *
-     * <code>optional bytes audiocodecname = 4;</code>
+     * <code>bytes audiocodecname = 4;</code>
      */
     private void setAudiocodecname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5041,7 +5161,7 @@ public final class InterfaceUpload {
      *音频编码器名称
      * </pre>
      *
-     * <code>optional bytes audiocodecname = 4;</code>
+     * <code>bytes audiocodecname = 4;</code>
      */
     private void clearAudiocodecname() {
       
@@ -5051,20 +5171,20 @@ public final class InterfaceUpload {
     public static final int SAMPLERATE_FIELD_NUMBER = 5;
     private int samplerate_;
     /**
-     * <code>optional fixed32 samplerate = 5;</code>
+     * <code>fixed32 samplerate = 5;</code>
      */
     public int getSamplerate() {
       return samplerate_;
     }
     /**
-     * <code>optional fixed32 samplerate = 5;</code>
+     * <code>fixed32 samplerate = 5;</code>
      */
     private void setSamplerate(int value) {
       
       samplerate_ = value;
     }
     /**
-     * <code>optional fixed32 samplerate = 5;</code>
+     * <code>fixed32 samplerate = 5;</code>
      */
     private void clearSamplerate() {
       
@@ -5074,20 +5194,20 @@ public final class InterfaceUpload {
     public static final int CHANNEL_FIELD_NUMBER = 6;
     private int channel_;
     /**
-     * <code>optional fixed32 channel = 6;</code>
+     * <code>fixed32 channel = 6;</code>
      */
     public int getChannel() {
       return channel_;
     }
     /**
-     * <code>optional fixed32 channel = 6;</code>
+     * <code>fixed32 channel = 6;</code>
      */
     private void setChannel(int value) {
       
       channel_ = value;
     }
     /**
-     * <code>optional fixed32 channel = 6;</code>
+     * <code>fixed32 channel = 6;</code>
      */
     private void clearChannel() {
       
@@ -5101,7 +5221,7 @@ public final class InterfaceUpload {
      *video
      * </pre>
      *
-     * <code>optional fixed32 videocodecid = 7;</code>
+     * <code>fixed32 videocodecid = 7;</code>
      */
     public int getVideocodecid() {
       return videocodecid_;
@@ -5111,7 +5231,7 @@ public final class InterfaceUpload {
      *video
      * </pre>
      *
-     * <code>optional fixed32 videocodecid = 7;</code>
+     * <code>fixed32 videocodecid = 7;</code>
      */
     private void setVideocodecid(int value) {
       
@@ -5122,7 +5242,7 @@ public final class InterfaceUpload {
      *video
      * </pre>
      *
-     * <code>optional fixed32 videocodecid = 7;</code>
+     * <code>fixed32 videocodecid = 7;</code>
      */
     private void clearVideocodecid() {
       
@@ -5136,7 +5256,7 @@ public final class InterfaceUpload {
      *视频频编码器名称
      * </pre>
      *
-     * <code>optional bytes videocodecname = 8;</code>
+     * <code>bytes videocodecname = 8;</code>
      */
     public com.google.protobuf.ByteString getVideocodecname() {
       return videocodecname_;
@@ -5146,7 +5266,7 @@ public final class InterfaceUpload {
      *视频频编码器名称
      * </pre>
      *
-     * <code>optional bytes videocodecname = 8;</code>
+     * <code>bytes videocodecname = 8;</code>
      */
     private void setVideocodecname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5160,7 +5280,7 @@ public final class InterfaceUpload {
      *视频频编码器名称
      * </pre>
      *
-     * <code>optional bytes videocodecname = 8;</code>
+     * <code>bytes videocodecname = 8;</code>
      */
     private void clearVideocodecname() {
       
@@ -5174,7 +5294,7 @@ public final class InterfaceUpload {
      *视频帧率 fps
      * </pre>
      *
-     * <code>optional float framepersecond = 9;</code>
+     * <code>float framepersecond = 9;</code>
      */
     public float getFramepersecond() {
       return framepersecond_;
@@ -5184,7 +5304,7 @@ public final class InterfaceUpload {
      *视频帧率 fps
      * </pre>
      *
-     * <code>optional float framepersecond = 9;</code>
+     * <code>float framepersecond = 9;</code>
      */
     private void setFramepersecond(float value) {
       
@@ -5195,7 +5315,7 @@ public final class InterfaceUpload {
      *视频帧率 fps
      * </pre>
      *
-     * <code>optional float framepersecond = 9;</code>
+     * <code>float framepersecond = 9;</code>
      */
     private void clearFramepersecond() {
       
@@ -5209,7 +5329,7 @@ public final class InterfaceUpload {
      *视频图像的原始宽度
      * </pre>
      *
-     * <code>optional fixed32 width = 10;</code>
+     * <code>fixed32 width = 10;</code>
      */
     public int getWidth() {
       return width_;
@@ -5219,7 +5339,7 @@ public final class InterfaceUpload {
      *视频图像的原始宽度
      * </pre>
      *
-     * <code>optional fixed32 width = 10;</code>
+     * <code>fixed32 width = 10;</code>
      */
     private void setWidth(int value) {
       
@@ -5230,7 +5350,7 @@ public final class InterfaceUpload {
      *视频图像的原始宽度
      * </pre>
      *
-     * <code>optional fixed32 width = 10;</code>
+     * <code>fixed32 width = 10;</code>
      */
     private void clearWidth() {
       
@@ -5244,7 +5364,7 @@ public final class InterfaceUpload {
      *视频图像的原始高度
      * </pre>
      *
-     * <code>optional fixed32 height = 11;</code>
+     * <code>fixed32 height = 11;</code>
      */
     public int getHeight() {
       return height_;
@@ -5254,7 +5374,7 @@ public final class InterfaceUpload {
      *视频图像的原始高度
      * </pre>
      *
-     * <code>optional fixed32 height = 11;</code>
+     * <code>fixed32 height = 11;</code>
      */
     private void setHeight(int value) {
       
@@ -5265,7 +5385,7 @@ public final class InterfaceUpload {
      *视频图像的原始高度
      * </pre>
      *
-     * <code>optional fixed32 height = 11;</code>
+     * <code>fixed32 height = 11;</code>
      */
     private void clearHeight() {
       
@@ -5363,6 +5483,19 @@ public final class InterfaceUpload {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_FileCodecDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_FileCodecDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceUpload.pbui_FileCodecDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -5456,7 +5589,7 @@ public final class InterfaceUpload {
        *----out
        * </pre>
        *
-       * <code>optional fixed32 mSec = 1;</code>
+       * <code>fixed32 mSec = 1;</code>
        */
       public int getMSec() {
         return instance.getMSec();
@@ -5466,7 +5599,7 @@ public final class InterfaceUpload {
        *----out
        * </pre>
        *
-       * <code>optional fixed32 mSec = 1;</code>
+       * <code>fixed32 mSec = 1;</code>
        */
       public Builder setMSec(int value) {
         copyOnWrite();
@@ -5478,7 +5611,7 @@ public final class InterfaceUpload {
        *----out
        * </pre>
        *
-       * <code>optional fixed32 mSec = 1;</code>
+       * <code>fixed32 mSec = 1;</code>
        */
       public Builder clearMSec() {
         copyOnWrite();
@@ -5491,7 +5624,7 @@ public final class InterfaceUpload {
        *文件的码流-比特率 单位： kbps 
        * </pre>
        *
-       * <code>optional fixed64 bitrate = 2;</code>
+       * <code>fixed64 bitrate = 2;</code>
        */
       public long getBitrate() {
         return instance.getBitrate();
@@ -5501,7 +5634,7 @@ public final class InterfaceUpload {
        *文件的码流-比特率 单位： kbps 
        * </pre>
        *
-       * <code>optional fixed64 bitrate = 2;</code>
+       * <code>fixed64 bitrate = 2;</code>
        */
       public Builder setBitrate(long value) {
         copyOnWrite();
@@ -5513,7 +5646,7 @@ public final class InterfaceUpload {
        *文件的码流-比特率 单位： kbps 
        * </pre>
        *
-       * <code>optional fixed64 bitrate = 2;</code>
+       * <code>fixed64 bitrate = 2;</code>
        */
       public Builder clearBitrate() {
         copyOnWrite();
@@ -5526,7 +5659,7 @@ public final class InterfaceUpload {
        *audio
        * </pre>
        *
-       * <code>optional fixed32 audiocodecid = 3;</code>
+       * <code>fixed32 audiocodecid = 3;</code>
        */
       public int getAudiocodecid() {
         return instance.getAudiocodecid();
@@ -5536,7 +5669,7 @@ public final class InterfaceUpload {
        *audio
        * </pre>
        *
-       * <code>optional fixed32 audiocodecid = 3;</code>
+       * <code>fixed32 audiocodecid = 3;</code>
        */
       public Builder setAudiocodecid(int value) {
         copyOnWrite();
@@ -5548,7 +5681,7 @@ public final class InterfaceUpload {
        *audio
        * </pre>
        *
-       * <code>optional fixed32 audiocodecid = 3;</code>
+       * <code>fixed32 audiocodecid = 3;</code>
        */
       public Builder clearAudiocodecid() {
         copyOnWrite();
@@ -5561,7 +5694,7 @@ public final class InterfaceUpload {
        *音频编码器名称
        * </pre>
        *
-       * <code>optional bytes audiocodecname = 4;</code>
+       * <code>bytes audiocodecname = 4;</code>
        */
       public com.google.protobuf.ByteString getAudiocodecname() {
         return instance.getAudiocodecname();
@@ -5571,7 +5704,7 @@ public final class InterfaceUpload {
        *音频编码器名称
        * </pre>
        *
-       * <code>optional bytes audiocodecname = 4;</code>
+       * <code>bytes audiocodecname = 4;</code>
        */
       public Builder setAudiocodecname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -5583,7 +5716,7 @@ public final class InterfaceUpload {
        *音频编码器名称
        * </pre>
        *
-       * <code>optional bytes audiocodecname = 4;</code>
+       * <code>bytes audiocodecname = 4;</code>
        */
       public Builder clearAudiocodecname() {
         copyOnWrite();
@@ -5592,13 +5725,13 @@ public final class InterfaceUpload {
       }
 
       /**
-       * <code>optional fixed32 samplerate = 5;</code>
+       * <code>fixed32 samplerate = 5;</code>
        */
       public int getSamplerate() {
         return instance.getSamplerate();
       }
       /**
-       * <code>optional fixed32 samplerate = 5;</code>
+       * <code>fixed32 samplerate = 5;</code>
        */
       public Builder setSamplerate(int value) {
         copyOnWrite();
@@ -5606,7 +5739,7 @@ public final class InterfaceUpload {
         return this;
       }
       /**
-       * <code>optional fixed32 samplerate = 5;</code>
+       * <code>fixed32 samplerate = 5;</code>
        */
       public Builder clearSamplerate() {
         copyOnWrite();
@@ -5615,13 +5748,13 @@ public final class InterfaceUpload {
       }
 
       /**
-       * <code>optional fixed32 channel = 6;</code>
+       * <code>fixed32 channel = 6;</code>
        */
       public int getChannel() {
         return instance.getChannel();
       }
       /**
-       * <code>optional fixed32 channel = 6;</code>
+       * <code>fixed32 channel = 6;</code>
        */
       public Builder setChannel(int value) {
         copyOnWrite();
@@ -5629,7 +5762,7 @@ public final class InterfaceUpload {
         return this;
       }
       /**
-       * <code>optional fixed32 channel = 6;</code>
+       * <code>fixed32 channel = 6;</code>
        */
       public Builder clearChannel() {
         copyOnWrite();
@@ -5642,7 +5775,7 @@ public final class InterfaceUpload {
        *video
        * </pre>
        *
-       * <code>optional fixed32 videocodecid = 7;</code>
+       * <code>fixed32 videocodecid = 7;</code>
        */
       public int getVideocodecid() {
         return instance.getVideocodecid();
@@ -5652,7 +5785,7 @@ public final class InterfaceUpload {
        *video
        * </pre>
        *
-       * <code>optional fixed32 videocodecid = 7;</code>
+       * <code>fixed32 videocodecid = 7;</code>
        */
       public Builder setVideocodecid(int value) {
         copyOnWrite();
@@ -5664,7 +5797,7 @@ public final class InterfaceUpload {
        *video
        * </pre>
        *
-       * <code>optional fixed32 videocodecid = 7;</code>
+       * <code>fixed32 videocodecid = 7;</code>
        */
       public Builder clearVideocodecid() {
         copyOnWrite();
@@ -5677,7 +5810,7 @@ public final class InterfaceUpload {
        *视频频编码器名称
        * </pre>
        *
-       * <code>optional bytes videocodecname = 8;</code>
+       * <code>bytes videocodecname = 8;</code>
        */
       public com.google.protobuf.ByteString getVideocodecname() {
         return instance.getVideocodecname();
@@ -5687,7 +5820,7 @@ public final class InterfaceUpload {
        *视频频编码器名称
        * </pre>
        *
-       * <code>optional bytes videocodecname = 8;</code>
+       * <code>bytes videocodecname = 8;</code>
        */
       public Builder setVideocodecname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -5699,7 +5832,7 @@ public final class InterfaceUpload {
        *视频频编码器名称
        * </pre>
        *
-       * <code>optional bytes videocodecname = 8;</code>
+       * <code>bytes videocodecname = 8;</code>
        */
       public Builder clearVideocodecname() {
         copyOnWrite();
@@ -5712,7 +5845,7 @@ public final class InterfaceUpload {
        *视频帧率 fps
        * </pre>
        *
-       * <code>optional float framepersecond = 9;</code>
+       * <code>float framepersecond = 9;</code>
        */
       public float getFramepersecond() {
         return instance.getFramepersecond();
@@ -5722,7 +5855,7 @@ public final class InterfaceUpload {
        *视频帧率 fps
        * </pre>
        *
-       * <code>optional float framepersecond = 9;</code>
+       * <code>float framepersecond = 9;</code>
        */
       public Builder setFramepersecond(float value) {
         copyOnWrite();
@@ -5734,7 +5867,7 @@ public final class InterfaceUpload {
        *视频帧率 fps
        * </pre>
        *
-       * <code>optional float framepersecond = 9;</code>
+       * <code>float framepersecond = 9;</code>
        */
       public Builder clearFramepersecond() {
         copyOnWrite();
@@ -5747,7 +5880,7 @@ public final class InterfaceUpload {
        *视频图像的原始宽度
        * </pre>
        *
-       * <code>optional fixed32 width = 10;</code>
+       * <code>fixed32 width = 10;</code>
        */
       public int getWidth() {
         return instance.getWidth();
@@ -5757,7 +5890,7 @@ public final class InterfaceUpload {
        *视频图像的原始宽度
        * </pre>
        *
-       * <code>optional fixed32 width = 10;</code>
+       * <code>fixed32 width = 10;</code>
        */
       public Builder setWidth(int value) {
         copyOnWrite();
@@ -5769,7 +5902,7 @@ public final class InterfaceUpload {
        *视频图像的原始宽度
        * </pre>
        *
-       * <code>optional fixed32 width = 10;</code>
+       * <code>fixed32 width = 10;</code>
        */
       public Builder clearWidth() {
         copyOnWrite();
@@ -5782,7 +5915,7 @@ public final class InterfaceUpload {
        *视频图像的原始高度
        * </pre>
        *
-       * <code>optional fixed32 height = 11;</code>
+       * <code>fixed32 height = 11;</code>
        */
       public int getHeight() {
         return instance.getHeight();
@@ -5792,7 +5925,7 @@ public final class InterfaceUpload {
        *视频图像的原始高度
        * </pre>
        *
-       * <code>optional fixed32 height = 11;</code>
+       * <code>fixed32 height = 11;</code>
        */
       public Builder setHeight(int value) {
         copyOnWrite();
@@ -5804,7 +5937,7 @@ public final class InterfaceUpload {
        *视频图像的原始高度
        * </pre>
        *
-       * <code>optional fixed32 height = 11;</code>
+       * <code>fixed32 height = 11;</code>
        */
       public Builder clearHeight() {
         copyOnWrite();
@@ -5814,6 +5947,7 @@ public final class InterfaceUpload {
 
       // @@protoc_insertion_point(builder_scope:pbui_FileCodecDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5945,6 +6079,7 @@ public final class InterfaceUpload {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

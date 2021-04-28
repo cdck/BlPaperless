@@ -17,7 +17,7 @@ public final class InterfaceWhiteboard {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     int getMemberid();
 
@@ -26,7 +26,7 @@ public final class InterfaceWhiteboard {
      *颜色值
      * </pre>
      *
-     * <code>optional fixed32 rgb = 2;</code>
+     * <code>fixed32 rgb = 2;</code>
      */
     int getRgb();
   }
@@ -51,7 +51,7 @@ public final class InterfaceWhiteboard {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -61,7 +61,7 @@ public final class InterfaceWhiteboard {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void setMemberid(int value) {
       
@@ -72,7 +72,7 @@ public final class InterfaceWhiteboard {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void clearMemberid() {
       
@@ -86,7 +86,7 @@ public final class InterfaceWhiteboard {
      *颜色值
      * </pre>
      *
-     * <code>optional fixed32 rgb = 2;</code>
+     * <code>fixed32 rgb = 2;</code>
      */
     public int getRgb() {
       return rgb_;
@@ -96,7 +96,7 @@ public final class InterfaceWhiteboard {
      *颜色值
      * </pre>
      *
-     * <code>optional fixed32 rgb = 2;</code>
+     * <code>fixed32 rgb = 2;</code>
      */
     private void setRgb(int value) {
       
@@ -107,7 +107,7 @@ public final class InterfaceWhiteboard {
      *颜色值
      * </pre>
      *
-     * <code>optional fixed32 rgb = 2;</code>
+     * <code>fixed32 rgb = 2;</code>
      */
     private void clearRgb() {
       
@@ -141,6 +141,19 @@ public final class InterfaceWhiteboard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetMemberColorDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetMemberColorDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetMemberColorDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -232,7 +245,7 @@ public final class InterfaceWhiteboard {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -242,7 +255,7 @@ public final class InterfaceWhiteboard {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -254,7 +267,7 @@ public final class InterfaceWhiteboard {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -267,7 +280,7 @@ public final class InterfaceWhiteboard {
        *颜色值
        * </pre>
        *
-       * <code>optional fixed32 rgb = 2;</code>
+       * <code>fixed32 rgb = 2;</code>
        */
       public int getRgb() {
         return instance.getRgb();
@@ -277,7 +290,7 @@ public final class InterfaceWhiteboard {
        *颜色值
        * </pre>
        *
-       * <code>optional fixed32 rgb = 2;</code>
+       * <code>fixed32 rgb = 2;</code>
        */
       public Builder setRgb(int value) {
         copyOnWrite();
@@ -289,7 +302,7 @@ public final class InterfaceWhiteboard {
        *颜色值
        * </pre>
        *
-       * <code>optional fixed32 rgb = 2;</code>
+       * <code>fixed32 rgb = 2;</code>
        */
       public Builder clearRgb() {
         copyOnWrite();
@@ -299,6 +312,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetMemberColorDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -367,6 +381,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -579,6 +594,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetMemberColorDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetMemberColorDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetMemberColorDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -766,6 +794,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetMemberColorDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -831,6 +860,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -875,7 +905,7 @@ public final class InterfaceWhiteboard {
      *指定操作标志 参见Pb_MeetPostilOperType
      * </pre>
      *
-     * <code>optional fixed32 operflag = 1;</code>
+     * <code>fixed32 operflag = 1;</code>
      */
     int getOperflag();
 
@@ -884,7 +914,7 @@ public final class InterfaceWhiteboard {
      *白板操作描述
      * </pre>
      *
-     * <code>optional bytes medianame = 2;</code>
+     * <code>bytes medianame = 2;</code>
      */
     com.google.protobuf.ByteString getMedianame();
 
@@ -893,7 +923,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     int getOpermemberid();
 
@@ -902,7 +932,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     int getSrcmemid();
 
@@ -911,7 +941,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     long getSrcwbid();
 
@@ -968,7 +998,7 @@ public final class InterfaceWhiteboard {
      *指定操作标志 参见Pb_MeetPostilOperType
      * </pre>
      *
-     * <code>optional fixed32 operflag = 1;</code>
+     * <code>fixed32 operflag = 1;</code>
      */
     public int getOperflag() {
       return operflag_;
@@ -978,7 +1008,7 @@ public final class InterfaceWhiteboard {
      *指定操作标志 参见Pb_MeetPostilOperType
      * </pre>
      *
-     * <code>optional fixed32 operflag = 1;</code>
+     * <code>fixed32 operflag = 1;</code>
      */
     private void setOperflag(int value) {
       
@@ -989,7 +1019,7 @@ public final class InterfaceWhiteboard {
      *指定操作标志 参见Pb_MeetPostilOperType
      * </pre>
      *
-     * <code>optional fixed32 operflag = 1;</code>
+     * <code>fixed32 operflag = 1;</code>
      */
     private void clearOperflag() {
       
@@ -1003,7 +1033,7 @@ public final class InterfaceWhiteboard {
      *白板操作描述
      * </pre>
      *
-     * <code>optional bytes medianame = 2;</code>
+     * <code>bytes medianame = 2;</code>
      */
     public com.google.protobuf.ByteString getMedianame() {
       return medianame_;
@@ -1013,7 +1043,7 @@ public final class InterfaceWhiteboard {
      *白板操作描述
      * </pre>
      *
-     * <code>optional bytes medianame = 2;</code>
+     * <code>bytes medianame = 2;</code>
      */
     private void setMedianame(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1027,7 +1057,7 @@ public final class InterfaceWhiteboard {
      *白板操作描述
      * </pre>
      *
-     * <code>optional bytes medianame = 2;</code>
+     * <code>bytes medianame = 2;</code>
      */
     private void clearMedianame() {
       
@@ -1041,7 +1071,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -1051,7 +1081,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -1062,7 +1092,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     private void clearOpermemberid() {
       
@@ -1076,7 +1106,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -1086,7 +1116,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -1097,7 +1127,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     private void clearSrcmemid() {
       
@@ -1111,7 +1141,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -1121,7 +1151,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -1132,7 +1162,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     private void clearSrcwbid() {
       
@@ -1284,6 +1314,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardControl parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardControl parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardControl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1378,7 +1421,7 @@ public final class InterfaceWhiteboard {
        *指定操作标志 参见Pb_MeetPostilOperType
        * </pre>
        *
-       * <code>optional fixed32 operflag = 1;</code>
+       * <code>fixed32 operflag = 1;</code>
        */
       public int getOperflag() {
         return instance.getOperflag();
@@ -1388,7 +1431,7 @@ public final class InterfaceWhiteboard {
        *指定操作标志 参见Pb_MeetPostilOperType
        * </pre>
        *
-       * <code>optional fixed32 operflag = 1;</code>
+       * <code>fixed32 operflag = 1;</code>
        */
       public Builder setOperflag(int value) {
         copyOnWrite();
@@ -1400,7 +1443,7 @@ public final class InterfaceWhiteboard {
        *指定操作标志 参见Pb_MeetPostilOperType
        * </pre>
        *
-       * <code>optional fixed32 operflag = 1;</code>
+       * <code>fixed32 operflag = 1;</code>
        */
       public Builder clearOperflag() {
         copyOnWrite();
@@ -1413,7 +1456,7 @@ public final class InterfaceWhiteboard {
        *白板操作描述
        * </pre>
        *
-       * <code>optional bytes medianame = 2;</code>
+       * <code>bytes medianame = 2;</code>
        */
       public com.google.protobuf.ByteString getMedianame() {
         return instance.getMedianame();
@@ -1423,7 +1466,7 @@ public final class InterfaceWhiteboard {
        *白板操作描述
        * </pre>
        *
-       * <code>optional bytes medianame = 2;</code>
+       * <code>bytes medianame = 2;</code>
        */
       public Builder setMedianame(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1435,7 +1478,7 @@ public final class InterfaceWhiteboard {
        *白板操作描述
        * </pre>
        *
-       * <code>optional bytes medianame = 2;</code>
+       * <code>bytes medianame = 2;</code>
        */
       public Builder clearMedianame() {
         copyOnWrite();
@@ -1448,7 +1491,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -1458,7 +1501,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -1470,7 +1513,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -1483,7 +1526,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -1493,7 +1536,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -1505,7 +1548,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -1518,7 +1561,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -1528,7 +1571,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -1540,7 +1583,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -1633,6 +1676,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWhiteBoardControl)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1747,6 +1791,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1791,7 +1836,7 @@ public final class InterfaceWhiteboard {
      *指定操作标志 参见Pb_MeetPostilOperType
      * </pre>
      *
-     * <code>optional fixed32 operflag = 1;</code>
+     * <code>fixed32 operflag = 1;</code>
      */
     int getOperflag();
 
@@ -1800,7 +1845,7 @@ public final class InterfaceWhiteboard {
      *白板操作描述
      * </pre>
      *
-     * <code>optional bytes medianame = 2;</code>
+     * <code>bytes medianame = 2;</code>
      */
     com.google.protobuf.ByteString getMedianame();
 
@@ -1809,7 +1854,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     int getOpermemberid();
 
@@ -1818,7 +1863,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     int getSrcmemid();
 
@@ -1827,7 +1872,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     long getSrcwbid();
   }
@@ -1856,7 +1901,7 @@ public final class InterfaceWhiteboard {
      *指定操作标志 参见Pb_MeetPostilOperType
      * </pre>
      *
-     * <code>optional fixed32 operflag = 1;</code>
+     * <code>fixed32 operflag = 1;</code>
      */
     public int getOperflag() {
       return operflag_;
@@ -1866,7 +1911,7 @@ public final class InterfaceWhiteboard {
      *指定操作标志 参见Pb_MeetPostilOperType
      * </pre>
      *
-     * <code>optional fixed32 operflag = 1;</code>
+     * <code>fixed32 operflag = 1;</code>
      */
     private void setOperflag(int value) {
       
@@ -1877,7 +1922,7 @@ public final class InterfaceWhiteboard {
      *指定操作标志 参见Pb_MeetPostilOperType
      * </pre>
      *
-     * <code>optional fixed32 operflag = 1;</code>
+     * <code>fixed32 operflag = 1;</code>
      */
     private void clearOperflag() {
       
@@ -1891,7 +1936,7 @@ public final class InterfaceWhiteboard {
      *白板操作描述
      * </pre>
      *
-     * <code>optional bytes medianame = 2;</code>
+     * <code>bytes medianame = 2;</code>
      */
     public com.google.protobuf.ByteString getMedianame() {
       return medianame_;
@@ -1901,7 +1946,7 @@ public final class InterfaceWhiteboard {
      *白板操作描述
      * </pre>
      *
-     * <code>optional bytes medianame = 2;</code>
+     * <code>bytes medianame = 2;</code>
      */
     private void setMedianame(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1915,7 +1960,7 @@ public final class InterfaceWhiteboard {
      *白板操作描述
      * </pre>
      *
-     * <code>optional bytes medianame = 2;</code>
+     * <code>bytes medianame = 2;</code>
      */
     private void clearMedianame() {
       
@@ -1929,7 +1974,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -1939,7 +1984,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -1950,7 +1995,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     private void clearOpermemberid() {
       
@@ -1964,7 +2009,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -1974,7 +2019,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -1985,7 +2030,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     private void clearSrcmemid() {
       
@@ -1999,7 +2044,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -2009,7 +2054,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -2020,7 +2065,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     private void clearSrcwbid() {
       
@@ -2075,6 +2120,19 @@ public final class InterfaceWhiteboard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetStartWhiteBoard parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetStartWhiteBoard parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetStartWhiteBoard parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2169,7 +2227,7 @@ public final class InterfaceWhiteboard {
        *指定操作标志 参见Pb_MeetPostilOperType
        * </pre>
        *
-       * <code>optional fixed32 operflag = 1;</code>
+       * <code>fixed32 operflag = 1;</code>
        */
       public int getOperflag() {
         return instance.getOperflag();
@@ -2179,7 +2237,7 @@ public final class InterfaceWhiteboard {
        *指定操作标志 参见Pb_MeetPostilOperType
        * </pre>
        *
-       * <code>optional fixed32 operflag = 1;</code>
+       * <code>fixed32 operflag = 1;</code>
        */
       public Builder setOperflag(int value) {
         copyOnWrite();
@@ -2191,7 +2249,7 @@ public final class InterfaceWhiteboard {
        *指定操作标志 参见Pb_MeetPostilOperType
        * </pre>
        *
-       * <code>optional fixed32 operflag = 1;</code>
+       * <code>fixed32 operflag = 1;</code>
        */
       public Builder clearOperflag() {
         copyOnWrite();
@@ -2204,7 +2262,7 @@ public final class InterfaceWhiteboard {
        *白板操作描述
        * </pre>
        *
-       * <code>optional bytes medianame = 2;</code>
+       * <code>bytes medianame = 2;</code>
        */
       public com.google.protobuf.ByteString getMedianame() {
         return instance.getMedianame();
@@ -2214,7 +2272,7 @@ public final class InterfaceWhiteboard {
        *白板操作描述
        * </pre>
        *
-       * <code>optional bytes medianame = 2;</code>
+       * <code>bytes medianame = 2;</code>
        */
       public Builder setMedianame(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2226,7 +2284,7 @@ public final class InterfaceWhiteboard {
        *白板操作描述
        * </pre>
        *
-       * <code>optional bytes medianame = 2;</code>
+       * <code>bytes medianame = 2;</code>
        */
       public Builder clearMedianame() {
         copyOnWrite();
@@ -2239,7 +2297,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -2249,7 +2307,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -2261,7 +2319,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -2274,7 +2332,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -2284,7 +2342,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -2296,7 +2354,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -2309,7 +2367,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -2319,7 +2377,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -2331,7 +2389,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -2341,6 +2399,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetStartWhiteBoard)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2430,6 +2489,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2474,7 +2534,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 1;</code>
+     * <code>fixed32 opermemberid = 1;</code>
      */
     int getOpermemberid();
 
@@ -2483,7 +2543,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 2;</code>
+     * <code>fixed32 srcmemid = 2;</code>
      */
     int getSrcmemid();
 
@@ -2492,7 +2552,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 3;</code>
+     * <code>fixed64 srcwbid = 3;</code>
      */
     long getSrcwbid();
   }
@@ -2521,7 +2581,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 1;</code>
+     * <code>fixed32 opermemberid = 1;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -2531,7 +2591,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 1;</code>
+     * <code>fixed32 opermemberid = 1;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -2542,7 +2602,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 1;</code>
+     * <code>fixed32 opermemberid = 1;</code>
      */
     private void clearOpermemberid() {
       
@@ -2556,7 +2616,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 2;</code>
+     * <code>fixed32 srcmemid = 2;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -2566,7 +2626,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 2;</code>
+     * <code>fixed32 srcmemid = 2;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -2577,7 +2637,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 2;</code>
+     * <code>fixed32 srcmemid = 2;</code>
      */
     private void clearSrcmemid() {
       
@@ -2591,7 +2651,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 3;</code>
+     * <code>fixed64 srcwbid = 3;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -2601,7 +2661,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 3;</code>
+     * <code>fixed64 srcwbid = 3;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -2612,7 +2672,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 3;</code>
+     * <code>fixed64 srcwbid = 3;</code>
      */
     private void clearSrcwbid() {
       
@@ -2653,6 +2713,19 @@ public final class InterfaceWhiteboard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardOper parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardOper parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardOper parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2748,7 +2821,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 1;</code>
+       * <code>fixed32 opermemberid = 1;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -2758,7 +2831,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 1;</code>
+       * <code>fixed32 opermemberid = 1;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -2770,7 +2843,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 1;</code>
+       * <code>fixed32 opermemberid = 1;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -2783,7 +2856,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 2;</code>
+       * <code>fixed32 srcmemid = 2;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -2793,7 +2866,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 2;</code>
+       * <code>fixed32 srcmemid = 2;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -2805,7 +2878,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 2;</code>
+       * <code>fixed32 srcmemid = 2;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -2818,7 +2891,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 3;</code>
+       * <code>fixed64 srcwbid = 3;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -2828,7 +2901,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 3;</code>
+       * <code>fixed64 srcwbid = 3;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -2840,7 +2913,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 3;</code>
+       * <code>fixed64 srcwbid = 3;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -2850,6 +2923,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWhiteBoardOper)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2925,6 +2999,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2969,7 +3044,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     int getOperid();
 
@@ -2978,7 +3053,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     int getOpermemberid();
 
@@ -2987,7 +3062,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     int getSrcmemid();
 
@@ -2996,7 +3071,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     long getSrcwbid();
 
@@ -3005,7 +3080,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     long getUtcstamp();
 
@@ -3014,7 +3089,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     int getFiguretype();
   }
@@ -3042,7 +3117,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     public int getOperid() {
       return operid_;
@@ -3052,7 +3127,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void setOperid(int value) {
       
@@ -3063,7 +3138,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void clearOperid() {
       
@@ -3077,7 +3152,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -3087,7 +3162,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -3098,7 +3173,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void clearOpermemberid() {
       
@@ -3112,7 +3187,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -3122,7 +3197,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -3133,7 +3208,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void clearSrcmemid() {
       
@@ -3147,7 +3222,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -3157,7 +3232,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -3168,7 +3243,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void clearSrcwbid() {
       
@@ -3182,7 +3257,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     public long getUtcstamp() {
       return utcstamp_;
@@ -3192,7 +3267,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void setUtcstamp(long value) {
       
@@ -3203,7 +3278,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void clearUtcstamp() {
       
@@ -3217,7 +3292,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     public int getFiguretype() {
       return figuretype_;
@@ -3227,7 +3302,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void setFiguretype(int value) {
       
@@ -3238,7 +3313,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void clearFiguretype() {
       
@@ -3300,6 +3375,19 @@ public final class InterfaceWhiteboard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetClearWhiteBoard parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetClearWhiteBoard parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetClearWhiteBoard parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3394,7 +3482,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public int getOperid() {
         return instance.getOperid();
@@ -3404,7 +3492,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder setOperid(int value) {
         copyOnWrite();
@@ -3416,7 +3504,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder clearOperid() {
         copyOnWrite();
@@ -3429,7 +3517,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -3439,7 +3527,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -3451,7 +3539,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -3464,7 +3552,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -3474,7 +3562,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -3486,7 +3574,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -3499,7 +3587,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -3509,7 +3597,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -3521,7 +3609,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -3534,7 +3622,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public long getUtcstamp() {
         return instance.getUtcstamp();
@@ -3544,7 +3632,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder setUtcstamp(long value) {
         copyOnWrite();
@@ -3556,7 +3644,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder clearUtcstamp() {
         copyOnWrite();
@@ -3569,7 +3657,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public int getFiguretype() {
         return instance.getFiguretype();
@@ -3579,7 +3667,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder setFiguretype(int value) {
         copyOnWrite();
@@ -3591,7 +3679,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder clearFiguretype() {
         copyOnWrite();
@@ -3601,6 +3689,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetClearWhiteBoard)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3697,6 +3786,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3741,7 +3831,7 @@ public final class InterfaceWhiteboard {
      *需要删除的人员ID 为0表示清除所有等于人员的白板操作
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     int getMemberid();
 
@@ -3750,7 +3840,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 2;</code>
+     * <code>fixed32 operid = 2;</code>
      */
     int getOperid();
 
@@ -3759,7 +3849,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     int getOpermemberid();
 
@@ -3768,7 +3858,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     int getSrcmemid();
 
@@ -3777,7 +3867,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     long getSrcwbid();
 
@@ -3786,7 +3876,7 @@ public final class InterfaceWhiteboard {
      *时间戳 微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 6;</code>
+     * <code>fixed64 utcstamp = 6;</code>
      */
     long getUtcstamp();
 
@@ -3795,7 +3885,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有类型的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 7;</code>
+     * <code>fixed32 figuretype = 7;</code>
      */
     int getFiguretype();
   }
@@ -3823,7 +3913,7 @@ public final class InterfaceWhiteboard {
      *需要删除的人员ID 为0表示清除所有等于人员的白板操作
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -3833,7 +3923,7 @@ public final class InterfaceWhiteboard {
      *需要删除的人员ID 为0表示清除所有等于人员的白板操作
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void setMemberid(int value) {
       
@@ -3844,7 +3934,7 @@ public final class InterfaceWhiteboard {
      *需要删除的人员ID 为0表示清除所有等于人员的白板操作
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void clearMemberid() {
       
@@ -3858,7 +3948,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 2;</code>
+     * <code>fixed32 operid = 2;</code>
      */
     public int getOperid() {
       return operid_;
@@ -3868,7 +3958,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 2;</code>
+     * <code>fixed32 operid = 2;</code>
      */
     private void setOperid(int value) {
       
@@ -3879,7 +3969,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 2;</code>
+     * <code>fixed32 operid = 2;</code>
      */
     private void clearOperid() {
       
@@ -3893,7 +3983,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -3903,7 +3993,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -3914,7 +4004,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 3;</code>
+     * <code>fixed32 opermemberid = 3;</code>
      */
     private void clearOpermemberid() {
       
@@ -3928,7 +4018,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -3938,7 +4028,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -3949,7 +4039,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 4;</code>
+     * <code>fixed32 srcmemid = 4;</code>
      */
     private void clearSrcmemid() {
       
@@ -3963,7 +4053,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -3973,7 +4063,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -3984,7 +4074,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 5;</code>
+     * <code>fixed64 srcwbid = 5;</code>
      */
     private void clearSrcwbid() {
       
@@ -3998,7 +4088,7 @@ public final class InterfaceWhiteboard {
      *时间戳 微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 6;</code>
+     * <code>fixed64 utcstamp = 6;</code>
      */
     public long getUtcstamp() {
       return utcstamp_;
@@ -4008,7 +4098,7 @@ public final class InterfaceWhiteboard {
      *时间戳 微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 6;</code>
+     * <code>fixed64 utcstamp = 6;</code>
      */
     private void setUtcstamp(long value) {
       
@@ -4019,7 +4109,7 @@ public final class InterfaceWhiteboard {
      *时间戳 微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 6;</code>
+     * <code>fixed64 utcstamp = 6;</code>
      */
     private void clearUtcstamp() {
       
@@ -4033,7 +4123,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有类型的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 7;</code>
+     * <code>fixed32 figuretype = 7;</code>
      */
     public int getFiguretype() {
       return figuretype_;
@@ -4043,7 +4133,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有类型的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 7;</code>
+     * <code>fixed32 figuretype = 7;</code>
      */
     private void setFiguretype(int value) {
       
@@ -4054,7 +4144,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有类型的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 7;</code>
+     * <code>fixed32 figuretype = 7;</code>
      */
     private void clearFiguretype() {
       
@@ -4123,6 +4213,19 @@ public final class InterfaceWhiteboard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetDoClearWhiteBoard parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetDoClearWhiteBoard parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetDoClearWhiteBoard parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4217,7 +4320,7 @@ public final class InterfaceWhiteboard {
        *需要删除的人员ID 为0表示清除所有等于人员的白板操作
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -4227,7 +4330,7 @@ public final class InterfaceWhiteboard {
        *需要删除的人员ID 为0表示清除所有等于人员的白板操作
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -4239,7 +4342,7 @@ public final class InterfaceWhiteboard {
        *需要删除的人员ID 为0表示清除所有等于人员的白板操作
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -4252,7 +4355,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 2;</code>
+       * <code>fixed32 operid = 2;</code>
        */
       public int getOperid() {
         return instance.getOperid();
@@ -4262,7 +4365,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 2;</code>
+       * <code>fixed32 operid = 2;</code>
        */
       public Builder setOperid(int value) {
         copyOnWrite();
@@ -4274,7 +4377,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 2;</code>
+       * <code>fixed32 operid = 2;</code>
        */
       public Builder clearOperid() {
         copyOnWrite();
@@ -4287,7 +4390,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -4297,7 +4400,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -4309,7 +4412,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 3;</code>
+       * <code>fixed32 opermemberid = 3;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -4322,7 +4425,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -4332,7 +4435,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -4344,7 +4447,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 4;</code>
+       * <code>fixed32 srcmemid = 4;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -4357,7 +4460,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -4367,7 +4470,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -4379,7 +4482,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 5;</code>
+       * <code>fixed64 srcwbid = 5;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -4392,7 +4495,7 @@ public final class InterfaceWhiteboard {
        *时间戳 微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 6;</code>
+       * <code>fixed64 utcstamp = 6;</code>
        */
       public long getUtcstamp() {
         return instance.getUtcstamp();
@@ -4402,7 +4505,7 @@ public final class InterfaceWhiteboard {
        *时间戳 微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 6;</code>
+       * <code>fixed64 utcstamp = 6;</code>
        */
       public Builder setUtcstamp(long value) {
         copyOnWrite();
@@ -4414,7 +4517,7 @@ public final class InterfaceWhiteboard {
        *时间戳 微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 6;</code>
+       * <code>fixed64 utcstamp = 6;</code>
        */
       public Builder clearUtcstamp() {
         copyOnWrite();
@@ -4427,7 +4530,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有类型的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 7;</code>
+       * <code>fixed32 figuretype = 7;</code>
        */
       public int getFiguretype() {
         return instance.getFiguretype();
@@ -4437,7 +4540,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有类型的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 7;</code>
+       * <code>fixed32 figuretype = 7;</code>
        */
       public Builder setFiguretype(int value) {
         copyOnWrite();
@@ -4449,7 +4552,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有类型的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 7;</code>
+       * <code>fixed32 figuretype = 7;</code>
        */
       public Builder clearFiguretype() {
         copyOnWrite();
@@ -4459,6 +4562,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoClearWhiteBoard)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4562,6 +4666,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4606,7 +4711,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 1;</code>
+     * <code>fixed32 srcmemid = 1;</code>
      */
     int getSrcmemid();
 
@@ -4615,7 +4720,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 2;</code>
+     * <code>fixed64 srcwbid = 2;</code>
      */
     long getSrcwbid();
 
@@ -4624,7 +4729,7 @@ public final class InterfaceWhiteboard {
      *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 3;</code>
+     * <code>fixed32 figuretype = 3;</code>
      */
     int getFiguretype();
   }
@@ -4652,7 +4757,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 1;</code>
+     * <code>fixed32 srcmemid = 1;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -4662,7 +4767,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 1;</code>
+     * <code>fixed32 srcmemid = 1;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -4673,7 +4778,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 1;</code>
+     * <code>fixed32 srcmemid = 1;</code>
      */
     private void clearSrcmemid() {
       
@@ -4687,7 +4792,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 2;</code>
+     * <code>fixed64 srcwbid = 2;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -4697,7 +4802,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 2;</code>
+     * <code>fixed64 srcwbid = 2;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -4708,7 +4813,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 2;</code>
+     * <code>fixed64 srcwbid = 2;</code>
      */
     private void clearSrcwbid() {
       
@@ -4722,7 +4827,7 @@ public final class InterfaceWhiteboard {
      *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 3;</code>
+     * <code>fixed32 figuretype = 3;</code>
      */
     public int getFiguretype() {
       return figuretype_;
@@ -4732,7 +4837,7 @@ public final class InterfaceWhiteboard {
      *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 3;</code>
+     * <code>fixed32 figuretype = 3;</code>
      */
     private void setFiguretype(int value) {
       
@@ -4743,7 +4848,7 @@ public final class InterfaceWhiteboard {
      *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 3;</code>
+     * <code>fixed32 figuretype = 3;</code>
      */
     private void clearFiguretype() {
       
@@ -4784,6 +4889,19 @@ public final class InterfaceWhiteboard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardQuery parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardQuery parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardQuery parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4878,7 +4996,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 1;</code>
+       * <code>fixed32 srcmemid = 1;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -4888,7 +5006,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 1;</code>
+       * <code>fixed32 srcmemid = 1;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -4900,7 +5018,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 1;</code>
+       * <code>fixed32 srcmemid = 1;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -4913,7 +5031,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 2;</code>
+       * <code>fixed64 srcwbid = 2;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -4923,7 +5041,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 2;</code>
+       * <code>fixed64 srcwbid = 2;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -4935,7 +5053,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 2;</code>
+       * <code>fixed64 srcwbid = 2;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -4948,7 +5066,7 @@ public final class InterfaceWhiteboard {
        *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 3;</code>
+       * <code>fixed32 figuretype = 3;</code>
        */
       public int getFiguretype() {
         return instance.getFiguretype();
@@ -4958,7 +5076,7 @@ public final class InterfaceWhiteboard {
        *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 3;</code>
+       * <code>fixed32 figuretype = 3;</code>
        */
       public Builder setFiguretype(int value) {
         copyOnWrite();
@@ -4970,7 +5088,7 @@ public final class InterfaceWhiteboard {
        *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 3;</code>
+       * <code>fixed32 figuretype = 3;</code>
        */
       public Builder clearFiguretype() {
         copyOnWrite();
@@ -4980,6 +5098,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWhiteBoardQuery)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5055,6 +5174,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5099,7 +5219,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 1;</code>
+     * <code>fixed32 srcmemid = 1;</code>
      */
     int getSrcmemid();
 
@@ -5108,7 +5228,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 2;</code>
+     * <code>fixed64 srcwbid = 2;</code>
      */
     long getSrcwbid();
 
@@ -5117,7 +5237,7 @@ public final class InterfaceWhiteboard {
      *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 3;</code>
+     * <code>fixed32 figuretype = 3;</code>
      */
     int getFiguretype();
 
@@ -5126,7 +5246,7 @@ public final class InterfaceWhiteboard {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 4;</code>
+     * <code>fixed32 opermemberid = 4;</code>
      */
     int getOpermemberid();
   }
@@ -5154,7 +5274,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 1;</code>
+     * <code>fixed32 srcmemid = 1;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -5164,7 +5284,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 1;</code>
+     * <code>fixed32 srcmemid = 1;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -5175,7 +5295,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 1;</code>
+     * <code>fixed32 srcmemid = 1;</code>
      */
     private void clearSrcmemid() {
       
@@ -5189,7 +5309,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 2;</code>
+     * <code>fixed64 srcwbid = 2;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -5199,7 +5319,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 2;</code>
+     * <code>fixed64 srcwbid = 2;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -5210,7 +5330,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 2;</code>
+     * <code>fixed64 srcwbid = 2;</code>
      */
     private void clearSrcwbid() {
       
@@ -5224,7 +5344,7 @@ public final class InterfaceWhiteboard {
      *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 3;</code>
+     * <code>fixed32 figuretype = 3;</code>
      */
     public int getFiguretype() {
       return figuretype_;
@@ -5234,7 +5354,7 @@ public final class InterfaceWhiteboard {
      *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 3;</code>
+     * <code>fixed32 figuretype = 3;</code>
      */
     private void setFiguretype(int value) {
       
@@ -5245,7 +5365,7 @@ public final class InterfaceWhiteboard {
      *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 3;</code>
+     * <code>fixed32 figuretype = 3;</code>
      */
     private void clearFiguretype() {
       
@@ -5259,7 +5379,7 @@ public final class InterfaceWhiteboard {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 4;</code>
+     * <code>fixed32 opermemberid = 4;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -5269,7 +5389,7 @@ public final class InterfaceWhiteboard {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 4;</code>
+     * <code>fixed32 opermemberid = 4;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -5280,7 +5400,7 @@ public final class InterfaceWhiteboard {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 4;</code>
+     * <code>fixed32 opermemberid = 4;</code>
      */
     private void clearOpermemberid() {
       
@@ -5328,6 +5448,19 @@ public final class InterfaceWhiteboard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardComplexQuery parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardComplexQuery parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardComplexQuery parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5422,7 +5555,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 1;</code>
+       * <code>fixed32 srcmemid = 1;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -5432,7 +5565,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 1;</code>
+       * <code>fixed32 srcmemid = 1;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -5444,7 +5577,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 1;</code>
+       * <code>fixed32 srcmemid = 1;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -5457,7 +5590,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 2;</code>
+       * <code>fixed64 srcwbid = 2;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -5467,7 +5600,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 2;</code>
+       * <code>fixed64 srcwbid = 2;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -5479,7 +5612,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 2;</code>
+       * <code>fixed64 srcwbid = 2;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -5492,7 +5625,7 @@ public final class InterfaceWhiteboard {
        *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 3;</code>
+       * <code>fixed32 figuretype = 3;</code>
        */
       public int getFiguretype() {
         return instance.getFiguretype();
@@ -5502,7 +5635,7 @@ public final class InterfaceWhiteboard {
        *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 3;</code>
+       * <code>fixed32 figuretype = 3;</code>
        */
       public Builder setFiguretype(int value) {
         copyOnWrite();
@@ -5514,7 +5647,7 @@ public final class InterfaceWhiteboard {
        *图形类型 必须指定一种类型,因为不同类型结构不同,不好解析,所以要按类型查询
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 3;</code>
+       * <code>fixed32 figuretype = 3;</code>
        */
       public Builder clearFiguretype() {
         copyOnWrite();
@@ -5527,7 +5660,7 @@ public final class InterfaceWhiteboard {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 4;</code>
+       * <code>fixed32 opermemberid = 4;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -5537,7 +5670,7 @@ public final class InterfaceWhiteboard {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 4;</code>
+       * <code>fixed32 opermemberid = 4;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -5549,7 +5682,7 @@ public final class InterfaceWhiteboard {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 4;</code>
+       * <code>fixed32 opermemberid = 4;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -5559,6 +5692,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWhiteBoardComplexQuery)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5641,6 +5775,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5685,7 +5820,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     int getOperid();
 
@@ -5694,7 +5829,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     int getOpermemberid();
 
@@ -5703,7 +5838,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     int getSrcmemid();
 
@@ -5712,7 +5847,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     long getSrcwbid();
 
@@ -5721,7 +5856,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     long getUtcstamp();
 
@@ -5730,7 +5865,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     int getFiguretype();
 
@@ -5739,7 +5874,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 7;</code>
+     * <code>fixed32 linesize = 7;</code>
      */
     int getLinesize();
 
@@ -5748,7 +5883,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 8;</code>
+     * <code>fixed32 Argb = 8;</code>
      */
     int getArgb();
 
@@ -5804,7 +5939,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     public int getOperid() {
       return operid_;
@@ -5814,7 +5949,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void setOperid(int value) {
       
@@ -5825,7 +5960,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void clearOperid() {
       
@@ -5839,7 +5974,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -5849,7 +5984,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -5860,7 +5995,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void clearOpermemberid() {
       
@@ -5874,7 +6009,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -5884,7 +6019,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -5895,7 +6030,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void clearSrcmemid() {
       
@@ -5909,7 +6044,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -5919,7 +6054,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -5930,7 +6065,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void clearSrcwbid() {
       
@@ -5944,7 +6079,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     public long getUtcstamp() {
       return utcstamp_;
@@ -5954,7 +6089,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void setUtcstamp(long value) {
       
@@ -5965,7 +6100,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void clearUtcstamp() {
       
@@ -5979,7 +6114,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     public int getFiguretype() {
       return figuretype_;
@@ -5989,7 +6124,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void setFiguretype(int value) {
       
@@ -6000,7 +6135,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void clearFiguretype() {
       
@@ -6014,7 +6149,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 7;</code>
+     * <code>fixed32 linesize = 7;</code>
      */
     public int getLinesize() {
       return linesize_;
@@ -6024,7 +6159,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 7;</code>
+     * <code>fixed32 linesize = 7;</code>
      */
     private void setLinesize(int value) {
       
@@ -6035,7 +6170,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 7;</code>
+     * <code>fixed32 linesize = 7;</code>
      */
     private void clearLinesize() {
       
@@ -6049,7 +6184,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 8;</code>
+     * <code>fixed32 Argb = 8;</code>
      */
     public int getArgb() {
       return argb_;
@@ -6059,7 +6194,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 8;</code>
+     * <code>fixed32 Argb = 8;</code>
      */
     private void setArgb(int value) {
       
@@ -6070,7 +6205,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 8;</code>
+     * <code>fixed32 Argb = 8;</code>
      */
     private void clearArgb() {
       
@@ -6243,6 +6378,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardInkItem parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardInkItem parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWhiteBoardInkItem parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -6337,7 +6485,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public int getOperid() {
         return instance.getOperid();
@@ -6347,7 +6495,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder setOperid(int value) {
         copyOnWrite();
@@ -6359,7 +6507,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder clearOperid() {
         copyOnWrite();
@@ -6372,7 +6520,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -6382,7 +6530,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -6394,7 +6542,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -6407,7 +6555,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -6417,7 +6565,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -6429,7 +6577,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -6442,7 +6590,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -6452,7 +6600,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -6464,7 +6612,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -6477,7 +6625,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public long getUtcstamp() {
         return instance.getUtcstamp();
@@ -6487,7 +6635,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder setUtcstamp(long value) {
         copyOnWrite();
@@ -6499,7 +6647,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder clearUtcstamp() {
         copyOnWrite();
@@ -6512,7 +6660,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public int getFiguretype() {
         return instance.getFiguretype();
@@ -6522,7 +6670,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder setFiguretype(int value) {
         copyOnWrite();
@@ -6534,7 +6682,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder clearFiguretype() {
         copyOnWrite();
@@ -6547,7 +6695,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 7;</code>
+       * <code>fixed32 linesize = 7;</code>
        */
       public int getLinesize() {
         return instance.getLinesize();
@@ -6557,7 +6705,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 7;</code>
+       * <code>fixed32 linesize = 7;</code>
        */
       public Builder setLinesize(int value) {
         copyOnWrite();
@@ -6569,7 +6717,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 7;</code>
+       * <code>fixed32 linesize = 7;</code>
        */
       public Builder clearLinesize() {
         copyOnWrite();
@@ -6582,7 +6730,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 8;</code>
+       * <code>fixed32 Argb = 8;</code>
        */
       public int getArgb() {
         return instance.getArgb();
@@ -6592,7 +6740,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 8;</code>
+       * <code>fixed32 Argb = 8;</code>
        */
       public Builder setArgb(int value) {
         copyOnWrite();
@@ -6604,7 +6752,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 8;</code>
+       * <code>fixed32 Argb = 8;</code>
        */
       public Builder clearArgb() {
         copyOnWrite();
@@ -6697,6 +6845,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWhiteBoardInkItem)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6832,6 +6981,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6876,7 +7026,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     int getOperid();
 
@@ -6885,7 +7035,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     int getOpermemberid();
 
@@ -6894,7 +7044,7 @@ public final class InterfaceWhiteboard {
      *时间戳
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 3;</code>
+     * <code>fixed64 utcstamp = 3;</code>
      */
     long getUtcstamp();
 
@@ -6903,7 +7053,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 4;</code>
+     * <code>fixed32 linesize = 4;</code>
      */
     int getLinesize();
 
@@ -6912,7 +7062,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 5;</code>
+     * <code>fixed32 Argb = 5;</code>
      */
     int getArgb();
 
@@ -6967,7 +7117,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     public int getOperid() {
       return operid_;
@@ -6977,7 +7127,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void setOperid(int value) {
       
@@ -6988,7 +7138,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void clearOperid() {
       
@@ -7002,7 +7152,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -7012,7 +7162,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -7023,7 +7173,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void clearOpermemberid() {
       
@@ -7037,7 +7187,7 @@ public final class InterfaceWhiteboard {
      *时间戳
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 3;</code>
+     * <code>fixed64 utcstamp = 3;</code>
      */
     public long getUtcstamp() {
       return utcstamp_;
@@ -7047,7 +7197,7 @@ public final class InterfaceWhiteboard {
      *时间戳
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 3;</code>
+     * <code>fixed64 utcstamp = 3;</code>
      */
     private void setUtcstamp(long value) {
       
@@ -7058,7 +7208,7 @@ public final class InterfaceWhiteboard {
      *时间戳
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 3;</code>
+     * <code>fixed64 utcstamp = 3;</code>
      */
     private void clearUtcstamp() {
       
@@ -7072,7 +7222,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 4;</code>
+     * <code>fixed32 linesize = 4;</code>
      */
     public int getLinesize() {
       return linesize_;
@@ -7082,7 +7232,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 4;</code>
+     * <code>fixed32 linesize = 4;</code>
      */
     private void setLinesize(int value) {
       
@@ -7093,7 +7243,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 4;</code>
+     * <code>fixed32 linesize = 4;</code>
      */
     private void clearLinesize() {
       
@@ -7107,7 +7257,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 5;</code>
+     * <code>fixed32 Argb = 5;</code>
      */
     public int getArgb() {
       return argb_;
@@ -7117,7 +7267,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 5;</code>
+     * <code>fixed32 Argb = 5;</code>
      */
     private void setArgb(int value) {
       
@@ -7128,7 +7278,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 5;</code>
+     * <code>fixed32 Argb = 5;</code>
      */
     private void clearArgb() {
       
@@ -7280,6 +7430,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBInkDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBInkDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBInkDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -7373,7 +7536,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public int getOperid() {
         return instance.getOperid();
@@ -7383,7 +7546,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder setOperid(int value) {
         copyOnWrite();
@@ -7395,7 +7558,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder clearOperid() {
         copyOnWrite();
@@ -7408,7 +7571,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -7418,7 +7581,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -7430,7 +7593,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -7443,7 +7606,7 @@ public final class InterfaceWhiteboard {
        *时间戳
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 3;</code>
+       * <code>fixed64 utcstamp = 3;</code>
        */
       public long getUtcstamp() {
         return instance.getUtcstamp();
@@ -7453,7 +7616,7 @@ public final class InterfaceWhiteboard {
        *时间戳
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 3;</code>
+       * <code>fixed64 utcstamp = 3;</code>
        */
       public Builder setUtcstamp(long value) {
         copyOnWrite();
@@ -7465,7 +7628,7 @@ public final class InterfaceWhiteboard {
        *时间戳
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 3;</code>
+       * <code>fixed64 utcstamp = 3;</code>
        */
       public Builder clearUtcstamp() {
         copyOnWrite();
@@ -7478,7 +7641,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 4;</code>
+       * <code>fixed32 linesize = 4;</code>
        */
       public int getLinesize() {
         return instance.getLinesize();
@@ -7488,7 +7651,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 4;</code>
+       * <code>fixed32 linesize = 4;</code>
        */
       public Builder setLinesize(int value) {
         copyOnWrite();
@@ -7500,7 +7663,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 4;</code>
+       * <code>fixed32 linesize = 4;</code>
        */
       public Builder clearLinesize() {
         copyOnWrite();
@@ -7513,7 +7676,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 5;</code>
+       * <code>fixed32 Argb = 5;</code>
        */
       public int getArgb() {
         return instance.getArgb();
@@ -7523,7 +7686,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 5;</code>
+       * <code>fixed32 Argb = 5;</code>
        */
       public Builder setArgb(int value) {
         copyOnWrite();
@@ -7535,7 +7698,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 5;</code>
+       * <code>fixed32 Argb = 5;</code>
        */
       public Builder clearArgb() {
         copyOnWrite();
@@ -7628,6 +7791,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetWBInkDetail)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7742,6 +7906,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7947,6 +8112,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBInkDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBInkDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBInkDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -8127,6 +8305,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWBInkDetail)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -8192,6 +8371,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -8236,7 +8416,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     int getOperid();
 
@@ -8245,7 +8425,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     int getOpermemberid();
 
@@ -8254,7 +8434,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     int getSrcmemid();
 
@@ -8263,7 +8443,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     long getSrcwbid();
 
@@ -8272,7 +8452,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     long getUtcstamp();
 
@@ -8281,7 +8461,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     int getFiguretype();
 
@@ -8290,7 +8470,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 7;</code>
+     * <code>fixed32 linesize = 7;</code>
      */
     int getLinesize();
 
@@ -8299,7 +8479,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 8;</code>
+     * <code>fixed32 Argb = 8;</code>
      */
     int getArgb();
 
@@ -8355,7 +8535,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     public int getOperid() {
       return operid_;
@@ -8365,7 +8545,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void setOperid(int value) {
       
@@ -8376,7 +8556,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void clearOperid() {
       
@@ -8390,7 +8570,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -8400,7 +8580,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -8411,7 +8591,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void clearOpermemberid() {
       
@@ -8425,7 +8605,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -8435,7 +8615,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -8446,7 +8626,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void clearSrcmemid() {
       
@@ -8460,7 +8640,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -8470,7 +8650,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -8481,7 +8661,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void clearSrcwbid() {
       
@@ -8495,7 +8675,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     public long getUtcstamp() {
       return utcstamp_;
@@ -8505,7 +8685,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void setUtcstamp(long value) {
       
@@ -8516,7 +8696,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void clearUtcstamp() {
       
@@ -8530,7 +8710,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     public int getFiguretype() {
       return figuretype_;
@@ -8540,7 +8720,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void setFiguretype(int value) {
       
@@ -8551,7 +8731,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void clearFiguretype() {
       
@@ -8565,7 +8745,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 7;</code>
+     * <code>fixed32 linesize = 7;</code>
      */
     public int getLinesize() {
       return linesize_;
@@ -8575,7 +8755,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 7;</code>
+     * <code>fixed32 linesize = 7;</code>
      */
     private void setLinesize(int value) {
       
@@ -8586,7 +8766,7 @@ public final class InterfaceWhiteboard {
      *线条宽度
      * </pre>
      *
-     * <code>optional fixed32 linesize = 7;</code>
+     * <code>fixed32 linesize = 7;</code>
      */
     private void clearLinesize() {
       
@@ -8600,7 +8780,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 8;</code>
+     * <code>fixed32 Argb = 8;</code>
      */
     public int getArgb() {
       return argb_;
@@ -8610,7 +8790,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 8;</code>
+     * <code>fixed32 Argb = 8;</code>
      */
     private void setArgb(int value) {
       
@@ -8621,7 +8801,7 @@ public final class InterfaceWhiteboard {
      *线条颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 8;</code>
+     * <code>fixed32 Argb = 8;</code>
      */
     private void clearArgb() {
       
@@ -8794,6 +8974,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBRectDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBRectDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBRectDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -8888,7 +9081,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public int getOperid() {
         return instance.getOperid();
@@ -8898,7 +9091,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder setOperid(int value) {
         copyOnWrite();
@@ -8910,7 +9103,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder clearOperid() {
         copyOnWrite();
@@ -8923,7 +9116,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -8933,7 +9126,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -8945,7 +9138,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -8958,7 +9151,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -8968,7 +9161,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -8980,7 +9173,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -8993,7 +9186,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -9003,7 +9196,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -9015,7 +9208,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -9028,7 +9221,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public long getUtcstamp() {
         return instance.getUtcstamp();
@@ -9038,7 +9231,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder setUtcstamp(long value) {
         copyOnWrite();
@@ -9050,7 +9243,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder clearUtcstamp() {
         copyOnWrite();
@@ -9063,7 +9256,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public int getFiguretype() {
         return instance.getFiguretype();
@@ -9073,7 +9266,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder setFiguretype(int value) {
         copyOnWrite();
@@ -9085,7 +9278,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder clearFiguretype() {
         copyOnWrite();
@@ -9098,7 +9291,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 7;</code>
+       * <code>fixed32 linesize = 7;</code>
        */
       public int getLinesize() {
         return instance.getLinesize();
@@ -9108,7 +9301,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 7;</code>
+       * <code>fixed32 linesize = 7;</code>
        */
       public Builder setLinesize(int value) {
         copyOnWrite();
@@ -9120,7 +9313,7 @@ public final class InterfaceWhiteboard {
        *线条宽度
        * </pre>
        *
-       * <code>optional fixed32 linesize = 7;</code>
+       * <code>fixed32 linesize = 7;</code>
        */
       public Builder clearLinesize() {
         copyOnWrite();
@@ -9133,7 +9326,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 8;</code>
+       * <code>fixed32 Argb = 8;</code>
        */
       public int getArgb() {
         return instance.getArgb();
@@ -9143,7 +9336,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 8;</code>
+       * <code>fixed32 Argb = 8;</code>
        */
       public Builder setArgb(int value) {
         copyOnWrite();
@@ -9155,7 +9348,7 @@ public final class InterfaceWhiteboard {
        *线条颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 8;</code>
+       * <code>fixed32 Argb = 8;</code>
        */
       public Builder clearArgb() {
         copyOnWrite();
@@ -9248,6 +9441,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetWBRectDetail)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -9383,6 +9577,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -9596,6 +9791,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBRectDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBRectDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBRectDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -9784,6 +9992,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWBRectDetail)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -9849,6 +10058,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -9893,7 +10103,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     int getOperid();
 
@@ -9902,7 +10112,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     int getOpermemberid();
 
@@ -9911,7 +10121,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     int getSrcmemid();
 
@@ -9920,7 +10130,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     long getSrcwbid();
 
@@ -9929,7 +10139,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     long getUtcstamp();
 
@@ -9938,7 +10148,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     int getFiguretype();
 
@@ -9947,7 +10157,7 @@ public final class InterfaceWhiteboard {
      *字体大小
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 7;</code>
+     * <code>fixed32 fontsize = 7;</code>
      */
     int getFontsize();
 
@@ -9956,7 +10166,7 @@ public final class InterfaceWhiteboard {
      *字体其它属性
      * </pre>
      *
-     * <code>optional fixed32 fontflag = 8;</code>
+     * <code>fixed32 fontflag = 8;</code>
      */
     int getFontflag();
 
@@ -9965,7 +10175,7 @@ public final class InterfaceWhiteboard {
      *字体颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 9;</code>
+     * <code>fixed32 Argb = 9;</code>
      */
     int getArgb();
 
@@ -9974,7 +10184,7 @@ public final class InterfaceWhiteboard {
      *字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 10;</code>
+     * <code>bytes fontname = 10;</code>
      */
     com.google.protobuf.ByteString getFontname();
 
@@ -9983,7 +10193,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float lx = 11;</code>
+     * <code>float lx = 11;</code>
      */
     float getLx();
 
@@ -9992,12 +10202,12 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float ly = 12;</code>
+     * <code>float ly = 12;</code>
      */
     float getLy();
 
     /**
-     * <code>optional bytes ptext = 13;</code>
+     * <code>bytes ptext = 13;</code>
      */
     com.google.protobuf.ByteString getPtext();
   }
@@ -10027,7 +10237,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     public int getOperid() {
       return operid_;
@@ -10037,7 +10247,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void setOperid(int value) {
       
@@ -10048,7 +10258,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void clearOperid() {
       
@@ -10062,7 +10272,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -10072,7 +10282,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -10083,7 +10293,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void clearOpermemberid() {
       
@@ -10097,7 +10307,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -10107,7 +10317,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -10118,7 +10328,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void clearSrcmemid() {
       
@@ -10132,7 +10342,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -10142,7 +10352,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -10153,7 +10363,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void clearSrcwbid() {
       
@@ -10167,7 +10377,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     public long getUtcstamp() {
       return utcstamp_;
@@ -10177,7 +10387,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void setUtcstamp(long value) {
       
@@ -10188,7 +10398,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void clearUtcstamp() {
       
@@ -10202,7 +10412,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     public int getFiguretype() {
       return figuretype_;
@@ -10212,7 +10422,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void setFiguretype(int value) {
       
@@ -10223,7 +10433,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void clearFiguretype() {
       
@@ -10237,7 +10447,7 @@ public final class InterfaceWhiteboard {
      *字体大小
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 7;</code>
+     * <code>fixed32 fontsize = 7;</code>
      */
     public int getFontsize() {
       return fontsize_;
@@ -10247,7 +10457,7 @@ public final class InterfaceWhiteboard {
      *字体大小
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 7;</code>
+     * <code>fixed32 fontsize = 7;</code>
      */
     private void setFontsize(int value) {
       
@@ -10258,7 +10468,7 @@ public final class InterfaceWhiteboard {
      *字体大小
      * </pre>
      *
-     * <code>optional fixed32 fontsize = 7;</code>
+     * <code>fixed32 fontsize = 7;</code>
      */
     private void clearFontsize() {
       
@@ -10272,7 +10482,7 @@ public final class InterfaceWhiteboard {
      *字体其它属性
      * </pre>
      *
-     * <code>optional fixed32 fontflag = 8;</code>
+     * <code>fixed32 fontflag = 8;</code>
      */
     public int getFontflag() {
       return fontflag_;
@@ -10282,7 +10492,7 @@ public final class InterfaceWhiteboard {
      *字体其它属性
      * </pre>
      *
-     * <code>optional fixed32 fontflag = 8;</code>
+     * <code>fixed32 fontflag = 8;</code>
      */
     private void setFontflag(int value) {
       
@@ -10293,7 +10503,7 @@ public final class InterfaceWhiteboard {
      *字体其它属性
      * </pre>
      *
-     * <code>optional fixed32 fontflag = 8;</code>
+     * <code>fixed32 fontflag = 8;</code>
      */
     private void clearFontflag() {
       
@@ -10307,7 +10517,7 @@ public final class InterfaceWhiteboard {
      *字体颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 9;</code>
+     * <code>fixed32 Argb = 9;</code>
      */
     public int getArgb() {
       return argb_;
@@ -10317,7 +10527,7 @@ public final class InterfaceWhiteboard {
      *字体颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 9;</code>
+     * <code>fixed32 Argb = 9;</code>
      */
     private void setArgb(int value) {
       
@@ -10328,7 +10538,7 @@ public final class InterfaceWhiteboard {
      *字体颜色
      * </pre>
      *
-     * <code>optional fixed32 Argb = 9;</code>
+     * <code>fixed32 Argb = 9;</code>
      */
     private void clearArgb() {
       
@@ -10342,7 +10552,7 @@ public final class InterfaceWhiteboard {
      *字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 10;</code>
+     * <code>bytes fontname = 10;</code>
      */
     public com.google.protobuf.ByteString getFontname() {
       return fontname_;
@@ -10352,7 +10562,7 @@ public final class InterfaceWhiteboard {
      *字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 10;</code>
+     * <code>bytes fontname = 10;</code>
      */
     private void setFontname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -10366,7 +10576,7 @@ public final class InterfaceWhiteboard {
      *字体名称
      * </pre>
      *
-     * <code>optional bytes fontname = 10;</code>
+     * <code>bytes fontname = 10;</code>
      */
     private void clearFontname() {
       
@@ -10380,7 +10590,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float lx = 11;</code>
+     * <code>float lx = 11;</code>
      */
     public float getLx() {
       return lx_;
@@ -10390,7 +10600,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float lx = 11;</code>
+     * <code>float lx = 11;</code>
      */
     private void setLx(float value) {
       
@@ -10401,7 +10611,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float lx = 11;</code>
+     * <code>float lx = 11;</code>
      */
     private void clearLx() {
       
@@ -10415,7 +10625,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float ly = 12;</code>
+     * <code>float ly = 12;</code>
      */
     public float getLy() {
       return ly_;
@@ -10425,7 +10635,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float ly = 12;</code>
+     * <code>float ly = 12;</code>
      */
     private void setLy(float value) {
       
@@ -10436,7 +10646,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float ly = 12;</code>
+     * <code>float ly = 12;</code>
      */
     private void clearLy() {
       
@@ -10446,13 +10656,13 @@ public final class InterfaceWhiteboard {
     public static final int PTEXT_FIELD_NUMBER = 13;
     private com.google.protobuf.ByteString ptext_;
     /**
-     * <code>optional bytes ptext = 13;</code>
+     * <code>bytes ptext = 13;</code>
      */
     public com.google.protobuf.ByteString getPtext() {
       return ptext_;
     }
     /**
-     * <code>optional bytes ptext = 13;</code>
+     * <code>bytes ptext = 13;</code>
      */
     private void setPtext(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -10462,7 +10672,7 @@ public final class InterfaceWhiteboard {
       ptext_ = value;
     }
     /**
-     * <code>optional bytes ptext = 13;</code>
+     * <code>bytes ptext = 13;</code>
      */
     private void clearPtext() {
       
@@ -10574,6 +10784,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBTextDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBTextDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBTextDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -10667,7 +10890,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public int getOperid() {
         return instance.getOperid();
@@ -10677,7 +10900,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder setOperid(int value) {
         copyOnWrite();
@@ -10689,7 +10912,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder clearOperid() {
         copyOnWrite();
@@ -10702,7 +10925,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -10712,7 +10935,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -10724,7 +10947,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -10737,7 +10960,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -10747,7 +10970,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -10759,7 +10982,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -10772,7 +10995,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -10782,7 +11005,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -10794,7 +11017,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -10807,7 +11030,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public long getUtcstamp() {
         return instance.getUtcstamp();
@@ -10817,7 +11040,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder setUtcstamp(long value) {
         copyOnWrite();
@@ -10829,7 +11052,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder clearUtcstamp() {
         copyOnWrite();
@@ -10842,7 +11065,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public int getFiguretype() {
         return instance.getFiguretype();
@@ -10852,7 +11075,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder setFiguretype(int value) {
         copyOnWrite();
@@ -10864,7 +11087,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder clearFiguretype() {
         copyOnWrite();
@@ -10877,7 +11100,7 @@ public final class InterfaceWhiteboard {
        *字体大小
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 7;</code>
+       * <code>fixed32 fontsize = 7;</code>
        */
       public int getFontsize() {
         return instance.getFontsize();
@@ -10887,7 +11110,7 @@ public final class InterfaceWhiteboard {
        *字体大小
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 7;</code>
+       * <code>fixed32 fontsize = 7;</code>
        */
       public Builder setFontsize(int value) {
         copyOnWrite();
@@ -10899,7 +11122,7 @@ public final class InterfaceWhiteboard {
        *字体大小
        * </pre>
        *
-       * <code>optional fixed32 fontsize = 7;</code>
+       * <code>fixed32 fontsize = 7;</code>
        */
       public Builder clearFontsize() {
         copyOnWrite();
@@ -10912,7 +11135,7 @@ public final class InterfaceWhiteboard {
        *字体其它属性
        * </pre>
        *
-       * <code>optional fixed32 fontflag = 8;</code>
+       * <code>fixed32 fontflag = 8;</code>
        */
       public int getFontflag() {
         return instance.getFontflag();
@@ -10922,7 +11145,7 @@ public final class InterfaceWhiteboard {
        *字体其它属性
        * </pre>
        *
-       * <code>optional fixed32 fontflag = 8;</code>
+       * <code>fixed32 fontflag = 8;</code>
        */
       public Builder setFontflag(int value) {
         copyOnWrite();
@@ -10934,7 +11157,7 @@ public final class InterfaceWhiteboard {
        *字体其它属性
        * </pre>
        *
-       * <code>optional fixed32 fontflag = 8;</code>
+       * <code>fixed32 fontflag = 8;</code>
        */
       public Builder clearFontflag() {
         copyOnWrite();
@@ -10947,7 +11170,7 @@ public final class InterfaceWhiteboard {
        *字体颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 9;</code>
+       * <code>fixed32 Argb = 9;</code>
        */
       public int getArgb() {
         return instance.getArgb();
@@ -10957,7 +11180,7 @@ public final class InterfaceWhiteboard {
        *字体颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 9;</code>
+       * <code>fixed32 Argb = 9;</code>
        */
       public Builder setArgb(int value) {
         copyOnWrite();
@@ -10969,7 +11192,7 @@ public final class InterfaceWhiteboard {
        *字体颜色
        * </pre>
        *
-       * <code>optional fixed32 Argb = 9;</code>
+       * <code>fixed32 Argb = 9;</code>
        */
       public Builder clearArgb() {
         copyOnWrite();
@@ -10982,7 +11205,7 @@ public final class InterfaceWhiteboard {
        *字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 10;</code>
+       * <code>bytes fontname = 10;</code>
        */
       public com.google.protobuf.ByteString getFontname() {
         return instance.getFontname();
@@ -10992,7 +11215,7 @@ public final class InterfaceWhiteboard {
        *字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 10;</code>
+       * <code>bytes fontname = 10;</code>
        */
       public Builder setFontname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -11004,7 +11227,7 @@ public final class InterfaceWhiteboard {
        *字体名称
        * </pre>
        *
-       * <code>optional bytes fontname = 10;</code>
+       * <code>bytes fontname = 10;</code>
        */
       public Builder clearFontname() {
         copyOnWrite();
@@ -11017,7 +11240,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float lx = 11;</code>
+       * <code>float lx = 11;</code>
        */
       public float getLx() {
         return instance.getLx();
@@ -11027,7 +11250,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float lx = 11;</code>
+       * <code>float lx = 11;</code>
        */
       public Builder setLx(float value) {
         copyOnWrite();
@@ -11039,7 +11262,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float lx = 11;</code>
+       * <code>float lx = 11;</code>
        */
       public Builder clearLx() {
         copyOnWrite();
@@ -11052,7 +11275,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float ly = 12;</code>
+       * <code>float ly = 12;</code>
        */
       public float getLy() {
         return instance.getLy();
@@ -11062,7 +11285,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float ly = 12;</code>
+       * <code>float ly = 12;</code>
        */
       public Builder setLy(float value) {
         copyOnWrite();
@@ -11074,7 +11297,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float ly = 12;</code>
+       * <code>float ly = 12;</code>
        */
       public Builder clearLy() {
         copyOnWrite();
@@ -11083,13 +11306,13 @@ public final class InterfaceWhiteboard {
       }
 
       /**
-       * <code>optional bytes ptext = 13;</code>
+       * <code>bytes ptext = 13;</code>
        */
       public com.google.protobuf.ByteString getPtext() {
         return instance.getPtext();
       }
       /**
-       * <code>optional bytes ptext = 13;</code>
+       * <code>bytes ptext = 13;</code>
        */
       public Builder setPtext(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -11097,7 +11320,7 @@ public final class InterfaceWhiteboard {
         return this;
       }
       /**
-       * <code>optional bytes ptext = 13;</code>
+       * <code>bytes ptext = 13;</code>
        */
       public Builder clearPtext() {
         copyOnWrite();
@@ -11107,6 +11330,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetWBTextDetail)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -11252,6 +11476,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -11457,6 +11682,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBTextDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBTextDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBTextDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -11637,6 +11875,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWBTextDetail)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -11702,6 +11941,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -11746,7 +11986,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     int getOperid();
 
@@ -11755,7 +11995,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     int getOpermemberid();
 
@@ -11764,7 +12004,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     int getSrcmemid();
 
@@ -11773,7 +12013,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     long getSrcwbid();
 
@@ -11782,7 +12022,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     long getUtcstamp();
 
@@ -11791,7 +12031,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     int getFiguretype();
 
@@ -11800,7 +12040,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float lx = 7;</code>
+     * <code>float lx = 7;</code>
      */
     float getLx();
 
@@ -11809,7 +12049,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float ly = 8;</code>
+     * <code>float ly = 8;</code>
      */
     float getLy();
 
@@ -11818,7 +12058,7 @@ public final class InterfaceWhiteboard {
      *png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes picdata = 9;</code>
+     * <code>bytes picdata = 9;</code>
      */
     com.google.protobuf.ByteString getPicdata();
   }
@@ -11847,7 +12087,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     public int getOperid() {
       return operid_;
@@ -11857,7 +12097,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void setOperid(int value) {
       
@@ -11868,7 +12108,7 @@ public final class InterfaceWhiteboard {
      *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 operid = 1;</code>
+     * <code>fixed32 operid = 1;</code>
      */
     private void clearOperid() {
       
@@ -11882,7 +12122,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     public int getOpermemberid() {
       return opermemberid_;
@@ -11892,7 +12132,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void setOpermemberid(int value) {
       
@@ -11903,7 +12143,7 @@ public final class InterfaceWhiteboard {
      *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
      * </pre>
      *
-     * <code>optional fixed32 opermemberid = 2;</code>
+     * <code>fixed32 opermemberid = 2;</code>
      */
     private void clearOpermemberid() {
       
@@ -11917,7 +12157,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     public int getSrcmemid() {
       return srcmemid_;
@@ -11927,7 +12167,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void setSrcmemid(int value) {
       
@@ -11938,7 +12178,7 @@ public final class InterfaceWhiteboard {
      *发起人的人员ID 白板标识使用
      * </pre>
      *
-     * <code>optional fixed32 srcmemid = 3;</code>
+     * <code>fixed32 srcmemid = 3;</code>
      */
     private void clearSrcmemid() {
       
@@ -11952,7 +12192,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     public long getSrcwbid() {
       return srcwbid_;
@@ -11962,7 +12202,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void setSrcwbid(long value) {
       
@@ -11973,7 +12213,7 @@ public final class InterfaceWhiteboard {
      *发起人的白板标识 取微秒级的时间作标识 白板标识使用
      * </pre>
      *
-     * <code>optional fixed64 srcwbid = 4;</code>
+     * <code>fixed64 srcwbid = 4;</code>
      */
     private void clearSrcwbid() {
       
@@ -11987,7 +12227,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     public long getUtcstamp() {
       return utcstamp_;
@@ -11997,7 +12237,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void setUtcstamp(long value) {
       
@@ -12008,7 +12248,7 @@ public final class InterfaceWhiteboard {
      *时间戳  微秒
      * </pre>
      *
-     * <code>optional fixed64 utcstamp = 5;</code>
+     * <code>fixed64 utcstamp = 5;</code>
      */
     private void clearUtcstamp() {
       
@@ -12022,7 +12262,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     public int getFiguretype() {
       return figuretype_;
@@ -12032,7 +12272,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void setFiguretype(int value) {
       
@@ -12043,7 +12283,7 @@ public final class InterfaceWhiteboard {
      *图形类型 为0表示清除所有等于figuretype的白板操作
      * </pre>
      *
-     * <code>optional fixed32 figuretype = 6;</code>
+     * <code>fixed32 figuretype = 6;</code>
      */
     private void clearFiguretype() {
       
@@ -12057,7 +12297,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float lx = 7;</code>
+     * <code>float lx = 7;</code>
      */
     public float getLx() {
       return lx_;
@@ -12067,7 +12307,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float lx = 7;</code>
+     * <code>float lx = 7;</code>
      */
     private void setLx(float value) {
       
@@ -12078,7 +12318,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float lx = 7;</code>
+     * <code>float lx = 7;</code>
      */
     private void clearLx() {
       
@@ -12092,7 +12332,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float ly = 8;</code>
+     * <code>float ly = 8;</code>
      */
     public float getLy() {
       return ly_;
@@ -12102,7 +12342,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float ly = 8;</code>
+     * <code>float ly = 8;</code>
      */
     private void setLy(float value) {
       
@@ -12113,7 +12353,7 @@ public final class InterfaceWhiteboard {
      *(lx,ly,左上角坐标)
      * </pre>
      *
-     * <code>optional float ly = 8;</code>
+     * <code>float ly = 8;</code>
      */
     private void clearLy() {
       
@@ -12127,7 +12367,7 @@ public final class InterfaceWhiteboard {
      *png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes picdata = 9;</code>
+     * <code>bytes picdata = 9;</code>
      */
     public com.google.protobuf.ByteString getPicdata() {
       return picdata_;
@@ -12137,7 +12377,7 @@ public final class InterfaceWhiteboard {
      *png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes picdata = 9;</code>
+     * <code>bytes picdata = 9;</code>
      */
     private void setPicdata(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -12151,7 +12391,7 @@ public final class InterfaceWhiteboard {
      *png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes picdata = 9;</code>
+     * <code>bytes picdata = 9;</code>
      */
     private void clearPicdata() {
       
@@ -12234,6 +12474,19 @@ public final class InterfaceWhiteboard {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBPictureDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBPictureDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Item_MeetWBPictureDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12328,7 +12581,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public int getOperid() {
         return instance.getOperid();
@@ -12338,7 +12591,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder setOperid(int value) {
         copyOnWrite();
@@ -12350,7 +12603,7 @@ public final class InterfaceWhiteboard {
        *操作ID 终端计算产生 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 operid = 1;</code>
+       * <code>fixed32 operid = 1;</code>
        */
       public Builder clearOperid() {
         copyOnWrite();
@@ -12363,7 +12616,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public int getOpermemberid() {
         return instance.getOpermemberid();
@@ -12373,7 +12626,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder setOpermemberid(int value) {
         copyOnWrite();
@@ -12385,7 +12638,7 @@ public final class InterfaceWhiteboard {
        *当前该命令的人员ID 为0表示清除所有等于opermemberid的白板操作
        * </pre>
        *
-       * <code>optional fixed32 opermemberid = 2;</code>
+       * <code>fixed32 opermemberid = 2;</code>
        */
       public Builder clearOpermemberid() {
         copyOnWrite();
@@ -12398,7 +12651,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public int getSrcmemid() {
         return instance.getSrcmemid();
@@ -12408,7 +12661,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder setSrcmemid(int value) {
         copyOnWrite();
@@ -12420,7 +12673,7 @@ public final class InterfaceWhiteboard {
        *发起人的人员ID 白板标识使用
        * </pre>
        *
-       * <code>optional fixed32 srcmemid = 3;</code>
+       * <code>fixed32 srcmemid = 3;</code>
        */
       public Builder clearSrcmemid() {
         copyOnWrite();
@@ -12433,7 +12686,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public long getSrcwbid() {
         return instance.getSrcwbid();
@@ -12443,7 +12696,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder setSrcwbid(long value) {
         copyOnWrite();
@@ -12455,7 +12708,7 @@ public final class InterfaceWhiteboard {
        *发起人的白板标识 取微秒级的时间作标识 白板标识使用
        * </pre>
        *
-       * <code>optional fixed64 srcwbid = 4;</code>
+       * <code>fixed64 srcwbid = 4;</code>
        */
       public Builder clearSrcwbid() {
         copyOnWrite();
@@ -12468,7 +12721,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public long getUtcstamp() {
         return instance.getUtcstamp();
@@ -12478,7 +12731,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder setUtcstamp(long value) {
         copyOnWrite();
@@ -12490,7 +12743,7 @@ public final class InterfaceWhiteboard {
        *时间戳  微秒
        * </pre>
        *
-       * <code>optional fixed64 utcstamp = 5;</code>
+       * <code>fixed64 utcstamp = 5;</code>
        */
       public Builder clearUtcstamp() {
         copyOnWrite();
@@ -12503,7 +12756,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public int getFiguretype() {
         return instance.getFiguretype();
@@ -12513,7 +12766,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder setFiguretype(int value) {
         copyOnWrite();
@@ -12525,7 +12778,7 @@ public final class InterfaceWhiteboard {
        *图形类型 为0表示清除所有等于figuretype的白板操作
        * </pre>
        *
-       * <code>optional fixed32 figuretype = 6;</code>
+       * <code>fixed32 figuretype = 6;</code>
        */
       public Builder clearFiguretype() {
         copyOnWrite();
@@ -12538,7 +12791,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float lx = 7;</code>
+       * <code>float lx = 7;</code>
        */
       public float getLx() {
         return instance.getLx();
@@ -12548,7 +12801,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float lx = 7;</code>
+       * <code>float lx = 7;</code>
        */
       public Builder setLx(float value) {
         copyOnWrite();
@@ -12560,7 +12813,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float lx = 7;</code>
+       * <code>float lx = 7;</code>
        */
       public Builder clearLx() {
         copyOnWrite();
@@ -12573,7 +12826,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float ly = 8;</code>
+       * <code>float ly = 8;</code>
        */
       public float getLy() {
         return instance.getLy();
@@ -12583,7 +12836,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float ly = 8;</code>
+       * <code>float ly = 8;</code>
        */
       public Builder setLy(float value) {
         copyOnWrite();
@@ -12595,7 +12848,7 @@ public final class InterfaceWhiteboard {
        *(lx,ly,左上角坐标)
        * </pre>
        *
-       * <code>optional float ly = 8;</code>
+       * <code>float ly = 8;</code>
        */
       public Builder clearLy() {
         copyOnWrite();
@@ -12608,7 +12861,7 @@ public final class InterfaceWhiteboard {
        *png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes picdata = 9;</code>
+       * <code>bytes picdata = 9;</code>
        */
       public com.google.protobuf.ByteString getPicdata() {
         return instance.getPicdata();
@@ -12618,7 +12871,7 @@ public final class InterfaceWhiteboard {
        *png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes picdata = 9;</code>
+       * <code>bytes picdata = 9;</code>
        */
       public Builder setPicdata(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -12630,7 +12883,7 @@ public final class InterfaceWhiteboard {
        *png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes picdata = 9;</code>
+       * <code>bytes picdata = 9;</code>
        */
       public Builder clearPicdata() {
         copyOnWrite();
@@ -12640,6 +12893,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetWBPictureDetail)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -12757,6 +13011,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -12962,6 +13217,19 @@ public final class InterfaceWhiteboard {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBPictureDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBPictureDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceWhiteboard.pbui_Type_MeetWBPictureDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -13142,6 +13410,7 @@ public final class InterfaceWhiteboard {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetWBPictureDetail)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -13207,6 +13476,7 @@ public final class InterfaceWhiteboard {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

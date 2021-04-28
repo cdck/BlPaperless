@@ -17,7 +17,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     int getRoomid();
 
@@ -26,7 +26,7 @@ public final class InterfaceRoom {
      *会场底图ID
      * </pre>
      *
-     * <code>optional fixed32 roombgpicid = 2;</code>
+     * <code>fixed32 roombgpicid = 2;</code>
      */
     int getRoombgpicid();
 
@@ -35,7 +35,7 @@ public final class InterfaceRoom {
      *会场名称	
      * </pre>
      *
-     * <code>optional bytes name = 3;</code>
+     * <code>bytes name = 3;</code>
      */
     com.google.protobuf.ByteString getName();
 
@@ -44,7 +44,7 @@ public final class InterfaceRoom {
      *会场地址
      * </pre>
      *
-     * <code>optional bytes addr = 4;</code>
+     * <code>bytes addr = 4;</code>
      */
     com.google.protobuf.ByteString getAddr();
 
@@ -53,7 +53,7 @@ public final class InterfaceRoom {
      *备注
      * </pre>
      *
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     com.google.protobuf.ByteString getComment();
   }
@@ -81,7 +81,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     public int getRoomid() {
       return roomid_;
@@ -91,7 +91,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void setRoomid(int value) {
       
@@ -102,7 +102,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void clearRoomid() {
       
@@ -116,7 +116,7 @@ public final class InterfaceRoom {
      *会场底图ID
      * </pre>
      *
-     * <code>optional fixed32 roombgpicid = 2;</code>
+     * <code>fixed32 roombgpicid = 2;</code>
      */
     public int getRoombgpicid() {
       return roombgpicid_;
@@ -126,7 +126,7 @@ public final class InterfaceRoom {
      *会场底图ID
      * </pre>
      *
-     * <code>optional fixed32 roombgpicid = 2;</code>
+     * <code>fixed32 roombgpicid = 2;</code>
      */
     private void setRoombgpicid(int value) {
       
@@ -137,7 +137,7 @@ public final class InterfaceRoom {
      *会场底图ID
      * </pre>
      *
-     * <code>optional fixed32 roombgpicid = 2;</code>
+     * <code>fixed32 roombgpicid = 2;</code>
      */
     private void clearRoombgpicid() {
       
@@ -151,7 +151,7 @@ public final class InterfaceRoom {
      *会场名称	
      * </pre>
      *
-     * <code>optional bytes name = 3;</code>
+     * <code>bytes name = 3;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
@@ -161,7 +161,7 @@ public final class InterfaceRoom {
      *会场名称	
      * </pre>
      *
-     * <code>optional bytes name = 3;</code>
+     * <code>bytes name = 3;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -175,7 +175,7 @@ public final class InterfaceRoom {
      *会场名称	
      * </pre>
      *
-     * <code>optional bytes name = 3;</code>
+     * <code>bytes name = 3;</code>
      */
     private void clearName() {
       
@@ -189,7 +189,7 @@ public final class InterfaceRoom {
      *会场地址
      * </pre>
      *
-     * <code>optional bytes addr = 4;</code>
+     * <code>bytes addr = 4;</code>
      */
     public com.google.protobuf.ByteString getAddr() {
       return addr_;
@@ -199,7 +199,7 @@ public final class InterfaceRoom {
      *会场地址
      * </pre>
      *
-     * <code>optional bytes addr = 4;</code>
+     * <code>bytes addr = 4;</code>
      */
     private void setAddr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -213,7 +213,7 @@ public final class InterfaceRoom {
      *会场地址
      * </pre>
      *
-     * <code>optional bytes addr = 4;</code>
+     * <code>bytes addr = 4;</code>
      */
     private void clearAddr() {
       
@@ -227,7 +227,7 @@ public final class InterfaceRoom {
      *备注
      * </pre>
      *
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     public com.google.protobuf.ByteString getComment() {
       return comment_;
@@ -237,7 +237,7 @@ public final class InterfaceRoom {
      *备注
      * </pre>
      *
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     private void setComment(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -251,7 +251,7 @@ public final class InterfaceRoom {
      *备注
      * </pre>
      *
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     private void clearComment() {
       
@@ -306,6 +306,19 @@ public final class InterfaceRoom {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -397,7 +410,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public int getRoomid() {
         return instance.getRoomid();
@@ -407,7 +420,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder setRoomid(int value) {
         copyOnWrite();
@@ -419,7 +432,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder clearRoomid() {
         copyOnWrite();
@@ -432,7 +445,7 @@ public final class InterfaceRoom {
        *会场底图ID
        * </pre>
        *
-       * <code>optional fixed32 roombgpicid = 2;</code>
+       * <code>fixed32 roombgpicid = 2;</code>
        */
       public int getRoombgpicid() {
         return instance.getRoombgpicid();
@@ -442,7 +455,7 @@ public final class InterfaceRoom {
        *会场底图ID
        * </pre>
        *
-       * <code>optional fixed32 roombgpicid = 2;</code>
+       * <code>fixed32 roombgpicid = 2;</code>
        */
       public Builder setRoombgpicid(int value) {
         copyOnWrite();
@@ -454,7 +467,7 @@ public final class InterfaceRoom {
        *会场底图ID
        * </pre>
        *
-       * <code>optional fixed32 roombgpicid = 2;</code>
+       * <code>fixed32 roombgpicid = 2;</code>
        */
       public Builder clearRoombgpicid() {
         copyOnWrite();
@@ -467,7 +480,7 @@ public final class InterfaceRoom {
        *会场名称	
        * </pre>
        *
-       * <code>optional bytes name = 3;</code>
+       * <code>bytes name = 3;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
@@ -477,7 +490,7 @@ public final class InterfaceRoom {
        *会场名称	
        * </pre>
        *
-       * <code>optional bytes name = 3;</code>
+       * <code>bytes name = 3;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -489,7 +502,7 @@ public final class InterfaceRoom {
        *会场名称	
        * </pre>
        *
-       * <code>optional bytes name = 3;</code>
+       * <code>bytes name = 3;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -502,7 +515,7 @@ public final class InterfaceRoom {
        *会场地址
        * </pre>
        *
-       * <code>optional bytes addr = 4;</code>
+       * <code>bytes addr = 4;</code>
        */
       public com.google.protobuf.ByteString getAddr() {
         return instance.getAddr();
@@ -512,7 +525,7 @@ public final class InterfaceRoom {
        *会场地址
        * </pre>
        *
-       * <code>optional bytes addr = 4;</code>
+       * <code>bytes addr = 4;</code>
        */
       public Builder setAddr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -524,7 +537,7 @@ public final class InterfaceRoom {
        *会场地址
        * </pre>
        *
-       * <code>optional bytes addr = 4;</code>
+       * <code>bytes addr = 4;</code>
        */
       public Builder clearAddr() {
         copyOnWrite();
@@ -537,7 +550,7 @@ public final class InterfaceRoom {
        *备注
        * </pre>
        *
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public com.google.protobuf.ByteString getComment() {
         return instance.getComment();
@@ -547,7 +560,7 @@ public final class InterfaceRoom {
        *备注
        * </pre>
        *
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public Builder setComment(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -559,7 +572,7 @@ public final class InterfaceRoom {
        *备注
        * </pre>
        *
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public Builder clearComment() {
         copyOnWrite();
@@ -569,6 +582,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetRoomDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -658,6 +672,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -870,6 +885,19 @@ public final class InterfaceRoom {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1057,6 +1085,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetRoomDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1122,6 +1151,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1166,7 +1196,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     int getRoomid();
 
@@ -1175,7 +1205,7 @@ public final class InterfaceRoom {
      *如果bgpicid指定, 则不需要指bgpathname 如果指定bgpathname，则不需要指bgpicid 如果同时指定,则优先使用bgpicid
      * </pre>
      *
-     * <code>optional fixed32 bgpicid = 2;</code>
+     * <code>fixed32 bgpicid = 2;</code>
      */
     int getBgpicid();
 
@@ -1184,7 +1214,7 @@ public final class InterfaceRoom {
      *给会场绑定一个新的图片
      * </pre>
      *
-     * <code>optional bytes bgpathname = 3;</code>
+     * <code>bytes bgpathname = 3;</code>
      */
     com.google.protobuf.ByteString getBgpathname();
 
@@ -1193,7 +1223,7 @@ public final class InterfaceRoom {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 4;</code>
+     * <code>fixed32 userval = 4;</code>
      */
     int getUserval();
   }
@@ -1221,7 +1251,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     public int getRoomid() {
       return roomid_;
@@ -1231,7 +1261,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void setRoomid(int value) {
       
@@ -1242,7 +1272,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void clearRoomid() {
       
@@ -1256,7 +1286,7 @@ public final class InterfaceRoom {
      *如果bgpicid指定, 则不需要指bgpathname 如果指定bgpathname，则不需要指bgpicid 如果同时指定,则优先使用bgpicid
      * </pre>
      *
-     * <code>optional fixed32 bgpicid = 2;</code>
+     * <code>fixed32 bgpicid = 2;</code>
      */
     public int getBgpicid() {
       return bgpicid_;
@@ -1266,7 +1296,7 @@ public final class InterfaceRoom {
      *如果bgpicid指定, 则不需要指bgpathname 如果指定bgpathname，则不需要指bgpicid 如果同时指定,则优先使用bgpicid
      * </pre>
      *
-     * <code>optional fixed32 bgpicid = 2;</code>
+     * <code>fixed32 bgpicid = 2;</code>
      */
     private void setBgpicid(int value) {
       
@@ -1277,7 +1307,7 @@ public final class InterfaceRoom {
      *如果bgpicid指定, 则不需要指bgpathname 如果指定bgpathname，则不需要指bgpicid 如果同时指定,则优先使用bgpicid
      * </pre>
      *
-     * <code>optional fixed32 bgpicid = 2;</code>
+     * <code>fixed32 bgpicid = 2;</code>
      */
     private void clearBgpicid() {
       
@@ -1291,7 +1321,7 @@ public final class InterfaceRoom {
      *给会场绑定一个新的图片
      * </pre>
      *
-     * <code>optional bytes bgpathname = 3;</code>
+     * <code>bytes bgpathname = 3;</code>
      */
     public com.google.protobuf.ByteString getBgpathname() {
       return bgpathname_;
@@ -1301,7 +1331,7 @@ public final class InterfaceRoom {
      *给会场绑定一个新的图片
      * </pre>
      *
-     * <code>optional bytes bgpathname = 3;</code>
+     * <code>bytes bgpathname = 3;</code>
      */
     private void setBgpathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1315,7 +1345,7 @@ public final class InterfaceRoom {
      *给会场绑定一个新的图片
      * </pre>
      *
-     * <code>optional bytes bgpathname = 3;</code>
+     * <code>bytes bgpathname = 3;</code>
      */
     private void clearBgpathname() {
       
@@ -1329,7 +1359,7 @@ public final class InterfaceRoom {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 4;</code>
+     * <code>fixed32 userval = 4;</code>
      */
     public int getUserval() {
       return userval_;
@@ -1339,7 +1369,7 @@ public final class InterfaceRoom {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 4;</code>
+     * <code>fixed32 userval = 4;</code>
      */
     private void setUserval(int value) {
       
@@ -1350,7 +1380,7 @@ public final class InterfaceRoom {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 4;</code>
+     * <code>fixed32 userval = 4;</code>
      */
     private void clearUserval() {
       
@@ -1398,6 +1428,19 @@ public final class InterfaceRoom {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomModBGInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomModBGInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomModBGInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1491,7 +1534,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public int getRoomid() {
         return instance.getRoomid();
@@ -1501,7 +1544,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder setRoomid(int value) {
         copyOnWrite();
@@ -1513,7 +1556,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder clearRoomid() {
         copyOnWrite();
@@ -1526,7 +1569,7 @@ public final class InterfaceRoom {
        *如果bgpicid指定, 则不需要指bgpathname 如果指定bgpathname，则不需要指bgpicid 如果同时指定,则优先使用bgpicid
        * </pre>
        *
-       * <code>optional fixed32 bgpicid = 2;</code>
+       * <code>fixed32 bgpicid = 2;</code>
        */
       public int getBgpicid() {
         return instance.getBgpicid();
@@ -1536,7 +1579,7 @@ public final class InterfaceRoom {
        *如果bgpicid指定, 则不需要指bgpathname 如果指定bgpathname，则不需要指bgpicid 如果同时指定,则优先使用bgpicid
        * </pre>
        *
-       * <code>optional fixed32 bgpicid = 2;</code>
+       * <code>fixed32 bgpicid = 2;</code>
        */
       public Builder setBgpicid(int value) {
         copyOnWrite();
@@ -1548,7 +1591,7 @@ public final class InterfaceRoom {
        *如果bgpicid指定, 则不需要指bgpathname 如果指定bgpathname，则不需要指bgpicid 如果同时指定,则优先使用bgpicid
        * </pre>
        *
-       * <code>optional fixed32 bgpicid = 2;</code>
+       * <code>fixed32 bgpicid = 2;</code>
        */
       public Builder clearBgpicid() {
         copyOnWrite();
@@ -1561,7 +1604,7 @@ public final class InterfaceRoom {
        *给会场绑定一个新的图片
        * </pre>
        *
-       * <code>optional bytes bgpathname = 3;</code>
+       * <code>bytes bgpathname = 3;</code>
        */
       public com.google.protobuf.ByteString getBgpathname() {
         return instance.getBgpathname();
@@ -1571,7 +1614,7 @@ public final class InterfaceRoom {
        *给会场绑定一个新的图片
        * </pre>
        *
-       * <code>optional bytes bgpathname = 3;</code>
+       * <code>bytes bgpathname = 3;</code>
        */
       public Builder setBgpathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1583,7 +1626,7 @@ public final class InterfaceRoom {
        *给会场绑定一个新的图片
        * </pre>
        *
-       * <code>optional bytes bgpathname = 3;</code>
+       * <code>bytes bgpathname = 3;</code>
        */
       public Builder clearBgpathname() {
         copyOnWrite();
@@ -1596,7 +1639,7 @@ public final class InterfaceRoom {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 4;</code>
+       * <code>fixed32 userval = 4;</code>
        */
       public int getUserval() {
         return instance.getUserval();
@@ -1606,7 +1649,7 @@ public final class InterfaceRoom {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 4;</code>
+       * <code>fixed32 userval = 4;</code>
        */
       public Builder setUserval(int value) {
         copyOnWrite();
@@ -1618,7 +1661,7 @@ public final class InterfaceRoom {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 4;</code>
+       * <code>fixed32 userval = 4;</code>
        */
       public Builder clearUserval() {
         copyOnWrite();
@@ -1628,6 +1671,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetRoomModBGInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1710,6 +1754,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1754,7 +1799,7 @@ public final class InterfaceRoom {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 bgpicid = 1;</code>
+     * <code>fixed32 bgpicid = 1;</code>
      */
     int getBgpicid();
 
@@ -1763,7 +1808,7 @@ public final class InterfaceRoom {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 2;</code>
+     * <code>fixed32 userval = 2;</code>
      */
     int getUserval();
   }
@@ -1788,7 +1833,7 @@ public final class InterfaceRoom {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 bgpicid = 1;</code>
+     * <code>fixed32 bgpicid = 1;</code>
      */
     public int getBgpicid() {
       return bgpicid_;
@@ -1798,7 +1843,7 @@ public final class InterfaceRoom {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 bgpicid = 1;</code>
+     * <code>fixed32 bgpicid = 1;</code>
      */
     private void setBgpicid(int value) {
       
@@ -1809,7 +1854,7 @@ public final class InterfaceRoom {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 bgpicid = 1;</code>
+     * <code>fixed32 bgpicid = 1;</code>
      */
     private void clearBgpicid() {
       
@@ -1823,7 +1868,7 @@ public final class InterfaceRoom {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 2;</code>
+     * <code>fixed32 userval = 2;</code>
      */
     public int getUserval() {
       return userval_;
@@ -1833,7 +1878,7 @@ public final class InterfaceRoom {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 2;</code>
+     * <code>fixed32 userval = 2;</code>
      */
     private void setUserval(int value) {
       
@@ -1844,7 +1889,7 @@ public final class InterfaceRoom {
      *&#47;/用户自定义的值
      * </pre>
      *
-     * <code>optional fixed32 userval = 2;</code>
+     * <code>fixed32 userval = 2;</code>
      */
     private void clearUserval() {
       
@@ -1878,6 +1923,19 @@ public final class InterfaceRoom {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_TypeSetRoomModBGReturn parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_TypeSetRoomModBGReturn parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_TypeSetRoomModBGReturn parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1969,7 +2027,7 @@ public final class InterfaceRoom {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 bgpicid = 1;</code>
+       * <code>fixed32 bgpicid = 1;</code>
        */
       public int getBgpicid() {
         return instance.getBgpicid();
@@ -1979,7 +2037,7 @@ public final class InterfaceRoom {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 bgpicid = 1;</code>
+       * <code>fixed32 bgpicid = 1;</code>
        */
       public Builder setBgpicid(int value) {
         copyOnWrite();
@@ -1991,7 +2049,7 @@ public final class InterfaceRoom {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 bgpicid = 1;</code>
+       * <code>fixed32 bgpicid = 1;</code>
        */
       public Builder clearBgpicid() {
         copyOnWrite();
@@ -2004,7 +2062,7 @@ public final class InterfaceRoom {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 2;</code>
+       * <code>fixed32 userval = 2;</code>
        */
       public int getUserval() {
         return instance.getUserval();
@@ -2014,7 +2072,7 @@ public final class InterfaceRoom {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 2;</code>
+       * <code>fixed32 userval = 2;</code>
        */
       public Builder setUserval(int value) {
         copyOnWrite();
@@ -2026,7 +2084,7 @@ public final class InterfaceRoom {
        *&#47;/用户自定义的值
        * </pre>
        *
-       * <code>optional fixed32 userval = 2;</code>
+       * <code>fixed32 userval = 2;</code>
        */
       public Builder clearUserval() {
         copyOnWrite();
@@ -2036,6 +2094,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_TypeSetRoomModBGReturn)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2104,6 +2163,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2148,7 +2208,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     int getRoomid();
 
@@ -2203,7 +2263,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     public int getRoomid() {
       return roomid_;
@@ -2213,7 +2273,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void setRoomid(int value) {
       
@@ -2224,7 +2284,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void clearRoomid() {
       
@@ -2348,6 +2408,19 @@ public final class InterfaceRoom {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomModDeviceInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomModDeviceInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomModDeviceInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2441,7 +2514,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public int getRoomid() {
         return instance.getRoomid();
@@ -2451,7 +2524,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder setRoomid(int value) {
         copyOnWrite();
@@ -2463,7 +2536,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder clearRoomid() {
         copyOnWrite();
@@ -2556,6 +2629,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetRoomModDeviceInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2642,6 +2716,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2686,7 +2761,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     int getDevid();
 
@@ -2695,7 +2770,7 @@ public final class InterfaceRoom {
      *左上角x坐标
      * </pre>
      *
-     * <code>optional float x = 2;</code>
+     * <code>float x = 2;</code>
      */
     float getX();
 
@@ -2704,7 +2779,7 @@ public final class InterfaceRoom {
      *左上角y坐标
      * </pre>
      *
-     * <code>optional float y = 3;</code>
+     * <code>float y = 3;</code>
      */
     float getY();
 
@@ -2713,7 +2788,7 @@ public final class InterfaceRoom {
      *会场设备朝向 参见 Pb_DeviceDirection
      * </pre>
      *
-     * <code>optional fixed32 direction = 4;</code>
+     * <code>fixed32 direction = 4;</code>
      */
     int getDirection();
   }
@@ -2738,7 +2813,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     public int getDevid() {
       return devid_;
@@ -2748,7 +2823,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     private void setDevid(int value) {
       
@@ -2759,7 +2834,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     private void clearDevid() {
       
@@ -2773,7 +2848,7 @@ public final class InterfaceRoom {
      *左上角x坐标
      * </pre>
      *
-     * <code>optional float x = 2;</code>
+     * <code>float x = 2;</code>
      */
     public float getX() {
       return x_;
@@ -2783,7 +2858,7 @@ public final class InterfaceRoom {
      *左上角x坐标
      * </pre>
      *
-     * <code>optional float x = 2;</code>
+     * <code>float x = 2;</code>
      */
     private void setX(float value) {
       
@@ -2794,7 +2869,7 @@ public final class InterfaceRoom {
      *左上角x坐标
      * </pre>
      *
-     * <code>optional float x = 2;</code>
+     * <code>float x = 2;</code>
      */
     private void clearX() {
       
@@ -2808,7 +2883,7 @@ public final class InterfaceRoom {
      *左上角y坐标
      * </pre>
      *
-     * <code>optional float y = 3;</code>
+     * <code>float y = 3;</code>
      */
     public float getY() {
       return y_;
@@ -2818,7 +2893,7 @@ public final class InterfaceRoom {
      *左上角y坐标
      * </pre>
      *
-     * <code>optional float y = 3;</code>
+     * <code>float y = 3;</code>
      */
     private void setY(float value) {
       
@@ -2829,7 +2904,7 @@ public final class InterfaceRoom {
      *左上角y坐标
      * </pre>
      *
-     * <code>optional float y = 3;</code>
+     * <code>float y = 3;</code>
      */
     private void clearY() {
       
@@ -2843,7 +2918,7 @@ public final class InterfaceRoom {
      *会场设备朝向 参见 Pb_DeviceDirection
      * </pre>
      *
-     * <code>optional fixed32 direction = 4;</code>
+     * <code>fixed32 direction = 4;</code>
      */
     public int getDirection() {
       return direction_;
@@ -2853,7 +2928,7 @@ public final class InterfaceRoom {
      *会场设备朝向 参见 Pb_DeviceDirection
      * </pre>
      *
-     * <code>optional fixed32 direction = 4;</code>
+     * <code>fixed32 direction = 4;</code>
      */
     private void setDirection(int value) {
       
@@ -2864,7 +2939,7 @@ public final class InterfaceRoom {
      *会场设备朝向 参见 Pb_DeviceDirection
      * </pre>
      *
-     * <code>optional fixed32 direction = 4;</code>
+     * <code>fixed32 direction = 4;</code>
      */
     private void clearDirection() {
       
@@ -2912,6 +2987,19 @@ public final class InterfaceRoom {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDevPosInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDevPosInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDevPosInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3003,7 +3091,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public int getDevid() {
         return instance.getDevid();
@@ -3013,7 +3101,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public Builder setDevid(int value) {
         copyOnWrite();
@@ -3025,7 +3113,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public Builder clearDevid() {
         copyOnWrite();
@@ -3038,7 +3126,7 @@ public final class InterfaceRoom {
        *左上角x坐标
        * </pre>
        *
-       * <code>optional float x = 2;</code>
+       * <code>float x = 2;</code>
        */
       public float getX() {
         return instance.getX();
@@ -3048,7 +3136,7 @@ public final class InterfaceRoom {
        *左上角x坐标
        * </pre>
        *
-       * <code>optional float x = 2;</code>
+       * <code>float x = 2;</code>
        */
       public Builder setX(float value) {
         copyOnWrite();
@@ -3060,7 +3148,7 @@ public final class InterfaceRoom {
        *左上角x坐标
        * </pre>
        *
-       * <code>optional float x = 2;</code>
+       * <code>float x = 2;</code>
        */
       public Builder clearX() {
         copyOnWrite();
@@ -3073,7 +3161,7 @@ public final class InterfaceRoom {
        *左上角y坐标
        * </pre>
        *
-       * <code>optional float y = 3;</code>
+       * <code>float y = 3;</code>
        */
       public float getY() {
         return instance.getY();
@@ -3083,7 +3171,7 @@ public final class InterfaceRoom {
        *左上角y坐标
        * </pre>
        *
-       * <code>optional float y = 3;</code>
+       * <code>float y = 3;</code>
        */
       public Builder setY(float value) {
         copyOnWrite();
@@ -3095,7 +3183,7 @@ public final class InterfaceRoom {
        *左上角y坐标
        * </pre>
        *
-       * <code>optional float y = 3;</code>
+       * <code>float y = 3;</code>
        */
       public Builder clearY() {
         copyOnWrite();
@@ -3108,7 +3196,7 @@ public final class InterfaceRoom {
        *会场设备朝向 参见 Pb_DeviceDirection
        * </pre>
        *
-       * <code>optional fixed32 direction = 4;</code>
+       * <code>fixed32 direction = 4;</code>
        */
       public int getDirection() {
         return instance.getDirection();
@@ -3118,7 +3206,7 @@ public final class InterfaceRoom {
        *会场设备朝向 参见 Pb_DeviceDirection
        * </pre>
        *
-       * <code>optional fixed32 direction = 4;</code>
+       * <code>fixed32 direction = 4;</code>
        */
       public Builder setDirection(int value) {
         copyOnWrite();
@@ -3130,7 +3218,7 @@ public final class InterfaceRoom {
        *会场设备朝向 参见 Pb_DeviceDirection
        * </pre>
        *
-       * <code>optional fixed32 direction = 4;</code>
+       * <code>fixed32 direction = 4;</code>
        */
       public Builder clearDirection() {
         copyOnWrite();
@@ -3140,6 +3228,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetRoomDevPosInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3222,6 +3311,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3266,7 +3356,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     int getRoomid();
 
@@ -3322,7 +3412,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     public int getRoomid() {
       return roomid_;
@@ -3332,7 +3422,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void setRoomid(int value) {
       
@@ -3343,7 +3433,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void clearRoomid() {
       
@@ -3554,6 +3644,19 @@ public final class InterfaceRoom {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDevPosInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDevPosInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDevPosInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3647,7 +3750,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public int getRoomid() {
         return instance.getRoomid();
@@ -3657,7 +3760,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder setRoomid(int value) {
         copyOnWrite();
@@ -3669,7 +3772,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder clearRoomid() {
         copyOnWrite();
@@ -3824,6 +3927,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetRoomDevPosInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3897,6 +4001,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3941,7 +4046,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     int getDevid();
 
@@ -3950,7 +4055,7 @@ public final class InterfaceRoom {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devname = 2;</code>
+     * <code>bytes devname = 2;</code>
      */
     com.google.protobuf.ByteString getDevname();
 
@@ -3959,7 +4064,7 @@ public final class InterfaceRoom {
      *&#47;/左上角x坐标
      * </pre>
      *
-     * <code>optional float x = 3;</code>
+     * <code>float x = 3;</code>
      */
     float getX();
 
@@ -3968,7 +4073,7 @@ public final class InterfaceRoom {
      *左上角y坐标
      * </pre>
      *
-     * <code>optional float y = 4;</code>
+     * <code>float y = 4;</code>
      */
     float getY();
 
@@ -3977,7 +4082,7 @@ public final class InterfaceRoom {
      *会场设备朝向
      * </pre>
      *
-     * <code>optional fixed32 direction = 5;</code>
+     * <code>fixed32 direction = 5;</code>
      */
     int getDirection();
 
@@ -3986,7 +4091,7 @@ public final class InterfaceRoom {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 6;</code>
+     * <code>fixed32 memberid = 6;</code>
      */
     int getMemberid();
 
@@ -3995,7 +4100,7 @@ public final class InterfaceRoom {
      *参会人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 7;</code>
+     * <code>bytes membername = 7;</code>
      */
     com.google.protobuf.ByteString getMembername();
 
@@ -4004,7 +4109,7 @@ public final class InterfaceRoom {
      *是否已经签到
      * </pre>
      *
-     * <code>optional fixed32 issignin = 8;</code>
+     * <code>fixed32 issignin = 8;</code>
      */
     int getIssignin();
 
@@ -4013,7 +4118,7 @@ public final class InterfaceRoom {
      *参会人员角色 参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 9;</code>
+     * <code>fixed32 role = 9;</code>
      */
     int getRole();
 
@@ -4022,7 +4127,7 @@ public final class InterfaceRoom {
      *界面状态 参见MemState_MainFace 定义
      * </pre>
      *
-     * <code>optional fixed32 facestate = 10;</code>
+     * <code>fixed32 facestate = 10;</code>
      */
     int getFacestate();
   }
@@ -4049,7 +4154,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     public int getDevid() {
       return devid_;
@@ -4059,7 +4164,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     private void setDevid(int value) {
       
@@ -4070,7 +4175,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     private void clearDevid() {
       
@@ -4084,7 +4189,7 @@ public final class InterfaceRoom {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devname = 2;</code>
+     * <code>bytes devname = 2;</code>
      */
     public com.google.protobuf.ByteString getDevname() {
       return devname_;
@@ -4094,7 +4199,7 @@ public final class InterfaceRoom {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devname = 2;</code>
+     * <code>bytes devname = 2;</code>
      */
     private void setDevname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4108,7 +4213,7 @@ public final class InterfaceRoom {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devname = 2;</code>
+     * <code>bytes devname = 2;</code>
      */
     private void clearDevname() {
       
@@ -4122,7 +4227,7 @@ public final class InterfaceRoom {
      *&#47;/左上角x坐标
      * </pre>
      *
-     * <code>optional float x = 3;</code>
+     * <code>float x = 3;</code>
      */
     public float getX() {
       return x_;
@@ -4132,7 +4237,7 @@ public final class InterfaceRoom {
      *&#47;/左上角x坐标
      * </pre>
      *
-     * <code>optional float x = 3;</code>
+     * <code>float x = 3;</code>
      */
     private void setX(float value) {
       
@@ -4143,7 +4248,7 @@ public final class InterfaceRoom {
      *&#47;/左上角x坐标
      * </pre>
      *
-     * <code>optional float x = 3;</code>
+     * <code>float x = 3;</code>
      */
     private void clearX() {
       
@@ -4157,7 +4262,7 @@ public final class InterfaceRoom {
      *左上角y坐标
      * </pre>
      *
-     * <code>optional float y = 4;</code>
+     * <code>float y = 4;</code>
      */
     public float getY() {
       return y_;
@@ -4167,7 +4272,7 @@ public final class InterfaceRoom {
      *左上角y坐标
      * </pre>
      *
-     * <code>optional float y = 4;</code>
+     * <code>float y = 4;</code>
      */
     private void setY(float value) {
       
@@ -4178,7 +4283,7 @@ public final class InterfaceRoom {
      *左上角y坐标
      * </pre>
      *
-     * <code>optional float y = 4;</code>
+     * <code>float y = 4;</code>
      */
     private void clearY() {
       
@@ -4192,7 +4297,7 @@ public final class InterfaceRoom {
      *会场设备朝向
      * </pre>
      *
-     * <code>optional fixed32 direction = 5;</code>
+     * <code>fixed32 direction = 5;</code>
      */
     public int getDirection() {
       return direction_;
@@ -4202,7 +4307,7 @@ public final class InterfaceRoom {
      *会场设备朝向
      * </pre>
      *
-     * <code>optional fixed32 direction = 5;</code>
+     * <code>fixed32 direction = 5;</code>
      */
     private void setDirection(int value) {
       
@@ -4213,7 +4318,7 @@ public final class InterfaceRoom {
      *会场设备朝向
      * </pre>
      *
-     * <code>optional fixed32 direction = 5;</code>
+     * <code>fixed32 direction = 5;</code>
      */
     private void clearDirection() {
       
@@ -4227,7 +4332,7 @@ public final class InterfaceRoom {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 6;</code>
+     * <code>fixed32 memberid = 6;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -4237,7 +4342,7 @@ public final class InterfaceRoom {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 6;</code>
+     * <code>fixed32 memberid = 6;</code>
      */
     private void setMemberid(int value) {
       
@@ -4248,7 +4353,7 @@ public final class InterfaceRoom {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 6;</code>
+     * <code>fixed32 memberid = 6;</code>
      */
     private void clearMemberid() {
       
@@ -4262,7 +4367,7 @@ public final class InterfaceRoom {
      *参会人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 7;</code>
+     * <code>bytes membername = 7;</code>
      */
     public com.google.protobuf.ByteString getMembername() {
       return membername_;
@@ -4272,7 +4377,7 @@ public final class InterfaceRoom {
      *参会人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 7;</code>
+     * <code>bytes membername = 7;</code>
      */
     private void setMembername(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4286,7 +4391,7 @@ public final class InterfaceRoom {
      *参会人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 7;</code>
+     * <code>bytes membername = 7;</code>
      */
     private void clearMembername() {
       
@@ -4300,7 +4405,7 @@ public final class InterfaceRoom {
      *是否已经签到
      * </pre>
      *
-     * <code>optional fixed32 issignin = 8;</code>
+     * <code>fixed32 issignin = 8;</code>
      */
     public int getIssignin() {
       return issignin_;
@@ -4310,7 +4415,7 @@ public final class InterfaceRoom {
      *是否已经签到
      * </pre>
      *
-     * <code>optional fixed32 issignin = 8;</code>
+     * <code>fixed32 issignin = 8;</code>
      */
     private void setIssignin(int value) {
       
@@ -4321,7 +4426,7 @@ public final class InterfaceRoom {
      *是否已经签到
      * </pre>
      *
-     * <code>optional fixed32 issignin = 8;</code>
+     * <code>fixed32 issignin = 8;</code>
      */
     private void clearIssignin() {
       
@@ -4335,7 +4440,7 @@ public final class InterfaceRoom {
      *参会人员角色 参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 9;</code>
+     * <code>fixed32 role = 9;</code>
      */
     public int getRole() {
       return role_;
@@ -4345,7 +4450,7 @@ public final class InterfaceRoom {
      *参会人员角色 参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 9;</code>
+     * <code>fixed32 role = 9;</code>
      */
     private void setRole(int value) {
       
@@ -4356,7 +4461,7 @@ public final class InterfaceRoom {
      *参会人员角色 参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 9;</code>
+     * <code>fixed32 role = 9;</code>
      */
     private void clearRole() {
       
@@ -4370,7 +4475,7 @@ public final class InterfaceRoom {
      *界面状态 参见MemState_MainFace 定义
      * </pre>
      *
-     * <code>optional fixed32 facestate = 10;</code>
+     * <code>fixed32 facestate = 10;</code>
      */
     public int getFacestate() {
       return facestate_;
@@ -4380,7 +4485,7 @@ public final class InterfaceRoom {
      *界面状态 参见MemState_MainFace 定义
      * </pre>
      *
-     * <code>optional fixed32 facestate = 10;</code>
+     * <code>fixed32 facestate = 10;</code>
      */
     private void setFacestate(int value) {
       
@@ -4391,7 +4496,7 @@ public final class InterfaceRoom {
      *界面状态 参见MemState_MainFace 定义
      * </pre>
      *
-     * <code>optional fixed32 facestate = 10;</code>
+     * <code>fixed32 facestate = 10;</code>
      */
     private void clearFacestate() {
       
@@ -4481,6 +4586,19 @@ public final class InterfaceRoom {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDevSeatDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDevSeatDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetRoomDevSeatDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4572,7 +4690,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public int getDevid() {
         return instance.getDevid();
@@ -4582,7 +4700,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public Builder setDevid(int value) {
         copyOnWrite();
@@ -4594,7 +4712,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public Builder clearDevid() {
         copyOnWrite();
@@ -4607,7 +4725,7 @@ public final class InterfaceRoom {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devname = 2;</code>
+       * <code>bytes devname = 2;</code>
        */
       public com.google.protobuf.ByteString getDevname() {
         return instance.getDevname();
@@ -4617,7 +4735,7 @@ public final class InterfaceRoom {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devname = 2;</code>
+       * <code>bytes devname = 2;</code>
        */
       public Builder setDevname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -4629,7 +4747,7 @@ public final class InterfaceRoom {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devname = 2;</code>
+       * <code>bytes devname = 2;</code>
        */
       public Builder clearDevname() {
         copyOnWrite();
@@ -4642,7 +4760,7 @@ public final class InterfaceRoom {
        *&#47;/左上角x坐标
        * </pre>
        *
-       * <code>optional float x = 3;</code>
+       * <code>float x = 3;</code>
        */
       public float getX() {
         return instance.getX();
@@ -4652,7 +4770,7 @@ public final class InterfaceRoom {
        *&#47;/左上角x坐标
        * </pre>
        *
-       * <code>optional float x = 3;</code>
+       * <code>float x = 3;</code>
        */
       public Builder setX(float value) {
         copyOnWrite();
@@ -4664,7 +4782,7 @@ public final class InterfaceRoom {
        *&#47;/左上角x坐标
        * </pre>
        *
-       * <code>optional float x = 3;</code>
+       * <code>float x = 3;</code>
        */
       public Builder clearX() {
         copyOnWrite();
@@ -4677,7 +4795,7 @@ public final class InterfaceRoom {
        *左上角y坐标
        * </pre>
        *
-       * <code>optional float y = 4;</code>
+       * <code>float y = 4;</code>
        */
       public float getY() {
         return instance.getY();
@@ -4687,7 +4805,7 @@ public final class InterfaceRoom {
        *左上角y坐标
        * </pre>
        *
-       * <code>optional float y = 4;</code>
+       * <code>float y = 4;</code>
        */
       public Builder setY(float value) {
         copyOnWrite();
@@ -4699,7 +4817,7 @@ public final class InterfaceRoom {
        *左上角y坐标
        * </pre>
        *
-       * <code>optional float y = 4;</code>
+       * <code>float y = 4;</code>
        */
       public Builder clearY() {
         copyOnWrite();
@@ -4712,7 +4830,7 @@ public final class InterfaceRoom {
        *会场设备朝向
        * </pre>
        *
-       * <code>optional fixed32 direction = 5;</code>
+       * <code>fixed32 direction = 5;</code>
        */
       public int getDirection() {
         return instance.getDirection();
@@ -4722,7 +4840,7 @@ public final class InterfaceRoom {
        *会场设备朝向
        * </pre>
        *
-       * <code>optional fixed32 direction = 5;</code>
+       * <code>fixed32 direction = 5;</code>
        */
       public Builder setDirection(int value) {
         copyOnWrite();
@@ -4734,7 +4852,7 @@ public final class InterfaceRoom {
        *会场设备朝向
        * </pre>
        *
-       * <code>optional fixed32 direction = 5;</code>
+       * <code>fixed32 direction = 5;</code>
        */
       public Builder clearDirection() {
         copyOnWrite();
@@ -4747,7 +4865,7 @@ public final class InterfaceRoom {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 6;</code>
+       * <code>fixed32 memberid = 6;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -4757,7 +4875,7 @@ public final class InterfaceRoom {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 6;</code>
+       * <code>fixed32 memberid = 6;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -4769,7 +4887,7 @@ public final class InterfaceRoom {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 6;</code>
+       * <code>fixed32 memberid = 6;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -4782,7 +4900,7 @@ public final class InterfaceRoom {
        *参会人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 7;</code>
+       * <code>bytes membername = 7;</code>
        */
       public com.google.protobuf.ByteString getMembername() {
         return instance.getMembername();
@@ -4792,7 +4910,7 @@ public final class InterfaceRoom {
        *参会人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 7;</code>
+       * <code>bytes membername = 7;</code>
        */
       public Builder setMembername(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -4804,7 +4922,7 @@ public final class InterfaceRoom {
        *参会人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 7;</code>
+       * <code>bytes membername = 7;</code>
        */
       public Builder clearMembername() {
         copyOnWrite();
@@ -4817,7 +4935,7 @@ public final class InterfaceRoom {
        *是否已经签到
        * </pre>
        *
-       * <code>optional fixed32 issignin = 8;</code>
+       * <code>fixed32 issignin = 8;</code>
        */
       public int getIssignin() {
         return instance.getIssignin();
@@ -4827,7 +4945,7 @@ public final class InterfaceRoom {
        *是否已经签到
        * </pre>
        *
-       * <code>optional fixed32 issignin = 8;</code>
+       * <code>fixed32 issignin = 8;</code>
        */
       public Builder setIssignin(int value) {
         copyOnWrite();
@@ -4839,7 +4957,7 @@ public final class InterfaceRoom {
        *是否已经签到
        * </pre>
        *
-       * <code>optional fixed32 issignin = 8;</code>
+       * <code>fixed32 issignin = 8;</code>
        */
       public Builder clearIssignin() {
         copyOnWrite();
@@ -4852,7 +4970,7 @@ public final class InterfaceRoom {
        *参会人员角色 参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 9;</code>
+       * <code>fixed32 role = 9;</code>
        */
       public int getRole() {
         return instance.getRole();
@@ -4862,7 +4980,7 @@ public final class InterfaceRoom {
        *参会人员角色 参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 9;</code>
+       * <code>fixed32 role = 9;</code>
        */
       public Builder setRole(int value) {
         copyOnWrite();
@@ -4874,7 +4992,7 @@ public final class InterfaceRoom {
        *参会人员角色 参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 9;</code>
+       * <code>fixed32 role = 9;</code>
        */
       public Builder clearRole() {
         copyOnWrite();
@@ -4887,7 +5005,7 @@ public final class InterfaceRoom {
        *界面状态 参见MemState_MainFace 定义
        * </pre>
        *
-       * <code>optional fixed32 facestate = 10;</code>
+       * <code>fixed32 facestate = 10;</code>
        */
       public int getFacestate() {
         return instance.getFacestate();
@@ -4897,7 +5015,7 @@ public final class InterfaceRoom {
        *界面状态 参见MemState_MainFace 定义
        * </pre>
        *
-       * <code>optional fixed32 facestate = 10;</code>
+       * <code>fixed32 facestate = 10;</code>
        */
       public Builder setFacestate(int value) {
         copyOnWrite();
@@ -4909,7 +5027,7 @@ public final class InterfaceRoom {
        *界面状态 参见MemState_MainFace 定义
        * </pre>
        *
-       * <code>optional fixed32 facestate = 10;</code>
+       * <code>fixed32 facestate = 10;</code>
        */
       public Builder clearFacestate() {
         copyOnWrite();
@@ -4919,6 +5037,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetRoomDevSeatDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5043,6 +5162,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5087,7 +5207,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     int getRoomid();
 
@@ -5142,7 +5262,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     public int getRoomid() {
       return roomid_;
@@ -5152,7 +5272,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void setRoomid(int value) {
       
@@ -5163,7 +5283,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 1;</code>
+     * <code>fixed32 roomid = 1;</code>
      */
     private void clearRoomid() {
       
@@ -5374,6 +5494,19 @@ public final class InterfaceRoom {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDevSeatDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDevSeatDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetRoomDevSeatDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -5466,7 +5599,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public int getRoomid() {
         return instance.getRoomid();
@@ -5476,7 +5609,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder setRoomid(int value) {
         copyOnWrite();
@@ -5488,7 +5621,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 1;</code>
+       * <code>fixed32 roomid = 1;</code>
        */
       public Builder clearRoomid() {
         copyOnWrite();
@@ -5643,6 +5776,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetRoomDevSeatDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5716,6 +5850,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5760,7 +5895,7 @@ public final class InterfaceRoom {
      *查询标志 参见 Pb_RoomDeviceFilterFlag
      * </pre>
      *
-     * <code>optional fixed32 filterflag = 1;</code>
+     * <code>fixed32 filterflag = 1;</code>
      */
     int getFilterflag();
 
@@ -5769,7 +5904,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 2;</code>
+     * <code>fixed32 roomid = 2;</code>
      */
     int getRoomid();
 
@@ -5778,7 +5913,7 @@ public final class InterfaceRoom {
      *匹配会议界面状态
      * </pre>
      *
-     * <code>optional fixed32 facestatus = 3;</code>
+     * <code>fixed32 facestatus = 3;</code>
      */
     int getFacestatus();
 
@@ -5787,7 +5922,7 @@ public final class InterfaceRoom {
      *排除指定ID
      * </pre>
      *
-     * <code>optional fixed32 exceptdevid = 4;</code>
+     * <code>fixed32 exceptdevid = 4;</code>
      */
     int getExceptdevid();
   }
@@ -5815,7 +5950,7 @@ public final class InterfaceRoom {
      *查询标志 参见 Pb_RoomDeviceFilterFlag
      * </pre>
      *
-     * <code>optional fixed32 filterflag = 1;</code>
+     * <code>fixed32 filterflag = 1;</code>
      */
     public int getFilterflag() {
       return filterflag_;
@@ -5825,7 +5960,7 @@ public final class InterfaceRoom {
      *查询标志 参见 Pb_RoomDeviceFilterFlag
      * </pre>
      *
-     * <code>optional fixed32 filterflag = 1;</code>
+     * <code>fixed32 filterflag = 1;</code>
      */
     private void setFilterflag(int value) {
       
@@ -5836,7 +5971,7 @@ public final class InterfaceRoom {
      *查询标志 参见 Pb_RoomDeviceFilterFlag
      * </pre>
      *
-     * <code>optional fixed32 filterflag = 1;</code>
+     * <code>fixed32 filterflag = 1;</code>
      */
     private void clearFilterflag() {
       
@@ -5850,7 +5985,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 2;</code>
+     * <code>fixed32 roomid = 2;</code>
      */
     public int getRoomid() {
       return roomid_;
@@ -5860,7 +5995,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 2;</code>
+     * <code>fixed32 roomid = 2;</code>
      */
     private void setRoomid(int value) {
       
@@ -5871,7 +6006,7 @@ public final class InterfaceRoom {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 2;</code>
+     * <code>fixed32 roomid = 2;</code>
      */
     private void clearRoomid() {
       
@@ -5885,7 +6020,7 @@ public final class InterfaceRoom {
      *匹配会议界面状态
      * </pre>
      *
-     * <code>optional fixed32 facestatus = 3;</code>
+     * <code>fixed32 facestatus = 3;</code>
      */
     public int getFacestatus() {
       return facestatus_;
@@ -5895,7 +6030,7 @@ public final class InterfaceRoom {
      *匹配会议界面状态
      * </pre>
      *
-     * <code>optional fixed32 facestatus = 3;</code>
+     * <code>fixed32 facestatus = 3;</code>
      */
     private void setFacestatus(int value) {
       
@@ -5906,7 +6041,7 @@ public final class InterfaceRoom {
      *匹配会议界面状态
      * </pre>
      *
-     * <code>optional fixed32 facestatus = 3;</code>
+     * <code>fixed32 facestatus = 3;</code>
      */
     private void clearFacestatus() {
       
@@ -5920,7 +6055,7 @@ public final class InterfaceRoom {
      *排除指定ID
      * </pre>
      *
-     * <code>optional fixed32 exceptdevid = 4;</code>
+     * <code>fixed32 exceptdevid = 4;</code>
      */
     public int getExceptdevid() {
       return exceptdevid_;
@@ -5930,7 +6065,7 @@ public final class InterfaceRoom {
      *排除指定ID
      * </pre>
      *
-     * <code>optional fixed32 exceptdevid = 4;</code>
+     * <code>fixed32 exceptdevid = 4;</code>
      */
     private void setExceptdevid(int value) {
       
@@ -5941,7 +6076,7 @@ public final class InterfaceRoom {
      *排除指定ID
      * </pre>
      *
-     * <code>optional fixed32 exceptdevid = 4;</code>
+     * <code>fixed32 exceptdevid = 4;</code>
      */
     private void clearExceptdevid() {
       
@@ -5989,6 +6124,19 @@ public final class InterfaceRoom {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_DumpMeetRoomDevInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_DumpMeetRoomDevInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_DumpMeetRoomDevInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6083,7 +6231,7 @@ public final class InterfaceRoom {
        *查询标志 参见 Pb_RoomDeviceFilterFlag
        * </pre>
        *
-       * <code>optional fixed32 filterflag = 1;</code>
+       * <code>fixed32 filterflag = 1;</code>
        */
       public int getFilterflag() {
         return instance.getFilterflag();
@@ -6093,7 +6241,7 @@ public final class InterfaceRoom {
        *查询标志 参见 Pb_RoomDeviceFilterFlag
        * </pre>
        *
-       * <code>optional fixed32 filterflag = 1;</code>
+       * <code>fixed32 filterflag = 1;</code>
        */
       public Builder setFilterflag(int value) {
         copyOnWrite();
@@ -6105,7 +6253,7 @@ public final class InterfaceRoom {
        *查询标志 参见 Pb_RoomDeviceFilterFlag
        * </pre>
        *
-       * <code>optional fixed32 filterflag = 1;</code>
+       * <code>fixed32 filterflag = 1;</code>
        */
       public Builder clearFilterflag() {
         copyOnWrite();
@@ -6118,7 +6266,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 2;</code>
+       * <code>fixed32 roomid = 2;</code>
        */
       public int getRoomid() {
         return instance.getRoomid();
@@ -6128,7 +6276,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 2;</code>
+       * <code>fixed32 roomid = 2;</code>
        */
       public Builder setRoomid(int value) {
         copyOnWrite();
@@ -6140,7 +6288,7 @@ public final class InterfaceRoom {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 2;</code>
+       * <code>fixed32 roomid = 2;</code>
        */
       public Builder clearRoomid() {
         copyOnWrite();
@@ -6153,7 +6301,7 @@ public final class InterfaceRoom {
        *匹配会议界面状态
        * </pre>
        *
-       * <code>optional fixed32 facestatus = 3;</code>
+       * <code>fixed32 facestatus = 3;</code>
        */
       public int getFacestatus() {
         return instance.getFacestatus();
@@ -6163,7 +6311,7 @@ public final class InterfaceRoom {
        *匹配会议界面状态
        * </pre>
        *
-       * <code>optional fixed32 facestatus = 3;</code>
+       * <code>fixed32 facestatus = 3;</code>
        */
       public Builder setFacestatus(int value) {
         copyOnWrite();
@@ -6175,7 +6323,7 @@ public final class InterfaceRoom {
        *匹配会议界面状态
        * </pre>
        *
-       * <code>optional fixed32 facestatus = 3;</code>
+       * <code>fixed32 facestatus = 3;</code>
        */
       public Builder clearFacestatus() {
         copyOnWrite();
@@ -6188,7 +6336,7 @@ public final class InterfaceRoom {
        *排除指定ID
        * </pre>
        *
-       * <code>optional fixed32 exceptdevid = 4;</code>
+       * <code>fixed32 exceptdevid = 4;</code>
        */
       public int getExceptdevid() {
         return instance.getExceptdevid();
@@ -6198,7 +6346,7 @@ public final class InterfaceRoom {
        *排除指定ID
        * </pre>
        *
-       * <code>optional fixed32 exceptdevid = 4;</code>
+       * <code>fixed32 exceptdevid = 4;</code>
        */
       public Builder setExceptdevid(int value) {
         copyOnWrite();
@@ -6210,7 +6358,7 @@ public final class InterfaceRoom {
        *排除指定ID
        * </pre>
        *
-       * <code>optional fixed32 exceptdevid = 4;</code>
+       * <code>fixed32 exceptdevid = 4;</code>
        */
       public Builder clearExceptdevid() {
         copyOnWrite();
@@ -6220,6 +6368,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DumpMeetRoomDevInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6302,6 +6451,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6494,6 +6644,19 @@ public final class InterfaceRoom {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_ResMeetRoomDevInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_ResMeetRoomDevInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_ResMeetRoomDevInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -6667,6 +6830,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ResMeetRoomDevInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6745,6 +6909,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6789,7 +6954,7 @@ public final class InterfaceRoom {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 nameId = 1;</code>
+     * <code>fixed32 nameId = 1;</code>
      */
     int getNameId();
 
@@ -6798,7 +6963,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 seatid = 2;</code>
+     * <code>fixed32 seatid = 2;</code>
      */
     int getSeatid();
 
@@ -6807,7 +6972,7 @@ public final class InterfaceRoom {
      *人员身份  参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     int getRole();
   }
@@ -6832,7 +6997,7 @@ public final class InterfaceRoom {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 nameId = 1;</code>
+     * <code>fixed32 nameId = 1;</code>
      */
     public int getNameId() {
       return nameId_;
@@ -6842,7 +7007,7 @@ public final class InterfaceRoom {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 nameId = 1;</code>
+     * <code>fixed32 nameId = 1;</code>
      */
     private void setNameId(int value) {
       
@@ -6853,7 +7018,7 @@ public final class InterfaceRoom {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 nameId = 1;</code>
+     * <code>fixed32 nameId = 1;</code>
      */
     private void clearNameId() {
       
@@ -6867,7 +7032,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 seatid = 2;</code>
+     * <code>fixed32 seatid = 2;</code>
      */
     public int getSeatid() {
       return seatid_;
@@ -6877,7 +7042,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 seatid = 2;</code>
+     * <code>fixed32 seatid = 2;</code>
      */
     private void setSeatid(int value) {
       
@@ -6888,7 +7053,7 @@ public final class InterfaceRoom {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 seatid = 2;</code>
+     * <code>fixed32 seatid = 2;</code>
      */
     private void clearSeatid() {
       
@@ -6902,7 +7067,7 @@ public final class InterfaceRoom {
      *人员身份  参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     public int getRole() {
       return role_;
@@ -6912,7 +7077,7 @@ public final class InterfaceRoom {
      *人员身份  参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     private void setRole(int value) {
       
@@ -6923,7 +7088,7 @@ public final class InterfaceRoom {
      *人员身份  参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 role = 3;</code>
+     * <code>fixed32 role = 3;</code>
      */
     private void clearRole() {
       
@@ -6964,6 +7129,19 @@ public final class InterfaceRoom {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetSeatDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetSeatDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Item_MeetSeatDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7055,7 +7233,7 @@ public final class InterfaceRoom {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 nameId = 1;</code>
+       * <code>fixed32 nameId = 1;</code>
        */
       public int getNameId() {
         return instance.getNameId();
@@ -7065,7 +7243,7 @@ public final class InterfaceRoom {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 nameId = 1;</code>
+       * <code>fixed32 nameId = 1;</code>
        */
       public Builder setNameId(int value) {
         copyOnWrite();
@@ -7077,7 +7255,7 @@ public final class InterfaceRoom {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 nameId = 1;</code>
+       * <code>fixed32 nameId = 1;</code>
        */
       public Builder clearNameId() {
         copyOnWrite();
@@ -7090,7 +7268,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 seatid = 2;</code>
+       * <code>fixed32 seatid = 2;</code>
        */
       public int getSeatid() {
         return instance.getSeatid();
@@ -7100,7 +7278,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 seatid = 2;</code>
+       * <code>fixed32 seatid = 2;</code>
        */
       public Builder setSeatid(int value) {
         copyOnWrite();
@@ -7112,7 +7290,7 @@ public final class InterfaceRoom {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 seatid = 2;</code>
+       * <code>fixed32 seatid = 2;</code>
        */
       public Builder clearSeatid() {
         copyOnWrite();
@@ -7125,7 +7303,7 @@ public final class InterfaceRoom {
        *人员身份  参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public int getRole() {
         return instance.getRole();
@@ -7135,7 +7313,7 @@ public final class InterfaceRoom {
        *人员身份  参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public Builder setRole(int value) {
         copyOnWrite();
@@ -7147,7 +7325,7 @@ public final class InterfaceRoom {
        *人员身份  参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 role = 3;</code>
+       * <code>fixed32 role = 3;</code>
        */
       public Builder clearRole() {
         copyOnWrite();
@@ -7157,6 +7335,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetSeatDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7232,6 +7411,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7512,6 +7692,19 @@ public final class InterfaceRoom {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetSeatDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetSeatDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceRoom.pbui_Type_MeetSeatDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -7747,6 +7940,7 @@ public final class InterfaceRoom {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetSeatDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7812,6 +8006,7 @@ public final class InterfaceRoom {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

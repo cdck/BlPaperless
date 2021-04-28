@@ -12,11 +12,9 @@ import android.media.projection.MediaProjectionManager;
 import android.os.Bundle;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.ServiceUtils;
-import com.pa.paperless.activity.MainActivity;
 import com.pa.paperless.activity.MeetingActivity;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Macro;

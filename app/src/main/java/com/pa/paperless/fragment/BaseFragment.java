@@ -6,8 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.pa.paperless.utils.LogUtil;
 import com.wind.myapplication.NativeUtil;
+
+import org.greenrobot.eventbus.EventBus;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;

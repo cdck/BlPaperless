@@ -3,6 +3,6 @@
 //
 
 #ifndef logable
-#define logable false
+#define logable true
 
 #endif //BOLING_PAPERLESS_3_2_1_COUNET_H

@@ -17,7 +17,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     int getTriggeruserval();
 
@@ -26,7 +26,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     int getDeviceid();
 
@@ -35,7 +35,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     int getMemberid();
 
@@ -44,7 +44,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 4;</code>
+     * <code>fixed32 substreamindex = 4;</code>
      */
     int getSubstreamindex();
   }
@@ -72,7 +72,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -82,7 +82,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -93,7 +93,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     private void clearTriggeruserval() {
       
@@ -107,7 +107,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -117,7 +117,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void setDeviceid(int value) {
       
@@ -128,7 +128,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void clearDeviceid() {
       
@@ -142,7 +142,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -152,7 +152,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void setMemberid(int value) {
       
@@ -163,7 +163,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void clearMemberid() {
       
@@ -177,7 +177,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 4;</code>
+     * <code>fixed32 substreamindex = 4;</code>
      */
     public int getSubstreamindex() {
       return substreamindex_;
@@ -187,7 +187,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 4;</code>
+     * <code>fixed32 substreamindex = 4;</code>
      */
     private void setSubstreamindex(int value) {
       
@@ -198,7 +198,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 4;</code>
+     * <code>fixed32 substreamindex = 4;</code>
      */
     private void clearSubstreamindex() {
       
@@ -246,6 +246,19 @@ public final class InterfaceStream {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_ReqStreamPush parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_ReqStreamPush parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_ReqStreamPush parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -340,7 +353,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -350,7 +363,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -362,7 +375,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -375,7 +388,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -385,7 +398,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -397,7 +410,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -410,7 +423,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -420,7 +433,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -432,7 +445,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -445,7 +458,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 4;</code>
+       * <code>fixed32 substreamindex = 4;</code>
        */
       public int getSubstreamindex() {
         return instance.getSubstreamindex();
@@ -455,7 +468,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 4;</code>
+       * <code>fixed32 substreamindex = 4;</code>
        */
       public Builder setSubstreamindex(int value) {
         copyOnWrite();
@@ -467,7 +480,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 4;</code>
+       * <code>fixed32 substreamindex = 4;</code>
        */
       public Builder clearSubstreamindex() {
         copyOnWrite();
@@ -477,6 +490,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ReqStreamPush)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -559,6 +573,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -603,7 +618,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     int getTriggeruserval();
 
@@ -612,7 +627,7 @@ public final class InterfaceStream {
      *处理该请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 handledeviceid = 2;</code>
+     * <code>fixed32 handledeviceid = 2;</code>
      */
     int getHandledeviceid();
 
@@ -621,7 +636,7 @@ public final class InterfaceStream {
      *本设备子通道号  这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     int getSubstreamindex();
 
@@ -675,7 +690,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -685,7 +700,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -696,7 +711,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     private void clearTriggeruserval() {
       
@@ -710,7 +725,7 @@ public final class InterfaceStream {
      *处理该请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 handledeviceid = 2;</code>
+     * <code>fixed32 handledeviceid = 2;</code>
      */
     public int getHandledeviceid() {
       return handledeviceid_;
@@ -720,7 +735,7 @@ public final class InterfaceStream {
      *处理该请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 handledeviceid = 2;</code>
+     * <code>fixed32 handledeviceid = 2;</code>
      */
     private void setHandledeviceid(int value) {
       
@@ -731,7 +746,7 @@ public final class InterfaceStream {
      *处理该请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 handledeviceid = 2;</code>
+     * <code>fixed32 handledeviceid = 2;</code>
      */
     private void clearHandledeviceid() {
       
@@ -745,7 +760,7 @@ public final class InterfaceStream {
      *本设备子通道号  这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     public int getSubstreamindex() {
       return substreamindex_;
@@ -755,7 +770,7 @@ public final class InterfaceStream {
      *本设备子通道号  这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     private void setSubstreamindex(int value) {
       
@@ -766,7 +781,7 @@ public final class InterfaceStream {
      *本设备子通道号  这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     private void clearSubstreamindex() {
       
@@ -904,6 +919,19 @@ public final class InterfaceStream {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_DoReqStreamPush parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_DoReqStreamPush parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_DoReqStreamPush parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -996,7 +1024,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -1006,7 +1034,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -1018,7 +1046,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -1031,7 +1059,7 @@ public final class InterfaceStream {
        *处理该请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 handledeviceid = 2;</code>
+       * <code>fixed32 handledeviceid = 2;</code>
        */
       public int getHandledeviceid() {
         return instance.getHandledeviceid();
@@ -1041,7 +1069,7 @@ public final class InterfaceStream {
        *处理该请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 handledeviceid = 2;</code>
+       * <code>fixed32 handledeviceid = 2;</code>
        */
       public Builder setHandledeviceid(int value) {
         copyOnWrite();
@@ -1053,7 +1081,7 @@ public final class InterfaceStream {
        *处理该请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 handledeviceid = 2;</code>
+       * <code>fixed32 handledeviceid = 2;</code>
        */
       public Builder clearHandledeviceid() {
         copyOnWrite();
@@ -1066,7 +1094,7 @@ public final class InterfaceStream {
        *本设备子通道号  这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public int getSubstreamindex() {
         return instance.getSubstreamindex();
@@ -1076,7 +1104,7 @@ public final class InterfaceStream {
        *本设备子通道号  这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public Builder setSubstreamindex(int value) {
         copyOnWrite();
@@ -1088,7 +1116,7 @@ public final class InterfaceStream {
        *本设备子通道号  这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public Builder clearSubstreamindex() {
         copyOnWrite();
@@ -1181,6 +1209,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DoReqStreamPush)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1281,6 +1310,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1325,7 +1355,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     int getTriggeruserval();
 
@@ -1334,7 +1364,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     int getDeviceid();
 
@@ -1343,7 +1373,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     int getSubstreamindex();
   }
@@ -1371,7 +1401,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -1381,7 +1411,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -1392,7 +1422,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     private void clearTriggeruserval() {
       
@@ -1406,7 +1436,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -1416,7 +1446,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void setDeviceid(int value) {
       
@@ -1427,7 +1457,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void clearDeviceid() {
       
@@ -1441,7 +1471,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     public int getSubstreamindex() {
       return substreamindex_;
@@ -1451,7 +1481,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     private void setSubstreamindex(int value) {
       
@@ -1462,7 +1492,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     private void clearSubstreamindex() {
       
@@ -1503,6 +1533,19 @@ public final class InterfaceStream {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_StreamPush parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_StreamPush parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_StreamPush parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1597,7 +1640,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -1607,7 +1650,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -1619,7 +1662,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -1632,7 +1675,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -1642,7 +1685,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -1654,7 +1697,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -1667,7 +1710,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public int getSubstreamindex() {
         return instance.getSubstreamindex();
@@ -1677,7 +1720,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public Builder setSubstreamindex(int value) {
         copyOnWrite();
@@ -1689,7 +1732,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public Builder clearSubstreamindex() {
         copyOnWrite();
@@ -1699,6 +1742,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_StreamPush)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1774,6 +1818,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1818,7 +1863,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     int getTriggeruserval();
 
@@ -1827,7 +1872,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 srcdeviceid = 2;</code>
+     * <code>fixed32 srcdeviceid = 2;</code>
      */
     int getSrcdeviceid();
 
@@ -1836,7 +1881,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     int getSubstreamindex();
 
@@ -1890,7 +1935,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -1900,7 +1945,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -1911,7 +1956,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 1;</code>
+     * <code>fixed32 triggeruserval = 1;</code>
      */
     private void clearTriggeruserval() {
       
@@ -1925,7 +1970,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 srcdeviceid = 2;</code>
+     * <code>fixed32 srcdeviceid = 2;</code>
      */
     public int getSrcdeviceid() {
       return srcdeviceid_;
@@ -1935,7 +1980,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 srcdeviceid = 2;</code>
+     * <code>fixed32 srcdeviceid = 2;</code>
      */
     private void setSrcdeviceid(int value) {
       
@@ -1946,7 +1991,7 @@ public final class InterfaceStream {
      *发起请求的设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 srcdeviceid = 2;</code>
+     * <code>fixed32 srcdeviceid = 2;</code>
      */
     private void clearSrcdeviceid() {
       
@@ -1960,7 +2005,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     public int getSubstreamindex() {
       return substreamindex_;
@@ -1970,7 +2015,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     private void setSubstreamindex(int value) {
       
@@ -1981,7 +2026,7 @@ public final class InterfaceStream {
      *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 substreamindex = 3;</code>
+     * <code>fixed32 substreamindex = 3;</code>
      */
     private void clearSubstreamindex() {
       
@@ -2119,6 +2164,19 @@ public final class InterfaceStream {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_DoStreamPush parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_DoStreamPush parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_DoStreamPush parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2211,7 +2269,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -2221,7 +2279,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -2233,7 +2291,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 1;</code>
+       * <code>fixed32 triggeruserval = 1;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -2246,7 +2304,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 srcdeviceid = 2;</code>
+       * <code>fixed32 srcdeviceid = 2;</code>
        */
       public int getSrcdeviceid() {
         return instance.getSrcdeviceid();
@@ -2256,7 +2314,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 srcdeviceid = 2;</code>
+       * <code>fixed32 srcdeviceid = 2;</code>
        */
       public Builder setSrcdeviceid(int value) {
         copyOnWrite();
@@ -2268,7 +2326,7 @@ public final class InterfaceStream {
        *发起请求的设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 srcdeviceid = 2;</code>
+       * <code>fixed32 srcdeviceid = 2;</code>
        */
       public Builder clearSrcdeviceid() {
         copyOnWrite();
@@ -2281,7 +2339,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public int getSubstreamindex() {
         return instance.getSubstreamindex();
@@ -2291,7 +2349,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public Builder setSubstreamindex(int value) {
         copyOnWrite();
@@ -2303,7 +2361,7 @@ public final class InterfaceStream {
        *本设备子通道号 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 substreamindex = 3;</code>
+       * <code>fixed32 substreamindex = 3;</code>
        */
       public Builder clearSubstreamindex() {
         copyOnWrite();
@@ -2396,6 +2454,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DoStreamPush)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2496,6 +2555,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2540,7 +2600,7 @@ public final class InterfaceStream {
      *触发器ID
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     int getTriggerid();
 
@@ -2549,7 +2609,7 @@ public final class InterfaceStream {
      *创建执行该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     int getCreatedeviceid();
 
@@ -2558,7 +2618,7 @@ public final class InterfaceStream {
      *流源设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 3;</code>
+     * <code>fixed32 deviceid = 3;</code>
      */
     int getDeviceid();
 
@@ -2567,7 +2627,7 @@ public final class InterfaceStream {
      *流源设备子通道ID 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 subid = 4;</code>
+     * <code>fixed32 subid = 4;</code>
      */
     int getSubid();
 
@@ -2576,7 +2636,7 @@ public final class InterfaceStream {
      *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 5;</code>
+     * <code>fixed32 res = 5;</code>
      */
     int getRes();
 
@@ -2585,7 +2645,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 6;</code>
+     * <code>fixed32 triggeruserval = 6;</code>
      */
     int getTriggeruserval();
   }
@@ -2613,7 +2673,7 @@ public final class InterfaceStream {
      *触发器ID
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     public int getTriggerid() {
       return triggerid_;
@@ -2623,7 +2683,7 @@ public final class InterfaceStream {
      *触发器ID
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     private void setTriggerid(int value) {
       
@@ -2634,7 +2694,7 @@ public final class InterfaceStream {
      *触发器ID
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     private void clearTriggerid() {
       
@@ -2648,7 +2708,7 @@ public final class InterfaceStream {
      *创建执行该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     public int getCreatedeviceid() {
       return createdeviceid_;
@@ -2658,7 +2718,7 @@ public final class InterfaceStream {
      *创建执行该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     private void setCreatedeviceid(int value) {
       
@@ -2669,7 +2729,7 @@ public final class InterfaceStream {
      *创建执行该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     private void clearCreatedeviceid() {
       
@@ -2683,7 +2743,7 @@ public final class InterfaceStream {
      *流源设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 3;</code>
+     * <code>fixed32 deviceid = 3;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -2693,7 +2753,7 @@ public final class InterfaceStream {
      *流源设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 3;</code>
+     * <code>fixed32 deviceid = 3;</code>
      */
     private void setDeviceid(int value) {
       
@@ -2704,7 +2764,7 @@ public final class InterfaceStream {
      *流源设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 3;</code>
+     * <code>fixed32 deviceid = 3;</code>
      */
     private void clearDeviceid() {
       
@@ -2718,7 +2778,7 @@ public final class InterfaceStream {
      *流源设备子通道ID 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 subid = 4;</code>
+     * <code>fixed32 subid = 4;</code>
      */
     public int getSubid() {
       return subid_;
@@ -2728,7 +2788,7 @@ public final class InterfaceStream {
      *流源设备子通道ID 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 subid = 4;</code>
+     * <code>fixed32 subid = 4;</code>
      */
     private void setSubid(int value) {
       
@@ -2739,7 +2799,7 @@ public final class InterfaceStream {
      *流源设备子通道ID 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 subid = 4;</code>
+     * <code>fixed32 subid = 4;</code>
      */
     private void clearSubid() {
       
@@ -2753,7 +2813,7 @@ public final class InterfaceStream {
      *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 5;</code>
+     * <code>fixed32 res = 5;</code>
      */
     public int getRes() {
       return res_;
@@ -2763,7 +2823,7 @@ public final class InterfaceStream {
      *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 5;</code>
+     * <code>fixed32 res = 5;</code>
      */
     private void setRes(int value) {
       
@@ -2774,7 +2834,7 @@ public final class InterfaceStream {
      *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 5;</code>
+     * <code>fixed32 res = 5;</code>
      */
     private void clearRes() {
       
@@ -2788,7 +2848,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 6;</code>
+     * <code>fixed32 triggeruserval = 6;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -2798,7 +2858,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 6;</code>
+     * <code>fixed32 triggeruserval = 6;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -2809,7 +2869,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 6;</code>
+     * <code>fixed32 triggeruserval = 6;</code>
      */
     private void clearTriggeruserval() {
       
@@ -2871,6 +2931,19 @@ public final class InterfaceStream {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetStreamPlay parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetStreamPlay parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetStreamPlay parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2965,7 +3038,7 @@ public final class InterfaceStream {
        *触发器ID
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public int getTriggerid() {
         return instance.getTriggerid();
@@ -2975,7 +3048,7 @@ public final class InterfaceStream {
        *触发器ID
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public Builder setTriggerid(int value) {
         copyOnWrite();
@@ -2987,7 +3060,7 @@ public final class InterfaceStream {
        *触发器ID
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public Builder clearTriggerid() {
         copyOnWrite();
@@ -3000,7 +3073,7 @@ public final class InterfaceStream {
        *创建执行该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public int getCreatedeviceid() {
         return instance.getCreatedeviceid();
@@ -3010,7 +3083,7 @@ public final class InterfaceStream {
        *创建执行该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public Builder setCreatedeviceid(int value) {
         copyOnWrite();
@@ -3022,7 +3095,7 @@ public final class InterfaceStream {
        *创建执行该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public Builder clearCreatedeviceid() {
         copyOnWrite();
@@ -3035,7 +3108,7 @@ public final class InterfaceStream {
        *流源设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 3;</code>
+       * <code>fixed32 deviceid = 3;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -3045,7 +3118,7 @@ public final class InterfaceStream {
        *流源设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 3;</code>
+       * <code>fixed32 deviceid = 3;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -3057,7 +3130,7 @@ public final class InterfaceStream {
        *流源设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 3;</code>
+       * <code>fixed32 deviceid = 3;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -3070,7 +3143,7 @@ public final class InterfaceStream {
        *流源设备子通道ID 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 subid = 4;</code>
+       * <code>fixed32 subid = 4;</code>
        */
       public int getSubid() {
         return instance.getSubid();
@@ -3080,7 +3153,7 @@ public final class InterfaceStream {
        *流源设备子通道ID 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 subid = 4;</code>
+       * <code>fixed32 subid = 4;</code>
        */
       public Builder setSubid(int value) {
         copyOnWrite();
@@ -3092,7 +3165,7 @@ public final class InterfaceStream {
        *流源设备子通道ID 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 subid = 4;</code>
+       * <code>fixed32 subid = 4;</code>
        */
       public Builder clearSubid() {
         copyOnWrite();
@@ -3105,7 +3178,7 @@ public final class InterfaceStream {
        *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 5;</code>
+       * <code>fixed32 res = 5;</code>
        */
       public int getRes() {
         return instance.getRes();
@@ -3115,7 +3188,7 @@ public final class InterfaceStream {
        *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 5;</code>
+       * <code>fixed32 res = 5;</code>
        */
       public Builder setRes(int value) {
         copyOnWrite();
@@ -3127,7 +3200,7 @@ public final class InterfaceStream {
        *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 5;</code>
+       * <code>fixed32 res = 5;</code>
        */
       public Builder clearRes() {
         copyOnWrite();
@@ -3140,7 +3213,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 6;</code>
+       * <code>fixed32 triggeruserval = 6;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -3150,7 +3223,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 6;</code>
+       * <code>fixed32 triggeruserval = 6;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -3162,7 +3235,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 6;</code>
+       * <code>fixed32 triggeruserval = 6;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -3172,6 +3245,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetStreamPlay)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3268,6 +3342,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3312,7 +3387,7 @@ public final class InterfaceStream {
      *设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 srcdeviceid = 1;</code>
+     * <code>fixed32 srcdeviceid = 1;</code>
      */
     int getSrcdeviceid();
 
@@ -3321,7 +3396,7 @@ public final class InterfaceStream {
      *设备子通道 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 subid = 2;</code>
+     * <code>fixed32 subid = 2;</code>
      */
     int getSubid();
 
@@ -3330,7 +3405,7 @@ public final class InterfaceStream {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 3;</code>
+     * <code>fixed32 playflag = 3;</code>
      */
     int getPlayflag();
 
@@ -3339,7 +3414,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     int getTriggeruserval();
 
@@ -3420,7 +3495,7 @@ public final class InterfaceStream {
      *设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 srcdeviceid = 1;</code>
+     * <code>fixed32 srcdeviceid = 1;</code>
      */
     public int getSrcdeviceid() {
       return srcdeviceid_;
@@ -3430,7 +3505,7 @@ public final class InterfaceStream {
      *设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 srcdeviceid = 1;</code>
+     * <code>fixed32 srcdeviceid = 1;</code>
      */
     private void setSrcdeviceid(int value) {
       
@@ -3441,7 +3516,7 @@ public final class InterfaceStream {
      *设备ID 采集端的设备ID
      * </pre>
      *
-     * <code>optional fixed32 srcdeviceid = 1;</code>
+     * <code>fixed32 srcdeviceid = 1;</code>
      */
     private void clearSrcdeviceid() {
       
@@ -3455,7 +3530,7 @@ public final class InterfaceStream {
      *设备子通道 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 subid = 2;</code>
+     * <code>fixed32 subid = 2;</code>
      */
     public int getSubid() {
       return subid_;
@@ -3465,7 +3540,7 @@ public final class InterfaceStream {
      *设备子通道 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 subid = 2;</code>
+     * <code>fixed32 subid = 2;</code>
      */
     private void setSubid(int value) {
       
@@ -3476,7 +3551,7 @@ public final class InterfaceStream {
      *设备子通道 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
      * </pre>
      *
-     * <code>optional fixed32 subid = 2;</code>
+     * <code>fixed32 subid = 2;</code>
      */
     private void clearSubid() {
       
@@ -3490,7 +3565,7 @@ public final class InterfaceStream {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 3;</code>
+     * <code>fixed32 playflag = 3;</code>
      */
     public int getPlayflag() {
       return playflag_;
@@ -3500,7 +3575,7 @@ public final class InterfaceStream {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 3;</code>
+     * <code>fixed32 playflag = 3;</code>
      */
     private void setPlayflag(int value) {
       
@@ -3511,7 +3586,7 @@ public final class InterfaceStream {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 3;</code>
+     * <code>fixed32 playflag = 3;</code>
      */
     private void clearPlayflag() {
       
@@ -3525,7 +3600,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -3535,7 +3610,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -3546,7 +3621,7 @@ public final class InterfaceStream {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     private void clearTriggeruserval() {
       
@@ -3786,6 +3861,19 @@ public final class InterfaceStream {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoStreamPlay parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoStreamPlay parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoStreamPlay parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3879,7 +3967,7 @@ public final class InterfaceStream {
        *设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 srcdeviceid = 1;</code>
+       * <code>fixed32 srcdeviceid = 1;</code>
        */
       public int getSrcdeviceid() {
         return instance.getSrcdeviceid();
@@ -3889,7 +3977,7 @@ public final class InterfaceStream {
        *设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 srcdeviceid = 1;</code>
+       * <code>fixed32 srcdeviceid = 1;</code>
        */
       public Builder setSrcdeviceid(int value) {
         copyOnWrite();
@@ -3901,7 +3989,7 @@ public final class InterfaceStream {
        *设备ID 采集端的设备ID
        * </pre>
        *
-       * <code>optional fixed32 srcdeviceid = 1;</code>
+       * <code>fixed32 srcdeviceid = 1;</code>
        */
       public Builder clearSrcdeviceid() {
         copyOnWrite();
@@ -3914,7 +4002,7 @@ public final class InterfaceStream {
        *设备子通道 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 subid = 2;</code>
+       * <code>fixed32 subid = 2;</code>
        */
       public int getSubid() {
         return instance.getSubid();
@@ -3924,7 +4012,7 @@ public final class InterfaceStream {
        *设备子通道 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 subid = 2;</code>
+       * <code>fixed32 subid = 2;</code>
        */
       public Builder setSubid(int value) {
         copyOnWrite();
@@ -3936,7 +4024,7 @@ public final class InterfaceStream {
        *设备子通道 这个是设备注册的流通索引 eg:如设置的桌面流通索引是2 摄像流通道是3
        * </pre>
        *
-       * <code>optional fixed32 subid = 2;</code>
+       * <code>fixed32 subid = 2;</code>
        */
       public Builder clearSubid() {
         copyOnWrite();
@@ -3949,7 +4037,7 @@ public final class InterfaceStream {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 3;</code>
+       * <code>fixed32 playflag = 3;</code>
        */
       public int getPlayflag() {
         return instance.getPlayflag();
@@ -3959,7 +4047,7 @@ public final class InterfaceStream {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 3;</code>
+       * <code>fixed32 playflag = 3;</code>
        */
       public Builder setPlayflag(int value) {
         copyOnWrite();
@@ -3971,7 +4059,7 @@ public final class InterfaceStream {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 3;</code>
+       * <code>fixed32 playflag = 3;</code>
        */
       public Builder clearPlayflag() {
         copyOnWrite();
@@ -3984,7 +4072,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -3994,7 +4082,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -4006,7 +4094,7 @@ public final class InterfaceStream {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -4182,6 +4270,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoStreamPlay)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4313,6 +4402,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4357,7 +4447,7 @@ public final class InterfaceStream {
      *触发器ID
      * </pre>
      *
-     * <code>optional fixed32 trrigerid = 1;</code>
+     * <code>fixed32 trrigerid = 1;</code>
      */
     int getTrrigerid();
 
@@ -4366,7 +4456,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     int getDeviceid();
 
@@ -4375,7 +4465,7 @@ public final class InterfaceStream {
      *设备子通道
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     int getSubid();
   }
@@ -4400,7 +4490,7 @@ public final class InterfaceStream {
      *触发器ID
      * </pre>
      *
-     * <code>optional fixed32 trrigerid = 1;</code>
+     * <code>fixed32 trrigerid = 1;</code>
      */
     public int getTrrigerid() {
       return trrigerid_;
@@ -4410,7 +4500,7 @@ public final class InterfaceStream {
      *触发器ID
      * </pre>
      *
-     * <code>optional fixed32 trrigerid = 1;</code>
+     * <code>fixed32 trrigerid = 1;</code>
      */
     private void setTrrigerid(int value) {
       
@@ -4421,7 +4511,7 @@ public final class InterfaceStream {
      *触发器ID
      * </pre>
      *
-     * <code>optional fixed32 trrigerid = 1;</code>
+     * <code>fixed32 trrigerid = 1;</code>
      */
     private void clearTrrigerid() {
       
@@ -4435,7 +4525,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -4445,7 +4535,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void setDeviceid(int value) {
       
@@ -4456,7 +4546,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void clearDeviceid() {
       
@@ -4470,7 +4560,7 @@ public final class InterfaceStream {
      *设备子通道
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     public int getSubid() {
       return subid_;
@@ -4480,7 +4570,7 @@ public final class InterfaceStream {
      *设备子通道
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     private void setSubid(int value) {
       
@@ -4491,7 +4581,7 @@ public final class InterfaceStream {
      *设备子通道
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     private void clearSubid() {
       
@@ -4532,6 +4622,19 @@ public final class InterfaceStream {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Item_MeetStreamPlayDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Item_MeetStreamPlayDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Item_MeetStreamPlayDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4623,7 +4726,7 @@ public final class InterfaceStream {
        *触发器ID
        * </pre>
        *
-       * <code>optional fixed32 trrigerid = 1;</code>
+       * <code>fixed32 trrigerid = 1;</code>
        */
       public int getTrrigerid() {
         return instance.getTrrigerid();
@@ -4633,7 +4736,7 @@ public final class InterfaceStream {
        *触发器ID
        * </pre>
        *
-       * <code>optional fixed32 trrigerid = 1;</code>
+       * <code>fixed32 trrigerid = 1;</code>
        */
       public Builder setTrrigerid(int value) {
         copyOnWrite();
@@ -4645,7 +4748,7 @@ public final class InterfaceStream {
        *触发器ID
        * </pre>
        *
-       * <code>optional fixed32 trrigerid = 1;</code>
+       * <code>fixed32 trrigerid = 1;</code>
        */
       public Builder clearTrrigerid() {
         copyOnWrite();
@@ -4658,7 +4761,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -4668,7 +4771,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -4680,7 +4783,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -4693,7 +4796,7 @@ public final class InterfaceStream {
        *设备子通道
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public int getSubid() {
         return instance.getSubid();
@@ -4703,7 +4806,7 @@ public final class InterfaceStream {
        *设备子通道
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public Builder setSubid(int value) {
         copyOnWrite();
@@ -4715,7 +4818,7 @@ public final class InterfaceStream {
        *设备子通道
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public Builder clearSubid() {
         copyOnWrite();
@@ -4725,6 +4828,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetStreamPlayDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4800,6 +4904,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5010,6 +5115,19 @@ public final class InterfaceStream {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetStreamPlayDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetStreamPlayDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetStreamPlayDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -5195,6 +5313,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetStreamPlayDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5260,6 +5379,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5304,7 +5424,7 @@ public final class InterfaceStream {
      *控制的标志  参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     int getFlag();
 
@@ -5313,7 +5433,7 @@ public final class InterfaceStream {
      *发起请求的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     int getDeviceid();
 
@@ -5322,7 +5442,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     int getMemberid();
 
@@ -5331,7 +5451,7 @@ public final class InterfaceStream {
      *x% width的百分
      * </pre>
      *
-     * <code>optional float x = 4;</code>
+     * <code>float x = 4;</code>
      */
     float getX();
 
@@ -5340,7 +5460,7 @@ public final class InterfaceStream {
      *y% height的百分
      * </pre>
      *
-     * <code>optional float y = 5;</code>
+     * <code>float y = 5;</code>
      */
     float getY();
   }
@@ -5368,7 +5488,7 @@ public final class InterfaceStream {
      *控制的标志  参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     public int getFlag() {
       return flag_;
@@ -5378,7 +5498,7 @@ public final class InterfaceStream {
      *控制的标志  参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     private void setFlag(int value) {
       
@@ -5389,7 +5509,7 @@ public final class InterfaceStream {
      *控制的标志  参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     private void clearFlag() {
       
@@ -5403,7 +5523,7 @@ public final class InterfaceStream {
      *发起请求的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -5413,7 +5533,7 @@ public final class InterfaceStream {
      *发起请求的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void setDeviceid(int value) {
       
@@ -5424,7 +5544,7 @@ public final class InterfaceStream {
      *发起请求的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void clearDeviceid() {
       
@@ -5438,7 +5558,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -5448,7 +5568,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void setMemberid(int value) {
       
@@ -5459,7 +5579,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void clearMemberid() {
       
@@ -5473,7 +5593,7 @@ public final class InterfaceStream {
      *x% width的百分
      * </pre>
      *
-     * <code>optional float x = 4;</code>
+     * <code>float x = 4;</code>
      */
     public float getX() {
       return x_;
@@ -5483,7 +5603,7 @@ public final class InterfaceStream {
      *x% width的百分
      * </pre>
      *
-     * <code>optional float x = 4;</code>
+     * <code>float x = 4;</code>
      */
     private void setX(float value) {
       
@@ -5494,7 +5614,7 @@ public final class InterfaceStream {
      *x% width的百分
      * </pre>
      *
-     * <code>optional float x = 4;</code>
+     * <code>float x = 4;</code>
      */
     private void clearX() {
       
@@ -5508,7 +5628,7 @@ public final class InterfaceStream {
      *y% height的百分
      * </pre>
      *
-     * <code>optional float y = 5;</code>
+     * <code>float y = 5;</code>
      */
     public float getY() {
       return y_;
@@ -5518,7 +5638,7 @@ public final class InterfaceStream {
      *y% height的百分
      * </pre>
      *
-     * <code>optional float y = 5;</code>
+     * <code>float y = 5;</code>
      */
     private void setY(float value) {
       
@@ -5529,7 +5649,7 @@ public final class InterfaceStream {
      *y% height的百分
      * </pre>
      *
-     * <code>optional float y = 5;</code>
+     * <code>float y = 5;</code>
      */
     private void clearY() {
       
@@ -5584,6 +5704,19 @@ public final class InterfaceStream {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetScreenMouseControl parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetScreenMouseControl parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetScreenMouseControl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5678,7 +5811,7 @@ public final class InterfaceStream {
        *控制的标志  参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -5688,7 +5821,7 @@ public final class InterfaceStream {
        *控制的标志  参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -5700,7 +5833,7 @@ public final class InterfaceStream {
        *控制的标志  参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -5713,7 +5846,7 @@ public final class InterfaceStream {
        *发起请求的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -5723,7 +5856,7 @@ public final class InterfaceStream {
        *发起请求的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -5735,7 +5868,7 @@ public final class InterfaceStream {
        *发起请求的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -5748,7 +5881,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -5758,7 +5891,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -5770,7 +5903,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -5783,7 +5916,7 @@ public final class InterfaceStream {
        *x% width的百分
        * </pre>
        *
-       * <code>optional float x = 4;</code>
+       * <code>float x = 4;</code>
        */
       public float getX() {
         return instance.getX();
@@ -5793,7 +5926,7 @@ public final class InterfaceStream {
        *x% width的百分
        * </pre>
        *
-       * <code>optional float x = 4;</code>
+       * <code>float x = 4;</code>
        */
       public Builder setX(float value) {
         copyOnWrite();
@@ -5805,7 +5938,7 @@ public final class InterfaceStream {
        *x% width的百分
        * </pre>
        *
-       * <code>optional float x = 4;</code>
+       * <code>float x = 4;</code>
        */
       public Builder clearX() {
         copyOnWrite();
@@ -5818,7 +5951,7 @@ public final class InterfaceStream {
        *y% height的百分
        * </pre>
        *
-       * <code>optional float y = 5;</code>
+       * <code>float y = 5;</code>
        */
       public float getY() {
         return instance.getY();
@@ -5828,7 +5961,7 @@ public final class InterfaceStream {
        *y% height的百分
        * </pre>
        *
-       * <code>optional float y = 5;</code>
+       * <code>float y = 5;</code>
        */
       public Builder setY(float value) {
         copyOnWrite();
@@ -5840,7 +5973,7 @@ public final class InterfaceStream {
        *y% height的百分
        * </pre>
        *
-       * <code>optional float y = 5;</code>
+       * <code>float y = 5;</code>
        */
       public Builder clearY() {
         copyOnWrite();
@@ -5850,6 +5983,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetScreenMouseControl)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5939,6 +6073,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5983,7 +6118,7 @@ public final class InterfaceStream {
      *控制的标志  参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     int getFlag();
 
@@ -5992,7 +6127,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     int getDeviceid();
 
@@ -6001,7 +6136,7 @@ public final class InterfaceStream {
      *x / width的百分比
      * </pre>
      *
-     * <code>optional float x = 3;</code>
+     * <code>float x = 3;</code>
      */
     float getX();
 
@@ -6010,7 +6145,7 @@ public final class InterfaceStream {
      *y / height的百分比
      * </pre>
      *
-     * <code>optional float y = 4;</code>
+     * <code>float y = 4;</code>
      */
     float getY();
   }
@@ -6037,7 +6172,7 @@ public final class InterfaceStream {
      *控制的标志  参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     public int getFlag() {
       return flag_;
@@ -6047,7 +6182,7 @@ public final class InterfaceStream {
      *控制的标志  参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     private void setFlag(int value) {
       
@@ -6058,7 +6193,7 @@ public final class InterfaceStream {
      *控制的标志  参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     private void clearFlag() {
       
@@ -6072,7 +6207,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -6082,7 +6217,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void setDeviceid(int value) {
       
@@ -6093,7 +6228,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void clearDeviceid() {
       
@@ -6107,7 +6242,7 @@ public final class InterfaceStream {
      *x / width的百分比
      * </pre>
      *
-     * <code>optional float x = 3;</code>
+     * <code>float x = 3;</code>
      */
     public float getX() {
       return x_;
@@ -6117,7 +6252,7 @@ public final class InterfaceStream {
      *x / width的百分比
      * </pre>
      *
-     * <code>optional float x = 3;</code>
+     * <code>float x = 3;</code>
      */
     private void setX(float value) {
       
@@ -6128,7 +6263,7 @@ public final class InterfaceStream {
      *x / width的百分比
      * </pre>
      *
-     * <code>optional float x = 3;</code>
+     * <code>float x = 3;</code>
      */
     private void clearX() {
       
@@ -6142,7 +6277,7 @@ public final class InterfaceStream {
      *y / height的百分比
      * </pre>
      *
-     * <code>optional float y = 4;</code>
+     * <code>float y = 4;</code>
      */
     public float getY() {
       return y_;
@@ -6152,7 +6287,7 @@ public final class InterfaceStream {
      *y / height的百分比
      * </pre>
      *
-     * <code>optional float y = 4;</code>
+     * <code>float y = 4;</code>
      */
     private void setY(float value) {
       
@@ -6163,7 +6298,7 @@ public final class InterfaceStream {
      *y / height的百分比
      * </pre>
      *
-     * <code>optional float y = 4;</code>
+     * <code>float y = 4;</code>
      */
     private void clearY() {
       
@@ -6211,6 +6346,19 @@ public final class InterfaceStream {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoScreenMouseControl parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoScreenMouseControl parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoScreenMouseControl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6304,7 +6452,7 @@ public final class InterfaceStream {
        *控制的标志  参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -6314,7 +6462,7 @@ public final class InterfaceStream {
        *控制的标志  参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -6326,7 +6474,7 @@ public final class InterfaceStream {
        *控制的标志  参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -6339,7 +6487,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -6349,7 +6497,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -6361,7 +6509,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -6374,7 +6522,7 @@ public final class InterfaceStream {
        *x / width的百分比
        * </pre>
        *
-       * <code>optional float x = 3;</code>
+       * <code>float x = 3;</code>
        */
       public float getX() {
         return instance.getX();
@@ -6384,7 +6532,7 @@ public final class InterfaceStream {
        *x / width的百分比
        * </pre>
        *
-       * <code>optional float x = 3;</code>
+       * <code>float x = 3;</code>
        */
       public Builder setX(float value) {
         copyOnWrite();
@@ -6396,7 +6544,7 @@ public final class InterfaceStream {
        *x / width的百分比
        * </pre>
        *
-       * <code>optional float x = 3;</code>
+       * <code>float x = 3;</code>
        */
       public Builder clearX() {
         copyOnWrite();
@@ -6409,7 +6557,7 @@ public final class InterfaceStream {
        *y / height的百分比
        * </pre>
        *
-       * <code>optional float y = 4;</code>
+       * <code>float y = 4;</code>
        */
       public float getY() {
         return instance.getY();
@@ -6419,7 +6567,7 @@ public final class InterfaceStream {
        *y / height的百分比
        * </pre>
        *
-       * <code>optional float y = 4;</code>
+       * <code>float y = 4;</code>
        */
       public Builder setY(float value) {
         copyOnWrite();
@@ -6431,7 +6579,7 @@ public final class InterfaceStream {
        *y / height的百分比
        * </pre>
        *
-       * <code>optional float y = 4;</code>
+       * <code>float y = 4;</code>
        */
       public Builder clearY() {
         copyOnWrite();
@@ -6441,6 +6589,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoScreenMouseControl)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6523,6 +6672,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6567,7 +6717,7 @@ public final class InterfaceStream {
      *控制的标志 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     int getFlag();
 
@@ -6576,7 +6726,7 @@ public final class InterfaceStream {
      *发起请求的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     int getDeviceid();
 
@@ -6585,7 +6735,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     int getMemberid();
 
@@ -6594,7 +6744,7 @@ public final class InterfaceStream {
      *参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 otherflag = 4;</code>
+     * <code>fixed32 otherflag = 4;</code>
      */
     int getOtherflag();
 
@@ -6603,7 +6753,7 @@ public final class InterfaceStream {
      *对应的key值 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 key = 5;</code>
+     * <code>fixed32 key = 5;</code>
      */
     int getKey();
   }
@@ -6630,7 +6780,7 @@ public final class InterfaceStream {
      *控制的标志 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     public int getFlag() {
       return flag_;
@@ -6640,7 +6790,7 @@ public final class InterfaceStream {
      *控制的标志 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     private void setFlag(int value) {
       
@@ -6651,7 +6801,7 @@ public final class InterfaceStream {
      *控制的标志 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     private void clearFlag() {
       
@@ -6665,7 +6815,7 @@ public final class InterfaceStream {
      *发起请求的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -6675,7 +6825,7 @@ public final class InterfaceStream {
      *发起请求的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void setDeviceid(int value) {
       
@@ -6686,7 +6836,7 @@ public final class InterfaceStream {
      *发起请求的设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void clearDeviceid() {
       
@@ -6700,7 +6850,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -6710,7 +6860,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void setMemberid(int value) {
       
@@ -6721,7 +6871,7 @@ public final class InterfaceStream {
      *发起请求的人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void clearMemberid() {
       
@@ -6735,7 +6885,7 @@ public final class InterfaceStream {
      *参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 otherflag = 4;</code>
+     * <code>fixed32 otherflag = 4;</code>
      */
     public int getOtherflag() {
       return otherflag_;
@@ -6745,7 +6895,7 @@ public final class InterfaceStream {
      *参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 otherflag = 4;</code>
+     * <code>fixed32 otherflag = 4;</code>
      */
     private void setOtherflag(int value) {
       
@@ -6756,7 +6906,7 @@ public final class InterfaceStream {
      *参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 otherflag = 4;</code>
+     * <code>fixed32 otherflag = 4;</code>
      */
     private void clearOtherflag() {
       
@@ -6770,7 +6920,7 @@ public final class InterfaceStream {
      *对应的key值 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 key = 5;</code>
+     * <code>fixed32 key = 5;</code>
      */
     public int getKey() {
       return key_;
@@ -6780,7 +6930,7 @@ public final class InterfaceStream {
      *对应的key值 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 key = 5;</code>
+     * <code>fixed32 key = 5;</code>
      */
     private void setKey(int value) {
       
@@ -6791,7 +6941,7 @@ public final class InterfaceStream {
      *对应的key值 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 key = 5;</code>
+     * <code>fixed32 key = 5;</code>
      */
     private void clearKey() {
       
@@ -6846,6 +6996,19 @@ public final class InterfaceStream {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetScreenKeyBoardControl parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetScreenKeyBoardControl parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetScreenKeyBoardControl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6939,7 +7102,7 @@ public final class InterfaceStream {
        *控制的标志 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -6949,7 +7112,7 @@ public final class InterfaceStream {
        *控制的标志 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -6961,7 +7124,7 @@ public final class InterfaceStream {
        *控制的标志 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -6974,7 +7137,7 @@ public final class InterfaceStream {
        *发起请求的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -6984,7 +7147,7 @@ public final class InterfaceStream {
        *发起请求的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -6996,7 +7159,7 @@ public final class InterfaceStream {
        *发起请求的设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -7009,7 +7172,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -7019,7 +7182,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -7031,7 +7194,7 @@ public final class InterfaceStream {
        *发起请求的人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -7044,7 +7207,7 @@ public final class InterfaceStream {
        *参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 otherflag = 4;</code>
+       * <code>fixed32 otherflag = 4;</code>
        */
       public int getOtherflag() {
         return instance.getOtherflag();
@@ -7054,7 +7217,7 @@ public final class InterfaceStream {
        *参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 otherflag = 4;</code>
+       * <code>fixed32 otherflag = 4;</code>
        */
       public Builder setOtherflag(int value) {
         copyOnWrite();
@@ -7066,7 +7229,7 @@ public final class InterfaceStream {
        *参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 otherflag = 4;</code>
+       * <code>fixed32 otherflag = 4;</code>
        */
       public Builder clearOtherflag() {
         copyOnWrite();
@@ -7079,7 +7242,7 @@ public final class InterfaceStream {
        *对应的key值 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 key = 5;</code>
+       * <code>fixed32 key = 5;</code>
        */
       public int getKey() {
         return instance.getKey();
@@ -7089,7 +7252,7 @@ public final class InterfaceStream {
        *对应的key值 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 key = 5;</code>
+       * <code>fixed32 key = 5;</code>
        */
       public Builder setKey(int value) {
         copyOnWrite();
@@ -7101,7 +7264,7 @@ public final class InterfaceStream {
        *对应的key值 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 key = 5;</code>
+       * <code>fixed32 key = 5;</code>
        */
       public Builder clearKey() {
         copyOnWrite();
@@ -7111,6 +7274,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetScreenKeyBoardControl)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7200,6 +7364,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7244,7 +7409,7 @@ public final class InterfaceStream {
      *控制的标志 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     int getFlag();
 
@@ -7253,7 +7418,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     int getDeviceid();
 
@@ -7262,7 +7427,7 @@ public final class InterfaceStream {
      *参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 otherflag = 3;</code>
+     * <code>fixed32 otherflag = 3;</code>
      */
     int getOtherflag();
 
@@ -7271,7 +7436,7 @@ public final class InterfaceStream {
      *对应的key值 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 key = 4;</code>
+     * <code>fixed32 key = 4;</code>
      */
     int getKey();
   }
@@ -7298,7 +7463,7 @@ public final class InterfaceStream {
      *控制的标志 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     public int getFlag() {
       return flag_;
@@ -7308,7 +7473,7 @@ public final class InterfaceStream {
      *控制的标志 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     private void setFlag(int value) {
       
@@ -7319,7 +7484,7 @@ public final class InterfaceStream {
      *控制的标志 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 1;</code>
+     * <code>fixed32 flag = 1;</code>
      */
     private void clearFlag() {
       
@@ -7333,7 +7498,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -7343,7 +7508,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void setDeviceid(int value) {
       
@@ -7354,7 +7519,7 @@ public final class InterfaceStream {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void clearDeviceid() {
       
@@ -7368,7 +7533,7 @@ public final class InterfaceStream {
      *参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 otherflag = 3;</code>
+     * <code>fixed32 otherflag = 3;</code>
      */
     public int getOtherflag() {
       return otherflag_;
@@ -7378,7 +7543,7 @@ public final class InterfaceStream {
      *参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 otherflag = 3;</code>
+     * <code>fixed32 otherflag = 3;</code>
      */
     private void setOtherflag(int value) {
       
@@ -7389,7 +7554,7 @@ public final class InterfaceStream {
      *参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 otherflag = 3;</code>
+     * <code>fixed32 otherflag = 3;</code>
      */
     private void clearOtherflag() {
       
@@ -7403,7 +7568,7 @@ public final class InterfaceStream {
      *对应的key值 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 key = 4;</code>
+     * <code>fixed32 key = 4;</code>
      */
     public int getKey() {
       return key_;
@@ -7413,7 +7578,7 @@ public final class InterfaceStream {
      *对应的key值 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 key = 4;</code>
+     * <code>fixed32 key = 4;</code>
      */
     private void setKey(int value) {
       
@@ -7424,7 +7589,7 @@ public final class InterfaceStream {
      *对应的key值 参考streamcontrol.h 定义
      * </pre>
      *
-     * <code>optional fixed32 key = 4;</code>
+     * <code>fixed32 key = 4;</code>
      */
     private void clearKey() {
       
@@ -7472,6 +7637,19 @@ public final class InterfaceStream {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoScreenKeyBoardControl parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoScreenKeyBoardControl parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceStream.pbui_Type_MeetDoScreenKeyBoardControl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7565,7 +7743,7 @@ public final class InterfaceStream {
        *控制的标志 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -7575,7 +7753,7 @@ public final class InterfaceStream {
        *控制的标志 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -7587,7 +7765,7 @@ public final class InterfaceStream {
        *控制的标志 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 1;</code>
+       * <code>fixed32 flag = 1;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -7600,7 +7778,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -7610,7 +7788,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -7622,7 +7800,7 @@ public final class InterfaceStream {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -7635,7 +7813,7 @@ public final class InterfaceStream {
        *参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 otherflag = 3;</code>
+       * <code>fixed32 otherflag = 3;</code>
        */
       public int getOtherflag() {
         return instance.getOtherflag();
@@ -7645,7 +7823,7 @@ public final class InterfaceStream {
        *参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 otherflag = 3;</code>
+       * <code>fixed32 otherflag = 3;</code>
        */
       public Builder setOtherflag(int value) {
         copyOnWrite();
@@ -7657,7 +7835,7 @@ public final class InterfaceStream {
        *参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 otherflag = 3;</code>
+       * <code>fixed32 otherflag = 3;</code>
        */
       public Builder clearOtherflag() {
         copyOnWrite();
@@ -7670,7 +7848,7 @@ public final class InterfaceStream {
        *对应的key值 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 key = 4;</code>
+       * <code>fixed32 key = 4;</code>
        */
       public int getKey() {
         return instance.getKey();
@@ -7680,7 +7858,7 @@ public final class InterfaceStream {
        *对应的key值 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 key = 4;</code>
+       * <code>fixed32 key = 4;</code>
        */
       public Builder setKey(int value) {
         copyOnWrite();
@@ -7692,7 +7870,7 @@ public final class InterfaceStream {
        *对应的key值 参考streamcontrol.h 定义
        * </pre>
        *
-       * <code>optional fixed32 key = 4;</code>
+       * <code>fixed32 key = 4;</code>
        */
       public Builder clearKey() {
         copyOnWrite();
@@ -7702,6 +7880,7 @@ public final class InterfaceStream {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoScreenKeyBoardControl)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7784,6 +7963,7 @@ public final class InterfaceStream {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

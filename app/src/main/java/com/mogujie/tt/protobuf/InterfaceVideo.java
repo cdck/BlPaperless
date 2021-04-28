@@ -17,7 +17,7 @@ public final class InterfaceVideo {
      *流通道ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     int getId();
 
@@ -26,7 +26,7 @@ public final class InterfaceVideo {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     int getDeviceid();
 
@@ -35,7 +35,7 @@ public final class InterfaceVideo {
      *子通道ID
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     int getSubid();
 
@@ -44,7 +44,7 @@ public final class InterfaceVideo {
      *流通道名称
      * </pre>
      *
-     * <code>optional bytes name = 4;</code>
+     * <code>bytes name = 4;</code>
      */
     com.google.protobuf.ByteString getName();
 
@@ -53,7 +53,7 @@ public final class InterfaceVideo {
      *流通道地址
      * </pre>
      *
-     * <code>optional bytes addr = 5;</code>
+     * <code>bytes addr = 5;</code>
      */
     com.google.protobuf.ByteString getAddr();
 
@@ -62,7 +62,7 @@ public final class InterfaceVideo {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devicename = 6;</code>
+     * <code>bytes devicename = 6;</code>
      */
     com.google.protobuf.ByteString getDevicename();
   }
@@ -90,7 +90,7 @@ public final class InterfaceVideo {
      *流通道ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     public int getId() {
       return id_;
@@ -100,7 +100,7 @@ public final class InterfaceVideo {
      *流通道ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void setId(int value) {
       
@@ -111,7 +111,7 @@ public final class InterfaceVideo {
      *流通道ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void clearId() {
       
@@ -125,7 +125,7 @@ public final class InterfaceVideo {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     public int getDeviceid() {
       return deviceid_;
@@ -135,7 +135,7 @@ public final class InterfaceVideo {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void setDeviceid(int value) {
       
@@ -146,7 +146,7 @@ public final class InterfaceVideo {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 deviceid = 2;</code>
+     * <code>fixed32 deviceid = 2;</code>
      */
     private void clearDeviceid() {
       
@@ -160,7 +160,7 @@ public final class InterfaceVideo {
      *子通道ID
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     public int getSubid() {
       return subid_;
@@ -170,7 +170,7 @@ public final class InterfaceVideo {
      *子通道ID
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     private void setSubid(int value) {
       
@@ -181,7 +181,7 @@ public final class InterfaceVideo {
      *子通道ID
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     private void clearSubid() {
       
@@ -195,7 +195,7 @@ public final class InterfaceVideo {
      *流通道名称
      * </pre>
      *
-     * <code>optional bytes name = 4;</code>
+     * <code>bytes name = 4;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
@@ -205,7 +205,7 @@ public final class InterfaceVideo {
      *流通道名称
      * </pre>
      *
-     * <code>optional bytes name = 4;</code>
+     * <code>bytes name = 4;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -219,7 +219,7 @@ public final class InterfaceVideo {
      *流通道名称
      * </pre>
      *
-     * <code>optional bytes name = 4;</code>
+     * <code>bytes name = 4;</code>
      */
     private void clearName() {
       
@@ -233,7 +233,7 @@ public final class InterfaceVideo {
      *流通道地址
      * </pre>
      *
-     * <code>optional bytes addr = 5;</code>
+     * <code>bytes addr = 5;</code>
      */
     public com.google.protobuf.ByteString getAddr() {
       return addr_;
@@ -243,7 +243,7 @@ public final class InterfaceVideo {
      *流通道地址
      * </pre>
      *
-     * <code>optional bytes addr = 5;</code>
+     * <code>bytes addr = 5;</code>
      */
     private void setAddr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -257,7 +257,7 @@ public final class InterfaceVideo {
      *流通道地址
      * </pre>
      *
-     * <code>optional bytes addr = 5;</code>
+     * <code>bytes addr = 5;</code>
      */
     private void clearAddr() {
       
@@ -271,7 +271,7 @@ public final class InterfaceVideo {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devicename = 6;</code>
+     * <code>bytes devicename = 6;</code>
      */
     public com.google.protobuf.ByteString getDevicename() {
       return devicename_;
@@ -281,7 +281,7 @@ public final class InterfaceVideo {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devicename = 6;</code>
+     * <code>bytes devicename = 6;</code>
      */
     private void setDevicename(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -295,7 +295,7 @@ public final class InterfaceVideo {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devicename = 6;</code>
+     * <code>bytes devicename = 6;</code>
      */
     private void clearDevicename() {
       
@@ -357,6 +357,19 @@ public final class InterfaceVideo {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceVideo.pbui_Item_MeetVideoDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVideo.pbui_Item_MeetVideoDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceVideo.pbui_Item_MeetVideoDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -448,7 +461,7 @@ public final class InterfaceVideo {
        *流通道ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public int getId() {
         return instance.getId();
@@ -458,7 +471,7 @@ public final class InterfaceVideo {
        *流通道ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -470,7 +483,7 @@ public final class InterfaceVideo {
        *流通道ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -483,7 +496,7 @@ public final class InterfaceVideo {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public int getDeviceid() {
         return instance.getDeviceid();
@@ -493,7 +506,7 @@ public final class InterfaceVideo {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder setDeviceid(int value) {
         copyOnWrite();
@@ -505,7 +518,7 @@ public final class InterfaceVideo {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 deviceid = 2;</code>
+       * <code>fixed32 deviceid = 2;</code>
        */
       public Builder clearDeviceid() {
         copyOnWrite();
@@ -518,7 +531,7 @@ public final class InterfaceVideo {
        *子通道ID
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public int getSubid() {
         return instance.getSubid();
@@ -528,7 +541,7 @@ public final class InterfaceVideo {
        *子通道ID
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public Builder setSubid(int value) {
         copyOnWrite();
@@ -540,7 +553,7 @@ public final class InterfaceVideo {
        *子通道ID
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public Builder clearSubid() {
         copyOnWrite();
@@ -553,7 +566,7 @@ public final class InterfaceVideo {
        *流通道名称
        * </pre>
        *
-       * <code>optional bytes name = 4;</code>
+       * <code>bytes name = 4;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
@@ -563,7 +576,7 @@ public final class InterfaceVideo {
        *流通道名称
        * </pre>
        *
-       * <code>optional bytes name = 4;</code>
+       * <code>bytes name = 4;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -575,7 +588,7 @@ public final class InterfaceVideo {
        *流通道名称
        * </pre>
        *
-       * <code>optional bytes name = 4;</code>
+       * <code>bytes name = 4;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -588,7 +601,7 @@ public final class InterfaceVideo {
        *流通道地址
        * </pre>
        *
-       * <code>optional bytes addr = 5;</code>
+       * <code>bytes addr = 5;</code>
        */
       public com.google.protobuf.ByteString getAddr() {
         return instance.getAddr();
@@ -598,7 +611,7 @@ public final class InterfaceVideo {
        *流通道地址
        * </pre>
        *
-       * <code>optional bytes addr = 5;</code>
+       * <code>bytes addr = 5;</code>
        */
       public Builder setAddr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -610,7 +623,7 @@ public final class InterfaceVideo {
        *流通道地址
        * </pre>
        *
-       * <code>optional bytes addr = 5;</code>
+       * <code>bytes addr = 5;</code>
        */
       public Builder clearAddr() {
         copyOnWrite();
@@ -623,7 +636,7 @@ public final class InterfaceVideo {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devicename = 6;</code>
+       * <code>bytes devicename = 6;</code>
        */
       public com.google.protobuf.ByteString getDevicename() {
         return instance.getDevicename();
@@ -633,7 +646,7 @@ public final class InterfaceVideo {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devicename = 6;</code>
+       * <code>bytes devicename = 6;</code>
        */
       public Builder setDevicename(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -645,7 +658,7 @@ public final class InterfaceVideo {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devicename = 6;</code>
+       * <code>bytes devicename = 6;</code>
        */
       public Builder clearDevicename() {
         copyOnWrite();
@@ -655,6 +668,7 @@ public final class InterfaceVideo {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetVideoDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -751,6 +765,7 @@ public final class InterfaceVideo {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1029,6 +1044,19 @@ public final class InterfaceVideo {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceVideo.pbui_Type_MeetVideoDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVideo.pbui_Type_MeetVideoDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceVideo.pbui_Type_MeetVideoDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1262,6 +1290,7 @@ public final class InterfaceVideo {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetVideoDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1327,6 +1356,7 @@ public final class InterfaceVideo {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

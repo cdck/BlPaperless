@@ -29,6 +29,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
+import com.blankj.utilcode.util.UriUtils;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceDevice;
@@ -52,7 +53,6 @@ import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.PopUtils;
 
-import com.pa.paperless.utils.UriUtil;
 import com.wind.myapplication.NativeUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -974,19 +974,10 @@ public class DrawBoardActivity extends BaseActivity implements View.OnClickListe
             // 获取选中文件的uri
             LogUtil.d(TAG, "onActivityResult: data.toString : " + data.toString());
             Uri uri = data.getData();
-            String realPath = "";
-            try {
-                realPath = UriUtil.getFilePath(getApplicationContext(), uri);
-                LogUtil.e(TAG, "DrawBoardActivity.onActivityResult :  选中的文件路径 --->>> " + realPath);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if (realPath == null || realPath.isEmpty()) {
-                LogUtil.e(TAG, "onActivityResult: 获取该文件的路径失败....");
-                ToastUtils.showShort(R.string.get_file_path_fail);
-            } else {
+            File file = UriUtils.uri2File(uri);
+            if (file != null) {
                 // 执行操作
-                Bitmap dstbmp = BitmapFactory.decodeFile(realPath);
+                Bitmap dstbmp = BitmapFactory.decodeFile(file.getAbsolutePath());
                 //将图片绘制到画板中
                 Bitmap bitmap = drawBoard.drawZoomBmp(dstbmp);
                 //保存图片信息

@@ -9,6 +9,110 @@ public final class InterfaceMember {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
   /**
+   * Protobuf enum {@code Pb_MeetSMSOper}
+   */
+  public enum Pb_MeetSMSOper
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <pre>
+     *=会议通知
+     * </pre>
+     *
+     * <code>Pb_MEET_SMS_OPERTEMP_START = 0;</code>
+     */
+    Pb_MEET_SMS_OPERTEMP_START(0),
+    /**
+     * <pre>
+     *=会议延期
+     * </pre>
+     *
+     * <code>Pb_MEET_SMS_OPERTEMP_LATE = 1;</code>
+     */
+    Pb_MEET_SMS_OPERTEMP_LATE(1),
+    /**
+     * <pre>
+     *=会议取消
+     * </pre>
+     *
+     * <code>Pb_MEET_SMS_OPERTEMP_CANCLE = 2;</code>
+     */
+    Pb_MEET_SMS_OPERTEMP_CANCLE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     *=会议通知
+     * </pre>
+     *
+     * <code>Pb_MEET_SMS_OPERTEMP_START = 0;</code>
+     */
+    public static final int Pb_MEET_SMS_OPERTEMP_START_VALUE = 0;
+    /**
+     * <pre>
+     *=会议延期
+     * </pre>
+     *
+     * <code>Pb_MEET_SMS_OPERTEMP_LATE = 1;</code>
+     */
+    public static final int Pb_MEET_SMS_OPERTEMP_LATE_VALUE = 1;
+    /**
+     * <pre>
+     *=会议取消
+     * </pre>
+     *
+     * <code>Pb_MEET_SMS_OPERTEMP_CANCLE = 2;</code>
+     */
+    public static final int Pb_MEET_SMS_OPERTEMP_CANCLE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Pb_MeetSMSOper valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static Pb_MeetSMSOper forNumber(int value) {
+      switch (value) {
+        case 0: return Pb_MEET_SMS_OPERTEMP_START;
+        case 1: return Pb_MEET_SMS_OPERTEMP_LATE;
+        case 2: return Pb_MEET_SMS_OPERTEMP_CANCLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Pb_MeetSMSOper>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Pb_MeetSMSOper> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Pb_MeetSMSOper>() {
+            public Pb_MeetSMSOper findValueByNumber(int number) {
+              return Pb_MeetSMSOper.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private Pb_MeetSMSOper(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:Pb_MeetSMSOper)
+  }
+
+  /**
    * <pre>
    *memberdetailflag
    *错误码
@@ -48,6 +152,10 @@ public final class InterfaceMember {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -93,42 +201,42 @@ public final class InterfaceMember {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 personid = 1;</code>
+     * <code>fixed32 personid = 1;</code>
      */
     int getPersonid();
 
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
 
     /**
-     * <code>optional bytes company = 3;</code>
+     * <code>bytes company = 3;</code>
      */
     com.google.protobuf.ByteString getCompany();
 
     /**
-     * <code>optional bytes job = 4;</code>
+     * <code>bytes job = 4;</code>
      */
     com.google.protobuf.ByteString getJob();
 
     /**
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     com.google.protobuf.ByteString getComment();
 
     /**
-     * <code>optional bytes phone = 6;</code>
+     * <code>bytes phone = 6;</code>
      */
     com.google.protobuf.ByteString getPhone();
 
     /**
-     * <code>optional bytes email = 7;</code>
+     * <code>bytes email = 7;</code>
      */
     com.google.protobuf.ByteString getEmail();
 
     /**
-     * <code>optional bytes password = 8;</code>
+     * <code>bytes password = 8;</code>
      */
     com.google.protobuf.ByteString getPassword();
   }
@@ -156,20 +264,20 @@ public final class InterfaceMember {
     public static final int PERSONID_FIELD_NUMBER = 1;
     private int personid_;
     /**
-     * <code>optional fixed32 personid = 1;</code>
+     * <code>fixed32 personid = 1;</code>
      */
     public int getPersonid() {
       return personid_;
     }
     /**
-     * <code>optional fixed32 personid = 1;</code>
+     * <code>fixed32 personid = 1;</code>
      */
     private void setPersonid(int value) {
       
       personid_ = value;
     }
     /**
-     * <code>optional fixed32 personid = 1;</code>
+     * <code>fixed32 personid = 1;</code>
      */
     private void clearPersonid() {
       
@@ -179,13 +287,13 @@ public final class InterfaceMember {
     public static final int NAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString name_;
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -195,7 +303,7 @@ public final class InterfaceMember {
       name_ = value;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -205,13 +313,13 @@ public final class InterfaceMember {
     public static final int COMPANY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString company_;
     /**
-     * <code>optional bytes company = 3;</code>
+     * <code>bytes company = 3;</code>
      */
     public com.google.protobuf.ByteString getCompany() {
       return company_;
     }
     /**
-     * <code>optional bytes company = 3;</code>
+     * <code>bytes company = 3;</code>
      */
     private void setCompany(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -221,7 +329,7 @@ public final class InterfaceMember {
       company_ = value;
     }
     /**
-     * <code>optional bytes company = 3;</code>
+     * <code>bytes company = 3;</code>
      */
     private void clearCompany() {
       
@@ -231,13 +339,13 @@ public final class InterfaceMember {
     public static final int JOB_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString job_;
     /**
-     * <code>optional bytes job = 4;</code>
+     * <code>bytes job = 4;</code>
      */
     public com.google.protobuf.ByteString getJob() {
       return job_;
     }
     /**
-     * <code>optional bytes job = 4;</code>
+     * <code>bytes job = 4;</code>
      */
     private void setJob(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -247,7 +355,7 @@ public final class InterfaceMember {
       job_ = value;
     }
     /**
-     * <code>optional bytes job = 4;</code>
+     * <code>bytes job = 4;</code>
      */
     private void clearJob() {
       
@@ -257,13 +365,13 @@ public final class InterfaceMember {
     public static final int COMMENT_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString comment_;
     /**
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     public com.google.protobuf.ByteString getComment() {
       return comment_;
     }
     /**
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     private void setComment(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -273,7 +381,7 @@ public final class InterfaceMember {
       comment_ = value;
     }
     /**
-     * <code>optional bytes comment = 5;</code>
+     * <code>bytes comment = 5;</code>
      */
     private void clearComment() {
       
@@ -283,13 +391,13 @@ public final class InterfaceMember {
     public static final int PHONE_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString phone_;
     /**
-     * <code>optional bytes phone = 6;</code>
+     * <code>bytes phone = 6;</code>
      */
     public com.google.protobuf.ByteString getPhone() {
       return phone_;
     }
     /**
-     * <code>optional bytes phone = 6;</code>
+     * <code>bytes phone = 6;</code>
      */
     private void setPhone(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -299,7 +407,7 @@ public final class InterfaceMember {
       phone_ = value;
     }
     /**
-     * <code>optional bytes phone = 6;</code>
+     * <code>bytes phone = 6;</code>
      */
     private void clearPhone() {
       
@@ -309,13 +417,13 @@ public final class InterfaceMember {
     public static final int EMAIL_FIELD_NUMBER = 7;
     private com.google.protobuf.ByteString email_;
     /**
-     * <code>optional bytes email = 7;</code>
+     * <code>bytes email = 7;</code>
      */
     public com.google.protobuf.ByteString getEmail() {
       return email_;
     }
     /**
-     * <code>optional bytes email = 7;</code>
+     * <code>bytes email = 7;</code>
      */
     private void setEmail(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -325,7 +433,7 @@ public final class InterfaceMember {
       email_ = value;
     }
     /**
-     * <code>optional bytes email = 7;</code>
+     * <code>bytes email = 7;</code>
      */
     private void clearEmail() {
       
@@ -335,13 +443,13 @@ public final class InterfaceMember {
     public static final int PASSWORD_FIELD_NUMBER = 8;
     private com.google.protobuf.ByteString password_;
     /**
-     * <code>optional bytes password = 8;</code>
+     * <code>bytes password = 8;</code>
      */
     public com.google.protobuf.ByteString getPassword() {
       return password_;
     }
     /**
-     * <code>optional bytes password = 8;</code>
+     * <code>bytes password = 8;</code>
      */
     private void setPassword(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -351,7 +459,7 @@ public final class InterfaceMember {
       password_ = value;
     }
     /**
-     * <code>optional bytes password = 8;</code>
+     * <code>bytes password = 8;</code>
      */
     private void clearPassword() {
       
@@ -427,6 +535,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -514,13 +635,13 @@ public final class InterfaceMember {
 
 
       /**
-       * <code>optional fixed32 personid = 1;</code>
+       * <code>fixed32 personid = 1;</code>
        */
       public int getPersonid() {
         return instance.getPersonid();
       }
       /**
-       * <code>optional fixed32 personid = 1;</code>
+       * <code>fixed32 personid = 1;</code>
        */
       public Builder setPersonid(int value) {
         copyOnWrite();
@@ -528,7 +649,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional fixed32 personid = 1;</code>
+       * <code>fixed32 personid = 1;</code>
        */
       public Builder clearPersonid() {
         copyOnWrite();
@@ -537,13 +658,13 @@ public final class InterfaceMember {
       }
 
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -551,7 +672,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -560,13 +681,13 @@ public final class InterfaceMember {
       }
 
       /**
-       * <code>optional bytes company = 3;</code>
+       * <code>bytes company = 3;</code>
        */
       public com.google.protobuf.ByteString getCompany() {
         return instance.getCompany();
       }
       /**
-       * <code>optional bytes company = 3;</code>
+       * <code>bytes company = 3;</code>
        */
       public Builder setCompany(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -574,7 +695,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional bytes company = 3;</code>
+       * <code>bytes company = 3;</code>
        */
       public Builder clearCompany() {
         copyOnWrite();
@@ -583,13 +704,13 @@ public final class InterfaceMember {
       }
 
       /**
-       * <code>optional bytes job = 4;</code>
+       * <code>bytes job = 4;</code>
        */
       public com.google.protobuf.ByteString getJob() {
         return instance.getJob();
       }
       /**
-       * <code>optional bytes job = 4;</code>
+       * <code>bytes job = 4;</code>
        */
       public Builder setJob(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -597,7 +718,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional bytes job = 4;</code>
+       * <code>bytes job = 4;</code>
        */
       public Builder clearJob() {
         copyOnWrite();
@@ -606,13 +727,13 @@ public final class InterfaceMember {
       }
 
       /**
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public com.google.protobuf.ByteString getComment() {
         return instance.getComment();
       }
       /**
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public Builder setComment(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -620,7 +741,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional bytes comment = 5;</code>
+       * <code>bytes comment = 5;</code>
        */
       public Builder clearComment() {
         copyOnWrite();
@@ -629,13 +750,13 @@ public final class InterfaceMember {
       }
 
       /**
-       * <code>optional bytes phone = 6;</code>
+       * <code>bytes phone = 6;</code>
        */
       public com.google.protobuf.ByteString getPhone() {
         return instance.getPhone();
       }
       /**
-       * <code>optional bytes phone = 6;</code>
+       * <code>bytes phone = 6;</code>
        */
       public Builder setPhone(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -643,7 +764,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional bytes phone = 6;</code>
+       * <code>bytes phone = 6;</code>
        */
       public Builder clearPhone() {
         copyOnWrite();
@@ -652,13 +773,13 @@ public final class InterfaceMember {
       }
 
       /**
-       * <code>optional bytes email = 7;</code>
+       * <code>bytes email = 7;</code>
        */
       public com.google.protobuf.ByteString getEmail() {
         return instance.getEmail();
       }
       /**
-       * <code>optional bytes email = 7;</code>
+       * <code>bytes email = 7;</code>
        */
       public Builder setEmail(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -666,7 +787,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional bytes email = 7;</code>
+       * <code>bytes email = 7;</code>
        */
       public Builder clearEmail() {
         copyOnWrite();
@@ -675,13 +796,13 @@ public final class InterfaceMember {
       }
 
       /**
-       * <code>optional bytes password = 8;</code>
+       * <code>bytes password = 8;</code>
        */
       public com.google.protobuf.ByteString getPassword() {
         return instance.getPassword();
       }
       /**
-       * <code>optional bytes password = 8;</code>
+       * <code>bytes password = 8;</code>
        */
       public Builder setPassword(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -689,7 +810,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional bytes password = 8;</code>
+       * <code>bytes password = 8;</code>
        */
       public Builder clearPassword() {
         copyOnWrite();
@@ -699,6 +820,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MemberDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -809,6 +931,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1021,6 +1144,19 @@ public final class InterfaceMember {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1208,6 +1344,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MemberDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1273,6 +1410,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1308,6 +1446,330 @@ public final class InterfaceMember {
     }
   }
 
+  public interface pbui_Type_MeetSMSNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:pbui_Type_MeetSMSNotify)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <pre>
+     *参见Pb_MeetSMSOper的定义 需要指定模板，后台会根据模板去发送
+     * </pre>
+     *
+     * <code>fixed32 templateindex = 1;</code>
+     */
+    int getTemplateindex();
+  }
+  /**
+   * <pre>
+   *短信通知会议
+   *call
+   *type：TYPE_MEET_INTERFACE_MEMBER
+   *fun: FUN_All 会议短信通知
+   *method:METHOD_MEET_INTERFACE_NOTIFY
+   * </pre>
+   *
+   * Protobuf type {@code pbui_Type_MeetSMSNotify}
+   */
+  public  static final class pbui_Type_MeetSMSNotify extends
+      com.google.protobuf.GeneratedMessageLite<
+          pbui_Type_MeetSMSNotify, pbui_Type_MeetSMSNotify.Builder> implements
+      // @@protoc_insertion_point(message_implements:pbui_Type_MeetSMSNotify)
+      pbui_Type_MeetSMSNotifyOrBuilder {
+    private pbui_Type_MeetSMSNotify() {
+    }
+    public static final int TEMPLATEINDEX_FIELD_NUMBER = 1;
+    private int templateindex_;
+    /**
+     * <pre>
+     *参见Pb_MeetSMSOper的定义 需要指定模板，后台会根据模板去发送
+     * </pre>
+     *
+     * <code>fixed32 templateindex = 1;</code>
+     */
+    public int getTemplateindex() {
+      return templateindex_;
+    }
+    /**
+     * <pre>
+     *参见Pb_MeetSMSOper的定义 需要指定模板，后台会根据模板去发送
+     * </pre>
+     *
+     * <code>fixed32 templateindex = 1;</code>
+     */
+    private void setTemplateindex(int value) {
+      
+      templateindex_ = value;
+    }
+    /**
+     * <pre>
+     *参见Pb_MeetSMSOper的定义 需要指定模板，后台会根据模板去发送
+     * </pre>
+     *
+     * <code>fixed32 templateindex = 1;</code>
+     */
+    private void clearTemplateindex() {
+      
+      templateindex_ = 0;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (templateindex_ != 0) {
+        output.writeFixed32(1, templateindex_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (templateindex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed32Size(1, templateindex_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * <pre>
+     *短信通知会议
+     *call
+     *type：TYPE_MEET_INTERFACE_MEMBER
+     *fun: FUN_All 会议短信通知
+     *method:METHOD_MEET_INTERFACE_NOTIFY
+     * </pre>
+     *
+     * Protobuf type {@code pbui_Type_MeetSMSNotify}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify, Builder> implements
+        // @@protoc_insertion_point(builder_implements:pbui_Type_MeetSMSNotify)
+        com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotifyOrBuilder {
+      // Construct using com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <pre>
+       *参见Pb_MeetSMSOper的定义 需要指定模板，后台会根据模板去发送
+       * </pre>
+       *
+       * <code>fixed32 templateindex = 1;</code>
+       */
+      public int getTemplateindex() {
+        return instance.getTemplateindex();
+      }
+      /**
+       * <pre>
+       *参见Pb_MeetSMSOper的定义 需要指定模板，后台会根据模板去发送
+       * </pre>
+       *
+       * <code>fixed32 templateindex = 1;</code>
+       */
+      public Builder setTemplateindex(int value) {
+        copyOnWrite();
+        instance.setTemplateindex(value);
+        return this;
+      }
+      /**
+       * <pre>
+       *参见Pb_MeetSMSOper的定义 需要指定模板，后台会根据模板去发送
+       * </pre>
+       *
+       * <code>fixed32 templateindex = 1;</code>
+       */
+      public Builder clearTemplateindex() {
+        copyOnWrite();
+        instance.clearTemplateindex();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:pbui_Type_MeetSMSNotify)
+    }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify other = (com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify) arg1;
+          templateindex_ = visitor.visitInt(templateindex_ != 0, templateindex_,
+              other.templateindex_ != 0, other.templateindex_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 13: {
+
+                  templateindex_ = input.readFixed32();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        // fall through
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:pbui_Type_MeetSMSNotify)
+    private static final com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pbui_Type_MeetSMSNotify();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetSMSNotify getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<pbui_Type_MeetSMSNotify> PARSER;
+
+    public static com.google.protobuf.Parser<pbui_Type_MeetSMSNotify> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
   public interface pbui_Item_MeetMemberDetailInfoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:pbui_Item_MeetMemberDetailInfo)
       com.google.protobuf.MessageLiteOrBuilder {
@@ -1317,7 +1779,7 @@ public final class InterfaceMember {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     int getDevid();
 
@@ -1326,7 +1788,7 @@ public final class InterfaceMember {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devname = 2;</code>
+     * <code>bytes devname = 2;</code>
      */
     com.google.protobuf.ByteString getDevname();
 
@@ -1335,7 +1797,7 @@ public final class InterfaceMember {
      *标志 参见本文件的 Pb_MemberDetailFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 memberdetailflag = 3;</code>
+     * <code>fixed32 memberdetailflag = 3;</code>
      */
     int getMemberdetailflag();
 
@@ -1344,7 +1806,7 @@ public final class InterfaceMember {
      *界面状态 参见Interface_Macro.proto Pb_MemState_MainFace 定义
      * </pre>
      *
-     * <code>optional fixed32 facestatus = 4;</code>
+     * <code>fixed32 facestatus = 4;</code>
      */
     int getFacestatus();
 
@@ -1353,7 +1815,7 @@ public final class InterfaceMember {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 5;</code>
+     * <code>fixed32 memberid = 5;</code>
      */
     int getMemberid();
 
@@ -1362,7 +1824,7 @@ public final class InterfaceMember {
      *参会人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 6;</code>
+     * <code>bytes membername = 6;</code>
      */
     com.google.protobuf.ByteString getMembername();
 
@@ -1371,7 +1833,7 @@ public final class InterfaceMember {
      *参会人员权限 参见Interface_Macro.proto  Pb_MemberPermissionPropertyID 定义
      * </pre>
      *
-     * <code>optional fixed32 permission = 7;</code>
+     * <code>fixed32 permission = 7;</code>
      */
     int getPermission();
   }
@@ -1398,7 +1860,7 @@ public final class InterfaceMember {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     public int getDevid() {
       return devid_;
@@ -1408,7 +1870,7 @@ public final class InterfaceMember {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     private void setDevid(int value) {
       
@@ -1419,7 +1881,7 @@ public final class InterfaceMember {
      *设备ID
      * </pre>
      *
-     * <code>optional fixed32 devid = 1;</code>
+     * <code>fixed32 devid = 1;</code>
      */
     private void clearDevid() {
       
@@ -1433,7 +1895,7 @@ public final class InterfaceMember {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devname = 2;</code>
+     * <code>bytes devname = 2;</code>
      */
     public com.google.protobuf.ByteString getDevname() {
       return devname_;
@@ -1443,7 +1905,7 @@ public final class InterfaceMember {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devname = 2;</code>
+     * <code>bytes devname = 2;</code>
      */
     private void setDevname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1457,7 +1919,7 @@ public final class InterfaceMember {
      *设备名称
      * </pre>
      *
-     * <code>optional bytes devname = 2;</code>
+     * <code>bytes devname = 2;</code>
      */
     private void clearDevname() {
       
@@ -1471,7 +1933,7 @@ public final class InterfaceMember {
      *标志 参见本文件的 Pb_MemberDetailFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 memberdetailflag = 3;</code>
+     * <code>fixed32 memberdetailflag = 3;</code>
      */
     public int getMemberdetailflag() {
       return memberdetailflag_;
@@ -1481,7 +1943,7 @@ public final class InterfaceMember {
      *标志 参见本文件的 Pb_MemberDetailFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 memberdetailflag = 3;</code>
+     * <code>fixed32 memberdetailflag = 3;</code>
      */
     private void setMemberdetailflag(int value) {
       
@@ -1492,7 +1954,7 @@ public final class InterfaceMember {
      *标志 参见本文件的 Pb_MemberDetailFlag 定义
      * </pre>
      *
-     * <code>optional fixed32 memberdetailflag = 3;</code>
+     * <code>fixed32 memberdetailflag = 3;</code>
      */
     private void clearMemberdetailflag() {
       
@@ -1506,7 +1968,7 @@ public final class InterfaceMember {
      *界面状态 参见Interface_Macro.proto Pb_MemState_MainFace 定义
      * </pre>
      *
-     * <code>optional fixed32 facestatus = 4;</code>
+     * <code>fixed32 facestatus = 4;</code>
      */
     public int getFacestatus() {
       return facestatus_;
@@ -1516,7 +1978,7 @@ public final class InterfaceMember {
      *界面状态 参见Interface_Macro.proto Pb_MemState_MainFace 定义
      * </pre>
      *
-     * <code>optional fixed32 facestatus = 4;</code>
+     * <code>fixed32 facestatus = 4;</code>
      */
     private void setFacestatus(int value) {
       
@@ -1527,7 +1989,7 @@ public final class InterfaceMember {
      *界面状态 参见Interface_Macro.proto Pb_MemState_MainFace 定义
      * </pre>
      *
-     * <code>optional fixed32 facestatus = 4;</code>
+     * <code>fixed32 facestatus = 4;</code>
      */
     private void clearFacestatus() {
       
@@ -1541,7 +2003,7 @@ public final class InterfaceMember {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 5;</code>
+     * <code>fixed32 memberid = 5;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -1551,7 +2013,7 @@ public final class InterfaceMember {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 5;</code>
+     * <code>fixed32 memberid = 5;</code>
      */
     private void setMemberid(int value) {
       
@@ -1562,7 +2024,7 @@ public final class InterfaceMember {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 5;</code>
+     * <code>fixed32 memberid = 5;</code>
      */
     private void clearMemberid() {
       
@@ -1576,7 +2038,7 @@ public final class InterfaceMember {
      *参会人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 6;</code>
+     * <code>bytes membername = 6;</code>
      */
     public com.google.protobuf.ByteString getMembername() {
       return membername_;
@@ -1586,7 +2048,7 @@ public final class InterfaceMember {
      *参会人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 6;</code>
+     * <code>bytes membername = 6;</code>
      */
     private void setMembername(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1600,7 +2062,7 @@ public final class InterfaceMember {
      *参会人员名称
      * </pre>
      *
-     * <code>optional bytes membername = 6;</code>
+     * <code>bytes membername = 6;</code>
      */
     private void clearMembername() {
       
@@ -1614,7 +2076,7 @@ public final class InterfaceMember {
      *参会人员权限 参见Interface_Macro.proto  Pb_MemberPermissionPropertyID 定义
      * </pre>
      *
-     * <code>optional fixed32 permission = 7;</code>
+     * <code>fixed32 permission = 7;</code>
      */
     public int getPermission() {
       return permission_;
@@ -1624,7 +2086,7 @@ public final class InterfaceMember {
      *参会人员权限 参见Interface_Macro.proto  Pb_MemberPermissionPropertyID 定义
      * </pre>
      *
-     * <code>optional fixed32 permission = 7;</code>
+     * <code>fixed32 permission = 7;</code>
      */
     private void setPermission(int value) {
       
@@ -1635,7 +2097,7 @@ public final class InterfaceMember {
      *参会人员权限 参见Interface_Macro.proto  Pb_MemberPermissionPropertyID 定义
      * </pre>
      *
-     * <code>optional fixed32 permission = 7;</code>
+     * <code>fixed32 permission = 7;</code>
      */
     private void clearPermission() {
       
@@ -1704,6 +2166,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MeetMemberDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MeetMemberDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MeetMemberDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1795,7 +2270,7 @@ public final class InterfaceMember {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public int getDevid() {
         return instance.getDevid();
@@ -1805,7 +2280,7 @@ public final class InterfaceMember {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public Builder setDevid(int value) {
         copyOnWrite();
@@ -1817,7 +2292,7 @@ public final class InterfaceMember {
        *设备ID
        * </pre>
        *
-       * <code>optional fixed32 devid = 1;</code>
+       * <code>fixed32 devid = 1;</code>
        */
       public Builder clearDevid() {
         copyOnWrite();
@@ -1830,7 +2305,7 @@ public final class InterfaceMember {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devname = 2;</code>
+       * <code>bytes devname = 2;</code>
        */
       public com.google.protobuf.ByteString getDevname() {
         return instance.getDevname();
@@ -1840,7 +2315,7 @@ public final class InterfaceMember {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devname = 2;</code>
+       * <code>bytes devname = 2;</code>
        */
       public Builder setDevname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1852,7 +2327,7 @@ public final class InterfaceMember {
        *设备名称
        * </pre>
        *
-       * <code>optional bytes devname = 2;</code>
+       * <code>bytes devname = 2;</code>
        */
       public Builder clearDevname() {
         copyOnWrite();
@@ -1865,7 +2340,7 @@ public final class InterfaceMember {
        *标志 参见本文件的 Pb_MemberDetailFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 memberdetailflag = 3;</code>
+       * <code>fixed32 memberdetailflag = 3;</code>
        */
       public int getMemberdetailflag() {
         return instance.getMemberdetailflag();
@@ -1875,7 +2350,7 @@ public final class InterfaceMember {
        *标志 参见本文件的 Pb_MemberDetailFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 memberdetailflag = 3;</code>
+       * <code>fixed32 memberdetailflag = 3;</code>
        */
       public Builder setMemberdetailflag(int value) {
         copyOnWrite();
@@ -1887,7 +2362,7 @@ public final class InterfaceMember {
        *标志 参见本文件的 Pb_MemberDetailFlag 定义
        * </pre>
        *
-       * <code>optional fixed32 memberdetailflag = 3;</code>
+       * <code>fixed32 memberdetailflag = 3;</code>
        */
       public Builder clearMemberdetailflag() {
         copyOnWrite();
@@ -1900,7 +2375,7 @@ public final class InterfaceMember {
        *界面状态 参见Interface_Macro.proto Pb_MemState_MainFace 定义
        * </pre>
        *
-       * <code>optional fixed32 facestatus = 4;</code>
+       * <code>fixed32 facestatus = 4;</code>
        */
       public int getFacestatus() {
         return instance.getFacestatus();
@@ -1910,7 +2385,7 @@ public final class InterfaceMember {
        *界面状态 参见Interface_Macro.proto Pb_MemState_MainFace 定义
        * </pre>
        *
-       * <code>optional fixed32 facestatus = 4;</code>
+       * <code>fixed32 facestatus = 4;</code>
        */
       public Builder setFacestatus(int value) {
         copyOnWrite();
@@ -1922,7 +2397,7 @@ public final class InterfaceMember {
        *界面状态 参见Interface_Macro.proto Pb_MemState_MainFace 定义
        * </pre>
        *
-       * <code>optional fixed32 facestatus = 4;</code>
+       * <code>fixed32 facestatus = 4;</code>
        */
       public Builder clearFacestatus() {
         copyOnWrite();
@@ -1935,7 +2410,7 @@ public final class InterfaceMember {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 5;</code>
+       * <code>fixed32 memberid = 5;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -1945,7 +2420,7 @@ public final class InterfaceMember {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 5;</code>
+       * <code>fixed32 memberid = 5;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -1957,7 +2432,7 @@ public final class InterfaceMember {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 5;</code>
+       * <code>fixed32 memberid = 5;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -1970,7 +2445,7 @@ public final class InterfaceMember {
        *参会人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 6;</code>
+       * <code>bytes membername = 6;</code>
        */
       public com.google.protobuf.ByteString getMembername() {
         return instance.getMembername();
@@ -1980,7 +2455,7 @@ public final class InterfaceMember {
        *参会人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 6;</code>
+       * <code>bytes membername = 6;</code>
        */
       public Builder setMembername(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1992,7 +2467,7 @@ public final class InterfaceMember {
        *参会人员名称
        * </pre>
        *
-       * <code>optional bytes membername = 6;</code>
+       * <code>bytes membername = 6;</code>
        */
       public Builder clearMembername() {
         copyOnWrite();
@@ -2005,7 +2480,7 @@ public final class InterfaceMember {
        *参会人员权限 参见Interface_Macro.proto  Pb_MemberPermissionPropertyID 定义
        * </pre>
        *
-       * <code>optional fixed32 permission = 7;</code>
+       * <code>fixed32 permission = 7;</code>
        */
       public int getPermission() {
         return instance.getPermission();
@@ -2015,7 +2490,7 @@ public final class InterfaceMember {
        *参会人员权限 参见Interface_Macro.proto  Pb_MemberPermissionPropertyID 定义
        * </pre>
        *
-       * <code>optional fixed32 permission = 7;</code>
+       * <code>fixed32 permission = 7;</code>
        */
       public Builder setPermission(int value) {
         copyOnWrite();
@@ -2027,7 +2502,7 @@ public final class InterfaceMember {
        *参会人员权限 参见Interface_Macro.proto  Pb_MemberPermissionPropertyID 定义
        * </pre>
        *
-       * <code>optional fixed32 permission = 7;</code>
+       * <code>fixed32 permission = 7;</code>
        */
       public Builder clearPermission() {
         copyOnWrite();
@@ -2037,6 +2512,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetMemberDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2140,6 +2616,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2352,6 +2829,19 @@ public final class InterfaceMember {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2539,6 +3029,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetMemberDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2604,6 +3095,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2648,7 +3140,7 @@ public final class InterfaceMember {
      *扫码加入的会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     int getMeetingid();
 
@@ -2657,7 +3149,7 @@ public final class InterfaceMember {
      *参会人角色 参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 memberrole = 2;</code>
+     * <code>fixed32 memberrole = 2;</code>
      */
     int getMemberrole();
 
@@ -2666,7 +3158,7 @@ public final class InterfaceMember {
      *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
      * </pre>
      *
-     * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+     * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
      */
     boolean hasMemberinfo();
     /**
@@ -2674,7 +3166,7 @@ public final class InterfaceMember {
      *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
      * </pre>
      *
-     * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+     * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
      */
     com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo getMemberinfo();
   }
@@ -2703,7 +3195,7 @@ public final class InterfaceMember {
      *扫码加入的会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     public int getMeetingid() {
       return meetingid_;
@@ -2713,7 +3205,7 @@ public final class InterfaceMember {
      *扫码加入的会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     private void setMeetingid(int value) {
       
@@ -2724,7 +3216,7 @@ public final class InterfaceMember {
      *扫码加入的会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     private void clearMeetingid() {
       
@@ -2738,7 +3230,7 @@ public final class InterfaceMember {
      *参会人角色 参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 memberrole = 2;</code>
+     * <code>fixed32 memberrole = 2;</code>
      */
     public int getMemberrole() {
       return memberrole_;
@@ -2748,7 +3240,7 @@ public final class InterfaceMember {
      *参会人角色 参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 memberrole = 2;</code>
+     * <code>fixed32 memberrole = 2;</code>
      */
     private void setMemberrole(int value) {
       
@@ -2759,7 +3251,7 @@ public final class InterfaceMember {
      *参会人角色 参见Pb_MeetMemberRole
      * </pre>
      *
-     * <code>optional fixed32 memberrole = 2;</code>
+     * <code>fixed32 memberrole = 2;</code>
      */
     private void clearMemberrole() {
       
@@ -2773,7 +3265,7 @@ public final class InterfaceMember {
      *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
      * </pre>
      *
-     * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+     * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
      */
     public boolean hasMemberinfo() {
       return memberinfo_ != null;
@@ -2783,7 +3275,7 @@ public final class InterfaceMember {
      *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
      * </pre>
      *
-     * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+     * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
      */
     public com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo getMemberinfo() {
       return memberinfo_ == null ? com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo.getDefaultInstance() : memberinfo_;
@@ -2793,7 +3285,7 @@ public final class InterfaceMember {
      *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
      * </pre>
      *
-     * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+     * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
      */
     private void setMemberinfo(com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo value) {
       if (value == null) {
@@ -2807,7 +3299,7 @@ public final class InterfaceMember {
      *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
      * </pre>
      *
-     * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+     * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
      */
     private void setMemberinfo(
         com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo.Builder builderForValue) {
@@ -2819,7 +3311,7 @@ public final class InterfaceMember {
      *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
      * </pre>
      *
-     * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+     * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
      */
     private void mergeMemberinfo(com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo value) {
       if (memberinfo_ != null &&
@@ -2836,7 +3328,7 @@ public final class InterfaceMember {
      *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
      * </pre>
      *
-     * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+     * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
      */
     private void clearMemberinfo() {  memberinfo_ = null;
       
@@ -2876,6 +3368,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_ScanEnterMeet parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_ScanEnterMeet parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_ScanEnterMeet parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2971,7 +3476,7 @@ public final class InterfaceMember {
        *扫码加入的会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public int getMeetingid() {
         return instance.getMeetingid();
@@ -2981,7 +3486,7 @@ public final class InterfaceMember {
        *扫码加入的会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public Builder setMeetingid(int value) {
         copyOnWrite();
@@ -2993,7 +3498,7 @@ public final class InterfaceMember {
        *扫码加入的会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public Builder clearMeetingid() {
         copyOnWrite();
@@ -3006,7 +3511,7 @@ public final class InterfaceMember {
        *参会人角色 参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 memberrole = 2;</code>
+       * <code>fixed32 memberrole = 2;</code>
        */
       public int getMemberrole() {
         return instance.getMemberrole();
@@ -3016,7 +3521,7 @@ public final class InterfaceMember {
        *参会人角色 参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 memberrole = 2;</code>
+       * <code>fixed32 memberrole = 2;</code>
        */
       public Builder setMemberrole(int value) {
         copyOnWrite();
@@ -3028,7 +3533,7 @@ public final class InterfaceMember {
        *参会人角色 参见Pb_MeetMemberRole
        * </pre>
        *
-       * <code>optional fixed32 memberrole = 2;</code>
+       * <code>fixed32 memberrole = 2;</code>
        */
       public Builder clearMemberrole() {
         copyOnWrite();
@@ -3041,7 +3546,7 @@ public final class InterfaceMember {
        *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
        * </pre>
        *
-       * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+       * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
        */
       public boolean hasMemberinfo() {
         return instance.hasMemberinfo();
@@ -3051,7 +3556,7 @@ public final class InterfaceMember {
        *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
        * </pre>
        *
-       * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+       * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
        */
       public com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo getMemberinfo() {
         return instance.getMemberinfo();
@@ -3061,7 +3566,7 @@ public final class InterfaceMember {
        *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
        * </pre>
        *
-       * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+       * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
        */
       public Builder setMemberinfo(com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo value) {
         copyOnWrite();
@@ -3073,7 +3578,7 @@ public final class InterfaceMember {
        *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
        * </pre>
        *
-       * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+       * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
        */
       public Builder setMemberinfo(
           com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo.Builder builderForValue) {
@@ -3086,7 +3591,7 @@ public final class InterfaceMember {
        *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
        * </pre>
        *
-       * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+       * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
        */
       public Builder mergeMemberinfo(com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberDetailInfo value) {
         copyOnWrite();
@@ -3098,7 +3603,7 @@ public final class InterfaceMember {
        *参会人员的信息,如果参会人ID不为0，表示新建一个参会人员
        * </pre>
        *
-       * <code>optional .pbui_Item_MemberDetailInfo memberinfo = 3;</code>
+       * <code>.pbui_Item_MemberDetailInfo memberinfo = 3;</code>
        */
       public Builder clearMemberinfo() {  copyOnWrite();
         instance.clearMemberinfo();
@@ -3107,6 +3612,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ScanEnterMeet)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3189,6 +3695,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3233,7 +3740,7 @@ public final class InterfaceMember {
      *属性ID 参见 Pb_MemberPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     int getPropertyid();
 
@@ -3242,7 +3749,7 @@ public final class InterfaceMember {
      *传入参数 为0表示本机设置定的人员id
      * </pre>
      *
-     * <code>optional fixed32 parameterval = 2;</code>
+     * <code>fixed32 parameterval = 2;</code>
      */
     int getParameterval();
   }
@@ -3270,7 +3777,7 @@ public final class InterfaceMember {
      *属性ID 参见 Pb_MemberPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     public int getPropertyid() {
       return propertyid_;
@@ -3280,7 +3787,7 @@ public final class InterfaceMember {
      *属性ID 参见 Pb_MemberPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void setPropertyid(int value) {
       
@@ -3291,7 +3798,7 @@ public final class InterfaceMember {
      *属性ID 参见 Pb_MemberPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void clearPropertyid() {
       
@@ -3305,7 +3812,7 @@ public final class InterfaceMember {
      *传入参数 为0表示本机设置定的人员id
      * </pre>
      *
-     * <code>optional fixed32 parameterval = 2;</code>
+     * <code>fixed32 parameterval = 2;</code>
      */
     public int getParameterval() {
       return parameterval_;
@@ -3315,7 +3822,7 @@ public final class InterfaceMember {
      *传入参数 为0表示本机设置定的人员id
      * </pre>
      *
-     * <code>optional fixed32 parameterval = 2;</code>
+     * <code>fixed32 parameterval = 2;</code>
      */
     private void setParameterval(int value) {
       
@@ -3326,7 +3833,7 @@ public final class InterfaceMember {
      *传入参数 为0表示本机设置定的人员id
      * </pre>
      *
-     * <code>optional fixed32 parameterval = 2;</code>
+     * <code>fixed32 parameterval = 2;</code>
      */
     private void clearParameterval() {
       
@@ -3360,6 +3867,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberQueryProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberQueryProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberQueryProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3454,7 +3974,7 @@ public final class InterfaceMember {
        *属性ID 参见 Pb_MemberPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public int getPropertyid() {
         return instance.getPropertyid();
@@ -3464,7 +3984,7 @@ public final class InterfaceMember {
        *属性ID 参见 Pb_MemberPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder setPropertyid(int value) {
         copyOnWrite();
@@ -3476,7 +3996,7 @@ public final class InterfaceMember {
        *属性ID 参见 Pb_MemberPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder clearPropertyid() {
         copyOnWrite();
@@ -3489,7 +4009,7 @@ public final class InterfaceMember {
        *传入参数 为0表示本机设置定的人员id
        * </pre>
        *
-       * <code>optional fixed32 parameterval = 2;</code>
+       * <code>fixed32 parameterval = 2;</code>
        */
       public int getParameterval() {
         return instance.getParameterval();
@@ -3499,7 +4019,7 @@ public final class InterfaceMember {
        *传入参数 为0表示本机设置定的人员id
        * </pre>
        *
-       * <code>optional fixed32 parameterval = 2;</code>
+       * <code>fixed32 parameterval = 2;</code>
        */
       public Builder setParameterval(int value) {
         copyOnWrite();
@@ -3511,7 +4031,7 @@ public final class InterfaceMember {
        *传入参数 为0表示本机设置定的人员id
        * </pre>
        *
-       * <code>optional fixed32 parameterval = 2;</code>
+       * <code>fixed32 parameterval = 2;</code>
        */
       public Builder clearParameterval() {
         copyOnWrite();
@@ -3521,6 +4041,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetMemberQueryProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3589,6 +4110,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3633,7 +4155,7 @@ public final class InterfaceMember {
      *整数属性值 参见属性ID的类型定义
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     int getPropertyval();
 
@@ -3642,7 +4164,7 @@ public final class InterfaceMember {
      *字符串属性值
      * </pre>
      *
-     * <code>optional bytes propertytext = 2;</code>
+     * <code>bytes propertytext = 2;</code>
      */
     com.google.protobuf.ByteString getPropertytext();
   }
@@ -3671,7 +4193,7 @@ public final class InterfaceMember {
      *整数属性值 参见属性ID的类型定义
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     public int getPropertyval() {
       return propertyval_;
@@ -3681,7 +4203,7 @@ public final class InterfaceMember {
      *整数属性值 参见属性ID的类型定义
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     private void setPropertyval(int value) {
       
@@ -3692,7 +4214,7 @@ public final class InterfaceMember {
      *整数属性值 参见属性ID的类型定义
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     private void clearPropertyval() {
       
@@ -3706,7 +4228,7 @@ public final class InterfaceMember {
      *字符串属性值
      * </pre>
      *
-     * <code>optional bytes propertytext = 2;</code>
+     * <code>bytes propertytext = 2;</code>
      */
     public com.google.protobuf.ByteString getPropertytext() {
       return propertytext_;
@@ -3716,7 +4238,7 @@ public final class InterfaceMember {
      *字符串属性值
      * </pre>
      *
-     * <code>optional bytes propertytext = 2;</code>
+     * <code>bytes propertytext = 2;</code>
      */
     private void setPropertytext(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3730,7 +4252,7 @@ public final class InterfaceMember {
      *字符串属性值
      * </pre>
      *
-     * <code>optional bytes propertytext = 2;</code>
+     * <code>bytes propertytext = 2;</code>
      */
     private void clearPropertytext() {
       
@@ -3764,6 +4286,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMembeProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMembeProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMembeProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3858,7 +4393,7 @@ public final class InterfaceMember {
        *整数属性值 参见属性ID的类型定义
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public int getPropertyval() {
         return instance.getPropertyval();
@@ -3868,7 +4403,7 @@ public final class InterfaceMember {
        *整数属性值 参见属性ID的类型定义
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public Builder setPropertyval(int value) {
         copyOnWrite();
@@ -3880,7 +4415,7 @@ public final class InterfaceMember {
        *整数属性值 参见属性ID的类型定义
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public Builder clearPropertyval() {
         copyOnWrite();
@@ -3893,7 +4428,7 @@ public final class InterfaceMember {
        *字符串属性值
        * </pre>
        *
-       * <code>optional bytes propertytext = 2;</code>
+       * <code>bytes propertytext = 2;</code>
        */
       public com.google.protobuf.ByteString getPropertytext() {
         return instance.getPropertytext();
@@ -3903,7 +4438,7 @@ public final class InterfaceMember {
        *字符串属性值
        * </pre>
        *
-       * <code>optional bytes propertytext = 2;</code>
+       * <code>bytes propertytext = 2;</code>
        */
       public Builder setPropertytext(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -3915,7 +4450,7 @@ public final class InterfaceMember {
        *字符串属性值
        * </pre>
        *
-       * <code>optional bytes propertytext = 2;</code>
+       * <code>bytes propertytext = 2;</code>
        */
       public Builder clearPropertytext() {
         copyOnWrite();
@@ -3925,6 +4460,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetMembeProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3993,6 +4529,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4185,6 +4722,19 @@ public final class InterfaceMember {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_ModifyMemberPos parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_ModifyMemberPos parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_ModifyMemberPos parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4358,6 +4908,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ModifyMemberPos)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4436,6 +4987,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4480,7 +5032,7 @@ public final class InterfaceMember {
      *参会人ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     int getMemberid();
 
@@ -4489,7 +5041,7 @@ public final class InterfaceMember {
      *参会人权限
      * </pre>
      *
-     * <code>optional fixed32 permission = 2;</code>
+     * <code>fixed32 permission = 2;</code>
      */
     int getPermission();
   }
@@ -4514,7 +5066,7 @@ public final class InterfaceMember {
      *参会人ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -4524,7 +5076,7 @@ public final class InterfaceMember {
      *参会人ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void setMemberid(int value) {
       
@@ -4535,7 +5087,7 @@ public final class InterfaceMember {
      *参会人ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void clearMemberid() {
       
@@ -4549,7 +5101,7 @@ public final class InterfaceMember {
      *参会人权限
      * </pre>
      *
-     * <code>optional fixed32 permission = 2;</code>
+     * <code>fixed32 permission = 2;</code>
      */
     public int getPermission() {
       return permission_;
@@ -4559,7 +5111,7 @@ public final class InterfaceMember {
      *参会人权限
      * </pre>
      *
-     * <code>optional fixed32 permission = 2;</code>
+     * <code>fixed32 permission = 2;</code>
      */
     private void setPermission(int value) {
       
@@ -4570,7 +5122,7 @@ public final class InterfaceMember {
      *参会人权限
      * </pre>
      *
-     * <code>optional fixed32 permission = 2;</code>
+     * <code>fixed32 permission = 2;</code>
      */
     private void clearPermission() {
       
@@ -4604,6 +5156,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberPermission parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberPermission parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberPermission parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4695,7 +5260,7 @@ public final class InterfaceMember {
        *参会人ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -4705,7 +5270,7 @@ public final class InterfaceMember {
        *参会人ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -4717,7 +5282,7 @@ public final class InterfaceMember {
        *参会人ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -4730,7 +5295,7 @@ public final class InterfaceMember {
        *参会人权限
        * </pre>
        *
-       * <code>optional fixed32 permission = 2;</code>
+       * <code>fixed32 permission = 2;</code>
        */
       public int getPermission() {
         return instance.getPermission();
@@ -4740,7 +5305,7 @@ public final class InterfaceMember {
        *参会人权限
        * </pre>
        *
-       * <code>optional fixed32 permission = 2;</code>
+       * <code>fixed32 permission = 2;</code>
        */
       public Builder setPermission(int value) {
         copyOnWrite();
@@ -4752,7 +5317,7 @@ public final class InterfaceMember {
        *参会人权限
        * </pre>
        *
-       * <code>optional fixed32 permission = 2;</code>
+       * <code>fixed32 permission = 2;</code>
        */
       public Builder clearPermission() {
         copyOnWrite();
@@ -4762,6 +5327,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MemberPermission)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4830,6 +5396,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5042,6 +5609,19 @@ public final class InterfaceMember {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberPermission parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberPermission parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberPermission parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -5229,6 +5809,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MemberPermission)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5294,6 +5875,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5338,7 +5920,7 @@ public final class InterfaceMember {
      *属性ID 参见 Pb_MemberPermissionPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     int getPropertyid();
 
@@ -5347,7 +5929,7 @@ public final class InterfaceMember {
      *传入参数 为0表示本机设置定的人员id
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     int getMemberid();
   }
@@ -5375,7 +5957,7 @@ public final class InterfaceMember {
      *属性ID 参见 Pb_MemberPermissionPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     public int getPropertyid() {
       return propertyid_;
@@ -5385,7 +5967,7 @@ public final class InterfaceMember {
      *属性ID 参见 Pb_MemberPermissionPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void setPropertyid(int value) {
       
@@ -5396,7 +5978,7 @@ public final class InterfaceMember {
      *属性ID 参见 Pb_MemberPermissionPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void clearPropertyid() {
       
@@ -5410,7 +5992,7 @@ public final class InterfaceMember {
      *传入参数 为0表示本机设置定的人员id
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -5420,7 +6002,7 @@ public final class InterfaceMember {
      *传入参数 为0表示本机设置定的人员id
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void setMemberid(int value) {
       
@@ -5431,7 +6013,7 @@ public final class InterfaceMember {
      *传入参数 为0表示本机设置定的人员id
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void clearMemberid() {
       
@@ -5465,6 +6047,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberPermissionQueryProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberPermissionQueryProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MeetMemberPermissionQueryProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5559,7 +6154,7 @@ public final class InterfaceMember {
        *属性ID 参见 Pb_MemberPermissionPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public int getPropertyid() {
         return instance.getPropertyid();
@@ -5569,7 +6164,7 @@ public final class InterfaceMember {
        *属性ID 参见 Pb_MemberPermissionPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder setPropertyid(int value) {
         copyOnWrite();
@@ -5581,7 +6176,7 @@ public final class InterfaceMember {
        *属性ID 参见 Pb_MemberPermissionPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder clearPropertyid() {
         copyOnWrite();
@@ -5594,7 +6189,7 @@ public final class InterfaceMember {
        *传入参数 为0表示本机设置定的人员id
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -5604,7 +6199,7 @@ public final class InterfaceMember {
        *传入参数 为0表示本机设置定的人员id
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -5616,7 +6211,7 @@ public final class InterfaceMember {
        *传入参数 为0表示本机设置定的人员id
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -5626,6 +6221,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetMemberPermissionQueryProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5694,6 +6290,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5738,7 +6335,7 @@ public final class InterfaceMember {
      *整数属性值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     int getPropertyval();
   }
@@ -5766,7 +6363,7 @@ public final class InterfaceMember {
      *整数属性值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     public int getPropertyval() {
       return propertyval_;
@@ -5776,7 +6373,7 @@ public final class InterfaceMember {
      *整数属性值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     private void setPropertyval(int value) {
       
@@ -5787,7 +6384,7 @@ public final class InterfaceMember {
      *整数属性值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     private void clearPropertyval() {
       
@@ -5814,6 +6411,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberPermissionProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberPermissionProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberPermissionProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5908,7 +6518,7 @@ public final class InterfaceMember {
        *整数属性值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public int getPropertyval() {
         return instance.getPropertyval();
@@ -5918,7 +6528,7 @@ public final class InterfaceMember {
        *整数属性值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public Builder setPropertyval(int value) {
         copyOnWrite();
@@ -5930,7 +6540,7 @@ public final class InterfaceMember {
        *整数属性值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public Builder clearPropertyval() {
         copyOnWrite();
@@ -5940,6 +6550,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MemberPermissionProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6001,6 +6612,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6041,12 +6653,12 @@ public final class InterfaceMember {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     int getGroupid();
 
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
   }
@@ -6068,20 +6680,20 @@ public final class InterfaceMember {
     public static final int GROUPID_FIELD_NUMBER = 1;
     private int groupid_;
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     public int getGroupid() {
       return groupid_;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void setGroupid(int value) {
       
       groupid_ = value;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void clearGroupid() {
       
@@ -6091,13 +6703,13 @@ public final class InterfaceMember {
     public static final int NAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString name_;
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -6107,7 +6719,7 @@ public final class InterfaceMember {
       name_ = value;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -6141,6 +6753,19 @@ public final class InterfaceMember {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Item_MemberGroupDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6228,13 +6853,13 @@ public final class InterfaceMember {
 
 
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public int getGroupid() {
         return instance.getGroupid();
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder setGroupid(int value) {
         copyOnWrite();
@@ -6242,7 +6867,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder clearGroupid() {
         copyOnWrite();
@@ -6251,13 +6876,13 @@ public final class InterfaceMember {
       }
 
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -6265,7 +6890,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -6275,6 +6900,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MemberGroupDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6343,6 +6969,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6555,6 +7182,19 @@ public final class InterfaceMember {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberGroupDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -6742,6 +7382,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MemberGroupDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6807,6 +7448,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6847,7 +7489,7 @@ public final class InterfaceMember {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     int getGroupid();
 
@@ -6886,20 +7528,20 @@ public final class InterfaceMember {
     public static final int GROUPID_FIELD_NUMBER = 1;
     private int groupid_;
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     public int getGroupid() {
       return groupid_;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void setGroupid(int value) {
       
       groupid_ = value;
     }
     /**
-     * <code>optional fixed32 groupid = 1;</code>
+     * <code>fixed32 groupid = 1;</code>
      */
     private void clearGroupid() {
       
@@ -6995,6 +7637,19 @@ public final class InterfaceMember {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberInGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberInGroupDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMember.pbui_Type_MemberInGroupDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -7084,13 +7739,13 @@ public final class InterfaceMember {
 
 
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public int getGroupid() {
         return instance.getGroupid();
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder setGroupid(int value) {
         copyOnWrite();
@@ -7098,7 +7753,7 @@ public final class InterfaceMember {
         return this;
       }
       /**
-       * <code>optional fixed32 groupid = 1;</code>
+       * <code>fixed32 groupid = 1;</code>
        */
       public Builder clearGroupid() {
         copyOnWrite();
@@ -7163,6 +7818,7 @@ public final class InterfaceMember {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MemberInGroupDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7249,6 +7905,7 @@ public final class InterfaceMember {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

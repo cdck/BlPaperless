@@ -17,7 +17,7 @@ public final class InterfaceSignin {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 nameId = 1;</code>
+     * <code>fixed32 nameId = 1;</code>
      */
     int getNameId();
 
@@ -26,7 +26,7 @@ public final class InterfaceSignin {
      *日期 时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcseconds = 2;</code>
+     * <code>fixed64 utcseconds = 2;</code>
      */
     long getUtcseconds();
 
@@ -35,7 +35,7 @@ public final class InterfaceSignin {
      *签到方式 参见Pb_MeetSignType
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 3;</code>
+     * <code>fixed32 signin_type = 3;</code>
      */
     int getSigninType();
 
@@ -44,7 +44,7 @@ public final class InterfaceSignin {
      *签到密码
      * </pre>
      *
-     * <code>optional bytes password = 4;</code>
+     * <code>bytes password = 4;</code>
      */
     com.google.protobuf.ByteString getPassword();
 
@@ -53,7 +53,7 @@ public final class InterfaceSignin {
      *如果有图片签到则为png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes psigndata = 5;</code>
+     * <code>bytes psigndata = 5;</code>
      */
     com.google.protobuf.ByteString getPsigndata();
   }
@@ -80,7 +80,7 @@ public final class InterfaceSignin {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 nameId = 1;</code>
+     * <code>fixed32 nameId = 1;</code>
      */
     public int getNameId() {
       return nameId_;
@@ -90,7 +90,7 @@ public final class InterfaceSignin {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 nameId = 1;</code>
+     * <code>fixed32 nameId = 1;</code>
      */
     private void setNameId(int value) {
       
@@ -101,7 +101,7 @@ public final class InterfaceSignin {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 nameId = 1;</code>
+     * <code>fixed32 nameId = 1;</code>
      */
     private void clearNameId() {
       
@@ -115,7 +115,7 @@ public final class InterfaceSignin {
      *日期 时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcseconds = 2;</code>
+     * <code>fixed64 utcseconds = 2;</code>
      */
     public long getUtcseconds() {
       return utcseconds_;
@@ -125,7 +125,7 @@ public final class InterfaceSignin {
      *日期 时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcseconds = 2;</code>
+     * <code>fixed64 utcseconds = 2;</code>
      */
     private void setUtcseconds(long value) {
       
@@ -136,7 +136,7 @@ public final class InterfaceSignin {
      *日期 时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 utcseconds = 2;</code>
+     * <code>fixed64 utcseconds = 2;</code>
      */
     private void clearUtcseconds() {
       
@@ -150,7 +150,7 @@ public final class InterfaceSignin {
      *签到方式 参见Pb_MeetSignType
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 3;</code>
+     * <code>fixed32 signin_type = 3;</code>
      */
     public int getSigninType() {
       return signinType_;
@@ -160,7 +160,7 @@ public final class InterfaceSignin {
      *签到方式 参见Pb_MeetSignType
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 3;</code>
+     * <code>fixed32 signin_type = 3;</code>
      */
     private void setSigninType(int value) {
       
@@ -171,7 +171,7 @@ public final class InterfaceSignin {
      *签到方式 参见Pb_MeetSignType
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 3;</code>
+     * <code>fixed32 signin_type = 3;</code>
      */
     private void clearSigninType() {
       
@@ -185,7 +185,7 @@ public final class InterfaceSignin {
      *签到密码
      * </pre>
      *
-     * <code>optional bytes password = 4;</code>
+     * <code>bytes password = 4;</code>
      */
     public com.google.protobuf.ByteString getPassword() {
       return password_;
@@ -195,7 +195,7 @@ public final class InterfaceSignin {
      *签到密码
      * </pre>
      *
-     * <code>optional bytes password = 4;</code>
+     * <code>bytes password = 4;</code>
      */
     private void setPassword(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -209,7 +209,7 @@ public final class InterfaceSignin {
      *签到密码
      * </pre>
      *
-     * <code>optional bytes password = 4;</code>
+     * <code>bytes password = 4;</code>
      */
     private void clearPassword() {
       
@@ -223,7 +223,7 @@ public final class InterfaceSignin {
      *如果有图片签到则为png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes psigndata = 5;</code>
+     * <code>bytes psigndata = 5;</code>
      */
     public com.google.protobuf.ByteString getPsigndata() {
       return psigndata_;
@@ -233,7 +233,7 @@ public final class InterfaceSignin {
      *如果有图片签到则为png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes psigndata = 5;</code>
+     * <code>bytes psigndata = 5;</code>
      */
     private void setPsigndata(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -247,7 +247,7 @@ public final class InterfaceSignin {
      *如果有图片签到则为png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes psigndata = 5;</code>
+     * <code>bytes psigndata = 5;</code>
      */
     private void clearPsigndata() {
       
@@ -302,6 +302,19 @@ public final class InterfaceSignin {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Item_MeetSignInDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Item_MeetSignInDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Item_MeetSignInDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -393,7 +406,7 @@ public final class InterfaceSignin {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 nameId = 1;</code>
+       * <code>fixed32 nameId = 1;</code>
        */
       public int getNameId() {
         return instance.getNameId();
@@ -403,7 +416,7 @@ public final class InterfaceSignin {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 nameId = 1;</code>
+       * <code>fixed32 nameId = 1;</code>
        */
       public Builder setNameId(int value) {
         copyOnWrite();
@@ -415,7 +428,7 @@ public final class InterfaceSignin {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 nameId = 1;</code>
+       * <code>fixed32 nameId = 1;</code>
        */
       public Builder clearNameId() {
         copyOnWrite();
@@ -428,7 +441,7 @@ public final class InterfaceSignin {
        *日期 时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcseconds = 2;</code>
+       * <code>fixed64 utcseconds = 2;</code>
        */
       public long getUtcseconds() {
         return instance.getUtcseconds();
@@ -438,7 +451,7 @@ public final class InterfaceSignin {
        *日期 时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcseconds = 2;</code>
+       * <code>fixed64 utcseconds = 2;</code>
        */
       public Builder setUtcseconds(long value) {
         copyOnWrite();
@@ -450,7 +463,7 @@ public final class InterfaceSignin {
        *日期 时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 utcseconds = 2;</code>
+       * <code>fixed64 utcseconds = 2;</code>
        */
       public Builder clearUtcseconds() {
         copyOnWrite();
@@ -463,7 +476,7 @@ public final class InterfaceSignin {
        *签到方式 参见Pb_MeetSignType
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 3;</code>
+       * <code>fixed32 signin_type = 3;</code>
        */
       public int getSigninType() {
         return instance.getSigninType();
@@ -473,7 +486,7 @@ public final class InterfaceSignin {
        *签到方式 参见Pb_MeetSignType
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 3;</code>
+       * <code>fixed32 signin_type = 3;</code>
        */
       public Builder setSigninType(int value) {
         copyOnWrite();
@@ -485,7 +498,7 @@ public final class InterfaceSignin {
        *签到方式 参见Pb_MeetSignType
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 3;</code>
+       * <code>fixed32 signin_type = 3;</code>
        */
       public Builder clearSigninType() {
         copyOnWrite();
@@ -498,7 +511,7 @@ public final class InterfaceSignin {
        *签到密码
        * </pre>
        *
-       * <code>optional bytes password = 4;</code>
+       * <code>bytes password = 4;</code>
        */
       public com.google.protobuf.ByteString getPassword() {
         return instance.getPassword();
@@ -508,7 +521,7 @@ public final class InterfaceSignin {
        *签到密码
        * </pre>
        *
-       * <code>optional bytes password = 4;</code>
+       * <code>bytes password = 4;</code>
        */
       public Builder setPassword(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -520,7 +533,7 @@ public final class InterfaceSignin {
        *签到密码
        * </pre>
        *
-       * <code>optional bytes password = 4;</code>
+       * <code>bytes password = 4;</code>
        */
       public Builder clearPassword() {
         copyOnWrite();
@@ -533,7 +546,7 @@ public final class InterfaceSignin {
        *如果有图片签到则为png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes psigndata = 5;</code>
+       * <code>bytes psigndata = 5;</code>
        */
       public com.google.protobuf.ByteString getPsigndata() {
         return instance.getPsigndata();
@@ -543,7 +556,7 @@ public final class InterfaceSignin {
        *如果有图片签到则为png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes psigndata = 5;</code>
+       * <code>bytes psigndata = 5;</code>
        */
       public Builder setPsigndata(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -555,7 +568,7 @@ public final class InterfaceSignin {
        *如果有图片签到则为png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes psigndata = 5;</code>
+       * <code>bytes psigndata = 5;</code>
        */
       public Builder clearPsigndata() {
         copyOnWrite();
@@ -565,6 +578,7 @@ public final class InterfaceSignin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetSignInDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -654,6 +668,7 @@ public final class InterfaceSignin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -864,6 +879,19 @@ public final class InterfaceSignin {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_MeetSignInDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_MeetSignInDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_MeetSignInDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1049,6 +1077,7 @@ public final class InterfaceSignin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetSignInDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1114,6 +1143,7 @@ public final class InterfaceSignin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1158,7 +1188,7 @@ public final class InterfaceSignin {
      *指定签到的人员ID,为0表示当前绑定的人员
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     int getMemberid();
 
@@ -1167,7 +1197,7 @@ public final class InterfaceSignin {
      *签到方式 参见Pb_MeetSignType
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 2;</code>
+     * <code>fixed32 signin_type = 2;</code>
      */
     int getSigninType();
 
@@ -1176,7 +1206,7 @@ public final class InterfaceSignin {
      *签到密码
      * </pre>
      *
-     * <code>optional bytes password = 3;</code>
+     * <code>bytes password = 3;</code>
      */
     com.google.protobuf.ByteString getPassword();
 
@@ -1185,7 +1215,7 @@ public final class InterfaceSignin {
      *如果有图片签到则为png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes psigndata = 4;</code>
+     * <code>bytes psigndata = 4;</code>
      */
     com.google.protobuf.ByteString getPsigndata();
   }
@@ -1214,7 +1244,7 @@ public final class InterfaceSignin {
      *指定签到的人员ID,为0表示当前绑定的人员
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -1224,7 +1254,7 @@ public final class InterfaceSignin {
      *指定签到的人员ID,为0表示当前绑定的人员
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void setMemberid(int value) {
       
@@ -1235,7 +1265,7 @@ public final class InterfaceSignin {
      *指定签到的人员ID,为0表示当前绑定的人员
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void clearMemberid() {
       
@@ -1249,7 +1279,7 @@ public final class InterfaceSignin {
      *签到方式 参见Pb_MeetSignType
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 2;</code>
+     * <code>fixed32 signin_type = 2;</code>
      */
     public int getSigninType() {
       return signinType_;
@@ -1259,7 +1289,7 @@ public final class InterfaceSignin {
      *签到方式 参见Pb_MeetSignType
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 2;</code>
+     * <code>fixed32 signin_type = 2;</code>
      */
     private void setSigninType(int value) {
       
@@ -1270,7 +1300,7 @@ public final class InterfaceSignin {
      *签到方式 参见Pb_MeetSignType
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 2;</code>
+     * <code>fixed32 signin_type = 2;</code>
      */
     private void clearSigninType() {
       
@@ -1284,7 +1314,7 @@ public final class InterfaceSignin {
      *签到密码
      * </pre>
      *
-     * <code>optional bytes password = 3;</code>
+     * <code>bytes password = 3;</code>
      */
     public com.google.protobuf.ByteString getPassword() {
       return password_;
@@ -1294,7 +1324,7 @@ public final class InterfaceSignin {
      *签到密码
      * </pre>
      *
-     * <code>optional bytes password = 3;</code>
+     * <code>bytes password = 3;</code>
      */
     private void setPassword(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1308,7 +1338,7 @@ public final class InterfaceSignin {
      *签到密码
      * </pre>
      *
-     * <code>optional bytes password = 3;</code>
+     * <code>bytes password = 3;</code>
      */
     private void clearPassword() {
       
@@ -1322,7 +1352,7 @@ public final class InterfaceSignin {
      *如果有图片签到则为png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes psigndata = 4;</code>
+     * <code>bytes psigndata = 4;</code>
      */
     public com.google.protobuf.ByteString getPsigndata() {
       return psigndata_;
@@ -1332,7 +1362,7 @@ public final class InterfaceSignin {
      *如果有图片签到则为png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes psigndata = 4;</code>
+     * <code>bytes psigndata = 4;</code>
      */
     private void setPsigndata(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1346,7 +1376,7 @@ public final class InterfaceSignin {
      *如果有图片签到则为png图片数据(二进制转hex编码)
      * </pre>
      *
-     * <code>optional bytes psigndata = 4;</code>
+     * <code>bytes psigndata = 4;</code>
      */
     private void clearPsigndata() {
       
@@ -1394,6 +1424,19 @@ public final class InterfaceSignin {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_DoMeetSignIno parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_DoMeetSignIno parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_DoMeetSignIno parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1487,7 +1530,7 @@ public final class InterfaceSignin {
        *指定签到的人员ID,为0表示当前绑定的人员
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -1497,7 +1540,7 @@ public final class InterfaceSignin {
        *指定签到的人员ID,为0表示当前绑定的人员
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -1509,7 +1552,7 @@ public final class InterfaceSignin {
        *指定签到的人员ID,为0表示当前绑定的人员
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -1522,7 +1565,7 @@ public final class InterfaceSignin {
        *签到方式 参见Pb_MeetSignType
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 2;</code>
+       * <code>fixed32 signin_type = 2;</code>
        */
       public int getSigninType() {
         return instance.getSigninType();
@@ -1532,7 +1575,7 @@ public final class InterfaceSignin {
        *签到方式 参见Pb_MeetSignType
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 2;</code>
+       * <code>fixed32 signin_type = 2;</code>
        */
       public Builder setSigninType(int value) {
         copyOnWrite();
@@ -1544,7 +1587,7 @@ public final class InterfaceSignin {
        *签到方式 参见Pb_MeetSignType
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 2;</code>
+       * <code>fixed32 signin_type = 2;</code>
        */
       public Builder clearSigninType() {
         copyOnWrite();
@@ -1557,7 +1600,7 @@ public final class InterfaceSignin {
        *签到密码
        * </pre>
        *
-       * <code>optional bytes password = 3;</code>
+       * <code>bytes password = 3;</code>
        */
       public com.google.protobuf.ByteString getPassword() {
         return instance.getPassword();
@@ -1567,7 +1610,7 @@ public final class InterfaceSignin {
        *签到密码
        * </pre>
        *
-       * <code>optional bytes password = 3;</code>
+       * <code>bytes password = 3;</code>
        */
       public Builder setPassword(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1579,7 +1622,7 @@ public final class InterfaceSignin {
        *签到密码
        * </pre>
        *
-       * <code>optional bytes password = 3;</code>
+       * <code>bytes password = 3;</code>
        */
       public Builder clearPassword() {
         copyOnWrite();
@@ -1592,7 +1635,7 @@ public final class InterfaceSignin {
        *如果有图片签到则为png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes psigndata = 4;</code>
+       * <code>bytes psigndata = 4;</code>
        */
       public com.google.protobuf.ByteString getPsigndata() {
         return instance.getPsigndata();
@@ -1602,7 +1645,7 @@ public final class InterfaceSignin {
        *如果有图片签到则为png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes psigndata = 4;</code>
+       * <code>bytes psigndata = 4;</code>
        */
       public Builder setPsigndata(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1614,7 +1657,7 @@ public final class InterfaceSignin {
        *如果有图片签到则为png图片数据(二进制转hex编码)
        * </pre>
        *
-       * <code>optional bytes psigndata = 4;</code>
+       * <code>bytes psigndata = 4;</code>
        */
       public Builder clearPsigndata() {
         copyOnWrite();
@@ -1624,6 +1667,7 @@ public final class InterfaceSignin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DoMeetSignIno)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1706,6 +1750,7 @@ public final class InterfaceSignin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1750,7 +1795,7 @@ public final class InterfaceSignin {
      *指定会议ID 0表示绑定的会议
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     int getMeetingid();
 
@@ -1804,7 +1849,7 @@ public final class InterfaceSignin {
      *指定会议ID 0表示绑定的会议
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     public int getMeetingid() {
       return meetingid_;
@@ -1814,7 +1859,7 @@ public final class InterfaceSignin {
      *指定会议ID 0表示绑定的会议
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     private void setMeetingid(int value) {
       
@@ -1825,7 +1870,7 @@ public final class InterfaceSignin {
      *指定会议ID 0表示绑定的会议
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 1;</code>
+     * <code>fixed32 meetingid = 1;</code>
      */
     private void clearMeetingid() {
       
@@ -1949,6 +1994,19 @@ public final class InterfaceSignin {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_DoDeleteMeetSignIno parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_DoDeleteMeetSignIno parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceSignin.pbui_Type_DoDeleteMeetSignIno parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2041,7 +2099,7 @@ public final class InterfaceSignin {
        *指定会议ID 0表示绑定的会议
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public int getMeetingid() {
         return instance.getMeetingid();
@@ -2051,7 +2109,7 @@ public final class InterfaceSignin {
        *指定会议ID 0表示绑定的会议
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public Builder setMeetingid(int value) {
         copyOnWrite();
@@ -2063,7 +2121,7 @@ public final class InterfaceSignin {
        *指定会议ID 0表示绑定的会议
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 1;</code>
+       * <code>fixed32 meetingid = 1;</code>
        */
       public Builder clearMeetingid() {
         copyOnWrite();
@@ -2156,6 +2214,7 @@ public final class InterfaceSignin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DoDeleteMeetSignIno)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2242,6 +2301,7 @@ public final class InterfaceSignin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

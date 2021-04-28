@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -40,6 +41,7 @@ import com.acker.simplezxing.activity.CaptureActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.hjq.permissions.OnPermission;
@@ -59,6 +61,7 @@ import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
+import com.pa.paperless.helper.SharedPreferenceHelper;
 import com.pa.paperless.service.App;
 import com.pa.paperless.ui.DrawBoard;
 import com.pa.paperless.utils.CodecUtil;
@@ -217,6 +220,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEMBER.getNumber(), 1, 0);
                 //缓存排位信息(不然收不到排位变更通知)
                 jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETSEAT.getNumber(), 1, 0);
+                //会议目录权限
+                jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT_VALUE, 1, 0);
                 fun_queryDevMeetInfo();
                 break;
             case EventType.MEETDIR_CHANGE_INFORM://会议目录变更通知
@@ -723,7 +728,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private void chooseMember() {
         View inflate = LayoutInflater.from(this).inflate(R.layout.bind_member_layout, null);
-        chooseMemberPop = new PopupWindow(inflate, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        chooseMemberPop = new PopupWindow(inflate, ScreenUtils.getScreenWidth() / 2, ScreenUtils.getScreenHeight() / 2);
         chooseMemberPop.setBackgroundDrawable(new BitmapDrawable());
         chooseMemberPop.setAnimationStyle(R.style.Anim_PopupWindow);
         // 设置popWindow弹出窗体可点击，这句话必须添加，并且是true
@@ -733,7 +738,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         chooseMemberPop.setFocusable(true);
         chooseMemberPop.showAtLocation(mian_into_meeting, Gravity.CENTER, 0, 0);
         ChooseViewHolder holder = new ChooseViewHolder(inflate);
-        holder.member_rl.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL));
+        holder.member_rl.setLayoutManager(new StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.VERTICAL));
         holder.member_rl.setAdapter(adapter);
         //第一次进来时设置默认选中
         if (!chooseMember.isEmpty()) {
@@ -1013,6 +1018,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             }
             Values.localDevId = contextInfo.getPropertyval();
             LogUtils.i(TAG, "本机设备id=" + Values.localDevId);
+            //会议目录权限
+            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
             setDevName();
             fun_queryDevMeetInfo();
             fun_queryInterFaceConfiguration();
@@ -1096,7 +1103,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 InterfaceFile.pbui_Item_MeetDirDetailInfo item = itemList.get(i);
                 //过滤掉子目录
                 if (item.getParentid() != 0) continue;
+                LogUtils.e(TAG,"当前目录="+item.getName().toStringUtf8());
                 int dirId = item.getId();
+                jni.queryDirPermission(dirId);
                 if (dirId != Macro.ANNOTATION_FILE_DIRECTORY_ID) {
                     FileUtil.cacheDirFile(dirId);
                 }
@@ -1471,6 +1480,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             LogUtil.e(TAG, " IPHolderEvent NumberFormatException 转换异常");
             e.printStackTrace();
         }
+        holder.cb_marquee.setChecked(SharedPreferenceHelper.isMarquee(this));
         holder.disablebsf_cb.setChecked(bsf);
         holder.use_cb.setChecked(use);
         holder.disable_mulitcast_cb.setChecked(mulitcast);
@@ -1503,6 +1513,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 iniUtil.put("nosdl", "disablebsf", enable ? 0 : 1);
                 iniUtil.put("selfinfo", "streamprotol", useTCP ? 1 : 0);
                 iniUtil.put("Audio", "disablemulticast", disableMulitcast ? 1 : 0);
+                SharedPreferenceHelper.setData(this, SharedPreferenceHelper.key_marquee, holder.cb_marquee.isChecked());
                 LogUtil.i(TAG, " 点击确定 maxBitRate= " + maxRate);
                 iniUtil.store();//修改后提交
                 /** **** **  app重启  ** **** **/
@@ -1827,6 +1838,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         public CheckBox disablebsf_cb;
         public CheckBox disable_mulitcast_cb;
         public CheckBox use_cb;
+        public CheckBox cb_marquee;
         public Button btn_clear_file;
         public Button btn_jump2off;
         public Button ip_pop_cancel;
@@ -1842,6 +1854,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             this.disablebsf_cb = (CheckBox) rootView.findViewById(R.id.disablebsf_cb);
             this.disable_mulitcast_cb = (CheckBox) rootView.findViewById(R.id.disable_mulitcast_cb);
             this.use_cb = (CheckBox) rootView.findViewById(R.id.use_cb);
+            this.cb_marquee = (CheckBox) rootView.findViewById(R.id.cb_marquee);
             this.btn_clear_file = (Button) rootView.findViewById(R.id.btn_clear_file);
             this.btn_jump2off = (Button) rootView.findViewById(R.id.btn_jump2off);
             this.ip_pop_cancel = (Button) rootView.findViewById(R.id.ip_pop_cancel);

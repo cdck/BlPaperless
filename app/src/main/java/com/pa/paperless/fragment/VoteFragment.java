@@ -23,7 +23,9 @@ import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.blankj.utilcode.util.UriUtils;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.intrusoft.scatter.ChartData;
@@ -45,19 +47,17 @@ import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
-import com.pa.paperless.utils.ConvertUtil;
 import com.pa.paperless.utils.Export;
 import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
-import com.pa.paperless.utils.PopUtil;
 import com.pa.paperless.utils.ScreenUtils;
 
-import com.pa.paperless.utils.UriUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -958,43 +958,41 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         if (requestCode == JUST_OPEN_EXCEL_CODE) {
             if (resultCode == RESULT_OK) {
                 Uri uri = data.getData();
-                String path = "";
-                try {
-                    path = UriUtil.getFilePath(getContext(), uri);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                if (path == null || path.isEmpty()) {
-                    ToastUtils.showShort(R.string.get_file_path_fail);
-                    return;
-                }
-                if (!path.endsWith(".xls")) {
-                    ToastUtils.showShort(R.string.only_xls_file);
-                    return;
-                }
-                List<ImportVoteBean> importVoteBeen = Export.ReadVoteExcel(path);
-                List<ByteString> chooses = new ArrayList<ByteString>();
-                chooses.add(MyUtils.s2b(getString(R.string.favour)));
-                chooses.add(MyUtils.s2b(getString(R.string.against)));
-                chooses.add(MyUtils.s2b(getString(R.string.waiver)));
-                List<InterfaceVote.pbui_Item_MeetOnVotingDetailInfo> votes = new ArrayList<>();
-                if (!importVoteBeen.isEmpty()) {
-                    for (int i = 0; i < importVoteBeen.size(); i++) {
-                        ImportVoteBean bean = importVoteBeen.get(i);
-                        LogUtil.e(TAG, "VoteFragment.onActivityResult :  --> 内容= " + bean.getContent() + "，模式= " + bean.getMode());
-                        InterfaceVote.pbui_Item_MeetOnVotingDetailInfo.Builder builder = InterfaceVote.pbui_Item_MeetOnVotingDetailInfo.newBuilder();
-                        builder.setContent(MyUtils.s2b(bean.getContent()));
-                        builder.setMaintype(InterfaceMacro.Pb_MeetVoteType.Pb_VOTE_MAINTYPE_vote.getNumber());
-                        builder.setMode(bean.getMode());
-                        builder.setType(InterfaceMacro.Pb_MeetVote_SelType.Pb_VOTE_TYPE_SINGLE.getNumber());
-                        builder.setTimeouts(0);
-                        builder.setSelectcount(3);
-                        builder.addAllText(chooses);
-                        InterfaceVote.pbui_Item_MeetOnVotingDetailInfo build = builder.build();
-                        votes.add(build);
+                File file = UriUtils.uri2File(uri);
+                if (file != null) {
+                    if (!file.getAbsolutePath().endsWith(".xls")) {
+                        ToastUtils.showShort(R.string.only_xls_file);
+                        return;
+                    }
+                    try {
+                        List<ImportVoteBean> importVoteBeen = Export.ReadVoteExcel(file.getAbsolutePath());
+                        List<ByteString> chooses = new ArrayList<ByteString>();
+                        chooses.add(MyUtils.s2b(getString(R.string.favour)));
+                        chooses.add(MyUtils.s2b(getString(R.string.against)));
+                        chooses.add(MyUtils.s2b(getString(R.string.waiver)));
+                        List<InterfaceVote.pbui_Item_MeetOnVotingDetailInfo> votes = new ArrayList<>();
+                        if (!importVoteBeen.isEmpty()) {
+                            for (int i = 0; i < importVoteBeen.size(); i++) {
+                                ImportVoteBean bean = importVoteBeen.get(i);
+                                LogUtil.e(TAG, "VoteFragment.onActivityResult :  --> 内容= " + bean.getContent() + "，模式= " + bean.getMode());
+                                InterfaceVote.pbui_Item_MeetOnVotingDetailInfo.Builder builder = InterfaceVote.pbui_Item_MeetOnVotingDetailInfo.newBuilder();
+                                builder.setContent(MyUtils.s2b(bean.getContent()));
+                                builder.setMaintype(InterfaceMacro.Pb_MeetVoteType.Pb_VOTE_MAINTYPE_vote.getNumber());
+                                builder.setMode(bean.getMode());
+                                builder.setType(InterfaceMacro.Pb_MeetVote_SelType.Pb_VOTE_TYPE_SINGLE.getNumber());
+                                builder.setTimeouts(0);
+                                builder.setSelectcount(3);
+                                builder.addAllText(chooses);
+                                InterfaceVote.pbui_Item_MeetOnVotingDetailInfo build = builder.build();
+                                votes.add(build);
+                            }
+                        }
+                        jni.createVote(votes);
+                    } catch (Exception e) {
+                        LogUtils.e(TAG,"导入投票信息失败");
+                        e.printStackTrace();
                     }
                 }
-                jni.createVote(votes);
             }
         }
     }

@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.chad.library.adapter.base.provider.BaseNodeProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
@@ -13,6 +14,7 @@ import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.utils.FileSizeUtil;
 import com.pa.paperless.utils.FileUtil;
+import com.pa.paperless.utils.MyUtils;
 import com.wind.myapplication.NativeUtil;
 
 import org.jetbrains.annotations.NotNull;
@@ -66,6 +68,10 @@ public class LevelFileProvider extends BaseNodeProvider {
 
         helper.getView(R.id.item_file_preview).setOnClickListener(v -> {
             LogUtils.i(TAG, "onChildClick fileName=" + fileName);
+            if (!MyUtils.isHasPermission(Macro.permission_code_download)) {
+                ToastUtils.showShort(R.string.no_permission);
+                return;
+            }
             if (FileUtil.isVideo(fileName)) {
                 //如果是音频或视频则在线播放
                 List<Integer> devIds = new ArrayList<>();

@@ -17,7 +17,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     int getMediaId();
 
@@ -26,7 +26,7 @@ public final class InterfacePlaymedia {
      *0=播放中，1=暂停，2=停止,3=恢复
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     int getStatus();
 
@@ -35,7 +35,7 @@ public final class InterfacePlaymedia {
      *当前位置，百分比
      * </pre>
      *
-     * <code>optional fixed32 per = 3;</code>
+     * <code>fixed32 per = 3;</code>
      */
     int getPer();
 
@@ -44,7 +44,7 @@ public final class InterfacePlaymedia {
      *当前播放秒数，当status&gt;0时，为文件ID号
      * </pre>
      *
-     * <code>optional fixed32 sec = 4;</code>
+     * <code>fixed32 sec = 4;</code>
      */
     int getSec();
   }
@@ -72,7 +72,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     public int getMediaId() {
       return mediaId_;
@@ -82,7 +82,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     private void setMediaId(int value) {
       
@@ -93,7 +93,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaId = 1;</code>
+     * <code>fixed32 mediaId = 1;</code>
      */
     private void clearMediaId() {
       
@@ -107,7 +107,7 @@ public final class InterfacePlaymedia {
      *0=播放中，1=暂停，2=停止,3=恢复
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     public int getStatus() {
       return status_;
@@ -117,7 +117,7 @@ public final class InterfacePlaymedia {
      *0=播放中，1=暂停，2=停止,3=恢复
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void setStatus(int value) {
       
@@ -128,7 +128,7 @@ public final class InterfacePlaymedia {
      *0=播放中，1=暂停，2=停止,3=恢复
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void clearStatus() {
       
@@ -142,7 +142,7 @@ public final class InterfacePlaymedia {
      *当前位置，百分比
      * </pre>
      *
-     * <code>optional fixed32 per = 3;</code>
+     * <code>fixed32 per = 3;</code>
      */
     public int getPer() {
       return per_;
@@ -152,7 +152,7 @@ public final class InterfacePlaymedia {
      *当前位置，百分比
      * </pre>
      *
-     * <code>optional fixed32 per = 3;</code>
+     * <code>fixed32 per = 3;</code>
      */
     private void setPer(int value) {
       
@@ -163,7 +163,7 @@ public final class InterfacePlaymedia {
      *当前位置，百分比
      * </pre>
      *
-     * <code>optional fixed32 per = 3;</code>
+     * <code>fixed32 per = 3;</code>
      */
     private void clearPer() {
       
@@ -177,7 +177,7 @@ public final class InterfacePlaymedia {
      *当前播放秒数，当status&gt;0时，为文件ID号
      * </pre>
      *
-     * <code>optional fixed32 sec = 4;</code>
+     * <code>fixed32 sec = 4;</code>
      */
     public int getSec() {
       return sec_;
@@ -187,7 +187,7 @@ public final class InterfacePlaymedia {
      *当前播放秒数，当status&gt;0时，为文件ID号
      * </pre>
      *
-     * <code>optional fixed32 sec = 4;</code>
+     * <code>fixed32 sec = 4;</code>
      */
     private void setSec(int value) {
       
@@ -198,7 +198,7 @@ public final class InterfacePlaymedia {
      *当前播放秒数，当status&gt;0时，为文件ID号
      * </pre>
      *
-     * <code>optional fixed32 sec = 4;</code>
+     * <code>fixed32 sec = 4;</code>
      */
     private void clearSec() {
       
@@ -246,6 +246,19 @@ public final class InterfacePlaymedia {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_PlayPosCb parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_PlayPosCb parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_PlayPosCb parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -340,7 +353,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public int getMediaId() {
         return instance.getMediaId();
@@ -350,7 +363,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public Builder setMediaId(int value) {
         copyOnWrite();
@@ -362,7 +375,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaId = 1;</code>
+       * <code>fixed32 mediaId = 1;</code>
        */
       public Builder clearMediaId() {
         copyOnWrite();
@@ -375,7 +388,7 @@ public final class InterfacePlaymedia {
        *0=播放中，1=暂停，2=停止,3=恢复
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public int getStatus() {
         return instance.getStatus();
@@ -385,7 +398,7 @@ public final class InterfacePlaymedia {
        *0=播放中，1=暂停，2=停止,3=恢复
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder setStatus(int value) {
         copyOnWrite();
@@ -397,7 +410,7 @@ public final class InterfacePlaymedia {
        *0=播放中，1=暂停，2=停止,3=恢复
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder clearStatus() {
         copyOnWrite();
@@ -410,7 +423,7 @@ public final class InterfacePlaymedia {
        *当前位置，百分比
        * </pre>
        *
-       * <code>optional fixed32 per = 3;</code>
+       * <code>fixed32 per = 3;</code>
        */
       public int getPer() {
         return instance.getPer();
@@ -420,7 +433,7 @@ public final class InterfacePlaymedia {
        *当前位置，百分比
        * </pre>
        *
-       * <code>optional fixed32 per = 3;</code>
+       * <code>fixed32 per = 3;</code>
        */
       public Builder setPer(int value) {
         copyOnWrite();
@@ -432,7 +445,7 @@ public final class InterfacePlaymedia {
        *当前位置，百分比
        * </pre>
        *
-       * <code>optional fixed32 per = 3;</code>
+       * <code>fixed32 per = 3;</code>
        */
       public Builder clearPer() {
         copyOnWrite();
@@ -445,7 +458,7 @@ public final class InterfacePlaymedia {
        *当前播放秒数，当status&gt;0时，为文件ID号
        * </pre>
        *
-       * <code>optional fixed32 sec = 4;</code>
+       * <code>fixed32 sec = 4;</code>
        */
       public int getSec() {
         return instance.getSec();
@@ -455,7 +468,7 @@ public final class InterfacePlaymedia {
        *当前播放秒数，当status&gt;0时，为文件ID号
        * </pre>
        *
-       * <code>optional fixed32 sec = 4;</code>
+       * <code>fixed32 sec = 4;</code>
        */
       public Builder setSec(int value) {
         copyOnWrite();
@@ -467,7 +480,7 @@ public final class InterfacePlaymedia {
        *当前播放秒数，当status&gt;0时，为文件ID号
        * </pre>
        *
-       * <code>optional fixed32 sec = 4;</code>
+       * <code>fixed32 sec = 4;</code>
        */
       public Builder clearSec() {
         copyOnWrite();
@@ -477,6 +490,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_PlayPosCb)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -559,6 +573,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -603,7 +618,7 @@ public final class InterfacePlaymedia {
      *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 1;</code>
+     * <code>fixed32 res = 1;</code>
      */
     int getRes();
 
@@ -612,7 +627,7 @@ public final class InterfacePlaymedia {
      *资源的坐标和宽高
      * </pre>
      *
-     * <code>optional fixed32 x = 2;</code>
+     * <code>fixed32 x = 2;</code>
      */
     int getX();
 
@@ -620,7 +635,7 @@ public final class InterfacePlaymedia {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 y = 3;</code>
+     * <code>fixed32 y = 3;</code>
      */
     int getY();
 
@@ -629,7 +644,7 @@ public final class InterfacePlaymedia {
      *宽
      * </pre>
      *
-     * <code>optional fixed32 w = 4;</code>
+     * <code>fixed32 w = 4;</code>
      */
     int getW();
 
@@ -638,7 +653,7 @@ public final class InterfacePlaymedia {
      *高				
      * </pre>
      *
-     * <code>optional fixed32 h = 5;</code>
+     * <code>fixed32 h = 5;</code>
      */
     int getH();
   }
@@ -666,7 +681,7 @@ public final class InterfacePlaymedia {
      *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 1;</code>
+     * <code>fixed32 res = 1;</code>
      */
     public int getRes() {
       return res_;
@@ -676,7 +691,7 @@ public final class InterfacePlaymedia {
      *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 1;</code>
+     * <code>fixed32 res = 1;</code>
      */
     private void setRes(int value) {
       
@@ -687,7 +702,7 @@ public final class InterfacePlaymedia {
      *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 1;</code>
+     * <code>fixed32 res = 1;</code>
      */
     private void clearRes() {
       
@@ -701,7 +716,7 @@ public final class InterfacePlaymedia {
      *资源的坐标和宽高
      * </pre>
      *
-     * <code>optional fixed32 x = 2;</code>
+     * <code>fixed32 x = 2;</code>
      */
     public int getX() {
       return x_;
@@ -711,7 +726,7 @@ public final class InterfacePlaymedia {
      *资源的坐标和宽高
      * </pre>
      *
-     * <code>optional fixed32 x = 2;</code>
+     * <code>fixed32 x = 2;</code>
      */
     private void setX(int value) {
       
@@ -722,7 +737,7 @@ public final class InterfacePlaymedia {
      *资源的坐标和宽高
      * </pre>
      *
-     * <code>optional fixed32 x = 2;</code>
+     * <code>fixed32 x = 2;</code>
      */
     private void clearX() {
       
@@ -735,7 +750,7 @@ public final class InterfacePlaymedia {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 y = 3;</code>
+     * <code>fixed32 y = 3;</code>
      */
     public int getY() {
       return y_;
@@ -744,7 +759,7 @@ public final class InterfacePlaymedia {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 y = 3;</code>
+     * <code>fixed32 y = 3;</code>
      */
     private void setY(int value) {
       
@@ -754,7 +769,7 @@ public final class InterfacePlaymedia {
      * <pre>
      * </pre>
      *
-     * <code>optional fixed32 y = 3;</code>
+     * <code>fixed32 y = 3;</code>
      */
     private void clearY() {
       
@@ -768,7 +783,7 @@ public final class InterfacePlaymedia {
      *宽
      * </pre>
      *
-     * <code>optional fixed32 w = 4;</code>
+     * <code>fixed32 w = 4;</code>
      */
     public int getW() {
       return w_;
@@ -778,7 +793,7 @@ public final class InterfacePlaymedia {
      *宽
      * </pre>
      *
-     * <code>optional fixed32 w = 4;</code>
+     * <code>fixed32 w = 4;</code>
      */
     private void setW(int value) {
       
@@ -789,7 +804,7 @@ public final class InterfacePlaymedia {
      *宽
      * </pre>
      *
-     * <code>optional fixed32 w = 4;</code>
+     * <code>fixed32 w = 4;</code>
      */
     private void clearW() {
       
@@ -803,7 +818,7 @@ public final class InterfacePlaymedia {
      *高				
      * </pre>
      *
-     * <code>optional fixed32 h = 5;</code>
+     * <code>fixed32 h = 5;</code>
      */
     public int getH() {
       return h_;
@@ -813,7 +828,7 @@ public final class InterfacePlaymedia {
      *高				
      * </pre>
      *
-     * <code>optional fixed32 h = 5;</code>
+     * <code>fixed32 h = 5;</code>
      */
     private void setH(int value) {
       
@@ -824,7 +839,7 @@ public final class InterfacePlaymedia {
      *高				
      * </pre>
      *
-     * <code>optional fixed32 h = 5;</code>
+     * <code>fixed32 h = 5;</code>
      */
     private void clearH() {
       
@@ -879,6 +894,19 @@ public final class InterfacePlaymedia {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetInitPlayRes parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetInitPlayRes parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetInitPlayRes parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -973,7 +1001,7 @@ public final class InterfacePlaymedia {
        *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 1;</code>
+       * <code>fixed32 res = 1;</code>
        */
       public int getRes() {
         return instance.getRes();
@@ -983,7 +1011,7 @@ public final class InterfacePlaymedia {
        *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 1;</code>
+       * <code>fixed32 res = 1;</code>
        */
       public Builder setRes(int value) {
         copyOnWrite();
@@ -995,7 +1023,7 @@ public final class InterfacePlaymedia {
        *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 1;</code>
+       * <code>fixed32 res = 1;</code>
        */
       public Builder clearRes() {
         copyOnWrite();
@@ -1008,7 +1036,7 @@ public final class InterfacePlaymedia {
        *资源的坐标和宽高
        * </pre>
        *
-       * <code>optional fixed32 x = 2;</code>
+       * <code>fixed32 x = 2;</code>
        */
       public int getX() {
         return instance.getX();
@@ -1018,7 +1046,7 @@ public final class InterfacePlaymedia {
        *资源的坐标和宽高
        * </pre>
        *
-       * <code>optional fixed32 x = 2;</code>
+       * <code>fixed32 x = 2;</code>
        */
       public Builder setX(int value) {
         copyOnWrite();
@@ -1030,7 +1058,7 @@ public final class InterfacePlaymedia {
        *资源的坐标和宽高
        * </pre>
        *
-       * <code>optional fixed32 x = 2;</code>
+       * <code>fixed32 x = 2;</code>
        */
       public Builder clearX() {
         copyOnWrite();
@@ -1042,7 +1070,7 @@ public final class InterfacePlaymedia {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 y = 3;</code>
+       * <code>fixed32 y = 3;</code>
        */
       public int getY() {
         return instance.getY();
@@ -1051,7 +1079,7 @@ public final class InterfacePlaymedia {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 y = 3;</code>
+       * <code>fixed32 y = 3;</code>
        */
       public Builder setY(int value) {
         copyOnWrite();
@@ -1062,7 +1090,7 @@ public final class InterfacePlaymedia {
        * <pre>
        * </pre>
        *
-       * <code>optional fixed32 y = 3;</code>
+       * <code>fixed32 y = 3;</code>
        */
       public Builder clearY() {
         copyOnWrite();
@@ -1075,7 +1103,7 @@ public final class InterfacePlaymedia {
        *宽
        * </pre>
        *
-       * <code>optional fixed32 w = 4;</code>
+       * <code>fixed32 w = 4;</code>
        */
       public int getW() {
         return instance.getW();
@@ -1085,7 +1113,7 @@ public final class InterfacePlaymedia {
        *宽
        * </pre>
        *
-       * <code>optional fixed32 w = 4;</code>
+       * <code>fixed32 w = 4;</code>
        */
       public Builder setW(int value) {
         copyOnWrite();
@@ -1097,7 +1125,7 @@ public final class InterfacePlaymedia {
        *宽
        * </pre>
        *
-       * <code>optional fixed32 w = 4;</code>
+       * <code>fixed32 w = 4;</code>
        */
       public Builder clearW() {
         copyOnWrite();
@@ -1110,7 +1138,7 @@ public final class InterfacePlaymedia {
        *高				
        * </pre>
        *
-       * <code>optional fixed32 h = 5;</code>
+       * <code>fixed32 h = 5;</code>
        */
       public int getH() {
         return instance.getH();
@@ -1120,7 +1148,7 @@ public final class InterfacePlaymedia {
        *高				
        * </pre>
        *
-       * <code>optional fixed32 h = 5;</code>
+       * <code>fixed32 h = 5;</code>
        */
       public Builder setH(int value) {
         copyOnWrite();
@@ -1132,7 +1160,7 @@ public final class InterfacePlaymedia {
        *高				
        * </pre>
        *
-       * <code>optional fixed32 h = 5;</code>
+       * <code>fixed32 h = 5;</code>
        */
       public Builder clearH() {
         copyOnWrite();
@@ -1142,6 +1170,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetInitPlayRes)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1231,6 +1260,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1275,7 +1305,7 @@ public final class InterfacePlaymedia {
      *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 1;</code>
+     * <code>fixed32 res = 1;</code>
      */
     int getRes();
   }
@@ -1303,7 +1333,7 @@ public final class InterfacePlaymedia {
      *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 1;</code>
+     * <code>fixed32 res = 1;</code>
      */
     public int getRes() {
       return res_;
@@ -1313,7 +1343,7 @@ public final class InterfacePlaymedia {
      *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 1;</code>
+     * <code>fixed32 res = 1;</code>
      */
     private void setRes(int value) {
       
@@ -1324,7 +1354,7 @@ public final class InterfacePlaymedia {
      *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 1;</code>
+     * <code>fixed32 res = 1;</code>
      */
     private void clearRes() {
       
@@ -1351,6 +1381,19 @@ public final class InterfacePlaymedia {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDestroyPlayRes parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDestroyPlayRes parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDestroyPlayRes parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1445,7 +1488,7 @@ public final class InterfacePlaymedia {
        *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 1;</code>
+       * <code>fixed32 res = 1;</code>
        */
       public int getRes() {
         return instance.getRes();
@@ -1455,7 +1498,7 @@ public final class InterfacePlaymedia {
        *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 1;</code>
+       * <code>fixed32 res = 1;</code>
        */
       public Builder setRes(int value) {
         copyOnWrite();
@@ -1467,7 +1510,7 @@ public final class InterfacePlaymedia {
        *资源索引 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 1;</code>
+       * <code>fixed32 res = 1;</code>
        */
       public Builder clearRes() {
         copyOnWrite();
@@ -1477,6 +1520,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDestroyPlayRes)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1538,6 +1582,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1582,7 +1627,7 @@ public final class InterfacePlaymedia {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     int getTriggerid();
 
@@ -1591,7 +1636,7 @@ public final class InterfacePlaymedia {
      *创建执行该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     int getCreatedeviceid();
 
@@ -1600,7 +1645,7 @@ public final class InterfacePlaymedia {
      *播放的媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     int getMediaid();
 
@@ -1609,7 +1654,7 @@ public final class InterfacePlaymedia {
      *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 4;</code>
+     * <code>fixed32 res = 4;</code>
      */
     int getRes();
 
@@ -1618,7 +1663,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 5;</code>
+     * <code>fixed32 triggeruserval = 5;</code>
      */
     int getTriggeruserval();
   }
@@ -1646,7 +1691,7 @@ public final class InterfacePlaymedia {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     public int getTriggerid() {
       return triggerid_;
@@ -1656,7 +1701,7 @@ public final class InterfacePlaymedia {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     private void setTriggerid(int value) {
       
@@ -1667,7 +1712,7 @@ public final class InterfacePlaymedia {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 triggerid = 1;</code>
+     * <code>fixed32 triggerid = 1;</code>
      */
     private void clearTriggerid() {
       
@@ -1681,7 +1726,7 @@ public final class InterfacePlaymedia {
      *创建执行该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     public int getCreatedeviceid() {
       return createdeviceid_;
@@ -1691,7 +1736,7 @@ public final class InterfacePlaymedia {
      *创建执行该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     private void setCreatedeviceid(int value) {
       
@@ -1702,7 +1747,7 @@ public final class InterfacePlaymedia {
      *创建执行该触发器的设备ID
      * </pre>
      *
-     * <code>optional fixed32 createdeviceid = 2;</code>
+     * <code>fixed32 createdeviceid = 2;</code>
      */
     private void clearCreatedeviceid() {
       
@@ -1716,7 +1761,7 @@ public final class InterfacePlaymedia {
      *播放的媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -1726,7 +1771,7 @@ public final class InterfacePlaymedia {
      *播放的媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     private void setMediaid(int value) {
       
@@ -1737,7 +1782,7 @@ public final class InterfacePlaymedia {
      *播放的媒体id
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     private void clearMediaid() {
       
@@ -1751,7 +1796,7 @@ public final class InterfacePlaymedia {
      *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 4;</code>
+     * <code>fixed32 res = 4;</code>
      */
     public int getRes() {
       return res_;
@@ -1761,7 +1806,7 @@ public final class InterfacePlaymedia {
      *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 4;</code>
+     * <code>fixed32 res = 4;</code>
      */
     private void setRes(int value) {
       
@@ -1772,7 +1817,7 @@ public final class InterfacePlaymedia {
      *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 res = 4;</code>
+     * <code>fixed32 res = 4;</code>
      */
     private void clearRes() {
       
@@ -1786,7 +1831,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 5;</code>
+     * <code>fixed32 triggeruserval = 5;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -1796,7 +1841,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 5;</code>
+     * <code>fixed32 triggeruserval = 5;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -1807,7 +1852,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 5;</code>
+     * <code>fixed32 triggeruserval = 5;</code>
      */
     private void clearTriggeruserval() {
       
@@ -1862,6 +1907,19 @@ public final class InterfacePlaymedia {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetMediaPlay parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetMediaPlay parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetMediaPlay parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1956,7 +2014,7 @@ public final class InterfacePlaymedia {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public int getTriggerid() {
         return instance.getTriggerid();
@@ -1966,7 +2024,7 @@ public final class InterfacePlaymedia {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public Builder setTriggerid(int value) {
         copyOnWrite();
@@ -1978,7 +2036,7 @@ public final class InterfacePlaymedia {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 triggerid = 1;</code>
+       * <code>fixed32 triggerid = 1;</code>
        */
       public Builder clearTriggerid() {
         copyOnWrite();
@@ -1991,7 +2049,7 @@ public final class InterfacePlaymedia {
        *创建执行该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public int getCreatedeviceid() {
         return instance.getCreatedeviceid();
@@ -2001,7 +2059,7 @@ public final class InterfacePlaymedia {
        *创建执行该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public Builder setCreatedeviceid(int value) {
         copyOnWrite();
@@ -2013,7 +2071,7 @@ public final class InterfacePlaymedia {
        *创建执行该触发器的设备ID
        * </pre>
        *
-       * <code>optional fixed32 createdeviceid = 2;</code>
+       * <code>fixed32 createdeviceid = 2;</code>
        */
       public Builder clearCreatedeviceid() {
         copyOnWrite();
@@ -2026,7 +2084,7 @@ public final class InterfacePlaymedia {
        *播放的媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -2036,7 +2094,7 @@ public final class InterfacePlaymedia {
        *播放的媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -2048,7 +2106,7 @@ public final class InterfacePlaymedia {
        *播放的媒体id
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -2061,7 +2119,7 @@ public final class InterfacePlaymedia {
        *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 4;</code>
+       * <code>fixed32 res = 4;</code>
        */
       public int getRes() {
         return instance.getRes();
@@ -2071,7 +2129,7 @@ public final class InterfacePlaymedia {
        *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 4;</code>
+       * <code>fixed32 res = 4;</code>
        */
       public Builder setRes(int value) {
         copyOnWrite();
@@ -2083,7 +2141,7 @@ public final class InterfacePlaymedia {
        *播放所用的资源ID 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 res = 4;</code>
+       * <code>fixed32 res = 4;</code>
        */
       public Builder clearRes() {
         copyOnWrite();
@@ -2096,7 +2154,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 5;</code>
+       * <code>fixed32 triggeruserval = 5;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -2106,7 +2164,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 5;</code>
+       * <code>fixed32 triggeruserval = 5;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -2118,7 +2176,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 5;</code>
+       * <code>fixed32 triggeruserval = 5;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -2128,6 +2186,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetMediaPlay)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2217,6 +2276,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2261,7 +2321,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     int getPlayflag();
 
@@ -2270,7 +2330,7 @@ public final class InterfacePlaymedia {
      *指定开始播放的百分比位置
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     int getPos();
 
@@ -2279,7 +2339,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     int getMediaid();
 
@@ -2288,7 +2348,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     int getTriggeruserval();
 
@@ -2369,7 +2429,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     public int getPlayflag() {
       return playflag_;
@@ -2379,7 +2439,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     private void setPlayflag(int value) {
       
@@ -2390,7 +2450,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 1;</code>
+     * <code>fixed32 playflag = 1;</code>
      */
     private void clearPlayflag() {
       
@@ -2404,7 +2464,7 @@ public final class InterfacePlaymedia {
      *指定开始播放的百分比位置
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     public int getPos() {
       return pos_;
@@ -2414,7 +2474,7 @@ public final class InterfacePlaymedia {
      *指定开始播放的百分比位置
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     private void setPos(int value) {
       
@@ -2425,7 +2485,7 @@ public final class InterfacePlaymedia {
      *指定开始播放的百分比位置
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     private void clearPos() {
       
@@ -2439,7 +2499,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -2449,7 +2509,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     private void setMediaid(int value) {
       
@@ -2460,7 +2520,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 3;</code>
+     * <code>fixed32 mediaid = 3;</code>
      */
     private void clearMediaid() {
       
@@ -2474,7 +2534,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -2484,7 +2544,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -2495,7 +2555,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     private void clearTriggeruserval() {
       
@@ -2735,6 +2795,19 @@ public final class InterfacePlaymedia {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoMediaPlay parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoMediaPlay parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoMediaPlay parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2828,7 +2901,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public int getPlayflag() {
         return instance.getPlayflag();
@@ -2838,7 +2911,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public Builder setPlayflag(int value) {
         copyOnWrite();
@@ -2850,7 +2923,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 1;</code>
+       * <code>fixed32 playflag = 1;</code>
        */
       public Builder clearPlayflag() {
         copyOnWrite();
@@ -2863,7 +2936,7 @@ public final class InterfacePlaymedia {
        *指定开始播放的百分比位置
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public int getPos() {
         return instance.getPos();
@@ -2873,7 +2946,7 @@ public final class InterfacePlaymedia {
        *指定开始播放的百分比位置
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public Builder setPos(int value) {
         copyOnWrite();
@@ -2885,7 +2958,7 @@ public final class InterfacePlaymedia {
        *指定开始播放的百分比位置
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public Builder clearPos() {
         copyOnWrite();
@@ -2898,7 +2971,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -2908,7 +2981,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -2920,7 +2993,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 3;</code>
+       * <code>fixed32 mediaid = 3;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -2933,7 +3006,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -2943,7 +3016,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -2955,7 +3028,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -3131,6 +3204,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoMediaPlay)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3262,6 +3336,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3306,7 +3381,7 @@ public final class InterfacePlaymedia {
      *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 resindex = 1;</code>
+     * <code>fixed32 resindex = 1;</code>
      */
     int getResindex();
 
@@ -3315,7 +3390,7 @@ public final class InterfacePlaymedia {
      *指定开始播放的百分比位置
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     int getPos();
 
@@ -3324,7 +3399,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 3;</code>
+     * <code>fixed32 playflag = 3;</code>
      */
     int getPlayflag();
 
@@ -3333,7 +3408,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     int getTriggeruserval();
 
@@ -3388,7 +3463,7 @@ public final class InterfacePlaymedia {
      *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 resindex = 1;</code>
+     * <code>fixed32 resindex = 1;</code>
      */
     public int getResindex() {
       return resindex_;
@@ -3398,7 +3473,7 @@ public final class InterfacePlaymedia {
      *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 resindex = 1;</code>
+     * <code>fixed32 resindex = 1;</code>
      */
     private void setResindex(int value) {
       
@@ -3409,7 +3484,7 @@ public final class InterfacePlaymedia {
      *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 resindex = 1;</code>
+     * <code>fixed32 resindex = 1;</code>
      */
     private void clearResindex() {
       
@@ -3423,7 +3498,7 @@ public final class InterfacePlaymedia {
      *指定开始播放的百分比位置
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     public int getPos() {
       return pos_;
@@ -3433,7 +3508,7 @@ public final class InterfacePlaymedia {
      *指定开始播放的百分比位置
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     private void setPos(int value) {
       
@@ -3444,7 +3519,7 @@ public final class InterfacePlaymedia {
      *指定开始播放的百分比位置
      * </pre>
      *
-     * <code>optional fixed32 pos = 2;</code>
+     * <code>fixed32 pos = 2;</code>
      */
     private void clearPos() {
       
@@ -3458,7 +3533,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 3;</code>
+     * <code>fixed32 playflag = 3;</code>
      */
     public int getPlayflag() {
       return playflag_;
@@ -3468,7 +3543,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 3;</code>
+     * <code>fixed32 playflag = 3;</code>
      */
     private void setPlayflag(int value) {
       
@@ -3479,7 +3554,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 3;</code>
+     * <code>fixed32 playflag = 3;</code>
      */
     private void clearPlayflag() {
       
@@ -3493,7 +3568,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -3503,7 +3578,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -3514,7 +3589,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 4;</code>
+     * <code>fixed32 triggeruserval = 4;</code>
      */
     private void clearTriggeruserval() {
       
@@ -3659,6 +3734,19 @@ public final class InterfacePlaymedia {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoSetPlayPos parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoSetPlayPos parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoSetPlayPos parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3752,7 +3840,7 @@ public final class InterfacePlaymedia {
        *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 resindex = 1;</code>
+       * <code>fixed32 resindex = 1;</code>
        */
       public int getResindex() {
         return instance.getResindex();
@@ -3762,7 +3850,7 @@ public final class InterfacePlaymedia {
        *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 resindex = 1;</code>
+       * <code>fixed32 resindex = 1;</code>
        */
       public Builder setResindex(int value) {
         copyOnWrite();
@@ -3774,7 +3862,7 @@ public final class InterfacePlaymedia {
        *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 resindex = 1;</code>
+       * <code>fixed32 resindex = 1;</code>
        */
       public Builder clearResindex() {
         copyOnWrite();
@@ -3787,7 +3875,7 @@ public final class InterfacePlaymedia {
        *指定开始播放的百分比位置
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public int getPos() {
         return instance.getPos();
@@ -3797,7 +3885,7 @@ public final class InterfacePlaymedia {
        *指定开始播放的百分比位置
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public Builder setPos(int value) {
         copyOnWrite();
@@ -3809,7 +3897,7 @@ public final class InterfacePlaymedia {
        *指定开始播放的百分比位置
        * </pre>
        *
-       * <code>optional fixed32 pos = 2;</code>
+       * <code>fixed32 pos = 2;</code>
        */
       public Builder clearPos() {
         copyOnWrite();
@@ -3822,7 +3910,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 3;</code>
+       * <code>fixed32 playflag = 3;</code>
        */
       public int getPlayflag() {
         return instance.getPlayflag();
@@ -3832,7 +3920,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 3;</code>
+       * <code>fixed32 playflag = 3;</code>
        */
       public Builder setPlayflag(int value) {
         copyOnWrite();
@@ -3844,7 +3932,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 3;</code>
+       * <code>fixed32 playflag = 3;</code>
        */
       public Builder clearPlayflag() {
         copyOnWrite();
@@ -3857,7 +3945,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -3867,7 +3955,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -3879,7 +3967,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 4;</code>
+       * <code>fixed32 triggeruserval = 4;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -3972,6 +4060,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoSetPlayPos)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4079,6 +4168,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4123,7 +4213,7 @@ public final class InterfacePlaymedia {
      *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 resindex = 1;</code>
+     * <code>fixed32 resindex = 1;</code>
      */
     int getResindex();
 
@@ -4132,7 +4222,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 2;</code>
+     * <code>fixed32 playflag = 2;</code>
      */
     int getPlayflag();
 
@@ -4141,7 +4231,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 3;</code>
+     * <code>fixed32 triggeruserval = 3;</code>
      */
     int getTriggeruserval();
 
@@ -4196,7 +4286,7 @@ public final class InterfacePlaymedia {
      *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 resindex = 1;</code>
+     * <code>fixed32 resindex = 1;</code>
      */
     public int getResindex() {
       return resindex_;
@@ -4206,7 +4296,7 @@ public final class InterfacePlaymedia {
      *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 resindex = 1;</code>
+     * <code>fixed32 resindex = 1;</code>
      */
     private void setResindex(int value) {
       
@@ -4217,7 +4307,7 @@ public final class InterfacePlaymedia {
      *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
      * </pre>
      *
-     * <code>optional fixed32 resindex = 1;</code>
+     * <code>fixed32 resindex = 1;</code>
      */
     private void clearResindex() {
       
@@ -4231,7 +4321,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 2;</code>
+     * <code>fixed32 playflag = 2;</code>
      */
     public int getPlayflag() {
       return playflag_;
@@ -4241,7 +4331,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 2;</code>
+     * <code>fixed32 playflag = 2;</code>
      */
     private void setPlayflag(int value) {
       
@@ -4252,7 +4342,7 @@ public final class InterfacePlaymedia {
      *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
      * </pre>
      *
-     * <code>optional fixed32 playflag = 2;</code>
+     * <code>fixed32 playflag = 2;</code>
      */
     private void clearPlayflag() {
       
@@ -4266,7 +4356,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 3;</code>
+     * <code>fixed32 triggeruserval = 3;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -4276,7 +4366,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 3;</code>
+     * <code>fixed32 triggeruserval = 3;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -4287,7 +4377,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 3;</code>
+     * <code>fixed32 triggeruserval = 3;</code>
      */
     private void clearTriggeruserval() {
       
@@ -4425,6 +4515,19 @@ public final class InterfacePlaymedia {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoPlayControl parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoPlayControl parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetDoPlayControl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4518,7 +4621,7 @@ public final class InterfacePlaymedia {
        *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 resindex = 1;</code>
+       * <code>fixed32 resindex = 1;</code>
        */
       public int getResindex() {
         return instance.getResindex();
@@ -4528,7 +4631,7 @@ public final class InterfacePlaymedia {
        *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 resindex = 1;</code>
+       * <code>fixed32 resindex = 1;</code>
        */
       public Builder setResindex(int value) {
         copyOnWrite();
@@ -4540,7 +4643,7 @@ public final class InterfacePlaymedia {
        *资源索引号 初始化播放资源时传入的资源ID eg:0,1,2,3 etc
        * </pre>
        *
-       * <code>optional fixed32 resindex = 1;</code>
+       * <code>fixed32 resindex = 1;</code>
        */
       public Builder clearResindex() {
         copyOnWrite();
@@ -4553,7 +4656,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 2;</code>
+       * <code>fixed32 playflag = 2;</code>
        */
       public int getPlayflag() {
         return instance.getPlayflag();
@@ -4563,7 +4666,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 2;</code>
+       * <code>fixed32 playflag = 2;</code>
        */
       public Builder setPlayflag(int value) {
         copyOnWrite();
@@ -4575,7 +4678,7 @@ public final class InterfacePlaymedia {
        *播放标志 参见Interface_Macro.proto Pb_MeetPlayFlag
        * </pre>
        *
-       * <code>optional fixed32 playflag = 2;</code>
+       * <code>fixed32 playflag = 2;</code>
        */
       public Builder clearPlayflag() {
         copyOnWrite();
@@ -4588,7 +4691,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 3;</code>
+       * <code>fixed32 triggeruserval = 3;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -4598,7 +4701,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 3;</code>
+       * <code>fixed32 triggeruserval = 3;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -4610,7 +4713,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 3;</code>
+       * <code>fixed32 triggeruserval = 3;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -4703,6 +4806,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDoPlayControl)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4803,6 +4907,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4847,7 +4952,7 @@ public final class InterfacePlaymedia {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 trrigerid = 1;</code>
+     * <code>fixed32 trrigerid = 1;</code>
      */
     int getTrrigerid();
 
@@ -4856,7 +4961,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     int getMediaid();
   }
@@ -4881,7 +4986,7 @@ public final class InterfacePlaymedia {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 trrigerid = 1;</code>
+     * <code>fixed32 trrigerid = 1;</code>
      */
     public int getTrrigerid() {
       return trrigerid_;
@@ -4891,7 +4996,7 @@ public final class InterfacePlaymedia {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 trrigerid = 1;</code>
+     * <code>fixed32 trrigerid = 1;</code>
      */
     private void setTrrigerid(int value) {
       
@@ -4902,7 +5007,7 @@ public final class InterfacePlaymedia {
      *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
      * </pre>
      *
-     * <code>optional fixed32 trrigerid = 1;</code>
+     * <code>fixed32 trrigerid = 1;</code>
      */
     private void clearTrrigerid() {
       
@@ -4916,7 +5021,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -4926,7 +5031,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     private void setMediaid(int value) {
       
@@ -4937,7 +5042,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     private void clearMediaid() {
       
@@ -4971,6 +5076,19 @@ public final class InterfacePlaymedia {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Item_MeetMediaPlayDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Item_MeetMediaPlayDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Item_MeetMediaPlayDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5062,7 +5180,7 @@ public final class InterfacePlaymedia {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 trrigerid = 1;</code>
+       * <code>fixed32 trrigerid = 1;</code>
        */
       public int getTrrigerid() {
         return instance.getTrrigerid();
@@ -5072,7 +5190,7 @@ public final class InterfacePlaymedia {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 trrigerid = 1;</code>
+       * <code>fixed32 trrigerid = 1;</code>
        */
       public Builder setTrrigerid(int value) {
         copyOnWrite();
@@ -5084,7 +5202,7 @@ public final class InterfacePlaymedia {
        *触发器ID 这是一个用户操作生成的ID,用来标识操作的,可以根据这个ID来判断操作,然后执行停止操作等
        * </pre>
        *
-       * <code>optional fixed32 trrigerid = 1;</code>
+       * <code>fixed32 trrigerid = 1;</code>
        */
       public Builder clearTrrigerid() {
         copyOnWrite();
@@ -5097,7 +5215,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -5107,7 +5225,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -5119,7 +5237,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -5129,6 +5247,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetMediaPlayDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5197,6 +5316,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5409,6 +5529,19 @@ public final class InterfacePlaymedia {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetMediaPlayDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetMediaPlayDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_MeetMediaPlayDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -5596,6 +5729,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetMediaPlayDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5661,6 +5795,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5705,7 +5840,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
 
@@ -5714,7 +5849,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     int getTriggeruserval();
   }
@@ -5742,7 +5877,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -5752,7 +5887,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
@@ -5763,7 +5898,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -5777,7 +5912,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -5787,7 +5922,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -5798,7 +5933,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     private void clearTriggeruserval() {
       
@@ -5832,6 +5967,19 @@ public final class InterfacePlaymedia {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_FilePush parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_FilePush parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_FilePush parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5926,7 +6074,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -5936,7 +6084,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -5948,7 +6096,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -5961,7 +6109,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -5971,7 +6119,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -5983,7 +6131,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -5993,6 +6141,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_FilePush)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6061,6 +6210,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6105,7 +6255,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     int getMediaid();
 
@@ -6114,7 +6264,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     int getTriggeruserval();
 
@@ -6168,7 +6318,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -6178,7 +6328,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void setMediaid(int value) {
       
@@ -6189,7 +6339,7 @@ public final class InterfacePlaymedia {
      *媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 1;</code>
+     * <code>fixed32 mediaid = 1;</code>
      */
     private void clearMediaid() {
       
@@ -6203,7 +6353,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     public int getTriggeruserval() {
       return triggeruserval_;
@@ -6213,7 +6363,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     private void setTriggeruserval(int value) {
       
@@ -6224,7 +6374,7 @@ public final class InterfacePlaymedia {
      *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
      * </pre>
      *
-     * <code>optional fixed32 triggeruserval = 2;</code>
+     * <code>fixed32 triggeruserval = 2;</code>
      */
     private void clearTriggeruserval() {
       
@@ -6355,6 +6505,19 @@ public final class InterfacePlaymedia {
     }
 
     public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_DoFilePush parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_DoFilePush parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfacePlaymedia.pbui_Type_DoFilePush parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -6447,7 +6610,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -6457,7 +6620,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -6469,7 +6632,7 @@ public final class InterfacePlaymedia {
        *媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 1;</code>
+       * <code>fixed32 mediaid = 1;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -6482,7 +6645,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public int getTriggeruserval() {
         return instance.getTriggeruserval();
@@ -6492,7 +6655,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public Builder setTriggeruserval(int value) {
         copyOnWrite();
@@ -6504,7 +6667,7 @@ public final class InterfacePlaymedia {
        *参见Interface_Macro.proto文件中的Pb_TriggerUsedef定义
        * </pre>
        *
-       * <code>optional fixed32 triggeruserval = 2;</code>
+       * <code>fixed32 triggeruserval = 2;</code>
        */
       public Builder clearTriggeruserval() {
         copyOnWrite();
@@ -6597,6 +6760,7 @@ public final class InterfacePlaymedia {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DoFilePush)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6690,6 +6854,7 @@ public final class InterfacePlaymedia {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

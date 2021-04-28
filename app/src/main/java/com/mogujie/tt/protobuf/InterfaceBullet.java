@@ -13,7 +13,7 @@ public final class InterfaceBullet {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     int getBulletid();
 
@@ -22,7 +22,7 @@ public final class InterfaceBullet {
      *标题
      * </pre>
      *
-     * <code>optional bytes title = 2;</code>
+     * <code>bytes title = 2;</code>
      */
     com.google.protobuf.ByteString getTitle();
 
@@ -31,7 +31,7 @@ public final class InterfaceBullet {
      *内容 
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     com.google.protobuf.ByteString getContent();
 
@@ -40,7 +40,7 @@ public final class InterfaceBullet {
      *类别
      * </pre>
      *
-     * <code>optional fixed32 type = 4;</code>
+     * <code>fixed32 type = 4;</code>
      */
     int getType();
 
@@ -49,7 +49,7 @@ public final class InterfaceBullet {
      *开始时间
      * </pre>
      *
-     * <code>optional fixed32 starttime = 5;</code>
+     * <code>fixed32 starttime = 5;</code>
      */
     int getStarttime();
 
@@ -58,7 +58,7 @@ public final class InterfaceBullet {
      *超时值
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     int getTimeouts();
   }
@@ -81,20 +81,20 @@ public final class InterfaceBullet {
     public static final int BULLETID_FIELD_NUMBER = 1;
     private int bulletid_;
     /**
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     public int getBulletid() {
       return bulletid_;
     }
     /**
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     private void setBulletid(int value) {
       
       bulletid_ = value;
     }
     /**
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     private void clearBulletid() {
       
@@ -108,7 +108,7 @@ public final class InterfaceBullet {
      *标题
      * </pre>
      *
-     * <code>optional bytes title = 2;</code>
+     * <code>bytes title = 2;</code>
      */
     public com.google.protobuf.ByteString getTitle() {
       return title_;
@@ -118,7 +118,7 @@ public final class InterfaceBullet {
      *标题
      * </pre>
      *
-     * <code>optional bytes title = 2;</code>
+     * <code>bytes title = 2;</code>
      */
     private void setTitle(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -132,7 +132,7 @@ public final class InterfaceBullet {
      *标题
      * </pre>
      *
-     * <code>optional bytes title = 2;</code>
+     * <code>bytes title = 2;</code>
      */
     private void clearTitle() {
       
@@ -146,7 +146,7 @@ public final class InterfaceBullet {
      *内容 
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -156,7 +156,7 @@ public final class InterfaceBullet {
      *内容 
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     private void setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -170,7 +170,7 @@ public final class InterfaceBullet {
      *内容 
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     private void clearContent() {
       
@@ -184,7 +184,7 @@ public final class InterfaceBullet {
      *类别
      * </pre>
      *
-     * <code>optional fixed32 type = 4;</code>
+     * <code>fixed32 type = 4;</code>
      */
     public int getType() {
       return type_;
@@ -194,7 +194,7 @@ public final class InterfaceBullet {
      *类别
      * </pre>
      *
-     * <code>optional fixed32 type = 4;</code>
+     * <code>fixed32 type = 4;</code>
      */
     private void setType(int value) {
       
@@ -205,7 +205,7 @@ public final class InterfaceBullet {
      *类别
      * </pre>
      *
-     * <code>optional fixed32 type = 4;</code>
+     * <code>fixed32 type = 4;</code>
      */
     private void clearType() {
       
@@ -219,7 +219,7 @@ public final class InterfaceBullet {
      *开始时间
      * </pre>
      *
-     * <code>optional fixed32 starttime = 5;</code>
+     * <code>fixed32 starttime = 5;</code>
      */
     public int getStarttime() {
       return starttime_;
@@ -229,7 +229,7 @@ public final class InterfaceBullet {
      *开始时间
      * </pre>
      *
-     * <code>optional fixed32 starttime = 5;</code>
+     * <code>fixed32 starttime = 5;</code>
      */
     private void setStarttime(int value) {
       
@@ -240,7 +240,7 @@ public final class InterfaceBullet {
      *开始时间
      * </pre>
      *
-     * <code>optional fixed32 starttime = 5;</code>
+     * <code>fixed32 starttime = 5;</code>
      */
     private void clearStarttime() {
       
@@ -254,7 +254,7 @@ public final class InterfaceBullet {
      *超时值
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     public int getTimeouts() {
       return timeouts_;
@@ -264,7 +264,7 @@ public final class InterfaceBullet {
      *超时值
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     private void setTimeouts(int value) {
       
@@ -275,7 +275,7 @@ public final class InterfaceBullet {
      *超时值
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     private void clearTimeouts() {
       
@@ -337,6 +337,19 @@ public final class InterfaceBullet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -424,13 +437,13 @@ public final class InterfaceBullet {
 
 
       /**
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public int getBulletid() {
         return instance.getBulletid();
       }
       /**
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public Builder setBulletid(int value) {
         copyOnWrite();
@@ -438,7 +451,7 @@ public final class InterfaceBullet {
         return this;
       }
       /**
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public Builder clearBulletid() {
         copyOnWrite();
@@ -451,7 +464,7 @@ public final class InterfaceBullet {
        *标题
        * </pre>
        *
-       * <code>optional bytes title = 2;</code>
+       * <code>bytes title = 2;</code>
        */
       public com.google.protobuf.ByteString getTitle() {
         return instance.getTitle();
@@ -461,7 +474,7 @@ public final class InterfaceBullet {
        *标题
        * </pre>
        *
-       * <code>optional bytes title = 2;</code>
+       * <code>bytes title = 2;</code>
        */
       public Builder setTitle(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -473,7 +486,7 @@ public final class InterfaceBullet {
        *标题
        * </pre>
        *
-       * <code>optional bytes title = 2;</code>
+       * <code>bytes title = 2;</code>
        */
       public Builder clearTitle() {
         copyOnWrite();
@@ -486,7 +499,7 @@ public final class InterfaceBullet {
        *内容 
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public com.google.protobuf.ByteString getContent() {
         return instance.getContent();
@@ -496,7 +509,7 @@ public final class InterfaceBullet {
        *内容 
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public Builder setContent(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -508,7 +521,7 @@ public final class InterfaceBullet {
        *内容 
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public Builder clearContent() {
         copyOnWrite();
@@ -521,7 +534,7 @@ public final class InterfaceBullet {
        *类别
        * </pre>
        *
-       * <code>optional fixed32 type = 4;</code>
+       * <code>fixed32 type = 4;</code>
        */
       public int getType() {
         return instance.getType();
@@ -531,7 +544,7 @@ public final class InterfaceBullet {
        *类别
        * </pre>
        *
-       * <code>optional fixed32 type = 4;</code>
+       * <code>fixed32 type = 4;</code>
        */
       public Builder setType(int value) {
         copyOnWrite();
@@ -543,7 +556,7 @@ public final class InterfaceBullet {
        *类别
        * </pre>
        *
-       * <code>optional fixed32 type = 4;</code>
+       * <code>fixed32 type = 4;</code>
        */
       public Builder clearType() {
         copyOnWrite();
@@ -556,7 +569,7 @@ public final class InterfaceBullet {
        *开始时间
        * </pre>
        *
-       * <code>optional fixed32 starttime = 5;</code>
+       * <code>fixed32 starttime = 5;</code>
        */
       public int getStarttime() {
         return instance.getStarttime();
@@ -566,7 +579,7 @@ public final class InterfaceBullet {
        *开始时间
        * </pre>
        *
-       * <code>optional fixed32 starttime = 5;</code>
+       * <code>fixed32 starttime = 5;</code>
        */
       public Builder setStarttime(int value) {
         copyOnWrite();
@@ -578,7 +591,7 @@ public final class InterfaceBullet {
        *开始时间
        * </pre>
        *
-       * <code>optional fixed32 starttime = 5;</code>
+       * <code>fixed32 starttime = 5;</code>
        */
       public Builder clearStarttime() {
         copyOnWrite();
@@ -591,7 +604,7 @@ public final class InterfaceBullet {
        *超时值
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public int getTimeouts() {
         return instance.getTimeouts();
@@ -601,7 +614,7 @@ public final class InterfaceBullet {
        *超时值
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public Builder setTimeouts(int value) {
         copyOnWrite();
@@ -613,7 +626,7 @@ public final class InterfaceBullet {
        *超时值
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public Builder clearTimeouts() {
         copyOnWrite();
@@ -623,6 +636,7 @@ public final class InterfaceBullet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_BulletDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -719,6 +733,7 @@ public final class InterfaceBullet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -999,6 +1014,19 @@ public final class InterfaceBullet {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_BulletDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_BulletDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_BulletDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1234,6 +1262,7 @@ public final class InterfaceBullet {
 
       // @@protoc_insertion_point(builder_scope:pbui_BulletDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1299,6 +1328,7 @@ public final class InterfaceBullet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1339,11 +1369,11 @@ public final class InterfaceBullet {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     boolean hasItem();
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo getItem();
 
@@ -1394,19 +1424,19 @@ public final class InterfaceBullet {
     public static final int ITEM_FIELD_NUMBER = 1;
     private com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo item_;
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     public boolean hasItem() {
       return item_ != null;
     }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     public com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo getItem() {
       return item_ == null ? com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo.getDefaultInstance() : item_;
     }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     private void setItem(com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo value) {
       if (value == null) {
@@ -1416,7 +1446,7 @@ public final class InterfaceBullet {
       
       }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     private void setItem(
         com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo.Builder builderForValue) {
@@ -1424,7 +1454,7 @@ public final class InterfaceBullet {
       
     }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     private void mergeItem(com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo value) {
       if (item_ != null &&
@@ -1437,7 +1467,7 @@ public final class InterfaceBullet {
       
     }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     private void clearItem() {  item_ = null;
       
@@ -1560,6 +1590,19 @@ public final class InterfaceBullet {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_MeetPublishBulletInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_MeetPublishBulletInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_MeetPublishBulletInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1649,19 +1692,19 @@ public final class InterfaceBullet {
 
 
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public boolean hasItem() {
         return instance.hasItem();
       }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo getItem() {
         return instance.getItem();
       }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public Builder setItem(com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo value) {
         copyOnWrite();
@@ -1669,7 +1712,7 @@ public final class InterfaceBullet {
         return this;
         }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public Builder setItem(
           com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo.Builder builderForValue) {
@@ -1678,7 +1721,7 @@ public final class InterfaceBullet {
         return this;
       }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public Builder mergeItem(com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo value) {
         copyOnWrite();
@@ -1686,7 +1729,7 @@ public final class InterfaceBullet {
         return this;
       }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public Builder clearItem() {  copyOnWrite();
         instance.clearItem();
@@ -1778,6 +1821,7 @@ public final class InterfaceBullet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetPublishBulletInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1871,6 +1915,7 @@ public final class InterfaceBullet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1915,7 +1960,7 @@ public final class InterfaceBullet {
      *停止的会议公告ID
      * </pre>
      *
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     int getBulletid();
 
@@ -1970,7 +2015,7 @@ public final class InterfaceBullet {
      *停止的会议公告ID
      * </pre>
      *
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     public int getBulletid() {
       return bulletid_;
@@ -1980,7 +2025,7 @@ public final class InterfaceBullet {
      *停止的会议公告ID
      * </pre>
      *
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     private void setBulletid(int value) {
       
@@ -1991,7 +2036,7 @@ public final class InterfaceBullet {
      *停止的会议公告ID
      * </pre>
      *
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     private void clearBulletid() {
       
@@ -2115,6 +2160,19 @@ public final class InterfaceBullet {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_StopBullet parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_StopBullet parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_StopBullet parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2208,7 +2266,7 @@ public final class InterfaceBullet {
        *停止的会议公告ID
        * </pre>
        *
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public int getBulletid() {
         return instance.getBulletid();
@@ -2218,7 +2276,7 @@ public final class InterfaceBullet {
        *停止的会议公告ID
        * </pre>
        *
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public Builder setBulletid(int value) {
         copyOnWrite();
@@ -2230,7 +2288,7 @@ public final class InterfaceBullet {
        *停止的会议公告ID
        * </pre>
        *
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public Builder clearBulletid() {
         copyOnWrite();
@@ -2323,6 +2381,7 @@ public final class InterfaceBullet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_StopBullet)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2409,6 +2468,7 @@ public final class InterfaceBullet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2453,7 +2513,7 @@ public final class InterfaceBullet {
      *停止的会议公告ID
      * </pre>
      *
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     int getBulletid();
   }
@@ -2481,7 +2541,7 @@ public final class InterfaceBullet {
      *停止的会议公告ID
      * </pre>
      *
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     public int getBulletid() {
       return bulletid_;
@@ -2491,7 +2551,7 @@ public final class InterfaceBullet {
      *停止的会议公告ID
      * </pre>
      *
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     private void setBulletid(int value) {
       
@@ -2502,7 +2562,7 @@ public final class InterfaceBullet {
      *停止的会议公告ID
      * </pre>
      *
-     * <code>optional fixed32 bulletid = 1;</code>
+     * <code>fixed32 bulletid = 1;</code>
      */
     private void clearBulletid() {
       
@@ -2529,6 +2589,19 @@ public final class InterfaceBullet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_StopBulletMsg parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_StopBulletMsg parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_StopBulletMsg parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2623,7 +2696,7 @@ public final class InterfaceBullet {
        *停止的会议公告ID
        * </pre>
        *
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public int getBulletid() {
         return instance.getBulletid();
@@ -2633,7 +2706,7 @@ public final class InterfaceBullet {
        *停止的会议公告ID
        * </pre>
        *
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public Builder setBulletid(int value) {
         copyOnWrite();
@@ -2645,7 +2718,7 @@ public final class InterfaceBullet {
        *停止的会议公告ID
        * </pre>
        *
-       * <code>optional fixed32 bulletid = 1;</code>
+       * <code>fixed32 bulletid = 1;</code>
        */
       public Builder clearBulletid() {
         copyOnWrite();
@@ -2655,6 +2728,7 @@ public final class InterfaceBullet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_StopBulletMsg)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2716,6 +2790,7 @@ public final class InterfaceBullet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2756,11 +2831,11 @@ public final class InterfaceBullet {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     boolean hasItem();
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo getItem();
 
@@ -2769,7 +2844,7 @@ public final class InterfaceBullet {
      *发起设备ID
      * </pre>
      *
-     * <code>optional fixed32 operdeviceid = 2;</code>
+     * <code>fixed32 operdeviceid = 2;</code>
      */
     int getOperdeviceid();
 
@@ -2778,7 +2853,7 @@ public final class InterfaceBullet {
      *发起人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermember = 3;</code>
+     * <code>fixed32 opermember = 3;</code>
      */
     int getOpermember();
   }
@@ -2802,19 +2877,19 @@ public final class InterfaceBullet {
     public static final int ITEM_FIELD_NUMBER = 1;
     private com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo item_;
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     public boolean hasItem() {
       return item_ != null;
     }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     public com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo getItem() {
       return item_ == null ? com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo.getDefaultInstance() : item_;
     }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     private void setItem(com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo value) {
       if (value == null) {
@@ -2824,7 +2899,7 @@ public final class InterfaceBullet {
       
       }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     private void setItem(
         com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo.Builder builderForValue) {
@@ -2832,7 +2907,7 @@ public final class InterfaceBullet {
       
     }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     private void mergeItem(com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo value) {
       if (item_ != null &&
@@ -2845,7 +2920,7 @@ public final class InterfaceBullet {
       
     }
     /**
-     * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+     * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
      */
     private void clearItem() {  item_ = null;
       
@@ -2858,7 +2933,7 @@ public final class InterfaceBullet {
      *发起设备ID
      * </pre>
      *
-     * <code>optional fixed32 operdeviceid = 2;</code>
+     * <code>fixed32 operdeviceid = 2;</code>
      */
     public int getOperdeviceid() {
       return operdeviceid_;
@@ -2868,7 +2943,7 @@ public final class InterfaceBullet {
      *发起设备ID
      * </pre>
      *
-     * <code>optional fixed32 operdeviceid = 2;</code>
+     * <code>fixed32 operdeviceid = 2;</code>
      */
     private void setOperdeviceid(int value) {
       
@@ -2879,7 +2954,7 @@ public final class InterfaceBullet {
      *发起设备ID
      * </pre>
      *
-     * <code>optional fixed32 operdeviceid = 2;</code>
+     * <code>fixed32 operdeviceid = 2;</code>
      */
     private void clearOperdeviceid() {
       
@@ -2893,7 +2968,7 @@ public final class InterfaceBullet {
      *发起人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermember = 3;</code>
+     * <code>fixed32 opermember = 3;</code>
      */
     public int getOpermember() {
       return opermember_;
@@ -2903,7 +2978,7 @@ public final class InterfaceBullet {
      *发起人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermember = 3;</code>
+     * <code>fixed32 opermember = 3;</code>
      */
     private void setOpermember(int value) {
       
@@ -2914,7 +2989,7 @@ public final class InterfaceBullet {
      *发起人员ID
      * </pre>
      *
-     * <code>optional fixed32 opermember = 3;</code>
+     * <code>fixed32 opermember = 3;</code>
      */
     private void clearOpermember() {
       
@@ -2955,6 +3030,19 @@ public final class InterfaceBullet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_NotifyMeetPublishBulletInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_NotifyMeetPublishBulletInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_Type_NotifyMeetPublishBulletInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3045,19 +3133,19 @@ public final class InterfaceBullet {
 
 
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public boolean hasItem() {
         return instance.hasItem();
       }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo getItem() {
         return instance.getItem();
       }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public Builder setItem(com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo value) {
         copyOnWrite();
@@ -3065,7 +3153,7 @@ public final class InterfaceBullet {
         return this;
         }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public Builder setItem(
           com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo.Builder builderForValue) {
@@ -3074,7 +3162,7 @@ public final class InterfaceBullet {
         return this;
       }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public Builder mergeItem(com.mogujie.tt.protobuf.InterfaceBullet.pbui_Item_BulletDetailInfo value) {
         copyOnWrite();
@@ -3082,7 +3170,7 @@ public final class InterfaceBullet {
         return this;
       }
       /**
-       * <code>optional .pbui_Item_BulletDetailInfo item = 1;</code>
+       * <code>.pbui_Item_BulletDetailInfo item = 1;</code>
        */
       public Builder clearItem() {  copyOnWrite();
         instance.clearItem();
@@ -3094,7 +3182,7 @@ public final class InterfaceBullet {
        *发起设备ID
        * </pre>
        *
-       * <code>optional fixed32 operdeviceid = 2;</code>
+       * <code>fixed32 operdeviceid = 2;</code>
        */
       public int getOperdeviceid() {
         return instance.getOperdeviceid();
@@ -3104,7 +3192,7 @@ public final class InterfaceBullet {
        *发起设备ID
        * </pre>
        *
-       * <code>optional fixed32 operdeviceid = 2;</code>
+       * <code>fixed32 operdeviceid = 2;</code>
        */
       public Builder setOperdeviceid(int value) {
         copyOnWrite();
@@ -3116,7 +3204,7 @@ public final class InterfaceBullet {
        *发起设备ID
        * </pre>
        *
-       * <code>optional fixed32 operdeviceid = 2;</code>
+       * <code>fixed32 operdeviceid = 2;</code>
        */
       public Builder clearOperdeviceid() {
         copyOnWrite();
@@ -3129,7 +3217,7 @@ public final class InterfaceBullet {
        *发起人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermember = 3;</code>
+       * <code>fixed32 opermember = 3;</code>
        */
       public int getOpermember() {
         return instance.getOpermember();
@@ -3139,7 +3227,7 @@ public final class InterfaceBullet {
        *发起人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermember = 3;</code>
+       * <code>fixed32 opermember = 3;</code>
        */
       public Builder setOpermember(int value) {
         copyOnWrite();
@@ -3151,7 +3239,7 @@ public final class InterfaceBullet {
        *发起人员ID
        * </pre>
        *
-       * <code>optional fixed32 opermember = 3;</code>
+       * <code>fixed32 opermember = 3;</code>
        */
       public Builder clearOpermember() {
         copyOnWrite();
@@ -3161,6 +3249,7 @@ public final class InterfaceBullet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_NotifyMeetPublishBulletInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3243,6 +3332,7 @@ public final class InterfaceBullet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3287,7 +3377,7 @@ public final class InterfaceBullet {
      *标题
      * </pre>
      *
-     * <code>optional bytes text = 1;</code>
+     * <code>bytes text = 1;</code>
      */
     com.google.protobuf.ByteString getText();
   }
@@ -3316,7 +3406,7 @@ public final class InterfaceBullet {
      *标题
      * </pre>
      *
-     * <code>optional bytes text = 1;</code>
+     * <code>bytes text = 1;</code>
      */
     public com.google.protobuf.ByteString getText() {
       return text_;
@@ -3326,7 +3416,7 @@ public final class InterfaceBullet {
      *标题
      * </pre>
      *
-     * <code>optional bytes text = 1;</code>
+     * <code>bytes text = 1;</code>
      */
     private void setText(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3340,7 +3430,7 @@ public final class InterfaceBullet {
      *标题
      * </pre>
      *
-     * <code>optional bytes text = 1;</code>
+     * <code>bytes text = 1;</code>
      */
     private void clearText() {
       
@@ -3367,6 +3457,19 @@ public final class InterfaceBullet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_BigBulletDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_BigBulletDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBullet.pbui_BigBulletDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3461,7 +3564,7 @@ public final class InterfaceBullet {
        *标题
        * </pre>
        *
-       * <code>optional bytes text = 1;</code>
+       * <code>bytes text = 1;</code>
        */
       public com.google.protobuf.ByteString getText() {
         return instance.getText();
@@ -3471,7 +3574,7 @@ public final class InterfaceBullet {
        *标题
        * </pre>
        *
-       * <code>optional bytes text = 1;</code>
+       * <code>bytes text = 1;</code>
        */
       public Builder setText(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -3483,7 +3586,7 @@ public final class InterfaceBullet {
        *标题
        * </pre>
        *
-       * <code>optional bytes text = 1;</code>
+       * <code>bytes text = 1;</code>
        */
       public Builder clearText() {
         copyOnWrite();
@@ -3493,6 +3596,7 @@ public final class InterfaceBullet {
 
       // @@protoc_insertion_point(builder_scope:pbui_BigBulletDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3554,6 +3658,7 @@ public final class InterfaceBullet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

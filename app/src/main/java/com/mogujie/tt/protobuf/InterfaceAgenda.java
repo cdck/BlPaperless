@@ -17,7 +17,7 @@ public final class InterfaceAgenda {
      *议程ID
      * </pre>
      *
-     * <code>optional fixed32 agendaid = 1;</code>
+     * <code>fixed32 agendaid = 1;</code>
      */
     int getAgendaid();
 
@@ -26,7 +26,7 @@ public final class InterfaceAgenda {
      *议程状态 参见Pb_AgendaStatus
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     int getStatus();
 
@@ -35,7 +35,7 @@ public final class InterfaceAgenda {
      *绑定目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 3;</code>
+     * <code>fixed32 dirid = 3;</code>
      */
     int getDirid();
 
@@ -44,7 +44,7 @@ public final class InterfaceAgenda {
      *单位秒
      * </pre>
      *
-     * <code>optional fixed64 startutctime = 4;</code>
+     * <code>fixed64 startutctime = 4;</code>
      */
     long getStartutctime();
 
@@ -53,7 +53,7 @@ public final class InterfaceAgenda {
      *单位秒
      * </pre>
      *
-     * <code>optional fixed64 endutctime = 5;</code>
+     * <code>fixed64 endutctime = 5;</code>
      */
     long getEndutctime();
 
@@ -62,7 +62,7 @@ public final class InterfaceAgenda {
      *描述内容
      * </pre>
      *
-     * <code>optional bytes desctext = 6;</code>
+     * <code>bytes desctext = 6;</code>
      */
     com.google.protobuf.ByteString getDesctext();
   }
@@ -84,7 +84,7 @@ public final class InterfaceAgenda {
      *议程ID
      * </pre>
      *
-     * <code>optional fixed32 agendaid = 1;</code>
+     * <code>fixed32 agendaid = 1;</code>
      */
     public int getAgendaid() {
       return agendaid_;
@@ -94,7 +94,7 @@ public final class InterfaceAgenda {
      *议程ID
      * </pre>
      *
-     * <code>optional fixed32 agendaid = 1;</code>
+     * <code>fixed32 agendaid = 1;</code>
      */
     private void setAgendaid(int value) {
       
@@ -105,7 +105,7 @@ public final class InterfaceAgenda {
      *议程ID
      * </pre>
      *
-     * <code>optional fixed32 agendaid = 1;</code>
+     * <code>fixed32 agendaid = 1;</code>
      */
     private void clearAgendaid() {
       
@@ -119,7 +119,7 @@ public final class InterfaceAgenda {
      *议程状态 参见Pb_AgendaStatus
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     public int getStatus() {
       return status_;
@@ -129,7 +129,7 @@ public final class InterfaceAgenda {
      *议程状态 参见Pb_AgendaStatus
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void setStatus(int value) {
       
@@ -140,7 +140,7 @@ public final class InterfaceAgenda {
      *议程状态 参见Pb_AgendaStatus
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void clearStatus() {
       
@@ -154,7 +154,7 @@ public final class InterfaceAgenda {
      *绑定目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 3;</code>
+     * <code>fixed32 dirid = 3;</code>
      */
     public int getDirid() {
       return dirid_;
@@ -164,7 +164,7 @@ public final class InterfaceAgenda {
      *绑定目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 3;</code>
+     * <code>fixed32 dirid = 3;</code>
      */
     private void setDirid(int value) {
       
@@ -175,7 +175,7 @@ public final class InterfaceAgenda {
      *绑定目录ID
      * </pre>
      *
-     * <code>optional fixed32 dirid = 3;</code>
+     * <code>fixed32 dirid = 3;</code>
      */
     private void clearDirid() {
       
@@ -189,7 +189,7 @@ public final class InterfaceAgenda {
      *单位秒
      * </pre>
      *
-     * <code>optional fixed64 startutctime = 4;</code>
+     * <code>fixed64 startutctime = 4;</code>
      */
     public long getStartutctime() {
       return startutctime_;
@@ -199,7 +199,7 @@ public final class InterfaceAgenda {
      *单位秒
      * </pre>
      *
-     * <code>optional fixed64 startutctime = 4;</code>
+     * <code>fixed64 startutctime = 4;</code>
      */
     private void setStartutctime(long value) {
       
@@ -210,7 +210,7 @@ public final class InterfaceAgenda {
      *单位秒
      * </pre>
      *
-     * <code>optional fixed64 startutctime = 4;</code>
+     * <code>fixed64 startutctime = 4;</code>
      */
     private void clearStartutctime() {
       
@@ -224,7 +224,7 @@ public final class InterfaceAgenda {
      *单位秒
      * </pre>
      *
-     * <code>optional fixed64 endutctime = 5;</code>
+     * <code>fixed64 endutctime = 5;</code>
      */
     public long getEndutctime() {
       return endutctime_;
@@ -234,7 +234,7 @@ public final class InterfaceAgenda {
      *单位秒
      * </pre>
      *
-     * <code>optional fixed64 endutctime = 5;</code>
+     * <code>fixed64 endutctime = 5;</code>
      */
     private void setEndutctime(long value) {
       
@@ -245,7 +245,7 @@ public final class InterfaceAgenda {
      *单位秒
      * </pre>
      *
-     * <code>optional fixed64 endutctime = 5;</code>
+     * <code>fixed64 endutctime = 5;</code>
      */
     private void clearEndutctime() {
       
@@ -259,7 +259,7 @@ public final class InterfaceAgenda {
      *描述内容
      * </pre>
      *
-     * <code>optional bytes desctext = 6;</code>
+     * <code>bytes desctext = 6;</code>
      */
     public com.google.protobuf.ByteString getDesctext() {
       return desctext_;
@@ -269,7 +269,7 @@ public final class InterfaceAgenda {
      *描述内容
      * </pre>
      *
-     * <code>optional bytes desctext = 6;</code>
+     * <code>bytes desctext = 6;</code>
      */
     private void setDesctext(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -283,7 +283,7 @@ public final class InterfaceAgenda {
      *描述内容
      * </pre>
      *
-     * <code>optional bytes desctext = 6;</code>
+     * <code>bytes desctext = 6;</code>
      */
     private void clearDesctext() {
       
@@ -345,6 +345,19 @@ public final class InterfaceAgenda {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceAgenda.pbui_ItemAgendaTimeInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAgenda.pbui_ItemAgendaTimeInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceAgenda.pbui_ItemAgendaTimeInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -432,7 +445,7 @@ public final class InterfaceAgenda {
        *议程ID
        * </pre>
        *
-       * <code>optional fixed32 agendaid = 1;</code>
+       * <code>fixed32 agendaid = 1;</code>
        */
       public int getAgendaid() {
         return instance.getAgendaid();
@@ -442,7 +455,7 @@ public final class InterfaceAgenda {
        *议程ID
        * </pre>
        *
-       * <code>optional fixed32 agendaid = 1;</code>
+       * <code>fixed32 agendaid = 1;</code>
        */
       public Builder setAgendaid(int value) {
         copyOnWrite();
@@ -454,7 +467,7 @@ public final class InterfaceAgenda {
        *议程ID
        * </pre>
        *
-       * <code>optional fixed32 agendaid = 1;</code>
+       * <code>fixed32 agendaid = 1;</code>
        */
       public Builder clearAgendaid() {
         copyOnWrite();
@@ -467,7 +480,7 @@ public final class InterfaceAgenda {
        *议程状态 参见Pb_AgendaStatus
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public int getStatus() {
         return instance.getStatus();
@@ -477,7 +490,7 @@ public final class InterfaceAgenda {
        *议程状态 参见Pb_AgendaStatus
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder setStatus(int value) {
         copyOnWrite();
@@ -489,7 +502,7 @@ public final class InterfaceAgenda {
        *议程状态 参见Pb_AgendaStatus
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder clearStatus() {
         copyOnWrite();
@@ -502,7 +515,7 @@ public final class InterfaceAgenda {
        *绑定目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 3;</code>
+       * <code>fixed32 dirid = 3;</code>
        */
       public int getDirid() {
         return instance.getDirid();
@@ -512,7 +525,7 @@ public final class InterfaceAgenda {
        *绑定目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 3;</code>
+       * <code>fixed32 dirid = 3;</code>
        */
       public Builder setDirid(int value) {
         copyOnWrite();
@@ -524,7 +537,7 @@ public final class InterfaceAgenda {
        *绑定目录ID
        * </pre>
        *
-       * <code>optional fixed32 dirid = 3;</code>
+       * <code>fixed32 dirid = 3;</code>
        */
       public Builder clearDirid() {
         copyOnWrite();
@@ -537,7 +550,7 @@ public final class InterfaceAgenda {
        *单位秒
        * </pre>
        *
-       * <code>optional fixed64 startutctime = 4;</code>
+       * <code>fixed64 startutctime = 4;</code>
        */
       public long getStartutctime() {
         return instance.getStartutctime();
@@ -547,7 +560,7 @@ public final class InterfaceAgenda {
        *单位秒
        * </pre>
        *
-       * <code>optional fixed64 startutctime = 4;</code>
+       * <code>fixed64 startutctime = 4;</code>
        */
       public Builder setStartutctime(long value) {
         copyOnWrite();
@@ -559,7 +572,7 @@ public final class InterfaceAgenda {
        *单位秒
        * </pre>
        *
-       * <code>optional fixed64 startutctime = 4;</code>
+       * <code>fixed64 startutctime = 4;</code>
        */
       public Builder clearStartutctime() {
         copyOnWrite();
@@ -572,7 +585,7 @@ public final class InterfaceAgenda {
        *单位秒
        * </pre>
        *
-       * <code>optional fixed64 endutctime = 5;</code>
+       * <code>fixed64 endutctime = 5;</code>
        */
       public long getEndutctime() {
         return instance.getEndutctime();
@@ -582,7 +595,7 @@ public final class InterfaceAgenda {
        *单位秒
        * </pre>
        *
-       * <code>optional fixed64 endutctime = 5;</code>
+       * <code>fixed64 endutctime = 5;</code>
        */
       public Builder setEndutctime(long value) {
         copyOnWrite();
@@ -594,7 +607,7 @@ public final class InterfaceAgenda {
        *单位秒
        * </pre>
        *
-       * <code>optional fixed64 endutctime = 5;</code>
+       * <code>fixed64 endutctime = 5;</code>
        */
       public Builder clearEndutctime() {
         copyOnWrite();
@@ -607,7 +620,7 @@ public final class InterfaceAgenda {
        *描述内容
        * </pre>
        *
-       * <code>optional bytes desctext = 6;</code>
+       * <code>bytes desctext = 6;</code>
        */
       public com.google.protobuf.ByteString getDesctext() {
         return instance.getDesctext();
@@ -617,7 +630,7 @@ public final class InterfaceAgenda {
        *描述内容
        * </pre>
        *
-       * <code>optional bytes desctext = 6;</code>
+       * <code>bytes desctext = 6;</code>
        */
       public Builder setDesctext(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -629,7 +642,7 @@ public final class InterfaceAgenda {
        *描述内容
        * </pre>
        *
-       * <code>optional bytes desctext = 6;</code>
+       * <code>bytes desctext = 6;</code>
        */
       public Builder clearDesctext() {
         copyOnWrite();
@@ -639,6 +652,7 @@ public final class InterfaceAgenda {
 
       // @@protoc_insertion_point(builder_scope:pbui_ItemAgendaTimeInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -735,6 +749,7 @@ public final class InterfaceAgenda {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -779,7 +794,7 @@ public final class InterfaceAgenda {
      *议程类型 参见Pb_AgendaType 查询时可以指定议程的类型查询
      * </pre>
      *
-     * <code>optional fixed32 agendatype = 1;</code>
+     * <code>fixed32 agendatype = 1;</code>
      */
     int getAgendatype();
 
@@ -788,7 +803,7 @@ public final class InterfaceAgenda {
      * 媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     int getMediaid();
 
@@ -797,7 +812,7 @@ public final class InterfaceAgenda {
      * 议程文本
      * </pre>
      *
-     * <code>optional bytes text = 3;</code>
+     * <code>bytes text = 3;</code>
      */
     com.google.protobuf.ByteString getText();
 
@@ -856,7 +871,7 @@ public final class InterfaceAgenda {
      *议程类型 参见Pb_AgendaType 查询时可以指定议程的类型查询
      * </pre>
      *
-     * <code>optional fixed32 agendatype = 1;</code>
+     * <code>fixed32 agendatype = 1;</code>
      */
     public int getAgendatype() {
       return agendatype_;
@@ -866,7 +881,7 @@ public final class InterfaceAgenda {
      *议程类型 参见Pb_AgendaType 查询时可以指定议程的类型查询
      * </pre>
      *
-     * <code>optional fixed32 agendatype = 1;</code>
+     * <code>fixed32 agendatype = 1;</code>
      */
     private void setAgendatype(int value) {
       
@@ -877,7 +892,7 @@ public final class InterfaceAgenda {
      *议程类型 参见Pb_AgendaType 查询时可以指定议程的类型查询
      * </pre>
      *
-     * <code>optional fixed32 agendatype = 1;</code>
+     * <code>fixed32 agendatype = 1;</code>
      */
     private void clearAgendatype() {
       
@@ -891,7 +906,7 @@ public final class InterfaceAgenda {
      * 媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     public int getMediaid() {
       return mediaid_;
@@ -901,7 +916,7 @@ public final class InterfaceAgenda {
      * 媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     private void setMediaid(int value) {
       
@@ -912,7 +927,7 @@ public final class InterfaceAgenda {
      * 媒体ID
      * </pre>
      *
-     * <code>optional fixed32 mediaid = 2;</code>
+     * <code>fixed32 mediaid = 2;</code>
      */
     private void clearMediaid() {
       
@@ -926,7 +941,7 @@ public final class InterfaceAgenda {
      * 议程文本
      * </pre>
      *
-     * <code>optional bytes text = 3;</code>
+     * <code>bytes text = 3;</code>
      */
     public com.google.protobuf.ByteString getText() {
       return text_;
@@ -936,7 +951,7 @@ public final class InterfaceAgenda {
      * 议程文本
      * </pre>
      *
-     * <code>optional bytes text = 3;</code>
+     * <code>bytes text = 3;</code>
      */
     private void setText(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -950,7 +965,7 @@ public final class InterfaceAgenda {
      * 议程文本
      * </pre>
      *
-     * <code>optional bytes text = 3;</code>
+     * <code>bytes text = 3;</code>
      */
     private void clearText() {
       
@@ -1175,6 +1190,19 @@ public final class InterfaceAgenda {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceAgenda.pbui_meetAgenda parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAgenda.pbui_meetAgenda parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAgenda.pbui_meetAgenda parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1270,7 +1298,7 @@ public final class InterfaceAgenda {
        *议程类型 参见Pb_AgendaType 查询时可以指定议程的类型查询
        * </pre>
        *
-       * <code>optional fixed32 agendatype = 1;</code>
+       * <code>fixed32 agendatype = 1;</code>
        */
       public int getAgendatype() {
         return instance.getAgendatype();
@@ -1280,7 +1308,7 @@ public final class InterfaceAgenda {
        *议程类型 参见Pb_AgendaType 查询时可以指定议程的类型查询
        * </pre>
        *
-       * <code>optional fixed32 agendatype = 1;</code>
+       * <code>fixed32 agendatype = 1;</code>
        */
       public Builder setAgendatype(int value) {
         copyOnWrite();
@@ -1292,7 +1320,7 @@ public final class InterfaceAgenda {
        *议程类型 参见Pb_AgendaType 查询时可以指定议程的类型查询
        * </pre>
        *
-       * <code>optional fixed32 agendatype = 1;</code>
+       * <code>fixed32 agendatype = 1;</code>
        */
       public Builder clearAgendatype() {
         copyOnWrite();
@@ -1305,7 +1333,7 @@ public final class InterfaceAgenda {
        * 媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public int getMediaid() {
         return instance.getMediaid();
@@ -1315,7 +1343,7 @@ public final class InterfaceAgenda {
        * 媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public Builder setMediaid(int value) {
         copyOnWrite();
@@ -1327,7 +1355,7 @@ public final class InterfaceAgenda {
        * 媒体ID
        * </pre>
        *
-       * <code>optional fixed32 mediaid = 2;</code>
+       * <code>fixed32 mediaid = 2;</code>
        */
       public Builder clearMediaid() {
         copyOnWrite();
@@ -1340,7 +1368,7 @@ public final class InterfaceAgenda {
        * 议程文本
        * </pre>
        *
-       * <code>optional bytes text = 3;</code>
+       * <code>bytes text = 3;</code>
        */
       public com.google.protobuf.ByteString getText() {
         return instance.getText();
@@ -1350,7 +1378,7 @@ public final class InterfaceAgenda {
        * 议程文本
        * </pre>
        *
-       * <code>optional bytes text = 3;</code>
+       * <code>bytes text = 3;</code>
        */
       public Builder setText(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1362,7 +1390,7 @@ public final class InterfaceAgenda {
        * 议程文本
        * </pre>
        *
-       * <code>optional bytes text = 3;</code>
+       * <code>bytes text = 3;</code>
        */
       public Builder clearText() {
         copyOnWrite();
@@ -1517,6 +1545,7 @@ public final class InterfaceAgenda {
 
       // @@protoc_insertion_point(builder_scope:pbui_meetAgenda)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1604,6 +1633,7 @@ public final class InterfaceAgenda {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

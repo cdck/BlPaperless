@@ -610,6 +610,7 @@
     <string name="id">ID</string>
     <string name="please_choose_file_first">Please select file first</string>
     <string name="delete_check_in_record">Delete check in record</string>
+    <string name="file_name_marquee">Scroll file name</string>
 
     <string-array name="role_spinner">
         <item>Not set</item>

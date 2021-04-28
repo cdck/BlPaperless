@@ -4,8 +4,10 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -154,12 +156,12 @@ public class NativeService extends Service {
                     InterfaceMember.pbui_Item_MemberPermission item = mPermissionsList.get(i);
                     if (item.getMemberid() == localMemberId) {
                         Values.localPermission = item.getPermission();
-                        LogUtil.i(TAG, "getEventMessage 本机的权限=" + Values.localPermission
-                                + "\n" + isHasPermission(Macro.permission_code_screen)
-                                + "\n" + isHasPermission(Macro.permission_code_projection)
-                                + "\n" + isHasPermission(Macro.permission_code_upload)
-                                + "\n" + isHasPermission(Macro.permission_code_download)
-                                + "\n" + isHasPermission(Macro.permission_code_vote)
+                        LogUtils.i(TAG, "getEventMessage 本机的权限=" + Values.localPermission
+                                + "\n是否有同屏权限=" + isHasPermission(Macro.permission_code_screen)
+                                + "\n是否有投影权限=" + isHasPermission(Macro.permission_code_projection)
+                                + "\n是否有上传权限=" + isHasPermission(Macro.permission_code_upload)
+                                + "\n是否有下载权限=" + isHasPermission(Macro.permission_code_download)
+                                + "\n是否有投票权限=" + isHasPermission(Macro.permission_code_vote)
                         );
                     }
                 }
@@ -344,7 +346,7 @@ public class NativeService extends Service {
             InterfaceDevice.pbui_Type_DeviceFaceShowDetail info = jni.queryDeviceMeetInfo();
             if (info == null) return;
             localMemberId = info.getMemberid();
-            LogUtil.i(TAG, "fun_queryDevMeetInfo 设置本机参会人ID" + localMemberId);
+            LogUtils.i(TAG, "fun_queryDevMeetInfo 设置本机参会人ID" + localMemberId);
             localDevId = info.getDeviceid();
             localMemberName = MyUtils.b2s(info.getMembername());
             Values.roomId = info.getRoomid();

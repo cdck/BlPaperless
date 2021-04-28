@@ -47,6 +47,10 @@ public final class InterfaceMeetfunction {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -96,7 +100,7 @@ public final class InterfaceMeetfunction {
      *功能标识码 参见Pb_Meet_FunctionCode
      * </pre>
      *
-     * <code>optional fixed32 funcode = 1;</code>
+     * <code>fixed32 funcode = 1;</code>
      */
     int getFuncode();
 
@@ -105,7 +109,7 @@ public final class InterfaceMeetfunction {
      *位置标识码
      * </pre>
      *
-     * <code>optional fixed32 position = 2;</code>
+     * <code>fixed32 position = 2;</code>
      */
     int getPosition();
   }
@@ -130,7 +134,7 @@ public final class InterfaceMeetfunction {
      *功能标识码 参见Pb_Meet_FunctionCode
      * </pre>
      *
-     * <code>optional fixed32 funcode = 1;</code>
+     * <code>fixed32 funcode = 1;</code>
      */
     public int getFuncode() {
       return funcode_;
@@ -140,7 +144,7 @@ public final class InterfaceMeetfunction {
      *功能标识码 参见Pb_Meet_FunctionCode
      * </pre>
      *
-     * <code>optional fixed32 funcode = 1;</code>
+     * <code>fixed32 funcode = 1;</code>
      */
     private void setFuncode(int value) {
       
@@ -151,7 +155,7 @@ public final class InterfaceMeetfunction {
      *功能标识码 参见Pb_Meet_FunctionCode
      * </pre>
      *
-     * <code>optional fixed32 funcode = 1;</code>
+     * <code>fixed32 funcode = 1;</code>
      */
     private void clearFuncode() {
       
@@ -165,7 +169,7 @@ public final class InterfaceMeetfunction {
      *位置标识码
      * </pre>
      *
-     * <code>optional fixed32 position = 2;</code>
+     * <code>fixed32 position = 2;</code>
      */
     public int getPosition() {
       return position_;
@@ -175,7 +179,7 @@ public final class InterfaceMeetfunction {
      *位置标识码
      * </pre>
      *
-     * <code>optional fixed32 position = 2;</code>
+     * <code>fixed32 position = 2;</code>
      */
     private void setPosition(int value) {
       
@@ -186,7 +190,7 @@ public final class InterfaceMeetfunction {
      *位置标识码
      * </pre>
      *
-     * <code>optional fixed32 position = 2;</code>
+     * <code>fixed32 position = 2;</code>
      */
     private void clearPosition() {
       
@@ -220,6 +224,19 @@ public final class InterfaceMeetfunction {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -311,7 +328,7 @@ public final class InterfaceMeetfunction {
        *功能标识码 参见Pb_Meet_FunctionCode
        * </pre>
        *
-       * <code>optional fixed32 funcode = 1;</code>
+       * <code>fixed32 funcode = 1;</code>
        */
       public int getFuncode() {
         return instance.getFuncode();
@@ -321,7 +338,7 @@ public final class InterfaceMeetfunction {
        *功能标识码 参见Pb_Meet_FunctionCode
        * </pre>
        *
-       * <code>optional fixed32 funcode = 1;</code>
+       * <code>fixed32 funcode = 1;</code>
        */
       public Builder setFuncode(int value) {
         copyOnWrite();
@@ -333,7 +350,7 @@ public final class InterfaceMeetfunction {
        *功能标识码 参见Pb_Meet_FunctionCode
        * </pre>
        *
-       * <code>optional fixed32 funcode = 1;</code>
+       * <code>fixed32 funcode = 1;</code>
        */
       public Builder clearFuncode() {
         copyOnWrite();
@@ -346,7 +363,7 @@ public final class InterfaceMeetfunction {
        *位置标识码
        * </pre>
        *
-       * <code>optional fixed32 position = 2;</code>
+       * <code>fixed32 position = 2;</code>
        */
       public int getPosition() {
         return instance.getPosition();
@@ -356,7 +373,7 @@ public final class InterfaceMeetfunction {
        *位置标识码
        * </pre>
        *
-       * <code>optional fixed32 position = 2;</code>
+       * <code>fixed32 position = 2;</code>
        */
       public Builder setPosition(int value) {
         copyOnWrite();
@@ -368,7 +385,7 @@ public final class InterfaceMeetfunction {
        *位置标识码
        * </pre>
        *
-       * <code>optional fixed32 position = 2;</code>
+       * <code>fixed32 position = 2;</code>
        */
       public Builder clearPosition() {
         copyOnWrite();
@@ -378,6 +395,7 @@ public final class InterfaceMeetfunction {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetFunConfigDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -446,6 +464,7 @@ public final class InterfaceMeetfunction {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -490,7 +509,7 @@ public final class InterfaceMeetfunction {
      *修改标志 参见Pb_FunCon_ModifyFlag
      * </pre>
      *
-     * <code>optional fixed32 modifyflag = 1;</code>
+     * <code>fixed32 modifyflag = 1;</code>
      */
     int getModifyflag();
 
@@ -533,7 +552,7 @@ public final class InterfaceMeetfunction {
      *修改标志 参见Pb_FunCon_ModifyFlag
      * </pre>
      *
-     * <code>optional fixed32 modifyflag = 1;</code>
+     * <code>fixed32 modifyflag = 1;</code>
      */
     public int getModifyflag() {
       return modifyflag_;
@@ -543,7 +562,7 @@ public final class InterfaceMeetfunction {
      *修改标志 参见Pb_FunCon_ModifyFlag
      * </pre>
      *
-     * <code>optional fixed32 modifyflag = 1;</code>
+     * <code>fixed32 modifyflag = 1;</code>
      */
     private void setModifyflag(int value) {
       
@@ -554,7 +573,7 @@ public final class InterfaceMeetfunction {
      *修改标志 参见Pb_FunCon_ModifyFlag
      * </pre>
      *
-     * <code>optional fixed32 modifyflag = 1;</code>
+     * <code>fixed32 modifyflag = 1;</code>
      */
     private void clearModifyflag() {
       
@@ -709,6 +728,19 @@ public final class InterfaceMeetfunction {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMeetfunction.pbui_Type_MeetFunConfigDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeetfunction.pbui_Type_MeetFunConfigDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeetfunction.pbui_Type_MeetFunConfigDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -801,7 +833,7 @@ public final class InterfaceMeetfunction {
        *修改标志 参见Pb_FunCon_ModifyFlag
        * </pre>
        *
-       * <code>optional fixed32 modifyflag = 1;</code>
+       * <code>fixed32 modifyflag = 1;</code>
        */
       public int getModifyflag() {
         return instance.getModifyflag();
@@ -811,7 +843,7 @@ public final class InterfaceMeetfunction {
        *修改标志 参见Pb_FunCon_ModifyFlag
        * </pre>
        *
-       * <code>optional fixed32 modifyflag = 1;</code>
+       * <code>fixed32 modifyflag = 1;</code>
        */
       public Builder setModifyflag(int value) {
         copyOnWrite();
@@ -823,7 +855,7 @@ public final class InterfaceMeetfunction {
        *修改标志 参见Pb_FunCon_ModifyFlag
        * </pre>
        *
-       * <code>optional fixed32 modifyflag = 1;</code>
+       * <code>fixed32 modifyflag = 1;</code>
        */
       public Builder clearModifyflag() {
         copyOnWrite();
@@ -930,6 +962,7 @@ public final class InterfaceMeetfunction {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetFunConfigDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1003,6 +1036,7 @@ public final class InterfaceMeetfunction {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

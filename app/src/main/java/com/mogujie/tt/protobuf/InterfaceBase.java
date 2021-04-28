@@ -17,7 +17,7 @@ public final class InterfaceBase {
      *client.ini文件路径名
      * </pre>
      *
-     * <code>optional bytes pconfigpathname = 1;</code>
+     * <code>bytes pconfigpathname = 1;</code>
      */
     com.google.protobuf.ByteString getPconfigpathname();
 
@@ -26,7 +26,7 @@ public final class InterfaceBase {
      *保存日志到文件
      * </pre>
      *
-     * <code>optional fixed32 logtofile = 2;</code>
+     * <code>fixed32 logtofile = 2;</code>
      */
     int getLogtofile();
 
@@ -35,7 +35,7 @@ public final class InterfaceBase {
      *初始化的流通道数
      * </pre>
      *
-     * <code>optional fixed32 streamnum = 3;</code>
+     * <code>fixed32 streamnum = 3;</code>
      */
     int getStreamnum();
 
@@ -44,7 +44,7 @@ public final class InterfaceBase {
      *程序类型 用于区分程序来初始化接口数据 参见Interface_Macro.proto--&gt; Pb_ProgramType
      * </pre>
      *
-     * <code>optional fixed32 programtype = 4;</code>
+     * <code>fixed32 programtype = 4;</code>
      */
     int getProgramtype();
 
@@ -53,7 +53,7 @@ public final class InterfaceBase {
      *程序唯一标识串，为空表示接口自动计算
      * </pre>
      *
-     * <code>optional bytes keystr = 5;</code>
+     * <code>bytes keystr = 5;</code>
      */
     com.google.protobuf.ByteString getKeystr();
 
@@ -62,7 +62,7 @@ public final class InterfaceBase {
      *屏幕宽
      * </pre>
      *
-     * <code>optional fixed32 screenwidth = 6;</code>
+     * <code>fixed32 screenwidth = 6;</code>
      */
     int getScreenwidth();
 
@@ -71,7 +71,7 @@ public final class InterfaceBase {
      *屏幕高
      * </pre>
      *
-     * <code>optional fixed32 screenheight = 7;</code>
+     * <code>fixed32 screenheight = 7;</code>
      */
     int getScreenheight();
   }
@@ -100,7 +100,7 @@ public final class InterfaceBase {
      *client.ini文件路径名
      * </pre>
      *
-     * <code>optional bytes pconfigpathname = 1;</code>
+     * <code>bytes pconfigpathname = 1;</code>
      */
     public com.google.protobuf.ByteString getPconfigpathname() {
       return pconfigpathname_;
@@ -110,7 +110,7 @@ public final class InterfaceBase {
      *client.ini文件路径名
      * </pre>
      *
-     * <code>optional bytes pconfigpathname = 1;</code>
+     * <code>bytes pconfigpathname = 1;</code>
      */
     private void setPconfigpathname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -124,7 +124,7 @@ public final class InterfaceBase {
      *client.ini文件路径名
      * </pre>
      *
-     * <code>optional bytes pconfigpathname = 1;</code>
+     * <code>bytes pconfigpathname = 1;</code>
      */
     private void clearPconfigpathname() {
       
@@ -138,7 +138,7 @@ public final class InterfaceBase {
      *保存日志到文件
      * </pre>
      *
-     * <code>optional fixed32 logtofile = 2;</code>
+     * <code>fixed32 logtofile = 2;</code>
      */
     public int getLogtofile() {
       return logtofile_;
@@ -148,7 +148,7 @@ public final class InterfaceBase {
      *保存日志到文件
      * </pre>
      *
-     * <code>optional fixed32 logtofile = 2;</code>
+     * <code>fixed32 logtofile = 2;</code>
      */
     private void setLogtofile(int value) {
       
@@ -159,7 +159,7 @@ public final class InterfaceBase {
      *保存日志到文件
      * </pre>
      *
-     * <code>optional fixed32 logtofile = 2;</code>
+     * <code>fixed32 logtofile = 2;</code>
      */
     private void clearLogtofile() {
       
@@ -173,7 +173,7 @@ public final class InterfaceBase {
      *初始化的流通道数
      * </pre>
      *
-     * <code>optional fixed32 streamnum = 3;</code>
+     * <code>fixed32 streamnum = 3;</code>
      */
     public int getStreamnum() {
       return streamnum_;
@@ -183,7 +183,7 @@ public final class InterfaceBase {
      *初始化的流通道数
      * </pre>
      *
-     * <code>optional fixed32 streamnum = 3;</code>
+     * <code>fixed32 streamnum = 3;</code>
      */
     private void setStreamnum(int value) {
       
@@ -194,7 +194,7 @@ public final class InterfaceBase {
      *初始化的流通道数
      * </pre>
      *
-     * <code>optional fixed32 streamnum = 3;</code>
+     * <code>fixed32 streamnum = 3;</code>
      */
     private void clearStreamnum() {
       
@@ -208,7 +208,7 @@ public final class InterfaceBase {
      *程序类型 用于区分程序来初始化接口数据 参见Interface_Macro.proto--&gt; Pb_ProgramType
      * </pre>
      *
-     * <code>optional fixed32 programtype = 4;</code>
+     * <code>fixed32 programtype = 4;</code>
      */
     public int getProgramtype() {
       return programtype_;
@@ -218,7 +218,7 @@ public final class InterfaceBase {
      *程序类型 用于区分程序来初始化接口数据 参见Interface_Macro.proto--&gt; Pb_ProgramType
      * </pre>
      *
-     * <code>optional fixed32 programtype = 4;</code>
+     * <code>fixed32 programtype = 4;</code>
      */
     private void setProgramtype(int value) {
       
@@ -229,7 +229,7 @@ public final class InterfaceBase {
      *程序类型 用于区分程序来初始化接口数据 参见Interface_Macro.proto--&gt; Pb_ProgramType
      * </pre>
      *
-     * <code>optional fixed32 programtype = 4;</code>
+     * <code>fixed32 programtype = 4;</code>
      */
     private void clearProgramtype() {
       
@@ -243,7 +243,7 @@ public final class InterfaceBase {
      *程序唯一标识串，为空表示接口自动计算
      * </pre>
      *
-     * <code>optional bytes keystr = 5;</code>
+     * <code>bytes keystr = 5;</code>
      */
     public com.google.protobuf.ByteString getKeystr() {
       return keystr_;
@@ -253,7 +253,7 @@ public final class InterfaceBase {
      *程序唯一标识串，为空表示接口自动计算
      * </pre>
      *
-     * <code>optional bytes keystr = 5;</code>
+     * <code>bytes keystr = 5;</code>
      */
     private void setKeystr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -267,7 +267,7 @@ public final class InterfaceBase {
      *程序唯一标识串，为空表示接口自动计算
      * </pre>
      *
-     * <code>optional bytes keystr = 5;</code>
+     * <code>bytes keystr = 5;</code>
      */
     private void clearKeystr() {
       
@@ -281,7 +281,7 @@ public final class InterfaceBase {
      *屏幕宽
      * </pre>
      *
-     * <code>optional fixed32 screenwidth = 6;</code>
+     * <code>fixed32 screenwidth = 6;</code>
      */
     public int getScreenwidth() {
       return screenwidth_;
@@ -291,7 +291,7 @@ public final class InterfaceBase {
      *屏幕宽
      * </pre>
      *
-     * <code>optional fixed32 screenwidth = 6;</code>
+     * <code>fixed32 screenwidth = 6;</code>
      */
     private void setScreenwidth(int value) {
       
@@ -302,7 +302,7 @@ public final class InterfaceBase {
      *屏幕宽
      * </pre>
      *
-     * <code>optional fixed32 screenwidth = 6;</code>
+     * <code>fixed32 screenwidth = 6;</code>
      */
     private void clearScreenwidth() {
       
@@ -316,7 +316,7 @@ public final class InterfaceBase {
      *屏幕高
      * </pre>
      *
-     * <code>optional fixed32 screenheight = 7;</code>
+     * <code>fixed32 screenheight = 7;</code>
      */
     public int getScreenheight() {
       return screenheight_;
@@ -326,7 +326,7 @@ public final class InterfaceBase {
      *屏幕高
      * </pre>
      *
-     * <code>optional fixed32 screenheight = 7;</code>
+     * <code>fixed32 screenheight = 7;</code>
      */
     private void setScreenheight(int value) {
       
@@ -337,7 +337,7 @@ public final class InterfaceBase {
      *屏幕高
      * </pre>
      *
-     * <code>optional fixed32 screenheight = 7;</code>
+     * <code>fixed32 screenheight = 7;</code>
      */
     private void clearScreenheight() {
       
@@ -406,6 +406,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetCore_InitParam parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetCore_InitParam parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetCore_InitParam parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -499,7 +512,7 @@ public final class InterfaceBase {
        *client.ini文件路径名
        * </pre>
        *
-       * <code>optional bytes pconfigpathname = 1;</code>
+       * <code>bytes pconfigpathname = 1;</code>
        */
       public com.google.protobuf.ByteString getPconfigpathname() {
         return instance.getPconfigpathname();
@@ -509,7 +522,7 @@ public final class InterfaceBase {
        *client.ini文件路径名
        * </pre>
        *
-       * <code>optional bytes pconfigpathname = 1;</code>
+       * <code>bytes pconfigpathname = 1;</code>
        */
       public Builder setPconfigpathname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -521,7 +534,7 @@ public final class InterfaceBase {
        *client.ini文件路径名
        * </pre>
        *
-       * <code>optional bytes pconfigpathname = 1;</code>
+       * <code>bytes pconfigpathname = 1;</code>
        */
       public Builder clearPconfigpathname() {
         copyOnWrite();
@@ -534,7 +547,7 @@ public final class InterfaceBase {
        *保存日志到文件
        * </pre>
        *
-       * <code>optional fixed32 logtofile = 2;</code>
+       * <code>fixed32 logtofile = 2;</code>
        */
       public int getLogtofile() {
         return instance.getLogtofile();
@@ -544,7 +557,7 @@ public final class InterfaceBase {
        *保存日志到文件
        * </pre>
        *
-       * <code>optional fixed32 logtofile = 2;</code>
+       * <code>fixed32 logtofile = 2;</code>
        */
       public Builder setLogtofile(int value) {
         copyOnWrite();
@@ -556,7 +569,7 @@ public final class InterfaceBase {
        *保存日志到文件
        * </pre>
        *
-       * <code>optional fixed32 logtofile = 2;</code>
+       * <code>fixed32 logtofile = 2;</code>
        */
       public Builder clearLogtofile() {
         copyOnWrite();
@@ -569,7 +582,7 @@ public final class InterfaceBase {
        *初始化的流通道数
        * </pre>
        *
-       * <code>optional fixed32 streamnum = 3;</code>
+       * <code>fixed32 streamnum = 3;</code>
        */
       public int getStreamnum() {
         return instance.getStreamnum();
@@ -579,7 +592,7 @@ public final class InterfaceBase {
        *初始化的流通道数
        * </pre>
        *
-       * <code>optional fixed32 streamnum = 3;</code>
+       * <code>fixed32 streamnum = 3;</code>
        */
       public Builder setStreamnum(int value) {
         copyOnWrite();
@@ -591,7 +604,7 @@ public final class InterfaceBase {
        *初始化的流通道数
        * </pre>
        *
-       * <code>optional fixed32 streamnum = 3;</code>
+       * <code>fixed32 streamnum = 3;</code>
        */
       public Builder clearStreamnum() {
         copyOnWrite();
@@ -604,7 +617,7 @@ public final class InterfaceBase {
        *程序类型 用于区分程序来初始化接口数据 参见Interface_Macro.proto--&gt; Pb_ProgramType
        * </pre>
        *
-       * <code>optional fixed32 programtype = 4;</code>
+       * <code>fixed32 programtype = 4;</code>
        */
       public int getProgramtype() {
         return instance.getProgramtype();
@@ -614,7 +627,7 @@ public final class InterfaceBase {
        *程序类型 用于区分程序来初始化接口数据 参见Interface_Macro.proto--&gt; Pb_ProgramType
        * </pre>
        *
-       * <code>optional fixed32 programtype = 4;</code>
+       * <code>fixed32 programtype = 4;</code>
        */
       public Builder setProgramtype(int value) {
         copyOnWrite();
@@ -626,7 +639,7 @@ public final class InterfaceBase {
        *程序类型 用于区分程序来初始化接口数据 参见Interface_Macro.proto--&gt; Pb_ProgramType
        * </pre>
        *
-       * <code>optional fixed32 programtype = 4;</code>
+       * <code>fixed32 programtype = 4;</code>
        */
       public Builder clearProgramtype() {
         copyOnWrite();
@@ -639,7 +652,7 @@ public final class InterfaceBase {
        *程序唯一标识串，为空表示接口自动计算
        * </pre>
        *
-       * <code>optional bytes keystr = 5;</code>
+       * <code>bytes keystr = 5;</code>
        */
       public com.google.protobuf.ByteString getKeystr() {
         return instance.getKeystr();
@@ -649,7 +662,7 @@ public final class InterfaceBase {
        *程序唯一标识串，为空表示接口自动计算
        * </pre>
        *
-       * <code>optional bytes keystr = 5;</code>
+       * <code>bytes keystr = 5;</code>
        */
       public Builder setKeystr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -661,7 +674,7 @@ public final class InterfaceBase {
        *程序唯一标识串，为空表示接口自动计算
        * </pre>
        *
-       * <code>optional bytes keystr = 5;</code>
+       * <code>bytes keystr = 5;</code>
        */
       public Builder clearKeystr() {
         copyOnWrite();
@@ -674,7 +687,7 @@ public final class InterfaceBase {
        *屏幕宽
        * </pre>
        *
-       * <code>optional fixed32 screenwidth = 6;</code>
+       * <code>fixed32 screenwidth = 6;</code>
        */
       public int getScreenwidth() {
         return instance.getScreenwidth();
@@ -684,7 +697,7 @@ public final class InterfaceBase {
        *屏幕宽
        * </pre>
        *
-       * <code>optional fixed32 screenwidth = 6;</code>
+       * <code>fixed32 screenwidth = 6;</code>
        */
       public Builder setScreenwidth(int value) {
         copyOnWrite();
@@ -696,7 +709,7 @@ public final class InterfaceBase {
        *屏幕宽
        * </pre>
        *
-       * <code>optional fixed32 screenwidth = 6;</code>
+       * <code>fixed32 screenwidth = 6;</code>
        */
       public Builder clearScreenwidth() {
         copyOnWrite();
@@ -709,7 +722,7 @@ public final class InterfaceBase {
        *屏幕高
        * </pre>
        *
-       * <code>optional fixed32 screenheight = 7;</code>
+       * <code>fixed32 screenheight = 7;</code>
        */
       public int getScreenheight() {
         return instance.getScreenheight();
@@ -719,7 +732,7 @@ public final class InterfaceBase {
        *屏幕高
        * </pre>
        *
-       * <code>optional fixed32 screenheight = 7;</code>
+       * <code>fixed32 screenheight = 7;</code>
        */
       public Builder setScreenheight(int value) {
         copyOnWrite();
@@ -731,7 +744,7 @@ public final class InterfaceBase {
        *屏幕高
        * </pre>
        *
-       * <code>optional fixed32 screenheight = 7;</code>
+       * <code>fixed32 screenheight = 7;</code>
        */
       public Builder clearScreenheight() {
         copyOnWrite();
@@ -741,6 +754,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_MeetCore_InitParam)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -844,6 +858,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -888,7 +903,7 @@ public final class InterfaceBase {
      *连接上的区域服务器ID
      * </pre>
      *
-     * <code>optional fixed32 areaid = 1;</code>
+     * <code>fixed32 areaid = 1;</code>
      */
     int getAreaid();
   }
@@ -916,7 +931,7 @@ public final class InterfaceBase {
      *连接上的区域服务器ID
      * </pre>
      *
-     * <code>optional fixed32 areaid = 1;</code>
+     * <code>fixed32 areaid = 1;</code>
      */
     public int getAreaid() {
       return areaid_;
@@ -926,7 +941,7 @@ public final class InterfaceBase {
      *连接上的区域服务器ID
      * </pre>
      *
-     * <code>optional fixed32 areaid = 1;</code>
+     * <code>fixed32 areaid = 1;</code>
      */
     private void setAreaid(int value) {
       
@@ -937,7 +952,7 @@ public final class InterfaceBase {
      *连接上的区域服务器ID
      * </pre>
      *
-     * <code>optional fixed32 areaid = 1;</code>
+     * <code>fixed32 areaid = 1;</code>
      */
     private void clearAreaid() {
       
@@ -964,6 +979,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Ready parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Ready parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Ready parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1058,7 +1086,7 @@ public final class InterfaceBase {
        *连接上的区域服务器ID
        * </pre>
        *
-       * <code>optional fixed32 areaid = 1;</code>
+       * <code>fixed32 areaid = 1;</code>
        */
       public int getAreaid() {
         return instance.getAreaid();
@@ -1068,7 +1096,7 @@ public final class InterfaceBase {
        *连接上的区域服务器ID
        * </pre>
        *
-       * <code>optional fixed32 areaid = 1;</code>
+       * <code>fixed32 areaid = 1;</code>
        */
       public Builder setAreaid(int value) {
         copyOnWrite();
@@ -1080,7 +1108,7 @@ public final class InterfaceBase {
        *连接上的区域服务器ID
        * </pre>
        *
-       * <code>optional fixed32 areaid = 1;</code>
+       * <code>fixed32 areaid = 1;</code>
        */
       public Builder clearAreaid() {
         copyOnWrite();
@@ -1090,6 +1118,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Ready)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1151,6 +1180,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1195,7 +1225,7 @@ public final class InterfaceBase {
      *参见 Pb_ValidateFlagBit 参考basemacro.h的宏定义
      * </pre>
      *
-     * <code>optional fixed32 valflag = 1;</code>
+     * <code>fixed32 valflag = 1;</code>
      */
     int getValflag();
 
@@ -1276,7 +1306,7 @@ public final class InterfaceBase {
      *参见 Pb_ValidateFlagBit 参考basemacro.h的宏定义
      * </pre>
      *
-     * <code>optional fixed32 valflag = 1;</code>
+     * <code>fixed32 valflag = 1;</code>
      */
     public int getValflag() {
       return valflag_;
@@ -1286,7 +1316,7 @@ public final class InterfaceBase {
      *参见 Pb_ValidateFlagBit 参考basemacro.h的宏定义
      * </pre>
      *
-     * <code>optional fixed32 valflag = 1;</code>
+     * <code>fixed32 valflag = 1;</code>
      */
     private void setValflag(int value) {
       
@@ -1297,7 +1327,7 @@ public final class InterfaceBase {
      *参见 Pb_ValidateFlagBit 参考basemacro.h的宏定义
      * </pre>
      *
-     * <code>optional fixed32 valflag = 1;</code>
+     * <code>fixed32 valflag = 1;</code>
      */
     private void clearValflag() {
       
@@ -1516,6 +1546,19 @@ public final class InterfaceBase {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_DeviceValidate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_DeviceValidate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_DeviceValidate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1609,7 +1652,7 @@ public final class InterfaceBase {
        *参见 Pb_ValidateFlagBit 参考basemacro.h的宏定义
        * </pre>
        *
-       * <code>optional fixed32 valflag = 1;</code>
+       * <code>fixed32 valflag = 1;</code>
        */
       public int getValflag() {
         return instance.getValflag();
@@ -1619,7 +1662,7 @@ public final class InterfaceBase {
        *参见 Pb_ValidateFlagBit 参考basemacro.h的宏定义
        * </pre>
        *
-       * <code>optional fixed32 valflag = 1;</code>
+       * <code>fixed32 valflag = 1;</code>
        */
       public Builder setValflag(int value) {
         copyOnWrite();
@@ -1631,7 +1674,7 @@ public final class InterfaceBase {
        *参见 Pb_ValidateFlagBit 参考basemacro.h的宏定义
        * </pre>
        *
-       * <code>optional fixed32 valflag = 1;</code>
+       * <code>fixed32 valflag = 1;</code>
        */
       public Builder clearValflag() {
         copyOnWrite();
@@ -1807,6 +1850,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DeviceValidate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1917,6 +1961,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1961,7 +2006,7 @@ public final class InterfaceBase {
      *参见Interface_Macro.proto Pb_WalletSystem_ErrorCode 定义
      * </pre>
      *
-     * <code>optional fixed32 errcode = 1;</code>
+     * <code>fixed32 errcode = 1;</code>
      */
     int getErrcode();
   }
@@ -1989,7 +2034,7 @@ public final class InterfaceBase {
      *参见Interface_Macro.proto Pb_WalletSystem_ErrorCode 定义
      * </pre>
      *
-     * <code>optional fixed32 errcode = 1;</code>
+     * <code>fixed32 errcode = 1;</code>
      */
     public int getErrcode() {
       return errcode_;
@@ -1999,7 +2044,7 @@ public final class InterfaceBase {
      *参见Interface_Macro.proto Pb_WalletSystem_ErrorCode 定义
      * </pre>
      *
-     * <code>optional fixed32 errcode = 1;</code>
+     * <code>fixed32 errcode = 1;</code>
      */
     private void setErrcode(int value) {
       
@@ -2010,7 +2055,7 @@ public final class InterfaceBase {
      *参见Interface_Macro.proto Pb_WalletSystem_ErrorCode 定义
      * </pre>
      *
-     * <code>optional fixed32 errcode = 1;</code>
+     * <code>fixed32 errcode = 1;</code>
      */
     private void clearErrcode() {
       
@@ -2037,6 +2082,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_LogonError parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_LogonError parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_LogonError parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2131,7 +2189,7 @@ public final class InterfaceBase {
        *参见Interface_Macro.proto Pb_WalletSystem_ErrorCode 定义
        * </pre>
        *
-       * <code>optional fixed32 errcode = 1;</code>
+       * <code>fixed32 errcode = 1;</code>
        */
       public int getErrcode() {
         return instance.getErrcode();
@@ -2141,7 +2199,7 @@ public final class InterfaceBase {
        *参见Interface_Macro.proto Pb_WalletSystem_ErrorCode 定义
        * </pre>
        *
-       * <code>optional fixed32 errcode = 1;</code>
+       * <code>fixed32 errcode = 1;</code>
        */
       public Builder setErrcode(int value) {
         copyOnWrite();
@@ -2153,7 +2211,7 @@ public final class InterfaceBase {
        *参见Interface_Macro.proto Pb_WalletSystem_ErrorCode 定义
        * </pre>
        *
-       * <code>optional fixed32 errcode = 1;</code>
+       * <code>fixed32 errcode = 1;</code>
        */
       public Builder clearErrcode() {
         copyOnWrite();
@@ -2163,6 +2221,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_LogonError)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2224,6 +2283,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2268,7 +2328,7 @@ public final class InterfaceBase {
      *属性ID 详细用法参见 Pb_SystemFuncionPropertyId
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     int getPropertyid();
 
@@ -2277,7 +2337,7 @@ public final class InterfaceBase {
      *传入参数值
      * </pre>
      *
-     * <code>optional fixed32 parameter = 2;</code>
+     * <code>fixed32 parameter = 2;</code>
      */
     int getParameter();
 
@@ -2286,7 +2346,7 @@ public final class InterfaceBase {
      *对应属性返回的值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 3;</code>
+     * <code>fixed32 propertyval = 3;</code>
      */
     int getPropertyval();
   }
@@ -2314,7 +2374,7 @@ public final class InterfaceBase {
      *属性ID 详细用法参见 Pb_SystemFuncionPropertyId
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     public int getPropertyid() {
       return propertyid_;
@@ -2324,7 +2384,7 @@ public final class InterfaceBase {
      *属性ID 详细用法参见 Pb_SystemFuncionPropertyId
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void setPropertyid(int value) {
       
@@ -2335,7 +2395,7 @@ public final class InterfaceBase {
      *属性ID 详细用法参见 Pb_SystemFuncionPropertyId
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void clearPropertyid() {
       
@@ -2349,7 +2409,7 @@ public final class InterfaceBase {
      *传入参数值
      * </pre>
      *
-     * <code>optional fixed32 parameter = 2;</code>
+     * <code>fixed32 parameter = 2;</code>
      */
     public int getParameter() {
       return parameter_;
@@ -2359,7 +2419,7 @@ public final class InterfaceBase {
      *传入参数值
      * </pre>
      *
-     * <code>optional fixed32 parameter = 2;</code>
+     * <code>fixed32 parameter = 2;</code>
      */
     private void setParameter(int value) {
       
@@ -2370,7 +2430,7 @@ public final class InterfaceBase {
      *传入参数值
      * </pre>
      *
-     * <code>optional fixed32 parameter = 2;</code>
+     * <code>fixed32 parameter = 2;</code>
      */
     private void clearParameter() {
       
@@ -2384,7 +2444,7 @@ public final class InterfaceBase {
      *对应属性返回的值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 3;</code>
+     * <code>fixed32 propertyval = 3;</code>
      */
     public int getPropertyval() {
       return propertyval_;
@@ -2394,7 +2454,7 @@ public final class InterfaceBase {
      *对应属性返回的值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 3;</code>
+     * <code>fixed32 propertyval = 3;</code>
      */
     private void setPropertyval(int value) {
       
@@ -2405,7 +2465,7 @@ public final class InterfaceBase {
      *对应属性返回的值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 3;</code>
+     * <code>fixed32 propertyval = 3;</code>
      */
     private void clearPropertyval() {
       
@@ -2446,6 +2506,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_SystemFuntionLimitsProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_SystemFuntionLimitsProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_SystemFuntionLimitsProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2540,7 +2613,7 @@ public final class InterfaceBase {
        *属性ID 详细用法参见 Pb_SystemFuncionPropertyId
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public int getPropertyid() {
         return instance.getPropertyid();
@@ -2550,7 +2623,7 @@ public final class InterfaceBase {
        *属性ID 详细用法参见 Pb_SystemFuncionPropertyId
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder setPropertyid(int value) {
         copyOnWrite();
@@ -2562,7 +2635,7 @@ public final class InterfaceBase {
        *属性ID 详细用法参见 Pb_SystemFuncionPropertyId
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder clearPropertyid() {
         copyOnWrite();
@@ -2575,7 +2648,7 @@ public final class InterfaceBase {
        *传入参数值
        * </pre>
        *
-       * <code>optional fixed32 parameter = 2;</code>
+       * <code>fixed32 parameter = 2;</code>
        */
       public int getParameter() {
         return instance.getParameter();
@@ -2585,7 +2658,7 @@ public final class InterfaceBase {
        *传入参数值
        * </pre>
        *
-       * <code>optional fixed32 parameter = 2;</code>
+       * <code>fixed32 parameter = 2;</code>
        */
       public Builder setParameter(int value) {
         copyOnWrite();
@@ -2597,7 +2670,7 @@ public final class InterfaceBase {
        *传入参数值
        * </pre>
        *
-       * <code>optional fixed32 parameter = 2;</code>
+       * <code>fixed32 parameter = 2;</code>
        */
       public Builder clearParameter() {
         copyOnWrite();
@@ -2610,7 +2683,7 @@ public final class InterfaceBase {
        *对应属性返回的值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 3;</code>
+       * <code>fixed32 propertyval = 3;</code>
        */
       public int getPropertyval() {
         return instance.getPropertyval();
@@ -2620,7 +2693,7 @@ public final class InterfaceBase {
        *对应属性返回的值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 3;</code>
+       * <code>fixed32 propertyval = 3;</code>
        */
       public Builder setPropertyval(int value) {
         copyOnWrite();
@@ -2632,7 +2705,7 @@ public final class InterfaceBase {
        *对应属性返回的值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 3;</code>
+       * <code>fixed32 propertyval = 3;</code>
        */
       public Builder clearPropertyval() {
         copyOnWrite();
@@ -2642,6 +2715,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_SystemFuntionLimitsProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2717,6 +2791,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2909,6 +2984,19 @@ public final class InterfaceBase {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_SystemFuntionLimits parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_SystemFuntionLimits parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_SystemFuntionLimits parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3082,6 +3170,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_SystemFuntionLimits)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3160,6 +3249,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3204,7 +3294,7 @@ public final class InterfaceBase {
      *本地时间，每秒一次 单位：微秒
      * </pre>
      *
-     * <code>optional fixed64 usec = 1;</code>
+     * <code>fixed64 usec = 1;</code>
      */
     long getUsec();
   }
@@ -3232,7 +3322,7 @@ public final class InterfaceBase {
      *本地时间，每秒一次 单位：微秒
      * </pre>
      *
-     * <code>optional fixed64 usec = 1;</code>
+     * <code>fixed64 usec = 1;</code>
      */
     public long getUsec() {
       return usec_;
@@ -3242,7 +3332,7 @@ public final class InterfaceBase {
      *本地时间，每秒一次 单位：微秒
      * </pre>
      *
-     * <code>optional fixed64 usec = 1;</code>
+     * <code>fixed64 usec = 1;</code>
      */
     private void setUsec(long value) {
       
@@ -3253,7 +3343,7 @@ public final class InterfaceBase {
      *本地时间，每秒一次 单位：微秒
      * </pre>
      *
-     * <code>optional fixed64 usec = 1;</code>
+     * <code>fixed64 usec = 1;</code>
      */
     private void clearUsec() {
       
@@ -3280,6 +3370,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Time parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Time parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Time parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3374,7 +3477,7 @@ public final class InterfaceBase {
        *本地时间，每秒一次 单位：微秒
        * </pre>
        *
-       * <code>optional fixed64 usec = 1;</code>
+       * <code>fixed64 usec = 1;</code>
        */
       public long getUsec() {
         return instance.getUsec();
@@ -3384,7 +3487,7 @@ public final class InterfaceBase {
        *本地时间，每秒一次 单位：微秒
        * </pre>
        *
-       * <code>optional fixed64 usec = 1;</code>
+       * <code>fixed64 usec = 1;</code>
        */
       public Builder setUsec(long value) {
         copyOnWrite();
@@ -3396,7 +3499,7 @@ public final class InterfaceBase {
        *本地时间，每秒一次 单位：微秒
        * </pre>
        *
-       * <code>optional fixed64 usec = 1;</code>
+       * <code>fixed64 usec = 1;</code>
        */
       public Builder clearUsec() {
         copyOnWrite();
@@ -3406,6 +3509,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Time)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3467,6 +3571,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3511,7 +3616,7 @@ public final class InterfaceBase {
      * 缓存标志 参见Pb_CacheFlag
      * </pre>
      *
-     * <code>optional fixed32 cacheflag = 1;</code>
+     * <code>fixed32 cacheflag = 1;</code>
      */
     int getCacheflag();
 
@@ -3520,7 +3625,7 @@ public final class InterfaceBase {
      *id用法描述 eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     int getId();
   }
@@ -3548,7 +3653,7 @@ public final class InterfaceBase {
      * 缓存标志 参见Pb_CacheFlag
      * </pre>
      *
-     * <code>optional fixed32 cacheflag = 1;</code>
+     * <code>fixed32 cacheflag = 1;</code>
      */
     public int getCacheflag() {
       return cacheflag_;
@@ -3558,7 +3663,7 @@ public final class InterfaceBase {
      * 缓存标志 参见Pb_CacheFlag
      * </pre>
      *
-     * <code>optional fixed32 cacheflag = 1;</code>
+     * <code>fixed32 cacheflag = 1;</code>
      */
     private void setCacheflag(int value) {
       
@@ -3569,7 +3674,7 @@ public final class InterfaceBase {
      * 缓存标志 参见Pb_CacheFlag
      * </pre>
      *
-     * <code>optional fixed32 cacheflag = 1;</code>
+     * <code>fixed32 cacheflag = 1;</code>
      */
     private void clearCacheflag() {
       
@@ -3583,7 +3688,7 @@ public final class InterfaceBase {
      *id用法描述 eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     public int getId() {
       return id_;
@@ -3593,7 +3698,7 @@ public final class InterfaceBase {
      *id用法描述 eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     private void setId(int value) {
       
@@ -3604,7 +3709,7 @@ public final class InterfaceBase {
      *id用法描述 eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     private void clearId() {
       
@@ -3638,6 +3743,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetCacheOper parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetCacheOper parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetCacheOper parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3732,7 +3850,7 @@ public final class InterfaceBase {
        * 缓存标志 参见Pb_CacheFlag
        * </pre>
        *
-       * <code>optional fixed32 cacheflag = 1;</code>
+       * <code>fixed32 cacheflag = 1;</code>
        */
       public int getCacheflag() {
         return instance.getCacheflag();
@@ -3742,7 +3860,7 @@ public final class InterfaceBase {
        * 缓存标志 参见Pb_CacheFlag
        * </pre>
        *
-       * <code>optional fixed32 cacheflag = 1;</code>
+       * <code>fixed32 cacheflag = 1;</code>
        */
       public Builder setCacheflag(int value) {
         copyOnWrite();
@@ -3754,7 +3872,7 @@ public final class InterfaceBase {
        * 缓存标志 参见Pb_CacheFlag
        * </pre>
        *
-       * <code>optional fixed32 cacheflag = 1;</code>
+       * <code>fixed32 cacheflag = 1;</code>
        */
       public Builder clearCacheflag() {
         copyOnWrite();
@@ -3767,7 +3885,7 @@ public final class InterfaceBase {
        *id用法描述 eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public int getId() {
         return instance.getId();
@@ -3777,7 +3895,7 @@ public final class InterfaceBase {
        *id用法描述 eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -3789,7 +3907,7 @@ public final class InterfaceBase {
        *id用法描述 eg:需要缓存目录id=0表示缓存所有目录信息(不包括目录里的文件),当id=1时表示缓存该目录里的文件,如果id=0不支持则会返回ERROR_MEET_INTERFACE_PARAMETER
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -3799,6 +3917,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_MeetCacheOper)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3867,6 +3986,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3911,7 +4031,7 @@ public final class InterfaceBase {
      *请求页 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     int getPageindex();
 
@@ -3920,7 +4040,7 @@ public final class InterfaceBase {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     int getPagenum();
 
@@ -3929,7 +4049,7 @@ public final class InterfaceBase {
      *用于分组使用,如：查询指分组中的人员,这里填写分组id
      * </pre>
      *
-     * <code>optional fixed32 idval = 3;</code>
+     * <code>fixed32 idval = 3;</code>
      */
     int getIdval();
   }
@@ -3957,7 +4077,7 @@ public final class InterfaceBase {
      *请求页 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     public int getPageindex() {
       return pageindex_;
@@ -3967,7 +4087,7 @@ public final class InterfaceBase {
      *请求页 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     private void setPageindex(int value) {
       
@@ -3978,7 +4098,7 @@ public final class InterfaceBase {
      *请求页 从0 开始
      * </pre>
      *
-     * <code>optional fixed32 pageindex = 1;</code>
+     * <code>fixed32 pageindex = 1;</code>
      */
     private void clearPageindex() {
       
@@ -3992,7 +4112,7 @@ public final class InterfaceBase {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     public int getPagenum() {
       return pagenum_;
@@ -4002,7 +4122,7 @@ public final class InterfaceBase {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     private void setPagenum(int value) {
       
@@ -4013,7 +4133,7 @@ public final class InterfaceBase {
      *每页项数
      * </pre>
      *
-     * <code>optional fixed32 pagenum = 2;</code>
+     * <code>fixed32 pagenum = 2;</code>
      */
     private void clearPagenum() {
       
@@ -4027,7 +4147,7 @@ public final class InterfaceBase {
      *用于分组使用,如：查询指分组中的人员,这里填写分组id
      * </pre>
      *
-     * <code>optional fixed32 idval = 3;</code>
+     * <code>fixed32 idval = 3;</code>
      */
     public int getIdval() {
       return idval_;
@@ -4037,7 +4157,7 @@ public final class InterfaceBase {
      *用于分组使用,如：查询指分组中的人员,这里填写分组id
      * </pre>
      *
-     * <code>optional fixed32 idval = 3;</code>
+     * <code>fixed32 idval = 3;</code>
      */
     private void setIdval(int value) {
       
@@ -4048,7 +4168,7 @@ public final class InterfaceBase {
      *用于分组使用,如：查询指分组中的人员,这里填写分组id
      * </pre>
      *
-     * <code>optional fixed32 idval = 3;</code>
+     * <code>fixed32 idval = 3;</code>
      */
     private void clearIdval() {
       
@@ -4089,6 +4209,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_PageReqQueryInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_PageReqQueryInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_PageReqQueryInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4183,7 +4316,7 @@ public final class InterfaceBase {
        *请求页 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public int getPageindex() {
         return instance.getPageindex();
@@ -4193,7 +4326,7 @@ public final class InterfaceBase {
        *请求页 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public Builder setPageindex(int value) {
         copyOnWrite();
@@ -4205,7 +4338,7 @@ public final class InterfaceBase {
        *请求页 从0 开始
        * </pre>
        *
-       * <code>optional fixed32 pageindex = 1;</code>
+       * <code>fixed32 pageindex = 1;</code>
        */
       public Builder clearPageindex() {
         copyOnWrite();
@@ -4218,7 +4351,7 @@ public final class InterfaceBase {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public int getPagenum() {
         return instance.getPagenum();
@@ -4228,7 +4361,7 @@ public final class InterfaceBase {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public Builder setPagenum(int value) {
         copyOnWrite();
@@ -4240,7 +4373,7 @@ public final class InterfaceBase {
        *每页项数
        * </pre>
        *
-       * <code>optional fixed32 pagenum = 2;</code>
+       * <code>fixed32 pagenum = 2;</code>
        */
       public Builder clearPagenum() {
         copyOnWrite();
@@ -4253,7 +4386,7 @@ public final class InterfaceBase {
        *用于分组使用,如：查询指分组中的人员,这里填写分组id
        * </pre>
        *
-       * <code>optional fixed32 idval = 3;</code>
+       * <code>fixed32 idval = 3;</code>
        */
       public int getIdval() {
         return instance.getIdval();
@@ -4263,7 +4396,7 @@ public final class InterfaceBase {
        *用于分组使用,如：查询指分组中的人员,这里填写分组id
        * </pre>
        *
-       * <code>optional fixed32 idval = 3;</code>
+       * <code>fixed32 idval = 3;</code>
        */
       public Builder setIdval(int value) {
         copyOnWrite();
@@ -4275,7 +4408,7 @@ public final class InterfaceBase {
        *用于分组使用,如：查询指分组中的人员,这里填写分组id
        * </pre>
        *
-       * <code>optional fixed32 idval = 3;</code>
+       * <code>fixed32 idval = 3;</code>
        */
       public Builder clearIdval() {
         copyOnWrite();
@@ -4285,6 +4418,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_PageReqQueryInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4360,6 +4494,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4404,7 +4539,7 @@ public final class InterfaceBase {
      *用于分组使用,如：查询指分组中的人员,这里填写分组id
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     int getId();
   }
@@ -4432,7 +4567,7 @@ public final class InterfaceBase {
      *用于分组使用,如：查询指分组中的人员,这里填写分组id
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     public int getId() {
       return id_;
@@ -4442,7 +4577,7 @@ public final class InterfaceBase {
      *用于分组使用,如：查询指分组中的人员,这里填写分组id
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void setId(int value) {
       
@@ -4453,7 +4588,7 @@ public final class InterfaceBase {
      *用于分组使用,如：查询指分组中的人员,这里填写分组id
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void clearId() {
       
@@ -4480,6 +4615,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByID parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByID parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByID parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4574,7 +4722,7 @@ public final class InterfaceBase {
        *用于分组使用,如：查询指分组中的人员,这里填写分组id
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public int getId() {
         return instance.getId();
@@ -4584,7 +4732,7 @@ public final class InterfaceBase {
        *用于分组使用,如：查询指分组中的人员,这里填写分组id
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -4596,7 +4744,7 @@ public final class InterfaceBase {
        *用于分组使用,如：查询指分组中的人员,这里填写分组id
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -4606,6 +4754,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_QueryInfoByID)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4667,6 +4816,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4707,7 +4857,7 @@ public final class InterfaceBase {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional bytes name = 1;</code>
+     * <code>bytes name = 1;</code>
      */
     com.google.protobuf.ByteString getName();
   }
@@ -4732,13 +4882,13 @@ public final class InterfaceBase {
     public static final int NAME_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString name_;
     /**
-     * <code>optional bytes name = 1;</code>
+     * <code>bytes name = 1;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
     }
     /**
-     * <code>optional bytes name = 1;</code>
+     * <code>bytes name = 1;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4748,7 +4898,7 @@ public final class InterfaceBase {
       name_ = value;
     }
     /**
-     * <code>optional bytes name = 1;</code>
+     * <code>bytes name = 1;</code>
      */
     private void clearName() {
       
@@ -4775,6 +4925,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByName parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByName parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByName parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4865,13 +5028,13 @@ public final class InterfaceBase {
 
 
       /**
-       * <code>optional bytes name = 1;</code>
+       * <code>bytes name = 1;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
       }
       /**
-       * <code>optional bytes name = 1;</code>
+       * <code>bytes name = 1;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -4879,7 +5042,7 @@ public final class InterfaceBase {
         return this;
       }
       /**
-       * <code>optional bytes name = 1;</code>
+       * <code>bytes name = 1;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -4889,6 +5052,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_QueryInfoByName)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4950,6 +5114,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4990,12 +5155,12 @@ public final class InterfaceBase {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 id1 = 1;</code>
+     * <code>fixed32 id1 = 1;</code>
      */
     int getId1();
 
     /**
-     * <code>optional fixed32 id2 = 2;</code>
+     * <code>fixed32 id2 = 2;</code>
      */
     int getId2();
   }
@@ -5019,20 +5184,20 @@ public final class InterfaceBase {
     public static final int ID1_FIELD_NUMBER = 1;
     private int id1_;
     /**
-     * <code>optional fixed32 id1 = 1;</code>
+     * <code>fixed32 id1 = 1;</code>
      */
     public int getId1() {
       return id1_;
     }
     /**
-     * <code>optional fixed32 id1 = 1;</code>
+     * <code>fixed32 id1 = 1;</code>
      */
     private void setId1(int value) {
       
       id1_ = value;
     }
     /**
-     * <code>optional fixed32 id1 = 1;</code>
+     * <code>fixed32 id1 = 1;</code>
      */
     private void clearId1() {
       
@@ -5042,20 +5207,20 @@ public final class InterfaceBase {
     public static final int ID2_FIELD_NUMBER = 2;
     private int id2_;
     /**
-     * <code>optional fixed32 id2 = 2;</code>
+     * <code>fixed32 id2 = 2;</code>
      */
     public int getId2() {
       return id2_;
     }
     /**
-     * <code>optional fixed32 id2 = 2;</code>
+     * <code>fixed32 id2 = 2;</code>
      */
     private void setId2(int value) {
       
       id2_ = value;
     }
     /**
-     * <code>optional fixed32 id2 = 2;</code>
+     * <code>fixed32 id2 = 2;</code>
      */
     private void clearId2() {
       
@@ -5089,6 +5254,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByDoubleID parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByDoubleID parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_QueryInfoByDoubleID parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5179,13 +5357,13 @@ public final class InterfaceBase {
 
 
       /**
-       * <code>optional fixed32 id1 = 1;</code>
+       * <code>fixed32 id1 = 1;</code>
        */
       public int getId1() {
         return instance.getId1();
       }
       /**
-       * <code>optional fixed32 id1 = 1;</code>
+       * <code>fixed32 id1 = 1;</code>
        */
       public Builder setId1(int value) {
         copyOnWrite();
@@ -5193,7 +5371,7 @@ public final class InterfaceBase {
         return this;
       }
       /**
-       * <code>optional fixed32 id1 = 1;</code>
+       * <code>fixed32 id1 = 1;</code>
        */
       public Builder clearId1() {
         copyOnWrite();
@@ -5202,13 +5380,13 @@ public final class InterfaceBase {
       }
 
       /**
-       * <code>optional fixed32 id2 = 2;</code>
+       * <code>fixed32 id2 = 2;</code>
        */
       public int getId2() {
         return instance.getId2();
       }
       /**
-       * <code>optional fixed32 id2 = 2;</code>
+       * <code>fixed32 id2 = 2;</code>
        */
       public Builder setId2(int value) {
         copyOnWrite();
@@ -5216,7 +5394,7 @@ public final class InterfaceBase {
         return this;
       }
       /**
-       * <code>optional fixed32 id2 = 2;</code>
+       * <code>fixed32 id2 = 2;</code>
        */
       public Builder clearId2() {
         copyOnWrite();
@@ -5226,6 +5404,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_QueryInfoByDoubleID)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5294,6 +5473,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5334,12 +5514,12 @@ public final class InterfaceBase {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 id1 = 1;</code>
+     * <code>fixed32 id1 = 1;</code>
      */
     int getId1();
 
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
   }
@@ -5364,20 +5544,20 @@ public final class InterfaceBase {
     public static final int ID1_FIELD_NUMBER = 1;
     private int id1_;
     /**
-     * <code>optional fixed32 id1 = 1;</code>
+     * <code>fixed32 id1 = 1;</code>
      */
     public int getId1() {
       return id1_;
     }
     /**
-     * <code>optional fixed32 id1 = 1;</code>
+     * <code>fixed32 id1 = 1;</code>
      */
     private void setId1(int value) {
       
       id1_ = value;
     }
     /**
-     * <code>optional fixed32 id1 = 1;</code>
+     * <code>fixed32 id1 = 1;</code>
      */
     private void clearId1() {
       
@@ -5387,13 +5567,13 @@ public final class InterfaceBase {
     public static final int NAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString name_;
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5403,7 +5583,7 @@ public final class InterfaceBase {
       name_ = value;
     }
     /**
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -5437,6 +5617,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_DoubleQueryInfoByName parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_DoubleQueryInfoByName parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_DoubleQueryInfoByName parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5527,13 +5720,13 @@ public final class InterfaceBase {
 
 
       /**
-       * <code>optional fixed32 id1 = 1;</code>
+       * <code>fixed32 id1 = 1;</code>
        */
       public int getId1() {
         return instance.getId1();
       }
       /**
-       * <code>optional fixed32 id1 = 1;</code>
+       * <code>fixed32 id1 = 1;</code>
        */
       public Builder setId1(int value) {
         copyOnWrite();
@@ -5541,7 +5734,7 @@ public final class InterfaceBase {
         return this;
       }
       /**
-       * <code>optional fixed32 id1 = 1;</code>
+       * <code>fixed32 id1 = 1;</code>
        */
       public Builder clearId1() {
         copyOnWrite();
@@ -5550,13 +5743,13 @@ public final class InterfaceBase {
       }
 
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -5564,7 +5757,7 @@ public final class InterfaceBase {
         return this;
       }
       /**
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -5574,6 +5767,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_DoubleQueryInfoByName)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5642,6 +5836,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5686,7 +5881,7 @@ public final class InterfaceBase {
      *本次通知是因为opermethod方法触发的
      * </pre>
      *
-     * <code>optional fixed32 opermethod = 1;</code>
+     * <code>fixed32 opermethod = 1;</code>
      */
     int getOpermethod();
 
@@ -5695,7 +5890,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定ID的操作,为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     int getId();
   }
@@ -5722,7 +5917,7 @@ public final class InterfaceBase {
      *本次通知是因为opermethod方法触发的
      * </pre>
      *
-     * <code>optional fixed32 opermethod = 1;</code>
+     * <code>fixed32 opermethod = 1;</code>
      */
     public int getOpermethod() {
       return opermethod_;
@@ -5732,7 +5927,7 @@ public final class InterfaceBase {
      *本次通知是因为opermethod方法触发的
      * </pre>
      *
-     * <code>optional fixed32 opermethod = 1;</code>
+     * <code>fixed32 opermethod = 1;</code>
      */
     private void setOpermethod(int value) {
       
@@ -5743,7 +5938,7 @@ public final class InterfaceBase {
      *本次通知是因为opermethod方法触发的
      * </pre>
      *
-     * <code>optional fixed32 opermethod = 1;</code>
+     * <code>fixed32 opermethod = 1;</code>
      */
     private void clearOpermethod() {
       
@@ -5757,7 +5952,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定ID的操作,为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     public int getId() {
       return id_;
@@ -5767,7 +5962,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定ID的操作,为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     private void setId(int value) {
       
@@ -5778,7 +5973,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定ID的操作,为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     private void clearId() {
       
@@ -5812,6 +6007,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetNotifyMsg parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetNotifyMsg parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetNotifyMsg parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5905,7 +6113,7 @@ public final class InterfaceBase {
        *本次通知是因为opermethod方法触发的
        * </pre>
        *
-       * <code>optional fixed32 opermethod = 1;</code>
+       * <code>fixed32 opermethod = 1;</code>
        */
       public int getOpermethod() {
         return instance.getOpermethod();
@@ -5915,7 +6123,7 @@ public final class InterfaceBase {
        *本次通知是因为opermethod方法触发的
        * </pre>
        *
-       * <code>optional fixed32 opermethod = 1;</code>
+       * <code>fixed32 opermethod = 1;</code>
        */
       public Builder setOpermethod(int value) {
         copyOnWrite();
@@ -5927,7 +6135,7 @@ public final class InterfaceBase {
        *本次通知是因为opermethod方法触发的
        * </pre>
        *
-       * <code>optional fixed32 opermethod = 1;</code>
+       * <code>fixed32 opermethod = 1;</code>
        */
       public Builder clearOpermethod() {
         copyOnWrite();
@@ -5940,7 +6148,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定ID的操作,为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public int getId() {
         return instance.getId();
@@ -5950,7 +6158,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定ID的操作,为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -5962,7 +6170,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定ID的操作,为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -5972,6 +6180,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_MeetNotifyMsg)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6040,6 +6249,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6084,7 +6294,7 @@ public final class InterfaceBase {
      *本次通知是因为opermethod方法触发的
      * </pre>
      *
-     * <code>optional fixed32 opermethod = 1;</code>
+     * <code>fixed32 opermethod = 1;</code>
      */
     int getOpermethod();
 
@@ -6093,7 +6303,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定ID的操作,为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     int getId();
 
@@ -6102,7 +6312,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定人员ID的操作,为0表示分组内的指定项 
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     int getSubid();
   }
@@ -6129,7 +6339,7 @@ public final class InterfaceBase {
      *本次通知是因为opermethod方法触发的
      * </pre>
      *
-     * <code>optional fixed32 opermethod = 1;</code>
+     * <code>fixed32 opermethod = 1;</code>
      */
     public int getOpermethod() {
       return opermethod_;
@@ -6139,7 +6349,7 @@ public final class InterfaceBase {
      *本次通知是因为opermethod方法触发的
      * </pre>
      *
-     * <code>optional fixed32 opermethod = 1;</code>
+     * <code>fixed32 opermethod = 1;</code>
      */
     private void setOpermethod(int value) {
       
@@ -6150,7 +6360,7 @@ public final class InterfaceBase {
      *本次通知是因为opermethod方法触发的
      * </pre>
      *
-     * <code>optional fixed32 opermethod = 1;</code>
+     * <code>fixed32 opermethod = 1;</code>
      */
     private void clearOpermethod() {
       
@@ -6164,7 +6374,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定ID的操作,为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     public int getId() {
       return id_;
@@ -6174,7 +6384,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定ID的操作,为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     private void setId(int value) {
       
@@ -6185,7 +6395,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定ID的操作,为0表示全部
      * </pre>
      *
-     * <code>optional fixed32 id = 2;</code>
+     * <code>fixed32 id = 2;</code>
      */
     private void clearId() {
       
@@ -6199,7 +6409,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定人员ID的操作,为0表示分组内的指定项 
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     public int getSubid() {
       return subid_;
@@ -6209,7 +6419,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定人员ID的操作,为0表示分组内的指定项 
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     private void setSubid(int value) {
       
@@ -6220,7 +6430,7 @@ public final class InterfaceBase {
      *如果指定了ID刚表示是对特定人员ID的操作,为0表示分组内的指定项 
      * </pre>
      *
-     * <code>optional fixed32 subid = 3;</code>
+     * <code>fixed32 subid = 3;</code>
      */
     private void clearSubid() {
       
@@ -6261,6 +6471,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetNotifyMsgForDouble parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetNotifyMsgForDouble parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_MeetNotifyMsgForDouble parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6354,7 +6577,7 @@ public final class InterfaceBase {
        *本次通知是因为opermethod方法触发的
        * </pre>
        *
-       * <code>optional fixed32 opermethod = 1;</code>
+       * <code>fixed32 opermethod = 1;</code>
        */
       public int getOpermethod() {
         return instance.getOpermethod();
@@ -6364,7 +6587,7 @@ public final class InterfaceBase {
        *本次通知是因为opermethod方法触发的
        * </pre>
        *
-       * <code>optional fixed32 opermethod = 1;</code>
+       * <code>fixed32 opermethod = 1;</code>
        */
       public Builder setOpermethod(int value) {
         copyOnWrite();
@@ -6376,7 +6599,7 @@ public final class InterfaceBase {
        *本次通知是因为opermethod方法触发的
        * </pre>
        *
-       * <code>optional fixed32 opermethod = 1;</code>
+       * <code>fixed32 opermethod = 1;</code>
        */
       public Builder clearOpermethod() {
         copyOnWrite();
@@ -6389,7 +6612,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定ID的操作,为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public int getId() {
         return instance.getId();
@@ -6399,7 +6622,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定ID的操作,为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -6411,7 +6634,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定ID的操作,为0表示全部
        * </pre>
        *
-       * <code>optional fixed32 id = 2;</code>
+       * <code>fixed32 id = 2;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -6424,7 +6647,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定人员ID的操作,为0表示分组内的指定项 
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public int getSubid() {
         return instance.getSubid();
@@ -6434,7 +6657,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定人员ID的操作,为0表示分组内的指定项 
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public Builder setSubid(int value) {
         copyOnWrite();
@@ -6446,7 +6669,7 @@ public final class InterfaceBase {
        *如果指定了ID刚表示是对特定人员ID的操作,为0表示分组内的指定项 
        * </pre>
        *
-       * <code>optional fixed32 subid = 3;</code>
+       * <code>fixed32 subid = 3;</code>
        */
       public Builder clearSubid() {
         copyOnWrite();
@@ -6456,6 +6679,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_MeetNotifyMsgForDouble)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6531,6 +6755,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6575,7 +6800,7 @@ public final class InterfaceBase {
      *数据ID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     int getPropertyid();
 
@@ -6584,7 +6809,7 @@ public final class InterfaceBase {
      *传入参数 
      * </pre>
      *
-     * <code>optional fixed32 parameterval = 2;</code>
+     * <code>fixed32 parameterval = 2;</code>
      */
     int getParameterval();
 
@@ -6593,7 +6818,7 @@ public final class InterfaceBase {
      *传入参数 
      * </pre>
      *
-     * <code>optional fixed32 parameterval2 = 3;</code>
+     * <code>fixed32 parameterval2 = 3;</code>
      */
     int getParameterval2();
   }
@@ -6620,7 +6845,7 @@ public final class InterfaceBase {
      *数据ID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     public int getPropertyid() {
       return propertyid_;
@@ -6630,7 +6855,7 @@ public final class InterfaceBase {
      *数据ID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void setPropertyid(int value) {
       
@@ -6641,7 +6866,7 @@ public final class InterfaceBase {
      *数据ID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void clearPropertyid() {
       
@@ -6655,7 +6880,7 @@ public final class InterfaceBase {
      *传入参数 
      * </pre>
      *
-     * <code>optional fixed32 parameterval = 2;</code>
+     * <code>fixed32 parameterval = 2;</code>
      */
     public int getParameterval() {
       return parameterval_;
@@ -6665,7 +6890,7 @@ public final class InterfaceBase {
      *传入参数 
      * </pre>
      *
-     * <code>optional fixed32 parameterval = 2;</code>
+     * <code>fixed32 parameterval = 2;</code>
      */
     private void setParameterval(int value) {
       
@@ -6676,7 +6901,7 @@ public final class InterfaceBase {
      *传入参数 
      * </pre>
      *
-     * <code>optional fixed32 parameterval = 2;</code>
+     * <code>fixed32 parameterval = 2;</code>
      */
     private void clearParameterval() {
       
@@ -6690,7 +6915,7 @@ public final class InterfaceBase {
      *传入参数 
      * </pre>
      *
-     * <code>optional fixed32 parameterval2 = 3;</code>
+     * <code>fixed32 parameterval2 = 3;</code>
      */
     public int getParameterval2() {
       return parameterval2_;
@@ -6700,7 +6925,7 @@ public final class InterfaceBase {
      *传入参数 
      * </pre>
      *
-     * <code>optional fixed32 parameterval2 = 3;</code>
+     * <code>fixed32 parameterval2 = 3;</code>
      */
     private void setParameterval2(int value) {
       
@@ -6711,7 +6936,7 @@ public final class InterfaceBase {
      *传入参数 
      * </pre>
      *
-     * <code>optional fixed32 parameterval2 = 3;</code>
+     * <code>fixed32 parameterval2 = 3;</code>
      */
     private void clearParameterval2() {
       
@@ -6752,6 +6977,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonQueryProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonQueryProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonQueryProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6845,7 +7083,7 @@ public final class InterfaceBase {
        *数据ID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public int getPropertyid() {
         return instance.getPropertyid();
@@ -6855,7 +7093,7 @@ public final class InterfaceBase {
        *数据ID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder setPropertyid(int value) {
         copyOnWrite();
@@ -6867,7 +7105,7 @@ public final class InterfaceBase {
        *数据ID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder clearPropertyid() {
         copyOnWrite();
@@ -6880,7 +7118,7 @@ public final class InterfaceBase {
        *传入参数 
        * </pre>
        *
-       * <code>optional fixed32 parameterval = 2;</code>
+       * <code>fixed32 parameterval = 2;</code>
        */
       public int getParameterval() {
         return instance.getParameterval();
@@ -6890,7 +7128,7 @@ public final class InterfaceBase {
        *传入参数 
        * </pre>
        *
-       * <code>optional fixed32 parameterval = 2;</code>
+       * <code>fixed32 parameterval = 2;</code>
        */
       public Builder setParameterval(int value) {
         copyOnWrite();
@@ -6902,7 +7140,7 @@ public final class InterfaceBase {
        *传入参数 
        * </pre>
        *
-       * <code>optional fixed32 parameterval = 2;</code>
+       * <code>fixed32 parameterval = 2;</code>
        */
       public Builder clearParameterval() {
         copyOnWrite();
@@ -6915,7 +7153,7 @@ public final class InterfaceBase {
        *传入参数 
        * </pre>
        *
-       * <code>optional fixed32 parameterval2 = 3;</code>
+       * <code>fixed32 parameterval2 = 3;</code>
        */
       public int getParameterval2() {
         return instance.getParameterval2();
@@ -6925,7 +7163,7 @@ public final class InterfaceBase {
        *传入参数 
        * </pre>
        *
-       * <code>optional fixed32 parameterval2 = 3;</code>
+       * <code>fixed32 parameterval2 = 3;</code>
        */
       public Builder setParameterval2(int value) {
         copyOnWrite();
@@ -6937,7 +7175,7 @@ public final class InterfaceBase {
        *传入参数 
        * </pre>
        *
-       * <code>optional fixed32 parameterval2 = 3;</code>
+       * <code>fixed32 parameterval2 = 3;</code>
        */
       public Builder clearParameterval2() {
         copyOnWrite();
@@ -6947,6 +7185,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_CommonQueryProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7022,6 +7261,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7066,7 +7306,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     int getPropertyval();
   }
@@ -7094,7 +7334,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     public int getPropertyval() {
       return propertyval_;
@@ -7104,7 +7344,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     private void setPropertyval(int value) {
       
@@ -7115,7 +7355,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 1;</code>
+     * <code>fixed32 propertyval = 1;</code>
      */
     private void clearPropertyval() {
       
@@ -7142,6 +7382,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonInt32uProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonInt32uProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonInt32uProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7236,7 +7489,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public int getPropertyval() {
         return instance.getPropertyval();
@@ -7246,7 +7499,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public Builder setPropertyval(int value) {
         copyOnWrite();
@@ -7258,7 +7511,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 1;</code>
+       * <code>fixed32 propertyval = 1;</code>
        */
       public Builder clearPropertyval() {
         copyOnWrite();
@@ -7268,6 +7521,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_CommonInt32uProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7329,6 +7583,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7373,7 +7628,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional fixed64 propertyval = 1;</code>
+     * <code>fixed64 propertyval = 1;</code>
      */
     long getPropertyval();
   }
@@ -7401,7 +7656,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional fixed64 propertyval = 1;</code>
+     * <code>fixed64 propertyval = 1;</code>
      */
     public long getPropertyval() {
       return propertyval_;
@@ -7411,7 +7666,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional fixed64 propertyval = 1;</code>
+     * <code>fixed64 propertyval = 1;</code>
      */
     private void setPropertyval(long value) {
       
@@ -7422,7 +7677,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional fixed64 propertyval = 1;</code>
+     * <code>fixed64 propertyval = 1;</code>
      */
     private void clearPropertyval() {
       
@@ -7449,6 +7704,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonInt64uProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonInt64uProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonInt64uProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7543,7 +7811,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional fixed64 propertyval = 1;</code>
+       * <code>fixed64 propertyval = 1;</code>
        */
       public long getPropertyval() {
         return instance.getPropertyval();
@@ -7553,7 +7821,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional fixed64 propertyval = 1;</code>
+       * <code>fixed64 propertyval = 1;</code>
        */
       public Builder setPropertyval(long value) {
         copyOnWrite();
@@ -7565,7 +7833,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional fixed64 propertyval = 1;</code>
+       * <code>fixed64 propertyval = 1;</code>
        */
       public Builder clearPropertyval() {
         copyOnWrite();
@@ -7575,6 +7843,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_CommonInt64uProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7636,6 +7905,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7680,7 +7950,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional bytes propertyval = 1;</code>
+     * <code>bytes propertyval = 1;</code>
      */
     com.google.protobuf.ByteString getPropertyval();
   }
@@ -7709,7 +7979,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional bytes propertyval = 1;</code>
+     * <code>bytes propertyval = 1;</code>
      */
     public com.google.protobuf.ByteString getPropertyval() {
       return propertyval_;
@@ -7719,7 +7989,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional bytes propertyval = 1;</code>
+     * <code>bytes propertyval = 1;</code>
      */
     private void setPropertyval(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7733,7 +8003,7 @@ public final class InterfaceBase {
      *数据值
      * </pre>
      *
-     * <code>optional bytes propertyval = 1;</code>
+     * <code>bytes propertyval = 1;</code>
      */
     private void clearPropertyval() {
       
@@ -7760,6 +8030,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonTextProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonTextProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_CommonTextProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7854,7 +8137,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional bytes propertyval = 1;</code>
+       * <code>bytes propertyval = 1;</code>
        */
       public com.google.protobuf.ByteString getPropertyval() {
         return instance.getPropertyval();
@@ -7864,7 +8147,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional bytes propertyval = 1;</code>
+       * <code>bytes propertyval = 1;</code>
        */
       public Builder setPropertyval(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -7876,7 +8159,7 @@ public final class InterfaceBase {
        *数据值
        * </pre>
        *
-       * <code>optional bytes propertyval = 1;</code>
+       * <code>bytes propertyval = 1;</code>
        */
       public Builder clearPropertyval() {
         copyOnWrite();
@@ -7886,6 +8169,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_CommonTextProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7947,6 +8231,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -7991,25 +8276,25 @@ public final class InterfaceBase {
      *修改删除操作标识ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     int getId();
 
     /**
      * <pre>
-     *网址别名
+     *网址别名 删除操作不需要指定该项
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
 
     /**
      * <pre>
-     *网址
+     *网址 删除操作不需要指定该项
      * </pre>
      *
-     * <code>optional bytes addr = 3;</code>
+     * <code>bytes addr = 3;</code>
      */
     com.google.protobuf.ByteString getAddr();
   }
@@ -8036,7 +8321,7 @@ public final class InterfaceBase {
      *修改删除操作标识ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     public int getId() {
       return id_;
@@ -8046,7 +8331,7 @@ public final class InterfaceBase {
      *修改删除操作标识ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void setId(int value) {
       
@@ -8057,7 +8342,7 @@ public final class InterfaceBase {
      *修改删除操作标识ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void clearId() {
       
@@ -8068,20 +8353,20 @@ public final class InterfaceBase {
     private com.google.protobuf.ByteString name_;
     /**
      * <pre>
-     *网址别名
+     *网址别名 删除操作不需要指定该项
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
     }
     /**
      * <pre>
-     *网址别名
+     *网址别名 删除操作不需要指定该项
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -8092,10 +8377,10 @@ public final class InterfaceBase {
     }
     /**
      * <pre>
-     *网址别名
+     *网址别名 删除操作不需要指定该项
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -8106,20 +8391,20 @@ public final class InterfaceBase {
     private com.google.protobuf.ByteString addr_;
     /**
      * <pre>
-     *网址
+     *网址 删除操作不需要指定该项
      * </pre>
      *
-     * <code>optional bytes addr = 3;</code>
+     * <code>bytes addr = 3;</code>
      */
     public com.google.protobuf.ByteString getAddr() {
       return addr_;
     }
     /**
      * <pre>
-     *网址
+     *网址 删除操作不需要指定该项
      * </pre>
      *
-     * <code>optional bytes addr = 3;</code>
+     * <code>bytes addr = 3;</code>
      */
     private void setAddr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -8130,10 +8415,10 @@ public final class InterfaceBase {
     }
     /**
      * <pre>
-     *网址
+     *网址 删除操作不需要指定该项
      * </pre>
      *
-     * <code>optional bytes addr = 3;</code>
+     * <code>bytes addr = 3;</code>
      */
     private void clearAddr() {
       
@@ -8174,6 +8459,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Item_UrlDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Item_UrlDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Item_UrlDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8265,7 +8563,7 @@ public final class InterfaceBase {
        *修改删除操作标识ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public int getId() {
         return instance.getId();
@@ -8275,7 +8573,7 @@ public final class InterfaceBase {
        *修改删除操作标识ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -8287,7 +8585,7 @@ public final class InterfaceBase {
        *修改删除操作标识ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -8297,20 +8595,20 @@ public final class InterfaceBase {
 
       /**
        * <pre>
-       *网址别名
+       *网址别名 删除操作不需要指定该项
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
       }
       /**
        * <pre>
-       *网址别名
+       *网址别名 删除操作不需要指定该项
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -8319,10 +8617,10 @@ public final class InterfaceBase {
       }
       /**
        * <pre>
-       *网址别名
+       *网址别名 删除操作不需要指定该项
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -8332,20 +8630,20 @@ public final class InterfaceBase {
 
       /**
        * <pre>
-       *网址
+       *网址 删除操作不需要指定该项
        * </pre>
        *
-       * <code>optional bytes addr = 3;</code>
+       * <code>bytes addr = 3;</code>
        */
       public com.google.protobuf.ByteString getAddr() {
         return instance.getAddr();
       }
       /**
        * <pre>
-       *网址
+       *网址 删除操作不需要指定该项
        * </pre>
        *
-       * <code>optional bytes addr = 3;</code>
+       * <code>bytes addr = 3;</code>
        */
       public Builder setAddr(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -8354,10 +8652,10 @@ public final class InterfaceBase {
       }
       /**
        * <pre>
-       *网址
+       *网址 删除操作不需要指定该项
        * </pre>
        *
-       * <code>optional bytes addr = 3;</code>
+       * <code>bytes addr = 3;</code>
        */
       public Builder clearAddr() {
         copyOnWrite();
@@ -8367,6 +8665,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_UrlDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -8442,6 +8741,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -8486,7 +8786,7 @@ public final class InterfaceBase {
      *1表示修改系统全局的 0表示修改当前会议的
      * </pre>
      *
-     * <code>optional fixed32 isetdefault = 1;</code>
+     * <code>fixed32 isetdefault = 1;</code>
      */
     int getIsetdefault();
 
@@ -8519,7 +8819,7 @@ public final class InterfaceBase {
   /**
    * <pre>
    *type: Pb_TYPE_MEET_INTERFACE_DEFAULTURL
-   *method: modify,query
+   *method: add,modify,query,delete
    * </pre>
    *
    * Protobuf type {@code pbui_meetUrl}
@@ -8540,7 +8840,7 @@ public final class InterfaceBase {
      *1表示修改系统全局的 0表示修改当前会议的
      * </pre>
      *
-     * <code>optional fixed32 isetdefault = 1;</code>
+     * <code>fixed32 isetdefault = 1;</code>
      */
     public int getIsetdefault() {
       return isetdefault_;
@@ -8550,7 +8850,7 @@ public final class InterfaceBase {
      *1表示修改系统全局的 0表示修改当前会议的
      * </pre>
      *
-     * <code>optional fixed32 isetdefault = 1;</code>
+     * <code>fixed32 isetdefault = 1;</code>
      */
     private void setIsetdefault(int value) {
       
@@ -8561,7 +8861,7 @@ public final class InterfaceBase {
      *1表示修改系统全局的 0表示修改当前会议的
      * </pre>
      *
-     * <code>optional fixed32 isetdefault = 1;</code>
+     * <code>fixed32 isetdefault = 1;</code>
      */
     private void clearIsetdefault() {
       
@@ -8772,6 +9072,19 @@ public final class InterfaceBase {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_meetUrl parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_meetUrl parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_meetUrl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -8842,7 +9155,7 @@ public final class InterfaceBase {
     /**
      * <pre>
      *type: Pb_TYPE_MEET_INTERFACE_DEFAULTURL
-     *method: modify,query
+     *method: add,modify,query,delete
      * </pre>
      *
      * Protobuf type {@code pbui_meetUrl}
@@ -8863,7 +9176,7 @@ public final class InterfaceBase {
        *1表示修改系统全局的 0表示修改当前会议的
        * </pre>
        *
-       * <code>optional fixed32 isetdefault = 1;</code>
+       * <code>fixed32 isetdefault = 1;</code>
        */
       public int getIsetdefault() {
         return instance.getIsetdefault();
@@ -8873,7 +9186,7 @@ public final class InterfaceBase {
        *1表示修改系统全局的 0表示修改当前会议的
        * </pre>
        *
-       * <code>optional fixed32 isetdefault = 1;</code>
+       * <code>fixed32 isetdefault = 1;</code>
        */
       public Builder setIsetdefault(int value) {
         copyOnWrite();
@@ -8885,7 +9198,7 @@ public final class InterfaceBase {
        *1表示修改系统全局的 0表示修改当前会议的
        * </pre>
        *
-       * <code>optional fixed32 isetdefault = 1;</code>
+       * <code>fixed32 isetdefault = 1;</code>
        */
       public Builder clearIsetdefault() {
         copyOnWrite();
@@ -9040,6 +9353,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_meetUrl)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -9113,6 +9427,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -9157,7 +9472,7 @@ public final class InterfaceBase {
      *参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     int getType();
 
@@ -9166,7 +9481,7 @@ public final class InterfaceBase {
      *参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     int getMethod();
 
@@ -9175,7 +9490,7 @@ public final class InterfaceBase {
      *参见 Pb_DB_StatusCode
      * </pre>
      *
-     * <code>optional fixed32 status = 3;</code>
+     * <code>fixed32 status = 3;</code>
      */
     int getStatus();
   }
@@ -9203,7 +9518,7 @@ public final class InterfaceBase {
      *参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     public int getType() {
       return type_;
@@ -9213,7 +9528,7 @@ public final class InterfaceBase {
      *参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     private void setType(int value) {
       
@@ -9224,7 +9539,7 @@ public final class InterfaceBase {
      *参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     private void clearType() {
       
@@ -9238,7 +9553,7 @@ public final class InterfaceBase {
      *参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     public int getMethod() {
       return method_;
@@ -9248,7 +9563,7 @@ public final class InterfaceBase {
      *参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     private void setMethod(int value) {
       
@@ -9259,7 +9574,7 @@ public final class InterfaceBase {
      *参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     private void clearMethod() {
       
@@ -9273,7 +9588,7 @@ public final class InterfaceBase {
      *参见 Pb_DB_StatusCode
      * </pre>
      *
-     * <code>optional fixed32 status = 3;</code>
+     * <code>fixed32 status = 3;</code>
      */
     public int getStatus() {
       return status_;
@@ -9283,7 +9598,7 @@ public final class InterfaceBase {
      *参见 Pb_DB_StatusCode
      * </pre>
      *
-     * <code>optional fixed32 status = 3;</code>
+     * <code>fixed32 status = 3;</code>
      */
     private void setStatus(int value) {
       
@@ -9294,7 +9609,7 @@ public final class InterfaceBase {
      *参见 Pb_DB_StatusCode
      * </pre>
      *
-     * <code>optional fixed32 status = 3;</code>
+     * <code>fixed32 status = 3;</code>
      */
     private void clearStatus() {
       
@@ -9335,6 +9650,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_MeetDBServerOperError parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_MeetDBServerOperError parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_MeetDBServerOperError parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9429,7 +9757,7 @@ public final class InterfaceBase {
        *参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public int getType() {
         return instance.getType();
@@ -9439,7 +9767,7 @@ public final class InterfaceBase {
        *参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public Builder setType(int value) {
         copyOnWrite();
@@ -9451,7 +9779,7 @@ public final class InterfaceBase {
        *参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public Builder clearType() {
         copyOnWrite();
@@ -9464,7 +9792,7 @@ public final class InterfaceBase {
        *参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public int getMethod() {
         return instance.getMethod();
@@ -9474,7 +9802,7 @@ public final class InterfaceBase {
        *参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public Builder setMethod(int value) {
         copyOnWrite();
@@ -9486,7 +9814,7 @@ public final class InterfaceBase {
        *参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public Builder clearMethod() {
         copyOnWrite();
@@ -9499,7 +9827,7 @@ public final class InterfaceBase {
        *参见 Pb_DB_StatusCode
        * </pre>
        *
-       * <code>optional fixed32 status = 3;</code>
+       * <code>fixed32 status = 3;</code>
        */
       public int getStatus() {
         return instance.getStatus();
@@ -9509,7 +9837,7 @@ public final class InterfaceBase {
        *参见 Pb_DB_StatusCode
        * </pre>
        *
-       * <code>optional fixed32 status = 3;</code>
+       * <code>fixed32 status = 3;</code>
        */
       public Builder setStatus(int value) {
         copyOnWrite();
@@ -9521,7 +9849,7 @@ public final class InterfaceBase {
        *参见 Pb_DB_StatusCode
        * </pre>
        *
-       * <code>optional fixed32 status = 3;</code>
+       * <code>fixed32 status = 3;</code>
        */
       public Builder clearStatus() {
         copyOnWrite();
@@ -9531,6 +9859,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetDBServerOperError)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -9606,6 +9935,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -9650,7 +9980,7 @@ public final class InterfaceBase {
      *当前client.ini记录的版本
      * </pre>
      *
-     * <code>optional fixed32 localhardver = 1;</code>
+     * <code>fixed32 localhardver = 1;</code>
      */
     int getLocalhardver();
 
@@ -9659,7 +9989,7 @@ public final class InterfaceBase {
      *当前client.ini记录的版本
      * </pre>
      *
-     * <code>optional fixed32 localsoftver = 2;</code>
+     * <code>fixed32 localsoftver = 2;</code>
      */
     int getLocalsoftver();
 
@@ -9668,7 +9998,7 @@ public final class InterfaceBase {
      *升级包的硬件版本
      * </pre>
      *
-     * <code>optional fixed32 newhardver = 3;</code>
+     * <code>fixed32 newhardver = 3;</code>
      */
     int getNewhardver();
 
@@ -9677,7 +10007,7 @@ public final class InterfaceBase {
      *升级包的软件版本
      * </pre>
      *
-     * <code>optional fixed32 newsoftver = 4;</code>
+     * <code>fixed32 newsoftver = 4;</code>
      */
     int getNewsoftver();
 
@@ -9686,7 +10016,7 @@ public final class InterfaceBase {
      *升级包的最低硬件版本
      * </pre>
      *
-     * <code>optional fixed32 newminhardver = 5;</code>
+     * <code>fixed32 newminhardver = 5;</code>
      */
     int getNewminhardver();
 
@@ -9695,7 +10025,7 @@ public final class InterfaceBase {
      *升级包的最低软件版本
      * </pre>
      *
-     * <code>optional fixed32 newminsoftver = 6;</code>
+     * <code>fixed32 newminsoftver = 6;</code>
      */
     int getNewminsoftver();
 
@@ -9704,7 +10034,7 @@ public final class InterfaceBase {
      *&#47;/升级包的设备类型 eg:0x1100000
      * </pre>
      *
-     * <code>optional fixed32 deviceidtype = 7;</code>
+     * <code>fixed32 deviceidtype = 7;</code>
      */
     int getDeviceidtype();
 
@@ -9713,7 +10043,7 @@ public final class InterfaceBase {
      *升级包的设备屏蔽码  eg:14
      * </pre>
      *
-     * <code>optional fixed32 devicemask = 8;</code>
+     * <code>fixed32 devicemask = 8;</code>
      */
     int getDevicemask();
 
@@ -9722,7 +10052,7 @@ public final class InterfaceBase {
      *升级包解压后的目录  注：程序需要有创建目录的权限
      * </pre>
      *
-     * <code>optional bytes updatepath = 9;</code>
+     * <code>bytes updatepath = 9;</code>
      */
     com.google.protobuf.ByteString getUpdatepath();
   }
@@ -9751,7 +10081,7 @@ public final class InterfaceBase {
      *当前client.ini记录的版本
      * </pre>
      *
-     * <code>optional fixed32 localhardver = 1;</code>
+     * <code>fixed32 localhardver = 1;</code>
      */
     public int getLocalhardver() {
       return localhardver_;
@@ -9761,7 +10091,7 @@ public final class InterfaceBase {
      *当前client.ini记录的版本
      * </pre>
      *
-     * <code>optional fixed32 localhardver = 1;</code>
+     * <code>fixed32 localhardver = 1;</code>
      */
     private void setLocalhardver(int value) {
       
@@ -9772,7 +10102,7 @@ public final class InterfaceBase {
      *当前client.ini记录的版本
      * </pre>
      *
-     * <code>optional fixed32 localhardver = 1;</code>
+     * <code>fixed32 localhardver = 1;</code>
      */
     private void clearLocalhardver() {
       
@@ -9786,7 +10116,7 @@ public final class InterfaceBase {
      *当前client.ini记录的版本
      * </pre>
      *
-     * <code>optional fixed32 localsoftver = 2;</code>
+     * <code>fixed32 localsoftver = 2;</code>
      */
     public int getLocalsoftver() {
       return localsoftver_;
@@ -9796,7 +10126,7 @@ public final class InterfaceBase {
      *当前client.ini记录的版本
      * </pre>
      *
-     * <code>optional fixed32 localsoftver = 2;</code>
+     * <code>fixed32 localsoftver = 2;</code>
      */
     private void setLocalsoftver(int value) {
       
@@ -9807,7 +10137,7 @@ public final class InterfaceBase {
      *当前client.ini记录的版本
      * </pre>
      *
-     * <code>optional fixed32 localsoftver = 2;</code>
+     * <code>fixed32 localsoftver = 2;</code>
      */
     private void clearLocalsoftver() {
       
@@ -9821,7 +10151,7 @@ public final class InterfaceBase {
      *升级包的硬件版本
      * </pre>
      *
-     * <code>optional fixed32 newhardver = 3;</code>
+     * <code>fixed32 newhardver = 3;</code>
      */
     public int getNewhardver() {
       return newhardver_;
@@ -9831,7 +10161,7 @@ public final class InterfaceBase {
      *升级包的硬件版本
      * </pre>
      *
-     * <code>optional fixed32 newhardver = 3;</code>
+     * <code>fixed32 newhardver = 3;</code>
      */
     private void setNewhardver(int value) {
       
@@ -9842,7 +10172,7 @@ public final class InterfaceBase {
      *升级包的硬件版本
      * </pre>
      *
-     * <code>optional fixed32 newhardver = 3;</code>
+     * <code>fixed32 newhardver = 3;</code>
      */
     private void clearNewhardver() {
       
@@ -9856,7 +10186,7 @@ public final class InterfaceBase {
      *升级包的软件版本
      * </pre>
      *
-     * <code>optional fixed32 newsoftver = 4;</code>
+     * <code>fixed32 newsoftver = 4;</code>
      */
     public int getNewsoftver() {
       return newsoftver_;
@@ -9866,7 +10196,7 @@ public final class InterfaceBase {
      *升级包的软件版本
      * </pre>
      *
-     * <code>optional fixed32 newsoftver = 4;</code>
+     * <code>fixed32 newsoftver = 4;</code>
      */
     private void setNewsoftver(int value) {
       
@@ -9877,7 +10207,7 @@ public final class InterfaceBase {
      *升级包的软件版本
      * </pre>
      *
-     * <code>optional fixed32 newsoftver = 4;</code>
+     * <code>fixed32 newsoftver = 4;</code>
      */
     private void clearNewsoftver() {
       
@@ -9891,7 +10221,7 @@ public final class InterfaceBase {
      *升级包的最低硬件版本
      * </pre>
      *
-     * <code>optional fixed32 newminhardver = 5;</code>
+     * <code>fixed32 newminhardver = 5;</code>
      */
     public int getNewminhardver() {
       return newminhardver_;
@@ -9901,7 +10231,7 @@ public final class InterfaceBase {
      *升级包的最低硬件版本
      * </pre>
      *
-     * <code>optional fixed32 newminhardver = 5;</code>
+     * <code>fixed32 newminhardver = 5;</code>
      */
     private void setNewminhardver(int value) {
       
@@ -9912,7 +10242,7 @@ public final class InterfaceBase {
      *升级包的最低硬件版本
      * </pre>
      *
-     * <code>optional fixed32 newminhardver = 5;</code>
+     * <code>fixed32 newminhardver = 5;</code>
      */
     private void clearNewminhardver() {
       
@@ -9926,7 +10256,7 @@ public final class InterfaceBase {
      *升级包的最低软件版本
      * </pre>
      *
-     * <code>optional fixed32 newminsoftver = 6;</code>
+     * <code>fixed32 newminsoftver = 6;</code>
      */
     public int getNewminsoftver() {
       return newminsoftver_;
@@ -9936,7 +10266,7 @@ public final class InterfaceBase {
      *升级包的最低软件版本
      * </pre>
      *
-     * <code>optional fixed32 newminsoftver = 6;</code>
+     * <code>fixed32 newminsoftver = 6;</code>
      */
     private void setNewminsoftver(int value) {
       
@@ -9947,7 +10277,7 @@ public final class InterfaceBase {
      *升级包的最低软件版本
      * </pre>
      *
-     * <code>optional fixed32 newminsoftver = 6;</code>
+     * <code>fixed32 newminsoftver = 6;</code>
      */
     private void clearNewminsoftver() {
       
@@ -9961,7 +10291,7 @@ public final class InterfaceBase {
      *&#47;/升级包的设备类型 eg:0x1100000
      * </pre>
      *
-     * <code>optional fixed32 deviceidtype = 7;</code>
+     * <code>fixed32 deviceidtype = 7;</code>
      */
     public int getDeviceidtype() {
       return deviceidtype_;
@@ -9971,7 +10301,7 @@ public final class InterfaceBase {
      *&#47;/升级包的设备类型 eg:0x1100000
      * </pre>
      *
-     * <code>optional fixed32 deviceidtype = 7;</code>
+     * <code>fixed32 deviceidtype = 7;</code>
      */
     private void setDeviceidtype(int value) {
       
@@ -9982,7 +10312,7 @@ public final class InterfaceBase {
      *&#47;/升级包的设备类型 eg:0x1100000
      * </pre>
      *
-     * <code>optional fixed32 deviceidtype = 7;</code>
+     * <code>fixed32 deviceidtype = 7;</code>
      */
     private void clearDeviceidtype() {
       
@@ -9996,7 +10326,7 @@ public final class InterfaceBase {
      *升级包的设备屏蔽码  eg:14
      * </pre>
      *
-     * <code>optional fixed32 devicemask = 8;</code>
+     * <code>fixed32 devicemask = 8;</code>
      */
     public int getDevicemask() {
       return devicemask_;
@@ -10006,7 +10336,7 @@ public final class InterfaceBase {
      *升级包的设备屏蔽码  eg:14
      * </pre>
      *
-     * <code>optional fixed32 devicemask = 8;</code>
+     * <code>fixed32 devicemask = 8;</code>
      */
     private void setDevicemask(int value) {
       
@@ -10017,7 +10347,7 @@ public final class InterfaceBase {
      *升级包的设备屏蔽码  eg:14
      * </pre>
      *
-     * <code>optional fixed32 devicemask = 8;</code>
+     * <code>fixed32 devicemask = 8;</code>
      */
     private void clearDevicemask() {
       
@@ -10031,7 +10361,7 @@ public final class InterfaceBase {
      *升级包解压后的目录  注：程序需要有创建目录的权限
      * </pre>
      *
-     * <code>optional bytes updatepath = 9;</code>
+     * <code>bytes updatepath = 9;</code>
      */
     public com.google.protobuf.ByteString getUpdatepath() {
       return updatepath_;
@@ -10041,7 +10371,7 @@ public final class InterfaceBase {
      *升级包解压后的目录  注：程序需要有创建目录的权限
      * </pre>
      *
-     * <code>optional bytes updatepath = 9;</code>
+     * <code>bytes updatepath = 9;</code>
      */
     private void setUpdatepath(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -10055,7 +10385,7 @@ public final class InterfaceBase {
      *升级包解压后的目录  注：程序需要有创建目录的权限
      * </pre>
      *
-     * <code>optional bytes updatepath = 9;</code>
+     * <code>bytes updatepath = 9;</code>
      */
     private void clearUpdatepath() {
       
@@ -10138,6 +10468,19 @@ public final class InterfaceBase {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_MeetUpdateNotify parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_MeetUpdateNotify parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceBase.pbui_Type_MeetUpdateNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10232,7 +10575,7 @@ public final class InterfaceBase {
        *当前client.ini记录的版本
        * </pre>
        *
-       * <code>optional fixed32 localhardver = 1;</code>
+       * <code>fixed32 localhardver = 1;</code>
        */
       public int getLocalhardver() {
         return instance.getLocalhardver();
@@ -10242,7 +10585,7 @@ public final class InterfaceBase {
        *当前client.ini记录的版本
        * </pre>
        *
-       * <code>optional fixed32 localhardver = 1;</code>
+       * <code>fixed32 localhardver = 1;</code>
        */
       public Builder setLocalhardver(int value) {
         copyOnWrite();
@@ -10254,7 +10597,7 @@ public final class InterfaceBase {
        *当前client.ini记录的版本
        * </pre>
        *
-       * <code>optional fixed32 localhardver = 1;</code>
+       * <code>fixed32 localhardver = 1;</code>
        */
       public Builder clearLocalhardver() {
         copyOnWrite();
@@ -10267,7 +10610,7 @@ public final class InterfaceBase {
        *当前client.ini记录的版本
        * </pre>
        *
-       * <code>optional fixed32 localsoftver = 2;</code>
+       * <code>fixed32 localsoftver = 2;</code>
        */
       public int getLocalsoftver() {
         return instance.getLocalsoftver();
@@ -10277,7 +10620,7 @@ public final class InterfaceBase {
        *当前client.ini记录的版本
        * </pre>
        *
-       * <code>optional fixed32 localsoftver = 2;</code>
+       * <code>fixed32 localsoftver = 2;</code>
        */
       public Builder setLocalsoftver(int value) {
         copyOnWrite();
@@ -10289,7 +10632,7 @@ public final class InterfaceBase {
        *当前client.ini记录的版本
        * </pre>
        *
-       * <code>optional fixed32 localsoftver = 2;</code>
+       * <code>fixed32 localsoftver = 2;</code>
        */
       public Builder clearLocalsoftver() {
         copyOnWrite();
@@ -10302,7 +10645,7 @@ public final class InterfaceBase {
        *升级包的硬件版本
        * </pre>
        *
-       * <code>optional fixed32 newhardver = 3;</code>
+       * <code>fixed32 newhardver = 3;</code>
        */
       public int getNewhardver() {
         return instance.getNewhardver();
@@ -10312,7 +10655,7 @@ public final class InterfaceBase {
        *升级包的硬件版本
        * </pre>
        *
-       * <code>optional fixed32 newhardver = 3;</code>
+       * <code>fixed32 newhardver = 3;</code>
        */
       public Builder setNewhardver(int value) {
         copyOnWrite();
@@ -10324,7 +10667,7 @@ public final class InterfaceBase {
        *升级包的硬件版本
        * </pre>
        *
-       * <code>optional fixed32 newhardver = 3;</code>
+       * <code>fixed32 newhardver = 3;</code>
        */
       public Builder clearNewhardver() {
         copyOnWrite();
@@ -10337,7 +10680,7 @@ public final class InterfaceBase {
        *升级包的软件版本
        * </pre>
        *
-       * <code>optional fixed32 newsoftver = 4;</code>
+       * <code>fixed32 newsoftver = 4;</code>
        */
       public int getNewsoftver() {
         return instance.getNewsoftver();
@@ -10347,7 +10690,7 @@ public final class InterfaceBase {
        *升级包的软件版本
        * </pre>
        *
-       * <code>optional fixed32 newsoftver = 4;</code>
+       * <code>fixed32 newsoftver = 4;</code>
        */
       public Builder setNewsoftver(int value) {
         copyOnWrite();
@@ -10359,7 +10702,7 @@ public final class InterfaceBase {
        *升级包的软件版本
        * </pre>
        *
-       * <code>optional fixed32 newsoftver = 4;</code>
+       * <code>fixed32 newsoftver = 4;</code>
        */
       public Builder clearNewsoftver() {
         copyOnWrite();
@@ -10372,7 +10715,7 @@ public final class InterfaceBase {
        *升级包的最低硬件版本
        * </pre>
        *
-       * <code>optional fixed32 newminhardver = 5;</code>
+       * <code>fixed32 newminhardver = 5;</code>
        */
       public int getNewminhardver() {
         return instance.getNewminhardver();
@@ -10382,7 +10725,7 @@ public final class InterfaceBase {
        *升级包的最低硬件版本
        * </pre>
        *
-       * <code>optional fixed32 newminhardver = 5;</code>
+       * <code>fixed32 newminhardver = 5;</code>
        */
       public Builder setNewminhardver(int value) {
         copyOnWrite();
@@ -10394,7 +10737,7 @@ public final class InterfaceBase {
        *升级包的最低硬件版本
        * </pre>
        *
-       * <code>optional fixed32 newminhardver = 5;</code>
+       * <code>fixed32 newminhardver = 5;</code>
        */
       public Builder clearNewminhardver() {
         copyOnWrite();
@@ -10407,7 +10750,7 @@ public final class InterfaceBase {
        *升级包的最低软件版本
        * </pre>
        *
-       * <code>optional fixed32 newminsoftver = 6;</code>
+       * <code>fixed32 newminsoftver = 6;</code>
        */
       public int getNewminsoftver() {
         return instance.getNewminsoftver();
@@ -10417,7 +10760,7 @@ public final class InterfaceBase {
        *升级包的最低软件版本
        * </pre>
        *
-       * <code>optional fixed32 newminsoftver = 6;</code>
+       * <code>fixed32 newminsoftver = 6;</code>
        */
       public Builder setNewminsoftver(int value) {
         copyOnWrite();
@@ -10429,7 +10772,7 @@ public final class InterfaceBase {
        *升级包的最低软件版本
        * </pre>
        *
-       * <code>optional fixed32 newminsoftver = 6;</code>
+       * <code>fixed32 newminsoftver = 6;</code>
        */
       public Builder clearNewminsoftver() {
         copyOnWrite();
@@ -10442,7 +10785,7 @@ public final class InterfaceBase {
        *&#47;/升级包的设备类型 eg:0x1100000
        * </pre>
        *
-       * <code>optional fixed32 deviceidtype = 7;</code>
+       * <code>fixed32 deviceidtype = 7;</code>
        */
       public int getDeviceidtype() {
         return instance.getDeviceidtype();
@@ -10452,7 +10795,7 @@ public final class InterfaceBase {
        *&#47;/升级包的设备类型 eg:0x1100000
        * </pre>
        *
-       * <code>optional fixed32 deviceidtype = 7;</code>
+       * <code>fixed32 deviceidtype = 7;</code>
        */
       public Builder setDeviceidtype(int value) {
         copyOnWrite();
@@ -10464,7 +10807,7 @@ public final class InterfaceBase {
        *&#47;/升级包的设备类型 eg:0x1100000
        * </pre>
        *
-       * <code>optional fixed32 deviceidtype = 7;</code>
+       * <code>fixed32 deviceidtype = 7;</code>
        */
       public Builder clearDeviceidtype() {
         copyOnWrite();
@@ -10477,7 +10820,7 @@ public final class InterfaceBase {
        *升级包的设备屏蔽码  eg:14
        * </pre>
        *
-       * <code>optional fixed32 devicemask = 8;</code>
+       * <code>fixed32 devicemask = 8;</code>
        */
       public int getDevicemask() {
         return instance.getDevicemask();
@@ -10487,7 +10830,7 @@ public final class InterfaceBase {
        *升级包的设备屏蔽码  eg:14
        * </pre>
        *
-       * <code>optional fixed32 devicemask = 8;</code>
+       * <code>fixed32 devicemask = 8;</code>
        */
       public Builder setDevicemask(int value) {
         copyOnWrite();
@@ -10499,7 +10842,7 @@ public final class InterfaceBase {
        *升级包的设备屏蔽码  eg:14
        * </pre>
        *
-       * <code>optional fixed32 devicemask = 8;</code>
+       * <code>fixed32 devicemask = 8;</code>
        */
       public Builder clearDevicemask() {
         copyOnWrite();
@@ -10512,7 +10855,7 @@ public final class InterfaceBase {
        *升级包解压后的目录  注：程序需要有创建目录的权限
        * </pre>
        *
-       * <code>optional bytes updatepath = 9;</code>
+       * <code>bytes updatepath = 9;</code>
        */
       public com.google.protobuf.ByteString getUpdatepath() {
         return instance.getUpdatepath();
@@ -10522,7 +10865,7 @@ public final class InterfaceBase {
        *升级包解压后的目录  注：程序需要有创建目录的权限
        * </pre>
        *
-       * <code>optional bytes updatepath = 9;</code>
+       * <code>bytes updatepath = 9;</code>
        */
       public Builder setUpdatepath(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -10534,7 +10877,7 @@ public final class InterfaceBase {
        *升级包解压后的目录  注：程序需要有创建目录的权限
        * </pre>
        *
-       * <code>optional bytes updatepath = 9;</code>
+       * <code>bytes updatepath = 9;</code>
        */
       public Builder clearUpdatepath() {
         copyOnWrite();
@@ -10544,6 +10887,7 @@ public final class InterfaceBase {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetUpdateNotify)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -10661,6 +11005,7 @@ public final class InterfaceBase {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

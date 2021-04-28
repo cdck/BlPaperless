@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
 import android.text.TextUtils;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.blankj.utilcode.util.UriUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.utils.LogUtil;
@@ -34,8 +37,8 @@ import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.Dispose;
 import com.pa.paperless.utils.FileUtil;
+import com.pa.paperless.utils.MyUtils;
 
-import com.pa.paperless.utils.UriUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -101,6 +104,12 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
     }
 
     private void fun_queryMeetDirFile(int dirid) {
+        InterfaceFile.pbui_Type_MeetDirRightDetailInfo dirPermission = jni.queryDirPermission(dirid);
+        if (dirPermission != null && dirPermission.getMemberidList().contains(Values.localMemberId)) {
+            LogUtils.e("没有共享文件的目录权限");
+            clear();
+            return;
+        }
         try {
             //143.查询会议目录文件（直接查询 共享资料(id 是固定为 1 )的文件）
             InterfaceFile.pbui_Type_MeetDirFileDetailInfo object = jni.queryMeetDirFile(dirid);
@@ -161,6 +170,10 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                 checkButton();
                 setBtnSelect(shardFileType);
                 mAllAdapter.setLookListener((fileInfo, mediaid, filename, filesize) -> {
+                    if (!MyUtils.isHasPermission(Macro.permission_code_download)) {
+                        ToastUtils.showShort(R.string.no_permission);
+                        return;
+                    }
                     if (FileUtil.isVideo(filename)) {
                         //如果是音频或视频则在线播放
                         List<Integer> devIds = new ArrayList<Integer>();
@@ -188,13 +201,24 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getEventMessage(EventMessage message) throws InvalidProtocolBufferException {
         switch (message.getAction()) {
-            case EventType.MEETDIR_FILE_CHANGE_INFORM://142 会议目录文件变更通知
+            //会议目录权限变更通知
+            case EventType.directory_permission_change_inform: {
+                InterfaceBase.pbui_MeetNotifyMsg object = (InterfaceBase.pbui_MeetNotifyMsg) message.getObject();
+                int id = object.getId();
+                if (id == Macro.SHARED_FILE_DIRECTORY_ID) {
+                    fun_queryMeetDirFile(id);
+                }
+                break;
+            }
+            //会议目录文件变更通知
+            case EventType.MEETDIR_FILE_CHANGE_INFORM: {
                 InterfaceBase.pbui_MeetNotifyMsgForDouble object1 = (InterfaceBase.pbui_MeetNotifyMsgForDouble) message.getObject();
                 int id = object1.getId();
                 if (id == Macro.SHARED_FILE_DIRECTORY_ID) {
                     fun_queryMeetDirFile(id);
                 }
                 break;
+            }
         }
     }
 
@@ -377,13 +401,17 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
                 FileUtil.downOfflineFile(data);
                 break;
             case R.id.download:
-                if (mAllAdapter == null) break;
-                MeetDirFileInfo data1 = mAllAdapter.getCheckedFile();
-                if (data1 == null) {
-                    ToastUtils.showShort(R.string.please_choose_downloadfile);
-                    break;
+                if (MyUtils.isHasPermission(Macro.permission_code_download)) {
+                    if (mAllAdapter == null) break;
+                    MeetDirFileInfo data1 = mAllAdapter.getCheckedFile();
+                    if (data1 == null) {
+                        ToastUtils.showShort(R.string.please_choose_downloadfile);
+                        break;
+                    }
+                    FileUtil.downloadFile(data1, Macro.SHARE_MATERIAL);
+                } else {
+                    ToastUtils.showShort(R.string.no_permission);
                 }
-                FileUtil.downloadFile(data1, Macro.SHARE_MATERIAL);
                 break;
             case R.id.push_file:
                 if (mAllAdapter == null) break;
@@ -413,19 +441,23 @@ public class SharedFileFragment extends BaseFragment implements View.OnClickList
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             Uri uri = data.getData();
-            if (uri == null) return;
-            String path = "";
-            try {
-                path = UriUtil.getFilePath(getContext(), uri);
-            } catch (Exception e) {
-                e.printStackTrace();
+            File file = UriUtils.uri2File(uri);
+            if (file != null) {
+                showDialog(file.getAbsolutePath());
             }
-            if (path == null || path.isEmpty()) {
-                ToastUtils.showShort(R.string.get_file_path_fail);
-            } else {
-                LogUtil.e(TAG, "SharedFileFragment.onActivityResult 370行:  选中文件的路径 --->>> " + path);
-                showDialog(path);
-            }
+//            if (uri == null) return;
+//            String path = "";
+//            try {
+//                path = UriUtil.getFilePath(getContext(), uri);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//            if (path == null || path.isEmpty()) {
+//                ToastUtils.showShort(R.string.get_file_path_fail);
+//            } else {
+//                LogUtil.e(TAG, "SharedFileFragment.onActivityResult 370行:  选中文件的路径 --->>> " + path);
+//                showDialog(path);
+//            }
         }
     }
 

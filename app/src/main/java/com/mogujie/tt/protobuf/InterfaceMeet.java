@@ -17,7 +17,7 @@ public final class InterfaceMeet {
      *查询标志位 参见MEET_COMPLEXQUERY_FLAG_MEETINGID
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 1;</code>
+     * <code>fixed32 queryflag = 1;</code>
      */
     int getQueryflag();
 
@@ -26,7 +26,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 2;</code>
+     * <code>fixed32 meetingid = 2;</code>
      */
     int getMeetingid();
 
@@ -35,7 +35,7 @@ public final class InterfaceMeet {
      *缓存标志 参见MEET_COMPLEXCACHE_FLAG_DIRFILE
      * </pre>
      *
-     * <code>optional fixed64 cacheflag = 3;</code>
+     * <code>fixed64 cacheflag = 3;</code>
      */
     long getCacheflag();
 
@@ -44,16 +44,16 @@ public final class InterfaceMeet {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 4;</code>
+     * <code>fixed32 roomid = 4;</code>
      */
     int getRoomid();
 
     /**
      * <pre>
-     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议
      * </pre>
      *
-     * <code>optional fixed32 status = 5;</code>
+     * <code>fixed32 status = 5;</code>
      */
     int getStatus();
 
@@ -62,7 +62,7 @@ public final class InterfaceMeet {
      *开始时间 单位：UTC秒
      * </pre>
      *
-     * <code>optional fixed32 startutctime = 6;</code>
+     * <code>fixed32 startutctime = 6;</code>
      */
     int getStartutctime();
 
@@ -71,7 +71,7 @@ public final class InterfaceMeet {
      *结束时间 单位：UTC秒
      * </pre>
      *
-     * <code>optional fixed32 endutctime = 7;</code>
+     * <code>fixed32 endutctime = 7;</code>
      */
     int getEndutctime();
 
@@ -80,7 +80,7 @@ public final class InterfaceMeet {
      *常用人员电话
      * </pre>
      *
-     * <code>optional bytes phone = 8;</code>
+     * <code>bytes phone = 8;</code>
      */
     com.google.protobuf.ByteString getPhone();
   }
@@ -109,7 +109,7 @@ public final class InterfaceMeet {
      *查询标志位 参见MEET_COMPLEXQUERY_FLAG_MEETINGID
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 1;</code>
+     * <code>fixed32 queryflag = 1;</code>
      */
     public int getQueryflag() {
       return queryflag_;
@@ -119,7 +119,7 @@ public final class InterfaceMeet {
      *查询标志位 参见MEET_COMPLEXQUERY_FLAG_MEETINGID
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 1;</code>
+     * <code>fixed32 queryflag = 1;</code>
      */
     private void setQueryflag(int value) {
       
@@ -130,7 +130,7 @@ public final class InterfaceMeet {
      *查询标志位 参见MEET_COMPLEXQUERY_FLAG_MEETINGID
      * </pre>
      *
-     * <code>optional fixed32 queryflag = 1;</code>
+     * <code>fixed32 queryflag = 1;</code>
      */
     private void clearQueryflag() {
       
@@ -144,7 +144,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 2;</code>
+     * <code>fixed32 meetingid = 2;</code>
      */
     public int getMeetingid() {
       return meetingid_;
@@ -154,7 +154,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 2;</code>
+     * <code>fixed32 meetingid = 2;</code>
      */
     private void setMeetingid(int value) {
       
@@ -165,7 +165,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 2;</code>
+     * <code>fixed32 meetingid = 2;</code>
      */
     private void clearMeetingid() {
       
@@ -179,7 +179,7 @@ public final class InterfaceMeet {
      *缓存标志 参见MEET_COMPLEXCACHE_FLAG_DIRFILE
      * </pre>
      *
-     * <code>optional fixed64 cacheflag = 3;</code>
+     * <code>fixed64 cacheflag = 3;</code>
      */
     public long getCacheflag() {
       return cacheflag_;
@@ -189,7 +189,7 @@ public final class InterfaceMeet {
      *缓存标志 参见MEET_COMPLEXCACHE_FLAG_DIRFILE
      * </pre>
      *
-     * <code>optional fixed64 cacheflag = 3;</code>
+     * <code>fixed64 cacheflag = 3;</code>
      */
     private void setCacheflag(long value) {
       
@@ -200,7 +200,7 @@ public final class InterfaceMeet {
      *缓存标志 参见MEET_COMPLEXCACHE_FLAG_DIRFILE
      * </pre>
      *
-     * <code>optional fixed64 cacheflag = 3;</code>
+     * <code>fixed64 cacheflag = 3;</code>
      */
     private void clearCacheflag() {
       
@@ -214,7 +214,7 @@ public final class InterfaceMeet {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 4;</code>
+     * <code>fixed32 roomid = 4;</code>
      */
     public int getRoomid() {
       return roomid_;
@@ -224,7 +224,7 @@ public final class InterfaceMeet {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 4;</code>
+     * <code>fixed32 roomid = 4;</code>
      */
     private void setRoomid(int value) {
       
@@ -235,7 +235,7 @@ public final class InterfaceMeet {
      *会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 4;</code>
+     * <code>fixed32 roomid = 4;</code>
      */
     private void clearRoomid() {
       
@@ -246,20 +246,20 @@ public final class InterfaceMeet {
     private int status_;
     /**
      * <pre>
-     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议
      * </pre>
      *
-     * <code>optional fixed32 status = 5;</code>
+     * <code>fixed32 status = 5;</code>
      */
     public int getStatus() {
       return status_;
     }
     /**
      * <pre>
-     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议
      * </pre>
      *
-     * <code>optional fixed32 status = 5;</code>
+     * <code>fixed32 status = 5;</code>
      */
     private void setStatus(int value) {
       
@@ -267,10 +267,10 @@ public final class InterfaceMeet {
     }
     /**
      * <pre>
-     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议
      * </pre>
      *
-     * <code>optional fixed32 status = 5;</code>
+     * <code>fixed32 status = 5;</code>
      */
     private void clearStatus() {
       
@@ -284,7 +284,7 @@ public final class InterfaceMeet {
      *开始时间 单位：UTC秒
      * </pre>
      *
-     * <code>optional fixed32 startutctime = 6;</code>
+     * <code>fixed32 startutctime = 6;</code>
      */
     public int getStartutctime() {
       return startutctime_;
@@ -294,7 +294,7 @@ public final class InterfaceMeet {
      *开始时间 单位：UTC秒
      * </pre>
      *
-     * <code>optional fixed32 startutctime = 6;</code>
+     * <code>fixed32 startutctime = 6;</code>
      */
     private void setStartutctime(int value) {
       
@@ -305,7 +305,7 @@ public final class InterfaceMeet {
      *开始时间 单位：UTC秒
      * </pre>
      *
-     * <code>optional fixed32 startutctime = 6;</code>
+     * <code>fixed32 startutctime = 6;</code>
      */
     private void clearStartutctime() {
       
@@ -319,7 +319,7 @@ public final class InterfaceMeet {
      *结束时间 单位：UTC秒
      * </pre>
      *
-     * <code>optional fixed32 endutctime = 7;</code>
+     * <code>fixed32 endutctime = 7;</code>
      */
     public int getEndutctime() {
       return endutctime_;
@@ -329,7 +329,7 @@ public final class InterfaceMeet {
      *结束时间 单位：UTC秒
      * </pre>
      *
-     * <code>optional fixed32 endutctime = 7;</code>
+     * <code>fixed32 endutctime = 7;</code>
      */
     private void setEndutctime(int value) {
       
@@ -340,7 +340,7 @@ public final class InterfaceMeet {
      *结束时间 单位：UTC秒
      * </pre>
      *
-     * <code>optional fixed32 endutctime = 7;</code>
+     * <code>fixed32 endutctime = 7;</code>
      */
     private void clearEndutctime() {
       
@@ -354,7 +354,7 @@ public final class InterfaceMeet {
      *常用人员电话
      * </pre>
      *
-     * <code>optional bytes phone = 8;</code>
+     * <code>bytes phone = 8;</code>
      */
     public com.google.protobuf.ByteString getPhone() {
       return phone_;
@@ -364,7 +364,7 @@ public final class InterfaceMeet {
      *常用人员电话
      * </pre>
      *
-     * <code>optional bytes phone = 8;</code>
+     * <code>bytes phone = 8;</code>
      */
     private void setPhone(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -378,7 +378,7 @@ public final class InterfaceMeet {
      *常用人员电话
      * </pre>
      *
-     * <code>optional bytes phone = 8;</code>
+     * <code>bytes phone = 8;</code>
      */
     private void clearPhone() {
       
@@ -454,6 +454,19 @@ public final class InterfaceMeet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_ComplexQueryMeetInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_ComplexQueryMeetInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_ComplexQueryMeetInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -548,7 +561,7 @@ public final class InterfaceMeet {
        *查询标志位 参见MEET_COMPLEXQUERY_FLAG_MEETINGID
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 1;</code>
+       * <code>fixed32 queryflag = 1;</code>
        */
       public int getQueryflag() {
         return instance.getQueryflag();
@@ -558,7 +571,7 @@ public final class InterfaceMeet {
        *查询标志位 参见MEET_COMPLEXQUERY_FLAG_MEETINGID
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 1;</code>
+       * <code>fixed32 queryflag = 1;</code>
        */
       public Builder setQueryflag(int value) {
         copyOnWrite();
@@ -570,7 +583,7 @@ public final class InterfaceMeet {
        *查询标志位 参见MEET_COMPLEXQUERY_FLAG_MEETINGID
        * </pre>
        *
-       * <code>optional fixed32 queryflag = 1;</code>
+       * <code>fixed32 queryflag = 1;</code>
        */
       public Builder clearQueryflag() {
         copyOnWrite();
@@ -583,7 +596,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 2;</code>
+       * <code>fixed32 meetingid = 2;</code>
        */
       public int getMeetingid() {
         return instance.getMeetingid();
@@ -593,7 +606,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 2;</code>
+       * <code>fixed32 meetingid = 2;</code>
        */
       public Builder setMeetingid(int value) {
         copyOnWrite();
@@ -605,7 +618,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 2;</code>
+       * <code>fixed32 meetingid = 2;</code>
        */
       public Builder clearMeetingid() {
         copyOnWrite();
@@ -618,7 +631,7 @@ public final class InterfaceMeet {
        *缓存标志 参见MEET_COMPLEXCACHE_FLAG_DIRFILE
        * </pre>
        *
-       * <code>optional fixed64 cacheflag = 3;</code>
+       * <code>fixed64 cacheflag = 3;</code>
        */
       public long getCacheflag() {
         return instance.getCacheflag();
@@ -628,7 +641,7 @@ public final class InterfaceMeet {
        *缓存标志 参见MEET_COMPLEXCACHE_FLAG_DIRFILE
        * </pre>
        *
-       * <code>optional fixed64 cacheflag = 3;</code>
+       * <code>fixed64 cacheflag = 3;</code>
        */
       public Builder setCacheflag(long value) {
         copyOnWrite();
@@ -640,7 +653,7 @@ public final class InterfaceMeet {
        *缓存标志 参见MEET_COMPLEXCACHE_FLAG_DIRFILE
        * </pre>
        *
-       * <code>optional fixed64 cacheflag = 3;</code>
+       * <code>fixed64 cacheflag = 3;</code>
        */
       public Builder clearCacheflag() {
         copyOnWrite();
@@ -653,7 +666,7 @@ public final class InterfaceMeet {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 4;</code>
+       * <code>fixed32 roomid = 4;</code>
        */
       public int getRoomid() {
         return instance.getRoomid();
@@ -663,7 +676,7 @@ public final class InterfaceMeet {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 4;</code>
+       * <code>fixed32 roomid = 4;</code>
        */
       public Builder setRoomid(int value) {
         copyOnWrite();
@@ -675,7 +688,7 @@ public final class InterfaceMeet {
        *会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 4;</code>
+       * <code>fixed32 roomid = 4;</code>
        */
       public Builder clearRoomid() {
         copyOnWrite();
@@ -685,20 +698,20 @@ public final class InterfaceMeet {
 
       /**
        * <pre>
-       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议
        * </pre>
        *
-       * <code>optional fixed32 status = 5;</code>
+       * <code>fixed32 status = 5;</code>
        */
       public int getStatus() {
         return instance.getStatus();
       }
       /**
        * <pre>
-       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议
        * </pre>
        *
-       * <code>optional fixed32 status = 5;</code>
+       * <code>fixed32 status = 5;</code>
        */
       public Builder setStatus(int value) {
         copyOnWrite();
@@ -707,10 +720,10 @@ public final class InterfaceMeet {
       }
       /**
        * <pre>
-       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议
        * </pre>
        *
-       * <code>optional fixed32 status = 5;</code>
+       * <code>fixed32 status = 5;</code>
        */
       public Builder clearStatus() {
         copyOnWrite();
@@ -723,7 +736,7 @@ public final class InterfaceMeet {
        *开始时间 单位：UTC秒
        * </pre>
        *
-       * <code>optional fixed32 startutctime = 6;</code>
+       * <code>fixed32 startutctime = 6;</code>
        */
       public int getStartutctime() {
         return instance.getStartutctime();
@@ -733,7 +746,7 @@ public final class InterfaceMeet {
        *开始时间 单位：UTC秒
        * </pre>
        *
-       * <code>optional fixed32 startutctime = 6;</code>
+       * <code>fixed32 startutctime = 6;</code>
        */
       public Builder setStartutctime(int value) {
         copyOnWrite();
@@ -745,7 +758,7 @@ public final class InterfaceMeet {
        *开始时间 单位：UTC秒
        * </pre>
        *
-       * <code>optional fixed32 startutctime = 6;</code>
+       * <code>fixed32 startutctime = 6;</code>
        */
       public Builder clearStartutctime() {
         copyOnWrite();
@@ -758,7 +771,7 @@ public final class InterfaceMeet {
        *结束时间 单位：UTC秒
        * </pre>
        *
-       * <code>optional fixed32 endutctime = 7;</code>
+       * <code>fixed32 endutctime = 7;</code>
        */
       public int getEndutctime() {
         return instance.getEndutctime();
@@ -768,7 +781,7 @@ public final class InterfaceMeet {
        *结束时间 单位：UTC秒
        * </pre>
        *
-       * <code>optional fixed32 endutctime = 7;</code>
+       * <code>fixed32 endutctime = 7;</code>
        */
       public Builder setEndutctime(int value) {
         copyOnWrite();
@@ -780,7 +793,7 @@ public final class InterfaceMeet {
        *结束时间 单位：UTC秒
        * </pre>
        *
-       * <code>optional fixed32 endutctime = 7;</code>
+       * <code>fixed32 endutctime = 7;</code>
        */
       public Builder clearEndutctime() {
         copyOnWrite();
@@ -793,7 +806,7 @@ public final class InterfaceMeet {
        *常用人员电话
        * </pre>
        *
-       * <code>optional bytes phone = 8;</code>
+       * <code>bytes phone = 8;</code>
        */
       public com.google.protobuf.ByteString getPhone() {
         return instance.getPhone();
@@ -803,7 +816,7 @@ public final class InterfaceMeet {
        *常用人员电话
        * </pre>
        *
-       * <code>optional bytes phone = 8;</code>
+       * <code>bytes phone = 8;</code>
        */
       public Builder setPhone(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -815,7 +828,7 @@ public final class InterfaceMeet {
        *常用人员电话
        * </pre>
        *
-       * <code>optional bytes phone = 8;</code>
+       * <code>bytes phone = 8;</code>
        */
       public Builder clearPhone() {
         copyOnWrite();
@@ -825,6 +838,7 @@ public final class InterfaceMeet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_ComplexQueryMeetInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -935,6 +949,7 @@ public final class InterfaceMeet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -979,7 +994,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     int getId();
 
@@ -988,7 +1003,7 @@ public final class InterfaceMeet {
      *名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     com.google.protobuf.ByteString getName();
 
@@ -997,7 +1012,7 @@ public final class InterfaceMeet {
      *会场ID，即会议室 
      * </pre>
      *
-     * <code>optional fixed32 roomId = 3;</code>
+     * <code>fixed32 roomId = 3;</code>
      */
     int getRoomId();
 
@@ -1006,7 +1021,7 @@ public final class InterfaceMeet {
      *名称查询返回有效,其它情况不使用,也不需要赋值
      * </pre>
      *
-     * <code>optional bytes roomname = 4;</code>
+     * <code>bytes roomname = 4;</code>
      */
     com.google.protobuf.ByteString getRoomname();
 
@@ -1015,7 +1030,7 @@ public final class InterfaceMeet {
      *是否为保密会议 1为密保会议
      * </pre>
      *
-     * <code>optional fixed32 secrecy = 5;</code>
+     * <code>fixed32 secrecy = 5;</code>
      */
     int getSecrecy();
 
@@ -1024,7 +1039,7 @@ public final class InterfaceMeet {
      *开始时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 startTime = 6;</code>
+     * <code>fixed64 startTime = 6;</code>
      */
     long getStartTime();
 
@@ -1033,7 +1048,7 @@ public final class InterfaceMeet {
      *结束时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 endTime = 7;</code>
+     * <code>fixed64 endTime = 7;</code>
      */
     long getEndTime();
 
@@ -1042,7 +1057,7 @@ public final class InterfaceMeet {
      *签到类型
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 8;</code>
+     * <code>fixed32 signin_type = 8;</code>
      */
     int getSigninType();
 
@@ -1051,7 +1066,7 @@ public final class InterfaceMeet {
      *管理员id
      * </pre>
      *
-     * <code>optional fixed32 managerid = 9;</code>
+     * <code>fixed32 managerid = 9;</code>
      */
     int getManagerid();
 
@@ -1060,16 +1075,16 @@ public final class InterfaceMeet {
      *会议签到密码 不能超过Pb_SIGNIN_PSW_LEN 定义的限制长度
      * </pre>
      *
-     * <code>optional bytes onepsw_signin = 10;</code>
+     * <code>bytes onepsw_signin = 10;</code>
      */
     com.google.protobuf.ByteString getOnepswSignin();
 
     /**
      * <pre>
-     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议 (执行add/dmup方法时可以指定复制后会议状态)
      * </pre>
      *
-     * <code>optional fixed32 status = 11;</code>
+     * <code>fixed32 status = 11;</code>
      */
     int getStatus();
 
@@ -1078,7 +1093,7 @@ public final class InterfaceMeet {
      *会议预约人
      * </pre>
      *
-     * <code>optional bytes ordername = 12;</code>
+     * <code>bytes ordername = 12;</code>
      */
     com.google.protobuf.ByteString getOrdername();
   }
@@ -1107,7 +1122,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     public int getId() {
       return id_;
@@ -1117,7 +1132,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void setId(int value) {
       
@@ -1128,7 +1143,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 id = 1;</code>
+     * <code>fixed32 id = 1;</code>
      */
     private void clearId() {
       
@@ -1142,7 +1157,7 @@ public final class InterfaceMeet {
      *名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     public com.google.protobuf.ByteString getName() {
       return name_;
@@ -1152,7 +1167,7 @@ public final class InterfaceMeet {
      *名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void setName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1166,7 +1181,7 @@ public final class InterfaceMeet {
      *名称
      * </pre>
      *
-     * <code>optional bytes name = 2;</code>
+     * <code>bytes name = 2;</code>
      */
     private void clearName() {
       
@@ -1180,7 +1195,7 @@ public final class InterfaceMeet {
      *会场ID，即会议室 
      * </pre>
      *
-     * <code>optional fixed32 roomId = 3;</code>
+     * <code>fixed32 roomId = 3;</code>
      */
     public int getRoomId() {
       return roomId_;
@@ -1190,7 +1205,7 @@ public final class InterfaceMeet {
      *会场ID，即会议室 
      * </pre>
      *
-     * <code>optional fixed32 roomId = 3;</code>
+     * <code>fixed32 roomId = 3;</code>
      */
     private void setRoomId(int value) {
       
@@ -1201,7 +1216,7 @@ public final class InterfaceMeet {
      *会场ID，即会议室 
      * </pre>
      *
-     * <code>optional fixed32 roomId = 3;</code>
+     * <code>fixed32 roomId = 3;</code>
      */
     private void clearRoomId() {
       
@@ -1215,7 +1230,7 @@ public final class InterfaceMeet {
      *名称查询返回有效,其它情况不使用,也不需要赋值
      * </pre>
      *
-     * <code>optional bytes roomname = 4;</code>
+     * <code>bytes roomname = 4;</code>
      */
     public com.google.protobuf.ByteString getRoomname() {
       return roomname_;
@@ -1225,7 +1240,7 @@ public final class InterfaceMeet {
      *名称查询返回有效,其它情况不使用,也不需要赋值
      * </pre>
      *
-     * <code>optional bytes roomname = 4;</code>
+     * <code>bytes roomname = 4;</code>
      */
     private void setRoomname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1239,7 +1254,7 @@ public final class InterfaceMeet {
      *名称查询返回有效,其它情况不使用,也不需要赋值
      * </pre>
      *
-     * <code>optional bytes roomname = 4;</code>
+     * <code>bytes roomname = 4;</code>
      */
     private void clearRoomname() {
       
@@ -1253,7 +1268,7 @@ public final class InterfaceMeet {
      *是否为保密会议 1为密保会议
      * </pre>
      *
-     * <code>optional fixed32 secrecy = 5;</code>
+     * <code>fixed32 secrecy = 5;</code>
      */
     public int getSecrecy() {
       return secrecy_;
@@ -1263,7 +1278,7 @@ public final class InterfaceMeet {
      *是否为保密会议 1为密保会议
      * </pre>
      *
-     * <code>optional fixed32 secrecy = 5;</code>
+     * <code>fixed32 secrecy = 5;</code>
      */
     private void setSecrecy(int value) {
       
@@ -1274,7 +1289,7 @@ public final class InterfaceMeet {
      *是否为保密会议 1为密保会议
      * </pre>
      *
-     * <code>optional fixed32 secrecy = 5;</code>
+     * <code>fixed32 secrecy = 5;</code>
      */
     private void clearSecrecy() {
       
@@ -1288,7 +1303,7 @@ public final class InterfaceMeet {
      *开始时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 startTime = 6;</code>
+     * <code>fixed64 startTime = 6;</code>
      */
     public long getStartTime() {
       return startTime_;
@@ -1298,7 +1313,7 @@ public final class InterfaceMeet {
      *开始时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 startTime = 6;</code>
+     * <code>fixed64 startTime = 6;</code>
      */
     private void setStartTime(long value) {
       
@@ -1309,7 +1324,7 @@ public final class InterfaceMeet {
      *开始时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 startTime = 6;</code>
+     * <code>fixed64 startTime = 6;</code>
      */
     private void clearStartTime() {
       
@@ -1323,7 +1338,7 @@ public final class InterfaceMeet {
      *结束时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 endTime = 7;</code>
+     * <code>fixed64 endTime = 7;</code>
      */
     public long getEndTime() {
       return endTime_;
@@ -1333,7 +1348,7 @@ public final class InterfaceMeet {
      *结束时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 endTime = 7;</code>
+     * <code>fixed64 endTime = 7;</code>
      */
     private void setEndTime(long value) {
       
@@ -1344,7 +1359,7 @@ public final class InterfaceMeet {
      *结束时间 单位:秒
      * </pre>
      *
-     * <code>optional fixed64 endTime = 7;</code>
+     * <code>fixed64 endTime = 7;</code>
      */
     private void clearEndTime() {
       
@@ -1358,7 +1373,7 @@ public final class InterfaceMeet {
      *签到类型
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 8;</code>
+     * <code>fixed32 signin_type = 8;</code>
      */
     public int getSigninType() {
       return signinType_;
@@ -1368,7 +1383,7 @@ public final class InterfaceMeet {
      *签到类型
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 8;</code>
+     * <code>fixed32 signin_type = 8;</code>
      */
     private void setSigninType(int value) {
       
@@ -1379,7 +1394,7 @@ public final class InterfaceMeet {
      *签到类型
      * </pre>
      *
-     * <code>optional fixed32 signin_type = 8;</code>
+     * <code>fixed32 signin_type = 8;</code>
      */
     private void clearSigninType() {
       
@@ -1393,7 +1408,7 @@ public final class InterfaceMeet {
      *管理员id
      * </pre>
      *
-     * <code>optional fixed32 managerid = 9;</code>
+     * <code>fixed32 managerid = 9;</code>
      */
     public int getManagerid() {
       return managerid_;
@@ -1403,7 +1418,7 @@ public final class InterfaceMeet {
      *管理员id
      * </pre>
      *
-     * <code>optional fixed32 managerid = 9;</code>
+     * <code>fixed32 managerid = 9;</code>
      */
     private void setManagerid(int value) {
       
@@ -1414,7 +1429,7 @@ public final class InterfaceMeet {
      *管理员id
      * </pre>
      *
-     * <code>optional fixed32 managerid = 9;</code>
+     * <code>fixed32 managerid = 9;</code>
      */
     private void clearManagerid() {
       
@@ -1428,7 +1443,7 @@ public final class InterfaceMeet {
      *会议签到密码 不能超过Pb_SIGNIN_PSW_LEN 定义的限制长度
      * </pre>
      *
-     * <code>optional bytes onepsw_signin = 10;</code>
+     * <code>bytes onepsw_signin = 10;</code>
      */
     public com.google.protobuf.ByteString getOnepswSignin() {
       return onepswSignin_;
@@ -1438,7 +1453,7 @@ public final class InterfaceMeet {
      *会议签到密码 不能超过Pb_SIGNIN_PSW_LEN 定义的限制长度
      * </pre>
      *
-     * <code>optional bytes onepsw_signin = 10;</code>
+     * <code>bytes onepsw_signin = 10;</code>
      */
     private void setOnepswSignin(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1452,7 +1467,7 @@ public final class InterfaceMeet {
      *会议签到密码 不能超过Pb_SIGNIN_PSW_LEN 定义的限制长度
      * </pre>
      *
-     * <code>optional bytes onepsw_signin = 10;</code>
+     * <code>bytes onepsw_signin = 10;</code>
      */
     private void clearOnepswSignin() {
       
@@ -1463,20 +1478,20 @@ public final class InterfaceMeet {
     private int status_;
     /**
      * <pre>
-     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议 (执行add/dmup方法时可以指定复制后会议状态)
      * </pre>
      *
-     * <code>optional fixed32 status = 11;</code>
+     * <code>fixed32 status = 11;</code>
      */
     public int getStatus() {
       return status_;
     }
     /**
      * <pre>
-     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议 (执行add/dmup方法时可以指定复制后会议状态)
      * </pre>
      *
-     * <code>optional fixed32 status = 11;</code>
+     * <code>fixed32 status = 11;</code>
      */
     private void setStatus(int value) {
       
@@ -1484,10 +1499,10 @@ public final class InterfaceMeet {
     }
     /**
      * <pre>
-     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+     *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议 (执行add/dmup方法时可以指定复制后会议状态)
      * </pre>
      *
-     * <code>optional fixed32 status = 11;</code>
+     * <code>fixed32 status = 11;</code>
      */
     private void clearStatus() {
       
@@ -1501,7 +1516,7 @@ public final class InterfaceMeet {
      *会议预约人
      * </pre>
      *
-     * <code>optional bytes ordername = 12;</code>
+     * <code>bytes ordername = 12;</code>
      */
     public com.google.protobuf.ByteString getOrdername() {
       return ordername_;
@@ -1511,7 +1526,7 @@ public final class InterfaceMeet {
      *会议预约人
      * </pre>
      *
-     * <code>optional bytes ordername = 12;</code>
+     * <code>bytes ordername = 12;</code>
      */
     private void setOrdername(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1525,7 +1540,7 @@ public final class InterfaceMeet {
      *会议预约人
      * </pre>
      *
-     * <code>optional bytes ordername = 12;</code>
+     * <code>bytes ordername = 12;</code>
      */
     private void clearOrdername() {
       
@@ -1630,6 +1645,19 @@ public final class InterfaceMeet {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Item_MeetMeetInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Item_MeetMeetInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Item_MeetMeetInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1720,7 +1748,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public int getId() {
         return instance.getId();
@@ -1730,7 +1758,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder setId(int value) {
         copyOnWrite();
@@ -1742,7 +1770,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 id = 1;</code>
+       * <code>fixed32 id = 1;</code>
        */
       public Builder clearId() {
         copyOnWrite();
@@ -1755,7 +1783,7 @@ public final class InterfaceMeet {
        *名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public com.google.protobuf.ByteString getName() {
         return instance.getName();
@@ -1765,7 +1793,7 @@ public final class InterfaceMeet {
        *名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1777,7 +1805,7 @@ public final class InterfaceMeet {
        *名称
        * </pre>
        *
-       * <code>optional bytes name = 2;</code>
+       * <code>bytes name = 2;</code>
        */
       public Builder clearName() {
         copyOnWrite();
@@ -1790,7 +1818,7 @@ public final class InterfaceMeet {
        *会场ID，即会议室 
        * </pre>
        *
-       * <code>optional fixed32 roomId = 3;</code>
+       * <code>fixed32 roomId = 3;</code>
        */
       public int getRoomId() {
         return instance.getRoomId();
@@ -1800,7 +1828,7 @@ public final class InterfaceMeet {
        *会场ID，即会议室 
        * </pre>
        *
-       * <code>optional fixed32 roomId = 3;</code>
+       * <code>fixed32 roomId = 3;</code>
        */
       public Builder setRoomId(int value) {
         copyOnWrite();
@@ -1812,7 +1840,7 @@ public final class InterfaceMeet {
        *会场ID，即会议室 
        * </pre>
        *
-       * <code>optional fixed32 roomId = 3;</code>
+       * <code>fixed32 roomId = 3;</code>
        */
       public Builder clearRoomId() {
         copyOnWrite();
@@ -1825,7 +1853,7 @@ public final class InterfaceMeet {
        *名称查询返回有效,其它情况不使用,也不需要赋值
        * </pre>
        *
-       * <code>optional bytes roomname = 4;</code>
+       * <code>bytes roomname = 4;</code>
        */
       public com.google.protobuf.ByteString getRoomname() {
         return instance.getRoomname();
@@ -1835,7 +1863,7 @@ public final class InterfaceMeet {
        *名称查询返回有效,其它情况不使用,也不需要赋值
        * </pre>
        *
-       * <code>optional bytes roomname = 4;</code>
+       * <code>bytes roomname = 4;</code>
        */
       public Builder setRoomname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1847,7 +1875,7 @@ public final class InterfaceMeet {
        *名称查询返回有效,其它情况不使用,也不需要赋值
        * </pre>
        *
-       * <code>optional bytes roomname = 4;</code>
+       * <code>bytes roomname = 4;</code>
        */
       public Builder clearRoomname() {
         copyOnWrite();
@@ -1860,7 +1888,7 @@ public final class InterfaceMeet {
        *是否为保密会议 1为密保会议
        * </pre>
        *
-       * <code>optional fixed32 secrecy = 5;</code>
+       * <code>fixed32 secrecy = 5;</code>
        */
       public int getSecrecy() {
         return instance.getSecrecy();
@@ -1870,7 +1898,7 @@ public final class InterfaceMeet {
        *是否为保密会议 1为密保会议
        * </pre>
        *
-       * <code>optional fixed32 secrecy = 5;</code>
+       * <code>fixed32 secrecy = 5;</code>
        */
       public Builder setSecrecy(int value) {
         copyOnWrite();
@@ -1882,7 +1910,7 @@ public final class InterfaceMeet {
        *是否为保密会议 1为密保会议
        * </pre>
        *
-       * <code>optional fixed32 secrecy = 5;</code>
+       * <code>fixed32 secrecy = 5;</code>
        */
       public Builder clearSecrecy() {
         copyOnWrite();
@@ -1895,7 +1923,7 @@ public final class InterfaceMeet {
        *开始时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 startTime = 6;</code>
+       * <code>fixed64 startTime = 6;</code>
        */
       public long getStartTime() {
         return instance.getStartTime();
@@ -1905,7 +1933,7 @@ public final class InterfaceMeet {
        *开始时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 startTime = 6;</code>
+       * <code>fixed64 startTime = 6;</code>
        */
       public Builder setStartTime(long value) {
         copyOnWrite();
@@ -1917,7 +1945,7 @@ public final class InterfaceMeet {
        *开始时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 startTime = 6;</code>
+       * <code>fixed64 startTime = 6;</code>
        */
       public Builder clearStartTime() {
         copyOnWrite();
@@ -1930,7 +1958,7 @@ public final class InterfaceMeet {
        *结束时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 endTime = 7;</code>
+       * <code>fixed64 endTime = 7;</code>
        */
       public long getEndTime() {
         return instance.getEndTime();
@@ -1940,7 +1968,7 @@ public final class InterfaceMeet {
        *结束时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 endTime = 7;</code>
+       * <code>fixed64 endTime = 7;</code>
        */
       public Builder setEndTime(long value) {
         copyOnWrite();
@@ -1952,7 +1980,7 @@ public final class InterfaceMeet {
        *结束时间 单位:秒
        * </pre>
        *
-       * <code>optional fixed64 endTime = 7;</code>
+       * <code>fixed64 endTime = 7;</code>
        */
       public Builder clearEndTime() {
         copyOnWrite();
@@ -1965,7 +1993,7 @@ public final class InterfaceMeet {
        *签到类型
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 8;</code>
+       * <code>fixed32 signin_type = 8;</code>
        */
       public int getSigninType() {
         return instance.getSigninType();
@@ -1975,7 +2003,7 @@ public final class InterfaceMeet {
        *签到类型
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 8;</code>
+       * <code>fixed32 signin_type = 8;</code>
        */
       public Builder setSigninType(int value) {
         copyOnWrite();
@@ -1987,7 +2015,7 @@ public final class InterfaceMeet {
        *签到类型
        * </pre>
        *
-       * <code>optional fixed32 signin_type = 8;</code>
+       * <code>fixed32 signin_type = 8;</code>
        */
       public Builder clearSigninType() {
         copyOnWrite();
@@ -2000,7 +2028,7 @@ public final class InterfaceMeet {
        *管理员id
        * </pre>
        *
-       * <code>optional fixed32 managerid = 9;</code>
+       * <code>fixed32 managerid = 9;</code>
        */
       public int getManagerid() {
         return instance.getManagerid();
@@ -2010,7 +2038,7 @@ public final class InterfaceMeet {
        *管理员id
        * </pre>
        *
-       * <code>optional fixed32 managerid = 9;</code>
+       * <code>fixed32 managerid = 9;</code>
        */
       public Builder setManagerid(int value) {
         copyOnWrite();
@@ -2022,7 +2050,7 @@ public final class InterfaceMeet {
        *管理员id
        * </pre>
        *
-       * <code>optional fixed32 managerid = 9;</code>
+       * <code>fixed32 managerid = 9;</code>
        */
       public Builder clearManagerid() {
         copyOnWrite();
@@ -2035,7 +2063,7 @@ public final class InterfaceMeet {
        *会议签到密码 不能超过Pb_SIGNIN_PSW_LEN 定义的限制长度
        * </pre>
        *
-       * <code>optional bytes onepsw_signin = 10;</code>
+       * <code>bytes onepsw_signin = 10;</code>
        */
       public com.google.protobuf.ByteString getOnepswSignin() {
         return instance.getOnepswSignin();
@@ -2045,7 +2073,7 @@ public final class InterfaceMeet {
        *会议签到密码 不能超过Pb_SIGNIN_PSW_LEN 定义的限制长度
        * </pre>
        *
-       * <code>optional bytes onepsw_signin = 10;</code>
+       * <code>bytes onepsw_signin = 10;</code>
        */
       public Builder setOnepswSignin(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2057,7 +2085,7 @@ public final class InterfaceMeet {
        *会议签到密码 不能超过Pb_SIGNIN_PSW_LEN 定义的限制长度
        * </pre>
        *
-       * <code>optional bytes onepsw_signin = 10;</code>
+       * <code>bytes onepsw_signin = 10;</code>
        */
       public Builder clearOnepswSignin() {
         copyOnWrite();
@@ -2067,20 +2095,20 @@ public final class InterfaceMeet {
 
       /**
        * <pre>
-       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议 (执行add/dmup方法时可以指定复制后会议状态)
        * </pre>
        *
-       * <code>optional fixed32 status = 11;</code>
+       * <code>fixed32 status = 11;</code>
        */
       public int getStatus() {
         return instance.getStatus();
       }
       /**
        * <pre>
-       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议 (执行add/dmup方法时可以指定复制后会议状态)
        * </pre>
        *
-       * <code>optional fixed32 status = 11;</code>
+       * <code>fixed32 status = 11;</code>
        */
       public Builder setStatus(int value) {
         copyOnWrite();
@@ -2089,10 +2117,10 @@ public final class InterfaceMeet {
       }
       /**
        * <pre>
-       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议
+       *会议状态，0为未开始会议，1为已开始会议，2为已结束会议,3为已暂停会议,4为模板会议 (执行add/dmup方法时可以指定复制后会议状态)
        * </pre>
        *
-       * <code>optional fixed32 status = 11;</code>
+       * <code>fixed32 status = 11;</code>
        */
       public Builder clearStatus() {
         copyOnWrite();
@@ -2105,7 +2133,7 @@ public final class InterfaceMeet {
        *会议预约人
        * </pre>
        *
-       * <code>optional bytes ordername = 12;</code>
+       * <code>bytes ordername = 12;</code>
        */
       public com.google.protobuf.ByteString getOrdername() {
         return instance.getOrdername();
@@ -2115,7 +2143,7 @@ public final class InterfaceMeet {
        *会议预约人
        * </pre>
        *
-       * <code>optional bytes ordername = 12;</code>
+       * <code>bytes ordername = 12;</code>
        */
       public Builder setOrdername(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2127,7 +2155,7 @@ public final class InterfaceMeet {
        *会议预约人
        * </pre>
        *
-       * <code>optional bytes ordername = 12;</code>
+       * <code>bytes ordername = 12;</code>
        */
       public Builder clearOrdername() {
         copyOnWrite();
@@ -2137,6 +2165,7 @@ public final class InterfaceMeet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetMeetInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2275,6 +2304,7 @@ public final class InterfaceMeet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2345,7 +2375,7 @@ public final class InterfaceMeet {
    *会议信息
    *call
    *type:Pb_TYPE_MEET_INTERFACE_MEETINFO
-   *method: add/mod/del/query
+   *method: add/mod/del/query/dmup
    * </pre>
    *
    * Protobuf type {@code pbui_Type_MeetMeetInfo}
@@ -2555,6 +2585,19 @@ public final class InterfaceMeet {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetMeetInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetMeetInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetMeetInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2627,7 +2670,7 @@ public final class InterfaceMeet {
      *会议信息
      *call
      *type:Pb_TYPE_MEET_INTERFACE_MEETINFO
-     *method: add/mod/del/query
+     *method: add/mod/del/query/dmup
      * </pre>
      *
      * Protobuf type {@code pbui_Type_MeetMeetInfo}
@@ -2790,6 +2833,7 @@ public final class InterfaceMeet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetMeetInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2855,6 +2899,7 @@ public final class InterfaceMeet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2899,7 +2944,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetid = 1;</code>
+     * <code>fixed32 meetid = 1;</code>
      */
     int getMeetid();
 
@@ -2908,7 +2953,7 @@ public final class InterfaceMeet {
      *会议状态 参见 Pb_MeetStatus
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     int getStatus();
   }
@@ -2936,7 +2981,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetid = 1;</code>
+     * <code>fixed32 meetid = 1;</code>
      */
     public int getMeetid() {
       return meetid_;
@@ -2946,7 +2991,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetid = 1;</code>
+     * <code>fixed32 meetid = 1;</code>
      */
     private void setMeetid(int value) {
       
@@ -2957,7 +3002,7 @@ public final class InterfaceMeet {
      *会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetid = 1;</code>
+     * <code>fixed32 meetid = 1;</code>
      */
     private void clearMeetid() {
       
@@ -2971,7 +3016,7 @@ public final class InterfaceMeet {
      *会议状态 参见 Pb_MeetStatus
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     public int getStatus() {
       return status_;
@@ -2981,7 +3026,7 @@ public final class InterfaceMeet {
      *会议状态 参见 Pb_MeetStatus
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void setStatus(int value) {
       
@@ -2992,7 +3037,7 @@ public final class InterfaceMeet {
      *会议状态 参见 Pb_MeetStatus
      * </pre>
      *
-     * <code>optional fixed32 status = 2;</code>
+     * <code>fixed32 status = 2;</code>
      */
     private void clearStatus() {
       
@@ -3026,6 +3071,19 @@ public final class InterfaceMeet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetModStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetModStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetModStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3120,7 +3178,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetid = 1;</code>
+       * <code>fixed32 meetid = 1;</code>
        */
       public int getMeetid() {
         return instance.getMeetid();
@@ -3130,7 +3188,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetid = 1;</code>
+       * <code>fixed32 meetid = 1;</code>
        */
       public Builder setMeetid(int value) {
         copyOnWrite();
@@ -3142,7 +3200,7 @@ public final class InterfaceMeet {
        *会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetid = 1;</code>
+       * <code>fixed32 meetid = 1;</code>
        */
       public Builder clearMeetid() {
         copyOnWrite();
@@ -3155,7 +3213,7 @@ public final class InterfaceMeet {
        *会议状态 参见 Pb_MeetStatus
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public int getStatus() {
         return instance.getStatus();
@@ -3165,7 +3223,7 @@ public final class InterfaceMeet {
        *会议状态 参见 Pb_MeetStatus
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder setStatus(int value) {
         copyOnWrite();
@@ -3177,7 +3235,7 @@ public final class InterfaceMeet {
        *会议状态 参见 Pb_MeetStatus
        * </pre>
        *
-       * <code>optional fixed32 status = 2;</code>
+       * <code>fixed32 status = 2;</code>
        */
       public Builder clearStatus() {
         copyOnWrite();
@@ -3187,6 +3245,7 @@ public final class InterfaceMeet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetModStatus)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3255,6 +3314,7 @@ public final class InterfaceMeet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3299,7 +3359,7 @@ public final class InterfaceMeet {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     int getMemberid();
 
@@ -3308,7 +3368,7 @@ public final class InterfaceMeet {
      *标志 参见file evaluate flag 宏定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     int getFlag();
 
@@ -3317,7 +3377,7 @@ public final class InterfaceMeet {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 3;</code>
+     * <code>fixed64 evaluatetime = 3;</code>
      */
     long getEvaluatetime();
 
@@ -3326,7 +3386,7 @@ public final class InterfaceMeet {
      *评分的文本
      * </pre>
      *
-     * <code>optional bytes evaluate = 4;</code>
+     * <code>bytes evaluate = 4;</code>
      */
     com.google.protobuf.ByteString getEvaluate();
   }
@@ -3353,7 +3413,7 @@ public final class InterfaceMeet {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -3363,7 +3423,7 @@ public final class InterfaceMeet {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void setMemberid(int value) {
       
@@ -3374,7 +3434,7 @@ public final class InterfaceMeet {
      *参会人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void clearMemberid() {
       
@@ -3388,7 +3448,7 @@ public final class InterfaceMeet {
      *标志 参见file evaluate flag 宏定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     public int getFlag() {
       return flag_;
@@ -3398,7 +3458,7 @@ public final class InterfaceMeet {
      *标志 参见file evaluate flag 宏定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     private void setFlag(int value) {
       
@@ -3409,7 +3469,7 @@ public final class InterfaceMeet {
      *标志 参见file evaluate flag 宏定义
      * </pre>
      *
-     * <code>optional fixed32 flag = 2;</code>
+     * <code>fixed32 flag = 2;</code>
      */
     private void clearFlag() {
       
@@ -3423,7 +3483,7 @@ public final class InterfaceMeet {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 3;</code>
+     * <code>fixed64 evaluatetime = 3;</code>
      */
     public long getEvaluatetime() {
       return evaluatetime_;
@@ -3433,7 +3493,7 @@ public final class InterfaceMeet {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 3;</code>
+     * <code>fixed64 evaluatetime = 3;</code>
      */
     private void setEvaluatetime(long value) {
       
@@ -3444,7 +3504,7 @@ public final class InterfaceMeet {
      *评分utc时间 微秒
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 3;</code>
+     * <code>fixed64 evaluatetime = 3;</code>
      */
     private void clearEvaluatetime() {
       
@@ -3458,7 +3518,7 @@ public final class InterfaceMeet {
      *评分的文本
      * </pre>
      *
-     * <code>optional bytes evaluate = 4;</code>
+     * <code>bytes evaluate = 4;</code>
      */
     public com.google.protobuf.ByteString getEvaluate() {
       return evaluate_;
@@ -3468,7 +3528,7 @@ public final class InterfaceMeet {
      *评分的文本
      * </pre>
      *
-     * <code>optional bytes evaluate = 4;</code>
+     * <code>bytes evaluate = 4;</code>
      */
     private void setEvaluate(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3482,7 +3542,7 @@ public final class InterfaceMeet {
      *评分的文本
      * </pre>
      *
-     * <code>optional bytes evaluate = 4;</code>
+     * <code>bytes evaluate = 4;</code>
      */
     private void clearEvaluate() {
       
@@ -3530,6 +3590,19 @@ public final class InterfaceMeet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Item_MeetEvaluate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Item_MeetEvaluate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Item_MeetEvaluate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3622,7 +3695,7 @@ public final class InterfaceMeet {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -3632,7 +3705,7 @@ public final class InterfaceMeet {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -3644,7 +3717,7 @@ public final class InterfaceMeet {
        *参会人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -3657,7 +3730,7 @@ public final class InterfaceMeet {
        *标志 参见file evaluate flag 宏定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public int getFlag() {
         return instance.getFlag();
@@ -3667,7 +3740,7 @@ public final class InterfaceMeet {
        *标志 参见file evaluate flag 宏定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public Builder setFlag(int value) {
         copyOnWrite();
@@ -3679,7 +3752,7 @@ public final class InterfaceMeet {
        *标志 参见file evaluate flag 宏定义
        * </pre>
        *
-       * <code>optional fixed32 flag = 2;</code>
+       * <code>fixed32 flag = 2;</code>
        */
       public Builder clearFlag() {
         copyOnWrite();
@@ -3692,7 +3765,7 @@ public final class InterfaceMeet {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 3;</code>
+       * <code>fixed64 evaluatetime = 3;</code>
        */
       public long getEvaluatetime() {
         return instance.getEvaluatetime();
@@ -3702,7 +3775,7 @@ public final class InterfaceMeet {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 3;</code>
+       * <code>fixed64 evaluatetime = 3;</code>
        */
       public Builder setEvaluatetime(long value) {
         copyOnWrite();
@@ -3714,7 +3787,7 @@ public final class InterfaceMeet {
        *评分utc时间 微秒
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 3;</code>
+       * <code>fixed64 evaluatetime = 3;</code>
        */
       public Builder clearEvaluatetime() {
         copyOnWrite();
@@ -3727,7 +3800,7 @@ public final class InterfaceMeet {
        *评分的文本
        * </pre>
        *
-       * <code>optional bytes evaluate = 4;</code>
+       * <code>bytes evaluate = 4;</code>
        */
       public com.google.protobuf.ByteString getEvaluate() {
         return instance.getEvaluate();
@@ -3737,7 +3810,7 @@ public final class InterfaceMeet {
        *评分的文本
        * </pre>
        *
-       * <code>optional bytes evaluate = 4;</code>
+       * <code>bytes evaluate = 4;</code>
        */
       public Builder setEvaluate(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -3749,7 +3822,7 @@ public final class InterfaceMeet {
        *评分的文本
        * </pre>
        *
-       * <code>optional bytes evaluate = 4;</code>
+       * <code>bytes evaluate = 4;</code>
        */
       public Builder clearEvaluate() {
         copyOnWrite();
@@ -3759,6 +3832,7 @@ public final class InterfaceMeet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_MeetEvaluate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3841,6 +3915,7 @@ public final class InterfaceMeet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3885,7 +3960,7 @@ public final class InterfaceMeet {
      *查询返回用户传过来的开始行
      * </pre>
      *
-     * <code>optional fixed32 startrow = 1;</code>
+     * <code>fixed32 startrow = 1;</code>
      */
     int getStartrow();
 
@@ -3894,7 +3969,7 @@ public final class InterfaceMeet {
      *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 2;</code>
+     * <code>fixed32 isfirst = 2;</code>
      */
     int getIsfirst();
 
@@ -3937,7 +4012,7 @@ public final class InterfaceMeet {
      *查询返回用户传过来的开始行
      * </pre>
      *
-     * <code>optional fixed32 startrow = 1;</code>
+     * <code>fixed32 startrow = 1;</code>
      */
     public int getStartrow() {
       return startrow_;
@@ -3947,7 +4022,7 @@ public final class InterfaceMeet {
      *查询返回用户传过来的开始行
      * </pre>
      *
-     * <code>optional fixed32 startrow = 1;</code>
+     * <code>fixed32 startrow = 1;</code>
      */
     private void setStartrow(int value) {
       
@@ -3958,7 +4033,7 @@ public final class InterfaceMeet {
      *查询返回用户传过来的开始行
      * </pre>
      *
-     * <code>optional fixed32 startrow = 1;</code>
+     * <code>fixed32 startrow = 1;</code>
      */
     private void clearStartrow() {
       
@@ -3972,7 +4047,7 @@ public final class InterfaceMeet {
      *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 2;</code>
+     * <code>fixed32 isfirst = 2;</code>
      */
     public int getIsfirst() {
       return isfirst_;
@@ -3982,7 +4057,7 @@ public final class InterfaceMeet {
      *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 2;</code>
+     * <code>fixed32 isfirst = 2;</code>
      */
     private void setIsfirst(int value) {
       
@@ -3993,7 +4068,7 @@ public final class InterfaceMeet {
      *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
      * </pre>
      *
-     * <code>optional fixed32 isfirst = 2;</code>
+     * <code>fixed32 isfirst = 2;</code>
      */
     private void clearIsfirst() {
       
@@ -4155,6 +4230,19 @@ public final class InterfaceMeet {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetingMeetEvaluate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetingMeetEvaluate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_MeetingMeetEvaluate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4247,7 +4335,7 @@ public final class InterfaceMeet {
        *查询返回用户传过来的开始行
        * </pre>
        *
-       * <code>optional fixed32 startrow = 1;</code>
+       * <code>fixed32 startrow = 1;</code>
        */
       public int getStartrow() {
         return instance.getStartrow();
@@ -4257,7 +4345,7 @@ public final class InterfaceMeet {
        *查询返回用户传过来的开始行
        * </pre>
        *
-       * <code>optional fixed32 startrow = 1;</code>
+       * <code>fixed32 startrow = 1;</code>
        */
       public Builder setStartrow(int value) {
         copyOnWrite();
@@ -4269,7 +4357,7 @@ public final class InterfaceMeet {
        *查询返回用户传过来的开始行
        * </pre>
        *
-       * <code>optional fixed32 startrow = 1;</code>
+       * <code>fixed32 startrow = 1;</code>
        */
       public Builder clearStartrow() {
         copyOnWrite();
@@ -4282,7 +4370,7 @@ public final class InterfaceMeet {
        *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 2;</code>
+       * <code>fixed32 isfirst = 2;</code>
        */
       public int getIsfirst() {
         return instance.getIsfirst();
@@ -4292,7 +4380,7 @@ public final class InterfaceMeet {
        *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 2;</code>
+       * <code>fixed32 isfirst = 2;</code>
        */
       public Builder setIsfirst(int value) {
         copyOnWrite();
@@ -4304,7 +4392,7 @@ public final class InterfaceMeet {
        *是否为第一帧,如果评分太多,接下来的帧会在下次接收到后回调
        * </pre>
        *
-       * <code>optional fixed32 isfirst = 2;</code>
+       * <code>fixed32 isfirst = 2;</code>
        */
       public Builder clearIsfirst() {
         copyOnWrite();
@@ -4411,6 +4499,7 @@ public final class InterfaceMeet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetingMeetEvaluate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4491,6 +4580,7 @@ public final class InterfaceMeet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4535,7 +4625,7 @@ public final class InterfaceMeet {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     int getMemberid();
 
@@ -4544,7 +4634,7 @@ public final class InterfaceMeet {
      *查询的起始评价utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 startevaluatetime = 2;</code>
+     * <code>fixed64 startevaluatetime = 2;</code>
      */
     long getStartevaluatetime();
 
@@ -4553,7 +4643,7 @@ public final class InterfaceMeet {
      *查询的结束评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 endevaluatetime = 3;</code>
+     * <code>fixed64 endevaluatetime = 3;</code>
      */
     long getEndevaluatetime();
 
@@ -4562,7 +4652,7 @@ public final class InterfaceMeet {
      *查询开始行 实现分页查询 必须有效 第一次从0开始
      * </pre>
      *
-     * <code>optional fixed32 startrow = 4;</code>
+     * <code>fixed32 startrow = 4;</code>
      */
     int getStartrow();
   }
@@ -4589,7 +4679,7 @@ public final class InterfaceMeet {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -4599,7 +4689,7 @@ public final class InterfaceMeet {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void setMemberid(int value) {
       
@@ -4610,7 +4700,7 @@ public final class InterfaceMeet {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void clearMemberid() {
       
@@ -4624,7 +4714,7 @@ public final class InterfaceMeet {
      *查询的起始评价utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 startevaluatetime = 2;</code>
+     * <code>fixed64 startevaluatetime = 2;</code>
      */
     public long getStartevaluatetime() {
       return startevaluatetime_;
@@ -4634,7 +4724,7 @@ public final class InterfaceMeet {
      *查询的起始评价utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 startevaluatetime = 2;</code>
+     * <code>fixed64 startevaluatetime = 2;</code>
      */
     private void setStartevaluatetime(long value) {
       
@@ -4645,7 +4735,7 @@ public final class InterfaceMeet {
      *查询的起始评价utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 startevaluatetime = 2;</code>
+     * <code>fixed64 startevaluatetime = 2;</code>
      */
     private void clearStartevaluatetime() {
       
@@ -4659,7 +4749,7 @@ public final class InterfaceMeet {
      *查询的结束评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 endevaluatetime = 3;</code>
+     * <code>fixed64 endevaluatetime = 3;</code>
      */
     public long getEndevaluatetime() {
       return endevaluatetime_;
@@ -4669,7 +4759,7 @@ public final class InterfaceMeet {
      *查询的结束评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 endevaluatetime = 3;</code>
+     * <code>fixed64 endevaluatetime = 3;</code>
      */
     private void setEndevaluatetime(long value) {
       
@@ -4680,7 +4770,7 @@ public final class InterfaceMeet {
      *查询的结束评分utc时间 微秒 必须有效
      * </pre>
      *
-     * <code>optional fixed64 endevaluatetime = 3;</code>
+     * <code>fixed64 endevaluatetime = 3;</code>
      */
     private void clearEndevaluatetime() {
       
@@ -4694,7 +4784,7 @@ public final class InterfaceMeet {
      *查询开始行 实现分页查询 必须有效 第一次从0开始
      * </pre>
      *
-     * <code>optional fixed32 startrow = 4;</code>
+     * <code>fixed32 startrow = 4;</code>
      */
     public int getStartrow() {
       return startrow_;
@@ -4704,7 +4794,7 @@ public final class InterfaceMeet {
      *查询开始行 实现分页查询 必须有效 第一次从0开始
      * </pre>
      *
-     * <code>optional fixed32 startrow = 4;</code>
+     * <code>fixed32 startrow = 4;</code>
      */
     private void setStartrow(int value) {
       
@@ -4715,7 +4805,7 @@ public final class InterfaceMeet {
      *查询开始行 实现分页查询 必须有效 第一次从0开始
      * </pre>
      *
-     * <code>optional fixed32 startrow = 4;</code>
+     * <code>fixed32 startrow = 4;</code>
      */
     private void clearStartrow() {
       
@@ -4763,6 +4853,19 @@ public final class InterfaceMeet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_QueryMeetEvaluate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_QueryMeetEvaluate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_QueryMeetEvaluate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4856,7 +4959,7 @@ public final class InterfaceMeet {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -4866,7 +4969,7 @@ public final class InterfaceMeet {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -4878,7 +4981,7 @@ public final class InterfaceMeet {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -4891,7 +4994,7 @@ public final class InterfaceMeet {
        *查询的起始评价utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 startevaluatetime = 2;</code>
+       * <code>fixed64 startevaluatetime = 2;</code>
        */
       public long getStartevaluatetime() {
         return instance.getStartevaluatetime();
@@ -4901,7 +5004,7 @@ public final class InterfaceMeet {
        *查询的起始评价utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 startevaluatetime = 2;</code>
+       * <code>fixed64 startevaluatetime = 2;</code>
        */
       public Builder setStartevaluatetime(long value) {
         copyOnWrite();
@@ -4913,7 +5016,7 @@ public final class InterfaceMeet {
        *查询的起始评价utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 startevaluatetime = 2;</code>
+       * <code>fixed64 startevaluatetime = 2;</code>
        */
       public Builder clearStartevaluatetime() {
         copyOnWrite();
@@ -4926,7 +5029,7 @@ public final class InterfaceMeet {
        *查询的结束评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 endevaluatetime = 3;</code>
+       * <code>fixed64 endevaluatetime = 3;</code>
        */
       public long getEndevaluatetime() {
         return instance.getEndevaluatetime();
@@ -4936,7 +5039,7 @@ public final class InterfaceMeet {
        *查询的结束评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 endevaluatetime = 3;</code>
+       * <code>fixed64 endevaluatetime = 3;</code>
        */
       public Builder setEndevaluatetime(long value) {
         copyOnWrite();
@@ -4948,7 +5051,7 @@ public final class InterfaceMeet {
        *查询的结束评分utc时间 微秒 必须有效
        * </pre>
        *
-       * <code>optional fixed64 endevaluatetime = 3;</code>
+       * <code>fixed64 endevaluatetime = 3;</code>
        */
       public Builder clearEndevaluatetime() {
         copyOnWrite();
@@ -4961,7 +5064,7 @@ public final class InterfaceMeet {
        *查询开始行 实现分页查询 必须有效 第一次从0开始
        * </pre>
        *
-       * <code>optional fixed32 startrow = 4;</code>
+       * <code>fixed32 startrow = 4;</code>
        */
       public int getStartrow() {
         return instance.getStartrow();
@@ -4971,7 +5074,7 @@ public final class InterfaceMeet {
        *查询开始行 实现分页查询 必须有效 第一次从0开始
        * </pre>
        *
-       * <code>optional fixed32 startrow = 4;</code>
+       * <code>fixed32 startrow = 4;</code>
        */
       public Builder setStartrow(int value) {
         copyOnWrite();
@@ -4983,7 +5086,7 @@ public final class InterfaceMeet {
        *查询开始行 实现分页查询 必须有效 第一次从0开始
        * </pre>
        *
-       * <code>optional fixed32 startrow = 4;</code>
+       * <code>fixed32 startrow = 4;</code>
        */
       public Builder clearStartrow() {
         copyOnWrite();
@@ -4993,6 +5096,7 @@ public final class InterfaceMeet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_QueryMeetEvaluate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5075,6 +5179,7 @@ public final class InterfaceMeet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5119,7 +5224,7 @@ public final class InterfaceMeet {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     int getMemberid();
 
@@ -5128,7 +5233,7 @@ public final class InterfaceMeet {
      *评分utc时间 微秒 当memberid有效时 可以有效表示删除指定的评论
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 2;</code>
+     * <code>fixed64 evaluatetime = 2;</code>
      */
     long getEvaluatetime();
   }
@@ -5155,7 +5260,7 @@ public final class InterfaceMeet {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -5165,7 +5270,7 @@ public final class InterfaceMeet {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void setMemberid(int value) {
       
@@ -5176,7 +5281,7 @@ public final class InterfaceMeet {
      *参会人员ID 可以为0表示所有参会人
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void clearMemberid() {
       
@@ -5190,7 +5295,7 @@ public final class InterfaceMeet {
      *评分utc时间 微秒 当memberid有效时 可以有效表示删除指定的评论
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 2;</code>
+     * <code>fixed64 evaluatetime = 2;</code>
      */
     public long getEvaluatetime() {
       return evaluatetime_;
@@ -5200,7 +5305,7 @@ public final class InterfaceMeet {
      *评分utc时间 微秒 当memberid有效时 可以有效表示删除指定的评论
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 2;</code>
+     * <code>fixed64 evaluatetime = 2;</code>
      */
     private void setEvaluatetime(long value) {
       
@@ -5211,7 +5316,7 @@ public final class InterfaceMeet {
      *评分utc时间 微秒 当memberid有效时 可以有效表示删除指定的评论
      * </pre>
      *
-     * <code>optional fixed64 evaluatetime = 2;</code>
+     * <code>fixed64 evaluatetime = 2;</code>
      */
     private void clearEvaluatetime() {
       
@@ -5245,6 +5350,19 @@ public final class InterfaceMeet {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_DelMeetEvaluate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_DelMeetEvaluate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceMeet.pbui_Type_DelMeetEvaluate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5338,7 +5456,7 @@ public final class InterfaceMeet {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -5348,7 +5466,7 @@ public final class InterfaceMeet {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -5360,7 +5478,7 @@ public final class InterfaceMeet {
        *参会人员ID 可以为0表示所有参会人
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -5373,7 +5491,7 @@ public final class InterfaceMeet {
        *评分utc时间 微秒 当memberid有效时 可以有效表示删除指定的评论
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 2;</code>
+       * <code>fixed64 evaluatetime = 2;</code>
        */
       public long getEvaluatetime() {
         return instance.getEvaluatetime();
@@ -5383,7 +5501,7 @@ public final class InterfaceMeet {
        *评分utc时间 微秒 当memberid有效时 可以有效表示删除指定的评论
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 2;</code>
+       * <code>fixed64 evaluatetime = 2;</code>
        */
       public Builder setEvaluatetime(long value) {
         copyOnWrite();
@@ -5395,7 +5513,7 @@ public final class InterfaceMeet {
        *评分utc时间 微秒 当memberid有效时 可以有效表示删除指定的评论
        * </pre>
        *
-       * <code>optional fixed64 evaluatetime = 2;</code>
+       * <code>fixed64 evaluatetime = 2;</code>
        */
       public Builder clearEvaluatetime() {
         copyOnWrite();
@@ -5405,6 +5523,7 @@ public final class InterfaceMeet {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DelMeetEvaluate)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5473,6 +5592,7 @@ public final class InterfaceMeet {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

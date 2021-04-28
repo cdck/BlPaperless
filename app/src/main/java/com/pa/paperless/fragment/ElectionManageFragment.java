@@ -6,13 +6,17 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.TextUtils;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.blankj.utilcode.util.UriUtils;
 import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.utils.ConvertUtil;
@@ -54,12 +58,12 @@ import com.pa.paperless.utils.Export;
 import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.ScreenUtils;
 
-import com.pa.paperless.utils.UriUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -1047,17 +1051,15 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
         if (requestCode == JUST_OPEN_SURVEY_EXCEL_CODE) {
             if (resultCode == RESULT_OK) {
                 Uri uri = data.getData();
-                String path = "";
-                try {
-                    path = UriUtil.getFilePath(getContext(), uri);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                if (path == null || path.isEmpty()) {
-                    ToastUtils.showShort(R.string.get_file_path_fail);
-                } else {
-                    List<InterfaceVote.pbui_Item_MeetOnVotingDetailInfo> votes = Export.importSurvey(path);
-                    if (!votes.isEmpty()) jni.createVote(votes);
+                File file = UriUtils.uri2File(uri);
+                if (file != null) {
+                    try {
+                        List<InterfaceVote.pbui_Item_MeetOnVotingDetailInfo> votes = Export.importSurvey(file.getAbsolutePath());
+                        if (!votes.isEmpty()) jni.createVote(votes);
+                    } catch (Exception e) {
+                        LogUtils.e(TAG, "导入选举异常");
+                        e.printStackTrace();
+                    }
                 }
             }
         }

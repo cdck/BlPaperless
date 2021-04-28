@@ -71,6 +71,10 @@ public final class InterfaceCommondata {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -121,7 +125,7 @@ public final class InterfaceCommondata {
      *数据类型 参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     int getType();
 
@@ -130,7 +134,7 @@ public final class InterfaceCommondata {
      *类型对应的操作方法 参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     int getMethod();
 
@@ -139,7 +143,7 @@ public final class InterfaceCommondata {
      *参见 pbui_ComContainer_Call
      * </pre>
      *
-     * <code>optional fixed32 call = 3;</code>
+     * <code>fixed32 call = 3;</code>
      */
     int getCall();
 
@@ -148,7 +152,7 @@ public final class InterfaceCommondata {
      *标识PHP后台操作使用
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 4;</code>
+     * <code>fixed32 meetingid = 4;</code>
      */
     int getMeetingid();
 
@@ -157,7 +161,7 @@ public final class InterfaceCommondata {
      *会议ID关联的会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 5;</code>
+     * <code>fixed32 roomid = 5;</code>
      */
     int getRoomid();
 
@@ -166,7 +170,7 @@ public final class InterfaceCommondata {
      *&#47;/用户身份 参见Interface_Macro.proto Pb_MeetFaceStatus
      * </pre>
      *
-     * <code>optional fixed32 role = 6;</code>
+     * <code>fixed32 role = 6;</code>
      */
     int getRole();
 
@@ -175,7 +179,7 @@ public final class InterfaceCommondata {
      *如果是参会人员则会参会人员ID,如果是管理员则为管理员ID
      * </pre>
      *
-     * <code>optional fixed32 userid = 7;</code>
+     * <code>fixed32 userid = 7;</code>
      */
     int getUserid();
 
@@ -184,7 +188,7 @@ public final class InterfaceCommondata {
      *如果是参会人员则会参会人员名称,如果是管理员则为管理员名称
      * </pre>
      *
-     * <code>optional bytes username = 8;</code>
+     * <code>bytes username = 8;</code>
      */
     com.google.protobuf.ByteString getUsername();
 
@@ -193,7 +197,7 @@ public final class InterfaceCommondata {
      *会话ID php后台使用
      * </pre>
      *
-     * <code>optional bytes sessionid = 9;</code>
+     * <code>bytes sessionid = 9;</code>
      */
     com.google.protobuf.ByteString getSessionid();
 
@@ -202,7 +206,7 @@ public final class InterfaceCommondata {
      *返回的值，如果错误保存错误码 参见 Pb_Error
      * </pre>
      *
-     * <code>optional fixed32 retcode = 10;</code>
+     * <code>fixed32 retcode = 10;</code>
      */
     int getRetcode();
 
@@ -211,7 +215,7 @@ public final class InterfaceCommondata {
      *对应的数据，如果存在数据，则按照 type、method解析该数据
      * </pre>
      *
-     * <code>optional bytes data = 11;</code>
+     * <code>bytes data = 11;</code>
      */
     com.google.protobuf.ByteString getData();
   }
@@ -239,7 +243,7 @@ public final class InterfaceCommondata {
      *数据类型 参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     public int getType() {
       return type_;
@@ -249,7 +253,7 @@ public final class InterfaceCommondata {
      *数据类型 参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     private void setType(int value) {
       
@@ -260,7 +264,7 @@ public final class InterfaceCommondata {
      *数据类型 参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     private void clearType() {
       
@@ -274,7 +278,7 @@ public final class InterfaceCommondata {
      *类型对应的操作方法 参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     public int getMethod() {
       return method_;
@@ -284,7 +288,7 @@ public final class InterfaceCommondata {
      *类型对应的操作方法 参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     private void setMethod(int value) {
       
@@ -295,7 +299,7 @@ public final class InterfaceCommondata {
      *类型对应的操作方法 参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     private void clearMethod() {
       
@@ -309,7 +313,7 @@ public final class InterfaceCommondata {
      *参见 pbui_ComContainer_Call
      * </pre>
      *
-     * <code>optional fixed32 call = 3;</code>
+     * <code>fixed32 call = 3;</code>
      */
     public int getCall() {
       return call_;
@@ -319,7 +323,7 @@ public final class InterfaceCommondata {
      *参见 pbui_ComContainer_Call
      * </pre>
      *
-     * <code>optional fixed32 call = 3;</code>
+     * <code>fixed32 call = 3;</code>
      */
     private void setCall(int value) {
       
@@ -330,7 +334,7 @@ public final class InterfaceCommondata {
      *参见 pbui_ComContainer_Call
      * </pre>
      *
-     * <code>optional fixed32 call = 3;</code>
+     * <code>fixed32 call = 3;</code>
      */
     private void clearCall() {
       
@@ -344,7 +348,7 @@ public final class InterfaceCommondata {
      *标识PHP后台操作使用
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 4;</code>
+     * <code>fixed32 meetingid = 4;</code>
      */
     public int getMeetingid() {
       return meetingid_;
@@ -354,7 +358,7 @@ public final class InterfaceCommondata {
      *标识PHP后台操作使用
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 4;</code>
+     * <code>fixed32 meetingid = 4;</code>
      */
     private void setMeetingid(int value) {
       
@@ -365,7 +369,7 @@ public final class InterfaceCommondata {
      *标识PHP后台操作使用
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 4;</code>
+     * <code>fixed32 meetingid = 4;</code>
      */
     private void clearMeetingid() {
       
@@ -379,7 +383,7 @@ public final class InterfaceCommondata {
      *会议ID关联的会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 5;</code>
+     * <code>fixed32 roomid = 5;</code>
      */
     public int getRoomid() {
       return roomid_;
@@ -389,7 +393,7 @@ public final class InterfaceCommondata {
      *会议ID关联的会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 5;</code>
+     * <code>fixed32 roomid = 5;</code>
      */
     private void setRoomid(int value) {
       
@@ -400,7 +404,7 @@ public final class InterfaceCommondata {
      *会议ID关联的会场ID
      * </pre>
      *
-     * <code>optional fixed32 roomid = 5;</code>
+     * <code>fixed32 roomid = 5;</code>
      */
     private void clearRoomid() {
       
@@ -414,7 +418,7 @@ public final class InterfaceCommondata {
      *&#47;/用户身份 参见Interface_Macro.proto Pb_MeetFaceStatus
      * </pre>
      *
-     * <code>optional fixed32 role = 6;</code>
+     * <code>fixed32 role = 6;</code>
      */
     public int getRole() {
       return role_;
@@ -424,7 +428,7 @@ public final class InterfaceCommondata {
      *&#47;/用户身份 参见Interface_Macro.proto Pb_MeetFaceStatus
      * </pre>
      *
-     * <code>optional fixed32 role = 6;</code>
+     * <code>fixed32 role = 6;</code>
      */
     private void setRole(int value) {
       
@@ -435,7 +439,7 @@ public final class InterfaceCommondata {
      *&#47;/用户身份 参见Interface_Macro.proto Pb_MeetFaceStatus
      * </pre>
      *
-     * <code>optional fixed32 role = 6;</code>
+     * <code>fixed32 role = 6;</code>
      */
     private void clearRole() {
       
@@ -449,7 +453,7 @@ public final class InterfaceCommondata {
      *如果是参会人员则会参会人员ID,如果是管理员则为管理员ID
      * </pre>
      *
-     * <code>optional fixed32 userid = 7;</code>
+     * <code>fixed32 userid = 7;</code>
      */
     public int getUserid() {
       return userid_;
@@ -459,7 +463,7 @@ public final class InterfaceCommondata {
      *如果是参会人员则会参会人员ID,如果是管理员则为管理员ID
      * </pre>
      *
-     * <code>optional fixed32 userid = 7;</code>
+     * <code>fixed32 userid = 7;</code>
      */
     private void setUserid(int value) {
       
@@ -470,7 +474,7 @@ public final class InterfaceCommondata {
      *如果是参会人员则会参会人员ID,如果是管理员则为管理员ID
      * </pre>
      *
-     * <code>optional fixed32 userid = 7;</code>
+     * <code>fixed32 userid = 7;</code>
      */
     private void clearUserid() {
       
@@ -484,7 +488,7 @@ public final class InterfaceCommondata {
      *如果是参会人员则会参会人员名称,如果是管理员则为管理员名称
      * </pre>
      *
-     * <code>optional bytes username = 8;</code>
+     * <code>bytes username = 8;</code>
      */
     public com.google.protobuf.ByteString getUsername() {
       return username_;
@@ -494,7 +498,7 @@ public final class InterfaceCommondata {
      *如果是参会人员则会参会人员名称,如果是管理员则为管理员名称
      * </pre>
      *
-     * <code>optional bytes username = 8;</code>
+     * <code>bytes username = 8;</code>
      */
     private void setUsername(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -508,7 +512,7 @@ public final class InterfaceCommondata {
      *如果是参会人员则会参会人员名称,如果是管理员则为管理员名称
      * </pre>
      *
-     * <code>optional bytes username = 8;</code>
+     * <code>bytes username = 8;</code>
      */
     private void clearUsername() {
       
@@ -522,7 +526,7 @@ public final class InterfaceCommondata {
      *会话ID php后台使用
      * </pre>
      *
-     * <code>optional bytes sessionid = 9;</code>
+     * <code>bytes sessionid = 9;</code>
      */
     public com.google.protobuf.ByteString getSessionid() {
       return sessionid_;
@@ -532,7 +536,7 @@ public final class InterfaceCommondata {
      *会话ID php后台使用
      * </pre>
      *
-     * <code>optional bytes sessionid = 9;</code>
+     * <code>bytes sessionid = 9;</code>
      */
     private void setSessionid(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -546,7 +550,7 @@ public final class InterfaceCommondata {
      *会话ID php后台使用
      * </pre>
      *
-     * <code>optional bytes sessionid = 9;</code>
+     * <code>bytes sessionid = 9;</code>
      */
     private void clearSessionid() {
       
@@ -560,7 +564,7 @@ public final class InterfaceCommondata {
      *返回的值，如果错误保存错误码 参见 Pb_Error
      * </pre>
      *
-     * <code>optional fixed32 retcode = 10;</code>
+     * <code>fixed32 retcode = 10;</code>
      */
     public int getRetcode() {
       return retcode_;
@@ -570,7 +574,7 @@ public final class InterfaceCommondata {
      *返回的值，如果错误保存错误码 参见 Pb_Error
      * </pre>
      *
-     * <code>optional fixed32 retcode = 10;</code>
+     * <code>fixed32 retcode = 10;</code>
      */
     private void setRetcode(int value) {
       
@@ -581,7 +585,7 @@ public final class InterfaceCommondata {
      *返回的值，如果错误保存错误码 参见 Pb_Error
      * </pre>
      *
-     * <code>optional fixed32 retcode = 10;</code>
+     * <code>fixed32 retcode = 10;</code>
      */
     private void clearRetcode() {
       
@@ -595,7 +599,7 @@ public final class InterfaceCommondata {
      *对应的数据，如果存在数据，则按照 type、method解析该数据
      * </pre>
      *
-     * <code>optional bytes data = 11;</code>
+     * <code>bytes data = 11;</code>
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -605,7 +609,7 @@ public final class InterfaceCommondata {
      *对应的数据，如果存在数据，则按照 type、method解析该数据
      * </pre>
      *
-     * <code>optional bytes data = 11;</code>
+     * <code>bytes data = 11;</code>
      */
     private void setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -619,7 +623,7 @@ public final class InterfaceCommondata {
      *对应的数据，如果存在数据，则按照 type、method解析该数据
      * </pre>
      *
-     * <code>optional bytes data = 11;</code>
+     * <code>bytes data = 11;</code>
      */
     private void clearData() {
       
@@ -717,6 +721,19 @@ public final class InterfaceCommondata {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceCommondata.pbui_ReqComContainer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceCommondata.pbui_ReqComContainer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceCommondata.pbui_ReqComContainer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -807,7 +824,7 @@ public final class InterfaceCommondata {
        *数据类型 参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public int getType() {
         return instance.getType();
@@ -817,7 +834,7 @@ public final class InterfaceCommondata {
        *数据类型 参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public Builder setType(int value) {
         copyOnWrite();
@@ -829,7 +846,7 @@ public final class InterfaceCommondata {
        *数据类型 参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public Builder clearType() {
         copyOnWrite();
@@ -842,7 +859,7 @@ public final class InterfaceCommondata {
        *类型对应的操作方法 参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public int getMethod() {
         return instance.getMethod();
@@ -852,7 +869,7 @@ public final class InterfaceCommondata {
        *类型对应的操作方法 参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public Builder setMethod(int value) {
         copyOnWrite();
@@ -864,7 +881,7 @@ public final class InterfaceCommondata {
        *类型对应的操作方法 参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public Builder clearMethod() {
         copyOnWrite();
@@ -877,7 +894,7 @@ public final class InterfaceCommondata {
        *参见 pbui_ComContainer_Call
        * </pre>
        *
-       * <code>optional fixed32 call = 3;</code>
+       * <code>fixed32 call = 3;</code>
        */
       public int getCall() {
         return instance.getCall();
@@ -887,7 +904,7 @@ public final class InterfaceCommondata {
        *参见 pbui_ComContainer_Call
        * </pre>
        *
-       * <code>optional fixed32 call = 3;</code>
+       * <code>fixed32 call = 3;</code>
        */
       public Builder setCall(int value) {
         copyOnWrite();
@@ -899,7 +916,7 @@ public final class InterfaceCommondata {
        *参见 pbui_ComContainer_Call
        * </pre>
        *
-       * <code>optional fixed32 call = 3;</code>
+       * <code>fixed32 call = 3;</code>
        */
       public Builder clearCall() {
         copyOnWrite();
@@ -912,7 +929,7 @@ public final class InterfaceCommondata {
        *标识PHP后台操作使用
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 4;</code>
+       * <code>fixed32 meetingid = 4;</code>
        */
       public int getMeetingid() {
         return instance.getMeetingid();
@@ -922,7 +939,7 @@ public final class InterfaceCommondata {
        *标识PHP后台操作使用
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 4;</code>
+       * <code>fixed32 meetingid = 4;</code>
        */
       public Builder setMeetingid(int value) {
         copyOnWrite();
@@ -934,7 +951,7 @@ public final class InterfaceCommondata {
        *标识PHP后台操作使用
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 4;</code>
+       * <code>fixed32 meetingid = 4;</code>
        */
       public Builder clearMeetingid() {
         copyOnWrite();
@@ -947,7 +964,7 @@ public final class InterfaceCommondata {
        *会议ID关联的会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 5;</code>
+       * <code>fixed32 roomid = 5;</code>
        */
       public int getRoomid() {
         return instance.getRoomid();
@@ -957,7 +974,7 @@ public final class InterfaceCommondata {
        *会议ID关联的会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 5;</code>
+       * <code>fixed32 roomid = 5;</code>
        */
       public Builder setRoomid(int value) {
         copyOnWrite();
@@ -969,7 +986,7 @@ public final class InterfaceCommondata {
        *会议ID关联的会场ID
        * </pre>
        *
-       * <code>optional fixed32 roomid = 5;</code>
+       * <code>fixed32 roomid = 5;</code>
        */
       public Builder clearRoomid() {
         copyOnWrite();
@@ -982,7 +999,7 @@ public final class InterfaceCommondata {
        *&#47;/用户身份 参见Interface_Macro.proto Pb_MeetFaceStatus
        * </pre>
        *
-       * <code>optional fixed32 role = 6;</code>
+       * <code>fixed32 role = 6;</code>
        */
       public int getRole() {
         return instance.getRole();
@@ -992,7 +1009,7 @@ public final class InterfaceCommondata {
        *&#47;/用户身份 参见Interface_Macro.proto Pb_MeetFaceStatus
        * </pre>
        *
-       * <code>optional fixed32 role = 6;</code>
+       * <code>fixed32 role = 6;</code>
        */
       public Builder setRole(int value) {
         copyOnWrite();
@@ -1004,7 +1021,7 @@ public final class InterfaceCommondata {
        *&#47;/用户身份 参见Interface_Macro.proto Pb_MeetFaceStatus
        * </pre>
        *
-       * <code>optional fixed32 role = 6;</code>
+       * <code>fixed32 role = 6;</code>
        */
       public Builder clearRole() {
         copyOnWrite();
@@ -1017,7 +1034,7 @@ public final class InterfaceCommondata {
        *如果是参会人员则会参会人员ID,如果是管理员则为管理员ID
        * </pre>
        *
-       * <code>optional fixed32 userid = 7;</code>
+       * <code>fixed32 userid = 7;</code>
        */
       public int getUserid() {
         return instance.getUserid();
@@ -1027,7 +1044,7 @@ public final class InterfaceCommondata {
        *如果是参会人员则会参会人员ID,如果是管理员则为管理员ID
        * </pre>
        *
-       * <code>optional fixed32 userid = 7;</code>
+       * <code>fixed32 userid = 7;</code>
        */
       public Builder setUserid(int value) {
         copyOnWrite();
@@ -1039,7 +1056,7 @@ public final class InterfaceCommondata {
        *如果是参会人员则会参会人员ID,如果是管理员则为管理员ID
        * </pre>
        *
-       * <code>optional fixed32 userid = 7;</code>
+       * <code>fixed32 userid = 7;</code>
        */
       public Builder clearUserid() {
         copyOnWrite();
@@ -1052,7 +1069,7 @@ public final class InterfaceCommondata {
        *如果是参会人员则会参会人员名称,如果是管理员则为管理员名称
        * </pre>
        *
-       * <code>optional bytes username = 8;</code>
+       * <code>bytes username = 8;</code>
        */
       public com.google.protobuf.ByteString getUsername() {
         return instance.getUsername();
@@ -1062,7 +1079,7 @@ public final class InterfaceCommondata {
        *如果是参会人员则会参会人员名称,如果是管理员则为管理员名称
        * </pre>
        *
-       * <code>optional bytes username = 8;</code>
+       * <code>bytes username = 8;</code>
        */
       public Builder setUsername(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1074,7 +1091,7 @@ public final class InterfaceCommondata {
        *如果是参会人员则会参会人员名称,如果是管理员则为管理员名称
        * </pre>
        *
-       * <code>optional bytes username = 8;</code>
+       * <code>bytes username = 8;</code>
        */
       public Builder clearUsername() {
         copyOnWrite();
@@ -1087,7 +1104,7 @@ public final class InterfaceCommondata {
        *会话ID php后台使用
        * </pre>
        *
-       * <code>optional bytes sessionid = 9;</code>
+       * <code>bytes sessionid = 9;</code>
        */
       public com.google.protobuf.ByteString getSessionid() {
         return instance.getSessionid();
@@ -1097,7 +1114,7 @@ public final class InterfaceCommondata {
        *会话ID php后台使用
        * </pre>
        *
-       * <code>optional bytes sessionid = 9;</code>
+       * <code>bytes sessionid = 9;</code>
        */
       public Builder setSessionid(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1109,7 +1126,7 @@ public final class InterfaceCommondata {
        *会话ID php后台使用
        * </pre>
        *
-       * <code>optional bytes sessionid = 9;</code>
+       * <code>bytes sessionid = 9;</code>
        */
       public Builder clearSessionid() {
         copyOnWrite();
@@ -1122,7 +1139,7 @@ public final class InterfaceCommondata {
        *返回的值，如果错误保存错误码 参见 Pb_Error
        * </pre>
        *
-       * <code>optional fixed32 retcode = 10;</code>
+       * <code>fixed32 retcode = 10;</code>
        */
       public int getRetcode() {
         return instance.getRetcode();
@@ -1132,7 +1149,7 @@ public final class InterfaceCommondata {
        *返回的值，如果错误保存错误码 参见 Pb_Error
        * </pre>
        *
-       * <code>optional fixed32 retcode = 10;</code>
+       * <code>fixed32 retcode = 10;</code>
        */
       public Builder setRetcode(int value) {
         copyOnWrite();
@@ -1144,7 +1161,7 @@ public final class InterfaceCommondata {
        *返回的值，如果错误保存错误码 参见 Pb_Error
        * </pre>
        *
-       * <code>optional fixed32 retcode = 10;</code>
+       * <code>fixed32 retcode = 10;</code>
        */
       public Builder clearRetcode() {
         copyOnWrite();
@@ -1157,7 +1174,7 @@ public final class InterfaceCommondata {
        *对应的数据，如果存在数据，则按照 type、method解析该数据
        * </pre>
        *
-       * <code>optional bytes data = 11;</code>
+       * <code>bytes data = 11;</code>
        */
       public com.google.protobuf.ByteString getData() {
         return instance.getData();
@@ -1167,7 +1184,7 @@ public final class InterfaceCommondata {
        *对应的数据，如果存在数据，则按照 type、method解析该数据
        * </pre>
        *
-       * <code>optional bytes data = 11;</code>
+       * <code>bytes data = 11;</code>
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1179,7 +1196,7 @@ public final class InterfaceCommondata {
        *对应的数据，如果存在数据，则按照 type、method解析该数据
        * </pre>
        *
-       * <code>optional bytes data = 11;</code>
+       * <code>bytes data = 11;</code>
        */
       public Builder clearData() {
         copyOnWrite();
@@ -1189,6 +1206,7 @@ public final class InterfaceCommondata {
 
       // @@protoc_insertion_point(builder_scope:pbui_ReqComContainer)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1320,6 +1338,7 @@ public final class InterfaceCommondata {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1364,7 +1383,7 @@ public final class InterfaceCommondata {
      *数据类型 参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     int getType();
 
@@ -1373,7 +1392,7 @@ public final class InterfaceCommondata {
      *类型对应的操作方法 参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     int getMethod();
 
@@ -1382,7 +1401,7 @@ public final class InterfaceCommondata {
      *参见 pbui_ComContainer_Call
      * </pre>
      *
-     * <code>optional fixed32 call = 3;</code>
+     * <code>fixed32 call = 3;</code>
      */
     int getCall();
 
@@ -1391,7 +1410,7 @@ public final class InterfaceCommondata {
      *会议ID，data数据对应的会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 4;</code>
+     * <code>fixed32 meetingid = 4;</code>
      */
     int getMeetingid();
 
@@ -1400,7 +1419,7 @@ public final class InterfaceCommondata {
      *会话ID php后台使用
      * </pre>
      *
-     * <code>optional bytes sessionid = 5;</code>
+     * <code>bytes sessionid = 5;</code>
      */
     com.google.protobuf.ByteString getSessionid();
 
@@ -1409,7 +1428,7 @@ public final class InterfaceCommondata {
      *返回的值，如果错误保存错误码 参见 Pb_Error
      * </pre>
      *
-     * <code>optional fixed32 retcode = 6;</code>
+     * <code>fixed32 retcode = 6;</code>
      */
     int getRetcode();
 
@@ -1418,7 +1437,7 @@ public final class InterfaceCommondata {
      *对应的数据，如果存在数据，则按照 type、method解析该数据
      * </pre>
      *
-     * <code>optional bytes data = 7;</code>
+     * <code>bytes data = 7;</code>
      */
     com.google.protobuf.ByteString getData();
   }
@@ -1445,7 +1464,7 @@ public final class InterfaceCommondata {
      *数据类型 参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     public int getType() {
       return type_;
@@ -1455,7 +1474,7 @@ public final class InterfaceCommondata {
      *数据类型 参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     private void setType(int value) {
       
@@ -1466,7 +1485,7 @@ public final class InterfaceCommondata {
      *数据类型 参见 Pb_Type
      * </pre>
      *
-     * <code>optional fixed32 type = 1;</code>
+     * <code>fixed32 type = 1;</code>
      */
     private void clearType() {
       
@@ -1480,7 +1499,7 @@ public final class InterfaceCommondata {
      *类型对应的操作方法 参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     public int getMethod() {
       return method_;
@@ -1490,7 +1509,7 @@ public final class InterfaceCommondata {
      *类型对应的操作方法 参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     private void setMethod(int value) {
       
@@ -1501,7 +1520,7 @@ public final class InterfaceCommondata {
      *类型对应的操作方法 参见 Pb_Method
      * </pre>
      *
-     * <code>optional fixed32 method = 2;</code>
+     * <code>fixed32 method = 2;</code>
      */
     private void clearMethod() {
       
@@ -1515,7 +1534,7 @@ public final class InterfaceCommondata {
      *参见 pbui_ComContainer_Call
      * </pre>
      *
-     * <code>optional fixed32 call = 3;</code>
+     * <code>fixed32 call = 3;</code>
      */
     public int getCall() {
       return call_;
@@ -1525,7 +1544,7 @@ public final class InterfaceCommondata {
      *参见 pbui_ComContainer_Call
      * </pre>
      *
-     * <code>optional fixed32 call = 3;</code>
+     * <code>fixed32 call = 3;</code>
      */
     private void setCall(int value) {
       
@@ -1536,7 +1555,7 @@ public final class InterfaceCommondata {
      *参见 pbui_ComContainer_Call
      * </pre>
      *
-     * <code>optional fixed32 call = 3;</code>
+     * <code>fixed32 call = 3;</code>
      */
     private void clearCall() {
       
@@ -1550,7 +1569,7 @@ public final class InterfaceCommondata {
      *会议ID，data数据对应的会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 4;</code>
+     * <code>fixed32 meetingid = 4;</code>
      */
     public int getMeetingid() {
       return meetingid_;
@@ -1560,7 +1579,7 @@ public final class InterfaceCommondata {
      *会议ID，data数据对应的会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 4;</code>
+     * <code>fixed32 meetingid = 4;</code>
      */
     private void setMeetingid(int value) {
       
@@ -1571,7 +1590,7 @@ public final class InterfaceCommondata {
      *会议ID，data数据对应的会议ID
      * </pre>
      *
-     * <code>optional fixed32 meetingid = 4;</code>
+     * <code>fixed32 meetingid = 4;</code>
      */
     private void clearMeetingid() {
       
@@ -1585,7 +1604,7 @@ public final class InterfaceCommondata {
      *会话ID php后台使用
      * </pre>
      *
-     * <code>optional bytes sessionid = 5;</code>
+     * <code>bytes sessionid = 5;</code>
      */
     public com.google.protobuf.ByteString getSessionid() {
       return sessionid_;
@@ -1595,7 +1614,7 @@ public final class InterfaceCommondata {
      *会话ID php后台使用
      * </pre>
      *
-     * <code>optional bytes sessionid = 5;</code>
+     * <code>bytes sessionid = 5;</code>
      */
     private void setSessionid(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1609,7 +1628,7 @@ public final class InterfaceCommondata {
      *会话ID php后台使用
      * </pre>
      *
-     * <code>optional bytes sessionid = 5;</code>
+     * <code>bytes sessionid = 5;</code>
      */
     private void clearSessionid() {
       
@@ -1623,7 +1642,7 @@ public final class InterfaceCommondata {
      *返回的值，如果错误保存错误码 参见 Pb_Error
      * </pre>
      *
-     * <code>optional fixed32 retcode = 6;</code>
+     * <code>fixed32 retcode = 6;</code>
      */
     public int getRetcode() {
       return retcode_;
@@ -1633,7 +1652,7 @@ public final class InterfaceCommondata {
      *返回的值，如果错误保存错误码 参见 Pb_Error
      * </pre>
      *
-     * <code>optional fixed32 retcode = 6;</code>
+     * <code>fixed32 retcode = 6;</code>
      */
     private void setRetcode(int value) {
       
@@ -1644,7 +1663,7 @@ public final class InterfaceCommondata {
      *返回的值，如果错误保存错误码 参见 Pb_Error
      * </pre>
      *
-     * <code>optional fixed32 retcode = 6;</code>
+     * <code>fixed32 retcode = 6;</code>
      */
     private void clearRetcode() {
       
@@ -1658,7 +1677,7 @@ public final class InterfaceCommondata {
      *对应的数据，如果存在数据，则按照 type、method解析该数据
      * </pre>
      *
-     * <code>optional bytes data = 7;</code>
+     * <code>bytes data = 7;</code>
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -1668,7 +1687,7 @@ public final class InterfaceCommondata {
      *对应的数据，如果存在数据，则按照 type、method解析该数据
      * </pre>
      *
-     * <code>optional bytes data = 7;</code>
+     * <code>bytes data = 7;</code>
      */
     private void setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1682,7 +1701,7 @@ public final class InterfaceCommondata {
      *对应的数据，如果存在数据，则按照 type、method解析该数据
      * </pre>
      *
-     * <code>optional bytes data = 7;</code>
+     * <code>bytes data = 7;</code>
      */
     private void clearData() {
       
@@ -1751,6 +1770,19 @@ public final class InterfaceCommondata {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceCommondata.pbui_ComContainer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceCommondata.pbui_ComContainer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceCommondata.pbui_ComContainer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1842,7 +1874,7 @@ public final class InterfaceCommondata {
        *数据类型 参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public int getType() {
         return instance.getType();
@@ -1852,7 +1884,7 @@ public final class InterfaceCommondata {
        *数据类型 参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public Builder setType(int value) {
         copyOnWrite();
@@ -1864,7 +1896,7 @@ public final class InterfaceCommondata {
        *数据类型 参见 Pb_Type
        * </pre>
        *
-       * <code>optional fixed32 type = 1;</code>
+       * <code>fixed32 type = 1;</code>
        */
       public Builder clearType() {
         copyOnWrite();
@@ -1877,7 +1909,7 @@ public final class InterfaceCommondata {
        *类型对应的操作方法 参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public int getMethod() {
         return instance.getMethod();
@@ -1887,7 +1919,7 @@ public final class InterfaceCommondata {
        *类型对应的操作方法 参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public Builder setMethod(int value) {
         copyOnWrite();
@@ -1899,7 +1931,7 @@ public final class InterfaceCommondata {
        *类型对应的操作方法 参见 Pb_Method
        * </pre>
        *
-       * <code>optional fixed32 method = 2;</code>
+       * <code>fixed32 method = 2;</code>
        */
       public Builder clearMethod() {
         copyOnWrite();
@@ -1912,7 +1944,7 @@ public final class InterfaceCommondata {
        *参见 pbui_ComContainer_Call
        * </pre>
        *
-       * <code>optional fixed32 call = 3;</code>
+       * <code>fixed32 call = 3;</code>
        */
       public int getCall() {
         return instance.getCall();
@@ -1922,7 +1954,7 @@ public final class InterfaceCommondata {
        *参见 pbui_ComContainer_Call
        * </pre>
        *
-       * <code>optional fixed32 call = 3;</code>
+       * <code>fixed32 call = 3;</code>
        */
       public Builder setCall(int value) {
         copyOnWrite();
@@ -1934,7 +1966,7 @@ public final class InterfaceCommondata {
        *参见 pbui_ComContainer_Call
        * </pre>
        *
-       * <code>optional fixed32 call = 3;</code>
+       * <code>fixed32 call = 3;</code>
        */
       public Builder clearCall() {
         copyOnWrite();
@@ -1947,7 +1979,7 @@ public final class InterfaceCommondata {
        *会议ID，data数据对应的会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 4;</code>
+       * <code>fixed32 meetingid = 4;</code>
        */
       public int getMeetingid() {
         return instance.getMeetingid();
@@ -1957,7 +1989,7 @@ public final class InterfaceCommondata {
        *会议ID，data数据对应的会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 4;</code>
+       * <code>fixed32 meetingid = 4;</code>
        */
       public Builder setMeetingid(int value) {
         copyOnWrite();
@@ -1969,7 +2001,7 @@ public final class InterfaceCommondata {
        *会议ID，data数据对应的会议ID
        * </pre>
        *
-       * <code>optional fixed32 meetingid = 4;</code>
+       * <code>fixed32 meetingid = 4;</code>
        */
       public Builder clearMeetingid() {
         copyOnWrite();
@@ -1982,7 +2014,7 @@ public final class InterfaceCommondata {
        *会话ID php后台使用
        * </pre>
        *
-       * <code>optional bytes sessionid = 5;</code>
+       * <code>bytes sessionid = 5;</code>
        */
       public com.google.protobuf.ByteString getSessionid() {
         return instance.getSessionid();
@@ -1992,7 +2024,7 @@ public final class InterfaceCommondata {
        *会话ID php后台使用
        * </pre>
        *
-       * <code>optional bytes sessionid = 5;</code>
+       * <code>bytes sessionid = 5;</code>
        */
       public Builder setSessionid(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2004,7 +2036,7 @@ public final class InterfaceCommondata {
        *会话ID php后台使用
        * </pre>
        *
-       * <code>optional bytes sessionid = 5;</code>
+       * <code>bytes sessionid = 5;</code>
        */
       public Builder clearSessionid() {
         copyOnWrite();
@@ -2017,7 +2049,7 @@ public final class InterfaceCommondata {
        *返回的值，如果错误保存错误码 参见 Pb_Error
        * </pre>
        *
-       * <code>optional fixed32 retcode = 6;</code>
+       * <code>fixed32 retcode = 6;</code>
        */
       public int getRetcode() {
         return instance.getRetcode();
@@ -2027,7 +2059,7 @@ public final class InterfaceCommondata {
        *返回的值，如果错误保存错误码 参见 Pb_Error
        * </pre>
        *
-       * <code>optional fixed32 retcode = 6;</code>
+       * <code>fixed32 retcode = 6;</code>
        */
       public Builder setRetcode(int value) {
         copyOnWrite();
@@ -2039,7 +2071,7 @@ public final class InterfaceCommondata {
        *返回的值，如果错误保存错误码 参见 Pb_Error
        * </pre>
        *
-       * <code>optional fixed32 retcode = 6;</code>
+       * <code>fixed32 retcode = 6;</code>
        */
       public Builder clearRetcode() {
         copyOnWrite();
@@ -2052,7 +2084,7 @@ public final class InterfaceCommondata {
        *对应的数据，如果存在数据，则按照 type、method解析该数据
        * </pre>
        *
-       * <code>optional bytes data = 7;</code>
+       * <code>bytes data = 7;</code>
        */
       public com.google.protobuf.ByteString getData() {
         return instance.getData();
@@ -2062,7 +2094,7 @@ public final class InterfaceCommondata {
        *对应的数据，如果存在数据，则按照 type、method解析该数据
        * </pre>
        *
-       * <code>optional bytes data = 7;</code>
+       * <code>bytes data = 7;</code>
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2074,7 +2106,7 @@ public final class InterfaceCommondata {
        *对应的数据，如果存在数据，则按照 type、method解析该数据
        * </pre>
        *
-       * <code>optional bytes data = 7;</code>
+       * <code>bytes data = 7;</code>
        */
       public Builder clearData() {
         copyOnWrite();
@@ -2084,6 +2116,7 @@ public final class InterfaceCommondata {
 
       // @@protoc_insertion_point(builder_scope:pbui_ComContainer)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2187,6 +2220,7 @@ public final class InterfaceCommondata {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

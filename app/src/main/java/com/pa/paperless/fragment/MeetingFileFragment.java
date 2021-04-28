@@ -16,6 +16,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.mogujie.tt.protobuf.InterfaceBase;
 import com.mogujie.tt.protobuf.InterfaceFile;
+import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.adapter.node.FileNodeAdapter;
 import com.pa.paperless.adapter.node.LevelDirNode;
@@ -25,8 +26,10 @@ import com.pa.paperless.data.bean.MeetDirFileInfo;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
+import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.utils.FileUtil;
 import com.pa.paperless.utils.LogUtil;
+import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.PopUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -79,7 +82,10 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.right_mettingfile, container, false);
         initView(inflate);
+        EventBus.getDefault().register(this);
         initButtons();
+        //会议目录权限
+//        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT.getNumber(), 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
         queryMeetDir();
         return inflate;
     }
@@ -163,13 +169,24 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
                 for (int i = 0; i < itemList.size(); i++) {
                     InterfaceFile.pbui_Item_MeetDirDetailInfo info = itemList.get(i);
                     int dirId = info.getId();
+                    String dirName = info.getName().toStringUtf8();
+                    LogUtils.i(TAG, "当前目录=" + dirName);
                     if (info.getParentid() != 0) {
+                        LogUtils.e(TAG, "过滤掉有父目录的目录" + dirName);
                         continue;
                     }
                     if (dirId != Macro.SHARED_FILE_DIRECTORY_ID && dirId != Macro.ANNOTATION_FILE_DIRECTORY_ID) {
-                        LevelDirNode levelDirItem = new LevelDirNode(new ArrayList<>(), dirId, info.getName().toStringUtf8());
+                        InterfaceFile.pbui_Type_MeetDirRightDetailInfo dirPermission = jni.queryDirPermission(dirId);
+                        if (dirPermission != null) {
+                            List<Integer> memberidList = dirPermission.getMemberidList();
+                            if (memberidList != null && memberidList.contains(Values.localMemberId)) {
+                                LogUtils.d("没有目录权限=" + dirName);
+                                continue;
+                            }
+                        }
+                        LevelDirNode levelDirItem = new LevelDirNode(new ArrayList<>(), dirId, dirName);
                         levelDirItem.setExpanded(beforeIsExpanded(dirId));
-                        LogUtils.i(TAG, "添加目录id " + dirId);
+                        LogUtils.i("添加目录：" + dirName + "，id=" + dirId);
                         allData.add(levelDirItem);
                         queryMeetDirFile(dirId);
                     }
@@ -290,10 +307,22 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getEventMessage(EventMessage message) throws InvalidProtocolBufferException {
         switch (message.getAction()) {
-            case EventType.MEETDIR_CHANGE_INFORM://会议目录变更通知
+            //会议目录权限变更通知
+            case EventType.directory_permission_change_inform: {
+                InterfaceBase.pbui_MeetNotifyMsg info = (InterfaceBase.pbui_MeetNotifyMsg) message.getObject();
+                int id = info.getId();
+                int opermethod = info.getOpermethod();
+                LogUtils.i(TAG, "会议目录权限变更通知 id=" + id + ",opermethod=" + opermethod);
+                jni.queryDirPermission(id);
                 queryMeetDir();
                 break;
-            case EventType.MEETDIR_FILE_CHANGE_INFORM://会议目录文件变更通知
+            }
+            //会议目录变更通知
+            case EventType.MEETDIR_CHANGE_INFORM:
+                queryMeetDir();
+                break;
+            //会议目录文件变更通知
+            case EventType.MEETDIR_FILE_CHANGE_INFORM: {
                 InterfaceBase.pbui_MeetNotifyMsgForDouble info = (InterfaceBase.pbui_MeetNotifyMsgForDouble) message.getObject();
                 int id = info.getId();
                 int subid = info.getSubid();
@@ -304,6 +333,7 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
                     queryMeetDir();
                 }
                 break;
+            }
         }
     }
 
@@ -339,8 +369,12 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
                     ToastUtils.showShort(R.string.no_data_download);
                     return;
                 }
-                updateDownloadFiles();
-                downloadFilePop();
+                if (MyUtils.isHasPermission(Macro.permission_code_download)) {
+                    updateDownloadFiles();
+                    downloadFilePop();
+                } else {
+                    ToastUtils.showShort(R.string.no_permission);
+                }
                 break;
             }
             case R.id.btn_push://文件推送
@@ -430,17 +464,20 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onStart() {
         super.onStart();
-        if (!EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-        }
+//        if (!EventBus.getDefault().isRegistered(this)) {
+//            LogUtils.e(TAG,"注册EventBus");
+//            EventBus.getDefault().register(this);
+//        }
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-        }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 }

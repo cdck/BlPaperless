@@ -17,7 +17,7 @@ public final class InterfaceContext {
      *数据ID 参见Pb_ContextPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     int getPropertyid();
   }
@@ -44,7 +44,7 @@ public final class InterfaceContext {
      *数据ID 参见Pb_ContextPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     public int getPropertyid() {
       return propertyid_;
@@ -54,7 +54,7 @@ public final class InterfaceContext {
      *数据ID 参见Pb_ContextPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void setPropertyid(int value) {
       
@@ -65,7 +65,7 @@ public final class InterfaceContext {
      *数据ID 参见Pb_ContextPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void clearPropertyid() {
       
@@ -92,6 +92,19 @@ public final class InterfaceContext {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceContext.pbui_QueryMeetContextInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceContext.pbui_QueryMeetContextInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceContext.pbui_QueryMeetContextInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -185,7 +198,7 @@ public final class InterfaceContext {
        *数据ID 参见Pb_ContextPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public int getPropertyid() {
         return instance.getPropertyid();
@@ -195,7 +208,7 @@ public final class InterfaceContext {
        *数据ID 参见Pb_ContextPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder setPropertyid(int value) {
         copyOnWrite();
@@ -207,7 +220,7 @@ public final class InterfaceContext {
        *数据ID 参见Pb_ContextPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder clearPropertyid() {
         copyOnWrite();
@@ -217,6 +230,7 @@ public final class InterfaceContext {
 
       // @@protoc_insertion_point(builder_scope:pbui_QueryMeetContextInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -278,6 +292,7 @@ public final class InterfaceContext {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -322,7 +337,7 @@ public final class InterfaceContext {
      *数据ID 参见Pb_ContextPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     int getPropertyid();
 
@@ -331,7 +346,7 @@ public final class InterfaceContext {
      *返回的有效数据,根据propertyid来判断
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 2;</code>
+     * <code>fixed32 propertyval = 2;</code>
      */
     int getPropertyval();
 
@@ -340,7 +355,7 @@ public final class InterfaceContext {
      *64位整数值 
      * </pre>
      *
-     * <code>optional fixed64 property64val = 3;</code>
+     * <code>fixed64 property64val = 3;</code>
      */
     long getProperty64Val();
 
@@ -349,7 +364,7 @@ public final class InterfaceContext {
      *字符串
      * </pre>
      *
-     * <code>optional bytes propertytext = 4;</code>
+     * <code>bytes propertytext = 4;</code>
      */
     com.google.protobuf.ByteString getPropertytext();
   }
@@ -377,7 +392,7 @@ public final class InterfaceContext {
      *数据ID 参见Pb_ContextPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     public int getPropertyid() {
       return propertyid_;
@@ -387,7 +402,7 @@ public final class InterfaceContext {
      *数据ID 参见Pb_ContextPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void setPropertyid(int value) {
       
@@ -398,7 +413,7 @@ public final class InterfaceContext {
      *数据ID 参见Pb_ContextPropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void clearPropertyid() {
       
@@ -412,7 +427,7 @@ public final class InterfaceContext {
      *返回的有效数据,根据propertyid来判断
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 2;</code>
+     * <code>fixed32 propertyval = 2;</code>
      */
     public int getPropertyval() {
       return propertyval_;
@@ -422,7 +437,7 @@ public final class InterfaceContext {
      *返回的有效数据,根据propertyid来判断
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 2;</code>
+     * <code>fixed32 propertyval = 2;</code>
      */
     private void setPropertyval(int value) {
       
@@ -433,7 +448,7 @@ public final class InterfaceContext {
      *返回的有效数据,根据propertyid来判断
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 2;</code>
+     * <code>fixed32 propertyval = 2;</code>
      */
     private void clearPropertyval() {
       
@@ -447,7 +462,7 @@ public final class InterfaceContext {
      *64位整数值 
      * </pre>
      *
-     * <code>optional fixed64 property64val = 3;</code>
+     * <code>fixed64 property64val = 3;</code>
      */
     public long getProperty64Val() {
       return property64Val_;
@@ -457,7 +472,7 @@ public final class InterfaceContext {
      *64位整数值 
      * </pre>
      *
-     * <code>optional fixed64 property64val = 3;</code>
+     * <code>fixed64 property64val = 3;</code>
      */
     private void setProperty64Val(long value) {
       
@@ -468,7 +483,7 @@ public final class InterfaceContext {
      *64位整数值 
      * </pre>
      *
-     * <code>optional fixed64 property64val = 3;</code>
+     * <code>fixed64 property64val = 3;</code>
      */
     private void clearProperty64Val() {
       
@@ -482,7 +497,7 @@ public final class InterfaceContext {
      *字符串
      * </pre>
      *
-     * <code>optional bytes propertytext = 4;</code>
+     * <code>bytes propertytext = 4;</code>
      */
     public com.google.protobuf.ByteString getPropertytext() {
       return propertytext_;
@@ -492,7 +507,7 @@ public final class InterfaceContext {
      *字符串
      * </pre>
      *
-     * <code>optional bytes propertytext = 4;</code>
+     * <code>bytes propertytext = 4;</code>
      */
     private void setPropertytext(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -506,7 +521,7 @@ public final class InterfaceContext {
      *字符串
      * </pre>
      *
-     * <code>optional bytes propertytext = 4;</code>
+     * <code>bytes propertytext = 4;</code>
      */
     private void clearPropertytext() {
       
@@ -554,6 +569,19 @@ public final class InterfaceContext {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceContext.pbui_MeetContextInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceContext.pbui_MeetContextInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceContext.pbui_MeetContextInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -647,7 +675,7 @@ public final class InterfaceContext {
        *数据ID 参见Pb_ContextPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public int getPropertyid() {
         return instance.getPropertyid();
@@ -657,7 +685,7 @@ public final class InterfaceContext {
        *数据ID 参见Pb_ContextPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder setPropertyid(int value) {
         copyOnWrite();
@@ -669,7 +697,7 @@ public final class InterfaceContext {
        *数据ID 参见Pb_ContextPropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder clearPropertyid() {
         copyOnWrite();
@@ -682,7 +710,7 @@ public final class InterfaceContext {
        *返回的有效数据,根据propertyid来判断
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 2;</code>
+       * <code>fixed32 propertyval = 2;</code>
        */
       public int getPropertyval() {
         return instance.getPropertyval();
@@ -692,7 +720,7 @@ public final class InterfaceContext {
        *返回的有效数据,根据propertyid来判断
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 2;</code>
+       * <code>fixed32 propertyval = 2;</code>
        */
       public Builder setPropertyval(int value) {
         copyOnWrite();
@@ -704,7 +732,7 @@ public final class InterfaceContext {
        *返回的有效数据,根据propertyid来判断
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 2;</code>
+       * <code>fixed32 propertyval = 2;</code>
        */
       public Builder clearPropertyval() {
         copyOnWrite();
@@ -717,7 +745,7 @@ public final class InterfaceContext {
        *64位整数值 
        * </pre>
        *
-       * <code>optional fixed64 property64val = 3;</code>
+       * <code>fixed64 property64val = 3;</code>
        */
       public long getProperty64Val() {
         return instance.getProperty64Val();
@@ -727,7 +755,7 @@ public final class InterfaceContext {
        *64位整数值 
        * </pre>
        *
-       * <code>optional fixed64 property64val = 3;</code>
+       * <code>fixed64 property64val = 3;</code>
        */
       public Builder setProperty64Val(long value) {
         copyOnWrite();
@@ -739,7 +767,7 @@ public final class InterfaceContext {
        *64位整数值 
        * </pre>
        *
-       * <code>optional fixed64 property64val = 3;</code>
+       * <code>fixed64 property64val = 3;</code>
        */
       public Builder clearProperty64Val() {
         copyOnWrite();
@@ -752,7 +780,7 @@ public final class InterfaceContext {
        *字符串
        * </pre>
        *
-       * <code>optional bytes propertytext = 4;</code>
+       * <code>bytes propertytext = 4;</code>
        */
       public com.google.protobuf.ByteString getPropertytext() {
         return instance.getPropertytext();
@@ -762,7 +790,7 @@ public final class InterfaceContext {
        *字符串
        * </pre>
        *
-       * <code>optional bytes propertytext = 4;</code>
+       * <code>bytes propertytext = 4;</code>
        */
       public Builder setPropertytext(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -774,7 +802,7 @@ public final class InterfaceContext {
        *字符串
        * </pre>
        *
-       * <code>optional bytes propertytext = 4;</code>
+       * <code>bytes propertytext = 4;</code>
        */
       public Builder clearPropertytext() {
         copyOnWrite();
@@ -784,6 +812,7 @@ public final class InterfaceContext {
 
       // @@protoc_insertion_point(builder_scope:pbui_MeetContextInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -866,6 +895,7 @@ public final class InterfaceContext {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

@@ -6,10 +6,14 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.chad.library.adapter.base.provider.BaseNodeProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.mogujie.tt.protobuf.InterfaceFile;
 import com.pa.boling.paperless.R;
+import com.pa.paperless.data.constant.Values;
+import com.wind.myapplication.NativeUtil;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -82,6 +86,17 @@ public class LevelDirProvider extends BaseNodeProvider {
         // 这里使用payload进行增量刷新（避免整个item刷新导致的闪烁，不自然）
         if (getAdapter() != null) {
             getAdapter().expandOrCollapse(position, true, true, FileNodeAdapter.EXPAND_COLLAPSE_PAYLOAD);
+//            LevelDirNode dirNode = (LevelDirNode) data;
+//            InterfaceFile.pbui_Type_MeetDirRightDetailInfo dirPermission = NativeUtil.getInstance().queryDirPermission(dirNode.getDirId());
+//            if (dirPermission != null) {
+//                int dirid = dirPermission.getDirid();
+//                List<Integer> memberidList = dirPermission.getMemberidList();
+//                StringBuilder sb = new StringBuilder();
+//                for (int id : memberidList) {
+//                    sb.append(id).append("、");
+//                }
+//                LogUtils.i("目录id=" + dirid + "\n参会人id=" + sb.toString());
+//            }
         } else {
             LogUtils.e(TAG, "onClick 方法中getAdapter为null");
         }

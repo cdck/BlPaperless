@@ -79,6 +79,10 @@ public final class InterfaceFilescorevote {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -193,6 +197,10 @@ public final class InterfaceFilescorevote {
 
 
     public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
       return value;
     }
 
@@ -244,7 +252,7 @@ public final class InterfaceFilescorevote {
      *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -253,7 +261,7 @@ public final class InterfaceFilescorevote {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 2;</code>
+     * <code>fixed32 fileid = 2;</code>
      */
     int getFileid();
 
@@ -262,7 +270,7 @@ public final class InterfaceFilescorevote {
      *投票内容 长度限制 Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     com.google.protobuf.ByteString getContent();
 
@@ -271,7 +279,7 @@ public final class InterfaceFilescorevote {
      *匿名投票=0 记名投票=1 Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     int getMode();
 
@@ -280,7 +288,7 @@ public final class InterfaceFilescorevote {
      *投票状态  参见 Pb_MeetVoteStatus
      * </pre>
      *
-     * <code>optional fixed32 votestate = 5;</code>
+     * <code>fixed32 votestate = 5;</code>
      */
     int getVotestate();
 
@@ -289,7 +297,7 @@ public final class InterfaceFilescorevote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     int getTimeouts();
 
@@ -298,7 +306,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 starttime = 7;</code>
+     * <code>fixed64 starttime = 7;</code>
      */
     long getStarttime();
 
@@ -307,7 +315,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 endtime = 8;</code>
+     * <code>fixed64 endtime = 8;</code>
      */
     long getEndtime();
 
@@ -316,7 +324,7 @@ public final class InterfaceFilescorevote {
      *应到人数
      * </pre>
      *
-     * <code>optional fixed32 shouldmembernum = 9;</code>
+     * <code>fixed32 shouldmembernum = 9;</code>
      */
     int getShouldmembernum();
 
@@ -325,7 +333,7 @@ public final class InterfaceFilescorevote {
      *已投人数
      * </pre>
      *
-     * <code>optional fixed32 realmembernum = 10;</code>
+     * <code>fixed32 realmembernum = 10;</code>
      */
     int getRealmembernum();
 
@@ -334,7 +342,7 @@ public final class InterfaceFilescorevote {
      *有效选项数量
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 11;</code>
+     * <code>fixed32 selectcount = 11;</code>
      */
     int getSelectcount();
 
@@ -409,7 +417,7 @@ public final class InterfaceFilescorevote {
      *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
@@ -419,7 +427,7 @@ public final class InterfaceFilescorevote {
      *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
@@ -430,7 +438,7 @@ public final class InterfaceFilescorevote {
      *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -444,7 +452,7 @@ public final class InterfaceFilescorevote {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 2;</code>
+     * <code>fixed32 fileid = 2;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -454,7 +462,7 @@ public final class InterfaceFilescorevote {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 2;</code>
+     * <code>fixed32 fileid = 2;</code>
      */
     private void setFileid(int value) {
       
@@ -465,7 +473,7 @@ public final class InterfaceFilescorevote {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 2;</code>
+     * <code>fixed32 fileid = 2;</code>
      */
     private void clearFileid() {
       
@@ -479,7 +487,7 @@ public final class InterfaceFilescorevote {
      *投票内容 长度限制 Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -489,7 +497,7 @@ public final class InterfaceFilescorevote {
      *投票内容 长度限制 Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     private void setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -503,7 +511,7 @@ public final class InterfaceFilescorevote {
      *投票内容 长度限制 Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     private void clearContent() {
       
@@ -517,7 +525,7 @@ public final class InterfaceFilescorevote {
      *匿名投票=0 记名投票=1 Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     public int getMode() {
       return mode_;
@@ -527,7 +535,7 @@ public final class InterfaceFilescorevote {
      *匿名投票=0 记名投票=1 Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     private void setMode(int value) {
       
@@ -538,7 +546,7 @@ public final class InterfaceFilescorevote {
      *匿名投票=0 记名投票=1 Pb_MeetVoteMode
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     private void clearMode() {
       
@@ -552,7 +560,7 @@ public final class InterfaceFilescorevote {
      *投票状态  参见 Pb_MeetVoteStatus
      * </pre>
      *
-     * <code>optional fixed32 votestate = 5;</code>
+     * <code>fixed32 votestate = 5;</code>
      */
     public int getVotestate() {
       return votestate_;
@@ -562,7 +570,7 @@ public final class InterfaceFilescorevote {
      *投票状态  参见 Pb_MeetVoteStatus
      * </pre>
      *
-     * <code>optional fixed32 votestate = 5;</code>
+     * <code>fixed32 votestate = 5;</code>
      */
     private void setVotestate(int value) {
       
@@ -573,7 +581,7 @@ public final class InterfaceFilescorevote {
      *投票状态  参见 Pb_MeetVoteStatus
      * </pre>
      *
-     * <code>optional fixed32 votestate = 5;</code>
+     * <code>fixed32 votestate = 5;</code>
      */
     private void clearVotestate() {
       
@@ -587,7 +595,7 @@ public final class InterfaceFilescorevote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     public int getTimeouts() {
       return timeouts_;
@@ -597,7 +605,7 @@ public final class InterfaceFilescorevote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     private void setTimeouts(int value) {
       
@@ -608,7 +616,7 @@ public final class InterfaceFilescorevote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 6;</code>
+     * <code>fixed32 timeouts = 6;</code>
      */
     private void clearTimeouts() {
       
@@ -622,7 +630,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 starttime = 7;</code>
+     * <code>fixed64 starttime = 7;</code>
      */
     public long getStarttime() {
       return starttime_;
@@ -632,7 +640,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 starttime = 7;</code>
+     * <code>fixed64 starttime = 7;</code>
      */
     private void setStarttime(long value) {
       
@@ -643,7 +651,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 starttime = 7;</code>
+     * <code>fixed64 starttime = 7;</code>
      */
     private void clearStarttime() {
       
@@ -657,7 +665,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 endtime = 8;</code>
+     * <code>fixed64 endtime = 8;</code>
      */
     public long getEndtime() {
       return endtime_;
@@ -667,7 +675,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 endtime = 8;</code>
+     * <code>fixed64 endtime = 8;</code>
      */
     private void setEndtime(long value) {
       
@@ -678,7 +686,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 endtime = 8;</code>
+     * <code>fixed64 endtime = 8;</code>
      */
     private void clearEndtime() {
       
@@ -692,7 +700,7 @@ public final class InterfaceFilescorevote {
      *应到人数
      * </pre>
      *
-     * <code>optional fixed32 shouldmembernum = 9;</code>
+     * <code>fixed32 shouldmembernum = 9;</code>
      */
     public int getShouldmembernum() {
       return shouldmembernum_;
@@ -702,7 +710,7 @@ public final class InterfaceFilescorevote {
      *应到人数
      * </pre>
      *
-     * <code>optional fixed32 shouldmembernum = 9;</code>
+     * <code>fixed32 shouldmembernum = 9;</code>
      */
     private void setShouldmembernum(int value) {
       
@@ -713,7 +721,7 @@ public final class InterfaceFilescorevote {
      *应到人数
      * </pre>
      *
-     * <code>optional fixed32 shouldmembernum = 9;</code>
+     * <code>fixed32 shouldmembernum = 9;</code>
      */
     private void clearShouldmembernum() {
       
@@ -727,7 +735,7 @@ public final class InterfaceFilescorevote {
      *已投人数
      * </pre>
      *
-     * <code>optional fixed32 realmembernum = 10;</code>
+     * <code>fixed32 realmembernum = 10;</code>
      */
     public int getRealmembernum() {
       return realmembernum_;
@@ -737,7 +745,7 @@ public final class InterfaceFilescorevote {
      *已投人数
      * </pre>
      *
-     * <code>optional fixed32 realmembernum = 10;</code>
+     * <code>fixed32 realmembernum = 10;</code>
      */
     private void setRealmembernum(int value) {
       
@@ -748,7 +756,7 @@ public final class InterfaceFilescorevote {
      *已投人数
      * </pre>
      *
-     * <code>optional fixed32 realmembernum = 10;</code>
+     * <code>fixed32 realmembernum = 10;</code>
      */
     private void clearRealmembernum() {
       
@@ -762,7 +770,7 @@ public final class InterfaceFilescorevote {
      *有效选项数量
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 11;</code>
+     * <code>fixed32 selectcount = 11;</code>
      */
     public int getSelectcount() {
       return selectcount_;
@@ -772,7 +780,7 @@ public final class InterfaceFilescorevote {
      *有效选项数量
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 11;</code>
+     * <code>fixed32 selectcount = 11;</code>
      */
     private void setSelectcount(int value) {
       
@@ -783,7 +791,7 @@ public final class InterfaceFilescorevote {
      *有效选项数量
      * </pre>
      *
-     * <code>optional fixed32 selectcount = 11;</code>
+     * <code>fixed32 selectcount = 11;</code>
      */
     private void clearSelectcount() {
       
@@ -1081,6 +1089,19 @@ public final class InterfaceFilescorevote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_Item_UserDefineFileScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_Item_UserDefineFileScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_Item_UserDefineFileScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1167,7 +1188,7 @@ public final class InterfaceFilescorevote {
        *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
@@ -1177,7 +1198,7 @@ public final class InterfaceFilescorevote {
        *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -1189,7 +1210,7 @@ public final class InterfaceFilescorevote {
        *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -1202,7 +1223,7 @@ public final class InterfaceFilescorevote {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 2;</code>
+       * <code>fixed32 fileid = 2;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -1212,7 +1233,7 @@ public final class InterfaceFilescorevote {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 2;</code>
+       * <code>fixed32 fileid = 2;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -1224,7 +1245,7 @@ public final class InterfaceFilescorevote {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 2;</code>
+       * <code>fixed32 fileid = 2;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -1237,7 +1258,7 @@ public final class InterfaceFilescorevote {
        *投票内容 长度限制 Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public com.google.protobuf.ByteString getContent() {
         return instance.getContent();
@@ -1247,7 +1268,7 @@ public final class InterfaceFilescorevote {
        *投票内容 长度限制 Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public Builder setContent(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1259,7 +1280,7 @@ public final class InterfaceFilescorevote {
        *投票内容 长度限制 Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public Builder clearContent() {
         copyOnWrite();
@@ -1272,7 +1293,7 @@ public final class InterfaceFilescorevote {
        *匿名投票=0 记名投票=1 Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public int getMode() {
         return instance.getMode();
@@ -1282,7 +1303,7 @@ public final class InterfaceFilescorevote {
        *匿名投票=0 记名投票=1 Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public Builder setMode(int value) {
         copyOnWrite();
@@ -1294,7 +1315,7 @@ public final class InterfaceFilescorevote {
        *匿名投票=0 记名投票=1 Pb_MeetVoteMode
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public Builder clearMode() {
         copyOnWrite();
@@ -1307,7 +1328,7 @@ public final class InterfaceFilescorevote {
        *投票状态  参见 Pb_MeetVoteStatus
        * </pre>
        *
-       * <code>optional fixed32 votestate = 5;</code>
+       * <code>fixed32 votestate = 5;</code>
        */
       public int getVotestate() {
         return instance.getVotestate();
@@ -1317,7 +1338,7 @@ public final class InterfaceFilescorevote {
        *投票状态  参见 Pb_MeetVoteStatus
        * </pre>
        *
-       * <code>optional fixed32 votestate = 5;</code>
+       * <code>fixed32 votestate = 5;</code>
        */
       public Builder setVotestate(int value) {
         copyOnWrite();
@@ -1329,7 +1350,7 @@ public final class InterfaceFilescorevote {
        *投票状态  参见 Pb_MeetVoteStatus
        * </pre>
        *
-       * <code>optional fixed32 votestate = 5;</code>
+       * <code>fixed32 votestate = 5;</code>
        */
       public Builder clearVotestate() {
         copyOnWrite();
@@ -1342,7 +1363,7 @@ public final class InterfaceFilescorevote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public int getTimeouts() {
         return instance.getTimeouts();
@@ -1352,7 +1373,7 @@ public final class InterfaceFilescorevote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public Builder setTimeouts(int value) {
         copyOnWrite();
@@ -1364,7 +1385,7 @@ public final class InterfaceFilescorevote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 6;</code>
+       * <code>fixed32 timeouts = 6;</code>
        */
       public Builder clearTimeouts() {
         copyOnWrite();
@@ -1377,7 +1398,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 starttime = 7;</code>
+       * <code>fixed64 starttime = 7;</code>
        */
       public long getStarttime() {
         return instance.getStarttime();
@@ -1387,7 +1408,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 starttime = 7;</code>
+       * <code>fixed64 starttime = 7;</code>
        */
       public Builder setStarttime(long value) {
         copyOnWrite();
@@ -1399,7 +1420,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 starttime = 7;</code>
+       * <code>fixed64 starttime = 7;</code>
        */
       public Builder clearStarttime() {
         copyOnWrite();
@@ -1412,7 +1433,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 endtime = 8;</code>
+       * <code>fixed64 endtime = 8;</code>
        */
       public long getEndtime() {
         return instance.getEndtime();
@@ -1422,7 +1443,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 endtime = 8;</code>
+       * <code>fixed64 endtime = 8;</code>
        */
       public Builder setEndtime(long value) {
         copyOnWrite();
@@ -1434,7 +1455,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 endtime = 8;</code>
+       * <code>fixed64 endtime = 8;</code>
        */
       public Builder clearEndtime() {
         copyOnWrite();
@@ -1447,7 +1468,7 @@ public final class InterfaceFilescorevote {
        *应到人数
        * </pre>
        *
-       * <code>optional fixed32 shouldmembernum = 9;</code>
+       * <code>fixed32 shouldmembernum = 9;</code>
        */
       public int getShouldmembernum() {
         return instance.getShouldmembernum();
@@ -1457,7 +1478,7 @@ public final class InterfaceFilescorevote {
        *应到人数
        * </pre>
        *
-       * <code>optional fixed32 shouldmembernum = 9;</code>
+       * <code>fixed32 shouldmembernum = 9;</code>
        */
       public Builder setShouldmembernum(int value) {
         copyOnWrite();
@@ -1469,7 +1490,7 @@ public final class InterfaceFilescorevote {
        *应到人数
        * </pre>
        *
-       * <code>optional fixed32 shouldmembernum = 9;</code>
+       * <code>fixed32 shouldmembernum = 9;</code>
        */
       public Builder clearShouldmembernum() {
         copyOnWrite();
@@ -1482,7 +1503,7 @@ public final class InterfaceFilescorevote {
        *已投人数
        * </pre>
        *
-       * <code>optional fixed32 realmembernum = 10;</code>
+       * <code>fixed32 realmembernum = 10;</code>
        */
       public int getRealmembernum() {
         return instance.getRealmembernum();
@@ -1492,7 +1513,7 @@ public final class InterfaceFilescorevote {
        *已投人数
        * </pre>
        *
-       * <code>optional fixed32 realmembernum = 10;</code>
+       * <code>fixed32 realmembernum = 10;</code>
        */
       public Builder setRealmembernum(int value) {
         copyOnWrite();
@@ -1504,7 +1525,7 @@ public final class InterfaceFilescorevote {
        *已投人数
        * </pre>
        *
-       * <code>optional fixed32 realmembernum = 10;</code>
+       * <code>fixed32 realmembernum = 10;</code>
        */
       public Builder clearRealmembernum() {
         copyOnWrite();
@@ -1517,7 +1538,7 @@ public final class InterfaceFilescorevote {
        *有效选项数量
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 11;</code>
+       * <code>fixed32 selectcount = 11;</code>
        */
       public int getSelectcount() {
         return instance.getSelectcount();
@@ -1527,7 +1548,7 @@ public final class InterfaceFilescorevote {
        *有效选项数量
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 11;</code>
+       * <code>fixed32 selectcount = 11;</code>
        */
       public Builder setSelectcount(int value) {
         copyOnWrite();
@@ -1539,7 +1560,7 @@ public final class InterfaceFilescorevote {
        *有效选项数量
        * </pre>
        *
-       * <code>optional fixed32 selectcount = 11;</code>
+       * <code>fixed32 selectcount = 11;</code>
        */
       public Builder clearSelectcount() {
         copyOnWrite();
@@ -1715,6 +1736,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_Item_UserDefineFileScore)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1881,6 +1903,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1925,7 +1948,7 @@ public final class InterfaceFilescorevote {
      *查询指定文件的 为0表示查询所有
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     int getFileid();
 
@@ -1969,7 +1992,7 @@ public final class InterfaceFilescorevote {
      *查询指定文件的 为0表示查询所有
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -1979,7 +2002,7 @@ public final class InterfaceFilescorevote {
      *查询指定文件的 为0表示查询所有
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void setFileid(int value) {
       
@@ -1990,7 +2013,7 @@ public final class InterfaceFilescorevote {
      *查询指定文件的 为0表示查询所有
      * </pre>
      *
-     * <code>optional fixed32 fileid = 1;</code>
+     * <code>fixed32 fileid = 1;</code>
      */
     private void clearFileid() {
       
@@ -2145,6 +2168,19 @@ public final class InterfaceFilescorevote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2238,7 +2274,7 @@ public final class InterfaceFilescorevote {
        *查询指定文件的 为0表示查询所有
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -2248,7 +2284,7 @@ public final class InterfaceFilescorevote {
        *查询指定文件的 为0表示查询所有
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -2260,7 +2296,7 @@ public final class InterfaceFilescorevote {
        *查询指定文件的 为0表示查询所有
        * </pre>
        *
-       * <code>optional fixed32 fileid = 1;</code>
+       * <code>fixed32 fileid = 1;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -2367,6 +2403,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_UserDefineFileScore)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2440,6 +2477,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2632,6 +2670,19 @@ public final class InterfaceFilescorevote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_DeleteUserDefineFileScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_DeleteUserDefineFileScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_DeleteUserDefineFileScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -2805,6 +2856,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_DeleteUserDefineFileScore)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2883,6 +2935,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2923,7 +2976,7 @@ public final class InterfaceFilescorevote {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -2932,12 +2985,12 @@ public final class InterfaceFilescorevote {
      *参见 Pb_VoteStartFlag
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 2;</code>
+     * <code>fixed32 voteflag = 2;</code>
      */
     int getVoteflag();
 
     /**
-     * <code>optional fixed32 timeouts = 3;</code>
+     * <code>fixed32 timeouts = 3;</code>
      */
     int getTimeouts();
 
@@ -2988,20 +3041,20 @@ public final class InterfaceFilescorevote {
     public static final int VOTEID_FIELD_NUMBER = 1;
     private int voteid_;
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
       voteid_ = value;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -3015,7 +3068,7 @@ public final class InterfaceFilescorevote {
      *参见 Pb_VoteStartFlag
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 2;</code>
+     * <code>fixed32 voteflag = 2;</code>
      */
     public int getVoteflag() {
       return voteflag_;
@@ -3025,7 +3078,7 @@ public final class InterfaceFilescorevote {
      *参见 Pb_VoteStartFlag
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 2;</code>
+     * <code>fixed32 voteflag = 2;</code>
      */
     private void setVoteflag(int value) {
       
@@ -3036,7 +3089,7 @@ public final class InterfaceFilescorevote {
      *参见 Pb_VoteStartFlag
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 2;</code>
+     * <code>fixed32 voteflag = 2;</code>
      */
     private void clearVoteflag() {
       
@@ -3046,20 +3099,20 @@ public final class InterfaceFilescorevote {
     public static final int TIMEOUTS_FIELD_NUMBER = 3;
     private int timeouts_;
     /**
-     * <code>optional fixed32 timeouts = 3;</code>
+     * <code>fixed32 timeouts = 3;</code>
      */
     public int getTimeouts() {
       return timeouts_;
     }
     /**
-     * <code>optional fixed32 timeouts = 3;</code>
+     * <code>fixed32 timeouts = 3;</code>
      */
     private void setTimeouts(int value) {
       
       timeouts_ = value;
     }
     /**
-     * <code>optional fixed32 timeouts = 3;</code>
+     * <code>fixed32 timeouts = 3;</code>
      */
     private void clearTimeouts() {
       
@@ -3197,6 +3250,19 @@ public final class InterfaceFilescorevote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_StartUserDefineFileScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_StartUserDefineFileScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_StartUserDefineFileScore parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3286,13 +3352,13 @@ public final class InterfaceFilescorevote {
 
 
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -3300,7 +3366,7 @@ public final class InterfaceFilescorevote {
         return this;
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -3313,7 +3379,7 @@ public final class InterfaceFilescorevote {
        *参见 Pb_VoteStartFlag
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 2;</code>
+       * <code>fixed32 voteflag = 2;</code>
        */
       public int getVoteflag() {
         return instance.getVoteflag();
@@ -3323,7 +3389,7 @@ public final class InterfaceFilescorevote {
        *参见 Pb_VoteStartFlag
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 2;</code>
+       * <code>fixed32 voteflag = 2;</code>
        */
       public Builder setVoteflag(int value) {
         copyOnWrite();
@@ -3335,7 +3401,7 @@ public final class InterfaceFilescorevote {
        *参见 Pb_VoteStartFlag
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 2;</code>
+       * <code>fixed32 voteflag = 2;</code>
        */
       public Builder clearVoteflag() {
         copyOnWrite();
@@ -3344,13 +3410,13 @@ public final class InterfaceFilescorevote {
       }
 
       /**
-       * <code>optional fixed32 timeouts = 3;</code>
+       * <code>fixed32 timeouts = 3;</code>
        */
       public int getTimeouts() {
         return instance.getTimeouts();
       }
       /**
-       * <code>optional fixed32 timeouts = 3;</code>
+       * <code>fixed32 timeouts = 3;</code>
        */
       public Builder setTimeouts(int value) {
         copyOnWrite();
@@ -3358,7 +3424,7 @@ public final class InterfaceFilescorevote {
         return this;
       }
       /**
-       * <code>optional fixed32 timeouts = 3;</code>
+       * <code>fixed32 timeouts = 3;</code>
        */
       public Builder clearTimeouts() {
         copyOnWrite();
@@ -3451,6 +3517,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_StartUserDefineFileScore)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3551,6 +3618,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -3595,7 +3663,7 @@ public final class InterfaceFilescorevote {
      *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -3604,7 +3672,7 @@ public final class InterfaceFilescorevote {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 2;</code>
+     * <code>fixed32 fileid = 2;</code>
      */
     int getFileid();
 
@@ -3613,7 +3681,7 @@ public final class InterfaceFilescorevote {
      *投票内容 [MEET_FILESCORE_VOTECONTENT_MAXLEN]
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     com.google.protobuf.ByteString getContent();
 
@@ -3622,7 +3690,7 @@ public final class InterfaceFilescorevote {
      *匿名投票=0 记名投票=1 参见VOTEMODE_agonymous
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     int getMode();
 
@@ -3631,7 +3699,7 @@ public final class InterfaceFilescorevote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 5;</code>
+     * <code>fixed32 timeouts = 5;</code>
      */
     int getTimeouts();
 
@@ -3640,7 +3708,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 starttime = 6;</code>
+     * <code>fixed64 starttime = 6;</code>
      */
     long getStarttime();
 
@@ -3649,7 +3717,7 @@ public final class InterfaceFilescorevote {
      *参见 Pb_MEET_VOTING_FLAG_REVOTE
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 7;</code>
+     * <code>fixed32 voteflag = 7;</code>
      */
     int getVoteflag();
 
@@ -3731,7 +3799,7 @@ public final class InterfaceFilescorevote {
      *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
@@ -3741,7 +3809,7 @@ public final class InterfaceFilescorevote {
      *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
@@ -3752,7 +3820,7 @@ public final class InterfaceFilescorevote {
      *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
      * </pre>
      *
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -3766,7 +3834,7 @@ public final class InterfaceFilescorevote {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 2;</code>
+     * <code>fixed32 fileid = 2;</code>
      */
     public int getFileid() {
       return fileid_;
@@ -3776,7 +3844,7 @@ public final class InterfaceFilescorevote {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 2;</code>
+     * <code>fixed32 fileid = 2;</code>
      */
     private void setFileid(int value) {
       
@@ -3787,7 +3855,7 @@ public final class InterfaceFilescorevote {
      *文件ID
      * </pre>
      *
-     * <code>optional fixed32 fileid = 2;</code>
+     * <code>fixed32 fileid = 2;</code>
      */
     private void clearFileid() {
       
@@ -3801,7 +3869,7 @@ public final class InterfaceFilescorevote {
      *投票内容 [MEET_FILESCORE_VOTECONTENT_MAXLEN]
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -3811,7 +3879,7 @@ public final class InterfaceFilescorevote {
      *投票内容 [MEET_FILESCORE_VOTECONTENT_MAXLEN]
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     private void setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3825,7 +3893,7 @@ public final class InterfaceFilescorevote {
      *投票内容 [MEET_FILESCORE_VOTECONTENT_MAXLEN]
      * </pre>
      *
-     * <code>optional bytes content = 3;</code>
+     * <code>bytes content = 3;</code>
      */
     private void clearContent() {
       
@@ -3839,7 +3907,7 @@ public final class InterfaceFilescorevote {
      *匿名投票=0 记名投票=1 参见VOTEMODE_agonymous
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     public int getMode() {
       return mode_;
@@ -3849,7 +3917,7 @@ public final class InterfaceFilescorevote {
      *匿名投票=0 记名投票=1 参见VOTEMODE_agonymous
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     private void setMode(int value) {
       
@@ -3860,7 +3928,7 @@ public final class InterfaceFilescorevote {
      *匿名投票=0 记名投票=1 参见VOTEMODE_agonymous
      * </pre>
      *
-     * <code>optional fixed32 mode = 4;</code>
+     * <code>fixed32 mode = 4;</code>
      */
     private void clearMode() {
       
@@ -3874,7 +3942,7 @@ public final class InterfaceFilescorevote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 5;</code>
+     * <code>fixed32 timeouts = 5;</code>
      */
     public int getTimeouts() {
       return timeouts_;
@@ -3884,7 +3952,7 @@ public final class InterfaceFilescorevote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 5;</code>
+     * <code>fixed32 timeouts = 5;</code>
      */
     private void setTimeouts(int value) {
       
@@ -3895,7 +3963,7 @@ public final class InterfaceFilescorevote {
      *计时结束 单位：秒
      * </pre>
      *
-     * <code>optional fixed32 timeouts = 5;</code>
+     * <code>fixed32 timeouts = 5;</code>
      */
     private void clearTimeouts() {
       
@@ -3909,7 +3977,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 starttime = 6;</code>
+     * <code>fixed64 starttime = 6;</code>
      */
     public long getStarttime() {
       return starttime_;
@@ -3919,7 +3987,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 starttime = 6;</code>
+     * <code>fixed64 starttime = 6;</code>
      */
     private void setStarttime(long value) {
       
@@ -3930,7 +3998,7 @@ public final class InterfaceFilescorevote {
      *开时投票的时间 UTC秒
      * </pre>
      *
-     * <code>optional fixed64 starttime = 6;</code>
+     * <code>fixed64 starttime = 6;</code>
      */
     private void clearStarttime() {
       
@@ -3944,7 +4012,7 @@ public final class InterfaceFilescorevote {
      *参见 Pb_MEET_VOTING_FLAG_REVOTE
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 7;</code>
+     * <code>fixed32 voteflag = 7;</code>
      */
     public int getVoteflag() {
       return voteflag_;
@@ -3954,7 +4022,7 @@ public final class InterfaceFilescorevote {
      *参见 Pb_MEET_VOTING_FLAG_REVOTE
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 7;</code>
+     * <code>fixed32 voteflag = 7;</code>
      */
     private void setVoteflag(int value) {
       
@@ -3965,7 +4033,7 @@ public final class InterfaceFilescorevote {
      *参见 Pb_MEET_VOTING_FLAG_REVOTE
      * </pre>
      *
-     * <code>optional fixed32 voteflag = 7;</code>
+     * <code>fixed32 voteflag = 7;</code>
      */
     private void clearVoteflag() {
       
@@ -4235,6 +4303,19 @@ public final class InterfaceFilescorevote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_StartUserDefineFileScoreNotify parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_StartUserDefineFileScoreNotify parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_StartUserDefineFileScoreNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -4328,7 +4409,7 @@ public final class InterfaceFilescorevote {
        *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
@@ -4338,7 +4419,7 @@ public final class InterfaceFilescorevote {
        *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -4350,7 +4431,7 @@ public final class InterfaceFilescorevote {
        *评分项ID，会议中唯一，用来标识删除和修改、发起、停止等操作
        * </pre>
        *
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -4363,7 +4444,7 @@ public final class InterfaceFilescorevote {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 2;</code>
+       * <code>fixed32 fileid = 2;</code>
        */
       public int getFileid() {
         return instance.getFileid();
@@ -4373,7 +4454,7 @@ public final class InterfaceFilescorevote {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 2;</code>
+       * <code>fixed32 fileid = 2;</code>
        */
       public Builder setFileid(int value) {
         copyOnWrite();
@@ -4385,7 +4466,7 @@ public final class InterfaceFilescorevote {
        *文件ID
        * </pre>
        *
-       * <code>optional fixed32 fileid = 2;</code>
+       * <code>fixed32 fileid = 2;</code>
        */
       public Builder clearFileid() {
         copyOnWrite();
@@ -4398,7 +4479,7 @@ public final class InterfaceFilescorevote {
        *投票内容 [MEET_FILESCORE_VOTECONTENT_MAXLEN]
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public com.google.protobuf.ByteString getContent() {
         return instance.getContent();
@@ -4408,7 +4489,7 @@ public final class InterfaceFilescorevote {
        *投票内容 [MEET_FILESCORE_VOTECONTENT_MAXLEN]
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public Builder setContent(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -4420,7 +4501,7 @@ public final class InterfaceFilescorevote {
        *投票内容 [MEET_FILESCORE_VOTECONTENT_MAXLEN]
        * </pre>
        *
-       * <code>optional bytes content = 3;</code>
+       * <code>bytes content = 3;</code>
        */
       public Builder clearContent() {
         copyOnWrite();
@@ -4433,7 +4514,7 @@ public final class InterfaceFilescorevote {
        *匿名投票=0 记名投票=1 参见VOTEMODE_agonymous
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public int getMode() {
         return instance.getMode();
@@ -4443,7 +4524,7 @@ public final class InterfaceFilescorevote {
        *匿名投票=0 记名投票=1 参见VOTEMODE_agonymous
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public Builder setMode(int value) {
         copyOnWrite();
@@ -4455,7 +4536,7 @@ public final class InterfaceFilescorevote {
        *匿名投票=0 记名投票=1 参见VOTEMODE_agonymous
        * </pre>
        *
-       * <code>optional fixed32 mode = 4;</code>
+       * <code>fixed32 mode = 4;</code>
        */
       public Builder clearMode() {
         copyOnWrite();
@@ -4468,7 +4549,7 @@ public final class InterfaceFilescorevote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 5;</code>
+       * <code>fixed32 timeouts = 5;</code>
        */
       public int getTimeouts() {
         return instance.getTimeouts();
@@ -4478,7 +4559,7 @@ public final class InterfaceFilescorevote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 5;</code>
+       * <code>fixed32 timeouts = 5;</code>
        */
       public Builder setTimeouts(int value) {
         copyOnWrite();
@@ -4490,7 +4571,7 @@ public final class InterfaceFilescorevote {
        *计时结束 单位：秒
        * </pre>
        *
-       * <code>optional fixed32 timeouts = 5;</code>
+       * <code>fixed32 timeouts = 5;</code>
        */
       public Builder clearTimeouts() {
         copyOnWrite();
@@ -4503,7 +4584,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 starttime = 6;</code>
+       * <code>fixed64 starttime = 6;</code>
        */
       public long getStarttime() {
         return instance.getStarttime();
@@ -4513,7 +4594,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 starttime = 6;</code>
+       * <code>fixed64 starttime = 6;</code>
        */
       public Builder setStarttime(long value) {
         copyOnWrite();
@@ -4525,7 +4606,7 @@ public final class InterfaceFilescorevote {
        *开时投票的时间 UTC秒
        * </pre>
        *
-       * <code>optional fixed64 starttime = 6;</code>
+       * <code>fixed64 starttime = 6;</code>
        */
       public Builder clearStarttime() {
         copyOnWrite();
@@ -4538,7 +4619,7 @@ public final class InterfaceFilescorevote {
        *参见 Pb_MEET_VOTING_FLAG_REVOTE
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 7;</code>
+       * <code>fixed32 voteflag = 7;</code>
        */
       public int getVoteflag() {
         return instance.getVoteflag();
@@ -4548,7 +4629,7 @@ public final class InterfaceFilescorevote {
        *参见 Pb_MEET_VOTING_FLAG_REVOTE
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 7;</code>
+       * <code>fixed32 voteflag = 7;</code>
        */
       public Builder setVoteflag(int value) {
         copyOnWrite();
@@ -4560,7 +4641,7 @@ public final class InterfaceFilescorevote {
        *参见 Pb_MEET_VOTING_FLAG_REVOTE
        * </pre>
        *
-       * <code>optional fixed32 voteflag = 7;</code>
+       * <code>fixed32 voteflag = 7;</code>
        */
       public Builder clearVoteflag() {
         copyOnWrite();
@@ -4736,6 +4817,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_StartUserDefineFileScoreNotify)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -4874,6 +4956,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -4918,7 +5001,7 @@ public final class InterfaceFilescorevote {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     int getMemberid();
 
@@ -4927,7 +5010,7 @@ public final class InterfaceFilescorevote {
      *是否已经提交 1表示已经提交 0未提交
      * </pre>
      *
-     * <code>optional fixed32 state = 2;</code>
+     * <code>fixed32 state = 2;</code>
      */
     int getState();
 
@@ -4961,7 +5044,7 @@ public final class InterfaceFilescorevote {
      *提交时间 UTC 秒
      * </pre>
      *
-     * <code>optional fixed64 votetime = 4;</code>
+     * <code>fixed64 votetime = 4;</code>
      */
     long getVotetime();
 
@@ -4970,7 +5053,7 @@ public final class InterfaceFilescorevote {
      *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
      * </pre>
      *
-     * <code>optional bytes content = 5;</code>
+     * <code>bytes content = 5;</code>
      */
     com.google.protobuf.ByteString getContent();
   }
@@ -4994,7 +5077,7 @@ public final class InterfaceFilescorevote {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -5004,7 +5087,7 @@ public final class InterfaceFilescorevote {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void setMemberid(int value) {
       
@@ -5015,7 +5098,7 @@ public final class InterfaceFilescorevote {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 1;</code>
+     * <code>fixed32 memberid = 1;</code>
      */
     private void clearMemberid() {
       
@@ -5029,7 +5112,7 @@ public final class InterfaceFilescorevote {
      *是否已经提交 1表示已经提交 0未提交
      * </pre>
      *
-     * <code>optional fixed32 state = 2;</code>
+     * <code>fixed32 state = 2;</code>
      */
     public int getState() {
       return state_;
@@ -5039,7 +5122,7 @@ public final class InterfaceFilescorevote {
      *是否已经提交 1表示已经提交 0未提交
      * </pre>
      *
-     * <code>optional fixed32 state = 2;</code>
+     * <code>fixed32 state = 2;</code>
      */
     private void setState(int value) {
       
@@ -5050,7 +5133,7 @@ public final class InterfaceFilescorevote {
      *是否已经提交 1表示已经提交 0未提交
      * </pre>
      *
-     * <code>optional fixed32 state = 2;</code>
+     * <code>fixed32 state = 2;</code>
      */
     private void clearState() {
       
@@ -5150,7 +5233,7 @@ public final class InterfaceFilescorevote {
      *提交时间 UTC 秒
      * </pre>
      *
-     * <code>optional fixed64 votetime = 4;</code>
+     * <code>fixed64 votetime = 4;</code>
      */
     public long getVotetime() {
       return votetime_;
@@ -5160,7 +5243,7 @@ public final class InterfaceFilescorevote {
      *提交时间 UTC 秒
      * </pre>
      *
-     * <code>optional fixed64 votetime = 4;</code>
+     * <code>fixed64 votetime = 4;</code>
      */
     private void setVotetime(long value) {
       
@@ -5171,7 +5254,7 @@ public final class InterfaceFilescorevote {
      *提交时间 UTC 秒
      * </pre>
      *
-     * <code>optional fixed64 votetime = 4;</code>
+     * <code>fixed64 votetime = 4;</code>
      */
     private void clearVotetime() {
       
@@ -5185,7 +5268,7 @@ public final class InterfaceFilescorevote {
      *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
      * </pre>
      *
-     * <code>optional bytes content = 5;</code>
+     * <code>bytes content = 5;</code>
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -5195,7 +5278,7 @@ public final class InterfaceFilescorevote {
      *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
      * </pre>
      *
-     * <code>optional bytes content = 5;</code>
+     * <code>bytes content = 5;</code>
      */
     private void setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -5209,7 +5292,7 @@ public final class InterfaceFilescorevote {
      *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
      * </pre>
      *
-     * <code>optional bytes content = 5;</code>
+     * <code>bytes content = 5;</code>
      */
     private void clearContent() {
       
@@ -5267,6 +5350,19 @@ public final class InterfaceFilescorevote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_Item_FileScoreMemberStatistic parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_Item_FileScoreMemberStatistic parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_Item_FileScoreMemberStatistic parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5354,7 +5450,7 @@ public final class InterfaceFilescorevote {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -5364,7 +5460,7 @@ public final class InterfaceFilescorevote {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -5376,7 +5472,7 @@ public final class InterfaceFilescorevote {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 1;</code>
+       * <code>fixed32 memberid = 1;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -5389,7 +5485,7 @@ public final class InterfaceFilescorevote {
        *是否已经提交 1表示已经提交 0未提交
        * </pre>
        *
-       * <code>optional fixed32 state = 2;</code>
+       * <code>fixed32 state = 2;</code>
        */
       public int getState() {
         return instance.getState();
@@ -5399,7 +5495,7 @@ public final class InterfaceFilescorevote {
        *是否已经提交 1表示已经提交 0未提交
        * </pre>
        *
-       * <code>optional fixed32 state = 2;</code>
+       * <code>fixed32 state = 2;</code>
        */
       public Builder setState(int value) {
         copyOnWrite();
@@ -5411,7 +5507,7 @@ public final class InterfaceFilescorevote {
        *是否已经提交 1表示已经提交 0未提交
        * </pre>
        *
-       * <code>optional fixed32 state = 2;</code>
+       * <code>fixed32 state = 2;</code>
        */
       public Builder clearState() {
         copyOnWrite();
@@ -5507,7 +5603,7 @@ public final class InterfaceFilescorevote {
        *提交时间 UTC 秒
        * </pre>
        *
-       * <code>optional fixed64 votetime = 4;</code>
+       * <code>fixed64 votetime = 4;</code>
        */
       public long getVotetime() {
         return instance.getVotetime();
@@ -5517,7 +5613,7 @@ public final class InterfaceFilescorevote {
        *提交时间 UTC 秒
        * </pre>
        *
-       * <code>optional fixed64 votetime = 4;</code>
+       * <code>fixed64 votetime = 4;</code>
        */
       public Builder setVotetime(long value) {
         copyOnWrite();
@@ -5529,7 +5625,7 @@ public final class InterfaceFilescorevote {
        *提交时间 UTC 秒
        * </pre>
        *
-       * <code>optional fixed64 votetime = 4;</code>
+       * <code>fixed64 votetime = 4;</code>
        */
       public Builder clearVotetime() {
         copyOnWrite();
@@ -5542,7 +5638,7 @@ public final class InterfaceFilescorevote {
        *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
        * </pre>
        *
-       * <code>optional bytes content = 5;</code>
+       * <code>bytes content = 5;</code>
        */
       public com.google.protobuf.ByteString getContent() {
         return instance.getContent();
@@ -5552,7 +5648,7 @@ public final class InterfaceFilescorevote {
        *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
        * </pre>
        *
-       * <code>optional bytes content = 5;</code>
+       * <code>bytes content = 5;</code>
        */
       public Builder setContent(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -5564,7 +5660,7 @@ public final class InterfaceFilescorevote {
        *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
        * </pre>
        *
-       * <code>optional bytes content = 5;</code>
+       * <code>bytes content = 5;</code>
        */
       public Builder clearContent() {
         copyOnWrite();
@@ -5574,6 +5670,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_Item_FileScoreMemberStatistic)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -5681,6 +5778,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -5721,7 +5819,7 @@ public final class InterfaceFilescorevote {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -5761,20 +5859,20 @@ public final class InterfaceFilescorevote {
     public static final int VOTEID_FIELD_NUMBER = 1;
     private int voteid_;
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
       voteid_ = value;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -5929,6 +6027,19 @@ public final class InterfaceFilescorevote {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScoreMemberStatistic parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScoreMemberStatistic parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScoreMemberStatistic parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -6018,13 +6129,13 @@ public final class InterfaceFilescorevote {
 
 
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -6032,7 +6143,7 @@ public final class InterfaceFilescorevote {
         return this;
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -6139,6 +6250,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_UserDefineFileScoreMemberStatistic)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6212,6 +6324,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6252,7 +6365,7 @@ public final class InterfaceFilescorevote {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     int getVoteid();
 
@@ -6261,7 +6374,7 @@ public final class InterfaceFilescorevote {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     int getMemberid();
 
@@ -6295,7 +6408,7 @@ public final class InterfaceFilescorevote {
      *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
      * </pre>
      *
-     * <code>optional bytes content = 5;</code>
+     * <code>bytes content = 5;</code>
      */
     com.google.protobuf.ByteString getContent();
   }
@@ -6303,7 +6416,7 @@ public final class InterfaceFilescorevote {
    * <pre>
    *文件自定义选项评分人员统计
    *call
-   *type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+   *type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTESIGN
    *method:Pb_METHOD_MEET_INTERFACE_SUBMIT
    * </pre>
    *
@@ -6322,20 +6435,20 @@ public final class InterfaceFilescorevote {
     public static final int VOTEID_FIELD_NUMBER = 1;
     private int voteid_;
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     public int getVoteid() {
       return voteid_;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void setVoteid(int value) {
       
       voteid_ = value;
     }
     /**
-     * <code>optional fixed32 voteid = 1;</code>
+     * <code>fixed32 voteid = 1;</code>
      */
     private void clearVoteid() {
       
@@ -6349,7 +6462,7 @@ public final class InterfaceFilescorevote {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -6359,7 +6472,7 @@ public final class InterfaceFilescorevote {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void setMemberid(int value) {
       
@@ -6370,7 +6483,7 @@ public final class InterfaceFilescorevote {
      *人员ID
      * </pre>
      *
-     * <code>optional fixed32 memberid = 2;</code>
+     * <code>fixed32 memberid = 2;</code>
      */
     private void clearMemberid() {
       
@@ -6470,7 +6583,7 @@ public final class InterfaceFilescorevote {
      *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
      * </pre>
      *
-     * <code>optional bytes content = 5;</code>
+     * <code>bytes content = 5;</code>
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -6480,7 +6593,7 @@ public final class InterfaceFilescorevote {
      *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
      * </pre>
      *
-     * <code>optional bytes content = 5;</code>
+     * <code>bytes content = 5;</code>
      */
     private void setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -6494,7 +6607,7 @@ public final class InterfaceFilescorevote {
      *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
      * </pre>
      *
-     * <code>optional bytes content = 5;</code>
+     * <code>bytes content = 5;</code>
      */
     private void clearContent() {
       
@@ -6545,6 +6658,19 @@ public final class InterfaceFilescorevote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScoreMemberStatisticNotify parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScoreMemberStatisticNotify parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_UserDefineFileScoreMemberStatisticNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6617,7 +6743,7 @@ public final class InterfaceFilescorevote {
      * <pre>
      *文件自定义选项评分人员统计
      *call
-     *type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTE
+     *type:Pb_TYPE_MEET_INTERFACE_FILESCOREVOTESIGN
      *method:Pb_METHOD_MEET_INTERFACE_SUBMIT
      * </pre>
      *
@@ -6635,13 +6761,13 @@ public final class InterfaceFilescorevote {
 
 
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -6649,7 +6775,7 @@ public final class InterfaceFilescorevote {
         return this;
       }
       /**
-       * <code>optional fixed32 voteid = 1;</code>
+       * <code>fixed32 voteid = 1;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -6662,7 +6788,7 @@ public final class InterfaceFilescorevote {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -6672,7 +6798,7 @@ public final class InterfaceFilescorevote {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -6684,7 +6810,7 @@ public final class InterfaceFilescorevote {
        *人员ID
        * </pre>
        *
-       * <code>optional fixed32 memberid = 2;</code>
+       * <code>fixed32 memberid = 2;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -6780,7 +6906,7 @@ public final class InterfaceFilescorevote {
        *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
        * </pre>
        *
-       * <code>optional bytes content = 5;</code>
+       * <code>bytes content = 5;</code>
        */
       public com.google.protobuf.ByteString getContent() {
         return instance.getContent();
@@ -6790,7 +6916,7 @@ public final class InterfaceFilescorevote {
        *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
        * </pre>
        *
-       * <code>optional bytes content = 5;</code>
+       * <code>bytes content = 5;</code>
        */
       public Builder setContent(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -6802,7 +6928,7 @@ public final class InterfaceFilescorevote {
        *[Pb_MEET_FILESCORE_VOTECONTENT_MAXLEN]; //意见 
        * </pre>
        *
-       * <code>optional bytes content = 5;</code>
+       * <code>bytes content = 5;</code>
        */
       public Builder clearContent() {
         copyOnWrite();
@@ -6812,6 +6938,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_UserDefineFileScoreMemberStatisticNotify)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -6912,6 +7039,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -6956,7 +7084,7 @@ public final class InterfaceFilescorevote {
      *数据ID Pb_FILESCOREVOTE_PropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     int getPropertyid();
 
@@ -6965,7 +7093,7 @@ public final class InterfaceFilescorevote {
      *传入参数
      * </pre>
      *
-     * <code>optional fixed32 voteid = 2;</code>
+     * <code>fixed32 voteid = 2;</code>
      */
     int getVoteid();
 
@@ -6974,7 +7102,7 @@ public final class InterfaceFilescorevote {
      *传入参数 为0表示本身
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     int getMemberid();
 
@@ -6983,7 +7111,7 @@ public final class InterfaceFilescorevote {
      *返回值 
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 4;</code>
+     * <code>fixed32 propertyval = 4;</code>
      */
     int getPropertyval();
   }
@@ -7011,7 +7139,7 @@ public final class InterfaceFilescorevote {
      *数据ID Pb_FILESCOREVOTE_PropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     public int getPropertyid() {
       return propertyid_;
@@ -7021,7 +7149,7 @@ public final class InterfaceFilescorevote {
      *数据ID Pb_FILESCOREVOTE_PropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void setPropertyid(int value) {
       
@@ -7032,7 +7160,7 @@ public final class InterfaceFilescorevote {
      *数据ID Pb_FILESCOREVOTE_PropertyID
      * </pre>
      *
-     * <code>optional fixed32 propertyid = 1;</code>
+     * <code>fixed32 propertyid = 1;</code>
      */
     private void clearPropertyid() {
       
@@ -7046,7 +7174,7 @@ public final class InterfaceFilescorevote {
      *传入参数
      * </pre>
      *
-     * <code>optional fixed32 voteid = 2;</code>
+     * <code>fixed32 voteid = 2;</code>
      */
     public int getVoteid() {
       return voteid_;
@@ -7056,7 +7184,7 @@ public final class InterfaceFilescorevote {
      *传入参数
      * </pre>
      *
-     * <code>optional fixed32 voteid = 2;</code>
+     * <code>fixed32 voteid = 2;</code>
      */
     private void setVoteid(int value) {
       
@@ -7067,7 +7195,7 @@ public final class InterfaceFilescorevote {
      *传入参数
      * </pre>
      *
-     * <code>optional fixed32 voteid = 2;</code>
+     * <code>fixed32 voteid = 2;</code>
      */
     private void clearVoteid() {
       
@@ -7081,7 +7209,7 @@ public final class InterfaceFilescorevote {
      *传入参数 为0表示本身
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     public int getMemberid() {
       return memberid_;
@@ -7091,7 +7219,7 @@ public final class InterfaceFilescorevote {
      *传入参数 为0表示本身
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void setMemberid(int value) {
       
@@ -7102,7 +7230,7 @@ public final class InterfaceFilescorevote {
      *传入参数 为0表示本身
      * </pre>
      *
-     * <code>optional fixed32 memberid = 3;</code>
+     * <code>fixed32 memberid = 3;</code>
      */
     private void clearMemberid() {
       
@@ -7116,7 +7244,7 @@ public final class InterfaceFilescorevote {
      *返回值 
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 4;</code>
+     * <code>fixed32 propertyval = 4;</code>
      */
     public int getPropertyval() {
       return propertyval_;
@@ -7126,7 +7254,7 @@ public final class InterfaceFilescorevote {
      *返回值 
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 4;</code>
+     * <code>fixed32 propertyval = 4;</code>
      */
     private void setPropertyval(int value) {
       
@@ -7137,7 +7265,7 @@ public final class InterfaceFilescorevote {
      *返回值 
      * </pre>
      *
-     * <code>optional fixed32 propertyval = 4;</code>
+     * <code>fixed32 propertyval = 4;</code>
      */
     private void clearPropertyval() {
       
@@ -7185,6 +7313,19 @@ public final class InterfaceFilescorevote {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_MeetFileScoreVoteQueryProperty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_MeetFileScoreVoteQueryProperty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceFilescorevote.pbui_Type_MeetFileScoreVoteQueryProperty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7279,7 +7420,7 @@ public final class InterfaceFilescorevote {
        *数据ID Pb_FILESCOREVOTE_PropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public int getPropertyid() {
         return instance.getPropertyid();
@@ -7289,7 +7430,7 @@ public final class InterfaceFilescorevote {
        *数据ID Pb_FILESCOREVOTE_PropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder setPropertyid(int value) {
         copyOnWrite();
@@ -7301,7 +7442,7 @@ public final class InterfaceFilescorevote {
        *数据ID Pb_FILESCOREVOTE_PropertyID
        * </pre>
        *
-       * <code>optional fixed32 propertyid = 1;</code>
+       * <code>fixed32 propertyid = 1;</code>
        */
       public Builder clearPropertyid() {
         copyOnWrite();
@@ -7314,7 +7455,7 @@ public final class InterfaceFilescorevote {
        *传入参数
        * </pre>
        *
-       * <code>optional fixed32 voteid = 2;</code>
+       * <code>fixed32 voteid = 2;</code>
        */
       public int getVoteid() {
         return instance.getVoteid();
@@ -7324,7 +7465,7 @@ public final class InterfaceFilescorevote {
        *传入参数
        * </pre>
        *
-       * <code>optional fixed32 voteid = 2;</code>
+       * <code>fixed32 voteid = 2;</code>
        */
       public Builder setVoteid(int value) {
         copyOnWrite();
@@ -7336,7 +7477,7 @@ public final class InterfaceFilescorevote {
        *传入参数
        * </pre>
        *
-       * <code>optional fixed32 voteid = 2;</code>
+       * <code>fixed32 voteid = 2;</code>
        */
       public Builder clearVoteid() {
         copyOnWrite();
@@ -7349,7 +7490,7 @@ public final class InterfaceFilescorevote {
        *传入参数 为0表示本身
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public int getMemberid() {
         return instance.getMemberid();
@@ -7359,7 +7500,7 @@ public final class InterfaceFilescorevote {
        *传入参数 为0表示本身
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder setMemberid(int value) {
         copyOnWrite();
@@ -7371,7 +7512,7 @@ public final class InterfaceFilescorevote {
        *传入参数 为0表示本身
        * </pre>
        *
-       * <code>optional fixed32 memberid = 3;</code>
+       * <code>fixed32 memberid = 3;</code>
        */
       public Builder clearMemberid() {
         copyOnWrite();
@@ -7384,7 +7525,7 @@ public final class InterfaceFilescorevote {
        *返回值 
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 4;</code>
+       * <code>fixed32 propertyval = 4;</code>
        */
       public int getPropertyval() {
         return instance.getPropertyval();
@@ -7394,7 +7535,7 @@ public final class InterfaceFilescorevote {
        *返回值 
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 4;</code>
+       * <code>fixed32 propertyval = 4;</code>
        */
       public Builder setPropertyval(int value) {
         copyOnWrite();
@@ -7406,7 +7547,7 @@ public final class InterfaceFilescorevote {
        *返回值 
        * </pre>
        *
-       * <code>optional fixed32 propertyval = 4;</code>
+       * <code>fixed32 propertyval = 4;</code>
        */
       public Builder clearPropertyval() {
         copyOnWrite();
@@ -7416,6 +7557,7 @@ public final class InterfaceFilescorevote {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetFileScoreVoteQueryProperty)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -7498,6 +7640,7 @@ public final class InterfaceFilescorevote {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }

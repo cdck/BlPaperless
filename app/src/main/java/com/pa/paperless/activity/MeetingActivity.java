@@ -16,7 +16,7 @@ import com.pa.paperless.broadcase.NetWorkReceiver;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.fragment.ElectionManageFragment;
-import com.pa.paperless.fragment.SignInFragment;
+import com.pa.paperless.fragment.SigninFragment;
 import com.pa.paperless.service.App;
 import com.pa.paperless.utils.LogUtil;
 
@@ -132,7 +132,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
     private List<Integer> funData = new ArrayList<>();
     private MeetingActivity context;
     private FunctionAdapter funAdapter;
-    private SignInFragment mSigninFragment;
+    private SigninFragment mSigninFragment;
     private SeatFragment mSigninSeatFragment;
     private AgendaFragment mAnnAgendaFragment;
     private MeetingFileFragment mMeetingFileFragment;
@@ -195,26 +195,9 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
             jni.initVideoRes(10, App.screenWidth, App.screenHeight);
             jni.initVideoRes(11, App.screenWidth, App.screenHeight);
             //  修改本机界面状态
-            jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(),
-                    InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace.getNumber());
-            //缓存会议目录
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORY.getNumber(), 1, 0);
-            //会议目录文件
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE.getNumber(), 1, 0);
-            // 缓存会场设备
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_ROOMDEVICE.getNumber(), 0, 1);
-            //缓存会场设备
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_ROOMDEVICE.getNumber(), 1, 0);
-            // 缓存会议排位
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETSEAT.getNumber(), 1, 0);
-            // 缓存参会人信息
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEMBER.getNumber(), 1, 0);
-            //缓存投票信息
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETVOTEINFO.getNumber(), 1, 0);
-            //人员签到
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETSIGN.getNumber(), 1, 0);
-            //公告信息
-            jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETBULLET.getNumber(), 1, 0);
+            jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE_VALUE,
+                    InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace_VALUE);
+            cache();
             //首次进入界面就立马调用一次无意义的操作，避免第一次真正调用时无效
             jni.createFileCache(0, 0, 0, 0, "");
             updateOnline();
@@ -222,6 +205,30 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void cache() {
+        // 缓存会场设备
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_ROOMDEVICE_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_FORCE_VALUE);
+        //缓存会场设备
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_ROOMDEVICE_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+        // 缓存会议排位
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETSEAT_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+        // 缓存参会人信息
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEMBER_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+        //缓存会议目录
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORY_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+        //会议目录文件
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYFILE_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+        //会议目录权限
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+        //缓存投票信息
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETVOTEINFO_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+        //人员签到
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETSIGN_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+        //公告信息
+        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETBULLET_VALUE, 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
+
     }
 
     @Override
@@ -256,8 +263,8 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         handler.removeCallbacksAndMessages(null);
         //关闭悬浮窗的服务
 //        myApp.openFab(false);
-        jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(),
-                InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MainFace.getNumber());
+        jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE_VALUE,
+                InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MainFace_VALUE);
         jni.mediaDestroy(0);
         jni.mediaDestroy(10);
         jni.mediaDestroy(11);
@@ -301,8 +308,8 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
             ToastUtils.showShort(R.string.device_offline);
         } else {
             //  修改本机界面状态
-            jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(),
-                    InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace.getNumber());
+            jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE_VALUE,
+                    InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace_VALUE);
         }
     }
 
@@ -349,13 +356,13 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 }
             });
             try {
-                InterfaceBase.pbui_CommonInt32uProperty property = jni.queryMeetRankingProperty(InterfaceMacro.Pb_MeetSeatPropertyID.Pb_MEETSEAT_PROPERTY_ROLEBYMEMBERID.getNumber());
+                InterfaceBase.pbui_CommonInt32uProperty property = jni.queryMeetRankingProperty(InterfaceMacro.Pb_MeetSeatPropertyID.Pb_MEETSEAT_PROPERTY_ROLEBYMEMBERID_VALUE);
                 if (property != null) {
                     int propertyval = property.getPropertyval();
                     LogUtil.d(TAG, "receiveFunInfo: 本机的角色= " + propertyval);
-                    if (propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_compere.getNumber()
-                            || propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary.getNumber()
-                            || propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_admin.getNumber()) {
+                    if (propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_compere_VALUE
+                            || propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary_VALUE
+                            || propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_admin_VALUE) {
                         setMemberRoleTv(propertyval);
                         Values.hasAllPermissions = true;
                         secretary.setVisibility(View.VISIBLE);
@@ -376,11 +383,11 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
     }
 
     private void setMemberRoleTv(int propertyval) {
-        if (propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_compere.getNumber()) {
+        if (propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_compere_VALUE) {
             member_with_role.setText(getString(R.string.member_host));
-        } else if (propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary.getNumber()) {
+        } else if (propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary_VALUE) {
             member_with_role.setText(getString(R.string.member_secretary));
-        } else if (propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_admin.getNumber()) {
+        } else if (propertyval == InterfaceMacro.Pb_MeetMemberRole.Pb_role_admin_VALUE) {
             member_with_role.setText(getString(R.string.member_admin));
         } else {
             member_with_role.setText(getString(R.string.member_coord));
@@ -467,7 +474,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 InterfaceFaceconfig.pbui_Item_FacePictureItemInfo itemInfo = pictureList.get(i);
                 int faceid = itemInfo.getFaceid();
                 int flag = itemInfo.getFlag();
-                if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_LOGO.getNumber()) {
+                if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_LOGO_VALUE) {
                     boolean isShow = (InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE == (flag & InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE));
                     if (isShow) {
                         logo_iv.setVisibility(View.VISIBLE);
@@ -487,7 +494,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 InterfaceFaceconfig.pbui_Item_FaceOnlyTextItemInfo info = onlytextList.get(i);
                 int faceid = info.getFaceid();
                 int flag = info.getFlag();
-                if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_COLTDTEXT.getNumber()) {
+                if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_COLTDTEXT_VALUE) {
                     company_name_tv.setText(MyUtils.b2s(info.getText()));
                     break;
                 }
@@ -495,10 +502,10 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
             for (int i = 0; i < textList.size(); i++) {
                 InterfaceFaceconfig.pbui_Item_FaceTextItemInfo info = textList.get(i);
                 int faceid = info.getFaceid();
-                if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_COMPANY.getNumber()) {//公司名称
+                if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_COMPANY_VALUE) {//公司名称
                     LogUtil.i(TAG, "单位名称控件");
                     updateCompanyNameTv(info);
-                } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACE_LOGO_GEO.getNumber()) {//Logo图标,只需要更新位置坐标
+                } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACE_LOGO_GEO_VALUE) {//Logo图标,只需要更新位置坐标
                     LogUtil.i(TAG, "logo图标控件");
                     update(R.id.meet_logo_iv, info);
                 }
@@ -562,28 +569,28 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         tv.setVisibility(b ? View.VISIBLE : View.GONE);
         int fontflag = info.getFontflag();
         //字体样式
-        if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_BOLD.getNumber()) {//加粗
+        if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_BOLD_VALUE) {//加粗
             tv.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-        } else if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_LEAN.getNumber()) {//倾斜
+        } else if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_LEAN_VALUE) {//倾斜
             tv.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
-        } else if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_UNDERLINE.getNumber()) {//下划线
+        } else if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_UNDERLINE_VALUE) {//下划线
             tv.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));//暂时用倾斜加粗
         } else {//正常文本
             tv.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
         }
         int align = info.getAlign();
         //对齐方式
-        if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_LEFT.getNumber()) {//左对齐
+        if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_LEFT_VALUE) {//左对齐
             tv.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
-        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_RIGHT.getNumber()) {//右对齐
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_RIGHT_VALUE) {//右对齐
             tv.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
-        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_HCENTER.getNumber()) {//水平对齐
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_HCENTER_VALUE) {//水平对齐
             tv.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
-        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_TOP.getNumber()) {//上对齐
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_TOP_VALUE) {//上对齐
             tv.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
-        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_BOTTOM.getNumber()) {//下对齐
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_BOTTOM_VALUE) {//下对齐
             tv.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
-        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_VCENTER.getNumber()) {//垂直对齐
+        } else if (align == InterfaceMacro.Pb_FontAlignFlag.Pb_MEET_FONTALIGNFLAG_VCENTER_VALUE) {//垂直对齐
             tv.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         } else {
             tv.setGravity(Gravity.CENTER);
@@ -749,11 +756,11 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 break;
             case EventType.SIGNIN_SEAT_FRAG://选中签到图形fragment
                 showFragment(Macro.PB_MEET_FUN_CODE_SIGN_IN_RESULT);
-                funAdapter.setCheckedId(funData.indexOf(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_SIGNINRESULT.getNumber()));
+                funAdapter.setCheckedId(funData.indexOf(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_SIGNINRESULT_VALUE));
                 break;
             case EventType.SIGNIN_DETAILS://打开签到详情
                 showFragment(Macro.PB_MEET_FUN_CODE_SIGN_IN_SEAT);
-                funAdapter.setCheckedId(funData.indexOf(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_SIGNINRESULT.getNumber()));
+                funAdapter.setCheckedId(funData.indexOf(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_SIGNINRESULT_VALUE));
                 break;
             case EventType.ICC_changed_inform://界面配置变更通知
                 LogUtil.d(TAG, "getEventMessage: 界面配置变更通知");
@@ -867,14 +874,14 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         DrawBoardActivity.disposePicOpermemberid = object4.getOpermemberid();//当前该命令的人员ID
         DrawBoardActivity.disposePicSrcmemid = object4.getSrcmemid();//发起人的人员ID 白板标识使用
         DrawBoardActivity.disposePicSrcwbidd = object4.getSrcwbid();//发起人的白板标识 取微秒级的时间作标识 白板标识使用
-        if (operflag == InterfaceMacro.Pb_MeetPostilOperType.Pb_MEETPOTIL_FLAG_FORCEOPEN.getNumber()) {
+        if (operflag == InterfaceMacro.Pb_MeetPostilOperType.Pb_MEETPOTIL_FLAG_FORCEOPEN_VALUE) {
             LogUtil.d(TAG, "eventOpenBoard: 强制打开白板  直接强制同意加入..");
             jni.agreeJoin(Values.localMemberId, DrawBoardActivity.disposePicSrcmemid, DrawBoardActivity.disposePicSrcwbidd);
             startActivity(new Intent(getApplicationContext(), DrawBoardActivity.class));
             DrawBoardActivity.sharing = true;//如果同意加入就设置已经在共享中
             DrawBoardActivity.mSrcmemid = DrawBoardActivity.disposePicSrcmemid;//设置发起的人员ID
             DrawBoardActivity.mSrcwbid = DrawBoardActivity.disposePicSrcwbidd;//设置白板标识
-        } else if (operflag == InterfaceMacro.Pb_MeetPostilOperType.Pb_MEETPOTIL_FLAG_REQUESTOPEN.getNumber()) {
+        } else if (operflag == InterfaceMacro.Pb_MeetPostilOperType.Pb_MEETPOTIL_FLAG_REQUESTOPEN_VALUE) {
             LogUtil.d(TAG, "eventOpenBoard: 询问打开白板..");
             WhetherOpen(DrawBoardActivity.disposePicSrcmemid, DrawBoardActivity.disposePicSrcwbidd, MyUtils.b2s(medianame), DrawBoardActivity.disposePicOpermemberid);
         }
@@ -969,9 +976,9 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                             ", 本机人员ID= " + Values.localMemberId + ", 角色role= " + role
                             + ",NativeService.hasAllPermissions= " + Values.hasAllPermissions);
                     //本机是否有秘书管理的权限
-                    if (role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_compere.getNumber()
-                            || role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary.getNumber()
-                            || role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_admin.getNumber()) {
+                    if (role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_compere_VALUE
+                            || role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary_VALUE
+                            || role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_admin_VALUE) {
                         setMemberRoleTv(role);
                         Values.hasAllPermissions = true;
                         if (secretary.getVisibility() != View.VISIBLE) {
@@ -1043,7 +1050,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 break;
             case Macro.PB_MEET_FUN_CODE_SIGN_IN_SEAT://签到详情
                 if (mSigninFragment == null) {
-                    mSigninFragment = new SignInFragment();
+                    mSigninFragment = new SigninFragment();
                     ft.add(R.id.meet_fl, mSigninFragment);
                 }
                 ft.show(mSigninFragment);

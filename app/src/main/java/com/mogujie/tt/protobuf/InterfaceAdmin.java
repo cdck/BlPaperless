@@ -13,12 +13,12 @@ public final class InterfaceAdmin {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <code>optional fixed32 adminid = 1;</code>
+     * <code>fixed32 adminid = 1;</code>
      */
     int getAdminid();
 
     /**
-     * <code>optional bytes adminname = 2;</code>
+     * <code>bytes adminname = 2;</code>
      */
     com.google.protobuf.ByteString getAdminname();
 
@@ -27,22 +27,22 @@ public final class InterfaceAdmin {
      *密码 md5 ascill 32字节
      * </pre>
      *
-     * <code>optional bytes pw = 3;</code>
+     * <code>bytes pw = 3;</code>
      */
     com.google.protobuf.ByteString getPw();
 
     /**
-     * <code>optional bytes comment = 4;</code>
+     * <code>bytes comment = 4;</code>
      */
     com.google.protobuf.ByteString getComment();
 
     /**
-     * <code>optional bytes phone = 5;</code>
+     * <code>bytes phone = 5;</code>
      */
     com.google.protobuf.ByteString getPhone();
 
     /**
-     * <code>optional bytes email = 6;</code>
+     * <code>bytes email = 6;</code>
      */
     com.google.protobuf.ByteString getEmail();
   }
@@ -64,20 +64,20 @@ public final class InterfaceAdmin {
     public static final int ADMINID_FIELD_NUMBER = 1;
     private int adminid_;
     /**
-     * <code>optional fixed32 adminid = 1;</code>
+     * <code>fixed32 adminid = 1;</code>
      */
     public int getAdminid() {
       return adminid_;
     }
     /**
-     * <code>optional fixed32 adminid = 1;</code>
+     * <code>fixed32 adminid = 1;</code>
      */
     private void setAdminid(int value) {
       
       adminid_ = value;
     }
     /**
-     * <code>optional fixed32 adminid = 1;</code>
+     * <code>fixed32 adminid = 1;</code>
      */
     private void clearAdminid() {
       
@@ -87,13 +87,13 @@ public final class InterfaceAdmin {
     public static final int ADMINNAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString adminname_;
     /**
-     * <code>optional bytes adminname = 2;</code>
+     * <code>bytes adminname = 2;</code>
      */
     public com.google.protobuf.ByteString getAdminname() {
       return adminname_;
     }
     /**
-     * <code>optional bytes adminname = 2;</code>
+     * <code>bytes adminname = 2;</code>
      */
     private void setAdminname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -103,7 +103,7 @@ public final class InterfaceAdmin {
       adminname_ = value;
     }
     /**
-     * <code>optional bytes adminname = 2;</code>
+     * <code>bytes adminname = 2;</code>
      */
     private void clearAdminname() {
       
@@ -117,7 +117,7 @@ public final class InterfaceAdmin {
      *密码 md5 ascill 32字节
      * </pre>
      *
-     * <code>optional bytes pw = 3;</code>
+     * <code>bytes pw = 3;</code>
      */
     public com.google.protobuf.ByteString getPw() {
       return pw_;
@@ -127,7 +127,7 @@ public final class InterfaceAdmin {
      *密码 md5 ascill 32字节
      * </pre>
      *
-     * <code>optional bytes pw = 3;</code>
+     * <code>bytes pw = 3;</code>
      */
     private void setPw(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -141,7 +141,7 @@ public final class InterfaceAdmin {
      *密码 md5 ascill 32字节
      * </pre>
      *
-     * <code>optional bytes pw = 3;</code>
+     * <code>bytes pw = 3;</code>
      */
     private void clearPw() {
       
@@ -151,13 +151,13 @@ public final class InterfaceAdmin {
     public static final int COMMENT_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString comment_;
     /**
-     * <code>optional bytes comment = 4;</code>
+     * <code>bytes comment = 4;</code>
      */
     public com.google.protobuf.ByteString getComment() {
       return comment_;
     }
     /**
-     * <code>optional bytes comment = 4;</code>
+     * <code>bytes comment = 4;</code>
      */
     private void setComment(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -167,7 +167,7 @@ public final class InterfaceAdmin {
       comment_ = value;
     }
     /**
-     * <code>optional bytes comment = 4;</code>
+     * <code>bytes comment = 4;</code>
      */
     private void clearComment() {
       
@@ -177,13 +177,13 @@ public final class InterfaceAdmin {
     public static final int PHONE_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString phone_;
     /**
-     * <code>optional bytes phone = 5;</code>
+     * <code>bytes phone = 5;</code>
      */
     public com.google.protobuf.ByteString getPhone() {
       return phone_;
     }
     /**
-     * <code>optional bytes phone = 5;</code>
+     * <code>bytes phone = 5;</code>
      */
     private void setPhone(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -193,7 +193,7 @@ public final class InterfaceAdmin {
       phone_ = value;
     }
     /**
-     * <code>optional bytes phone = 5;</code>
+     * <code>bytes phone = 5;</code>
      */
     private void clearPhone() {
       
@@ -203,13 +203,13 @@ public final class InterfaceAdmin {
     public static final int EMAIL_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString email_;
     /**
-     * <code>optional bytes email = 6;</code>
+     * <code>bytes email = 6;</code>
      */
     public com.google.protobuf.ByteString getEmail() {
       return email_;
     }
     /**
-     * <code>optional bytes email = 6;</code>
+     * <code>bytes email = 6;</code>
      */
     private void setEmail(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -219,7 +219,7 @@ public final class InterfaceAdmin {
       email_ = value;
     }
     /**
-     * <code>optional bytes email = 6;</code>
+     * <code>bytes email = 6;</code>
      */
     private void clearEmail() {
       
@@ -281,6 +281,19 @@ public final class InterfaceAdmin {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Item_AdminDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Item_AdminDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Item_AdminDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -364,13 +377,13 @@ public final class InterfaceAdmin {
 
 
       /**
-       * <code>optional fixed32 adminid = 1;</code>
+       * <code>fixed32 adminid = 1;</code>
        */
       public int getAdminid() {
         return instance.getAdminid();
       }
       /**
-       * <code>optional fixed32 adminid = 1;</code>
+       * <code>fixed32 adminid = 1;</code>
        */
       public Builder setAdminid(int value) {
         copyOnWrite();
@@ -378,7 +391,7 @@ public final class InterfaceAdmin {
         return this;
       }
       /**
-       * <code>optional fixed32 adminid = 1;</code>
+       * <code>fixed32 adminid = 1;</code>
        */
       public Builder clearAdminid() {
         copyOnWrite();
@@ -387,13 +400,13 @@ public final class InterfaceAdmin {
       }
 
       /**
-       * <code>optional bytes adminname = 2;</code>
+       * <code>bytes adminname = 2;</code>
        */
       public com.google.protobuf.ByteString getAdminname() {
         return instance.getAdminname();
       }
       /**
-       * <code>optional bytes adminname = 2;</code>
+       * <code>bytes adminname = 2;</code>
        */
       public Builder setAdminname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -401,7 +414,7 @@ public final class InterfaceAdmin {
         return this;
       }
       /**
-       * <code>optional bytes adminname = 2;</code>
+       * <code>bytes adminname = 2;</code>
        */
       public Builder clearAdminname() {
         copyOnWrite();
@@ -414,7 +427,7 @@ public final class InterfaceAdmin {
        *密码 md5 ascill 32字节
        * </pre>
        *
-       * <code>optional bytes pw = 3;</code>
+       * <code>bytes pw = 3;</code>
        */
       public com.google.protobuf.ByteString getPw() {
         return instance.getPw();
@@ -424,7 +437,7 @@ public final class InterfaceAdmin {
        *密码 md5 ascill 32字节
        * </pre>
        *
-       * <code>optional bytes pw = 3;</code>
+       * <code>bytes pw = 3;</code>
        */
       public Builder setPw(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -436,7 +449,7 @@ public final class InterfaceAdmin {
        *密码 md5 ascill 32字节
        * </pre>
        *
-       * <code>optional bytes pw = 3;</code>
+       * <code>bytes pw = 3;</code>
        */
       public Builder clearPw() {
         copyOnWrite();
@@ -445,13 +458,13 @@ public final class InterfaceAdmin {
       }
 
       /**
-       * <code>optional bytes comment = 4;</code>
+       * <code>bytes comment = 4;</code>
        */
       public com.google.protobuf.ByteString getComment() {
         return instance.getComment();
       }
       /**
-       * <code>optional bytes comment = 4;</code>
+       * <code>bytes comment = 4;</code>
        */
       public Builder setComment(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -459,7 +472,7 @@ public final class InterfaceAdmin {
         return this;
       }
       /**
-       * <code>optional bytes comment = 4;</code>
+       * <code>bytes comment = 4;</code>
        */
       public Builder clearComment() {
         copyOnWrite();
@@ -468,13 +481,13 @@ public final class InterfaceAdmin {
       }
 
       /**
-       * <code>optional bytes phone = 5;</code>
+       * <code>bytes phone = 5;</code>
        */
       public com.google.protobuf.ByteString getPhone() {
         return instance.getPhone();
       }
       /**
-       * <code>optional bytes phone = 5;</code>
+       * <code>bytes phone = 5;</code>
        */
       public Builder setPhone(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -482,7 +495,7 @@ public final class InterfaceAdmin {
         return this;
       }
       /**
-       * <code>optional bytes phone = 5;</code>
+       * <code>bytes phone = 5;</code>
        */
       public Builder clearPhone() {
         copyOnWrite();
@@ -491,13 +504,13 @@ public final class InterfaceAdmin {
       }
 
       /**
-       * <code>optional bytes email = 6;</code>
+       * <code>bytes email = 6;</code>
        */
       public com.google.protobuf.ByteString getEmail() {
         return instance.getEmail();
       }
       /**
-       * <code>optional bytes email = 6;</code>
+       * <code>bytes email = 6;</code>
        */
       public Builder setEmail(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -505,7 +518,7 @@ public final class InterfaceAdmin {
         return this;
       }
       /**
-       * <code>optional bytes email = 6;</code>
+       * <code>bytes email = 6;</code>
        */
       public Builder clearEmail() {
         copyOnWrite();
@@ -515,6 +528,7 @@ public final class InterfaceAdmin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Item_AdminDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -611,6 +625,7 @@ public final class InterfaceAdmin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -891,6 +906,19 @@ public final class InterfaceAdmin {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_TypeAdminDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_TypeAdminDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_TypeAdminDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -1126,6 +1154,7 @@ public final class InterfaceAdmin {
 
       // @@protoc_insertion_point(builder_scope:pbui_TypeAdminDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1191,6 +1220,7 @@ public final class InterfaceAdmin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1235,7 +1265,7 @@ public final class InterfaceAdmin {
      *用户名
      * </pre>
      *
-     * <code>optional bytes adminname = 1;</code>
+     * <code>bytes adminname = 1;</code>
      */
     com.google.protobuf.ByteString getAdminname();
 
@@ -1244,7 +1274,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminoldpwd = 2;</code>
+     * <code>bytes adminoldpwd = 2;</code>
      */
     com.google.protobuf.ByteString getAdminoldpwd();
 
@@ -1253,7 +1283,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminnewpwd = 3;</code>
+     * <code>bytes adminnewpwd = 3;</code>
      */
     com.google.protobuf.ByteString getAdminnewpwd();
   }
@@ -1284,7 +1314,7 @@ public final class InterfaceAdmin {
      *用户名
      * </pre>
      *
-     * <code>optional bytes adminname = 1;</code>
+     * <code>bytes adminname = 1;</code>
      */
     public com.google.protobuf.ByteString getAdminname() {
       return adminname_;
@@ -1294,7 +1324,7 @@ public final class InterfaceAdmin {
      *用户名
      * </pre>
      *
-     * <code>optional bytes adminname = 1;</code>
+     * <code>bytes adminname = 1;</code>
      */
     private void setAdminname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1308,7 +1338,7 @@ public final class InterfaceAdmin {
      *用户名
      * </pre>
      *
-     * <code>optional bytes adminname = 1;</code>
+     * <code>bytes adminname = 1;</code>
      */
     private void clearAdminname() {
       
@@ -1322,7 +1352,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminoldpwd = 2;</code>
+     * <code>bytes adminoldpwd = 2;</code>
      */
     public com.google.protobuf.ByteString getAdminoldpwd() {
       return adminoldpwd_;
@@ -1332,7 +1362,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminoldpwd = 2;</code>
+     * <code>bytes adminoldpwd = 2;</code>
      */
     private void setAdminoldpwd(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1346,7 +1376,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminoldpwd = 2;</code>
+     * <code>bytes adminoldpwd = 2;</code>
      */
     private void clearAdminoldpwd() {
       
@@ -1360,7 +1390,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminnewpwd = 3;</code>
+     * <code>bytes adminnewpwd = 3;</code>
      */
     public com.google.protobuf.ByteString getAdminnewpwd() {
       return adminnewpwd_;
@@ -1370,7 +1400,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminnewpwd = 3;</code>
+     * <code>bytes adminnewpwd = 3;</code>
      */
     private void setAdminnewpwd(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1384,7 +1414,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminnewpwd = 3;</code>
+     * <code>bytes adminnewpwd = 3;</code>
      */
     private void clearAdminnewpwd() {
       
@@ -1425,6 +1455,19 @@ public final class InterfaceAdmin {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminModifyPwd parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminModifyPwd parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminModifyPwd parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1519,7 +1562,7 @@ public final class InterfaceAdmin {
        *用户名
        * </pre>
        *
-       * <code>optional bytes adminname = 1;</code>
+       * <code>bytes adminname = 1;</code>
        */
       public com.google.protobuf.ByteString getAdminname() {
         return instance.getAdminname();
@@ -1529,7 +1572,7 @@ public final class InterfaceAdmin {
        *用户名
        * </pre>
        *
-       * <code>optional bytes adminname = 1;</code>
+       * <code>bytes adminname = 1;</code>
        */
       public Builder setAdminname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1541,7 +1584,7 @@ public final class InterfaceAdmin {
        *用户名
        * </pre>
        *
-       * <code>optional bytes adminname = 1;</code>
+       * <code>bytes adminname = 1;</code>
        */
       public Builder clearAdminname() {
         copyOnWrite();
@@ -1554,7 +1597,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminoldpwd = 2;</code>
+       * <code>bytes adminoldpwd = 2;</code>
        */
       public com.google.protobuf.ByteString getAdminoldpwd() {
         return instance.getAdminoldpwd();
@@ -1564,7 +1607,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminoldpwd = 2;</code>
+       * <code>bytes adminoldpwd = 2;</code>
        */
       public Builder setAdminoldpwd(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1576,7 +1619,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminoldpwd = 2;</code>
+       * <code>bytes adminoldpwd = 2;</code>
        */
       public Builder clearAdminoldpwd() {
         copyOnWrite();
@@ -1589,7 +1632,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminnewpwd = 3;</code>
+       * <code>bytes adminnewpwd = 3;</code>
        */
       public com.google.protobuf.ByteString getAdminnewpwd() {
         return instance.getAdminnewpwd();
@@ -1599,7 +1642,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminnewpwd = 3;</code>
+       * <code>bytes adminnewpwd = 3;</code>
        */
       public Builder setAdminnewpwd(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -1611,7 +1654,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminnewpwd = 3;</code>
+       * <code>bytes adminnewpwd = 3;</code>
        */
       public Builder clearAdminnewpwd() {
         copyOnWrite();
@@ -1621,6 +1664,7 @@ public final class InterfaceAdmin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_AdminModifyPwd)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -1696,6 +1740,7 @@ public final class InterfaceAdmin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -1740,7 +1785,7 @@ public final class InterfaceAdmin {
      *=0md5字符密码 =1明文密码
      * </pre>
      *
-     * <code>optional fixed32 isascill = 1;</code>
+     * <code>fixed32 isascill = 1;</code>
      */
     int getIsascill();
 
@@ -1749,7 +1794,7 @@ public final class InterfaceAdmin {
      *用户名 常用人员手机号
      * </pre>
      *
-     * <code>optional bytes adminname = 2;</code>
+     * <code>bytes adminname = 2;</code>
      */
     com.google.protobuf.ByteString getAdminname();
 
@@ -1758,7 +1803,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminpwd = 3;</code>
+     * <code>bytes adminpwd = 3;</code>
      */
     com.google.protobuf.ByteString getAdminpwd();
 
@@ -1767,7 +1812,7 @@ public final class InterfaceAdmin {
      *=0管理员登陆 =1常用人员登陆 =2离线本地模式
      * </pre>
      *
-     * <code>optional fixed32 logonmode = 4;</code>
+     * <code>fixed32 logonmode = 4;</code>
      */
     int getLogonmode();
   }
@@ -1796,7 +1841,7 @@ public final class InterfaceAdmin {
      *=0md5字符密码 =1明文密码
      * </pre>
      *
-     * <code>optional fixed32 isascill = 1;</code>
+     * <code>fixed32 isascill = 1;</code>
      */
     public int getIsascill() {
       return isascill_;
@@ -1806,7 +1851,7 @@ public final class InterfaceAdmin {
      *=0md5字符密码 =1明文密码
      * </pre>
      *
-     * <code>optional fixed32 isascill = 1;</code>
+     * <code>fixed32 isascill = 1;</code>
      */
     private void setIsascill(int value) {
       
@@ -1817,7 +1862,7 @@ public final class InterfaceAdmin {
      *=0md5字符密码 =1明文密码
      * </pre>
      *
-     * <code>optional fixed32 isascill = 1;</code>
+     * <code>fixed32 isascill = 1;</code>
      */
     private void clearIsascill() {
       
@@ -1831,7 +1876,7 @@ public final class InterfaceAdmin {
      *用户名 常用人员手机号
      * </pre>
      *
-     * <code>optional bytes adminname = 2;</code>
+     * <code>bytes adminname = 2;</code>
      */
     public com.google.protobuf.ByteString getAdminname() {
       return adminname_;
@@ -1841,7 +1886,7 @@ public final class InterfaceAdmin {
      *用户名 常用人员手机号
      * </pre>
      *
-     * <code>optional bytes adminname = 2;</code>
+     * <code>bytes adminname = 2;</code>
      */
     private void setAdminname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1855,7 +1900,7 @@ public final class InterfaceAdmin {
      *用户名 常用人员手机号
      * </pre>
      *
-     * <code>optional bytes adminname = 2;</code>
+     * <code>bytes adminname = 2;</code>
      */
     private void clearAdminname() {
       
@@ -1869,7 +1914,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminpwd = 3;</code>
+     * <code>bytes adminpwd = 3;</code>
      */
     public com.google.protobuf.ByteString getAdminpwd() {
       return adminpwd_;
@@ -1879,7 +1924,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminpwd = 3;</code>
+     * <code>bytes adminpwd = 3;</code>
      */
     private void setAdminpwd(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1893,7 +1938,7 @@ public final class InterfaceAdmin {
      *用户密码(ascill/md5ascill)
      * </pre>
      *
-     * <code>optional bytes adminpwd = 3;</code>
+     * <code>bytes adminpwd = 3;</code>
      */
     private void clearAdminpwd() {
       
@@ -1907,7 +1952,7 @@ public final class InterfaceAdmin {
      *=0管理员登陆 =1常用人员登陆 =2离线本地模式
      * </pre>
      *
-     * <code>optional fixed32 logonmode = 4;</code>
+     * <code>fixed32 logonmode = 4;</code>
      */
     public int getLogonmode() {
       return logonmode_;
@@ -1917,7 +1962,7 @@ public final class InterfaceAdmin {
      *=0管理员登陆 =1常用人员登陆 =2离线本地模式
      * </pre>
      *
-     * <code>optional fixed32 logonmode = 4;</code>
+     * <code>fixed32 logonmode = 4;</code>
      */
     private void setLogonmode(int value) {
       
@@ -1928,7 +1973,7 @@ public final class InterfaceAdmin {
      *=0管理员登陆 =1常用人员登陆 =2离线本地模式
      * </pre>
      *
-     * <code>optional fixed32 logonmode = 4;</code>
+     * <code>fixed32 logonmode = 4;</code>
      */
     private void clearLogonmode() {
       
@@ -1976,6 +2021,19 @@ public final class InterfaceAdmin {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminLogon parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminLogon parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminLogon parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2069,7 +2127,7 @@ public final class InterfaceAdmin {
        *=0md5字符密码 =1明文密码
        * </pre>
        *
-       * <code>optional fixed32 isascill = 1;</code>
+       * <code>fixed32 isascill = 1;</code>
        */
       public int getIsascill() {
         return instance.getIsascill();
@@ -2079,7 +2137,7 @@ public final class InterfaceAdmin {
        *=0md5字符密码 =1明文密码
        * </pre>
        *
-       * <code>optional fixed32 isascill = 1;</code>
+       * <code>fixed32 isascill = 1;</code>
        */
       public Builder setIsascill(int value) {
         copyOnWrite();
@@ -2091,7 +2149,7 @@ public final class InterfaceAdmin {
        *=0md5字符密码 =1明文密码
        * </pre>
        *
-       * <code>optional fixed32 isascill = 1;</code>
+       * <code>fixed32 isascill = 1;</code>
        */
       public Builder clearIsascill() {
         copyOnWrite();
@@ -2104,7 +2162,7 @@ public final class InterfaceAdmin {
        *用户名 常用人员手机号
        * </pre>
        *
-       * <code>optional bytes adminname = 2;</code>
+       * <code>bytes adminname = 2;</code>
        */
       public com.google.protobuf.ByteString getAdminname() {
         return instance.getAdminname();
@@ -2114,7 +2172,7 @@ public final class InterfaceAdmin {
        *用户名 常用人员手机号
        * </pre>
        *
-       * <code>optional bytes adminname = 2;</code>
+       * <code>bytes adminname = 2;</code>
        */
       public Builder setAdminname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2126,7 +2184,7 @@ public final class InterfaceAdmin {
        *用户名 常用人员手机号
        * </pre>
        *
-       * <code>optional bytes adminname = 2;</code>
+       * <code>bytes adminname = 2;</code>
        */
       public Builder clearAdminname() {
         copyOnWrite();
@@ -2139,7 +2197,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminpwd = 3;</code>
+       * <code>bytes adminpwd = 3;</code>
        */
       public com.google.protobuf.ByteString getAdminpwd() {
         return instance.getAdminpwd();
@@ -2149,7 +2207,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminpwd = 3;</code>
+       * <code>bytes adminpwd = 3;</code>
        */
       public Builder setAdminpwd(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2161,7 +2219,7 @@ public final class InterfaceAdmin {
        *用户密码(ascill/md5ascill)
        * </pre>
        *
-       * <code>optional bytes adminpwd = 3;</code>
+       * <code>bytes adminpwd = 3;</code>
        */
       public Builder clearAdminpwd() {
         copyOnWrite();
@@ -2174,7 +2232,7 @@ public final class InterfaceAdmin {
        *=0管理员登陆 =1常用人员登陆 =2离线本地模式
        * </pre>
        *
-       * <code>optional fixed32 logonmode = 4;</code>
+       * <code>fixed32 logonmode = 4;</code>
        */
       public int getLogonmode() {
         return instance.getLogonmode();
@@ -2184,7 +2242,7 @@ public final class InterfaceAdmin {
        *=0管理员登陆 =1常用人员登陆 =2离线本地模式
        * </pre>
        *
-       * <code>optional fixed32 logonmode = 4;</code>
+       * <code>fixed32 logonmode = 4;</code>
        */
       public Builder setLogonmode(int value) {
         copyOnWrite();
@@ -2196,7 +2254,7 @@ public final class InterfaceAdmin {
        *=0管理员登陆 =1常用人员登陆 =2离线本地模式
        * </pre>
        *
-       * <code>optional fixed32 logonmode = 4;</code>
+       * <code>fixed32 logonmode = 4;</code>
        */
       public Builder clearLogonmode() {
         copyOnWrite();
@@ -2206,6 +2264,7 @@ public final class InterfaceAdmin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_AdminLogon)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2288,6 +2347,7 @@ public final class InterfaceAdmin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2332,7 +2392,7 @@ public final class InterfaceAdmin {
      * 参见 Pb_AdminLogonStatus
      * </pre>
      *
-     * <code>optional fixed32 err = 1;</code>
+     * <code>fixed32 err = 1;</code>
      */
     int getErr();
 
@@ -2341,7 +2401,7 @@ public final class InterfaceAdmin {
      *会话ID
      * </pre>
      *
-     * <code>optional fixed32 sessionid = 2;</code>
+     * <code>fixed32 sessionid = 2;</code>
      */
     int getSessionid();
 
@@ -2350,12 +2410,12 @@ public final class InterfaceAdmin {
      *会话ID
      * </pre>
      *
-     * <code>optional fixed32 adminid = 3;</code>
+     * <code>fixed32 adminid = 3;</code>
      */
     int getAdminid();
 
     /**
-     * <code>optional bytes adminname = 4;</code>
+     * <code>bytes adminname = 4;</code>
      */
     com.google.protobuf.ByteString getAdminname();
   }
@@ -2383,7 +2443,7 @@ public final class InterfaceAdmin {
      * 参见 Pb_AdminLogonStatus
      * </pre>
      *
-     * <code>optional fixed32 err = 1;</code>
+     * <code>fixed32 err = 1;</code>
      */
     public int getErr() {
       return err_;
@@ -2393,7 +2453,7 @@ public final class InterfaceAdmin {
      * 参见 Pb_AdminLogonStatus
      * </pre>
      *
-     * <code>optional fixed32 err = 1;</code>
+     * <code>fixed32 err = 1;</code>
      */
     private void setErr(int value) {
       
@@ -2404,7 +2464,7 @@ public final class InterfaceAdmin {
      * 参见 Pb_AdminLogonStatus
      * </pre>
      *
-     * <code>optional fixed32 err = 1;</code>
+     * <code>fixed32 err = 1;</code>
      */
     private void clearErr() {
       
@@ -2418,7 +2478,7 @@ public final class InterfaceAdmin {
      *会话ID
      * </pre>
      *
-     * <code>optional fixed32 sessionid = 2;</code>
+     * <code>fixed32 sessionid = 2;</code>
      */
     public int getSessionid() {
       return sessionid_;
@@ -2428,7 +2488,7 @@ public final class InterfaceAdmin {
      *会话ID
      * </pre>
      *
-     * <code>optional fixed32 sessionid = 2;</code>
+     * <code>fixed32 sessionid = 2;</code>
      */
     private void setSessionid(int value) {
       
@@ -2439,7 +2499,7 @@ public final class InterfaceAdmin {
      *会话ID
      * </pre>
      *
-     * <code>optional fixed32 sessionid = 2;</code>
+     * <code>fixed32 sessionid = 2;</code>
      */
     private void clearSessionid() {
       
@@ -2453,7 +2513,7 @@ public final class InterfaceAdmin {
      *会话ID
      * </pre>
      *
-     * <code>optional fixed32 adminid = 3;</code>
+     * <code>fixed32 adminid = 3;</code>
      */
     public int getAdminid() {
       return adminid_;
@@ -2463,7 +2523,7 @@ public final class InterfaceAdmin {
      *会话ID
      * </pre>
      *
-     * <code>optional fixed32 adminid = 3;</code>
+     * <code>fixed32 adminid = 3;</code>
      */
     private void setAdminid(int value) {
       
@@ -2474,7 +2534,7 @@ public final class InterfaceAdmin {
      *会话ID
      * </pre>
      *
-     * <code>optional fixed32 adminid = 3;</code>
+     * <code>fixed32 adminid = 3;</code>
      */
     private void clearAdminid() {
       
@@ -2484,13 +2544,13 @@ public final class InterfaceAdmin {
     public static final int ADMINNAME_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString adminname_;
     /**
-     * <code>optional bytes adminname = 4;</code>
+     * <code>bytes adminname = 4;</code>
      */
     public com.google.protobuf.ByteString getAdminname() {
       return adminname_;
     }
     /**
-     * <code>optional bytes adminname = 4;</code>
+     * <code>bytes adminname = 4;</code>
      */
     private void setAdminname(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2500,7 +2560,7 @@ public final class InterfaceAdmin {
       adminname_ = value;
     }
     /**
-     * <code>optional bytes adminname = 4;</code>
+     * <code>bytes adminname = 4;</code>
      */
     private void clearAdminname() {
       
@@ -2548,6 +2608,19 @@ public final class InterfaceAdmin {
       return size;
     }
 
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminLogonStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminLogonStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
     public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_AdminLogonStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2641,7 +2714,7 @@ public final class InterfaceAdmin {
        * 参见 Pb_AdminLogonStatus
        * </pre>
        *
-       * <code>optional fixed32 err = 1;</code>
+       * <code>fixed32 err = 1;</code>
        */
       public int getErr() {
         return instance.getErr();
@@ -2651,7 +2724,7 @@ public final class InterfaceAdmin {
        * 参见 Pb_AdminLogonStatus
        * </pre>
        *
-       * <code>optional fixed32 err = 1;</code>
+       * <code>fixed32 err = 1;</code>
        */
       public Builder setErr(int value) {
         copyOnWrite();
@@ -2663,7 +2736,7 @@ public final class InterfaceAdmin {
        * 参见 Pb_AdminLogonStatus
        * </pre>
        *
-       * <code>optional fixed32 err = 1;</code>
+       * <code>fixed32 err = 1;</code>
        */
       public Builder clearErr() {
         copyOnWrite();
@@ -2676,7 +2749,7 @@ public final class InterfaceAdmin {
        *会话ID
        * </pre>
        *
-       * <code>optional fixed32 sessionid = 2;</code>
+       * <code>fixed32 sessionid = 2;</code>
        */
       public int getSessionid() {
         return instance.getSessionid();
@@ -2686,7 +2759,7 @@ public final class InterfaceAdmin {
        *会话ID
        * </pre>
        *
-       * <code>optional fixed32 sessionid = 2;</code>
+       * <code>fixed32 sessionid = 2;</code>
        */
       public Builder setSessionid(int value) {
         copyOnWrite();
@@ -2698,7 +2771,7 @@ public final class InterfaceAdmin {
        *会话ID
        * </pre>
        *
-       * <code>optional fixed32 sessionid = 2;</code>
+       * <code>fixed32 sessionid = 2;</code>
        */
       public Builder clearSessionid() {
         copyOnWrite();
@@ -2711,7 +2784,7 @@ public final class InterfaceAdmin {
        *会话ID
        * </pre>
        *
-       * <code>optional fixed32 adminid = 3;</code>
+       * <code>fixed32 adminid = 3;</code>
        */
       public int getAdminid() {
         return instance.getAdminid();
@@ -2721,7 +2794,7 @@ public final class InterfaceAdmin {
        *会话ID
        * </pre>
        *
-       * <code>optional fixed32 adminid = 3;</code>
+       * <code>fixed32 adminid = 3;</code>
        */
       public Builder setAdminid(int value) {
         copyOnWrite();
@@ -2733,7 +2806,7 @@ public final class InterfaceAdmin {
        *会话ID
        * </pre>
        *
-       * <code>optional fixed32 adminid = 3;</code>
+       * <code>fixed32 adminid = 3;</code>
        */
       public Builder clearAdminid() {
         copyOnWrite();
@@ -2742,13 +2815,13 @@ public final class InterfaceAdmin {
       }
 
       /**
-       * <code>optional bytes adminname = 4;</code>
+       * <code>bytes adminname = 4;</code>
        */
       public com.google.protobuf.ByteString getAdminname() {
         return instance.getAdminname();
       }
       /**
-       * <code>optional bytes adminname = 4;</code>
+       * <code>bytes adminname = 4;</code>
        */
       public Builder setAdminname(com.google.protobuf.ByteString value) {
         copyOnWrite();
@@ -2756,7 +2829,7 @@ public final class InterfaceAdmin {
         return this;
       }
       /**
-       * <code>optional bytes adminname = 4;</code>
+       * <code>bytes adminname = 4;</code>
        */
       public Builder clearAdminname() {
         copyOnWrite();
@@ -2766,6 +2839,7 @@ public final class InterfaceAdmin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_AdminLogonStatus)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -2848,6 +2922,7 @@ public final class InterfaceAdmin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
@@ -2892,7 +2967,7 @@ public final class InterfaceAdmin {
      *管理员ID
      * </pre>
      *
-     * <code>optional fixed32 mgrid = 1;</code>
+     * <code>fixed32 mgrid = 1;</code>
      */
     int getMgrid();
 
@@ -2946,7 +3021,7 @@ public final class InterfaceAdmin {
      *管理员ID
      * </pre>
      *
-     * <code>optional fixed32 mgrid = 1;</code>
+     * <code>fixed32 mgrid = 1;</code>
      */
     public int getMgrid() {
       return mgrid_;
@@ -2956,7 +3031,7 @@ public final class InterfaceAdmin {
      *管理员ID
      * </pre>
      *
-     * <code>optional fixed32 mgrid = 1;</code>
+     * <code>fixed32 mgrid = 1;</code>
      */
     private void setMgrid(int value) {
       
@@ -2967,7 +3042,7 @@ public final class InterfaceAdmin {
      *管理员ID
      * </pre>
      *
-     * <code>optional fixed32 mgrid = 1;</code>
+     * <code>fixed32 mgrid = 1;</code>
      */
     private void clearMgrid() {
       
@@ -3091,6 +3166,19 @@ public final class InterfaceAdmin {
     }
 
     public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_MeetManagerRoomDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_MeetManagerRoomDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.InterfaceAdmin.pbui_Type_MeetManagerRoomDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
@@ -3183,7 +3271,7 @@ public final class InterfaceAdmin {
        *管理员ID
        * </pre>
        *
-       * <code>optional fixed32 mgrid = 1;</code>
+       * <code>fixed32 mgrid = 1;</code>
        */
       public int getMgrid() {
         return instance.getMgrid();
@@ -3193,7 +3281,7 @@ public final class InterfaceAdmin {
        *管理员ID
        * </pre>
        *
-       * <code>optional fixed32 mgrid = 1;</code>
+       * <code>fixed32 mgrid = 1;</code>
        */
       public Builder setMgrid(int value) {
         copyOnWrite();
@@ -3205,7 +3293,7 @@ public final class InterfaceAdmin {
        *管理员ID
        * </pre>
        *
-       * <code>optional fixed32 mgrid = 1;</code>
+       * <code>fixed32 mgrid = 1;</code>
        */
       public Builder clearMgrid() {
         copyOnWrite();
@@ -3298,6 +3386,7 @@ public final class InterfaceAdmin {
 
       // @@protoc_insertion_point(builder_scope:pbui_Type_MeetManagerRoomDetailInfo)
     }
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
     protected final Object dynamicMethod(
         com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
         Object arg0, Object arg1) {
@@ -3384,6 +3473,7 @@ public final class InterfaceAdmin {
           } finally {
           }
         }
+        // fall through
         case GET_DEFAULT_INSTANCE: {
           return DEFAULT_INSTANCE;
         }
