@@ -697,19 +697,28 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void update(int resid) {
         ConstraintSet set = new ConstraintSet();
         set.clone(root_layout_id);
-        //设置控件的大小
-        float width = (bx - lx) / 100 * App.screenWidth;
-        float height = (by - ly) / 100 * App.screenHeight;
+        //计算控件所占的宽/高百分比
+        float dx = bx - lx;
+        float dy = by - ly;
+        //设置控件的宽高
+        float width = dx / 100 * App.screenWidth;
+        float height = dy / 100 * App.screenHeight;
         set.constrainWidth(resid, (int) width);
         set.constrainHeight(resid, (int) height);
 //        LogUtil.d(TAG, "update: 控件大小 当前控件宽= " + width + ", 当前控件高= " + height);
-        float biasX, biasY;
-        float halfW = (bx - lx) / 2 + lx;
-        float halfH = (by - ly) / 2 + ly;
+        //计算控件中心位置的百分比数（未除于100）
+        float halfW = dx / 2 + lx;
+        float halfH = dy / 2 + ly;
 
-        if (lx == 0) biasX = 0;
-        else if (lx > 50) biasX = bx / 100;
-        else biasX = halfW / 100;
+        float biasX, biasY;
+        if (lx <= 0) {
+            biasX = 0;
+        } else if (lx > 50) {
+            biasX = lx / 100;
+        } else {// 当lx=0到50之间
+                // 则直接去控件中心x轴的百分比
+            biasX = halfW / 100;
+        }
 
         if (ly == 0) biasY = 0;
         else if (ly > 50) biasY = by / 100;
@@ -1103,7 +1112,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 InterfaceFile.pbui_Item_MeetDirDetailInfo item = itemList.get(i);
                 //过滤掉子目录
                 if (item.getParentid() != 0) continue;
-                LogUtils.e(TAG,"当前目录="+item.getName().toStringUtf8());
+                LogUtils.e(TAG, "当前目录=" + item.getName().toStringUtf8());
                 int dirId = item.getId();
                 jni.queryDirPermission(dirId);
                 if (dirId != Macro.ANNOTATION_FILE_DIRECTORY_ID) {
@@ -1187,6 +1196,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 by = itemInfo.getBy();
                 if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_MEETNAME.getNumber()) {//会议名称
                     updateTv(R.id.main_meetName, fontflag, flag, fontsize, color, align, fontName);
+                    StringBuilder sb = new StringBuilder();
+                    sb.append("字体属性=").append(fontflag)
+                            .append("\n字体名称=").append(fontName)
+                            .append("\n对齐属性=").append(align)
+                            .append("\n字体大小=").append(fontsize)
+                            .append("\n左上角坐标=").append(lx + "," + ly)
+                            .append("\n右下角坐标=").append(bx + "," + by)
+                            .append("\n屏幕宽高=").append(App.screenWidth + "," + App.screenHeight)
+                    ;
+                    LogUtils.e("会议名称文本属性配置：\n" + sb.toString());
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_MEMBERCOMPANY.getNumber()) {//参会人单位
                     updateTv(R.id.company_name, fontflag, flag, fontsize, color, align, fontName);
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACEID_MEMBERNAME.getNumber()) {//参会人名称
