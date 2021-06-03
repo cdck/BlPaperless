@@ -29,15 +29,15 @@
         android:name="com.pa.paperless.service.App"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/app_icon"
+        android:icon="@mipmap/boling_simple_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/app_icon"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/boling_simple_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme"
         android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true"
         tools:ignore="LockedOrientationActivity">
-        <activity android:name="com.pa.paperless.activity.ChatVideoActivity"/>
+        <activity android:name="com.pa.paperless.activity.ChatVideoActivity" />
         <activity
             android:name="com.pa.paperless.activity.MainActivity"
             android:screenOrientation="landscape"
@@ -72,7 +72,7 @@
             android:name="com.pa.paperless.activity.NoticeActivity"
             android:screenOrientation="landscape" /> <!-- WPS广播 -->
         <!-- exported="true" 属性：能否接收其他App的发出的广播 -->
-        <receiver android:name="com.pa.paperless.broadcase.WpsBroadCastReciver"/> <!-- 开机广播 -->
+        <receiver android:name="com.pa.paperless.broadcase.WpsBroadCastReciver" /> <!-- 开机广播 -->
         <receiver android:name="com.pa.paperless.broadcase.BootBroadCaseReciver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

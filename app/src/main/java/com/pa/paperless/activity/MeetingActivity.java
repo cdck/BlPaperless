@@ -88,6 +88,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import cc.shinichi.library.ImagePreview;
@@ -165,7 +166,6 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
     private ElectionManageFragment mSurveyManageFragment;
     private ScreenManageFragment mScreenManageFragment;
     private NoticeFragment mNoticeFragment;
-    private StaggeredGridLayoutManager rvLayoutManager;
     private int chatIndex;
     private boolean isCanJump2Main = true;
     private NetWorkReceiver netWorkReceiver;
@@ -177,7 +177,11 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         //视频为了避免闪屏和透明问题，Activity在onCreate时需要设置:
 //        getWindow().setFormat(PixelFormat.TRANSLUCENT);
-        setContentView(R.layout.activity_meeting);
+        if (App.isSimple) {
+            setContentView(R.layout.simple_activity_meeting);
+        } else {
+            setContentView(R.layout.activity_meeting);
+        }
         context = this;
         initView();
         EventBus.getDefault().register(this);
@@ -320,7 +324,19 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
             if (meetfun != null) {
                 List<InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo> itemList4 = meetfun.getItemList();
                 for (InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo function : itemList4) {
-                    funData.add(function.getFuncode());
+                    int funcode = function.getFuncode();
+                    if (App.isSimple) {
+                        if (funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_AGENDA_BULLETIN_VALUE
+                                || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_MATERIAL_VALUE
+                                || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_POSTIL_VALUE
+                                || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_WEBBROWSER_VALUE
+                                || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_SIGNINRESULT_VALUE
+                        ) {
+                            funData.add(funcode);
+                        }
+                    } else {
+                        funData.add(funcode);
+                    }
                 }
             }
             if (funAdapter == null) {
@@ -449,8 +465,15 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
 
     private void initSecretaryData() {
         secretaryData = new ArrayList<>();
-        for (int i = Macro.PB_MEET_FUN_CODE_DEV_CONTROL; i < Macro.PB_MEET_FUN_CODE_OPEN_BACKGROUND + 1; i++) {
-            secretaryData.add(i);
+        if (App.isSimple) {
+            secretaryData.add(Macro.PB_MEET_FUN_CODE_DEV_CONTROL);
+            secretaryData.add(Macro.PB_MEET_FUN_CODE_VOTE_MANAGE);
+            secretaryData.add(Macro.PB_MEET_FUN_CODE_VOTE_RESULT);
+            secretaryData.add(Macro.PB_MEET_FUN_CODE_SCREEN_MANAGE);
+        } else {
+            for (int i = Macro.PB_MEET_FUN_CODE_DEV_CONTROL; i < Macro.PB_MEET_FUN_CODE_OPEN_BACKGROUND + 1; i++) {
+                secretaryData.add(i);
+            }
         }
         secretaryAdapter = new SecretaryAdapter(this, secretaryData);
         secretary_rl.setAdapter(secretaryAdapter);
@@ -1349,10 +1372,17 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         member = findViewById(R.id.member);
         meet_title_tv = findViewById(R.id.meet_title_tv);
         meet_rl = findViewById(R.id.meet_rl);
-        rvLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        meet_rl.setLayoutManager(rvLayoutManager);
+        if (App.isSimple) {
+            meet_rl.setLayoutManager(new LinearLayoutManager(this));
+        } else {
+            meet_rl.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        }
         secretary_rl = findViewById(R.id.secretary_rl);
-        secretary_rl.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        if (App.isSimple) {
+            secretary_rl.setLayoutManager(new LinearLayoutManager(this));
+        } else {
+            secretary_rl.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        }
         initSecretaryData();
         if (mBadge == null) {
             /** ************ ******  设置未读消息展示  ****** ************ **/

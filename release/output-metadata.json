@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.pa.boling.paperless",
+  "applicationId": "com.xlk.boling.paperless.simple",
   "variantName": "processReleaseResources",
   "elements": [
     {

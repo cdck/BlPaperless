@@ -52,6 +52,13 @@ import me.jessyan.autosize.AutoSizeConfig;
  */
 public class App extends Application {
 
+    /**
+     * 变更需要修改：
+     * 1.应用名称和logo图标
+     * 2.
+     */
+    public static final boolean isSimple = true;
+
     private static final String TAG = "App-->";
     public static boolean isDebug = true;
     public static final boolean read2file = false;

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.listener.ItemClickListener;
+import com.pa.paperless.service.App;
 
 import java.util.List;
 
@@ -43,7 +44,13 @@ public class SecretaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(mContext).inflate(R.layout.item_function, parent, false);
+        int item_function;
+        if(App.isSimple){
+            item_function = R.layout.simple_item_function;
+        }else {
+            item_function = R.layout.item_function;
+        }
+        View inflate = LayoutInflater.from(mContext).inflate(item_function, parent, false);
         ViewHolder holder = new ViewHolder(inflate);
         return holder;
     }

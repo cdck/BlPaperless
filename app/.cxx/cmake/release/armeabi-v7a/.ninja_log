@@ -44,3 +44,9 @@
 1	335	0	clean	81a0c8a35c45b8df
 18	875	644330437	build.ninja	e0d84ed3d39f524d
 0	496	0	clean	81a0c8a35c45b8df
+0	11	0	clean	81a0c8a35c45b8df
+0	411	0	clean	81a0c8a35c45b8df
+22	991	644390871	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	260ccefc3bf18eef
+14	992	644390871	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	910ced52c4e8038e
+2	1003	644390871	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	89fe4d5c641edc15
+1003	1133	644390872	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so	a896e72abae29cfe
