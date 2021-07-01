@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 
+import com.pa.paperless.adapter.UrlAdapter;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.utils.LogUtil;
 
@@ -34,9 +35,11 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import static com.pa.paperless.service.App.isDebug;
 
@@ -54,11 +57,12 @@ public class WebBrowseFragment extends BaseFragment implements View.OnClickListe
     private EditText edt_url;
     private Button goto_url;
     public static boolean webView_isshowing = false;
-    private ArrayList<String> histroyURL;
     private final String HOME_URL = "http://www.baidu.com/";
     private final String TBS_URL = "http://debugtbs.qq.com";
     private AVLoadingIndicatorView pro_bar;
     private RecyclerView web_url_rv;
+    private List<InterfaceBase.pbui_Item_UrlDetailInfo> urlLists=new ArrayList<>();
+    private UrlAdapter urlAdapter;
 
     @Nullable
     @Override
@@ -82,23 +86,30 @@ public class WebBrowseFragment extends BaseFragment implements View.OnClickListe
         webView_isshowing = true;
         fun_webQuery();
         EventBus.getDefault().register(this);
-//        new WebMenuAdapter(R.layout.item_web_menu,);
         return inflate;
     }
 
     private void fun_webQuery() {
         try {
             InterfaceBase.pbui_meetUrl object = jni.webQuery();
-            if (object == null) return;
-            String url = MyUtils.b2s(object.getItemList().get(0).getAddr());
-            if (url.equals("")) {
-                return;
+            urlLists.clear();
+            if (object != null) {
+                urlLists.addAll(object.getItemList());
             }
-            if (histroyURL == null) {
-                histroyURL = new ArrayList<>();
+            if (urlAdapter == null) {
+                urlAdapter = new UrlAdapter(urlLists);
+                web_url_rv.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+                web_url_rv.setAdapter(urlAdapter);
+                urlAdapter.setOnItemClickListener((adapter, view, position) -> {
+                    InterfaceBase.pbui_Item_UrlDetailInfo item = urlLists.get(position);
+                    String addr = item.getAddr().toStringUtf8();
+                    mWebView.loadUrl(uriHttpFirst(addr));
+                    web_url_rv.setVisibility(View.GONE);
+                    mWebView.setVisibility(View.VISIBLE);
+                });
+            } else {
+                urlAdapter.notifyDataSetChanged();
             }
-            histroyURL.add(uriHttpFirst(url));
-            mWebView.loadUrl(uriHttpFirst(url));
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
@@ -246,11 +257,15 @@ public class WebBrowseFragment extends BaseFragment implements View.OnClickListe
                 mWebView.goForward();
                 break;
             case R.id.home://回到主页
-                mWebView.loadUrl(HOME_URL);
+//                mWebView.loadUrl(HOME_URL);
+                web_url_rv.setVisibility(View.VISIBLE);
+                mWebView.setVisibility(View.GONE);
                 break;
             case R.id.goto_url://前往
                 String url = edt_url.getText().toString();
                 mWebView.loadUrl(uriHttpFirst(url));
+                web_url_rv.setVisibility(View.GONE);
+                mWebView.setVisibility(View.VISIBLE);
                 break;
             case R.id.debug:
                 mWebView.loadUrl(TBS_URL);

@@ -1,7 +1,7 @@
-Executable : C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+Executable : /Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
 arguments : 
 -C
-F:\work\boling_paperless_3.2.1\app\.cxx\cmake\debug\armeabi-v7a
+/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/debug/armeabi-v7a
 native-lib
 jvmArgs : 
 

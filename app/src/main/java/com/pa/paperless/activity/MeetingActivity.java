@@ -16,7 +16,7 @@ import com.pa.paperless.broadcase.NetWorkReceiver;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.fragment.ElectionManageFragment;
-import com.pa.paperless.fragment.SigninFragment;
+import com.pa.paperless.fragment.SignInFragment;
 import com.pa.paperless.service.App;
 import com.pa.paperless.utils.LogUtil;
 
@@ -133,7 +133,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
     private List<Integer> funData = new ArrayList<>();
     private MeetingActivity context;
     private FunctionAdapter funAdapter;
-    private SigninFragment mSigninFragment;
+    private SignInFragment mSigninFragment;
     private SeatFragment mSigninSeatFragment;
     private AgendaFragment mAnnAgendaFragment;
     private MeetingFileFragment mMeetingFileFragment;
@@ -1073,7 +1073,7 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
                 break;
             case Macro.PB_MEET_FUN_CODE_SIGN_IN_SEAT://签到详情
                 if (mSigninFragment == null) {
-                    mSigninFragment = new SigninFragment();
+                    mSigninFragment = new SignInFragment();
                     ft.add(R.id.meet_fl, mSigninFragment);
                 }
                 ft.show(mSigninFragment);

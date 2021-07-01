@@ -1,21 +1,21 @@
-                Executable : C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
+                Executable : /Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
 arguments : 
--HF:\work\boling_paperless_3.2.1\app
+-H/Users/huge/AndroidStudioProjects/BlPaperless/app
 -DCMAKE_CXX_FLAGS=-frtti -fexceptions
--DCMAKE_FIND_ROOT_PATH=F:\work\boling_paperless_3.2.1\app\.cxx\cmake\debug\prefab\armeabi-v7a\prefab
+-DCMAKE_FIND_ROOT_PATH=/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/debug/prefab/armeabi-v7a/prefab
 -DCMAKE_BUILD_TYPE=Debug
--DCMAKE_TOOLCHAIN_FILE=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk-bundle\build\cmake\android.toolchain.cmake
+-DCMAKE_TOOLCHAIN_FILE=/Users/huge/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake
 -DANDROID_ABI=armeabi-v7a
--DANDROID_NDK=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk-bundle
+-DANDROID_NDK=/Users/huge/Library/Android/sdk/ndk/21.1.6352462
 -DANDROID_PLATFORM=android-23
 -DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a
--DCMAKE_ANDROID_NDK=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk-bundle
+-DCMAKE_ANDROID_NDK=/Users/huge/Library/Android/sdk/ndk/21.1.6352462
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=F:\work\boling_paperless_3.2.1\app\build\intermediates\cmake\debug\obj\armeabi-v7a
--DCMAKE_MAKE_PROGRAM=C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/huge/AndroidStudioProjects/BlPaperless/app/build/intermediates/cmake/debug/obj/armeabi-v7a
+-DCMAKE_MAKE_PROGRAM=/Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=23
--BF:\work\boling_paperless_3.2.1\app\.cxx\cmake\debug\armeabi-v7a
+-B/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/debug/armeabi-v7a
 -GNinja
 jvmArgs : 
 

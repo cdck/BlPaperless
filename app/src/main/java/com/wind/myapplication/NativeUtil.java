@@ -119,7 +119,7 @@ public class NativeUtil {
      * @return
      */
     public boolean javaInitSys(String uniqueId) {
-        LogUtil.e(TAG, "NativeUtil.javaInitSys :  keystr手机的唯一标识符 --> " + uniqueId);
+        LogUtils.e(TAG, "NativeUtil.javaInitSys :  keystr手机的唯一标识符 --> " + uniqueId);
         InterfaceBase.pbui_MeetCore_InitParam.Builder tmp = InterfaceBase.pbui_MeetCore_InitParam.newBuilder();
         tmp.setPconfigpathname(s2b(IniUtil.inifile.getAbsolutePath()));
         tmp.setProgramtype(InterfaceMacro.Pb_ProgramType.Pb_MEET_PROGRAM_TYPE_MEETCLIENT.getNumber());
@@ -128,12 +128,12 @@ public class NativeUtil {
         tmp.setKeystr(s2b(uniqueId));
         InterfaceBase.pbui_MeetCore_InitParam pb = tmp.build();
         boolean bret = true;
-        LogUtil.e(TAG, "javaInitSys:start!");
+        LogUtils.e(TAG, "javaInitSys:start!");
         if (-1 == Init_walletSys(pb.toByteArray())) {
-            LogUtil.e(TAG, "NativeUtil.javaInitSys :  初始化失败了 --> ");
+            LogUtils.e(TAG, "NativeUtil.javaInitSys :  初始化失败了 --> ");
             bret = false;
         }
-        LogUtil.e(TAG, "javaInitSys:finish!");
+        LogUtils.e(TAG, "javaInitSys:finish!");
         return bret;
     }
 
@@ -1790,7 +1790,7 @@ public class NativeUtil {
                 break;
             case 2: //  平台初始化完毕
                 if (method == InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_LOGON.getNumber()) {
-                    LogUtil.i(CASE_TAG, "callback_method -->平台初始化失败通知");
+                    LogUtils.i(CASE_TAG, "callback_method -->平台初始化失败通知");
 //                    InterfaceBase.pbui_Type_LogonError pbui_type_logonError = InterfaceBase.pbui_Type_LogonError.parseFrom(data);
 //                    EventBus.getDefault().post(new EventMessage(EventType.platform_initialization_failed, pbui_type_logonError));
                     ToastUtils.showShort(R.string.Platform_initialization_failed);
@@ -1798,7 +1798,7 @@ public class NativeUtil {
                     InterfaceBase.pbui_Ready pbui_ready = InterfaceBase.pbui_Ready.parseFrom(data);
                     int areaid = pbui_ready.getAreaid();
                     Values.isOver = true;
-                    LogUtil.e(CASE_TAG, "NativeUtil.callback_method:  平台初始化完毕 --->>>  type   " + type);
+                    LogUtils.e(CASE_TAG, "NativeUtil.callback_method:  平台初始化完毕 --->>>  type   " + type);
                     EventBus.getDefault().post(new EventMessage(EventType.PLATFORM_INITIALIZATION));
                 }
                 break;

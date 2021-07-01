@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.activity.BaseActivity;
 import com.pa.paperless.data.constant.EventType;
@@ -76,6 +77,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener,
     private ObjectAnimator plectrumAnimator;
     private ObjectAnimator opticalDiskAnimator;
     private int mStatus = -1;
+    private Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -224,6 +226,33 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener,
         createBottomPop(mView);
     }
 
+    private void updateHideTimer() {
+        if (timer == null) {
+            timer = new Timer();
+            TimerTask timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    LogUtils.i("定时隐藏掉弹框");
+                    if (bottomPop != null && bottomPop.isShowing()) {
+                        runOnUiThread(() -> {
+                            video_top_title.setVisibility(View.GONE);
+                            bottomPop.dismiss();
+                        });
+                        timer.cancel();
+                        timer.purge();
+                        timer = null;
+                    }
+                }
+            };
+            timer.schedule(timerTask, 5 * 1000);
+        } else {
+            timer.cancel();
+            timer.purge();
+            timer = null;
+            updateHideTimer();
+        }
+    }
+
     private void createBottomPop(View parent) {
         LogUtil.e(TAG, "createBottomPop :  创建PopupWindow --> ");
         View inflate = LayoutInflater.from(this).inflate(R.layout.video_bottom_pop, null);
@@ -239,6 +268,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener,
         bottomPop.setFocusable(true);
         bottomPop.setAnimationStyle(R.style.Anim_PopupWindow);
         bottomPop.showAtLocation(parent, Gravity.BOTTOM, 0, 0);
+        updateHideTimer();
         bottomPop.setOnDismissListener(() -> video_top_title.setVisibility(View.GONE));
         videoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -255,6 +285,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener,
             public void onStopTrackingTouch(SeekBar seekBar) {
                 int progress = seekBar.getProgress();
                 presenter.setPlayPlace(progress);
+                updateHideTimer();
             }
         });
     }
@@ -275,19 +306,24 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener,
         videoCurrentTimeTv.setText(lastSec);
         videoTotalTimeTv.setText(lastTotal);
 
-        videoPlayOrPauseBtn.setOnClickListener(v -> presenter.playOrPause());
+        videoPlayOrPauseBtn.setOnClickListener(v -> {presenter.playOrPause();
+            updateHideTimer();});
         videoStopBtn.setOnClickListener(v -> {
             bottomPop.dismiss();
             presenter.stopScreen();
             finish();
+            updateHideTimer();
         });
         videoScreenShotBtn.setOnClickListener(v -> {
             presenter.pause();
             surfaceView.cutVideoImg();
             bottomPop.dismiss();
+            updateHideTimer();
         });
-        videoStartScreenBtn.setOnClickListener(v -> presenter.startScreen());
-        videoStopScreenBtn.setOnClickListener(v -> presenter.stopScreen());
+        videoStartScreenBtn.setOnClickListener(v -> {presenter.startScreen();
+            updateHideTimer();});
+        videoStopScreenBtn.setOnClickListener(v -> {presenter.stopScreen();
+            updateHideTimer();});
     }
 
     private void initView() {

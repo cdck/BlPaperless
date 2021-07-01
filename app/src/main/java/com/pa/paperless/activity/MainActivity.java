@@ -201,7 +201,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void getEventMessage(EventMessage message) throws InvalidProtocolBufferException {
         switch (message.getAction()) {
             case EventType.PLATFORM_INITIALIZATION://平台初始化完毕
-                LogUtil.e(TAG, "getEventMessage: 平台初始化完毕");
+                LogUtils.e(TAG, "getEventMessage: 平台初始化完毕");
                 MainStart();
                 break;
             case EventType.platform_initialization_failed:
@@ -716,7 +716,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         } else if (lx > 50) {
             biasX = lx / 100;
         } else {// 当lx=0到50之间
-                // 则直接去控件中心x轴的百分比
+            // 则直接去控件中心x轴的百分比
             biasX = halfW / 100;
         }
 
@@ -997,7 +997,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         jni.setInterfaceState(InterfaceMacro.Pb_ContextPropertyID.Pb_MEETCONTEXT_PROPERTY_ROLE.getNumber(),
                 InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MainFace.getNumber());
         updateOnline();
-        LogUtil.d(TAG, "MainStart: 直接申请读取帧缓存权限");
+        LogUtils.d(TAG, "MainStart: 直接申请读取帧缓存权限");
         startIntent(REQUEST_MEDIA_PROJECTION);
     }
 
@@ -1323,10 +1323,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     // 复制ini、dev文件
     private void initConfFile() {
         FileUtils.createOrExistsDir(Macro.root_dir);
-        boolean exists = FileUtils.isFileExists(Macro.root_dir + "/client.ini");
+        boolean exists = FileUtils.isFileExists(Macro.iniFilePath);
         //拷贝配置文件
         if (!exists) {
-            copyTo("client.ini", Macro.root_dir, "client.ini");
+            copyTo(App.isSimple ? "boling_simple.ini" : "client.ini", Macro.root_dir, "client.ini");
         } else {
             if (iniUtil.load(IniUtil.inifile)) {//要确保load成功
                 LogUtils.i(TAG, "加载ini文件成功");
@@ -1350,11 +1350,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 }
             }
         }
-        boolean devFileExists = FileUtils.isFileExists(Macro.root_dir + "/client.dev");
+        boolean devFileExists = FileUtils.isFileExists(Macro.devFilePath);
         if (devFileExists) {
-            FileUtils.delete(Macro.root_dir + "/client.dev");
+            FileUtils.delete(Macro.devFilePath);
         }
-        copyTo("client.dev", Macro.root_dir, "client.dev");
+        copyTo(App.isSimple ? "boling_simple.dev" :"client.dev", Macro.root_dir, "client.dev");
     }
 
     /**
@@ -1393,7 +1393,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             LogUtils.i(TAG, "copyTo方法 拷贝" + fromPath + "完成------");
             //确保有ini文件
             if (fromPath.equals("client.ini")) {
-                LogUtil.d(TAG, "进入设置版本信息。。。。");
+                LogUtils.d(TAG, "进入设置版本信息。。。。");
                 setVersion();
             }
         } catch (Exception e) {
@@ -1807,7 +1807,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 }
                 gotoMeet();
                 break;
-            case R.id.main_secretary_manage://修改IP地址|
+            case R.id.main_secretary_manage://修改IP地址
                 if (IniUtil.inifile.exists()) {
                     String nowIp = iniUtil.get("areaaddr", "area0ip");
                     String nowPort = iniUtil.get("areaaddr", "area0port");

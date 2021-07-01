@@ -46,7 +46,7 @@ import java.util.List;
  * Created by Administrator on 2017/11/1.
  * 签到状态Fragment
  */
-public class SigninFragment extends BaseFragment implements View.OnClickListener {
+ public class SignInFragment extends BaseFragment implements View.OnClickListener {
     private final String TAG = "SigninFragment-->";
     private ListView mSigninLv;
     private List<SignInBean> mDatas = new ArrayList<>();

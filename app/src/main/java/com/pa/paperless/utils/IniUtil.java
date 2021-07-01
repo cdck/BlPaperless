@@ -16,7 +16,7 @@ import java.io.File;
 public class IniUtil {
     private final String TAG = "IniUtil-->";
     private static IniUtil instance = new IniUtil();
-    public static File inifile = new File(Macro.root_dir + "/client.ini");
+    public static File inifile = new File(Macro.iniFilePath);
     private Ini ini;
     private File file = null;
 

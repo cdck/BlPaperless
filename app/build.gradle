@@ -66,11 +66,15 @@ android {
         useNewCruncher = false
     }
     //指定打包后应用名称
-//    applicationVariants.all { variant ->
-//        variant.outputs.all {
-//            outputFileName = "paperless-android-v${variant.versionName}.apk"
-//        }
-//    }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            if(isSimple.toBoolean()){
+                outputFileName = "boling_paperless-simple-v${variant.versionName}.apk"
+            }else {
+                outputFileName = "boling_paperless-v${variant.versionName}.apk"
+            }
+        }
+    }
     productFlavors {
     }
     //解决API 28只创建arm64目录，导致找不到库的问题

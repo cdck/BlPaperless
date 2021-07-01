@@ -6,6 +6,7 @@ import android.os.Environment;
 
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.pa.boling.paperless.R;
+import com.pa.paperless.service.App;
 
 import static com.pa.paperless.service.App.applicationContext;
 
@@ -18,7 +19,10 @@ public class Macro {
     /**
      * app各类文件存放路径 SD卡下
      */
-    public static final String root_dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/BOLING_PAPERLESS_NETCONFIG";
+    public static final String root_dir = App.isSimple ? Environment.getExternalStorageDirectory().getAbsolutePath() + "/bolingSimpleConfig"
+            : Environment.getExternalStorageDirectory().getAbsolutePath() + "/BOLING_PAPERLESS_NETCONFIG";
+    public static final String iniFilePath = root_dir + "/client.ini";
+    public static final String devFilePath = root_dir + "/client.dev";
     public static final String logcat_dir = root_dir + "/Log";
 
     //下载的文件存放目录
