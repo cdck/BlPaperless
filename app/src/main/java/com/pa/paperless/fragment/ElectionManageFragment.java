@@ -57,6 +57,7 @@ import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.utils.Export;
 import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.ScreenUtils;
+import com.pa.paperless.utils.ToastUtil;
 
 
 import org.greenrobot.eventbus.EventBus;
@@ -484,15 +485,11 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
         holder.choose_rv.setAdapter(chooseAdapter);
         chooseAdapter.setListener((view, posion) -> {
             InterfaceMember.pbui_Item_MeetMemberDetailInfo info = chooseData.get(posion);
-            int memberdetailflag = info.getMemberdetailflag();
-            boolean isonline = memberdetailflag == InterfaceMember.Pb_MemberDetailFlag.Pb_MEMBERDETAIL_FLAG_ONLINE.getNumber();
-            int state = info.getFacestatus();
-            if (isonline && info.getPermission() > 15 && (state == 1 || state == 3)) {
+            if (chooseAdapter.isCanJoin(info)) {
                 chooseAdapter.setChecks(info.getMemberid());
                 holder.all_number_cb.setChecked(chooseAdapter.isCheckAll());
-                chooseAdapter.notifyDataSetChanged();
             } else
-                ToastUtils.showShort(R.string.must_choose_online);
+                ToastUtil.showShort(R.string.must_choose_online);
         });
         holder.all_number_cb.setOnClickListener(v -> {
             boolean checked = holder.all_number_cb.isChecked();
@@ -502,7 +499,7 @@ public class ElectionManageFragment extends BaseFragment implements View.OnClick
         holder.ensure.setOnClickListener(v -> {
             List<Integer> checks = chooseAdapter.getChecks();
             if (checks.isEmpty()) {
-                ToastUtils.showShort(R.string.please_choose);
+                ToastUtil.showShort(R.string.please_choose);
                 return;
             }
             int votestate = voteInfo.getVotestate();

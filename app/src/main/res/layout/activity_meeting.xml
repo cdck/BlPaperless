@@ -254,6 +254,7 @@
                 android:id="@+id/meet_bottom_rl"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="20dp"
                 android:layout_weight="1">

@@ -280,6 +280,72 @@ public class NativeUtil {
     }
 
     /**
+     * 查询指定人员id的设备id
+     *
+     * @param personid 人员id
+     * @return 如果参会人未绑定设备则返回0
+     */
+    public int queryDeviceIdByMemberId(int personid) {
+        InterfaceBase.pbui_CommonQueryProperty.Builder builder = InterfaceBase.pbui_CommonQueryProperty.newBuilder();
+        builder.setPropertyid(InterfaceMacro.Pb_MeetSeatPropertyID.Pb_MEETSEAT_PROPERTY_SEATID_VALUE);
+        builder.setParameterval(personid);
+        byte[] array = call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETSEAT.getNumber(), InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_QUERYPROPERTY.getNumber(), builder.build().toByteArray());
+        if (array == null) {
+            try {
+                InterfaceBase.pbui_CommonInt32uProperty info = InterfaceBase.pbui_CommonInt32uProperty.parseFrom(array);
+                if (info != null) {
+                    LogUtils.i("queryDeviceIdByMemberId 根据参会人id=" + personid + "，得到设备id=" + info.getPropertyval());
+                    return info.getPropertyval();
+                }
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * 查询指定设备的属性
+     */
+    public int queryDeviceFlag(int devId) {
+        byte[] bytes = queryDevicePropertiesById(
+                InterfaceMacro.Pb_MeetDevicePropertyID.Pb_MEETDEVICE_PROPERTY_DEVICEFLAG_VALUE, devId);
+        if (bytes != null) {
+            try {
+                InterfaceDevice.pbui_DeviceInt32uProperty info = InterfaceDevice.pbui_DeviceInt32uProperty.parseFrom(bytes);
+                if (info != null) {
+                    return info.getPropertyval();
+                }
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * 查询设备是否在线
+     *
+     * @param devId 设备id
+     */
+    public boolean deviceIsOnline(int devId) {
+        boolean isonline = false;
+        byte[] bytes = queryDevicePropertiesById(InterfaceMacro.Pb_MeetDevicePropertyID.Pb_MEETDEVICE_PROPERTY_NETSTATUS_VALUE,
+                devId);
+        if (bytes != null) {
+            InterfaceDevice.pbui_DeviceInt32uProperty pbui_deviceInt32uProperty = null;
+            try {
+                pbui_deviceInt32uProperty = InterfaceDevice.pbui_DeviceInt32uProperty.parseFrom(bytes);
+                int propertyval = pbui_deviceInt32uProperty.getPropertyval();
+                isonline = propertyval == 1;
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
+        }
+        return isonline;
+    }
+
+    /**
      * 修改本机界面状态
      * Pb_MemState_MainFace=0; //处于主界面
      * Pb_MemState_MemFace=1;//参会人员界面
@@ -827,6 +893,30 @@ public class NativeUtil {
         InterfaceRoom.pbui_Type_MeetRoomModDeviceInfo build = builder.build();
         call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_ROOMDEVICE.getNumber(), InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_ADD.getNumber(), build.toByteArray());
         LogUtil.e(TAG, "NativeUtil.addPlaceDevice :  添加会场设备 --> ");
+    }
+
+    /**
+     * 组合查询设备
+     *
+     * @param build
+     * @return
+     */
+    public InterfaceDevice.pbui_Type_DeviceDetailInfo combinedQueryDevice(InterfaceDevice.pbui_Type_DeviceComplexQuery build) {
+//        InterfaceMacro.Pb_RoomDeviceFilterFlag.Pb_MEET_ROOMDEVICE_FLAG_ONLINE_VALUE
+//                |InterfaceMacro.Pb_RoomDeviceFilterFlag.Pb_MEET_ROOMDEVICE_FLAG_BINDMEMBER_VALUE
+        byte[] bytes = call_method(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_DEVICEINFO.getNumber()
+                , InterfaceMacro.Pb_Method.Pb_METHOD_MEET_INTERFACE_COMPLEXQUERY.getNumber(), build.toByteArray());
+        if (bytes != null) {
+            try {
+                InterfaceDevice.pbui_Type_DeviceDetailInfo info = InterfaceDevice.pbui_Type_DeviceDetailInfo.parseFrom(bytes);
+                LogUtils.i("组合查询设备 成功");
+                return info;
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
+        }
+        LogUtils.e("组合查询设备 失败");
+        return null;
     }
 
     /**

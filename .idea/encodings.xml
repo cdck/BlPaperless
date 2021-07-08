@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/src/main/assets/client.ini" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/cpp/include/commdef.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/cpp/include/deviceid_suffix.h" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/cpp/include/meetc/meetinterface_type.h" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/cpp/include/meetc/owbase.h" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/mogujie/tt/protobuf/InterfaceCommondata.java" charset="UTF-8" />

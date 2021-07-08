@@ -13,11 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mogujie.tt.protobuf.InterfaceMacro;
+import com.mogujie.tt.protobuf.InterfaceRoom;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.data.bean.DevControlBean;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.listener.ItemClickListener;
 import com.pa.paperless.utils.MyUtils;
+import com.wind.myapplication.NativeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,14 +43,15 @@ public class DevControlAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     public void notifyChecks() {
         notifyDataSetChanged();
-        List<Integer> mediaIds = new ArrayList<>();
+        List<Integer> temps = new ArrayList<>();
         for (int i = 0; i < mData.size(); i++) {
             DevControlBean o = mData.get(i);
             int devcieid = o.getDevice().getDevcieid();
-            if (checks.contains(devcieid))
-                mediaIds.add(devcieid);
+            if (checks.contains(devcieid)) {
+                temps.add(devcieid);
+            }
         }
-        checks = mediaIds;
+        checks = temps;
         notifyDataSetChanged();
     }
 
@@ -90,19 +93,21 @@ public class DevControlAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ((ViewHolder) holder).number_cb.setText(position + 1 + "");
-        ((ViewHolder) holder).number_cb.setChecked(checks.contains(mData.get(position).getDevice().getDevcieid()));
-        ((ViewHolder) holder).mamberTv.setText(mData.get(position).getMemberName());
-        ((ViewHolder) holder).nameTv.setText(MyUtils.b2s(mData.get(position).getDevice().getDevname()));
-        int devId = mData.get(position).getDevice().getDevcieid();
+        DevControlBean item = mData.get(position);
+        int devid = item.getDevice().getDevcieid();
+        ((ViewHolder) holder).number_cb.setChecked(checks.contains(devid));
+        ((ViewHolder) holder).mamberTv.setText(item.getMemberName());
+        ((ViewHolder) holder).nameTv.setText(item.getDevice().getDevname().toStringUtf8());
+        int devId = devid;
         String devTypeStr = getDevType(devId);
-        //mData.get(position).getDevice().getResinfo()
         ((ViewHolder) holder).devTypeTv.setText(devTypeStr);
-        int netState = mData.get(position).getDevice().getNetstate();
-        ((ViewHolder) holder).devStateTv.setText(netState == 1 ? cxt.getString(R.string.online) : cxt.getString(R.string.offline));
-        int faceState = mData.get(position).getDevice().getFacestate();
+        boolean isOnline = item.getDevice().getNetstate() == 1;
+        ((ViewHolder) holder).devStateTv.setText(isOnline ? cxt.getString(R.string.online) : cxt.getString(R.string.offline));
+        int faceState = item.getDevice().getFacestate();
         String faceStateStr = getFaceState(faceState);
-        int deviceflag = mData.get(position).getDevice().getDeviceflag();
-        boolean b = InterfaceMacro.Pb_MeetDeviceFlag.Pb_MEETDEVICE_FLAG_OPENOUTSIDE_VALUE == (deviceflag & InterfaceMacro.Pb_MeetDeviceFlag.Pb_MEETDEVICE_FLAG_OPENOUTSIDE_VALUE);
+        int deviceflag = item.getDevice().getDeviceflag();
+        boolean b = InterfaceMacro.Pb_MeetDeviceFlag.Pb_MEETDEVICE_FLAG_OPENOUTSIDE_VALUE ==
+                (deviceflag & InterfaceMacro.Pb_MeetDeviceFlag.Pb_MEETDEVICE_FLAG_OPENOUTSIDE_VALUE);
         ((ViewHolder) holder).outDocumentTv.setText(b ? "√" : "");
         ((ViewHolder) holder).interfaceStateTv.setText(faceStateStr);
         ((ViewHolder) holder).itemView.setOnClickListener(v -> {
@@ -110,13 +115,13 @@ public class DevControlAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 mListener.onItemClick(((ViewHolder) holder).itemView, position);
             }
         });
-        ((ViewHolder) holder).number_cb.setTextColor(netState == 1 ? Color.BLUE : Color.BLACK);
-        ((ViewHolder) holder).mamberTv.setTextColor(netState == 1 ? Color.BLUE : Color.BLACK);
-        ((ViewHolder) holder).nameTv.setTextColor(netState == 1 ? Color.BLUE : Color.BLACK);
-        ((ViewHolder) holder).devTypeTv.setTextColor(netState == 1 ? Color.BLUE : Color.BLACK);
-        ((ViewHolder) holder).devStateTv.setTextColor(netState == 1 ? Color.BLUE : Color.BLACK);
-        ((ViewHolder) holder).outDocumentTv.setTextColor(netState == 1 ? Color.BLUE : Color.BLACK);
-        ((ViewHolder) holder).interfaceStateTv.setTextColor(netState == 1 ? Color.BLUE : Color.BLACK);
+        ((ViewHolder) holder).number_cb.setTextColor(isOnline ? Color.BLUE : Color.BLACK);
+        ((ViewHolder) holder).mamberTv.setTextColor(isOnline ? Color.BLUE : Color.BLACK);
+        ((ViewHolder) holder).nameTv.setTextColor(isOnline ? Color.BLUE : Color.BLACK);
+        ((ViewHolder) holder).devTypeTv.setTextColor(isOnline ? Color.BLUE : Color.BLACK);
+        ((ViewHolder) holder).devStateTv.setTextColor(isOnline ? Color.BLUE : Color.BLACK);
+        ((ViewHolder) holder).outDocumentTv.setTextColor(isOnline ? Color.BLUE : Color.BLACK);
+        ((ViewHolder) holder).interfaceStateTv.setTextColor(isOnline ? Color.BLUE : Color.BLACK);
     }
 
 

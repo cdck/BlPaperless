@@ -1,69 +1,69 @@
 {
   "stringTable": {
-    "0": "/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/release/armeabi-v7a",
-    "1": "--target=armv7-none-linux-androideabi23 --gcc-toolchain=/Users/huge/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/huge/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DDEVICETYPE=0 -D_ANDROID -D_LINUX -Dnative_lib_EXPORTS -I../../../../src/main/cpp/include -I../../../../src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -frtti -fexceptions -Oz -DNDEBUG -fPIC",
-    "2": "--target=armv7-none-linux-androideabi23 --gcc-toolchain=/Users/huge/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/huge/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DDEVICETYPE=0 -D_ANDROID -D_LINUX -Dnative_lib_EXPORTS -I../../../../src/main/cpp/include -I../../../../src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -Oz -DNDEBUG -fPIC"
+    "0": "F:/work/boling_paperless_3.2.1/app/.cxx/cmake/release/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi23 --gcc-toolchain=C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DDEVICETYPE=0 -D_ANDROID -D_LINUX -Dnative_lib_EXPORTS -I../../../../src/main/cpp/include -I../../../../src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -frtti -fexceptions -Oz -DNDEBUG -fPIC",
+    "2": "--target=armv7-none-linux-androideabi23 --gcc-toolchain=C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DDEVICETYPE=0 -D_ANDROID -D_LINUX -Dnative_lib_EXPORTS -I../../../../src/main/cpp/include -I../../../../src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -Oz -DNDEBUG -fPIC"
   },
   "buildFiles": [
-    "/Users/huge/AndroidStudioProjects/BlPaperless/app/CMakeLists.txt",
-    "/Users/huge/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake",
-    "/Users/huge/Library/Android/sdk/ndk/21.1.6352462/build/cmake/platforms.cmake"
+    "F:\\work\\boling_paperless_3.2.1\\app\\CMakeLists.txt",
+    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
   ],
   "cleanCommands": [
-    "/Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/release/armeabi-v7a\" clean"
+    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\armeabi-v7a\" clean"
   ],
-  "buildTargetsCommand": "/Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/release/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "native-lib-Release-armeabi-v7a": {
-      "buildCommand": "/Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/release/armeabi-v7a\" native-lib",
+      "buildCommand": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\armeabi-v7a\" native-lib",
       "buildType": "release",
-      "toolchain": "1684491508",
+      "toolchain": "1779089186",
       "abi": "armeabi-v7a",
       "artifactName": "native-lib",
       "files": [
         {
-          "src": "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/cpp/helpers.c",
+          "src": "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\cpp\\jni_wallet_netinit.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\cpp\\wallet_net.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\cpp\\helpers.c",
           "flagsOrdinal": 2,
-          "workingDirectoryOrdinal": 0
-        },
-        {
-          "src": "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/cpp/jni_wallet_netinit.cpp",
-          "flagsOrdinal": 1,
-          "workingDirectoryOrdinal": 0
-        },
-        {
-          "src": "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/cpp/wallet_net.cpp",
-          "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "/Users/huge/AndroidStudioProjects/BlPaperless/app/build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so",
+      "output": "F:\\work\\boling_paperless_3.2.1\\app\\build\\intermediates\\cmake\\release\\obj\\armeabi-v7a\\libnative-lib.so",
       "runtimeFiles": [
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavcodec-57.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavdevice-57.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavfilter-6.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavformat-57.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavutil-55.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libpostproc-54.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libswresample-2.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libswscale-4.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libSDL2.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libmain.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libNetClient.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libDevice-OpenSles.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libCodec.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libExecProc.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libmeetcoreAnd.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libPBmeetcoreAnd.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libmeetAnd.so"
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavcodec-57.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavdevice-57.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavfilter-6.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavformat-57.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavutil-55.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libpostproc-54.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libswresample-2.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libswscale-4.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libSDL2.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libmain.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libNetClient.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libDevice-OpenSles.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libCodec.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libExecProc.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libmeetcoreAnd.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libPBmeetcoreAnd.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libmeetAnd.so"
       ]
     }
   },
   "toolchains": {
-    "1684491508": {
-      "cCompilerExecutable": "/Users/huge/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
-      "cppCompilerExecutable": "/Users/huge/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    "1779089186": {
+      "cCompilerExecutable": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
     }
   },
   "cFileExtensions": [

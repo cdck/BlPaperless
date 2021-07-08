@@ -214,7 +214,7 @@
 
     <string name="fun_text_meet_file_data">会议资料</string>
     <string name="fun_text_share_file">共享文件</string>
-    <string name="fun_text_postil_file">批注文件</string>
+    <string name="fun_text_postil_file">查看批注</string>
     <string name="fun_text_meet_chat">会议交流</string>
     <string name="fun_text_live_video">视频直播</string>
     <string name="fun_text_white_board">电子白板</string>
@@ -612,6 +612,9 @@
     <string name="please_choose_file_first">请先选择文件</string>
     <string name="delete_check_in_record">删除签到记录</string>
     <string name="file_name_marquee">滚动显示文件名</string>
+    <string name="exit">退出</string>
+    <string name="err_member_offline">当前参会人处于离线状态</string>
+    <string name="err_unbound_device">当前参会人未绑定设备</string>
 
 
     <string-array name="role_spinner">

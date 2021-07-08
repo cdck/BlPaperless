@@ -24,7 +24,7 @@
             android:gravity="start|center_vertical"
             android:paddingStart="5dp"
             android:textColor="@color/black"
-            android:textStyle="bold"
+            
             tools:text="18" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:gravity="start|center_vertical"
             android:lines="1"
             android:textColor="@color/black"
-            android:textStyle="bold"
+            
             tools:text="超长参会人名字" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:gravity="start|center_vertical"
             android:lines="1"
             android:textColor="@color/black"
-            android:textStyle="bold"
+            
             tools:text="预览文字" />
 
         <TextView
@@ -66,7 +66,7 @@
             android:gravity="start|center_vertical"
             android:lines="1"
             android:textColor="@color/black"
-            android:textStyle="bold"
+            
             tools:text="预览文字" />
 
         <TextView
@@ -80,7 +80,7 @@
             android:gravity="start|center_vertical"
             android:lines="1"
             android:textColor="@color/black"
-            android:textStyle="bold"
+            
             tools:text="预览文字" />
 
         <TextView
@@ -94,7 +94,7 @@
             android:gravity="center"
             android:lines="1"
             android:textColor="@color/black"
-            android:textStyle="bold"
+            
             tools:text="预览文字" />
 
         <TextView
@@ -108,7 +108,7 @@
             android:gravity="start|center_vertical"
             android:lines="1"
             android:textColor="@color/black"
-            android:textStyle="bold"
+            
             tools:text="预览文字" />
     </LinearLayout>
 </LinearLayout>

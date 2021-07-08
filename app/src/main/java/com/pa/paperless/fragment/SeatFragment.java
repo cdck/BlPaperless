@@ -7,7 +7,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+
 import androidx.annotation.Nullable;
+
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +58,6 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
     private final String TAG = "SeatFragment-->";
     private LinearLayout seat_root_ll;
     private CustomAbsoluteLayout absolute;
-    private CustomConstraintLayout seat_view;
     private int width = 1300, height = 760, viewWidth, viewHeight;
     private TextView count_tv, signed_in_tv, not_sign_in_tv;
     Button view_details;
@@ -91,7 +92,6 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
         View inflate = inflater.inflate(R.layout.seat_layout, container, false);
         handler = new SeatHandler(this);
         seat_root_ll = inflate.findViewById(R.id.seat_root_ll);
-        seat_view = inflate.findViewById(R.id.seat_view);
         absolute = inflate.findViewById(R.id.seat_layout);
         count_tv = inflate.findViewById(R.id.count_tv);
         signed_in_tv = inflate.findViewById(R.id.signed_in_tv);
@@ -129,7 +129,7 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
             List<InterfaceMember.pbui_Item_MemberDetailInfo> itemList = o.getItemList();
             for (int i = 0; i < itemList.size(); i++) {
 //                if (!filterMembers.contains((itemList.get(i).getPersonid()))) {
-                    memberInfos.add(itemList.get(i));
+                memberInfos.add(itemList.get(i));
 //                }
             }
             fun_querySign();
@@ -261,9 +261,9 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
         switch (item.getDirection()) {
             case 1://朝下 (文本控件在下)
                 if (issignin == 1) {
-                    iv.setImageResource(R.drawable.seat_t_bottom);
+                    iv.setImageResource(R.drawable.seat_green_bottom);
                 } else {
-                    iv.setImageResource(R.drawable.seat_f_bottom);
+                    iv.setImageResource(R.drawable.seat_gray_bottom);
                 }
                 seatLinearParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
                 seatLinearParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
@@ -272,9 +272,9 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case 0://朝上
                 if (issignin == 1) {
-                    iv.setImageResource(R.drawable.seat_t_top);
+                    iv.setImageResource(R.drawable.seat_green_top);
                 } else {
-                    iv.setImageResource(R.drawable.seat_f_top);
+                    iv.setImageResource(R.drawable.seat_gray_top);
                 }
                 ivParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
                 ivParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
@@ -283,9 +283,9 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case 3://朝右
                 if (issignin == 1) {
-                    iv.setImageResource(R.drawable.seat_t_right);
+                    iv.setImageResource(R.drawable.seat_green_right);
                 } else {
-                    iv.setImageResource(R.drawable.seat_f_right);
+                    iv.setImageResource(R.drawable.seat_gray_right);
                 }
                 ivParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
                 ivParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
@@ -294,9 +294,9 @@ public class SeatFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case 2://朝左
                 if (issignin == 1) {
-                    iv.setImageResource(R.drawable.seat_t_left);
+                    iv.setImageResource(R.drawable.seat_green_left);
                 } else {
-                    iv.setImageResource(R.drawable.seat_f_left);
+                    iv.setImageResource(R.drawable.seat_gray_left);
                 }
                 ivParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
                 ivParams.addRule(RelativeLayout.CENTER_HORIZONTAL);

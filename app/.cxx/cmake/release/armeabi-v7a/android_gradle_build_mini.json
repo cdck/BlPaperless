@@ -1,37 +1,37 @@
 {
   "buildFiles": [
-    "/Users/huge/AndroidStudioProjects/BlPaperless/app/CMakeLists.txt",
-    "/Users/huge/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake",
-    "/Users/huge/Library/Android/sdk/ndk/21.1.6352462/build/cmake/platforms.cmake"
+    "F:\\work\\boling_paperless_3.2.1\\app\\CMakeLists.txt",
+    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
   ],
   "cleanCommands": [
-    "/Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/release/armeabi-v7a\" clean"
+    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\armeabi-v7a\" clean"
   ],
-  "buildTargetsCommand": "/Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/release/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "native-lib-Release-armeabi-v7a": {
       "artifactName": "native-lib",
-      "buildCommand": "/Users/huge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/huge/AndroidStudioProjects/BlPaperless/app/.cxx/cmake/release/armeabi-v7a\" native-lib",
+      "buildCommand": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"F:\\work\\boling_paperless_3.2.1\\app\\.cxx\\cmake\\release\\armeabi-v7a\" native-lib",
       "abi": "armeabi-v7a",
-      "output": "/Users/huge/AndroidStudioProjects/BlPaperless/app/build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so",
+      "output": "F:\\work\\boling_paperless_3.2.1\\app\\build\\intermediates\\cmake\\release\\obj\\armeabi-v7a\\libnative-lib.so",
       "runtimeFiles": [
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavcodec-57.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavdevice-57.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavfilter-6.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavformat-57.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libavutil-55.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libpostproc-54.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libswresample-2.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libswscale-4.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libSDL2.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libmain.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libNetClient.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libDevice-OpenSles.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libCodec.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libExecProc.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libmeetcoreAnd.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libPBmeetcoreAnd.so",
-        "/Users/huge/AndroidStudioProjects/BlPaperless/app/src/main/nativeLibs/armeabi-v7a/libmeetAnd.so"
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavcodec-57.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavdevice-57.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavfilter-6.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavformat-57.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libavutil-55.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libpostproc-54.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libswresample-2.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libswscale-4.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libSDL2.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libmain.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libNetClient.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libDevice-OpenSles.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libCodec.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libExecProc.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libmeetcoreAnd.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libPBmeetcoreAnd.so",
+        "F:\\work\\boling_paperless_3.2.1\\app\\src\\main\\nativeLibs\\armeabi-v7a\\libmeetAnd.so"
       ]
     }
   }

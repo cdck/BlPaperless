@@ -66,7 +66,6 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
     private List<InterfaceMember.pbui_Item_MemberDetailInfo> memberInfos;
     private TextView default_tv;
     private String currentMemberName;//当前选中的参会人名称
-    private List<DevMember> devMembers;
     private List<Integer> permissionList = new ArrayList<>();
 
     @Nullable
@@ -96,33 +95,8 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                     break;
                 }
             }
-            fun_queryMeetRanking();
-        } catch (InvalidProtocolBufferException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void fun_queryMeetRanking() {
-        try {
-            InterfaceRoom.pbui_Type_MeetSeatDetailInfo object = jni.queryMeetRanking();
-            if (object == null) return;
-            if (memberInfos == null && memberInfos.isEmpty()) return;
-            List<InterfaceRoom.pbui_Item_MeetSeatDetailInfo> itemList = object.getItemList();
-            if (devMembers == null) devMembers = new ArrayList<>();
-            else devMembers.clear();
-            for (int i = 0; i < itemList.size(); i++) {
-                InterfaceRoom.pbui_Item_MeetSeatDetailInfo item = itemList.get(i);
-                int devid = item.getSeatid();
-                int memberid = item.getNameId();
-                for (int j = 0; j < memberInfos.size(); j++) {
-                    int personid = memberInfos.get(j).getPersonid();
-                    if (personid == memberid) {
-                        devMembers.add(new DevMember(memberInfos.get(j), devid));
-                    }
-                }
-            }
             if (memberAdapter == null) {
-                memberAdapter = new PostilMemberAdapter(getActivity(), devMembers);
+                memberAdapter = new PostilMemberAdapter(getActivity(), memberInfos);
                 mMemberLv.setAdapter(memberAdapter);
             } else {
                 memberAdapter.notifyDataSetChanged();
@@ -134,9 +108,17 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                 memberAdapter.setCheck(position);
                 LogUtil.e(TAG, "PostilFragment.onItemClick :  position --> " + position);
                 default_tv.setSelected(false);
-                DevMember devMember = devMembers.get(position);
-                currentMemberName = devMember.getMemberDetailInfo().getName().toStringUtf8();
-                int devId = devMember.getDevId();
+                InterfaceMember.pbui_Item_MemberDetailInfo member = memberInfos.get(position);
+                currentMemberName = member.getName().toStringUtf8();
+                int devId = jni.queryDeviceIdByMemberId(member.getPersonid());
+                boolean isOnline = jni.deviceIsOnline(devId);
+                if (devId == 0) {
+                    ToastUtils.showShort(R.string.err_unbound_device);
+                    return;
+                } else if (!isOnline) {
+                    ToastUtils.showShort(R.string.err_member_offline);
+                    return;
+                }
                 //保存的权限集合中是否有当前设备同意的权限
                 if (permissionList.contains(devId)) {
                     showCurrentFile(currentMemberName);
@@ -147,14 +129,66 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
                             InterfaceMacro.Pb_MemberPermissionPropertyID.Pb_memperm_postilview.getNumber());
                 }
             });
+
+//            fun_queryMeetRanking();
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
     }
 
+//    private void fun_queryMeetRanking() {
+//        try {
+//            InterfaceRoom.pbui_Type_MeetSeatDetailInfo object = jni.queryMeetRanking();
+//            if (object == null) return;
+//            if (memberInfos == null && memberInfos.isEmpty()) return;
+//            List<InterfaceRoom.pbui_Item_MeetSeatDetailInfo> itemList = object.getItemList();
+//            if (devMembers == null) devMembers = new ArrayList<>();
+//            else devMembers.clear();
+//            for (int i = 0; i < itemList.size(); i++) {
+//                InterfaceRoom.pbui_Item_MeetSeatDetailInfo item = itemList.get(i);
+//                int devid = item.getSeatid();
+//                int memberid = item.getNameId();
+//                for (int j = 0; j < memberInfos.size(); j++) {
+//                    int personid = memberInfos.get(j).getPersonid();
+//                    if (personid == memberid) {
+//                        devMembers.add(new DevMember(memberInfos.get(j), devid));
+//                    }
+//                }
+//            }
+//            if (memberAdapter == null) {
+//                memberAdapter = new PostilMemberAdapter(getActivity(), devMembers);
+//                mMemberLv.setAdapter(memberAdapter);
+//            } else {
+//                memberAdapter.notifyDataSetChanged();
+//            }
+//            /* **** **  查找到参会人数据后再查批注文件  ** **** */
+//            //143.查询会议目录文件（直接查询 批注文件(id 是固定为 2 )的文件）
+//            fun_queryMeetDirFile(Macro.ANNOTATION_FILE_DIRECTORY_ID);
+//            mMemberLv.setOnItemClickListener((parent, view, position, id) -> {
+//                memberAdapter.setCheck(position);
+//                LogUtil.e(TAG, "PostilFragment.onItemClick :  position --> " + position);
+//                default_tv.setSelected(false);
+//                DevMember devMember = devMembers.get(position);
+//                currentMemberName = devMember.getMemberDetailInfo().getName().toStringUtf8();
+//                int devId = devMember.getDevId();
+//                //保存的权限集合中是否有当前设备同意的权限
+//                if (permissionList.contains(devId)) {
+//                    showCurrentFile(currentMemberName);
+//                } else {
+//                    ToastUtils.showShort(R.string.request_permission_now);
+//                    //发送请求查看批注文件权限
+//                    jni.sendAttendRequestPermissions(devId,
+//                            InterfaceMacro.Pb_MemberPermissionPropertyID.Pb_memperm_postilview.getNumber());
+//                }
+//            });
+//        } catch (InvalidProtocolBufferException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     private void fun_queryMeetDirFile(int dirid) {
         InterfaceFile.pbui_Type_MeetDirRightDetailInfo dirPermission = jni.queryDirPermission(dirid);
-        if (dirPermission!=null && dirPermission.getMemberidList().contains(Values.localMemberId)) {
+        if (dirPermission != null && dirPermission.getMemberidList().contains(Values.localMemberId)) {
             LogUtils.e("没有批注文件的目录权限");
             clear();
             return;
@@ -243,9 +277,9 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
             case EventType.MEMBER_CHANGE_INFORM://参会人员变更通知
                 fun_queryAttendPeople();
                 break;
-            case EventType.MeetSeat_Change_Inform://会议排位变更通知
-                fun_queryMeetRanking();
-                break;
+//            case EventType.MeetSeat_Change_Inform://会议排位变更通知
+//                fun_queryMeetRanking();
+//                break;
             case EventType.RECEIVE_REQUEST_REPLY://收到权限申请的回复
                 InterfaceDevice.pbui_Type_MeetRequestPrivilegeResponse object = (InterfaceDevice.pbui_Type_MeetRequestPrivilegeResponse) message.getObject();
                 int returncode = object.getReturncode();
@@ -465,7 +499,7 @@ public class PostilFragment extends BaseFragment implements View.OnClickListener
         default_tv.setSelected(true);
         currentMemberName = Values.localMemberName;
         if (mAdapter != null && meetDirFileInfos != null && mData != null) {
-            memberAdapter.setCheck(Integer.MAX_VALUE);
+            memberAdapter.setCheck(-1);
             mData.clear();
             for (int i = 0; i < meetDirFileInfos.size(); i++) {
                 MeetDirFileInfo meetDirFileInfo = meetDirFileInfos.get(i);

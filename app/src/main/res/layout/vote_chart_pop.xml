@@ -1,225 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
         android:layout_marginStart="5dp"
+        android:layout_marginBottom="19dp"
         android:background="@color/vote_back_color"
         android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/imag_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_margin="5dp"
-            android:background="@drawable/icon_close_red" />
-
-        <LinearLayout
-            android:id="@+id/vote_type_top_ll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/vote_type_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                tools:text="（单选 记名 正在进行）"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/member_count_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                tools:text="应到：9人 实到：9人 已投：9人 未投：0人"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/title_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            tools:text="投票内容"
-            android:textColor="@color/white"
-            android:textSize="22sp" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imag_btn"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="end"
+                android:layout_margin="5dp"
+                android:background="@drawable/icon_close_red"
+                android:visibility="invisible" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
+                android:id="@+id/vote_type_top_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp">
-
-                <com.intrusoft.scatter.PieChart
-                    android:id="@+id/pie_chart"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:paddingStart="10dp">
-
-                <LinearLayout
-                    android:id="@+id/vote_option_a"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:id="@+id/vote_option_color_a"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/chart_color_red" />
-
-                    <TextView
-                        android:id="@+id/option_a"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        tools:text="3票 %30"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/vote_option_b"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:id="@+id/vote_option_color_b"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/chart_color_green" />
-
-                    <TextView
-                        android:id="@+id/option_b"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        tools:text="3票 %30"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/vote_option_c"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:id="@+id/vote_option_color_c"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/chart_color_blue" />
-
-                    <TextView
-                        android:id="@+id/option_c"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        tools:text="3票 %30"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/vote_option_d"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:id="@+id/vote_option_color_d"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/chart_color_aqua" />
-
-                    <TextView
-                        android:id="@+id/option_d"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        tools:text="3票 %30"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/vote_option_e"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:id="@+id/vote_option_color_e"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/chart_color_pink" />
-
-                    <TextView
-                        android:id="@+id/option_e"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        tools:text="3票 %30"
-                        android:textColor="@color/white" />
-                </LinearLayout>
+                android:visibility="visible">
 
                 <TextView
-                    tools:text="投票人数：8人"
-                    android:id="@+id/vote_member_count_tv"
+                    android:id="@+id/vote_type_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:textColor="@color/white"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="20sp"
+                    tools:text="（单选 记名 正在进行）" />
+
+                <TextView
+                    android:id="@+id/member_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="应到：9人 实到：9人 已投：9人 未投：0人" />
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                tools:text="投票内容" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <com.intrusoft.scatter.PieChart
+                        android:id="@+id/pie_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingStart="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/vote_option_a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/vote_option_color_a"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@color/chart_color_red" />
+
+                        <TextView
+                            android:id="@+id/option_a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            tools:text="3票 %30" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/vote_option_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/vote_option_color_b"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@color/chart_color_green" />
+
+                        <TextView
+                            android:id="@+id/option_b"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            tools:text="3票 %30" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/vote_option_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/vote_option_color_c"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@color/chart_color_blue" />
+
+                        <TextView
+                            android:id="@+id/option_c"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            tools:text="3票 %30" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/vote_option_d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/vote_option_color_d"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@color/chart_color_aqua" />
+
+                        <TextView
+                            android:id="@+id/option_d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            tools:text="3票 %30" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/vote_option_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/vote_option_color_e"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@color/chart_color_pink" />
+
+                        <TextView
+                            android:id="@+id/option_e"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            tools:text="3票 %30" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/vote_member_count_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        tools:text="投票人数：8人" />
+
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            style="@style/btn_style_pressend"
+            android:layout_margin="5dp"
+            android:text="@string/exit"/>
     </LinearLayout>
 </LinearLayout>

@@ -2,13 +2,16 @@ package com.pa.paperless.adapter.rvadapter;
 
 import android.content.Context;
 import android.graphics.Color;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.mogujie.tt.protobuf.InterfaceMacro;
 import com.mogujie.tt.protobuf.InterfaceMember;
 import com.pa.boling.paperless.R;
@@ -28,12 +31,11 @@ public class ChooseJoinVoteAdapter extends RecyclerView.Adapter<ChooseJoinVoteAd
     private List<InterfaceMember.pbui_Item_MeetMemberDetailInfo> mData;
     private Context cxt;
     private ItemClickListener mListener;
-    private List<Integer> checks;
+    private List<Integer> checks = new ArrayList<>();
 
     public ChooseJoinVoteAdapter(Context context, List<InterfaceMember.pbui_Item_MeetMemberDetailInfo> data) {
         cxt = context;
         mData = data;
-        checks = new ArrayList<>();
     }
 
     public void notifyChecks() {
@@ -43,37 +45,49 @@ public class ChooseJoinVoteAdapter extends RecyclerView.Adapter<ChooseJoinVoteAd
             int memberid = info.getMemberid();
             if (checks.contains(memberid)) mediaIds.add(memberid);
         }
-        checks = mediaIds;
+        checks.clear();
+        checks.addAll(mediaIds);
         notifyDataSetChanged();
     }
 
     public List<Integer> getChecks() {
+        notifyChecks();
         return checks;
     }
 
     public void setChecks(int memberid) {
+        LogUtils.e("setChecks memberid=" + memberid + "," + checks.toString());
         if (checks.contains(memberid)) checks.remove(checks.indexOf(memberid));
         else checks.add(memberid);
+        notifyChecks();
     }
 
     public boolean isCheckAll() {
-        return checks.size() == mData.size();
+        return checks.size() == getCanCheckSize() && checks.size() > 0;
+    }
+
+    /**
+     * 获取当前可加入投票的人数
+     *
+     * @return 总人数
+     */
+    public int getCanCheckSize() {
+        int count = 0;
+        for (int i = 0; i < mData.size(); i++) {
+            InterfaceMember.pbui_Item_MeetMemberDetailInfo info = mData.get(i);
+            if (isCanJoin(info)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public void setCheckAll(boolean b) {
         checks.clear();
         if (b) {
-            for (int i = 0; i < mData.size(); i++) {
-                for (InterfaceMember.pbui_Item_MeetMemberDetailInfo info : mData) {
-//                    int memberdetailflag = info.getMemberdetailflag();
-//                    boolean isonline = memberdetailflag == InterfaceMember.Pb_MemberDetailFlag.Pb_MEMBERDETAIL_FLAG_ONLINE.getNumber();
-//                    int state = info.getFacestatus();
-                    boolean havePermission = MyUtils.isHavePermission(info.getMemberid(), Macro.permission_code_vote);
-//                    /** **** **  在线并且有权限且界面在参会人界面或则投票界面  ** **** **/
-//                    if (isonline && havePermission && (state == 1 || state == 3)) {
-                    if (havePermission) {
-                        checks.add(info.getMemberid());
-                    }
+            for (InterfaceMember.pbui_Item_MeetMemberDetailInfo info : mData) {
+                if (isCanJoin(info)) {
+                    checks.add(info.getMemberid());
                 }
             }
         }
@@ -91,6 +105,16 @@ public class ChooseJoinVoteAdapter extends RecyclerView.Adapter<ChooseJoinVoteAd
         return holder;
     }
 
+    public boolean isCanJoin(InterfaceMember.pbui_Item_MeetMemberDetailInfo info) {
+        int devid = info.getDevid();
+        int state = info.getFacestatus();
+        int memberdetailflag = info.getMemberdetailflag();
+        boolean isonline = memberdetailflag == InterfaceMember.Pb_MemberDetailFlag.Pb_MEMBERDETAIL_FLAG_ONLINE.getNumber();
+        boolean b = ((state == InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace_VALUE) || (state == InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_VoteFace_VALUE));
+        boolean havePermission = MyUtils.isHavePermission(info.getMemberid(), Macro.permission_code_vote);
+        return devid != 0 && isonline && b && havePermission;
+    }
+
     @Override
     public void onBindViewHolder(ChooseJoinVoteAdapter.ViewHolder holder, int position) {
         holder.number_cb.setText(String.valueOf(position + 1));
@@ -101,20 +125,18 @@ public class ChooseJoinVoteAdapter extends RecyclerView.Adapter<ChooseJoinVoteAd
         int state = info.getFacestatus();
         int memberdetailflag = info.getMemberdetailflag();
         boolean isonline = memberdetailflag == InterfaceMember.Pb_MemberDetailFlag.Pb_MEMBERDETAIL_FLAG_ONLINE.getNumber();
-        boolean canjoin = true;//一层层的判断是否可以加入投票
+        boolean canjoin = false;//一层层的判断是否可以加入投票
         if (devid == 0) {
-//            canjoin = false;
             holder.dev_state_tv.setText(cxt.getString(R.string.unbind_seat));
         } else {
             if (isonline) {
-                boolean b = ((state == InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace.getNumber()) || (state == InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_VoteFace.getNumber()));
-//                canjoin = b;
+                //参会人界面或投票界面
+                boolean b = ((state == InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_MemFace_VALUE) || (state == InterfaceMacro.Pb_MeetFaceStatus.Pb_MemState_VoteFace_VALUE));
+                canjoin = b;
                 holder.dev_state_tv.setText(b ? cxt.getString(R.string.online) : cxt.getString(R.string.online_but));
             } else holder.dev_state_tv.setText(cxt.getString(R.string.offline));
         }
-//        if (canjoin) canjoin = isonline;
         //是否有投票权限，只要大于15就说明有，因为如果有投票的权限最小值都是16
-//        boolean havePermission = info.getPermission() > 15;
         boolean havePermission = MyUtils.isHavePermission(info.getMemberid(), Macro.permission_code_vote);
         if (canjoin) canjoin = havePermission;
         holder.permission_tv.setText(havePermission ? cxt.getString(R.string.default_str) : cxt.getString(R.string.not_permission));
@@ -132,7 +154,6 @@ public class ChooseJoinVoteAdapter extends RecyclerView.Adapter<ChooseJoinVoteAd
         holder.dev_state_tv.setTextColor(isonline ? Color.BLUE : Color.BLACK);
         holder.permission_tv.setTextColor(isonline ? Color.BLUE : Color.BLACK);
     }
-
 
     @Override
     public int getItemCount() {

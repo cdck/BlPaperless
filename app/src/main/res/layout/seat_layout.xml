@@ -16,12 +16,6 @@
             android:layout_width="1300px"
             android:layout_height="760px" />
 
-        <com.pa.paperless.ui.CustomConstraintLayout
-            android:id="@+id/seat_view"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -68,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/shape_round_red"
+            android:drawableLeft="@drawable/shape_round_black"
             android:gravity="center"
             android:paddingLeft="10dp"
             android:text="@string/no_sign_in" />

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.mogujie.tt.protobuf.InterfaceMember;
 import com.pa.boling.paperless.R;
 import com.pa.paperless.data.bean.DevMember;
 
@@ -20,10 +21,10 @@ import java.util.List;
 
 public class PostilMemberAdapter extends BaseAdapter {
     private final Context mContext;
-    private List<DevMember> mDatas;
+    private List<InterfaceMember.pbui_Item_MemberDetailInfo> mDatas;
     private int SelePosion;
 
-    public PostilMemberAdapter(Context context, List<DevMember> data) {
+    public PostilMemberAdapter(Context context, List<InterfaceMember.pbui_Item_MemberDetailInfo> data) {
         mContext = context;
         mDatas = data;
     }
@@ -60,8 +61,8 @@ public class PostilMemberAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        DevMember devMember = mDatas.get(position);
-        holder.postil_member_name.setText(devMember.getMemberDetailInfo().getName().toStringUtf8());
+        InterfaceMember.pbui_Item_MemberDetailInfo member = mDatas.get(position);
+        holder.postil_member_name.setText(member.getName().toStringUtf8());
         if (position == SelePosion) {
             holder.postil_member_name.setSelected(true);
             holder.postil_member_name.setTextColor(mContext.getResources().getColor(R.color.btn_fill_color));

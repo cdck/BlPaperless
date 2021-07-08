@@ -52,20 +52,20 @@ import me.jessyan.autosize.AutoSizeConfig;
  */
 public class App extends Application {
 
+    private static final String TAG = "App-->";
     /**
      * 变更需要修改：
      * 1.应用名称和logo图标
-     * 2.gradle.properties
+     * 2.gradle.properties中isSimple参数
      */
     public static final boolean isSimple = true;
-
-    private static final String TAG = "App-->";
-    public static boolean isDebug = false;
-    public static final boolean read2file = false;
     /**
      * 红蓝版本切换时同时需要替换资源文件
      */
-    public static final boolean isRedTheme = true;
+    public static final boolean isRedTheme = false;
+
+    public static boolean isDebug = true;
+    public static final boolean read2file = false;
 
     public static List<Activity> activities = new ArrayList<>();
     /**

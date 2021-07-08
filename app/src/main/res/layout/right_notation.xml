@@ -18,6 +18,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
+            android:visibility="visible"
             android:layout_marginBottom="5dp"
             android:clickable="true"
             android:drawableLeft="@drawable/member_head_s"

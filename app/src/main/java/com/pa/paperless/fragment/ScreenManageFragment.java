@@ -1,6 +1,7 @@
 package com.pa.paperless.fragment;
 
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -9,6 +10,7 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.Values;
 import com.pa.paperless.utils.LogUtil;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +37,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 /**
  * Created by xlk on 2018/11/5.
  * 屏幕管理
@@ -54,10 +55,10 @@ public class ScreenManageFragment extends BaseFragment implements View.OnClickLi
     private Button launch_screen;
     private Button stop_task;
     private Button refresh;
-    private List<InterfaceMember.pbui_Item_MemberDetailInfo> memberInfos;
-    private List<InterfaceDevice.pbui_Item_DeviceDetailInfo> deviceInfos;
-    private List<InterfaceDevice.pbui_Item_DeviceDetailInfo> onLinerPro;
-    private List<DevMember> onLineMember;
+    private List<InterfaceMember.pbui_Item_MemberDetailInfo> memberInfos = new ArrayList<>();
+    private List<InterfaceDevice.pbui_Item_DeviceDetailInfo> deviceInfos = new ArrayList<>();
+    private List<InterfaceDevice.pbui_Item_DeviceDetailInfo> onLinerPro = new ArrayList<>();
+    private List<DevMember> onLineMember = new ArrayList<>();
     private OnLineProjectorAdapter onLineProjectorAdapter;
     private ScreenControlAdapter onlineMemberAdapter, onlineMemberRightAdapter;
 
@@ -72,11 +73,11 @@ public class ScreenManageFragment extends BaseFragment implements View.OnClickLi
 
     private void fun_queryAttendPeople() {
         try {
-            InterfaceMember.pbui_Type_MemberDetailInfo o = jni.queryAttendPeople();
-            if (o == null) return;
-            if (memberInfos == null) memberInfos = new ArrayList<>();
-            else memberInfos.clear();
-            memberInfos.addAll(o.getItemList());
+            InterfaceMember.pbui_Type_MemberDetailInfo object = jni.queryAttendPeople();
+            memberInfos.clear();
+            if (object != null) {
+                memberInfos.addAll(object.getItemList());
+            }
             fun_queryDeviceInfo();
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
@@ -85,33 +86,32 @@ public class ScreenManageFragment extends BaseFragment implements View.OnClickLi
 
     private void fun_queryDeviceInfo() {
         try {
-            InterfaceDevice.pbui_Type_DeviceDetailInfo pbui_type_deviceDetailInfo = jni.queryDeviceInfo();
-            if (pbui_type_deviceDetailInfo == null) return;
-            if (deviceInfos == null) deviceInfos = new ArrayList<>();
-            else deviceInfos.clear();
-            deviceInfos.addAll(pbui_type_deviceDetailInfo.getPdevList());
-            if (onLinerPro == null) onLinerPro = new ArrayList<>();
-            else onLinerPro.clear();
-            if (onLineMember == null) onLineMember = new ArrayList<>();
-            else onLineMember.clear();
+            InterfaceDevice.pbui_Type_DeviceDetailInfo object = jni.queryDeviceInfo();
+            deviceInfos.clear();
+            onLinerPro.clear();
+            onLineMember.clear();
+            if (object != null) {
+                deviceInfos.addAll(object.getPdevList());
+            }
+            for (int i = 0; i < memberInfos.size(); i++) {
+                for (int j = 0; j < deviceInfos.size(); j++) {
+                    InterfaceDevice.pbui_Item_DeviceDetailInfo dev = deviceInfos.get(j);
+                    if (dev.getNetstate() == 1) {
+                        if (dev.getMemberid() == memberInfos.get(i).getPersonid()) {
+                            onLineMember.add(new DevMember(memberInfos.get(i), dev.getDevcieid()));
+                            break;
+                        }
+                    }
+                }
+            }
             for (int i = 0; i < deviceInfos.size(); i++) {
                 InterfaceDevice.pbui_Item_DeviceDetailInfo deviceInfo = deviceInfos.get(i);
                 int devId = deviceInfo.getDevcieid();
-                int memberId = deviceInfo.getMemberid();
-                String devName = deviceInfo.getDevname().toStringUtf8();
                 int netState = deviceInfo.getNetstate();
-                int faceState = deviceInfo.getFacestate();
                 if (netState == 1) {//在线
                     if ((devId & Macro.DEVICE_MEET_ID_MASK) == Macro.DEVICE_MEET_PROJECTIVE) {
                         onLinerPro.add(deviceInfo);
-                    } else {
-                        if (memberInfos != null && !memberInfos.isEmpty()) {
-                            for (int j = 0; j < memberInfos.size(); j++) {
-                                if (memberInfos.get(j).getPersonid() == memberId /*&& memberId!= Values.localMemberId*/) {
-                                    onLineMember.add(new DevMember(memberInfos.get(j), devId));
-                                }
-                            }
-                        }
+                        break;
                     }
                 }
             }
@@ -243,11 +243,11 @@ public class ScreenManageFragment extends BaseFragment implements View.OnClickLi
                 if (onlineMemberAdapter == null) break;
                 List<Integer> checks = onlineMemberAdapter.getChecks();
                 if (checks.isEmpty()) {
-                     ToastUtils.showShort(R.string.please_choose_screen_source);
+                    ToastUtils.showShort(R.string.please_choose_screen_source);
                 } else {
                     Integer devid = checks.get(0);
                     if (devid == Values.localDevId) {
-                         ToastUtils.showShort(R.string.no_watch_oneself);
+                        ToastUtils.showShort(R.string.no_watch_oneself);
                     } else {
                         ArrayList<Integer> ids = new ArrayList<>();
                         ids.add(Values.localDevId);
@@ -278,7 +278,7 @@ public class ScreenManageFragment extends BaseFragment implements View.OnClickLi
                 if (onlineMemberRightAdapter == null) break;
                 List<Integer> checks2 = onLineProjectorAdapter.getChecks();
                 checks2.addAll(onlineMemberRightAdapter.getChecks());
-                if (checks2.isEmpty())  ToastUtils.showShort(R.string.please_choose_target);
+                if (checks2.isEmpty()) ToastUtils.showShort(R.string.please_choose_target);
                 else jni.stopResourceOperate(res, checks2);
                 break;
             case R.id.refresh:

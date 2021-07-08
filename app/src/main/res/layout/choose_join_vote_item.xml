@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:background="#ffffff"
             android:clickable="false"
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             android:textColor="@color/black"
             android:textStyle="bold" />
 

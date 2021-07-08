@@ -24,7 +24,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.UriUtils;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -47,10 +46,12 @@ import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
+import com.pa.paperless.utils.Arith;
 import com.pa.paperless.utils.Export;
 import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
 import com.pa.paperless.utils.ScreenUtils;
+import com.pa.paperless.utils.ToastUtil;
 
 
 import org.greenrobot.eventbus.EventBus;
@@ -58,6 +59,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,7 +107,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
     private boolean open_vote_chart;
     private PopupWindow ChartPop;
     private List<ChartData> chartDatas;
-    private int countPre;
+    private float countPre;
     private List<InterfaceMember.pbui_Item_MeetMemberDetailInfo> chooseData;
     private ChooseJoinVoteAdapter chooseAdapter;
     private boolean showJoinPop;
@@ -379,14 +382,14 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                         if (votestate == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
                             for (int i = 0; i < mVoteData.size(); i++) {//查看当前是否已经有选举已经发起
                                 if (mVoteData.get(i).getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_voteing.getNumber()) {
-                                    ToastUtils.showShort(R.string.has_vote_ongoing);
+                                    ToastUtil.showShort(R.string.has_vote_ongoing);
                                     isback = true;
                                     break;
                                 }
                             }
                         }
                         if (votestate == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_endvote.getNumber()) {
-                            ToastUtils.showShort(R.string.the_vote_is_over);
+                            ToastUtil.showShort(R.string.the_vote_is_over);
                             isback = true;
                         }
                         if (isback) return;
@@ -404,18 +407,18 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                             }
                         }
                         if (voteInfo.getMode() != 1) {
-                            ToastUtils.showShort(R.string.please_choose_registered_vote);
+                            ToastUtil.showShort(R.string.please_choose_registered_vote);
                         } else if (voteInfo.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
-                            ToastUtils.showShort(R.string.not_choose_notvote);
+                            ToastUtil.showShort(R.string.not_choose_notvote);
                         } else if (!havedata) {
-                            ToastUtils.showShort(R.string.no_data_can_show);
+                            ToastUtil.showShort(R.string.no_data_can_show);
                         } else {
                             open_vote_details = true;
                             fun_queryOneVoteSubmitter(voteInfo);
                         }
                     }
                 } else
-                    ToastUtils.showShort(R.string.please_choose_vote);
+                    ToastUtil.showShort(R.string.please_choose_vote);
                 break;
             case R.id.stop_btn:
                 if (mVoteData != null && mVoteData.size() > mPosion) {
@@ -424,7 +427,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                         if (voteInfo1.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_voteing.getNumber()) {
                             jni.stopVote(voteInfo1.getVoteid());
                         } else
-                            ToastUtils.showShort(R.string.please_choose_ongoing_vote);
+                            ToastUtil.showShort(R.string.please_choose_ongoing_vote);
                     } else {//查看图表
                         InterfaceVote.pbui_Item_MeetVoteDetailInfo voteInfo = mVoteData.get(mPosion);
                         List<InterfaceVote.pbui_SubItem_VoteItemInfo> optionInfo = voteInfo.getItemList();
@@ -436,9 +439,9 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                             }
                         }
                         if (!havedata) {
-                            ToastUtils.showShort(R.string.no_data_can_show);
+                            ToastUtil.showShort(R.string.no_data_can_show);
                         } else if (voteInfo.getVotestate() == InterfaceMacro.Pb_MeetVoteStatus.Pb_vote_notvote.getNumber()) {
-                            ToastUtils.showShort(R.string.not_choose_notvote);
+                            ToastUtil.showShort(R.string.not_choose_notvote);
                         } else {
                             open_vote_chart = true;
                             fun_queryOneVoteSubmitter(voteInfo);
@@ -466,8 +469,10 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                 InterfaceRoom.pbui_Item_MeetRoomDevSeatDetailInfo item = itemList1.get(i);
                 int memberid = item.getMemberid();
                 int role = item.getRole();
-                if (role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary_VALUE) {
-                    LogUtil.i(TAG, "fun_queryAttendPeopleDetailed 过滤掉秘书：" + item.getMembername().toStringUtf8());
+                if (role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_member_secretary_VALUE
+                        || role == InterfaceMacro.Pb_MeetMemberRole.Pb_role_admin_VALUE
+                ) {
+                    LogUtil.i(TAG, "fun_queryAttendPeopleDetailed 过滤掉秘书或管理员：" + item.getMembername().toStringUtf8());
                     ids.add(memberid);
                 }
             }
@@ -522,16 +527,12 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         chooseAdapter.setCheckAll(true);
         chooseAdapter.setListener((view, posion) -> {
             InterfaceMember.pbui_Item_MeetMemberDetailInfo info = chooseData.get(posion);
-            int memberdetailflag = info.getMemberdetailflag();
-            boolean isonline = memberdetailflag == InterfaceMember.Pb_MemberDetailFlag.Pb_MEMBERDETAIL_FLAG_ONLINE.getNumber();
-            int state = info.getFacestatus();
-            /** **** **  在线并且有权限且界面在参会人界面或则投票界面  ** **** **/
-            if (isonline && info.getPermission() > 15 && (state == 1 || state == 3)) {
+            if (chooseAdapter.isCanJoin(info)) {
                 chooseAdapter.setChecks(info.getMemberid());
                 holder.all_number_cb.setChecked(chooseAdapter.isCheckAll());
-                chooseAdapter.notifyDataSetChanged();
-            } else
-                ToastUtils.showShort(R.string.must_choose_online);
+            } else {
+                ToastUtil.showShort(R.string.must_choose_online);
+            }
         });
         holder.all_number_cb.setOnClickListener(v -> {
             boolean checked = holder.all_number_cb.isChecked();
@@ -541,7 +542,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         holder.ensure.setOnClickListener(v -> {
             List<Integer> checks = chooseAdapter.getChecks();
             if (checks.isEmpty()) {
-                ToastUtils.showShort(R.string.please_choose);
+                ToastUtil.showShort(R.string.please_choose);
                 return;
             }
             LogUtil.e(TAG, "VoteFragment.choosePopEvent : 是否有自己的ID  --> " + checks.contains(Values.localMemberId));
@@ -660,6 +661,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
     private void ChartViewHolderEvent(ChartViewHolder
                                               holder, InterfaceVote.pbui_Item_MeetVoteDetailInfo voteInfo) {
         holder.imag_btn.setOnClickListener(v -> ChartPop.dismiss());
+        holder.btn_exit.setOnClickListener(v -> ChartPop.dismiss());
         /** **** **  先隐藏所有的选项  ** **** **/
         holder.vote_option_a.setVisibility(View.GONE);
         holder.vote_option_b.setVisibility(View.GONE);
@@ -751,16 +753,15 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         holder.pie_chart.setVisibility(View.VISIBLE);
     }
 
-    private int setChartData(float count, int selcnt, int colora, int colorb) {
+    private void setChartData(int count, int selcnt, int colora, int colorb) {
         if (selcnt > 0) {
-            float element = (float) selcnt / count;
-            LogUtil.d(TAG, "FabService.setUplistener :  element --> " + element);
-            int v = (int) (element * 100);
-            String str = v + "%";
-            countPre += v;
-            chartDatas.add(new ChartData(str, v, colora, colorb));
+            float div = Arith.divFloat(selcnt, count, 3);
+            float percentage = div * 100;//百分比
+            String str = percentage + "%";
+            countPre += percentage;
+            LogUtils.e(selcnt + "/" + count + "=" + div + ",当前答案的占比=" + str + ",目前总占比=" + countPre);
+            chartDatas.add(new ChartData(str, percentage, colora, colorb));
         }
-        return countPre;
     }
 
     private int getCount(List<InterfaceVote.pbui_SubItem_VoteItemInfo> itemList) {
@@ -865,10 +866,10 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         holder.pop_add_btn.setOnClickListener(v -> {
             String edt_str = holder.modif_edt.getText().toString();
             if (edt_str.trim().isEmpty()) {
-                ToastUtils.showShort(R.string.please_input_content);
+                ToastUtil.showShort(R.string.please_input_content);
                 return;
             } else if (edt_str.trim().length() > Macro.title_max_length) {
-                ToastUtils.showShort(R.string.beyond_max_length);
+                ToastUtil.showShort(R.string.beyond_max_length);
                 return;
             }
             //因为字符资源文件中的索引0就是匿名，1是记名所以可以对应起来
@@ -893,11 +894,11 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         holder.pop_modif_btn.setOnClickListener(v -> {
             String edt_str = holder.modif_edt.getText().toString();
             if (edt_str.trim().isEmpty()) {
-                ToastUtils.showShort(R.string.please_input_content);
+                ToastUtil.showShort(R.string.please_input_content);
                 return;
             }
             if (edt_str.trim().length() > Macro.title_max_length) {
-                ToastUtils.showShort(R.string.beyond_max_length);
+                ToastUtil.showShort(R.string.beyond_max_length);
                 return;
             }
             if (mVoteData != null && mVoteData.size() > popPosion) {
@@ -919,14 +920,14 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                 InterfaceVote.pbui_Item_MeetOnVotingDetailInfo build = builder.build();
                 jni.modifyVote(build);
             } else {
-                ToastUtils.showShort(R.string.please_choose_vote);
+                ToastUtil.showShort(R.string.please_choose_vote);
             }
         });
         holder.pop_del_btn.setOnClickListener(v -> {
             if (mVoteData != null && !mVoteData.isEmpty()) {
                 List<Integer> voteids = new ArrayList<>();
                 if (popPosion >= mVoteData.size()) {
-                    ToastUtils.showShort(R.string.please_choose_vote);
+                    ToastUtil.showShort(R.string.please_choose_vote);
                     return;
                 }
                 voteids.add(mVoteData.get(popPosion).getVoteid());
@@ -941,7 +942,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                 String[] titles = new String[]{getString(R.string.vote_content), getString(R.string.whether_registered)};
                 Export.VoteEntry(getString(R.string.vote_entry), titles, mVoteData, 0);
             } else
-                ToastUtils.showShort(R.string.no_data_export);
+                ToastUtil.showShort(R.string.no_data_export);
         });
         holder.import_excel.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -961,7 +962,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                 File file = UriUtils.uri2File(uri);
                 if (file != null) {
                     if (!file.getAbsolutePath().endsWith(".xls")) {
-                        ToastUtils.showShort(R.string.only_xls_file);
+                        ToastUtil.showShort(R.string.only_xls_file);
                         return;
                     }
                     try {
@@ -989,7 +990,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
                         }
                         jni.createVote(votes);
                     } catch (Exception e) {
-                        LogUtils.e(TAG,"导入投票信息失败");
+                        LogUtils.e(TAG, "导入投票信息失败");
                         e.printStackTrace();
                     }
                 }
@@ -1071,6 +1072,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
         public ImageView vote_option_color_e;
         public LinearLayout vote_type_top_ll;
         public TextView vote_member_count_tv;
+        public Button btn_exit;
 
         public ChartViewHolder(View rootView) {
             this.rootView = rootView;
@@ -1096,6 +1098,7 @@ public class VoteFragment extends BaseFragment implements View.OnClickListener {
             this.vote_option_color_e = (ImageView) rootView.findViewById(R.id.vote_option_color_e);
             this.vote_type_top_ll = (LinearLayout) rootView.findViewById(R.id.vote_type_top_ll);
             this.vote_member_count_tv = (TextView) rootView.findViewById(R.id.vote_member_count_tv);
+            this.btn_exit = (Button) rootView.findViewById(R.id.btn_exit);
         }
 
     }

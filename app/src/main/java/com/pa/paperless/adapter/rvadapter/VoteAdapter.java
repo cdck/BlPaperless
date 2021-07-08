@@ -2,7 +2,9 @@ package com.pa.paperless.adapter.rvadapter;
 
 import android.content.Context;
 import android.graphics.Color;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +27,7 @@ public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.ViewHolder> {
     private final List<InterfaceVote.pbui_Item_MeetVoteDetailInfo> mData;
     private final Context mContext;
     private ItemClickListener mListener;
-    private int mCheckedPosion;
+    private int mCheckedPosion = -1;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -155,7 +157,7 @@ public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.ViewHolder> {
         });
         /** ************ ******  item设置选中效果  ****** ************ **/
         if (position == mCheckedPosion) {
-            int color = mContext.getResources().getColor(R.color.select_item_red_bg);
+            int color = mContext.getResources().getColor(R.color.select_vote_item_red_bg);
             holder.itemView.setBackgroundColor(color);
         } else {
             holder.itemView.setBackgroundColor(Color.TRANSPARENT);
@@ -174,6 +176,7 @@ public class VoteAdapter extends RecyclerView.Adapter<VoteAdapter.ViewHolder> {
         }
         return items;
     }
+
     @Override
     public long getItemId(int position) {
         return position;

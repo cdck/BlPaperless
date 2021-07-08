@@ -1,12 +1,16 @@
 # ninja log v5
-0	7	0	clean	19811a04d44ab874
-1	100	1622771485	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	520595a3a2f8b34f
-1	120	1622771485	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	b71280d2791e7e86
-0	614	1622771486	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	d93db263022e10aa
-615	676	1622771486	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	4f11c5adedaee89c
-1	7	0	clean	19811a04d44ab874
-0	7	0	clean	19811a04d44ab874
-3	123	1622771585	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	520595a3a2f8b34f
-2	148	1622771585	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	b71280d2791e7e86
-2	653	1622771585	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	d93db263022e10aa
-653	714	1622771585	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	4f11c5adedaee89c
+12	1041	646895857	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	ae28007cc4f42829
+23	1542	646895857	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	e59bf42cc8038b6f
+1	2084	646895858	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	622f347de017f659
+2085	2813	646895859	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	afd39c653a7540bb
+0	12	0	clean	81a0c8a35c45b8df
+8	20	0	clean	81a0c8a35c45b8df
+32	493	647151401	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	ae28007cc4f42829
+42	496	647151401	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	e59bf42cc8038b6f
+7	1000	647151401	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	622f347de017f659
+1000	1138	647151402	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	afd39c653a7540bb
+0	12	0	clean	81a0c8a35c45b8df
+1502	5004	647415408	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	ae28007cc4f42829
+2	9856	647415415	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	622f347de017f659
+1513	11330	647415417	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	e59bf42cc8038b6f
+11330	12835	647415418	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	afd39c653a7540bb

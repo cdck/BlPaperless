@@ -60,6 +60,7 @@
     <color name="fun_tv_color_n">#B5302F</color>
     <color name="select_item_bg">#70cacaca</color>
     <color name="select_item_red_bg">#8D72DCF1</color>
+    <color name="select_vote_item_red_bg">#B5302F</color>
 
     <!--视频播放界面底部和顶部PopupWindow字体颜色-->
     <color name="video_time_color">#1DDD24</color>

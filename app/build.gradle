@@ -20,6 +20,8 @@ android {
         }
         minSdkVersion 23
         targetSdkVersion 28
+        versionCode 17
+        versionName "1.17.0708"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
@@ -68,10 +70,10 @@ android {
     //指定打包后应用名称
     applicationVariants.all { variant ->
         variant.outputs.all {
-            if(isSimple.toBoolean()){
-                outputFileName = "boling_paperless-simple-v${variant.versionName}.apk"
-            }else {
-                outputFileName = "boling_paperless-v${variant.versionName}.apk"
+            if (isSimple.toBoolean()) {
+                outputFileName = "会议席位（博聆简易版）v${variant.versionName}.apk"
+            } else {
+                outputFileName = "博聆无纸化v${variant.versionName}.apk"
             }
         }
     }

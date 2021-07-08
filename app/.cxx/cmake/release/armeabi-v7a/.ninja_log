@@ -1,12 +1,16 @@
 # ninja log v5
-1	101	1622771356	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	432174cf1767a892
-1	107	1622771356	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	443a4360db96323
-0	541	1622771356	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	a90de8ea11ffc261
-542	601	1622771357	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so	19041ffe65cd377
-0	13	0	clean	19811a04d44ab874
-0	7	0	clean	19811a04d44ab874
-0	8	0	clean	19811a04d44ab874
-7	166	1622771629	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	432174cf1767a892
-5	188	1622771629	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	443a4360db96323
-3	835	1622771630	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	a90de8ea11ffc261
-835	929	1622771630	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so	19041ffe65cd377
+1130	4542	647151139	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	b0f5303e59045e34
+2	9609	647151146	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	84b5eb312457ecc5
+1148	9992	647151146	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	523e5d50d995256
+9992	10867	647151147	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so	ebc2760a5851f5d7
+0	16	0	clean	81a0c8a35c45b8df
+0	480	0	clean	81a0c8a35c45b8df
+31	1061	647151515	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	b0f5303e59045e34
+2	1562	647151516	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	84b5eb312457ecc5
+42	1562	647151515	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	523e5d50d995256
+1562	1698	647151517	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so	ebc2760a5851f5d7
+0	384	0	clean	81a0c8a35c45b8df
+49	211	647416637	CMakeFiles/native-lib.dir/src/main/cpp/wallet_net.cpp.o	b0f5303e59045e34
+72	230	647416637	CMakeFiles/native-lib.dir/src/main/cpp/helpers.c.o	523e5d50d995256
+2	787	647416637	CMakeFiles/native-lib.dir/src/main/cpp/jni_wallet_netinit.cpp.o	84b5eb312457ecc5
+787	924	647416637	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so	ebc2760a5851f5d7

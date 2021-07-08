@@ -321,21 +321,29 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         try {
             InterfaceMeetfunction.pbui_Type_MeetFunConfigDetailInfo meetfun = jni.queryMeetFunction();
             funData.clear();
-            if (meetfun != null) {
-                List<InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo> itemList4 = meetfun.getItemList();
-                for (InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo function : itemList4) {
-                    int funcode = function.getFuncode();
-                    if (App.isSimple) {
-                        if (funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_AGENDA_BULLETIN_VALUE
-                                || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_MATERIAL_VALUE
-                                || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_POSTIL_VALUE
-                                || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_WEBBROWSER_VALUE
-                                || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_SIGNINRESULT_VALUE
-                        ) {
+            if (App.isSimple) {
+                funData.add(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_AGENDA_BULLETIN_VALUE);
+                funData.add(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_MATERIAL_VALUE);
+                funData.add(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_POSTIL_VALUE);
+                funData.add(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_WEBBROWSER_VALUE);
+                funData.add(InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_SIGNINRESULT_VALUE);
+            } else {
+                if (meetfun != null) {
+                    List<InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo> itemList4 = meetfun.getItemList();
+                    for (InterfaceMeetfunction.pbui_Item_MeetFunConfigDetailInfo function : itemList4) {
+                        int funcode = function.getFuncode();
+                        if (App.isSimple) {
+                            if (funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_AGENDA_BULLETIN_VALUE
+                                    || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_MATERIAL_VALUE
+                                    || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_POSTIL_VALUE
+                                    || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_WEBBROWSER_VALUE
+                                    || funcode == InterfaceMacro.Pb_Meet_FunctionCode.Pb_MEET_FUNCODE_SIGNINRESULT_VALUE
+                            ) {
+                                funData.add(funcode);
+                            }
+                        } else {
                             funData.add(funcode);
                         }
-                    } else {
-                        funData.add(funcode);
                     }
                 }
             }
@@ -1373,13 +1381,13 @@ public class MeetingActivity extends BaseActivity implements View.OnClickListene
         meet_title_tv = findViewById(R.id.meet_title_tv);
         meet_rl = findViewById(R.id.meet_rl);
         if (App.isSimple) {
-            meet_rl.setLayoutManager(new LinearLayoutManager(this));
+            meet_rl.setLayoutManager(new StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL));
         } else {
             meet_rl.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         }
         secretary_rl = findViewById(R.id.secretary_rl);
         if (App.isSimple) {
-            secretary_rl.setLayoutManager(new LinearLayoutManager(this));
+            secretary_rl.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.HORIZONTAL));
         } else {
             secretary_rl.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         }
