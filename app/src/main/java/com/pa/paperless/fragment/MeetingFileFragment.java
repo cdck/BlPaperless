@@ -1,5 +1,7 @@
 package com.pa.paperless.fragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.PopupWindow;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.blankj.utilcode.util.UriUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
@@ -27,6 +30,7 @@ import com.pa.paperless.data.constant.EventMessage;
 import com.pa.paperless.data.constant.EventType;
 import com.pa.paperless.data.constant.Macro;
 import com.pa.paperless.data.constant.Values;
+import com.pa.paperless.service.App;
 import com.pa.paperless.utils.FileUtil;
 import com.pa.paperless.utils.LogUtil;
 import com.pa.paperless.utils.MyUtils;
@@ -36,6 +40,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,6 +81,7 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
     private int fileFilterType = -1;
     private DownloadFileAdapter downloadFileAdapter;
     private PopupWindow downloadPop;
+    private Button btn_upload;
 
     @Nullable
     @Override
@@ -84,8 +90,6 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
         initView(inflate);
         EventBus.getDefault().register(this);
         initButtons();
-        //会议目录权限
-//        jni.cacheData(InterfaceMacro.Pb_Type.Pb_TYPE_MEET_INTERFACE_MEETDIRECTORYRIGHT.getNumber(), 1, InterfaceMacro.Pb_CacheFlag.Pb_MEET_CACEH_FLAG_ZERO_VALUE);
         queryMeetDir();
         return inflate;
     }
@@ -101,10 +105,13 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
         btn_video.setOnClickListener(this);
         btn_other.setOnClickListener(this);
 
+        btn_upload = inflate.findViewById(R.id.btn_upload);
         btn_push = inflate.findViewById(R.id.btn_push);
         btn_download = inflate.findViewById(R.id.btn_download);
+        btn_upload.setOnClickListener(this);
         btn_push.setOnClickListener(this);
         btn_download.setOnClickListener(this);
+        btn_upload.setVisibility(App.isSimple ? View.VISIBLE : View.INVISIBLE);
 
         rv_file = inflate.findViewById(R.id.rv_file);
     }
@@ -175,7 +182,10 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
                         LogUtils.e(TAG, "过滤掉有父目录的目录" + dirName);
                         continue;
                     }
-                    if (dirId != Macro.SHARED_FILE_DIRECTORY_ID && dirId != Macro.ANNOTATION_FILE_DIRECTORY_ID) {
+                    if (dirId != Macro.ANNOTATION_FILE_DIRECTORY_ID) {
+                        if (!App.isSimple && dirId == Macro.SHARED_FILE_DIRECTORY_ID) {
+                            continue;
+                        }
                         InterfaceFile.pbui_Type_MeetDirRightDetailInfo dirPermission = jni.queryDirPermission(dirId);
                         if (dirPermission != null) {
                             List<Integer> memberidList = dirPermission.getMemberidList();
@@ -340,6 +350,10 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_upload: {
+                chooseLocalFile(REQUEST_CODE_UPLOAD_SHARE_FILE);
+                break;
+            }
             case R.id.btn_document: {
                 saveCurrentExpandStatus();
                 fileFilterType = fileFilterType == 0 ? -1 : 0;
@@ -479,5 +493,19 @@ public class MeetingFileFragment extends BaseFragment implements View.OnClickLis
     public void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_UPLOAD_SHARE_FILE && resultCode == Activity.RESULT_OK) {
+            File file = UriUtils.uri2File(data.getData());
+            if (file != null) {
+                jni.uploadFile(InterfaceMacro.Pb_Upload_Flag.Pb_MEET_UPLOADFLAG_ZERO_VALUE,
+                        Macro.SHARED_FILE_DIRECTORY_ID, 0, file.getName(), file.getAbsolutePath(), 0, Macro.upload_local_file);
+            } else {
+                ToastUtils.showShort(R.string.error_open_file_failed);
+            }
+        }
     }
 }

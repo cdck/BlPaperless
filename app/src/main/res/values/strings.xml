@@ -615,6 +615,9 @@
     <string name="exit">退出</string>
     <string name="err_member_offline">当前参会人处于离线状态</string>
     <string name="err_unbound_device">当前参会人未绑定设备</string>
+    <string name="upload_share">上传共享</string>
+    <string name="upload_progress_">%1$s 已上传 %2$s &#037;</string>
+    <string name="upload_finish_">%1$s上传完毕</string>
 
 
     <string-array name="role_spinner">

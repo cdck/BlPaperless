@@ -221,7 +221,7 @@ public class WebBrowseFragment extends BaseFragment implements View.OnClickListe
         home = inflate.findViewById(R.id.home);
         home.setOnClickListener(this);
         debug = inflate.findViewById(R.id.debug);
-        debug.setVisibility(isDebug ? View.VISIBLE : View.GONE);
+//        debug.setVisibility(isDebug ? View.VISIBLE : View.GONE);
         debug.setOnClickListener(this);
         edt_url = inflate.findViewById(R.id.edt_url);
         edt_url.setOnClickListener(this);
@@ -240,7 +240,7 @@ public class WebBrowseFragment extends BaseFragment implements View.OnClickListe
             mWebView.setAlpha(0);
             onPause();
         } else {
-            debug.setVisibility(isDebug ? View.VISIBLE : View.GONE);
+//            debug.setVisibility(isDebug ? View.VISIBLE : View.GONE);
             LogUtil.d(TAG, "onHiddenChanged: 显示");
             mWebView.setAlpha(1);
             onResume();

@@ -94,14 +94,14 @@
 
     <!--会议资料导航按钮-->
     <style name="Meet_File_Btn">
-        <item name="android:textSize">16sp</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginStart">5dp</item>
-        <item name="android:background">@drawable/btn_pressed</item>
+        <item name="android:background">@drawable/btn_file_s</item>
+<!--        <item name="android:background">@drawable/btn_pressed</item>-->
     </style>
 
     <!--批注文件 导航按钮-->

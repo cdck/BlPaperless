@@ -36,6 +36,7 @@ import com.pa.paperless.data.constant.WpsModel;
 import com.pa.paperless.utils.Dispose;
 import com.pa.paperless.utils.LogUtil;
 
+import com.pa.paperless.utils.ToastUtil;
 import com.pa.paperless.video.VideoActivity;
 import com.pa.paperless.utils.FileUtil;
 import com.pa.paperless.utils.MyUtils;
@@ -464,11 +465,19 @@ public class NativeService extends Service {
         InterfaceUpload.pbui_TypeUploadPosCb object = (InterfaceUpload.pbui_TypeUploadPosCb) message.getObject();
         int mediaId = object.getMediaId();
         int per = object.getPer();
+        int status = object.getStatus();
+        String pathName = object.getPathname().toStringUtf8();
         String userStr = object.getUserstr().toStringUtf8();
         byte[] bytes = jni.queryFileProperty(InterfaceMacro.Pb_MeetFilePropertyID.Pb_MEETFILE_PROPERTY_NAME.getNumber(), mediaId);
         InterfaceBase.pbui_CommonTextProperty pbui_commonTextProperty = InterfaceBase.pbui_CommonTextProperty.parseFrom(bytes);
-        String uploadFileName = MyUtils.b2s(pbui_commonTextProperty.getPropertyval());
+        String uploadFileName = pbui_commonTextProperty.getPropertyval().toStringUtf8();
         String name = FileUtil.getCutStr(uploadFileName, 1);//获取当前上传文件的前缀文件名
+        LogUtils.i(TAG, "uploadInform --> status=" + status + "，上传进度：" + per + "\npathName= " + pathName);
+        if (status == InterfaceMacro.Pb_Upload_State.Pb_UPLOADMEDIA_FLAG_UPLOADING_VALUE) {
+            ToastUtils.showShort(getString(R.string.upload_progress_, pathName, per + ""));
+        } else if (status == InterfaceMacro.Pb_Upload_State.Pb_UPLOADMEDIA_FLAG_HADEND_VALUE) {
+
+        }
         if (newName != null && newName.equals(name)) {
             LogUtil.v(TAG, "uploadInform: 当前上传的是画板图片...");
         } else if (FabPicName != null && FabPicName.equals(name)) {
@@ -480,6 +489,7 @@ public class NativeService extends Service {
             LogUtil.v(TAG, "uploadInform: " + uploadFileName + " 上传进度:" + per);
         }
         if (per == 100) {
+            ToastUtil.showShort(getString(R.string.upload_finish_, pathName));
             if (FabPicName != null && FabPicName.equals(name)) {
                 LogUtil.v(TAG, "uploadInform: 截图图片上传完毕...");
                 Timer t = new Timer();

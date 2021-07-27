@@ -140,7 +140,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView tv_dev_online;
     private ImageView main_close_iv;
-    private ImageView main_win_iv;
+    private ImageView main_win_iv, main_min_iv;
 
     private ImageView main_logo_iv;
     private TextView company_name;
@@ -509,9 +509,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Button btn = findViewById(resid);
         btn.setTextColor(color);
         btn.setTextSize(fontsize);
-        update(resid);
-        boolean b = (InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE == (flag & InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE));
-        btn.setVisibility(b ? View.VISIBLE : View.GONE);
+        if (!App.isSimple) {
+            update(resid);
+            boolean b = (InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE == (flag & InterfaceMacro.Pb_MeetFaceFlag.Pb_MEET_FACEFLAG_SHOW_VALUE));
+            btn.setVisibility(b ? View.VISIBLE : View.GONE);
+        }
         //字体样式
         if (fontflag == InterfaceMacro.Pb_MeetFaceFontFlag.Pb_MEET_FONTFLAG_BOLD.getNumber()) {//加粗
             btn.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
@@ -1225,7 +1227,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACE_checkin_GEO.getNumber()) {//进入会议按钮 text
                     updateBtn(R.id.mian_into_meeting, fontflag, flag, fontsize, color, align, fontName);
                 } else if (faceid == InterfaceMacro.Pb_MeetFaceID.Pb_MEET_FACE_manage_GEO.getNumber()) {//进入后台 text
-                    updateBtn(R.id.main_secretary_manage, fontflag, flag, fontsize, color, align, fontName);
+//                    updateBtn(R.id.main_secretary_manage, fontflag, flag, fontsize, color, align, fontName);
                 }
             }
             if (logoIsHide) {
@@ -1354,7 +1356,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         if (devFileExists) {
             FileUtils.delete(Macro.devFilePath);
         }
-        copyTo(App.isSimple ? "boling_simple.dev" :"client.dev", Macro.root_dir, "client.dev");
+        copyTo(App.isSimple ? "boling_simple.dev" : "client.dev", Macro.root_dir, "client.dev");
     }
 
     /**
@@ -1776,7 +1778,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         company_name = (TextView) findViewById(R.id.company_name);
         main_close_iv = (ImageView) findViewById(R.id.main_close_iv);
         main_win_iv = (ImageView) findViewById(R.id.main_win_iv);
+        main_min_iv = (ImageView) findViewById(R.id.main_min_iv);
         main_win_iv.setOnClickListener(this);
+        main_min_iv.setOnClickListener(this);
         main_close_iv.setOnClickListener(this);
         tv_dev_online = (TextView) findViewById(R.id.tv_dev_online);
         main_meetName = (TextView) findViewById(R.id.main_meetName);
@@ -1808,6 +1812,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 gotoMeet();
                 break;
             case R.id.main_secretary_manage://修改IP地址
+//                if (IniUtil.inifile.exists()) {
+//                    String nowIp = iniUtil.get("areaaddr", "area0ip");
+//                    String nowPort = iniUtil.get("areaaddr", "area0port");
+//                    String streamprotol = iniUtil.get("selfinfo", "streamprotol");
+//                    String disablemulticast = iniUtil.get("Audio", "disablemulticast");
+//                    showInputIniIp(nowIp, nowPort, streamprotol, disablemulticast);
+//                } else {
+//                    reSetIniFile();
+//                }
+                break;
+            case R.id.main_win_iv: {
                 if (IniUtil.inifile.exists()) {
                     String nowIp = iniUtil.get("areaaddr", "area0ip");
                     String nowPort = iniUtil.get("areaaddr", "area0port");
@@ -1818,12 +1833,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     reSetIniFile();
                 }
                 break;
-            case R.id.main_win_iv:
+            }
+            case R.id.main_min_iv: {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.addCategory(Intent.CATEGORY_HOME);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 break;
+            }
             case R.id.main_close_iv:
                 exit();
                 break;

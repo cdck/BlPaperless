@@ -68,6 +68,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shape_btn"
         android:text="@string/setting"
+        android:visibility="gone"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.99"
@@ -79,7 +80,7 @@
     <!--android:background="@drawable/shape_btn"-->
     <Button
         android:id="@+id/mian_into_meeting"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_btn"
         android:text="@string/into_meeting"
@@ -135,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -186,7 +187,7 @@
         android:layout_marginEnd="15dp"
         android:lines="1"
         android:textColor="@color/colorGreen"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/main_win_iv"
         app:layout_constraintEnd_toStartOf="@+id/main_win_iv"
         app:layout_constraintHorizontal_bias="0.7"
@@ -201,6 +202,17 @@
         android:layout_marginEnd="10dp"
         android:clickable="true"
         android:src="@drawable/icon_win_select"
+        app:layout_constraintEnd_toStartOf="@+id/main_min_iv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/main_min_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="10dp"
+        android:clickable="true"
+        android:src="@drawable/icon_min_select"
         app:layout_constraintEnd_toStartOf="@+id/main_close_iv"
         app:layout_constraintTop_toTopOf="parent" />
 

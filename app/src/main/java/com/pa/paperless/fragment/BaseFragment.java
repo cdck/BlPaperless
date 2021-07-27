@@ -1,6 +1,7 @@
 package com.pa.paperless.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +23,25 @@ import androidx.fragment.app.Fragment;
 
 public abstract class BaseFragment extends Fragment {
     protected NativeUtil jni = NativeUtil.getInstance();
+    protected final int REQUEST_CODE_UPLOAD_SHARE_FILE = 1;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         LogUtil.i("F_life", this.getClass().getSimpleName() + ".onCreateView");
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    /**
+     * 打开选择本地文件
+     *
+     * @param requestCode 返回码
+     */
+    protected void chooseLocalFile(int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("*/*");
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        startActivityForResult(intent, requestCode);
     }
 
     @Override
